@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voorzetsels in het Nederlands</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #27ae60;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* عنوان بالهولندية */
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 1.8rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        /* عرض الوقت والتاريخ الحقيقي */
+        .live-datetime {
+            background-color: #eef2f7;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: bold;
+            color: var(--primary-color);
+            border: 1px solid #dcdfe6;
+            font-size: 1.05rem;
+        }
+
+        /* زر النسخ */
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+        }
+
+        .copy-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: bold;
+            transition: background 0.2s, transform 0.1s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .copy-btn:hover {
+            background-color: #219150;
+        }
+
+        .copy-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* عرض قائمة حروف الجر */
+        .content-box {
+            background-color: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            line-height: 1.8;
+            max-height: 450px;
+            overflow-y: auto;
+            direction: rtl;
+            white-space: pre-line;
+            font-size: 0.95rem;
+        }
+
+        /* إشعار عند النسخ */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: #323232;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- عنوان باللغة الهولندية -->
+        <h1>Belangrijkste Voorzetsels in het Nederlands</h1>
+        <div class="subtitle">أهم حروف الجر في اللغة الهولندية مع الأمثلة</div>
+
+        <!-- الوقت والتاريخ المباشر -->
+        <div class="live-datetime" id="datetime-display">
+            جاري تحميل الوقت والتاريخ...
+        </div>
+
+        <!-- زر النسخ -->
+        <div class="btn-container">
+            <button class="copy-btn" onclick="copyContent()">
+                📋 نسخ النص
+            </button>
+        </div>
+
+        <!-- المحتوى المراد نسخه -->
+        <div class="content-box" id="text-to-copy">
+🔹 أهم حروف الجر في الهولندية
+
+1. in — في / داخل
+   Ik woon in België. — أنا أعيش في بلجيكا.
+
+2. op — على / فوق
+   Het boek ligt op de tafel. — الكتاب على الطاولة.
+
+3. aan — عند / على / إلى
+   Ik zit aan de tafel. — أنا جالس على الطاولة.
+
+4. naar — إلى
+   Ik ga naar school. — أذهب إلى المدرسة.
+
+5. van — من / لـِ
+   Ik kom van het werk. — أنا قادم من العمل.
+
+6. met — مع / بواسطة
+   Ik ga met de bus. — أذهب بالحافلة.
+
+7. voor — أمام / من أجل / قبل
+   Dit cadeau is voor jou. — هذه الهدية لك.
+
+8. achter — خلف / وراء
+   De auto staat achter het huis. — السيارة خلف البيت.
+
+9. naast — بجانب
+   Ik zit naast hem. — أنا أجلس بجانبه.
+
+10. tussen — بين
+    De winkel is tussen de bank en het station. — المتجر بين البنك والمحطة.
+
+11. onder — تحت
+    De tas ligt onder de stoel. — الحقيبة تحت الكرسي.
+
+12. boven — فوق / أعلى
+    De lamp hangt boven de tafel. — المصباح معلق فوق الطاولة.
+
+13. tegen — ضد / مقابل / ملاصق لـ
+    De fiets staat tegen de muur. — الدراجة ملاصقة للحائط.
+
+14. bij — عند / لدى / بالقرب من
+    Ik ben bij mijn vriend. — أنا عند صديقي.
+
+15. uit — من داخل / خارجًا من
+    Ik kom uit Egypte. — أنا من مصر.
+
+16. door — عبر / بواسطة
+    Ik loop door het park. — أمشي عبر الحديقة.
+
+17. over — عن / فوق / عبر
+    We praten over voetbal. — نتحدث عن كرة القدم.
+
+18. zonder — بدون
+    Koffie zonder suiker. — قهوة بدون سكر.
+
+19. tijdens — أثناء
+    Tijdens de les. — أثناء الدرس.
+
+20. sinds — منذ
+    Ik woon hier sinds 2024. — أعيش هنا منذ 2024.
+
+⭐ مهم جدًا في الكلام اليومي:
+- naar = إلى مكان (Ik ga naar Gent)
+- in = داخل مكان (Ik ben in Gent)
+- uit = من داخل مكان/بلد (Ik kom uit Egypte)
+- van = من شخص/مكان/مصدر (Ik kom van mijn werk)
+- bij = عند شخص/جهة (Ik ben bij de dokter)
+- met = مع شخص / بواسطة وسيلة (Ik ga met de trein)
+        </div>
+    </div>
+
+    <!-- عنصر الإشعار -->
+    <div class="toast" id="toast">تم نسخ النص بنجاح!</div>
+
+    <script>
+        // 1. كود تحديث الوقت والتاريخ المباشر
+        function updateDateTime() {
+            const now = new Date();
+            
+            // خيارات تنسيق التاريخ باللغة الهولندية
+            const dateOptions = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            
+            const dutchDate = now.toLocaleDateString('nl-BE', dateOptions);
+            const timeString = now.toLocaleTimeString('ar-EG', { hour12: false });
+
+            const displayElement = document.getElementById('datetime-display');
+            displayElement.innerText = `📅 ${dutchDate} | ⏰ ${timeString}`;
+        }
+
+        // تشغيل الوقت فورًا وتحديثه كل ثانية (1000ms)
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+        // 2. كود نسخ النص إلى الحافظة
+        function copyContent() {
+            const text = document.getElementById('text-to-copy').innerText;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+            }).catch(err => {
+                console.error('فشل النسخ: ', err);
+            });
+        }
+
+        // إظهار إشعار مؤقت عند النسخ
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
