@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة باستخدام Wat? (ماذا؟ / ما؟) في الهولندية</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent: #10b981;
+            --accent-bg: #ecfdf5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* شريط البحث */
+        .search-box {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        /* التبويبات (Tabs) */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: #e2e8f0;
+            color: var(--text-main);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* عناوين وقوائم الجمل */
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .sentence-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .sentence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .sentence-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .dutch-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.25rem;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .arabic-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* صندوق القاعدة والدرس التالي */
+        .rule-box {
+            background: var(--accent-bg);
+            border-right: 4px solid var(--accent);
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+        }
+
+        .rule-box h3 {
+            color: #047857;
+            margin-bottom: 0.75rem;
+        }
+
+        .rule-box ul {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .rule-box li {
+            font-weight: 600;
+            color: #065f46;
+        }
+
+        .next-lesson {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px dashed #a7f3d0;
+            font-weight: bold;
+            color: #047857;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .sentence-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🇳🇱 100 جملة باستخدام Wat? (ماذا؟ / ما؟)</h1>
+            <p>جمل باللغة الهولندية مع الترجمة بالعربية للمحادثة اليومية</p>
+        </header>
+
+        <!-- حقل البحث -->
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="filterSentences()" placeholder="ابحث عن كلمة بالهولندية أو العربية...">
+        </div>
+
+        <!-- التبويبات -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="filterTab('all', this)">الكل (100)</button>
+            <button class="tab-btn" onclick="filterTab('cat1', this)">1–25: الحياة اليومية</button>
+            <button class="tab-btn" onclick="filterTab('cat2', this)">26–50: البيت والأشخاص</button>
+            <button class="tab-btn" onclick="filterTab('cat3', this)">51–75: العمل والدراسة</button>
+            <button class="tab-btn" onclick="filterTab('cat4', this)">76–100: التسوق والمحادثة</button>
+        </div>
+
+        <!-- الحاوية الرئيسية للجمل -->
+        <div id="contentArea"></div>
+
+        <!-- قاعدة مهمة والدرس التالي -->
+        <div class="rule-box">
+            <h3>📌 قاعدة مهمة:</h3>
+            <p>كلمة <strong>Wat</strong> تُستخدم للسؤال عن الأشياء والأفعال والمعلومات، وأحيانًا تأتي بمعنى «ما نوع»:</p>
+            <ul>
+                <li>• <strong>Wat is dit?</strong> — ما هذا؟</li>
+                <li>• <strong>Wat doe je?</strong> — ماذا تفعل؟</li>
+                <li>• <strong>Wat voor werk doe je?</strong> — ما نوع العمل الذي تقوم به؟</li>
+                <li>• <strong>Wat heb je nodig?</strong> — ماذا تحتاج؟</li>
+            </ul>
+            <div class="next-lesson">
+                👉 الدرس التالي: Waar? — أين؟
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const data = [
+            {
+                cat: "cat1",
+                title: "1–25: الحياة اليومية",
+                items: [
+                    { nl: "Wat doe je?", ar: "ماذا تفعل؟" },
+                    { nl: "Wat wil je?", ar: "ماذا تريد؟" },
+                    { nl: "Wat zeg je?", ar: "ماذا تقول؟" },
+                    { nl: "Wat bedoel je?", ar: "ماذا تقصد؟" },
+                    { nl: "Wat denk je?", ar: "ماذا تعتقد؟" },
+                    { nl: "Wat weet je?", ar: "ماذا تعرف؟" },
+                    { nl: "Wat zie je?", ar: "ماذا ترى؟" },
+                    { nl: "Wat hoor je?", ar: "ماذا تسمع؟" },
+                    { nl: "Wat zoek je?", ar: "ماذا تبحث عنه؟" },
+                    { nl: "Wat vind je?", ar: "ما رأيك؟" },
+                    { nl: "Wat lees je?", ar: "ماذا تقرأ؟" },
+                    { nl: "Wat schrijf je?", ar: "ماذا تكتب؟" },
+                    { nl: "Wat eet je?", ar: "ماذا تأكل؟" },
+                    { nl: "Wat drink je?", ar: "ماذا تشرب؟" },
+                    { nl: "Wat koop je?", ar: "ماذا تشتري؟" },
+                    { nl: "Wat verkoop je?", ar: "ماذا تبيع؟" },
+                    { nl: "Wat maak je?", ar: "ماذا تصنع؟" },
+                    { nl: "Wat kook je?", ar: "ماذا تطبخ؟" },
+                    { nl: "Wat leer je?", ar: "ماذا تتعلّم؟" },
+                    { nl: "Wat studeer je?", ar: "ماذا تدرس؟" },
+                    { nl: "Wat speel je?", ar: "ماذا تلعب؟" },
+                    { nl: "Wat kijk je?", ar: "ماذا تشاهد؟ (الأشيع: Wat ben je aan het kijken?)" },
+                    { nl: "Wat luister je?", ar: "ماذا تستمع إليه؟ (الأشيع: Waar luister je naar?)" },
+                    { nl: "Wat draag je?", ar: "ماذا ترتدي؟" },
+                    { nl: "Wat gebruik je?", ar: "ماذا تستخدم؟" }
+                ]
+            },
+            {
+                cat: "cat2",
+                title: "26–50: البيت والأشخاص",
+                items: [
+                    { nl: "Wat is dat?", ar: "ما ذلك؟" },
+                    { nl: "Wat is dit?", ar: "ما هذا؟" },
+                    { nl: "Wat is er gebeurd?", ar: "ماذا حدث؟" },
+                    { nl: "Wat is er aan de hand?", ar: "ما الذي يحدث؟" },
+                    { nl: "Wat is jouw naam?", ar: "ما اسمك؟" },
+                    { nl: "Wat is jouw adres?", ar: "ما عنوانك؟" },
+                    { nl: "Wat is jouw telefoonnummer?", ar: "ما رقم هاتفك؟" },
+                    { nl: "Wat is jouw beroep?", ar: "ما مهنتك؟" },
+                    { nl: "Wat is jouw favoriete eten?", ar: "ما طعامك المفضّل؟" },
+                    { nl: "Wat is jouw favoriete kleur?", ar: "ما لونك المفضّل؟" },
+                    { nl: "Wat ligt op tafel?", ar: "ماذا يوجد على الطاولة؟" },
+                    { nl: "Wat staat in de kast?", ar: "ماذا يوجد داخل الخزانة؟" },
+                    { nl: "Wat zit er in de tas?", ar: "ماذا يوجد داخل الحقيبة؟" },
+                    { nl: "Wat hangt aan de muur?", ar: "ماذا يعلّق على الحائط؟" },
+                    { nl: "Wat ligt onder het bed?", ar: "ماذا يوجد تحت السرير؟" },
+                    { nl: "Wat heb je nodig?", ar: "ماذا تحتاج؟" },
+                    { nl: "Wat wil je eten?", ar: "ماذا تريد أن تأكل؟" },
+                    { nl: "Wat wil je drinken?", ar: "ماذا تريد أن تشرب؟" },
+                    { nl: "Wat ga je doen?", ar: "ماذا ستفعل؟" },
+                    { nl: "Wat ben je aan het doen?", ar: "ماذا تفعل الآن؟" },
+                    { nl: "Wat doe je vanavond?", ar: "ماذا ستفعل هذا المساء؟" },
+                    { nl: "Wat doe je in het weekend?", ar: "ماذا تفعل في عطلة نهاية الأسبوع؟" },
+                    { nl: "Wat heb je gekocht?", ar: "ماذا اشتريت؟" },
+                    { nl: "Wat heb je gegeten?", ar: "ماذا أكلت؟" },
+                    { nl: "Wat heb je gezegd?", ar: "ماذا قلت؟" }
+                ]
+            },
+            {
+                cat: "cat3",
+                title: "51–75: العمل والدراسة",
+                items: [
+                    { nl: "Wat voor werk doe je?", ar: "ما نوع العمل الذي تقوم به؟" },
+                    { nl: "Wat zoek je voor werk?", ar: "ما نوع العمل الذي تبحث عنه؟" },
+                    { nl: "Wat verdien je per maand?", ar: "كم تكسب شهريًا؟" },
+                    { nl: "Wat is je functie?", ar: "ما وظيفتك؟" },
+                    { nl: "Wat zijn je taken?", ar: "ما مهامك؟" },
+                    { nl: "Wat zijn je sterke punten?", ar: "ما نقاط قوتك؟" },
+                    { nl: "Wat zijn je zwakke punten?", ar: "ما نقاط ضعفك؟" },
+                    { nl: "Wat heb je gestudeerd?", ar: "ماذا درست؟" },
+                    { nl: "Wat heb je geleerd?", ar: "ماذا تعلّمت؟" },
+                    { nl: "Wat wil je leren?", ar: "ماذا تريد أن تتعلّم؟" },
+                    { nl: "Wat betekent dit woord?", ar: "ماذا تعني هذه الكلمة؟" },
+                    { nl: "Wat betekent deze zin?", ar: "ماذا تعني هذه الجملة؟" },
+                    { nl: "Wat moet ik doen?", ar: "ماذا يجب أن أفعل؟" },
+                    { nl: "Wat moet ik invullen?", ar: "ماذا يجب أن أملأ في الاستمارة؟" },
+                    { nl: "Wat moet ik meenemen?", ar: "ماذا يجب أن أحضر معي؟" },
+                    { nl: "Wat moet ik ondertekenen?", ar: "ماذا يجب أن أوقّع؟" },
+                    { nl: "Wat staat er in de e-mail?", ar: "ماذا ورد في البريد الإلكتروني؟" },
+                    { nl: "Wat staat er in het contract?", ar: "ماذا يوجد في العقد؟" },
+                    { nl: "Wat is het probleem?", ar: "ما المشكلة؟" },
+                    { nl: "Wat is de oplossing?", ar: "ما الحل؟" },
+                    { nl: "Wat is er mis met de machine?", ar: "ما العطل في الآلة؟" },
+                    { nl: "Wat moet er gerepareerd worden?", ar: "ما الذي يجب إصلاحه؟" },
+                    { nl: "Wat heb je nodig voor het werk?", ar: "ماذا تحتاج للعمل؟" },
+                    { nl: "Wat heb je vandaag gedaan?", ar: "ماذا فعلت اليوم؟" },
+                    { nl: "Wat ga je morgen doen?", ar: "ماذا ستفعل غدًا؟" }
+                ]
+            },
+            {
+                cat: "cat4",
+                title: "76–100: التسوّق والمواصلات والمحادثة",
+                items: [
+                    { nl: "Wat kost dit?", ar: "كم سعر هذا؟" },
+                    { nl: "Wat kost dat?", ar: "كم سعر ذلك؟" },
+                    { nl: "Wat is de prijs?", ar: "ما السعر؟" },
+                    { nl: "Wat wil je kopen?", ar: "ماذا تريد أن تشتري؟" },
+                    { nl: "Wat raad je aan?", ar: "بماذا تنصح؟" },
+                    { nl: "Wat is goedkoper?", ar: "أيّهما أرخص؟" },
+                    { nl: "Wat is beter?", ar: "أيّهما أفضل؟" },
+                    { nl: "Wat is er beschikbaar?", ar: "ما المتاح؟" },
+                    { nl: "Wat is er inbegrepen?", ar: "ما الذي يشمله السعر؟" },
+                    { nl: "Wat is de korting?", ar: "ما قيمة الخصم؟" },
+                    { nl: "Wat zoek je in de winkel?", ar: "ماذا تبحث عنه في المتجر؟" },
+                    { nl: "Wat is er open?", ar: "ما الأماكن المفتوحة؟" },
+                    { nl: "Wat is het adres?", ar: "ما العنوان؟" },
+                    { nl: "Wat is de dichtstbijzijnde halte?", ar: "ما أقرب محطة؟" },
+                    { nl: "Wat is de volgende trein?", ar: "ما القطار التالي؟" },
+                    { nl: "Wat is er met de bus gebeurd?", ar: "ماذا حدث للحافلة؟" },
+                    { nl: "Wat is de snelste manier om er te komen?", ar: "ما أسرع طريقة للوصول إلى هناك؟" },
+                    { nl: "Wat vind je van België?", ar: "ما رأيك في بلجيكا؟" },
+                    { nl: "Wat vind je van deze woning?", ar: "ما رأيك في هذا المسكن؟" },
+                    { nl: "Wat vind je van mijn Nederlands?", ar: "ما رأيك في لغتي الهولندية؟" },
+                    { nl: "Wat wil je zeggen?", ar: "ماذا تريد أن تقول؟" },
+                    { nl: "Wat bedoel je daarmee?", ar: "ماذا تقصد بذلك؟" },
+                    { nl: "Wat kan ik voor je doen?", ar: "ماذا يمكنني أن أفعل من أجلك؟" },
+                    { nl: "Wat zou je graag willen?", ar: "ماذا تودّ أن تحصل عليه؟" },
+                    { nl: "Wat gebeurt er als ik te laat kom?", ar: "ماذا يحدث إذا وصلت متأخرًا؟" }
+                ]
+            }
+        ];
+
+        let activeTab = 'all';
+
+        function renderSentences() {
+            const container = document.getElementById('contentArea');
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            container.innerHTML = '';
+
+            data.forEach(group => {
+                if (activeTab !== 'all' && group.cat !== activeTab) return;
+
+                const filteredItems = group.items.filter(item => 
+                    item.nl.toLowerCase().includes(searchVal) || 
+                    item.ar.toLowerCase().includes(searchVal)
+                );
+
+                if (filteredItems.length > 0) {
+                    const section = document.createElement('section');
+                    
+                    const title = document.createElement('h2');
+                    title.className = 'section-title';
+                    title.textContent = group.title;
+                    section.appendChild(title);
+
+                    const grid = document.createElement('div');
+                    grid.className = 'sentence-list';
+
+                    filteredItems.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = 'sentence-card';
+                        card.innerHTML = `
+                            <div class="dutch-text">${item.nl}</div>
+                            <div class="arabic-text">${item.ar}</div>
+                        `;
+                        grid.appendChild(card);
+                    });
+
+                    section.appendChild(grid);
+                    container.appendChild(section);
+                }
+            });
+        }
+
+        function filterTab(category, btn) {
+            activeTab = category;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderSentences();
+        }
+
+        function filterSentences() {
+            renderSentences();
+        }
+
+        // العرض الأولي
+        renderSentences();
+    </script>
+</body>
+</html>
