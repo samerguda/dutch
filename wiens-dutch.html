@@ -2,198 +2,487 @@
 <html lang="nl" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>100 جملة هولندية باستخدام Wiens - دليل احترافي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة هولندية باستخدام Wiens - دليل احترافي وتفاعلي</title>
+    <!-- خط تجوال للألفاظ العربية ونظيف للغة الهولندية -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #0f172a;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --accent-color: #f59e0b;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 50px 0 40px;
+            text-align: center;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-md);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Search Bar */
+        .search-container {
+            position: sticky;
+            top: 15px;
+            z-index: 100;
+            margin-bottom: 35px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 24px;
+            font-size: 1rem;
+            font-family: 'Tajawal', sans-serif;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-md);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        section h2 {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        /* Rule Card */
+        .rule-card {
+            background-color: #eff6ff;
+            border-right: 5px solid var(--primary-color);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin-bottom: 25px;
+        }
+
+        .rule-card ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .rule-card li {
+            position: relative;
+            padding-right: 20px;
+            margin-bottom: 8px;
+        }
+
+        .rule-card li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            position: absolute;
+            right: 0;
+            top: -5px;
+        }
+
+        /* Sentence Grid & Cards */
+        .sentences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 15px;
+        }
+
+        .sentence-card {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+        }
+
+        .sentence-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .nl-text {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            text-align: left;
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .ar-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .copy-btn {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .sentence-card:hover .copy-btn {
+            opacity: 1;
+        }
+
+        .copy-btn:hover {
+            color: var(--primary-color);
+        }
+
+        /* Comparison Table */
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        td.nl-cell {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            text-align: left;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            .sentences-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- 
-      ====================================================
-      دليل شامل: 100 جملة هولندية باستخدام Wiens? (مِلْك مَنْ؟)
-      مرتبة في 4 تصنيفات رئيسية + شرح أداة المحادثة اليومية الشائعة (Van wie?)
-      ====================================================
-    -->
 
-    <section id="grammar-rule">
-        <h2>📌 القاعدة الاستخدامية: الفرق بين Wiens و Van wie</h2>
-        <p>
-            تُستخدم <strong>Wiens</strong> للسؤال عن ملكية الأشياء أو الأشخاص (بمعنى: <em>مِلْك مَنْ؟ / كتاب مَنْ؟</em>).
-        </p>
-        <ul>
-            <li><strong>Wiens:</strong> أداة رسمية تُستخدم أكثر في الكتابة أو النواحي الرسمية.</li>
-            <li><strong>Van wie:</strong> الصيغة الأكثر شيوعاً واستخداماً في الحياة اليومية والمحادثات الشفهية في هولندا بلجيكا.</li>
-        </ul>
-    </section>
+    <header>
+        <div class="container">
+            <h1>100 جملة هولندية باستخدام Wiens</h1>
+            <p>دليل شمول واحترافي لتعلم أداة الملكية الرسمية والفرق بينها وبين Van wie</p>
+        </div>
+    </header>
 
-    <section id="category-1">
-        <h2>1–25: الأشياء الشخصية (Persoonlijke spullen)</h2>
-        <ul>
-            <li>Wiens boek is dit? — كتاب مَنْ هذا؟</li>
-            <li>Wiens telefoon is dit? — هاتف مَنْ هذا؟</li>
-            <li>Wiens tas ligt hier? — حقيبة مَنْ موجودة هنا؟</li>
-            <li>Wiens jas hangt aan de deur? — معطف مَنْ معلّق على الباب؟</li>
-            <li>Wiens fiets staat buiten? — دراجة مَنْ موجودة في الخارج؟</li>
-            <li>Wiens sleutels liggen op tafel? — مفاتيح مَنْ موجودة على الطاولة؟</li>
-            <li>Wiens schoenen zijn dit? — حذاء مَنْ هذا؟</li>
-            <li>Wiens bril ligt op de bank? — نظارة مَنْ موجودة على الأريكة؟</li>
-            <li>Wiens horloge is kapot? — ساعة مَنْ معطّلة؟</li>
-            <li>Wiens laptop staat hier? — حاسوب محمول مَنْ موجود هنا؟</li>
-            <li>Wiens pen ligt op de grond? — قلم مَنْ موجود على الأرض؟</li>
-            <li>Wiens portemonnee is dit? — محفظة مَنْ هذه؟</li>
-            <li>Wiens paspoort ligt in de lade? — جواز سفر مَنْ موجود في الدرج؟</li>
-            <li>Wiens identiteitskaart is dit? — بطاقة هوية مَنْ هذه؟</li>
-            <li>Wiens jas is nat? — معطف مَنْ مبلّل؟</li>
-            <li>Wiens paraplu staat bij de deur? — مظلة مَنْ موجودة عند الباب؟</li>
-            <li>Wiens boekentas staat hier? — حقيبة كتب مَنْ موجودة هنا؟</li>
-            <li>Wiens sleutel past op deze deur? — مفتاح مَنْ يناسب هذا الباب؟</li>
-            <li>Wiens telefoon gaat over? — هاتف مَنْ يرنّ؟</li>
-            <li>Wiens oplader heb je gebruikt? — شاحن مَنْ استخدمت؟</li>
-            <li>Wiens kopje staat op tafel? — فنجان مَنْ موجود على الطاولة؟</li>
-            <li>Wiens handdoek ligt in de badkamer? — منشفة مَنْ موجودة في الحمام؟</li>
-            <li>Wiens koffer staat in de gang? — حقيبة سفر مَنْ موجودة في الممر؟</li>
-            <li>Wiens cadeau ligt onder de kerstboom? — هدية مَنْ موجودة تحت شجرة عيد الميلاد؟</li>
-            <li>Wiens foto hangt aan de muur? — صورة مَنْ معلّقة على الحائط؟</li>
-        </ul>
-    </section>
+    <main class="container">
 
-    <section id="category-2">
-        <h2>26–50: المنزل والعائلة (Huis en familie)</h2>
-        <ul>
-            <li>Wiens huis is dit? — منزل مَنْ هذا؟</li>
-            <li>Wiens appartement is groter? — شقة مَنْ أكبر؟</li>
-            <li>Wiens kamer is opgeruimd? — غرفة مَنْ مرتّبة؟</li>
-            <li>Wiens bed staat bij het raam? — سرير مَنْ موجود بجوار النافذة؟</li>
-            <li>Wiens auto staat voor het huis? — سيارة مَنْ موجودة أمام المنزل؟</li>
-            <li>Wiens garage is open? — مرآب مَنْ مفتوح؟</li>
-            <li>Wiens tuin is zo mooi? — حديقة مَنْ جميلة هكذا؟</li>
-            <li>Wiens hond blaft? — كلب مَنْ ينبح؟</li>
-            <li>Wiens kat zit op de stoel? — قطة مَنْ تجلس على الكرسي؟</li>
-            <li>Wiens kinderen spelen buiten? — أطفال مَنْ يلعبون في الخارج؟</li>
-            <li>Wiens moeder komt vandaag? — أمّ مَنْ ستأتي اليوم؟</li>
-            <li>Wiens vader werkt hier? — والد مَنْ يعمل هنا؟</li>
-            <li>Wiens broer woont in België? — أخو مَنْ يسكن في بلجيكا؟</li>
-            <li>Wiens zus studeert in Gent? — أخت مَنْ تدرس في غنت؟</li>
-            <li>Wiens familie komt op bezoek? — عائلة مَنْ ستأتي للزيارة؟</li>
-            <li>Wiens vrouw werkt in een ziekenhuis? — زوجة مَنْ تعمل في مستشفى؟</li>
-            <li>Wiens man is vandaag thuis? — زوج مَنْ موجود في المنزل اليوم؟</li>
-            <li>Wiens verjaardag vieren we vandaag? — عيد ميلاد مَنْ نحتفل به اليوم؟</li>
-            <li>Wiens kamer moet ik schoonmaken? — غرفة مَنْ يجب أن أنظّف؟</li>
-            <li>Wiens spullen liggen op de vloer? — أغراض مَنْ موجودة على الأرض؟</li>
-            <li>Wiens meubels zijn nieuw? — أثاث مَنْ جديد؟</li>
-            <li>Wiens koelkast is leeg? — ثلّاجة مَنْ فارغة؟</li>
-            <li>Wiens was ligt in de machine? — ملابس مَنْ موجودة في الغسالة؟</li>
-            <li>Wiens sleutel ligt onder de mat? — مفتاح مَنْ موجود تحت الدعّاسة؟</li>
-            <li>Wiens naam staat op de brievenbus? — اسم مَنْ مكتوب على صندوق البريد؟</li>
-        </ul>
-    </section>
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 ابحث عن أي كلمة أو جملة بالهولندية أو العربية..." onkeyup="filterSentences()">
+        </div>
 
-    <section id="category-3">
-        <h2>51–75: العمل والدراسة (Werk en studie)</h2>
-        <ul>
-            <li>Wiens bureau staat bij het raam? — مكتب مَنْ موجود بجوار النافذة؟</li>
-            <li>Wiens computer is nieuw? — حاسوب مَنْ جديد؟</li>
-            <li>Wiens documenten liggen hier? — مستندات مَنْ موجودة هنا؟</li>
-            <li>Wiens handtekening ontbreekt? — توقيع مَنْ ناقص؟</li>
-            <li>Wiens rapport moet ik controleren? — تقرير مَنْ يجب أن أفحص؟</li>
-            <li>Wiens e-mail heb je ontvangen? — بريد إلكتروني مَنْ استلمت؟</li>
-            <li>Wiens telefoonnummer staat op het formulier? — رقم هاتف مَنْ مكتوب في الاستمارة؟</li>
-            <li>Wiens afspraak is om tien uur? — موعد مَنْ في الساعة العاشرة؟</li>
-            <li>Wiens project bespreken we vandaag? — مشروع مَنْ نناقش اليوم؟</li>
-            <li>Wiens idee was dit? — فكرة مَنْ كانت هذه؟</li>
-            <li>Wiens voorstel heeft de manager goedgekeurd? — اقتراح مَنْ وافق عليه المدير؟</li>
-            <li>Wiens taak is dit? — مهمة مَنْ هذه؟</li>
-            <li>Wiens verantwoordelijkheid is dat? — مسؤولية مَنْ ذلك؟</li>
-            <li>Wiens gereedschap ligt in de werkplaats? — أدوات مَنْ موجودة في ورشة العمل؟</li>
-            <li>Wiens helm ligt op de tafel? — خوذة مَنْ موجودة على الطاولة؟</li>
-            <li>Wiens veiligheidschoenen zijn dit? — حذاء السلامة مَنْ هذا؟</li>
-            <li>Wiens machine werkt niet? — آلة مَنْ لا تعمل؟</li>
-            <li>Wiens ontwerp gebruiken we? — تصميم مَنْ نستخدم؟</li>
-            <li>Wiens handschrift kan ik niet lezen? — خطّ مَنْ لا أستطيع قراءته؟</li>
-            <li>Wiens antwoord is juist? — إجابة مَنْ صحيحة؟</li>
-            <li>Wiens boek heb je geleend? — كتاب مَنْ استعرت؟</li>
-            <li>Wiens notities liggen op mijn bureau? — ملاحظات مَنْ موجودة على مكتبي؟</li>
-            <li>Wiens klas heeft vandaag examen? — فصل مَنْ لديه امتحان اليوم؟</li>
-            <li>Wiens leraar komt morgen? — معلّم مَنْ سيأتي غدًا؟</li>
-            <li>Wiens diploma hangt aan de muur? — شهادة مَنْ معلّقة على الحائط؟</li>
-        </ul>
-    </section>
+        <!-- Rule Overview -->
+        <section id="grammar-rule">
+            <h2>📌 القاعدة الاستخدامية: الفرق بين Wiens و Van wie</h2>
+            <div class="rule-card">
+                <p>تُستخدم <strong>Wiens</strong> للسؤال عن ملكية الأشياء أو الأشخاص (بمعنى: <em>مِلْك مَنْ؟ / كتاب مَنْ؟</em>).</p>
+                <ul>
+                    <li><strong>Wiens:</strong> أداة رسمية يُفضل استخدامها في الكتابة والنصوص الرسمية (تُستخدم غالباً للمذكر والمفرد).</li>
+                    <li><strong>Van wie:</strong> الصيغة الشائعة والأكثر استخداماً في المحادثات اليومية الشفهية في هولندا وبلجيكا.</li>
+                </ul>
+            </div>
+        </section>
 
-    <section id="category-4">
-        <h2>76–100: أسئلة متنوعة (Diverse vragen)</h2>
-        <ul>
-            <li>Wiens idee was het om hierheen te komen? — فكرة مَنْ كانت أن نأتي إلى هنا؟</li>
-            <li>Wiens schuld is dit? — خطأ مَنْ هذا؟</li>
-            <li>Wiens beslissing was dat? — قرار مَنْ كان ذلك؟</li>
-            <li>Wiens beurt is het nu? — دور مَنْ الآن؟</li>
-            <li>Wiens naam ben ik vergeten? — اسم مَنْ نسيت؟</li>
-            <li>Wiens verjaardag is morgen? — عيد ميلاد مَنْ غدًا؟</li>
-            <li>Wiens uitnodiging heb je gekregen? — دعوة مَنْ تلقيت؟</li>
-            <li>Wiens bericht heb je gelezen? — رسالة مَنْ قرأت؟</li>
-            <li>Wiens stem hoor ik? — صوت مَنْ أسمع؟</li>
-            <li>Wiens hand houd je vast? — يد مَنْ تمسك؟</li>
-            <li>Wiens kant kies je? — إلى جانب مَنْ تنحاز؟</li>
-            <li>Wiens mening respecteer je? — رأي مَنْ تحترم؟</li>
-            <li>Wiens advies heb je gevolgd? — نصيحة مَنْ اتّبعت؟</li>
-            <li>Wiens hulp heb je nodig? — مساعدة مَنْ تحتاج؟</li>
-            <li>Wiens toestemming heb je nodig? — موافقة مَنْ تحتاج؟</li>
-            <li>Wiens geld heb je gebruikt? — مال مَنْ استخدمت؟</li>
-            <li>Wiens rekening moet ik betalen? — فاتورة مَنْ يجب أن أدفع؟</li>
-            <li>Wiens naam staat op het contract? — اسم مَنْ مكتوب على العقد؟</li>
-            <li>Wiens handtekening staat hier? — توقيع مَنْ موجود هنا؟</li>
-            <li>Wiens foto heb je gevonden? — صورة مَنْ وجدت؟</li>
-            <li>Wiens verhaal geloof je? — قصة مَنْ تصدّق؟</li>
-            <li>Wiens probleem proberen we op te lossen? — مشكلة مَنْ نحاول حلّها؟</li>
-            <li>Wiens voorbeeld wil je volgen? — مثال مَنْ تريد أن تقتدي به؟</li>
-            <li>Wiens mening is het belangrijkst? — رأي مَنْ هو الأهم؟</li>
-            <li>Wiens eigendom is dit gebouw? — ملكية مَنْ هذا المبنى؟</li>
-        </ul>
-    </section>
+        <!-- Category 1 -->
+        <section id="category-1">
+            <h2>1–25: الأشياء الشخصية (Persoonlijke spullen)</h2>
+            <div class="sentences-grid">
+                <div class="sentence-card"><div class="nl-text">Wiens boek is dit?</div><div class="ar-text">كتاب مَنْ هذا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens telefoon is dit?</div><div class="ar-text">هاتف مَنْ هذا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens tas ligt hier?</div><div class="ar-text">حقيبة مَنْ موجودة هنا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens jas hangt aan de deur?</div><div class="ar-text">معطف مَنْ معلّق على الباب؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens fiets staat buiten?</div><div class="ar-text">دراجة مَنْ موجودة في الخارج؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens sleutels liggen op tafel?</div><div class="ar-text">مفاتيح مَنْ موجودة على الطاولة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens schoenen zijn dit?</div><div class="ar-text">حذاء مَنْ هذا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens bril ligt op de bank?</div><div class="ar-text">نظارة مَنْ موجودة على الأريكة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens horloge is kapot?</div><div class="ar-text">ساعة مَنْ معطّلة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens laptop staat hier?</div><div class="ar-text">حاسوب محمول مَنْ موجود هنا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens pen ligt op de grond?</div><div class="ar-text">قلم مَنْ موجود على الأرض؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens portemonnee is dit?</div><div class="ar-text">محفظة مَنْ هذه؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens paspoort ligt in de lade?</div><div class="ar-text">جواز سفر مَنْ موجود في الدرج؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens identiteitskaart is dit?</div><div class="ar-text">بطاقة هوية مَنْ هذه؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens jas is nat?</div><div class="ar-text">معطف مَنْ مبلّل؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens paraplu staat bij de deur?</div><div class="ar-text">مظلة مَنْ موجودة عند الباب؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens boekentas staat hier?</div><div class="ar-text">حقيبة كتب مَنْ موجودة هنا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens sleutel past op deze deur?</div><div class="ar-text">مفتاح مَنْ يناسب هذا الباب؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens telefoon gaat over?</div><div class="ar-text">هاتف مَنْ يرنّ؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens oplader heb je gebruikt?</div><div class="ar-text">شاحن مَنْ استخدمت؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens kopje staat op tafel?</div><div class="ar-text">فنجان مَنْ موجود على الطاولة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens handdoek ligt in de badkamer?</div><div class="ar-text">منشفة مَنْ موجودة في الحمام؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens koffer staat in de gang?</div><div class="ar-text">حقيبة سفر مَنْ موجودة في الممر؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens cadeau ligt onder de kerstboom?</div><div class="ar-text">هدية مَنْ موجودة تحت شجرة عيد الميلاد؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens foto hangt aan de muur?</div><div class="ar-text">صورة مَنْ معلّقة على الحائط؟</div></div>
+            </div>
+        </section>
 
-    <section id="daily-spoken-dutch">
-        <h2>💬 التحويل الشائع للمحادثات اليومية (Wiens vs. Van wie)</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>رسمي (Wiens)</th>
-                    <th>محادثة يومية شائعة (Van wie)</th>
-                    <th>المعنى بالعربية</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Wiens boek is dit?</td>
-                    <td><strong>Van wie</strong> is dit boek?</td>
-                    <td>كتاب مَنْ هذا؟</td>
-                </tr>
-                <tr>
-                    <td>Wiens auto is dit?</td>
-                    <td><strong>Van wie</strong> is deze auto?</td>
-                    <td>سيارة مَنْ هذه؟</td>
-                </tr>
-                <tr>
-                    <td>Wiens tas is dit?</td>
-                    <td><strong>Van wie</strong> is deze tas?</td>
-                    <td>حقيبة مَنْ هذه؟</td>
-                </tr>
-                <tr>
-                    <td>Wiens huis is dit?</td>
-                    <td><strong>Van wie</strong> is dit huis?</td>
-                    <td>منزل مَنْ هذا؟</td>
-                </tr>
-                <tr>
-                    <td>Wiens telefoon is dit?</td>
-                    <td><strong>Van wie</strong> is deze telefoon?</td>
-                    <td>هاتف مَنْ هذا؟</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        <!-- Category 2 -->
+        <section id="category-2">
+            <h2>26–50: المنزل والعائلة (Huis en familie)</h2>
+            <div class="sentences-grid">
+                <div class="sentence-card"><div class="nl-text">Wiens huis is dit?</div><div class="ar-text">منزل مَنْ هذا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens appartement is groter?</div><div class="ar-text">شقة مَنْ أكبر؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens kamer is opgeruimd?</div><div class="ar-text">غرفة مَنْ مرتّبة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens bed staat bij het raam?</div><div class="ar-text">سرير مَنْ موجود بجوار النافذة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens auto staat voor het huis?</div><div class="ar-text">سيارة مَنْ موجودة أمام المنزل؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens garage is open?</div><div class="ar-text">مرآب مَنْ مفتوح؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens tuin is zo mooi?</div><div class="ar-text">حديقة مَنْ جميلة هكذا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens hond blaft?</div><div class="ar-text">كلب مَنْ ينبح؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens kat zit op de stoel?</div><div class="ar-text">قطة مَنْ تجلس على الكرسي؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens kinderen spelen buiten?</div><div class="ar-text">أطفال مَنْ يلعبون في الخارج؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens moeder komt vandaag?</div><div class="ar-text">أمّ مَنْ ستأتي اليوم؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens vader werkt hier?</div><div class="ar-text">والد مَنْ يعمل هنا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens broer woont in België?</div><div class="ar-text">أخو مَنْ يسكن في بلجيكا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens zus studeert in Gent?</div><div class="ar-text">أخت مَنْ تدرس في غنت؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens familie komt op bezoek?</div><div class="ar-text">عائلة مَنْ ستأتي للزيارة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens vrouw werkt in een ziekenhuis?</div><div class="ar-text">زوجة مَنْ تعمل في مستشفى؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens man is vandaag thuis?</div><div class="ar-text">زوج مَنْ موجود في المنزل اليوم؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens verjaardag vieren we vandaag?</div><div class="ar-text">عيد ميلاد مَنْ نحتفل به اليوم؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens kamer moet ik schoonmaken?</div><div class="ar-text">غرفة مَنْ يجب أن أنظّف؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens spullen liggen op de vloer?</div><div class="ar-text">أغراض مَنْ موجودة على الأرض؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens meubels zijn nieuw?</div><div class="ar-text">أثاث مَنْ جديد؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens koelkast is leeg?</div><div class="ar-text">ثلّاجة مَنْ فارغة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens was ligt in de machine?</div><div class="ar-text">ملابس مَنْ موجودة في الغسالة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens sleutel ligt onder de mat?</div><div class="ar-text">مفتاح مَنْ موجود تحت الدعّاسة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens naam staat op de brievenbus?</div><div class="ar-text">اسم مَنْ مكتوب على صندوق البريد؟</div></div>
+            </div>
+        </section>
 
-    <section id="summary-rules">
-        <h2>💡 ملخص قواعد أدوات السؤال الخاصة بـ Wie</h2>
-        <ul>
-            <li><strong>Wie?</strong> — مَنْ؟ (للسؤال عن الأشخاص)</li>
-            <li><strong>Wiens?</strong> — مِلْك مَنْ؟ (للسؤال عن الملكية - رسمي)</li>
-            <li><strong>Van wie?</strong> — بتاع مَنْ؟ / مِلْك مَنْ؟ (للسؤال عن الملكية - عامي ومستخدم بكثرة)</li>
-        </ul>
-    </section>
+        <!-- Category 3 -->
+        <section id="category-3">
+            <h2>51–75: العمل والدراسة (Werk en studie)</h2>
+            <div class="sentences-grid">
+                <div class="sentence-card"><div class="nl-text">Wiens bureau staat bij het raam?</div><div class="ar-text">مكتب مَنْ موجود بجوار النافذة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens computer is nieuw?</div><div class="ar-text">حاسوب مَنْ جديد؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens documenten liggen hier?</div><div class="ar-text">مستندات مَنْ موجودة هنا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens handtekening ontbreekt?</div><div class="ar-text">توقيع مَنْ ناقص؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens rapport moet ik controleren?</div><div class="ar-text">تقرير مَنْ يجب أن أفحص؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens e-mail heb je ontvangen?</div><div class="ar-text">بريد إلكتروني مَنْ استلمت؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens telefoonnummer staat op het formulier?</div><div class="ar-text">رقم هاتف مَنْ مكتوب في الاستمارة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens afspraak is om tien uur?</div><div class="ar-text">موعد مَنْ في الساعة العاشرة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens project bespreken we vandaag?</div><div class="ar-text">مشروع مَنْ نناقش اليوم؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens idee was dit?</div><div class="ar-text">فكرة مَنْ كانت هذه؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens voorstel heeft de manager goedgekeurd?</div><div class="ar-text">اقتراح مَنْ وافق عليه المدير؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens taak is dit?</div><div class="ar-text">مهمة مَنْ هذه؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens verantwoordelijkheid is dat?</div><div class="ar-text">مسؤولية مَنْ ذلك؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens gereedschap ligt in de werkplaats?</div><div class="ar-text">أدوات مَنْ موجودة في ورشة العمل؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens helm ligt op de tafel?</div><div class="ar-text">خوذة مَنْ موجودة على الطاولة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens veiligheidschoenen zijn dit?</div><div class="ar-text">حذاء السلامة مَنْ هذا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens machine werkt niet?</div><div class="ar-text">آلة مَنْ لا تعمل؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens ontwerp gebruiken we?</div><div class="ar-text">تصميم مَنْ نستخدم؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens handschrift kan ik niet lezen?</div><div class="ar-text">خطّ مَنْ لا أستطيع قراءته؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens antwoord is juist?</div><div class="ar-text">إجابة مَنْ صحيحة؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens boek heb je geleend?</div><div class="ar-text">كتاب مَنْ استعرت؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens notities liggen op mijn bureau?</div><div class="ar-text">ملاحظات مَنْ موجودة على مكتبي؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens klas heeft vandaag examen?</div><div class="ar-text">فصل مَنْ لديه امتحان اليوم؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens leraar komt morgen?</div><div class="ar-text">معلّم مَنْ سيأتي غدًا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens diploma hangt aan de muur?</div><div class="ar-text">شهادة مَنْ معلّقة على الحائط؟</div></div>
+            </div>
+        </section>
+
+        <!-- Category 4 -->
+        <section id="category-4">
+            <h2>76–100: أسئلة متنوعة (Diverse vragen)</h2>
+            <div class="sentences-grid">
+                <div class="sentence-card"><div class="nl-text">Wiens idee was het om hierheen te komen?</div><div class="ar-text">فكرة مَنْ كانت أن نأتي إلى هنا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens schuld is dit?</div><div class="ar-text">خطأ مَنْ هذا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens beslissing was dat?</div><div class="ar-text">قرار مَنْ كان ذلك؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens beurt is het nu?</div><div class="ar-text">دور مَنْ الآن؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens naam ben ik vergeten?</div><div class="ar-text">اسم مَنْ نسيت؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens verjaardag is morgen?</div><div class="ar-text">عيد ميلاد مَنْ غدًا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens uitnodiging heb je gekregen?</div><div class="ar-text">دعوة مَنْ تلقيت؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens bericht heb je gelezen?</div><div class="ar-text">رسالة مَنْ قرأت؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens stem hoor ik?</div><div class="ar-text">صوت مَنْ أسمع؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens hand houd je vast?</div><div class="ar-text">يد مَنْ تمسك؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens kant kies je?</div><div class="ar-text">إلى جانب مَنْ تنحاز؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens mening respecteer je?</div><div class="ar-text">رأي مَنْ تحترم؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens advies heb je gevolgd?</div><div class="ar-text">نصيحة مَنْ اتّبعت؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens hulp heb je nodig?</div><div class="ar-text">مساعدة مَنْ تحتاج؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens toestemming heb je nodig?</div><div class="ar-text">موافقة مَنْ تحتاج؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens geld heb je gebruikt?</div><div class="ar-text">مال مَنْ استخدمت؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens rekening moet ik betalen?</div><div class="ar-text">فاتورة مَنْ يجب أن أدفع؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens naam staat op het contract?</div><div class="ar-text">اسم مَنْ مكتوب على العقد؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens handtekening staat hier?</div><div class="ar-text">توقيع مَنْ موجود هنا؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens foto heb je gevonden?</div><div class="ar-text">صورة مَنْ وجدت؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens verhaal geloof je?</div><div class="ar-text">قصة مَنْ تصدّق؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens probleem proberen we op te lossen?</div><div class="ar-text">مشكلة مَنْ نحاول حلّها؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens voorbeeld wil je volgen?</div><div class="ar-text">مثال مَنْ تريد أن تقتدي به؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens mening is het belangrijkst?</div><div class="ar-text">رأي مَنْ هو الأهم؟</div></div>
+                <div class="sentence-card"><div class="nl-text">Wiens eigendom is dit gebouw?</div><div class="ar-text">ملكية مَنْ هذا المبنى؟</div></div>
+            </div>
+        </section>
+
+        <!-- Conversational Table -->
+        <section id="daily-spoken-dutch">
+            <h2>💬 التحويل الشائع للمحادثات اليومية (Wiens vs. Van wie)</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>رسمي (Wiens)</th>
+                            <th>محادثة يومية شائعة (Van wie)</th>
+                            <th>المعنى بالعربية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="nl-cell">Wiens boek is dit?</td>
+                            <td class="nl-cell"><strong>Van wie</strong> is dit boek?</td>
+                            <td>كتاب مَنْ هذا؟</td>
+                        </tr>
+                        <tr>
+                            <td class="nl-cell">Wiens auto is dit?</td>
+                            <td class="nl-cell"><strong>Van wie</strong> is deze auto?</td>
+                            <td>سيارة مَنْ هذه؟</td>
+                        </tr>
+                        <tr>
+                            <td class="nl-cell">Wiens tas is dit?</td>
+                            <td class="nl-cell"><strong>Van wie</strong> is deze tas?</td>
+                            <td>حقيبة مَنْ هذه؟</td>
+                        </tr>
+                        <tr>
+                            <td class="nl-cell">Wiens huis is dit?</td>
+                            <td class="nl-cell"><strong>Van wie</strong> is dit huis?</td>
+                            <td>منزل مَنْ هذا؟</td>
+                        </tr>
+                        <tr>
+                            <td class="nl-cell">Wiens telefoon is dit?</td>
+                            <td class="nl-cell"><strong>Van wie</strong> is deze telefoon?</td>
+                            <td>هاتف مَنْ هذا؟</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Summary Rules -->
+        <section id="summary-rules">
+            <h2>💡 ملخص قواعد أدوات السؤال الخاصة بـ Wie</h2>
+            <div class="rule-card" style="background-color: #fef3c7; border-right-color: var(--accent-color);">
+                <ul>
+                    <li><strong>Wie?</strong> — مَنْ؟ (للسؤال عن الفاعل أو الأشخاص)</li>
+                    <li><strong>Wiens?</strong> — مِلْك مَنْ؟ (للسؤال عن الملكية للمذكر/المفرد - صيغة رسمية/مكتوبة)</li>
+                    <li><strong>Van wie?</strong> — مِلْك مَنْ؟ / بتاع مَنْ؟ (للسؤال عن الملكية - عامي ومستخدم بكثرة)</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // دالة البحث الفوري
+        function filterSentences() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.sentence-card');
+
+            cards.forEach(card => {
+                const nlText = card.querySelector('.nl-text').innerText.toLowerCase();
+                const arText = card.querySelector('.ar-text').innerText.toLowerCase();
+
+                if (nlText.includes(input) || arText.includes(input)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
