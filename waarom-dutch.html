@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة باستخدام Waarom? (لماذا؟) في الهولندية</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent: #dc2626;
+            --accent-bg: #fef2f2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* شريط البحث */
+        .search-box {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        /* التبويبات (Tabs) */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: #e2e8f0;
+            color: var(--text-main);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* قوائم الجمل */
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .sentence-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .sentence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .sentence-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .dutch-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.25rem;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .arabic-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* صندوق القاعدة والملاحظات */
+        .rule-box {
+            background: var(--accent-bg);
+            border-right: 4px solid var(--accent);
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+        }
+
+        .rule-box h3 {
+            color: #991b1b;
+            margin-bottom: 0.75rem;
+        }
+
+        .rule-box p {
+            margin-bottom: 0.5rem;
+            color: #7f1d1d;
+        }
+
+        .rule-box ul {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .rule-box li {
+            font-weight: 600;
+            color: #991b1b;
+        }
+
+        .correction-note {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px dashed #fca5a5;
+            font-size: 0.95rem;
+            color: #991b1b;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .sentence-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🇳🇱 100 جملة باستخدام Waarom? (لماذا؟)</h1>
+            <p>جمل باللغة الهولندية مع الترجمة بالعربية للتعبير عن الأسباب والمبررات</p>
+        </header>
+
+        <!-- حقل البحث -->
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="filterSentences()" placeholder="ابحث عن كلمة بالهولندية أو العربية...">
+        </div>
+
+        <!-- التبويبات -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="filterTab('all', this)">الكل (100)</button>
+            <button class="tab-btn" onclick="filterTab('cat1', this)">1–25: الحياة اليومية</button>
+            <button class="tab-btn" onclick="filterTab('cat2', this)">26–50: العمل والدراسة</button>
+            <button class="tab-btn" onclick="filterTab('cat3', this)">51–75: السكن والحياة في بلجيكا</button>
+            <button class="tab-btn" onclick="filterTab('cat4', this)">76–100: العلاقات والمحادثات</button>
+        </div>
+
+        <!-- الحاوية الرئيسية للجمل -->
+        <div id="contentArea"></div>
+
+        <!-- قاعدة مهمة وتصحيح لغوي -->
+        <div class="rule-box">
+            <h3>📌 قاعدة مهمة جدًا:</h3>
+            <p>في السؤال المباشر، يأتي الفعل عادةً بعد <strong>Waarom</strong> مباشرةً:</p>
+            <ul>
+                <li>• <strong>Waarom werk je?</strong> — لماذا تعمل؟</li>
+                <li>• <strong>Waarom leer je Nederlands?</strong> — لماذا تتعلّم الهولندية؟</li>
+                <li>• <strong>Waarom ben je moe?</strong> — لماذا أنت متعب؟</li>
+            </ul>
+            <p style="margin-top: 1rem;">لكن عندما يكون السؤال داخل جملة فرعية، يتغيّر ترتيب الكلمات (الفعل يأتي في نهاية الجملة):</p>
+            <ul>
+                <li>• <strong>Ik weet niet waarom je hier bent.</strong> — لا أعرف لماذا أنت هنا.</li>
+                <li>• <strong>Kun je uitleggen waarom je te laat bent?</strong> — هل يمكنك أن تشرح لماذا أنت متأخر؟</li>
+            </ul>
+            <div class="correction-note">
+                💡 <strong>ملحوظة تصحيحية:</strong> في الجملة رقم 91، الصواب هو: <em>Waarom ben je de afspraak vergeten?</em> — لماذا نسيت الموعد؟
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const data = [
+            {
+                cat: "cat1",
+                title: "1–25: الحياة اليومية",
+                items: [
+                    { nl: "Waarom ben je hier?", ar: "لماذا أنت هنا؟" },
+                    { nl: "Waarom ben je thuis?", ar: "لماذا أنت في المنزل؟" },
+                    { nl: "Waarom ben je moe?", ar: "لماذا أنت متعب؟" },
+                    { nl: "Waarom ben je boos?", ar: "لماذا أنت غاضب؟" },
+                    { nl: "Waarom ben je verdrietig?", ar: "لماذا أنت حزين؟" },
+                    { nl: "Waarom lach je?", ar: "لماذا تضحك؟" },
+                    { nl: "Waarom huil je?", ar: "لماذا تبكي؟" },
+                    { nl: "Waarom schreeuw je?", ar: "لماذا تصرخ؟" },
+                    { nl: "Waarom ben je stil?", ar: "لماذا أنت صامت؟" },
+                    { nl: "Waarom ben je zo blij?", ar: "لماذا أنت سعيد هكذا؟" },
+                    { nl: "Waarom slaap je niet?", ar: "لماذا لا تنام؟" },
+                    { nl: "Waarom sta je zo vroeg op?", ar: "لماذا تستيقظ مبكرًا هكذا؟" },
+                    { nl: "Waarom ga je zo laat slapen?", ar: "لماذا تذهب للنوم متأخرًا هكذا؟" },
+                    { nl: "Waarom eet je niet?", ar: "لماذا لا تأكل؟" },
+                    { nl: "Waarom drink je geen water?", ar: "لماذا لا تشرب الماء؟" },
+                    { nl: "Waarom kook je vandaag?", ar: "لماذا تطبخ اليوم؟" },
+                    { nl: "Waarom blijf je thuis?", ar: "لماذا تبقى في المنزل؟" },
+                    { nl: "Waarom ga je naar buiten?", ar: "لماذا تخرج؟" },
+                    { nl: "Waarom loop je zo snel?", ar: "لماذا تمشي بسرعة هكذا؟" },
+                    { nl: "Waarom ren je?", ar: "لماذا تجري؟" },
+                    { nl: "Waarom wacht je hier?", ar: "لماذا تنتظر هنا؟" },
+                    { nl: "Waarom kijk je naar mij?", ar: "لماذا تنظر إليّ؟" },
+                    { nl: "Waarom lach je om mij?", ar: "لماذا تضحك عليّ؟" },
+                    { nl: "Waarom praat je zo zacht?", ar: "لماذا تتحدث بصوت منخفض هكذا؟" },
+                    { nl: "Waarom maak je zoveel lawaai?", ar: "لماذا تُصدر كل هذه الضوضاء؟" }
+                ]
+            },
+            {
+                cat: "cat2",
+                title: "26–50: العمل والدراسة",
+                items: [
+                    { nl: "Waarom werk je hier?", ar: "لماذا تعمل هنا؟" },
+                    { nl: "Waarom zoek je werk?", ar: "لماذا تبحث عن عمل؟" },
+                    { nl: "Waarom wil je van baan veranderen?", ar: "لماذا تريد تغيير وظيفتك؟" },
+                    { nl: "Waarom ben je te laat?", ar: "لماذا أنت متأخر؟" },
+                    { nl: "Waarom kom je niet op tijd?", ar: "لماذا لا تأتي في الموعد؟" },
+                    { nl: "Waarom werk je vandaag niet?", ar: "لماذا لا تعمل اليوم؟" },
+                    { nl: "Waarom ben je niet naar je werk gegaan?", ar: "لماذا لم تذهب إلى عملك؟" },
+                    { nl: "Waarom heb je ontslag genomen?", ar: "لماذا استقلت من عملك؟" },
+                    { nl: "Waarom wil je hier werken?", ar: "لماذا تريد العمل هنا؟" },
+                    { nl: "Waarom heb je deze baan gekozen?", ar: "لماذا اخترت هذه الوظيفة؟" },
+                    { nl: "Waarom heb je geen ervaring?", ar: "لماذا ليس لديك خبرة؟" },
+                    { nl: "Waarom heb je je cv niet gestuurd?", ar: "لماذا لم ترسل سيرتك الذاتية؟" },
+                    { nl: "Waarom heb je niet gesolliciteerd?", ar: "لماذا لم تتقدّم للوظيفة؟" },
+                    { nl: "Waarom wil je ingenieur worden?", ar: "لماذا تريد أن تصبح مهندسًا؟" },
+                    { nl: "Waarom studeer je Nederlands?", ar: "لماذا تدرس الهولندية؟" },
+                    { nl: "Waarom leer je Frans?", ar: "لماذا تتعلّم الفرنسية؟" },
+                    { nl: "Waarom begrijp je de vraag niet?", ar: "لماذا لا تفهم السؤال؟" },
+                    { nl: "Waarom stel je zoveel vragen?", ar: "لماذا تطرح أسئلة كثيرة؟" },
+                    { nl: "Waarom heb je je huiswerk niet gemaakt?", ar: "لماذا لم تؤدِّ واجبك؟" },
+                    { nl: "Waarom ben je niet naar de les gekomen?", ar: "لماذا لم تأتِ إلى الدرس؟" },
+                    { nl: "Waarom heb je het examen niet gehaald?", ar: "لماذا لم تنجح في الامتحان؟" },
+                    { nl: "Waarom wil je deze cursus volgen?", ar: "لماذا تريد الالتحاق بهذه الدورة؟" },
+                    { nl: "Waarom heb je dat antwoord gekozen?", ar: "لماذا اخترت تلك الإجابة؟" },
+                    { nl: "Waarom heb je de vergadering gemist?", ar: "لماذا فاتك الاجتماع؟" },
+                    { nl: "Waarom heb je het rapport niet afgemaakt?", ar: "لماذا لم تُكمل التقرير؟" }
+                ]
+            },
+            {
+                cat: "cat3",
+                title: "51–75: السكن والحياة في بلجيكا",
+                items: [
+                    { nl: "Waarom woon je in België?", ar: "لماذا تعيش في بلجيكا؟" },
+                    { nl: "Waarom ben je naar België gekomen?", ar: "لماذا جئت إلى بلجيكا؟" },
+                    { nl: "Waarom ben je naar Harelbeke verhuisd?", ar: "لماذا انتقلت إلى هارلبيكة؟" },
+                    { nl: "Waarom wil je verhuizen?", ar: "لماذا تريد الانتقال إلى مسكن آخر؟" },
+                    { nl: "Waarom is de huur zo duur?", ar: "لماذا الإيجار غالٍ جدًا؟" },
+                    { nl: "Waarom is de deur gesloten?", ar: "لماذا الباب مغلق؟" },
+                    { nl: "Waarom is het licht aan?", ar: "لماذا الضوء مُضاء؟" },
+                    { nl: "Waarom is het zo koud in huis?", ar: "لماذا الجو بارد هكذا في المنزل؟" },
+                    { nl: "Waarom werkt de verwarming niet?", ar: "لماذا لا يعمل التدفئة؟" },
+                    { nl: "Waarom is er geen warm water?", ar: "لماذا لا توجد مياه ساخنة؟" },
+                    { nl: "Waarom is de winkel gesloten?", ar: "لماذا المتجر مغلق؟" },
+                    { nl: "Waarom is de bus te laat?", ar: "لماذا الحافلة متأخرة؟" },
+                    { nl: "Waarom rijdt de trein niet?", ar: "لماذا لا يسير القطار؟" },
+                    { nl: "Waarom moet ik overstappen?", ar: "لماذا يجب أن أغيّر وسيلة النقل؟" },
+                    { nl: "Waarom moet ik dit document invullen?", ar: "لماذا يجب أن أملأ هذه الوثيقة؟" },
+                    { nl: "Waarom moet ik een afspraak maken?", ar: "لماذا يجب أن أحجز موعدًا؟" },
+                    { nl: "Waarom heb ik nog geen antwoord gekregen?", ar: "لماذا لم أتلقَّ إجابة بعد؟" },
+                    { nl: "Waarom is mijn aanvraag geweigerd?", ar: "لماذا رُفض طلبي؟" },
+                    { nl: "Waarom heb ik deze brief gekregen?", ar: "لماذا تلقيت هذه الرسالة؟" },
+                    { nl: "Waarom moet ik mijn adres veranderen?", ar: "لماذا يجب أن أغيّر عنواني؟" },
+                    { nl: "Waarom moet ik mij inschrijven?", ar: "لماذا يجب أن أسجّل نفسي؟" },
+                    { nl: "Waarom heb ik deze verzekering nodig?", ar: "لماذا أحتاج إلى هذا التأمين؟" },
+                    { nl: "Waarom moet ik belasting betalen?", ar: "لماذا يجب أن أدفع الضرائب؟" },
+                    { nl: "Waarom is mijn rekening zo hoog?", ar: "لماذا فاتورتي مرتفعة هكذا؟" },
+                    { nl: "Waarom moet ik zo lang wachten?", ar: "لماذا يجب أن أنتظر كل هذه المدة؟" }
+                ]
+            },
+            {
+                cat: "cat4",
+                title: "76–100: العلاقات والمحادثات اليومية",
+                items: [
+                    { nl: "Waarom bel je mij?", ar: "لماذا تتصل بي؟" },
+                    { nl: "Waarom stuur je mij geen bericht?", ar: "لماذا لا ترسل لي رسالة؟" },
+                    { nl: "Waarom antwoord je niet?", ar: "لماذا لا تردّ؟" },
+                    { nl: "Waarom heb je mij niet gebeld?", ar: "لماذا لم تتصل بي؟" },
+                    { nl: "Waarom heb je dat gezegd?", ar: "لماذا قلت ذلك؟" },
+                    { nl: "Waarom zeg je dat?", ar: "لماذا تقول ذلك؟" },
+                    { nl: "Waarom lieg je tegen mij?", ar: "لماذا تكذب عليّ؟" },
+                    { nl: "Waarom vertrouw je mij niet?", ar: "لماذا لا تثق بي؟" },
+                    { nl: "Waarom ben je boos op mij?", ar: "لماذا أنت غاضب مني؟" },
+                    { nl: "Waarom ben je het niet met mij eens?", ar: "لماذا لا تتفق معي؟" },
+                    { nl: "Waarom help je mij niet?", ar: "لماذا لا تساعدني؟" },
+                    { nl: "Waarom heb je mij niet geholpen?", ar: "لماذا لم تساعدني؟" },
+                    { nl: "Waarom heb je dat niet verteld?", ar: "لماذا لم تخبر بذلك؟" },
+                    { nl: "Waarom wil je alleen zijn?", ar: "لماذا تريد أن تكون وحدك؟" },
+                    { nl: "Waarom wil je met mij praten?", ar: "لماذا تريد التحدث معي؟" },
+                    { nl: "Waarom ben je de afspraak vergeten?", ar: "لماذا نسيت الموعد؟" },
+                    { nl: "Waarom ben je niet gekomen?", ar: "لماذا لم تأتِ؟" },
+                    { nl: "Waarom ben je weggegaan?", ar: "لماذا غادرت؟" },
+                    { nl: "Waarom wil je teruggaan?", ar: "لماذا تريد العودة؟" },
+                    { nl: "Waarom heb je dat gekocht?", ar: "لماذا اشتريت ذلك؟" },
+                    { nl: "Waarom geef je zoveel geld uit?", ar: "لماذا تنفق الكثير من المال؟" },
+                    { nl: "Waarom spaar je geen geld?", ar: "لماذا لا تدّخر المال؟" },
+                    { nl: "Waarom verander je van gedachten?", ar: "لماذا تغيّر رأيك؟" },
+                    { nl: "Waarom denk je daar zo over?", ar: "لماذا تفكّر في الأمر بهذه الطريقة؟" },
+                    { nl: "Waarom wil je Nederlands goed leren spreken?", ar: "لماذا تريد تعلّم التحدث بالهولندية جيدًا؟" }
+                ]
+            }
+        ];
+
+        let activeTab = 'all';
+
+        function renderSentences() {
+            const container = document.getElementById('contentArea');
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            container.innerHTML = '';
+
+            data.forEach(group => {
+                if (activeTab !== 'all' && group.cat !== activeTab) return;
+
+                const filteredItems = group.items.filter(item => 
+                    item.nl.toLowerCase().includes(searchVal) || 
+                    item.ar.toLowerCase().includes(searchVal)
+                );
+
+                if (filteredItems.length > 0) {
+                    const section = document.createElement('section');
+                    
+                    const title = document.createElement('h2');
+                    title.className = 'section-title';
+                    title.textContent = group.title;
+                    section.appendChild(title);
+
+                    const grid = document.createElement('div');
+                    grid.className = 'sentence-list';
+
+                    filteredItems.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = 'sentence-card';
+                        card.innerHTML = `
+                            <div class="dutch-text">${item.nl}</div>
+                            <div class="arabic-text">${item.ar}</div>
+                        `;
+                        grid.appendChild(card);
+                    });
+
+                    section.appendChild(grid);
+                    container.appendChild(section);
+                }
+            });
+        }
+
+        function filterTab(category, btn) {
+            activeTab = category;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderSentences();
+        }
+
+        function filterSentences() {
+            renderSentences();
+        }
+
+        // العرض الأولي
+        renderSentences();
+    </script>
+</body>
+</html>
