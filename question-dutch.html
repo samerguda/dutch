@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات الاستفهام في اللغة الهولندية (Vraagwoorden)</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --success: #16a34a;
+            --error: #dc2626;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .card .term {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .card .meaning {
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .example {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            border-top: 1px dashed var(--border-color);
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            text-align: right;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        .rule-box {
+            background: #eff6ff;
+            border-right: 4px solid var(--primary);
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .quiz-question p {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .quiz-options {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .quiz-option {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quiz-option:hover {
+            background: #e2e8f0;
+        }
+
+        .quiz-option.correct {
+            background: #dcfce7;
+            border-color: var(--success);
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .quiz-option.incorrect {
+            background: #fee2e2;
+            border-color: var(--error);
+            color: var(--error);
+        }
+
+        .feedback {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            section { padding: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🇳🇱 أدوات الاستفهام في الهولندية</h1>
+            <p>Vraagwoorden - دليل شامل مع الأمثلة والقواعد</p>
+        </header>
+
+        <!-- القسم الأول: أهم أدوات الاستفهام الأساسية -->
+        <section>
+            <h2>1. أهم أدوات الاستفهام الأساسية</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="term">Wie?</div>
+                    <div class="meaning">مَنْ؟</div>
+                    <div class="example">Wie ben jij? — مَنْ أنت؟<br>Wie heeft gebeld? — مَنْ اتصل؟</div>
+                </div>
+                <div class="card">
+                    <div class="term">Wat?</div>
+                    <div class="meaning">ماذا؟ / ما؟</div>
+                    <div class="example">Wat doe je? — ماذا تفعل؟<br>Wat wil je? — ماذا تريد؟</div>
+                </div>
+                <div class="card">
+                    <div class="term">Waar?</div>
+                    <div class="meaning">أين؟</div>
+                    <div class="example">Waar woon je? — أين تسكن؟</div>
+                </div>
+                <div class="card">
+                    <div class="term">Wanneer?</div>
+                    <div class="meaning">متى؟</div>
+                    <div class="example">Wanneer begin je? — متى تبدأ؟</div>
+                </div>
+                <div class="card">
+                    <div class="term">Waarom?</div>
+                    <div class="meaning">لماذا؟</div>
+                    <div class="example">Waarom ben je te laat? — لماذا أنت متأخر؟</div>
+                </div>
+                <div class="card">
+                    <div class="term">Hoe?</div>
+                    <div class="meaning">كيف؟</div>
+                    <div class="example">Hoe gaat het? — كيف الحال؟</div>
+                </div>
+                <div class="card">
+                    <div class="term">Welke?</div>
+                    <div class="meaning">أيّ؟</div>
+                    <div class="example">Welke taal spreek je? — أي لغة تتحدث؟</div>
+                </div>
+                <div class="card">
+                    <div class="term">Wiens?</div>
+                    <div class="meaning">لِمَنْ؟ / مِلْك مَنْ؟</div>
+                    <div class="example">Wiens fiets is dit? — دراجة مَنْ هذه؟</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم الثاني: أدوات الاستفهام المركبة -->
+        <section>
+            <h2>2. أدوات الاستفهام المركبة</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الأداة الهولنداية</th>
+                            <th>المعنى بالعربي</th>
+                            <th>مثال عملي</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hoeveel?</strong></td>
+                            <td>كم؟ للعدد أو الكمية</td>
+                            <td>Hoeveel kost het? — كم سعره؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hoe laat?</strong></td>
+                            <td>الساعة كام؟</td>
+                            <td>Hoe laat is het? — الساعة كام؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hoe lang?</strong></td>
+                            <td>كم المدة؟ / كم الطول؟</td>
+                            <td>Hoe lang blijf je? — هتفضل لمدة قد إيه؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hoe vaak?</strong></td>
+                            <td>كم مرة؟</td>
+                            <td>Hoe vaak sport je? — بتتمرن كام مرة؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hoe ver?</strong></td>
+                            <td>كم المسافة؟</td>
+                            <td>Hoe ver is het? — المسافة قد إيه؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hoe oud?</strong></td>
+                            <td>كم العمر؟</td>
+                            <td>Hoe oud ben je? — عندك كام سنة؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waarheen?</strong></td>
+                            <td>إلى أين؟</td>
+                            <td>Waarheen ga je? — إلى أين تذهب؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waarvandaan?</strong></td>
+                            <td>من أين؟</td>
+                            <td>Waar kom je vandaan? — أنت من أين؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waarmee?</strong></td>
+                            <td>بماذا؟ / باستخدام ماذا؟</td>
+                            <td>Waarmee schrijf je? — بتكتب بإيه؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waarover?</strong></td>
+                            <td>عن ماذا؟</td>
+                            <td>Waarover praat je? — بتتكلم عن إيه؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waarvoor?</strong></td>
+                            <td>لماذا؟ / لأي غرض؟</td>
+                            <td>Waarvoor gebruik je dit? — بتستخدم ده في إيه؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waarop?</strong></td>
+                            <td>على ماذا؟</td>
+                            <td>Waarop wacht je? — بتستنى إيه؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waarin?</strong></td>
+                            <td>في ماذا؟</td>
+                            <td>Waarin zit het? — موجود في إيه؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waarvan?</strong></td>
+                            <td>من ماذا؟</td>
+                            <td>Waarvan is het gemaakt? — مصنوع من إيه؟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waarbij?</strong></td>
+                            <td>مع ماذا؟ / في أي سياق؟</td>
+                            <td>Waarbij heb je hulp nodig? — في إيه محتاج مساعدة؟</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- القسم الثالث: أدوات أخرى مهمة -->
+        <section>
+            <h2>3. أدوات أخرى مهمة</h2>
+            <div class="grid-cards" style="margin-bottom: 1.5rem;">
+                <div class="card">
+                    <div class="term">Van wie?</div>
+                    <div class="meaning">من مَنْ؟ / بتاع مَنْ؟</div>
+                    <div class="example">Van wie is deze auto? — سيارة مَنْ هذه؟</div>
+                </div>
+                <div class="card">
+                    <div class="term">Met wie?</div>
+                    <div class="meaning">مع مَنْ؟</div>
+                    <div class="example">Met wie werk je? — مع مَنْ تعمل؟</div>
+                </div>
+                <div class="card">
+                    <div class="term">Sinds wanneer?</div>
+                    <div class="meaning">منذ متى؟</div>
+                    <div class="example">Sinds wanneer woon je in België? — منذ متى تعيش في بلجيكا؟</div>
+                </div>
+                <div class="card">
+                    <div class="term">Wat voor (een)?</div>
+                    <div class="meaning">ما نوع…؟</div>
+                    <div class="example">Wat voor werk zoek je? — ما نوع العمل الذي تبحث عنه؟</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم الرابع: ترتيب الجملة -->
+        <section>
+            <h2>4. ترتيب السؤال في الهولندية</h2>
+            <div class="rule-box">
+                القاعدة الأساسية:<br>
+                أداة الاستفهام + الفعل + الفاعل + باقي الجملة؟
+            </div>
+            <ul style="list-style-type: disc; padding-right: 1.5rem; color: var(--text-muted);">
+                <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-main);">Waar woon je?</strong> — أين تسكن؟</li>
+                <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-main);">Wanneer begin je met werken?</strong> — متى تبدأ العمل؟</li>
+                <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-main);">Waarom leer je Nederlands?</strong> — لماذا تتعلم الهولندية؟</li>
+                <li><strong style="color: var(--text-main);">Hoeveel verdien je per maand?</strong> — كم تكسب شهريًا؟</li>
+            </ul>
+        </section>
+
+        <!-- القسم الخامس: اختبار تفاعلي -->
+        <section>
+            <h2>5. اختبر نفسك</h2>
+            
+            <div class="quiz-question" data-answer="Waar">
+                <p>1. أين تسكن؟</p>
+                <div class="quiz-options">
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Waar')">Wie</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Waar')">Waar</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Waar')">Wanneer</span>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-answer="Waarom">
+                <p>2. لماذا تتعلم الهولندية؟</p>
+                <div class="quiz-options">
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Waarom')">Wat</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Waarom')">Hoe</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Waarom')">Waarom</span>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-answer="Met wie">
+                <p>3. مع مَنْ تعمل؟</p>
+                <div class="quiz-options">
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Met wie')">Voor wie</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Met wie')">Met wie</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Met wie')">Van wie</span>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-answer="Hoe oud">
+                <p>4. كم عمرك؟</p>
+                <div class="quiz-options">
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Hoe oud')">Hoe vaak</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Hoe oud')">Hoe lang</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Hoe oud')">Hoe oud</span>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-answer="Wanneer">
+                <p>5. متى تبدأ؟</p>
+                <div class="quiz-options">
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Wanneer')">Wanneer</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Wanneer')">Welke</span>
+                    <span class="quiz-option" onclick="checkAnswer(this, 'Wanneer')">Wiens</span>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <button onclick="resetQuiz()" style="background: var(--primary); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">إعادة الاختبار</button>
+        </section>
+
+    </div>
+
+    <script>
+        function checkAnswer(element, correctAnswer) {
+            const questionDiv = element.closest('.quiz-question');
+            const options = questionDiv.querySelectorAll('.quiz-option');
+            const feedback = questionDiv.querySelector('.feedback');
+            
+            // منع إعادة الاختيار للسؤال نفسه بعد الإجابة
+            if (questionDiv.classList.contains('answered')) return;
+            questionDiv.classList.add('answered');
+
+            options.forEach(opt => {
+                if (opt.textContent.trim() === correctAnswer) {
+                    opt.classList.add('correct');
+                } else if (opt === element) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            if (element.textContent.trim() === correctAnswer) {
+                feedback.style.color = 'var(--success)';
+                feedback.textContent = 'إجابة صحيحة! أحسنت 👏';
+            } else {
+                feedback.style.color = 'var(--error)';
+                feedback.textContent = 'إجابة خاطئة. الإجابة الصحيحة هي: ' + correctAnswer;
+            }
+        }
+
+        function resetQuiz() {
+            const questions = document.querySelectorAll('.quiz-question');
+            questions.forEach(q => {
+                q.classList.remove('answered');
+                q.querySelector('.feedback').textContent = '';
+                q.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.classList.remove('correct', 'incorrect');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
