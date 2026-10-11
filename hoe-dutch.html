@@ -1,168 +1,538 @@
 <!DOCTYPE html>
-<html lang="nl" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>100 جملة هولندية باستخدام Hoe - دليل احترافي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدليل الشامل: 100 جملة هولندية باستخدام Hoe - دليل احترافي</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.03);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Header & Hero */
+        .header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            padding: 48px 20px 40px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 24px;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Container & Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Search Section */
+        .search-section {
+            margin: -25px auto 35px;
+            max-width: 600px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-box {
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            border-radius: 50px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 24px;
+            font-size: 1rem;
+            font-family: inherit;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.2s ease;
+            background: #ffffff;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+        }
+
+        /* Nav Pills */
+        .nav-pills {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            background: #ffffff;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.92rem;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-link:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        /* Category Cards Grid */
+        .category-section {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        .category-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-title span.tag {
+            background: #eff6ff;
+            color: var(--primary);
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .sentence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 14px;
+        }
+
+        .sentence-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 14px 18px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .sentence-card:hover {
+            background: #ffffff;
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .dutch-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.02rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 4px;
+        }
+
+        .arabic-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            direction: rtl;
+        }
+
+        /* Table Design */
+        .grammar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: #ffffff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .grammar-table th, .grammar-table td {
+            padding: 14px 18px;
+            text-align: right;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .grammar-table th {
+            background-color: #f1f5f9;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .grammar-table td.nl {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* Differences Section */
+        .differences-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .difference-item {
+            background: #fffbebfb;
+            border: 1px solid #fef3c7;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .difference-item strong {
+            font-family: 'Inter', sans-serif;
+            color: #b45309;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 640px) {
+            .header h1 { font-size: 1.6rem; }
+            .sentence-grid { grid-template-columns: 1fr; }
+            .category-section { padding: 18px; }
+        }
+    </style>
 </head>
 <body>
-    <!-- 
-      ====================================================
-      دليل شامل: 100 جملة هولندية باستخدام Hoe? (كيف / كم)
-      مرتبة في 4 تصنيفات رئيسية + أهم التركيبات والفروق النحوية
-      ====================================================
-    -->
 
-    <section id="category-1">
-        <h2>1–25: الحياة اليومية (Het dagelijks leven)</h2>
-        <ul>
-            <li>Hoe gaat het? — كيف حالك؟</li>
-            <li>Hoe voel je je? — كيف تشعر؟</li>
-            <li>Hoe heet je? — ما اسمك؟</li>
-            <li>Hoe oud ben je? — كم عمرك؟</li>
-            <li>Hoe woon je? — كيف تعيش؟ / كيف ظروف سكنك؟</li>
-            <li>Hoe slaap je? — كيف تنام؟</li>
-            <li>Hoe laat sta je op? — الساعة كام تستيقظ؟</li>
-            <li>Hoe laat ga je slapen? — الساعة كام تذهب للنوم؟</li>
-            <li>Hoe begin je je dag? — كيف تبدأ يومك؟</li>
-            <li>Hoe breng je je dag door? — كيف تقضي يومك؟</li>
-            <li>Hoe maak je koffie? — كيف تحضّر القهوة؟</li>
-            <li>Hoe kook je rijst? — كيف تطبخ الأرز؟</li>
-            <li>Hoe maak je het huis schoon? — كيف تنظّف المنزل؟</li>
-            <li>Hoe was je je kleren? — كيف تغسل ملابسك؟</li>
-            <li>Hoe open je deze deur? — كيف تفتح هذا الباب؟</li>
-            <li>Hoe sluit je het raam? — كيف تغلق النافذة؟</li>
-            <li>Hoe gebruik je deze telefoon? — كيف تستخدم هذا الهاتف؟</li>
-            <li>Hoe werkt dit apparaat? — كيف يعمل هذا الجهاز؟</li>
-            <li>Hoe maak je dit klaar? — كيف تجهّز هذا؟</li>
-            <li>Hoe vind je deze film? — ما رأيك في هذا الفيلم؟</li>
-            <li>Hoe voel je je vandaag? — كيف تشعر اليوم؟</li>
-            <li>Hoe ziet je huis eruit? — كيف يبدو منزلك؟</li>
-            <li>Hoe ziet je kamer eruit? — كيف تبدو غرفتك؟</li>
-            <li>Hoe klinkt dat? — كيف يبدو صوته؟</li>
-            <li>Hoe ruikt het? — كيف رائحته؟</li>
-        </ul>
-    </section>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>100 جملة هولندية باستخدام Hoe</h1>
+            <p>دليل تعليمي شامل واستراتيجي مع الفروق النحوية والأمثلة الأكثر استخداماً في بلجيكا وهولندا</p>
+            <div class="badge-container">
+                <span class="badge">📖 100 جملة تطبيقية</span>
+                <span class="badge">📌 4 تصنيفات رئيسية</span>
+                <span class="badge">💡 أهم قواعد وقوالب Hoe</span>
+            </div>
+        </div>
+    </header>
 
-    <section id="category-2">
-        <h2>26–50: العمل والدراسة (Werk en studie)</h2>
-        <ul>
-            <li>Hoe werk je hier? — كيف تعمل هنا؟</li>
-            <li>Hoe zoek je werk? — كيف تبحث عن عمل؟</li>
-            <li>Hoe vind je een baan? — كيف تجد وظيفة؟</li>
-            <li>Hoe solliciteer je? — كيف تتقدّم لوظيفة؟</li>
-            <li>Hoe schrijf je een cv? — كيف تكتب سيرة ذاتية؟</li>
-            <li>Hoe bereid je je voor op een sollicitatiegesprek? — كيف تستعد لمقابلة عمل؟</li>
-            <li>Hoeveel ervaring heb je? — كم لديك من الخبرة؟</li>
-            <li>Hoeveel verdien je per maand? — كم تكسب شهريًا؟</li>
-            <li>Hoeveel uur werk je per dag? — كم ساعة تعمل يوميًا؟</li>
-            <li>Hoe laat begin je met werken? — الساعة كام تبدأ العمل؟</li>
-            <li>Hoe laat ben je klaar met werken? — الساعة كام تنتهي من العمل؟</li>
-            <li>Hoe doe je dit werk? — كيف تؤدي هذا العمل؟</li>
-            <li>Hoe los je dit probleem op? — كيف تحل هذه المشكلة؟</li>
-            <li>Hoe controleer je de machine? — كيف تفحص الآلة؟</li>
-            <li>Hoe repareer je dit toestel? — كيف تصلح هذا الجهاز؟</li>
-            <li>Hoe maak je een rapport? — كيف تُعدّ تقريرًا؟</li>
-            <li>Hoe schrijf je een e-mail? — كيف تكتب بريدًا إلكترونيًا؟</li>
-            <li>Hoe vraag je een baan aan? — كيف تتقدّم للحصول على وظيفة؟</li>
-            <li>Hoe leer je Nederlands? — كيف تتعلّم الهولندية؟</li>
-            <li>Hoe leer je nieuwe woorden? — كيف تتعلّم كلمات جديدة؟</li>
-            <li>Hoe spreek je dit woord uit? — كيف تنطق هذه الكلمة؟</li>
-            <li>Hoe schrijf je dit woord? — كيف تكتب هذه الكلمة؟</li>
-            <li>Hoe begrijp je deze zin? — كيف تفهم هذه الجملة؟</li>
-            <li>Hoe bereid je je voor op het examen? — كيف تستعد للامتحان؟</li>
-            <li>Hoe verbeter je je Nederlands? — كيف تحسّن لغتك الهولندية؟</li>
-        </ul>
-    </section>
+    <main class="container">
+        
+        <!-- Live Search -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="ابحث عن أي كلمة أو جملة بالهولندية أو العربية..." onkeyup="filterSentences()">
+            </div>
+        </div>
 
-    <section id="category-3">
-        <h2>51–75: المواصلات والسكن والحياة في بلجيكا (Transport, wonen en leven in België)</h2>
-        <ul>
-            <li>Hoe kom ik bij het station? — كيف أصل إلى المحطة؟</li>
-            <li>Hoe ga je naar je werk? — كيف تذهب إلى عملك؟</li>
-            <li>Hoe reis je naar Brussel? — كيف تسافر إلى بروكسل؟</li>
-            <li>Hoe ver is het station? — كم تبعد المحطة؟</li>
-            <li>Hoe lang duurt de reis? — كم تستغرق الرحلة؟</li>
-            <li>Hoe vaak rijdt deze bus? — كم مرة تسير هذه الحافلة؟</li>
-            <li>Hoe koop ik een treinkaartje? — كيف أشتري تذكرة قطار؟</li>
-            <li>Hoe moet ik overstappen? — كيف يجب أن أغيّر وسيلة النقل؟</li>
-            <li>Hoe kom ik thuis? — كيف أصل إلى المنزل؟</li>
-            <li>Hoe vind ik dit adres? — كيف أجد هذا العنوان؟</li>
-            <li>Hoe huur ik een appartement? — كيف أستأجر شقة؟</li>
-            <li>Hoeveel huur betaal je? — كم تدفع إيجارًا؟</li>
-            <li>Hoe betaal je de elektriciteitsrekening? — كيف تدفع فاتورة الكهرباء؟</li>
-            <li>Hoe werkt de verwarming? — كيف تعمل التدفئة؟</li>
-            <li>Hoe krijg ik warm water? — كيف أحصل على الماء الساخن؟</li>
-            <li>Hoe schrijf ik mij in bij de gemeente? — كيف أسجّل نفسي في البلدية؟</li>
-            <li>Hoe maak ik een afspraak bij de gemeente? — كيف أحجز موعدًا في البلدية؟</li>
-            <li>Hoe vraag ik een verblijfskaart aan? — كيف أطلب بطاقة إقامة؟</li>
-            <li>Hoe lang duurt de aanvraag? — كم تستغرق معالجة الطلب؟</li>
-            <li>Hoe ontvang ik mijn documenten? — كيف أتسلّم مستنداتي؟</li>
-            <li>Hoe open ik een bankrekening? — كيف أفتح حسابًا مصرفيًا؟</li>
-            <li>Hoe sluit ik een verzekering af? — كيف أبرم عقد تأمين؟</li>
-            <li>Hoe schrijf ik mij in bij VDAB? — كيف أسجّل نفسي في VDAB؟</li>
-            <li>Hoe vind ik een Nederlandse cursus? — كيف أجد دورة هولندية؟</li>
-            <li>Hoe kan ik hier integreren? — كيف يمكنني الاندماج هنا؟</li>
-        </ul>
-    </section>
+        <!-- Navigation Pills -->
+        <nav class="nav-pills">
+            <a href="#category-1" class="nav-link">الحياة اليومية</a>
+            <a href="#category-2" class="nav-link">العمل والدراسة</a>
+            <a href="#category-3" class="nav-link">المواصلات والسكن</a>
+            <a href="#category-4" class="nav-link">أسئلة متنوّعة</a>
+            <a href="#grammar-structures" class="nav-link">التركيبات النحوية</a>
+        </nav>
 
-    <section id="category-4">
-        <h2>76–100: أسئلة متنوّعة ومهمّة (Diverse en belangrijke vragen)</h2>
-        <ul>
-            <li>Hoeveel kost dit? — كم سعر هذا؟</li>
-            <li>Hoeveel kost dat per maand? — كم سعر ذلك شهريًا؟</li>
-            <li>Hoeveel geld heb je nodig? — كم تحتاج من المال؟</li>
-            <li>Hoeveel mensen komen er? — كم شخصًا سيأتي؟</li>
-            <li>Hoeveel tijd heb je? — كم من الوقت لديك؟</li>
-            <li>Hoe lang blijf je hier? — كم ستبقى هنا؟</li>
-            <li>Hoe lang woon je al in België? — منذ متى وأنت تعيش في بلجيكا؟</li>
-            <li>Hoe vaak sport je? — كم مرة تمارس الرياضة؟</li>
-            <li>Hoe vaak ga je naar de supermarkt? — كم مرة تذهب إلى السوبرماركت؟</li>
-            <li>Hoe laat begint de film? — الساعة كام يبدأ الفيلم؟</li>
-            <li>Hoe laat vertrekt de trein? — الساعة كام يغادر القطار؟</li>
-            <li>Hoe laat kom je thuis? — الساعة كام تصل إلى المنزل؟</li>
-            <li>Hoe snel kun je werken? — ما مدى السرعة التي يمكنك العمل بها؟</li>
-            <li>Hoe goed spreek je Nederlands? — ما مدى إتقانك للهولندية؟</li>
-            <li>Hoe moeilijk is deze oefening? — ما مدى صعوبة هذا التمرين؟</li>
-            <li>Hoe makkelijk is het om hier werk te vinden? — ما مدى سهولة إيجاد عمل هنا؟</li>
-            <li>Hoe belangrijk is dit voor jou? — ما مدى أهمية هذا بالنسبة لك؟</li>
-            <li>Hoe denk je daarover? — ما رأيك في ذلك؟</li>
-            <li>Hoe weet je that? (Hoe weet je dat?) — كيف تعرف ذلك؟</li>
-            <li>Hoe heb je dat gedaan? — كيف فعلت ذلك؟</li>
-            <li>Hoe ben je hier gekomen? — كيف وصلت إلى هنا؟</li>
-            <li>Hoe heb je dat geleerd? — كيف تعلّمت ذلك؟</li>
-            <li>How can I thank you? (Hoe kan ik je bedanken?) — كيف يمكنني أن أشكرك؟</li>
-            <li>Hoe kan ik je bereiken? — كيف يمكنني التواصل معك؟</li>
-            <li>Hoe kunnen we dit probleem oplossen? — كيف يمكننا حل هذه المشكلة؟</li>
-        </ul>
-    </section>
+        <!-- Category 1 -->
+        <section id="category-1" class="category-section">
+            <h2 class="category-title">
+                1–25: الحياة اليومية (Het dagelijks leven)
+                <span class="tag">أساسيات</span>
+            </h2>
+            <div class="sentence-grid">
+                <div class="sentence-card"><div class="dutch-text">Hoe gaat het?</div><div class="arabic-text">كيف حالك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe voel je je?</div><div class="arabic-text">كيف تشعر؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe heet je?</div><div class="arabic-text">ما اسمك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe oud ben je?</div><div class="arabic-text">كم عمرك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe woon je?</div><div class="arabic-text">كيف تعيش؟ / كيف ظروف سكنك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe slaap je?</div><div class="arabic-text">كيف تنام؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe laat sta je op?</div><div class="arabic-text">الساعة كم تستيقظ؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe laat ga je slapen?</div><div class="arabic-text">الساعة كم تذهب للنوم؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe begin je je dag?</div><div class="arabic-text">كيف تبدأ يومك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe breng je je dag door?</div><div class="arabic-text">كيف تقضي يومك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe maak je koffie?</div><div class="arabic-text">كيف تحضّر القهوة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe kook je rijst?</div><div class="arabic-text">كيف تطبخ الأرز؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe maak je het huis schoon?</div><div class="arabic-text">كيف تنظّف المنزل؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe was je je kleren?</div><div class="arabic-text">كيف تغسل ملابسك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe open je deze deur?</div><div class="arabic-text">كيف تفتح هذا الباب؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe sluit je het raam?</div><div class="arabic-text">كيف تغلق النافذة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe gebruik je deze telefoon?</div><div class="arabic-text">كيف تستخدم هذا الهاتف؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe werkt dit apparaat?</div><div class="arabic-text">كيف يعمل هذا الجهاز؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe maak je dit klaar?</div><div class="arabic-text">كيف تجهّز هذا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe vind je deze film?</div><div class="arabic-text">ما رأيك في هذا الفيلم؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe voel je je vandaag?</div><div class="arabic-text">كيف تشعر اليوم؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe ziet je huis eruit?</div><div class="arabic-text">كيف يبدو منزلك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe ziet je kamer eruit?</div><div class="arabic-text">كيف تبدو غرفتك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe klinkt dat?</div><div class="arabic-text">كيف يبدو صوته؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe ruikt het?</div><div class="arabic-text">كيف رائحته؟</div></div>
+            </div>
+        </section>
 
-    <section id="grammar-structures">
-        <h2>📌 أهم التركيبات مع Hoe (Belangrijke constructies)</h2>
-        <table border="1">
-            <tr><th>الهولندية</th><th>المعنى بالعربية</th></tr>
-            <tr><td>Hoe laat?</td><td>الساعة كام؟</td></tr>
-            <tr><td>Hoeveel?</td><td>كم؟</td></tr>
-            <tr><td>Hoe lang?</td><td>كم المدة؟ / كم الطول؟</td></tr>
-            <tr><td>Hoe vaak?</td><td>كم مرة؟</td></tr>
-            <tr><td>Hoe oud?</td><td>كم العمر؟</td></tr>
-            <tr><td>Hoe ver?</td><td>كم المسافة؟</td></tr>
-            <tr><td>Hoe groot?</td><td>كم الحجم؟ / كم الطول؟</td></tr>
-            <tr><td>Hoe klein?</td><td>ما مدى الصغر؟</td></tr>
-            <tr><td>Hoe snel?</td><td>ما مدى السرعة؟</td></tr>
-            <tr><td>Hoe goed?</td><td>ما مدى الجودة أو الإتقان؟</td></tr>
-            <tr><td>Hoe moeilijk?</td><td>ما مدى الصعوبة؟</td></tr>
-            <tr><td>Hoe duur?</td><td>ما مدى الغلاء؟</td></tr>
-        </table>
-    </section>
+        <!-- Category 2 -->
+        <section id="category-2" class="category-section">
+            <h2 class="category-title">
+                26–50: العمل والدراسة (Werk en studie)
+                <span class="tag">مهني تعليمي</span>
+            </h2>
+            <div class="sentence-grid">
+                <div class="sentence-card"><div class="dutch-text">Hoe werk je hier?</div><div class="arabic-text">كيف تعمل هنا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe zoek je werk?</div><div class="arabic-text">كيف تبحث عن عمل؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe vind je een baan?</div><div class="arabic-text">كيف تجد وظيفة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe solliciteer je?</div><div class="arabic-text">كيف تتقدّم لوظيفة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe schrijf je een cv?</div><div class="arabic-text">كيف تكتب سيرة ذاتية؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe bereid je je voor op een sollicitatiegesprek?</div><div class="arabic-text">كيف تستعد لمقابلة عمل؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoeveel ervaring heb je?</div><div class="arabic-text">كم لديك من الخبرة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoeveel verdien je per maand?</div><div class="arabic-text">كم تكسب شهريًا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoeveel uur werk je per dag?</div><div class="arabic-text">كم ساعة تعمل يوميًا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe laat begin je met werken?</div><div class="arabic-text">الساعة كم تبدأ العمل؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe laat ben je klaar met werken?</div><div class="arabic-text">الساعة كم تنتهي من العمل؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe doe je dit werk?</div><div class="arabic-text">كيف تؤدي هذا العمل؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe los je dit probleem op?</div><div class="arabic-text">كيف تحل هذه المشكلة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe controleer je de machine?</div><div class="arabic-text">كيف تفحص الآلة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe repareer je dit toestel?</div><div class="arabic-text">كيف تصلح هذا الجهاز؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe maak je een rapport?</div><div class="arabic-text">كيف تُعدّ تقريرًا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe schrijf je een e-mail?</div><div class="arabic-text">كيف تكتب بريدًا إلكترونيًا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe vraag je een baan aan?</div><div class="arabic-text">كيف تتقدّم للحصول على وظيفة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe leer je Nederlands?</div><div class="arabic-text">كيف تتعلّم الهولندية؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe leer je nieuwe woorden?</div><div class="arabic-text">كيف تتعلّم كلمات جديدة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe spreek je dit woord uit?</div><div class="arabic-text">كيف تنطق هذه الكلمة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe schrijf je dit woord?</div><div class="arabic-text">كيف تكتب هذه الكلمة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe begrijp je deze zin?</div><div class="arabic-text">كيف تفهم هذه الجملة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe bereid je je voor op het examen?</div><div class="arabic-text">كيف تستعد للامتحان؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe verbeter je je Nederlands?</div><div class="arabic-text">كيف تحسّن لغتك الهولندية؟</div></div>
+            </div>
+        </section>
 
-    <section id="important-differences">
-        <h2>💡 فروق هامة في الاستخدام (Belangrijke verschillen)</h2>
-        <ul>
-            <li><strong>Hoe heet je?</strong> VS <strong>Wat is je naam?</strong> (كلاهما يعني: ما اسمك؟)</li>
-            <li><strong>Hoe oud ben je?</strong> — كم عمرك؟</li>
-            <li><strong>Hoe laat is het?</strong> — كم الساعة؟ (الساعة كام؟)</li>
-            <li><strong>Hoeveel kost het?</strong> — كم سعره؟</li>
-        </ul>
-    </section>
+        <!-- Category 3 -->
+        <section id="category-3" class="category-section">
+            <h2 class="category-title">
+                51–75: المعاملات، المواصلات والسكن (Transport, wonen en leven in België)
+                <span class="tag">إداري وميداني</span>
+            </h2>
+            <div class="sentence-grid">
+                <div class="sentence-card"><div class="dutch-text">Hoe kom ik bij het station?</div><div class="arabic-text">كيف أصل إلى المحطة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe ga je naar je werk?</div><div class="arabic-text">كيف تذهب إلى عملك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe reis je naar Brussel?</div><div class="arabic-text">كيف تسافر إلى بروكسل؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe ver is het station?</div><div class="arabic-text">كم تبعد المحطة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe lang duurt de reis?</div><div class="arabic-text">كم تستغرق الرحلة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe vaak rijdt deze bus?</div><div class="arabic-text">كم مرة تسير هذه الحافلة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe koop ik een treinkaartje?</div><div class="arabic-text">كيف أشتري تذكرة قطار؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe moet ik overstappen?</div><div class="arabic-text">كيف يجب أن أغيّر وسيلة النقل؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe kom ik thuis?</div><div class="arabic-text">كيف أصل إلى المنزل؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe vind ik dit adres?</div><div class="arabic-text">كيف أجد هذا العنوان؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe huur ik een appartement?</div><div class="arabic-text">كيف أستأجر شقة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoeveel huur betaal je?</div><div class="arabic-text">كم تدفع إيجارًا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe betaal je de elektriciteitsrekening?</div><div class="arabic-text">كيف تدفع فاتورة الكهرباء؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe werkt de verwarming?</div><div class="arabic-text">كيف تعمل التدفئة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe krijg ik warm water?</div><div class="arabic-text">كيف أحصل على الماء الساخن؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe schrijf ik mij in bij de gemeente?</div><div class="arabic-text">كيف أسجّل نفسي في البلدية؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe maak ik een afspraak bij de gemeente?</div><div class="arabic-text">كيف أحجز موعدًا في البلدية؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe vraag ik een verblijfskaart aan?</div><div class="arabic-text">كيف أطلب بطاقة إقامة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe lang duurt de aanvraag?</div><div class="arabic-text">كم تستغرق معالجة الطلب؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe ontvang ik mijn documenten?</div><div class="arabic-text">كيف أتسلّم مستنداتي؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe open ik een bankrekening?</div><div class="arabic-text">كيف أفتح حسابًا مصرفيًا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe sluit ik een verzekering af?</div><div class="arabic-text">كيف أبرم عقد تأمين؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe schrijf ik mij in bij VDAB?</div><div class="arabic-text">كيف أسجّل نفسي في VDAB؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe vind ik een Nederlandse cursus?</div><div class="arabic-text">كيف أجد دورة هولندية؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe kan ik hier integreren?</div><div class="arabic-text">كيف يمكنني الاندماج هنا؟</div></div>
+            </div>
+        </section>
+
+        <!-- Category 4 -->
+        <section id="category-4" class="category-section">
+            <h2 class="category-title">
+                76–100: أسئلة متنوّعة ومهمّة (Diverse en belangrijke vragen)
+                <span class="tag">متنوع وتفاعلي</span>
+            </h2>
+            <div class="sentence-grid">
+                <div class="sentence-card"><div class="dutch-text">Hoeveel kost dit?</div><div class="arabic-text">كم سعر هذا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoeveel kost dat per maand?</div><div class="arabic-text">كم سعر ذلك شهريًا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoeveel geld heb je nodig?</div><div class="arabic-text">كم تحتاج من المال؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoeveel mensen komen er?</div><div class="arabic-text">كم شخصًا سيأتي؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoeveel tijd heb je?</div><div class="arabic-text">كم من الوقت لديك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe lang blijf je hier?</div><div class="arabic-text">كم ستبقى هنا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe lang woon je al in België?</div><div class="arabic-text">منذ متى وأنت تعيش في بلجيكا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe vaak sport je?</div><div class="arabic-text">كم مرة تمارس الرياضة؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe vaak ga je naar de supermarkt?</div><div class="arabic-text">كم مرة تذهب إلى السوبرماركت؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe laat begint de film?</div><div class="arabic-text">الساعة كم يبدأ الفيلم؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe laat vertrekt de trein?</div><div class="arabic-text">الساعة كم يغادر القطار؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe laat kom je thuis?</div><div class="arabic-text">الساعة كم تصل إلى المنزل؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe snel kun je werken?</div><div class="arabic-text">ما مدى السرعة التي يمكنك العمل بها؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe goed spreek je Nederlands?</div><div class="arabic-text">ما مدى إتقانك للهولندية؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe moeilijk is deze oefening?</div><div class="arabic-text">ما مدى صعوبة هذا التمرين؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe makkelijk is het om hier werk te vinden?</div><div class="arabic-text">ما مدى سهولة إيجاد عمل هنا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe belangrijk is dit voor jou?</div><div class="arabic-text">ما مدى أهمية هذا بالنسبة لك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe denk je daarover?</div><div class="arabic-text">ما رأيك في ذلك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe weet je dat?</div><div class="arabic-text">كيف تعرف ذلك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe heb je dat gedaan?</div><div class="arabic-text">كيف فعلت ذلك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe ben je hier gekomen?</div><div class="arabic-text">كيف وصلت إلى هنا؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe heb je dat geleerd?</div><div class="arabic-text">كيف تعلّمت ذلك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe kan ik je bedanken?</div><div class="arabic-text">كيف يمكنني أن أشكرك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe kan ik je bereiken?</div><div class="arabic-text">كيف يمكنني التواصل معك؟</div></div>
+                <div class="sentence-card"><div class="dutch-text">Hoe kunnen we dit probleem oplossen?</div><div class="arabic-text">كيف يمكننا حل هذه المشكلة؟</div></div>
+            </div>
+        </section>
+
+        <!-- Grammar Structures Section -->
+        <section id="grammar-structures" class="category-section">
+            <h2 class="category-title">📌 أهم التركيبات والقواعد مع Hoe</h2>
+            <p style="color: var(--text-muted); margin-bottom: 15px;">جدول مرجعي سريع لأداة الاستفهام Hoe مع الصفات والظروف لتشكل معاني مختلفة:</p>
+            <table class="grammar-table">
+                <thead>
+                    <tr>
+                        <th>الهولندية</th>
+                        <th>المعنى بالعربية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="nl">Hoe laat?</td><td>الساعة كام؟ / في أي وقت؟</td></tr>
+                    <tr><td class="nl">Hoeveel?</td><td>كم؟ (للكمية والعدد)</td></tr>
+                    <tr><td class="nl">Hoe lang?</td><td>كم المدة؟ / كم الطول؟</td></tr>
+                    <tr><td class="nl">Hoe vaak?</td><td>كم مرة؟ (التكرار)</td></tr>
+                    <tr><td class="nl">Hoe oud?</td><td>كم العمر؟</td></tr>
+                    <tr><td class="nl">Hoe ver?</td><td>كم المسافة؟</td></tr>
+                    <tr><td class="nl">Hoe groot?</td><td>كم الحجم؟ / كم الطول؟</td></tr>
+                    <tr><td class="nl">Hoe klein?</td><td>ما مدى الصغر؟</td></tr>
+                    <tr><td class="nl">Hoe snel?</td><td>ما مدى السرعة؟</td></tr>
+                    <tr><td class="nl">Hoe goed?</td><td>ما مدى الجودة أو الإتقان؟</td></tr>
+                    <tr><td class="nl">Hoe moeilijk?</td><td>ما مدى الصعوبة؟</td></tr>
+                    <tr><td class="nl">Hoe duur?</td><td>ما مدى الغلاء؟ / كم السعر؟</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Important Differences -->
+        <section id="important-differences" class="category-section">
+            <h2 class="category-title">💡 فروق هامة في الاستخدام (Belangrijke verschillen)</h2>
+            <div class="differences-list">
+                <div class="difference-item">
+                    <strong>Hoe heet je?</strong> VS <strong>Wat is je naam?</strong>
+                    <p style="margin-top: 6px; font-size: 0.9rem; color: var(--text-main);">كلاهما يعني (ما اسمك؟) لكن الأولى تستخدم أداة Hoe مع الفعل heten.</p>
+                </div>
+                <div class="difference-item">
+                    <strong>Hoe oud ben je?</strong>
+                    <p style="margin-top: 6px; font-size: 0.9rem; color: var(--text-main);">كم عمرك؟ (تستخدم دائماً Hoe وليس Wat).</p>
+                </div>
+                <div class="difference-item">
+                    <strong>Hoe laat is het?</strong>
+                    <p style="margin-top: 6px; font-size: 0.9rem; color: var(--text-main);">كم الساعة؟ (تعبير ثابت للسؤال عن الوقت).</p>
+                </div>
+                <div class="difference-item">
+                    <strong>Hoeveel kost het?</strong>
+                    <p style="margin-top: 6px; font-size: 0.9rem; color: var(--text-main);">كم سعره؟ (استخدام Hoeveel للسؤال عن الثمن).</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© دليل تعليم اللغة الهولندية الاحترافي — تم تحسين وتنسيق الكود بأعلى معايير الجودة</p>
+    </footer>
+
+    <!-- Search Filtering Script -->
+    <script>
+        function filterSentences() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.sentence-card');
+
+            cards.forEach(card => {
+                const dutch = card.querySelector('.dutch-text').textContent.toLowerCase();
+                const arabic = card.querySelector('.arabic-text').textContent.toLowerCase();
+
+                if (dutch.includes(input) || arabic.includes(input)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
