@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة باستخدام Waar? (أين؟) في الهولندية</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent: #8b5cf6;
+            --accent-bg: #f5f3ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* شريط البحث */
+        .search-box {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        /* التبويبات (Tabs) */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: #e2e8f0;
+            color: var(--text-main);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* قوائم الجمل */
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .sentence-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .sentence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .sentence-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .dutch-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.25rem;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .arabic-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* صندوق القاعدة */
+        .rule-box {
+            background: var(--accent-bg);
+            border-right: 4px solid var(--accent);
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+        }
+
+        .rule-box h3 {
+            color: #6b21a8;
+            margin-bottom: 0.75rem;
+        }
+
+        .rule-box ul {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .rule-box li {
+            font-weight: 600;
+            color: #581c87;
+        }
+
+        .next-lesson {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px dashed #ddd6fe;
+            font-weight: bold;
+            color: #6b21a8;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .sentence-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🇳🇱 100 جملة باستخدام Waar? (أين؟)</h1>
+            <p>جمل باللغة الهولندية مع الترجمة بالعربية للسؤال عن الأماكن والاتجاهات</p>
+        </header>
+
+        <!-- حقل البحث -->
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="filterSentences()" placeholder="ابحث عن كلمة بالهولندية أو العربية...">
+        </div>
+
+        <!-- التبويبات -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="filterTab('all', this)">الكل (100)</button>
+            <button class="tab-btn" onclick="filterTab('cat1', this)">1–25: للسؤال عن السكن والوجود</button>
+            <button class="tab-btn" onclick="filterTab('cat2', this)">26–50: الأغراض والأشياء</button>
+            <button class="tab-btn" onclick="filterTab('cat3', this)">51–75: الأماكن والخدمات</button>
+            <button class="tab-btn" onclick="filterTab('cat4', this)">76–100: الاتجاهات والسفر</button>
+        </div>
+
+        <!-- الحاوية الرئيسية للجمل -->
+        <div id="contentArea"></div>
+
+        <!-- قاعدة مهمة والدرس التالي -->
+        <div class="rule-box">
+            <h3>📌 قاعدة مهمة:</h3>
+            <p>كلمة <strong>Waar</strong> تعني «أين؟» وتُستخدم للسؤال عن الموقع، وتترابط مع حروف الجر لتكوين أسئلة مرّكبة مثل:</p>
+            <ul>
+                <li>• <strong>Waarheen? / Waar... naartoe?</strong> — إلى أين؟</li>
+                <li>• <strong>Waarvandaan? / Waar... vandaan?</strong> — من أين؟</li>
+                <li>• <strong>Waarmee?</strong> — بماذا / باستخدام ماذا؟</li>
+                <li>• <strong>Waarover?</strong> — عن ماذا؟</li>
+            </ul>
+            <div class="next-lesson">
+                👉 الدرس التالي: Wanneer? — متى؟
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const data = [
+            {
+                cat: "cat1",
+                title: "1–25: للسؤال عن السكن، الأشخاص، والوجود",
+                items: [
+                    { nl: "Waar woon je?", ar: "أين تسكن؟" },
+                    { nl: "Waar ben je?", ar: "أين أنت؟" },
+                    { nl: "Waar is hij?", ar: "أين هو؟" },
+                    { nl: "Waar is zij?", ar: "أين هي؟" },
+                    { nl: "Waar zijn ze?", ar: "أين هم؟" },
+                    { nl: "Waar werkt je man?", ar: "أين يعمل زوجك؟" },
+                    { nl: "Waar werkt je vrouw?", ar: "أين تعمل زوجتك؟" },
+                    { nl: "Waar studeer je?", ar: "أين تدرس؟" },
+                    { nl: "Waar zit je?", ar: "أين تجلس؟ / أين مكانك؟" },
+                    { nl: "Waar sta je?", ar: "أين تقف؟" },
+                    { nl: "Waar slaap je?", ar: "أين تنام؟" },
+                    { nl: "Waar is de dokter?", ar: "أين الطبيب؟" },
+                    { nl: "Waar is de leraar?", ar: "أين المعلم؟" },
+                    { nl: "Waar zijn de kinderen?", ar: "أين الأطفال؟" },
+                    { nl: "Waar is iedereen?", ar: "أين الجميع؟" },
+                    { nl: "Waar kom je vandaan?", ar: "من أين أنت؟" },
+                    { nl: "Waar is hij geboren?", ar: "أين ولد؟" },
+                    { nl: "Waar heb je hem ontmoet?", ar: "أين قابلته؟" },
+                    { nl: "Waar spreek je af?", ar: "أين تلتقيان؟" },
+                    { nl: "Waar wacht je op mij?", ar: "أين تنتظرني؟" },
+                    { nl: "Waar is de baas?", ar: "أين المدير؟" },
+                    { nl: "Waar is jouw familie?", ar: "أين عائلتك؟" },
+                    { nl: "Waar woont jouw vriend?", ar: "أين يسكن صديقك؟" },
+                    { nl: "Waar ben je nu?", ar: "أين أنت الآن؟" },
+                    { nl: "Waar was je gisteren?", ar: "أين كنت أمس؟" }
+                ]
+            },
+            {
+                cat: "cat2",
+                title: "26–50: أين توجد الأشياء والأغراض؟",
+                items: [
+                    { nl: "Waar is mijn sleutel?", ar: "أين مفتاحي؟" },
+                    { nl: "Waar is mijn telefoon?", ar: "أين هاتفي؟" },
+                    { nl: "Waar is mijn tas?", ar: "أين حقيبتي؟" },
+                    { nl: "Waar is mijn paspoort?", ar: "أين جواز سفري؟" },
+                    { nl: "Waar liggen de documenten?", ar: "أين توجد الوثائق؟" },
+                    { nl: "Waar staat de auto?", ar: "أين تقف السيارة؟" },
+                    { nl: "Waar is de fiets?", ar: "أين الدراجة؟" },
+                    { nl: "Waar heb je het neergelegd?", ar: "أين وضعت هذا؟" },
+                    { nl: "Waar kan ik mijn jas ophangen?", ar: "أين يمكنني تعليق معطفي؟" },
+                    { nl: "Waar is de afstandsbediening?", ar: "أين جهاز التحكم (الريموت)؟" },
+                    { nl: "Waar is de lader?", ar: "أين الشاحن؟" },
+                    { nl: "Waar staan de glazen?", ar: "أين توجد الكؤوس؟" },
+                    { nl: "Waar liggen de borden?", ar: "أين الأطباق؟" },
+                    { nl: "Waar is de schaar?", ar: "أين المقص؟" },
+                    { nl: "Waar is het zout?", ar: "أين الملح؟" },
+                    { nl: "Waar is het brood?", ar: "أين الخبز؟" },
+                    { nl: "Waar is de vuilnisbak?", ar: "أين سلة المهملات؟" },
+                    { nl: "Waar zijn mijn schoenen?", ar: "أين حذائي؟" },
+                    { nl: "Waar is de badkamer?", ar: "أين الحمام؟" },
+                    { nl: "Waar is het toilet?", ar: "أين دورة المياه؟" },
+                    { nl: "Waar is de keuken?", ar: "أين المطبخ؟" },
+                    { nl: "Waar is de uitgang?", ar: "أين المخرج؟" },
+                    { nl: "Waar is de ingang?", ar: "أين المدخل؟" },
+                    { nl: "Waar is de lift?", ar: "أين المصعد؟" },
+                    { nl: "Waar zijn de trappen?", ar: "أين السلالم؟" }
+                ]
+            },
+            {
+                cat: "cat3",
+                title: "51–75: الأماكن والخدمات في المدينة",
+                items: [
+                    { nl: "Waar is het station?", ar: "أين المحطة؟" },
+                    { nl: "Waar is de bushalte?", ar: "أين موقف الحافلة؟" },
+                    { nl: "Waar is de supermarkt?", ar: "أين السوبرماركت؟" },
+                    { nl: "Waar is de apotheek?", ar: "أين الصيدلية؟" },
+                    { nl: "Waar is het ziekenhuis?", ar: "أين المستشفى؟" },
+                    { nl: "Waar is de bank?", ar: "أين البنك؟" },
+                    { nl: "Waar is de geldautomaat?", ar: "أين الصراف الآلي؟" },
+                    { nl: "Waar is het gemeentehuis?", ar: "أين البلدية؟" },
+                    { nl: "Waar is de post? / het postkantoor?", ar: "أين مكتب البريد؟" },
+                    { nl: "Waar is de school?", ar: "أين المدرسة؟" },
+                    { nl: "Waar is de bibliotheek?", ar: "أين المكتبة؟" },
+                    { nl: "Waar is de bakker?", ar: "أين المخبز؟" },
+                    { nl: "Waar is de slager?", ar: "أين الجزار؟" },
+                    { nl: "Waar is de markt?", ar: "أين السوق؟" },
+                    { nl: "Waar is het park?", ar: "أين الحديقة؟" },
+                    { nl: "Waar is het centrum?", ar: "أين وسط المدينة؟" },
+                    { nl: "Waar is een goed restaurant?", ar: "أين يوجد مطعم جيد؟" },
+                    { nl: "Waar is het hotel?", ar: "أين الفندق؟" },
+                    { nl: "Waar is de luchthaven?", ar: "أين المطار؟" },
+                    { nl: "Waar is de dichtstbijzijnde winkel?", ar: "أين أقرب متجر؟" },
+                    { nl: "Waar kan ik parkeren?", ar: "أين يمكنني إيقاف السيارة؟" },
+                    { nl: "Waar kan ik een ticket kopen?", ar: "أين يمكنني شراء تذكرة؟" },
+                    { nl: "Waar kan ik geld wisselen?", ar: "أين يمكنني تصريف المال؟" },
+                    { nl: "Waar is de paskamer?", ar: "أين غرفة قياس الملابس؟" },
+                    { nl: "Waar is de kassa?", ar: "أين الصندوق / الكاشير؟" }
+                ]
+            },
+            {
+                cat: "cat4",
+                title: "76–100: الاتجاهات والسفر والأفعال المركبة",
+                items: [
+                    { nl: "Waar ga je naartoe?", ar: "إلى أين أنت ذاهب؟" },
+                    { nl: "Waar reijs je naartoe?", ar: "إلى أين تسافر؟" },
+                    { nl: "Waar moet ik overstappen?", ar: "أين يجب أن أغير القطار/الحافلة؟" },
+                    { nl: "Waar uitstappen?", ar: "أين ننزل؟" },
+                    { nl: "Waar instappen?", ar: "أين نركب؟" },
+                    { nl: "Waar gaat deze bus naartoe?", ar: "إلى أين تذهب هذه الحافلة؟" },
+                    { nl: "Waar gaat deze trein naartoe?", ar: "إلى أين يذهب هذا القطار؟" },
+                    { nl: "Waar vind ik informatie?", ar: "أين أجد معلومات؟" },
+                    { nl: "Waar zoek je naar?", ar: "عن ماذا / أين تبحث؟" },
+                    { nl: "Waar kijk je naar?", ar: "إلى ماذا تنظر؟" },
+                    { nl: "Waar luister je naar?", ar: "إلى ماذا تستمع؟" },
+                    { nl: "Waar praat je over?", ar: "عن ماذا تتحدث؟" },
+                    { nl: "Waar denk je aan?", ar: "بماذا تفكر؟" },
+                    { nl: "Waar wacht je op?", ar: "ماذا / أين تنتظر؟" },
+                    { nl: "Waar slaat dit op?", ar: "ما معنى هذا؟ / إلى ماذا يشير هذا؟" },
+                    { nl: "Waarmee kan ik je helpen?", ar: "بماذا يمكنني مساعدتك؟" },
+                    { nl: "Waarvoor is dit?", ar: "لماذا هذا؟ / لأي غرض هذا؟" },
+                    { nl: "Waarin zit de فوتو?", ar: "في ماذا توجد الصورة؟" },
+                    { nl: "Waarvan is het gemaakt?", ar: "مما هو مصنوع؟" },
+                    { nl: "Waarop wacht je?", ar: "على ماذا تنتظر؟" },
+                    { nl: "Waar kan ik dit vinden?", ar: "أين يمكنني أن أجد هذا؟" },
+                    { nl: "Waar moet ik me melden?", ar: "أين يجب أن أسجل حظوري / أراجع؟" },
+                    { nl: "Waar moet ik tekenen?", ar: "أين يجب أن أوقع؟" },
+                    { nl: "Waar is de nooduitgang?", ar: "أين مخرج الطوارئ؟" },
+                    { nl: "Waar kan ik gaan zitten?", ar: "أين يمكنني الجلوس؟" }
+                ]
+            }
+        ];
+
+        let activeTab = 'all';
+
+        function renderSentences() {
+            const container = document.getElementById('contentArea');
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            container.innerHTML = '';
+
+            data.forEach(group => {
+                if (activeTab !== 'all' && group.cat !== activeTab) return;
+
+                const filteredItems = group.items.filter(item => 
+                    item.nl.toLowerCase().includes(searchVal) || 
+                    item.ar.toLowerCase().includes(searchVal)
+                );
+
+                if (filteredItems.length > 0) {
+                    const section = document.createElement('section');
+                    
+                    const title = document.createElement('h2');
+                    title.className = 'section-title';
+                    title.textContent = group.title;
+                    section.appendChild(title);
+
+                    const grid = document.createElement('div');
+                    grid.className = 'sentence-list';
+
+                    filteredItems.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = 'sentence-card';
+                        card.innerHTML = `
+                            <div class="dutch-text">${item.nl}</div>
+                            <div class="arabic-text">${item.ar}</div>
+                        `;
+                        grid.appendChild(card);
+                    });
+
+                    section.appendChild(grid);
+                    container.appendChild(section);
+                }
+            });
+        }
+
+        function filterTab(category, btn) {
+            activeTab = category;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderSentences();
+        }
+
+        function filterSentences() {
+            renderSentences();
+        }
+
+        // العرض الأولي
+        renderSentences();
+    </script>
+</body>
+</html>
