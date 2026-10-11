@@ -1,187 +1,860 @@
-<!DOCTYPE html>
-<html lang="nl" dir="rtl">
+<!<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>100 جملة هولندية بلجيكية باستخدام Hoe lang - دليل احترافي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل شامل: 100 جملة هولندية بلجيكية باستخدام Hoe lang</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --primary-accent: #2563eb;
+            --secondary-accent: #059669;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            padding: 3rem 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-accent);
+            display: block;
+        }
+
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Card Section */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+        }
+
+        .card-header .badge {
+            background: #dbeafe;
+            color: var(--primary-accent);
+            font-size: 0.85rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Rules Banner */
+        .rule-box {
+            background: #eff6ff;
+            border-right: 4px solid var(--primary-accent);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            margin-top: 1rem;
+        }
+
+        .rule-box ul {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .rule-box li {
+            position: relative;
+            padding-right: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .rule-box li::before {
+            content: '✔';
+            position: absolute;
+            right: 0;
+            color: var(--primary-accent);
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            font-size: 1rem;
+            font-family: inherit;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            outline: none;
+            transition: border-color 0.2s;
+            background-color: var(--card-bg);
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+
+        /* Sentence List Grid */
+        .sentence-list {
+            display: grid;
+            gap: 0.75rem;
+            list-style: none;
+        }
+
+        .sentence-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8fafc;
+            padding: 0.9rem 1.2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .sentence-item:hover {
+            background: #ffffff;
+            border-color: var(--primary-accent);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .sentence-nl {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--primary-color);
+            direction: ltr;
+            font-size: 1.05rem;
+        }
+
+        .sentence-ar {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .copy-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--text-muted);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+            margin-left: 0.5rem;
+        }
+
+        .copy-btn:hover {
+            background: #e2e8f0;
+            color: var(--primary-color);
+        }
+
+        /* Table Styling */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body { background: white; padding: 0; }
+            .card { box-shadow: none; border: none; padding: 0; }
+            .search-container, .copy-btn { display: none; }
+            .sentence-item { break-inside: avoid; border-bottom: 1px solid #ccc; }
+        }
+
+        @media (max-width: 640px) {
+            .sentence-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+            .sentence-nl { direction: ltr; }
+        }
+    </style>
 </head>
 <body>
-    <!-- 
-      ====================================================
-      دليل شامل: 100 جملة بلجيكية هولندية باستخدام Hoe lang?
-      معنيان رئيسيان: 
-      1. للسؤال عن الزمن والمدة (لمدة قد إيه؟)
-      2. للسؤال عن الطول المادي أو المسافة القياسية (قد إيه طوله؟)
-      ====================================================
-    -->
 
-    <section id="grammar-rule">
-        <h2>📌 القاعدة الاستخدامية: أداة الاستفهام Hoe lang</h2>
-        <p>
-            تتميز أداة <strong>Hoe lang?</strong> بالقدرة على التعبير عن مفهومين أساسيين بناءً على الفعل المتبوع:
-        </p>
-        <ul>
-            <li><strong>المدة الزمنية (Tijd/Duur):</strong> عند استخدامها مع أفعال استغراق الوقت مثل (duur, blijven, wachten, werken).</li>
-            <li><strong>الطول المادي (Lengte):</strong> عند استخدامها مع الفعل (zijn) والأسماء المادية (مثل: tafel, kabel, muur).</li>
+<div class="container">
+    <!-- Header -->
+    <header>
+        <h1>100 جملة هولندية بلجيكية باستخدام Hoe lang</h1>
+        <p>دليل الشامل والاحترافي للتمييز بين السؤال عن المدة الزمنية والطول المادي</p>
+    </header>
+
+    <!-- Stat Dashboard -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="number">100</span>
+            <span class="label">جملة تعليمية مفهرسة</span>
+        </div>
+        <div class="stat-card">
+            <span class="number">4</span>
+            <span class="label">تصنيفات موضوعية</span>
+        </div>
+        <div class="stat-card">
+            <span class="number">2</span>
+            <span class="label">استخدامان أساسيان</span>
+        </div>
+    </div>
+
+    <!-- Grammar Rule Section -->
+    <section class="card" id="grammar-rule">
+        <div class="card-header">
+            <h2>📌 القاعدة الأساسية لاستخدام Hoe lang</h2>
+        </div>
+        <p>تُستخدم أداة الاستفهام <strong>Hoe lang?</strong> في اللغة الهولندية لبناء سؤالين مختلفين يعتمدان بشكل أساسي على نوع الفعل والسياق:</p>
+        <div class="rule-box">
+            <ul>
+                <li><strong>المدة الزمنية (Tijd / Duur):</strong> تُستخدم مع أفعال استغراق الوقت والتأخير مثل (duuren, blijven, wachten, werken) للإجابة عن "كم من الوقت؟".</li>
+                <li><strong>الطول المادي (Lengte):</strong> تُستخدم مع الفعل (zijn) والأسماء والمواد القياسية مثل (tafel, kabel, muur) للإجابة عن "كم يبلغ طوله؟".</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Search Input -->
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 ابحث عن أي جملة بالعربية أو الهولندية..." onkeyup="filterSentences()">
+    </div>
+
+    <!-- Category 1 -->
+    <section class="card category-section">
+        <div class="card-header">
+            <h2>1–25: المدة الزمنية في الحياة اليومية</h2>
+            <span class="badge">Het dagelijks leven</span>
+        </div>
+        <ul class="sentence-list">
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang blijf je hier? <button class="copy-btn" onclick="copyText('Hoe lang blijf je hier?')">نسخ</button></span>
+                <span class="sentence-ar">هتقعد هنا لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang woon je al in België? <button class="copy-btn" onclick="copyText('Hoe lang woon je al in België?')">نسخ</button></span>
+                <span class="sentence-ar">بقالك قد إيه عايش في بلجيكا؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang werk je hier al? <button class="copy-btn" onclick="copyText('Hoe lang werk je hier al?')">نسخ</button></span>
+                <span class="sentence-ar">بقالك قد إيه بتشتغل هنا؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de les? <button class="copy-btn" onclick="copyText('Hoe lang duurt de les?')">نسخ</button></span>
+                <span class="sentence-ar">الدرس مدته قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de vergadering? <button class="copy-btn" onclick="copyText('Hoe lang duurt de vergadering?')">نسخ</button></span>
+                <span class="sentence-ar">الاجتماع مدته قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de reis? <button class="copy-btn" onclick="copyText('Hoe lang duurt de reis?')">نسخ</button></span>
+                <span class="sentence-ar">الرحلة بتاخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de treinrit? <button class="copy-btn" onclick="copyText('Hoe lang duurt de treinrit?')">نسخ</button></span>
+                <span class="sentence-ar">رحلة القطار بتاخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de busrit? <button class="copy-btn" onclick="copyText('Hoe lang duurt de busrit?')">نسخ</button></span>
+                <span class="sentence-ar">رحلة الأوتوبيس بتاخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de film? <button class="copy-btn" onclick="copyText('Hoe lang duurt de film?')">نسخ</button></span>
+                <span class="sentence-ar">الفيلم مدته قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het examen? <button class="copy-btn" onclick="copyText('Hoe lang duurt het examen?')">نسخ</button></span>
+                <span class="sentence-ar">الامتحان مدته قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang moet ik wachten? <button class="copy-btn" onclick="copyText('Hoe lang moet ik wachten?')">نسخ</button></span>
+                <span class="sentence-ar">لازم أستنى لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang moet je werken? <button class="copy-btn" onclick="copyText('Hoe lang moet je werken?')">نسخ</button></span>
+                <span class="sentence-ar">لازم تشتغل لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang slaap je meestal? <button class="copy-btn" onclick="copyText('Hoe lang slaap je meestal?')">نسخ</button></span>
+                <span class="sentence-ar">عادةً بتنام لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang blijf je op school? <button class="copy-btn" onclick="copyText('Hoe lang blijf je op school?')">نسخ</button></span>
+                <span class="sentence-ar">هتفضل في المدرسة لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang blijf je op je werk? <button class="copy-btn" onclick="copyText('Hoe lang blijf je op je werk?')">نسخ</button></span>
+                <span class="sentence-ar">هتفضل في الشغل لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de pauze? <button class="copy-btn" onclick="copyText('Hoe lang duurt de pauze?')">نسخ</button></span>
+                <span class="sentence-ar">الاستراحة مدتها قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de lunchpauze? <button class="copy-btn" onclick="copyText('Hoe lang duurt de lunchpauze?')">نسخ</button></span>
+                <span class="sentence-ar">استراحة الغدا مدتها قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de cursus Nederlands? <button class="copy-btn" onclick="copyText('Hoe lang duurt de cursus Nederlands?')">نسخ</button></span>
+                <span class="sentence-ar">كورس الهولندي مدته قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de opleiding? <button class="copy-btn" onclick="copyText('Hoe lang duurt de opleiding?')">نسخ</button></span>
+                <span class="sentence-ar">الدراسة أو التدريب مدته قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de procedure? <button class="copy-btn" onclick="copyText('Hoe lang duurt de procedure?')">نسخ</button></span>
+                <span class="sentence-ar">الإجراءات بتاخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang moet ik wachten op mijn kaart? <button class="copy-btn" onclick="copyText('Hoe lang moet ik wachten op mijn kaart?')">نسخ</button></span>
+                <span class="sentence-ar">لازم أستنى قد إيه عشان أستلم الكارت؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de aanvraag? <button class="copy-btn" onclick="copyText('Hoe lang duurt de aanvraag?')">نسخ</button></span>
+                <span class="sentence-ar">طلب التقديم بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het voordat je antwoord krijgt? <button class="copy-btn" onclick="copyText('Hoe lang duurt het voordat je antwoord krijgt?')">نسخ</button></span>
+                <span class="sentence-ar">هتستنى قد إيه لحد ما يوصلك رد؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang ben je onderweg? <button class="copy-btn" onclick="copyText('Hoe lang ben je onderweg?')">نسخ</button></span>
+                <span class="sentence-ar">بتقضي قد إيه في الطريق؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om naar Gent te rijden? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om naar Gent te rijden?')">نسخ</button></span>
+                <span class="sentence-ar">المشوار لخنت بالعربية بياخد وقت قد إيه؟</span>
+            </li>
         </ul>
     </section>
 
-    <section id="category-1">
-        <h2>1–25: المدة الزمنية في الحياة اليومية (Het dagelijks leven)</h2>
-        <ul>
-            <li>Hoe lang blijf je hier? — هتقعد هنا لمدة قد إيه؟</li>
-            <li>Hoe lang woon je al in België? — بقالك قد إيه عايش في بلجيكا؟</li>
-            <li>Hoe lang werk je hier al? — بقالك قد إيه بتشتغل هنا؟</li>
-            <li>Hoe lang duurt de les? — الدرس مدته قد إيه؟</li>
-            <li>Hoe lang duurt de vergadering? — الاجتماع مدته قد إيه؟</li>
-            <li>Hoe lang duurt de reis? — الرحلة بتاخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt de treinrit? — رحلة القطار بتاخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt de busrit? — رحلة الأوتوبيس بتاخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt de film? — الفيلم مدته قد إيه؟</li>
-            <li>Hoe lang duurt het examen? — الامتحان مدته قد إيه؟</li>
-            <li>Hoe lang moet ik wachten? — لازم أستنى لمدة قد إيه؟</li>
-            <li>Hoe lang moet je werken? — لازم تشتغل لمدة قد إيه؟</li>
-            <li>Hoe lang slaap je meestal? — عادةً بتنام لمدة قد إيه؟</li>
-            <li>Hoe lang blijf je op school? — هتفضل في المدرسة لمدة قد إيه؟</li>
-            <li>Hoe lang blijf je op je werk? — هتفضل في الشغل لمدة قد إيه؟</li>
-            <li>Hoe lang duurt de pauze? — الاستراحة مدتها قد إيه؟</li>
-            <li>Hoe lang duurt de lunchpauze? — استراحة الغدا مدتها قد إيه؟</li>
-            <li>Hoe lang duurt de cursus Nederlands? — كورس الهولندي مدته قد إيه؟</li>
-            <li>Hoe lang duurt de opleiding? — الدراسة أو التدريب مدته قد إيه؟</li>
-            <li>Hoe lang duurt de procedure? — الإجراءات بتاخد وقت قد إيه؟</li>
-            <li>Hoe lang moet ik wachten op mijn kaart? — لازم أستنى قد إيه عشان أستلم الكارت؟</li>
-            <li>Hoe lang duurt de aanvraag? — طلب التقديم بياخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt het voordat je antwoord krijgt? — هتستنى قد إيه لحد ما يوصلك رد؟</li>
-            <li>Hoe lang ben je onderweg? — بتقضي قد إيه في الطريق؟</li>
-            <li>Hoe lang duurt het om naar Gent te rijden? — المشوار لخنت بالعربية بياخد وقت قد إيه؟</li>
+    <!-- Category 2 -->
+    <section class="card category-section">
+        <div class="card-header">
+            <h2>26–50: السكن والسفر والتعلم</h2>
+            <span class="badge">Wonen, reizen en leren</span>
+        </div>
+        <ul class="sentence-list">
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang ben je al in Harelbeke? <button class="copy-btn" onclick="copyText('Hoe lang ben je al in Harelbeke?')">نسخ</button></span>
+                <span class="sentence-ar">بقالك قد إيه في هارلبيكة؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang woon je al in dit huis? <button class="copy-btn" onclick="copyText('Hoe lang woon je al in dit huis?')">نسخ</button></span>
+                <span class="sentence-ar">بقالك قد إيه ساكن في البيت ده؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang huur je dit appartement al? <button class="copy-btn" onclick="copyText('Hoe lang huur je dit appartement al?')">نسخ</button></span>
+                <span class="sentence-ar">بقالك قد إيه مأجر الشقة دي؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt je contract? <button class="copy-btn" onclick="copyText('Hoe lang duurt je contract?')">نسخ</button></span>
+                <span class="sentence-ar">عقدك مدته قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang loopt mijn abonnement? <button class="copy-btn" onclick="copyText('Hoe lang loopt mijn abonnement?')">نسخ</button></span>
+                <span class="sentence-ar">اشتراكي ساري لحد إمتى؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is je vakantie? <button class="copy-btn" onclick="copyText('Hoe lang is je vakantie?')">نسخ</button></span>
+                <span class="sentence-ar">إجازتك مدتها قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang blijf je in Portugal? <button class="copy-btn" onclick="copyText('Hoe lang blijf je in Portugal?')">نسخ</button></span>
+                <span class="sentence-ar">هتقعد في البرتغال لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang blijf je in het buitenland? <button class="copy-btn" onclick="copyText('Hoe lang blijf je in het buitenland?')">نسخ</button></span>
+                <span class="sentence-ar">هتقعد بره البلد لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de vlucht? <button class="copy-btn" onclick="copyText('Hoe lang duurt de vlucht?')">نسخ</button></span>
+                <span class="sentence-ar">رحلة الطيران مدتها قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de overstap? <button class="copy-btn" onclick="copyText('Hoe lang duurt de overstap?')">نسخ</button></span>
+                <span class="sentence-ar">وقت الانتظار بين الرحلات قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om naar Brussel te gaan? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om naar Brussel te gaan?')">نسخ</button></span>
+                <span class="sentence-ar">الوصول لبروكسل بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om naar het station te wandelen? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om naar het station te wandelen?')">نسخ</button></span>
+                <span class="sentence-ar">المشي للمحطة بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang moet ik nog rijden? <button class="copy-btn" onclick="copyText('Hoe lang moet ik nog rijden?')">نسخ</button></span>
+                <span class="sentence-ar">لسه لازم أسوق لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de wandeling? <button class="copy-btn" onclick="copyText('Hoe lang duurt de wandeling?')">نسخ</button></span>
+                <span class="sentence-ar">المشي ده بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang fiets je naar je werk? <button class="copy-btn" onclick="copyText('Hoe lang fiets je naar je werk?')">نسخ</button></span>
+                <span class="sentence-ar">بتقضي قد إيه في ركوب العجلة لحد الشغل؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om te koken? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om te koken?')">نسخ</button></span>
+                <span class="sentence-ar">الطبخ بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang moet het vlees bakken? <button class="copy-btn" onclick="copyText('Hoe lang moet het vlees bakken?')">نسخ</button></span>
+                <span class="sentence-ar">اللحمة لازم تستوي لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang moet ik de wasmachine laten draaien? <button class="copy-btn" onclick="copyText('Hoe lang moet ik de wasmachine laten draaien?')">نسخ</button></span>
+                <span class="sentence-ar">أشغّل الغسالة لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om het huis schoon te maken? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om het huis schoon te maken?')">نسخ</button></span>
+                <span class="sentence-ar">تنظيف البيت بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om boodschappen te doen? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om boodschappen te doen?')">نسخ</button></span>
+                <span class="sentence-ar">شراء احتياجات البيت بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om dit te leren? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om dit te leren?')">نسخ</button></span>
+                <span class="sentence-ar">تعلُّم ده بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang leer je al Nederlands? <button class="copy-btn" onclick="copyText('Hoe lang leer je al Nederlands?')">نسخ</button></span>
+                <span class="sentence-ar">بقالك قد إيه بتتعلم هولندي؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang oefen je elke dag? <button class="copy-btn" onclick="copyText('Hoe lang oefen je elke dag?')">نسخ</button></span>
+                <span class="sentence-ar">بتتدرب كل يوم لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om een taal te leren? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om een taal te leren?')">نسخ</button></span>
+                <span class="sentence-ar">تعلُّم لغة بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang heb je nodig om je huiswerk te maken? <button class="copy-btn" onclick="copyText('Hoe lang heb je nodig om je huiswerk te maken?')">نسخ</button></span>
+                <span class="sentence-ar">محتاج وقت قد إيه عشان تخلص واجبك؟</span>
+            </li>
         </ul>
     </section>
 
-    <section id="category-2">
-        <h2>26–50: السكن والسفر والتعلم (Wonen, reizen en leren)</h2>
-        <ul>
-            <li>Hoe lang ben je al in Harelbeke? — بقالك قد إيه في هارلبيكة؟</li>
-            <li>Hoe lang woon je al in dit huis? — بقالك قد إيه ساكن في البيت ده؟</li>
-            <li>Hoe lang huur je dit appartement al? — بقالك قد إيه مأجر الشقة دي؟</li>
-            <li>Hoe lang duurt je contract? — عقدك مدته قد إيه؟</li>
-            <li>Hoe lang loopt mijn abonnement? — اشتراكي ساري لحد إمتى؟</li>
-            <li>Hoe lang is je vakantie? — إجازتك مدتها قد إيه؟</li>
-            <li>Hoe lang blijf je in Portugal? — هتقعد في البرتغال لمدة قد إيه؟</li>
-            <li>Hoe lang blijf je in het buitenland? — هتقعد بره البلد لمدة قد إيه؟</li>
-            <li>Hoe lang duurt de vlucht? — رحلة الطيران مدتها قد إيه؟</li>
-            <li>Hoe lang duurt de overstap? — وقت الانتظار بين الرحلات قد إيه؟</li>
-            <li>Hoe lang duurt het om naar Brussel te gaan? — الوصول لبروكسل بياخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt het om naar het station te wandelen? — المشي للمحطة بياخد وقت قد إيه؟</li>
-            <li>Hoe lang moet ik nog rijden? — لسه لازم أسوق لمدة قد إيه؟</li>
-            <li>Hoe lang duurt de wandeling? — المشي ده بياخد وقت قد إيه؟</li>
-            <li>Hoe lang fiets je naar je werk? — بتقضي قد إيه في ركوب العجلة لحد الشغل؟</li>
-            <li>Hoe lang duurt het om te koken? — الطبخ بياخد وقت قد إيه؟</li>
-            <li>Hoe lang moet het vlees bakken? — اللحمة لازم تستوي لمدة قد إيه؟</li>
-            <li>Hoe lang moet ik de wasmachine laten draaien? — أشغّل الغسالة لمدة قد إيه؟</li>
-            <li>Hoe lang duurt het om het huis schoon te maken? — تنظيف البيت بياخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt het om boodschappen te doen? — شراء احتياجات البيت بياخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt het om dit te leren? — تعلُّم ده بياخد وقت قد إيه؟</li>
-            <li>Hoe lang leer je al Nederlands? — بقالك قد إيه بتتعلم هولندي؟</li>
-            <li>Hoe lang oefen je elke dag? — بتتدرب كل يوم لمدة قد إيه؟</li>
-            <li>Hoe lang duurt het om een taal te leren? — تعلُّم لغة بياخد وقت قد إيه؟</li>
-            <li>Hoe lang heb je nodig om je huiswerk te maken? — محتاج وقت قد إيه عشان تخلص واجبك؟</li>
+    <!-- Category 3 -->
+    <section class="card category-section">
+        <div class="card-header">
+            <h2>51–75: العمل والمشاريع والخدمات الفنية</h2>
+            <span class="badge">Werk en onderhoud</span>
+        </div>
+        <ul class="sentence-list">
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang werk je al als ingenieur? <button class="copy-btn" onclick="copyText('Hoe lang werk je al als ingenieur?')">نسخ</button></span>
+                <span class="sentence-ar">بقالك قد إيه بتشتغل مهندس؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang heb je ervaring in HVAC? <button class="copy-btn" onclick="copyText('Hoe lang heb je ervaring in HVAC?')">نسخ</button></span>
+                <span class="sentence-ar">عندك خبرة في مجال التكييف والتهوية لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang heb je bij je vorige werkgever gewerkt? <button class="copy-btn" onclick="copyText('Hoe lang heb je bij je vorige werkgever gewerkt?')">نسخ</button></span>
+                <span class="sentence-ar">اشتغلت عند صاحب العمل السابق لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt een sollicitatiegesprek? <button class="copy-btn" onclick="copyText('Hoe lang duurt een sollicitatiegesprek?')">نسخ</button></span>
+                <span class="sentence-ar">مقابلة العمل مدتها قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang moet ik op een antwoord wachten? <button class="copy-btn" onclick="copyText('Hoe lang moet ik op een antwoord wachten?')">نسخ</button></span>
+                <span class="sentence-ar">لازم أستنى قد إيه عشان يجيني رد؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de proefperiode? <button class="copy-btn" onclick="copyText('Hoe lang duurt de proefperiode?')">نسخ</button></span>
+                <span class="sentence-ar">فترة التجربة مدتها قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om een cv te maken? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om een cv te maken?')">نسخ</button></span>
+                <span class="sentence-ar">إعداد السيرة الذاتية بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de opleiding op het werk? <button class="copy-btn" onclick="copyText('Hoe lang duurt de opleiding op het werk?')">نسخ</button></span>
+                <span class="sentence-ar">التدريب في الشغل مدته قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang moet ik op de werf blijven? <button class="copy-btn" onclick="copyText('Hoe lang moet ik op de werf blijven?')">نسخ</button></span>
+                <span class="sentence-ar">لازم أفضل في موقع البناء لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het onderhoud? <button class="copy-btn" onclick="copyText('Hoe lang duurt het onderhoud?')">نسخ</button></span>
+                <span class="sentence-ar">الصيانة بتاخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de herstelling? <button class="copy-btn" onclick="copyText('Hoe lang duurt de herstelling?')">نسخ</button></span>
+                <span class="sentence-ar">التصليح بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om de installatie te monteren? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om de installatie te monteren?')">نسخ</button></span>
+                <span class="sentence-ar">تركيب النظام بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de inspectie? <button class="copy-btn" onclick="copyText('Hoe lang duurt de inspectie?')">نسخ</button></span>
+                <span class="sentence-ar">الفحص مدته قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang moet de pomp draaien? <button class="copy-btn" onclick="copyText('Hoe lang moet de pomp draaien?')">نسخ</button></span>
+                <span class="sentence-ar">المضخة لازم تشتغل لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om het probleem op te lossen? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om het probleem op te lossen?')">نسخ</button></span>
+                <span class="sentence-ar">حل المشكلة بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het om de documenten te controleren? <button class="copy-btn" onclick="copyText('Hoe lang duurt het om de documenten te controleren?')">نسخ</button></span>
+                <span class="sentence-ar">مراجعة المستندات بتاخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de levering? <button class="copy-btn" onclick="copyText('Hoe lang duurt de levering?')">نسخ</button></span>
+                <span class="sentence-ar">التوصيل بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang moet ik op mijn bestelling wachten? <button class="copy-btn" onclick="copyText('Hoe lang moet ik op mijn bestelling wachten?')">نسخ</button></span>
+                <span class="sentence-ar">لازم أستنى قد إيه لحد ما الطلب يوصل؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de herstelling van mijn auto? <button class="copy-btn" onclick="copyText('Hoe lang duurt de herstelling van mijn auto?')">نسخ</button></span>
+                <span class="sentence-ar">تصليح عربيتي بياخد وقت قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is de winkel open? <button class="copy-btn" onclick="copyText('Hoe lang is de winkel open?')">نسخ</button></span>
+                <span class="sentence-ar">المحل بيفضل مفتوح لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is de apotheek open? <button class="copy-btn" onclick="copyText('Hoe lang is de apotheek open?')">نسخ</button></span>
+                <span class="sentence-ar">الصيدلية بتفضل مفتوحة لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de afspraak bij de dokter? <button class="copy-btn" onclick="copyText('Hoe lang duurt de afspraak bij de dokter?')">نسخ</button></span>
+                <span class="sentence-ar">موعد الدكتور مدته قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang moet ik de medicatie gebruiken? <button class="copy-btn" onclick="copyText('Hoe lang moet ik de medicatie gebruiken?')">نسخ</button></span>
+                <span class="sentence-ar">لازم أستخدم الدواء لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het voordat de bus komt? <button class="copy-btn" onclick="copyText('Hoe lang duurt het voordat de bus komt?')">نسخ</button></span>
+                <span class="sentence-ar">فاضل قد إيه لحد ما الأوتوبيس ييجي؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt het voordat we aankomen? <button class="copy-btn" onclick="copyText('Hoe lang duurt het voordat we aankomen?')">نسخ</button></span>
+                <span class="sentence-ar">فاضل قد إيه لحد ما نوصل؟</span>
+            </li>
         </ul>
     </section>
 
-    <section id="category-3">
-        <h2>51–75: العمل والمشاريع والخدمات الفنية (Werk en onderhoud)</h2>
-        <ul>
-            <li>Hoe lang werk je al als ingenieur? — بقالك قد إيه بتشتغل مهندس؟</li>
-            <li>Hoe lang heb je ervaring in HVAC? — عندك خبرة في مجال التكييف والتهوية لمدة قد إيه؟</li>
-            <li>Hoe lang heb je bij je vorige werkgever gewerkt? — اشتغلت عند صاحب العمل السابق لمدة قد إيه؟</li>
-            <li>Hoe lang duurt een sollicitatiegesprek? — مقابلة العمل مدتها قد إيه؟</li>
-            <li>Hoe lang moet ik op een antwoord wachten? — لازم أستنى قد إيه عشان يجيني رد؟</li>
-            <li>Hoe lang duurt de proefperiode? — فترة التجربة مدتها قد إيه؟</li>
-            <li>Hoe lang duurt het om een cv te maken? — إعداد السيرة الذاتية بياخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt de opleiding op het werk? — التدريب في الشغل مدته قد إيه؟</li>
-            <li>Hoe lang moet ik op de werf blijven? — لازم أفضل في موقع البناء لمدة قد إيه؟</li>
-            <li>Hoe lang duurt het onderhoud? — الصيانة بتاخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt de herstelling? — التصليح بياخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt het om de installatie te monteren? — تركيب النظام بياخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt de inspectie? — الفحص مدته قد إيه؟</li>
-            <li>Hoe lang moet de pomp draaien? — المضخة لازم تشتغل لمدة قد إيه؟</li>
-            <li>Hoe lang duurt het om het probleem op te lossen? — حل المشكلة بياخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt het om de documenten te controleren? — مراجعة المستندات بتاخد وقت قد إيه؟</li>
-            <li>Hoe lang duurt de levering? — التوصيل بياخد وقت قد إيه؟</li>
-            <li>Hoe lang moet ik op mijn bestelling wachten? — لازم أستنى قد إيه لحد ما الطلب يوصل؟</li>
-            <li>Hoe lang duurt de herstelling van mijn auto? — تصليح عربيتي بياخد وقت قد إيه؟</li>
-            <li>Hoe lang is de winkel open? — المحل بيفضل مفتوح لمدة قد إيه؟</li>
-            <li>Hoe lang is de apotheek open? — الصيدلية بتفضل مفتوحة لمدة قد إيه؟</li>
-            <li>Hoe lang duurt de afspraak bij de dokter? — موعد الدكتور مدته قد إيه؟</li>
-            <li>Hoe lang moet ik de medicatie gebruiken? — لازم أستخدم الدواء لمدة قد إيه؟</li>
-            <li>Hoe lang duurt het voordat de bus komt? — فاضل قد إيه لحد ما الأوتوبيس ييجي؟</li>
-            <li>Hoe lang duurt het voordat we aankomen? — فاضل قد إيه لحد ما نوصل؟</li>
+    <!-- Category 4 -->
+    <section class="card category-section">
+        <div class="card-header">
+            <h2>76–100: قياس الطول المادي والتوقعات</h2>
+            <span class="badge">Lengte en verwachting</span>
+        </div>
+        <ul class="sentence-list">
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is deze tafel? <button class="copy-btn" onclick="copyText('Hoe lang is deze tafel?')">نسخ</button></span>
+                <span class="sentence-ar">طول الترابيزة دي قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is deze muur? <button class="copy-btn" onclick="copyText('Hoe lang is deze muur?')">نسخ</button></span>
+                <span class="sentence-ar">طول الحيطة دي قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is de gang? <button class="copy-btn" onclick="copyText('Hoe lang is de gang?')">نسخ</button></span>
+                <span class="sentence-ar">طول الممر قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is de kabel? <button class="copy-btn" onclick="copyText('Hoe lang is de kabel?')">نسخ</button></span>
+                <span class="sentence-ar">طول الكابل قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is deze buis? <button class="copy-btn" onclick="copyText('Hoe lang is deze buis?')">نسخ</button></span>
+                <span class="sentence-ar">طول الماسورة دي قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is de slang? <button class="copy-btn" onclick="copyText('Hoe lang is de slang?')">نسخ</button></span>
+                <span class="sentence-ar">طول الخرطوم قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is de leiding? <button class="copy-btn" onclick="copyText('Hoe lang is de leiding?')">نسخ</button></span>
+                <span class="sentence-ar">طول خط الأنابيب قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is de weg? <button class="copy-btn" onclick="copyText('Hoe lang is de weg?')">نسخ</button></span>
+                <span class="sentence-ar">طول الطريق قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is de brug? <button class="copy-btn" onclick="copyText('Hoe lang is de brug?')">نسخ</button></span>
+                <span class="sentence-ar">طول الكوبري قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is het gebouw? <button class="copy-btn" onclick="copyText('Hoe lang is het gebouw?')">نسخ</button></span>
+                <span class="sentence-ar">طول المبنى قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is je haar? <button class="copy-btn" onclick="copyText('Hoe lang is je haar?')">نسخ</button></span>
+                <span class="sentence-ar">شعرك طوله قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is je baard? <button class="copy-btn" onclick="copyText('Hoe lang is je baard?')">نسخ</button></span>
+                <span class="sentence-ar">دقنك طولها قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is deze broek? <button class="copy-btn" onclick="copyText('Hoe lang is deze broek?')">نسخ</button></span>
+                <span class="sentence-ar">طول البنطلون ده قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is de jurk? <button class="copy-btn" onclick="copyText('Hoe lang is de jurk?')">نسخ</button></span>
+                <span class="sentence-ar">طول الفستان قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is het touw? <button class="copy-btn" onclick="copyText('Hoe lang is het touw?')">نسخ</button></span>
+                <span class="sentence-ar">طول الحبل قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is de trein? <button class="copy-btn" onclick="copyText('Hoe lang is de trein?')">نسخ</button></span>
+                <span class="sentence-ar">طول القطار قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is de vrachtwagen? <button class="copy-btn" onclick="copyText('Hoe lang is de vrachtwagen?')">نسخ</button></span>
+                <span class="sentence-ar">طول الشاحنة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is het zwembad? <button class="copy-btn" onclick="copyText('Hoe lang is het zwembad?')">نسخ</button></span>
+                <span class="sentence-ar">طول حمام السباحة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang is het parcours? <button class="copy-btn" onclick="copyText('Hoe lang is het parcours?')">نسخ</button></span>
+                <span class="sentence-ar">طول مسار السباق قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang duurt de wedstrijd? <button class="copy-btn" onclick="copyText('Hoe lang duurt de wedstrijd?')">نسخ</button></span>
+                <span class="sentence-ar">المباراة مدتها قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang heb je gisteren gewerkt? <button class="copy-btn" onclick="copyText('Hoe lang heb je gisteren gewerkt?')">نسخ</button></span>
+                <span class="sentence-ar">اشتغلت امبارح لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang heb je op mij gewacht? <button class="copy-btn" onclick="copyText('Hoe lang heb je op mij gewacht?')">نسخ</button></span>
+                <span class="sentence-ar">استنيتني لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang ben je weggeweest? <button class="copy-btn" onclick="copyText('Hoe lang ben je weggeweest?')">نسخ</button></span>
+                <span class="sentence-ar">كنت غايب لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang wil je blijven? <button class="copy-btn" onclick="copyText('Hoe lang wil je blijven?')">نسخ</button></span>
+                <span class="sentence-ar">عايز تفضل لمدة قد إيه؟</span>
+            </li>
+            <li class="sentence-item">
+                <span class="sentence-nl">Hoe lang denk je dat het zal duren? <button class="copy-btn" onclick="copyText('Hoe lang denk je dat het zal duren?')">نسخ</button></span>
+                <span class="sentence-ar">في رأيك الموضوع هياخد وقت قد إيه؟</span>
+            </li>
         </ul>
     </section>
 
-    <section id="category-4">
-        <h2>76–100: قياس الطول المادي والتوقعات (Lengte en verwachting)</h2>
-        <ul>
-            <li>Hoe lang is deze tafel? — طول الترابيزة دي قد إيه؟</li>
-            <li>Hoe lang is deze muur? — طول الحيطة دي قد إيه؟</li>
-            <li>Hoe lang is de gang? — طول الممر قد إيه؟</li>
-            <li>Hoe lang is de kabel? — طول الكابل قد إيه؟</li>
-            <li>Hoe lang is deze buis? — طول الماسورة دي قد إيه؟</li>
-            <li>Hoe lang is de slang? — طول الخرطوم قد إيه؟</li>
-            <li>Hoe lang is de leiding? — طول خط الأنابيب قد إيه؟</li>
-            <li>Hoe lang is de weg? — طول الطريق قد إيه؟</li>
-            <li>Hoe lang is de brug? — طول الكوبري قد إيه؟</li>
-            <li>Hoe lang is het gebouw? — طول المبنى قد إيه؟</li>
-            <li>Hoe lang is je haar? — شعرك طوله قد إيه؟</li>
-            <li>Hoe lang is je baard? — دقنك طولها قد إيه؟</li>
-            <li>Hoe lang is deze broek? — طول البنطلون ده قد إيه؟</li>
-            <li>Hoe lang is de jurk? — طول الفستان قد إيه؟</li>
-            <li>Hoe lang is het touw? — طول الحبل قد إيه؟</li>
-            <li>Hoe lang is de trein? — طول القطار قد إيه؟</li>
-            <li>Hoe lang is de vrachtwagen? — طول الشاحنة قد إيه؟</li>
-            <li>Hoe lang is het zwembad? — طول حمام السباحة قد إيه؟</li>
-            <li>Hoe lang is het parcours? — طول مسار السباق قد إيه؟</li>
-            <li>Hoe lang duurt de wedstrijd? — المباراة مدتها قد إيه؟</li>
-            <li>Hoe lang heb je gisteren gewerkt? — اشتغلت امبارح لمدة قد إيه؟</li>
-            <li>Hoe lang heb je op mij gewacht? — استنيتني لمدة قد إيه؟</li>
-            <li>Hoe lang ben je weggeweest? — كنت غايب لمدة قد إيه؟</li>
-            <li>Hoe lang wil je blijven? — عايز تفضل لمدة قد إيه؟</li>
-            <li>Hoe lang denk je dat het zal duren? — في رأيك الموضوع هياخد وقت قد إيه؟</li>
-        </ul>
+    <!-- Comparison Table Section -->
+    <section class="card" id="comparison-table">
+        <div class="card-header">
+            <h2>💡 مقارنة شاملة بأدوات الاستفهام الأخرى</h2>
+        </div>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>أداة الاستفهام</th>
+                        <th>المعنى والتطبيق</th>
+                        <th>مثال توضيحي</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Hoe lang?</strong></td>
+                        <td>المدة الزمنية المفتوحة / الطول المادي</td>
+                        <td><span dir="ltr">Hoe lang duurt de les?</span> (الدرس مدته قد إيه؟)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hoe laat?</strong></td>
+                        <td>التوقيت المحدد بالنقطة الزمنية (الساعة)</td>
+                        <td><span dir="ltr">Hoe laat begint de les?</span> (الدرس بيبدأ الساعة كام؟)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sinds wanneer?</strong></td>
+                        <td>بداية حدث مستمر حتى الوقت الحاضر</td>
+                        <td><span dir="ltr">Sinds wanneer woon je hier?</span> (ساكن هنا من إمتى؟)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hoe ver?</strong></td>
+                        <td>المسافات المكانية والبعد الجغرافي</td>
+                        <td><span dir="ltr">Hoe ver is het station?</span> (المحطة بعيدة قد إيه؟)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
+</div>
 
-    <section id="comparison-table">
-        <h2>💡 مقارنة بين أدوات الاستفهام الخاصة بالوقت والمسافة</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>أداة الاستفهام</th>
-                    <th>المعنى بالتفصيل</th>
-                    <th>مثال توضيحي</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Hoe lang?</strong></td>
-                    <td>المدة الزمنية المفتوحة / الطول المادي</td>
-                    <td>Hoe lang duurt de les? — الدرس مدته قد إيه؟</td>
-                </tr>
-                <tr>
-                    <td><strong>Hoe laat?</strong></td>
-                    <td>الساعة والتوقيت الدقيق</td>
-                    <td>Hoe laat begint de les? — الدرس بيبدأ الساعة كام؟</td>
-                </tr>
-                <tr>
-                    <td><strong>Sinds wanneer?</strong></td>
-                    <td>نقطة بداية حدث مستمر (من إمتى؟)</td>
-                    <td>Sinds wanneer woon je hier? — ساكن هنا من إمتى؟</td>
-                </tr>
-                <tr>
-                    <td><strong>Hoe ver?</strong></td>
-                    <td>المسافة المكنية (بعيد قد إيه؟)</td>
-                    <td>Hoe ver is het station? — المحطة بعيدة قد إيه؟</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+<!-- JavaScript Interactivity -->
+<script>
+    // Live Filter Functionality
+    function filterSentences() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const items = document.querySelectorAll('.sentence-item');
+        const sections = document.querySelectorAll('.category-section');
+
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (text.includes(input)) {
+                item.style.display = "flex";
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+        // Hide empty categories during search
+        sections.forEach(section => {
+            const visibleItems = section.querySelectorAll('.sentence-item[style*="display: flex"]');
+            if (input !== '' && visibleItems.length === 0) {
+                section.style.display = 'none';
+            } else {
+                section.style.display = 'block';
+            }
+        });
+    }
+
+    // Copy to Clipboard
+    function copyText(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert('تم نسخ الجملة: ' + text);
+        });
+    }
+</script>
+
 </body>
 </html>
