@@ -2,178 +2,486 @@
 <html lang="nl" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>100 جملة هولندية بلجيكية باستخدام Hoeveel - دليل احترافي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة هولندية بلجيكية باستخدام Hoeveel - دليل احترافي شامل</title>
+    
+    <!-- خط Tajawal للغة العربية واللاتينية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent-color: #d97706;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: #ffffff;
+            padding: 40px 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .badge-belgium {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Section Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Grammar Box */
+        .grammar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .grammar-item {
+            background: var(--badge-bg);
+            border-right: 4px solid var(--primary-light);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .grammar-item h3 {
+            color: var(--badge-text);
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+        }
+
+        .grammar-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Search Control */
+        .search-box {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 20px;
+            font-size: 1rem;
+            font-family: inherit;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-light);
+        }
+
+        /* Sentence List / Grid */
+        .sentence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 12px;
+        }
+
+        .sentence-card {
+            background: #fafafa;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .sentence-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background: #ffffff;
+        }
+
+        .dutch-text {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            direction: ltr;
+            text-align: right;
+        }
+
+        .arabic-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .sentence-num {
+            font-size: 0.75rem;
+            background: var(--border-color);
+            color: var(--text-muted);
+            padding: 2px 6px;
+            border-radius: 4px;
+            align-self: flex-start;
+        }
+
+        /* Table Styling */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--badge-bg);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .dutch-cell {
+            direction: ltr;
+            text-align: right;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Comparison Box */
+        .comparison-box {
+            background: #fffbebf5;
+            border: 1px solid #fef3c7;
+            border-right: 4px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+
+        /* Responsive Settings */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .sentence-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .search-box {
+                display: none;
+            }
+            .card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- 
-      ====================================================
-      دليل شامل: 100 جملة بلجيكية هولندية باستخدام Hoeveel? (كم؟ / بكام؟)
-      مرتبة في 4 تصنيفات رئيسية + شرح الفروق النحوية والاستخدامات
-      ====================================================
-    -->
 
-    <section id="grammar-rule">
-        <h2>📌 القاعدة الاستخدامية: أداة الاستفهام Hoeveel (كم؟ / بكام؟)</h2>
-        <p>
-            تُستخدم <strong>Hoeveel</strong> للسؤال عن الكميات القابلة للعدّ والأسماء غير القابلة للعدّ، إضافة إلى الأسعار والنسب.
-        </p>
-        <ul>
-            <li><strong>المجموعات والأعداد:</strong> تُتبع بالاسم مباشرة (مثل: Hoeveel mensen? / Hoeveel kinderen?).</li>
-            <li><strong>الأسعار:</strong> تُستخدم في التركيب الشهير (Hoeveel kost dit? / Hoeveel bedraagt...?).</li>
-            <li><strong>التكرار والزمن:</strong> تُستخدم للتعبير عن عدد المرات (Hoeveel keer?) أو الوحدات الزمنية المحصورة (Hoeveel dagen?).</li>
-        </ul>
+<div class="container">
+
+    <!-- Header Section -->
+    <header>
+        <h1>100 جملة هولندية بلجيكية باستخدام Hoeveel</h1>
+        <p>دليل شامل ومحترف للمستويات A1-B1 مع شرح القواعد والاستخدامات اليومية</p>
+        <span class="badge-belgium">🇧🇪 Nederlands in België (Vlaams)</span>
+    </header>
+
+    <!-- Interactive Search Bar -->
+    <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 ابحث عن أي جملة باللغة العربية أو الهولندية...">
+    </div>
+
+    <!-- Grammar Rule Section -->
+    <section class="card" id="grammar-rule">
+        <h2 class="section-title">📌 القاعدة الاستخدامية: أداة الاستفهام Hoeveel (كم؟ / بكام؟)</h2>
+        <p>تُستخدم <strong>Hoeveel</strong> للسؤال عن الكميات (سواء القابلة للعدّ أو غير القابلة للعدّ)، وكذلك للأسعار، والنسب، والقياسات.</p>
+        
+        <div class="grammar-grid">
+            <div class="grammar-item">
+                <h3>1. الأسماء والمجموعات</h3>
+                <p>تُتبع بالاسم مباشرة عند السؤال عن العدد أو الكمية:<br><em>Hoeveel mensen? / Hoeveel geld?</em></p>
+            </div>
+            <div class="grammar-item">
+                <h3>2. الأسعار والتكاليف</h3>
+                <p>تُستخدم مع الأفعال (kosten / bedragen):<br><em>Hoeveel kost dit? / Hoeveel bedraagt de huur?</em></p>
+            </div>
+            <div class="grammar-item">
+                <h3>3. المرات والزمن</h3>
+                <p>للسؤال عن التكرار أو الوحدات الزمنية المحددة:<br><em>Hoeveel keer? / Hoeveel dagen?</em></p>
+            </div>
+        </div>
     </section>
 
-    <section id="category-1">
-        <h2>1–25: الحياة اليومية والأساسيات (Het dagelijks leven)</h2>
-        <ul>
-            <li>Hoeveel kost dit? — بكام ده؟</li>
-            <li>Hoeveel kinderen heb je? — عندك كام طفل؟</li>
-            <li>Hoeveel kost de huur? — الإيجار بكام؟</li>
-            <li>Hoeveel tijd heb je nodig? — محتاج وقت قد إيه؟</li>
-            <li>Hoeveel mensen komen er? — كام شخص هييجوا؟</li>
-            <li>Hoeveel broers heb je? — عندك كام أخ؟</li>
-            <li>Hoeveel zussen heb je? — عندك كام أخت؟</li>
-            <li>Hoeveel dagen blijf je hier? — هتقعد هنا كام يوم؟</li>
-            <li>Hoeveel uur werk je per dag? — بتشتغل كام ساعة في اليوم؟</li>
-            <li>Hoeveel verdien je per maand? — بتكسب كام في الشهر؟</li>
-            <li>Hoeveel betaal je voor elektriciteit? — بتدفع كام للكهرباء؟</li>
-            <li>Hoeveel water drink je per dag? — بتشرب قد إيه مياه في اليوم؟</li>
-            <li>Hoeveel koffie drink je? — بتشرب كام قهوة؟</li>
-            <li>Hoeveel suiker wil je? — عايز سكر قد إيه؟</li>
-            <li>Hoeveel melk hebben we nog? — لسه عندنا لبن قد إيه؟</li>
-            <li>Hoeveel appels wil je kopen? — عايز تشتري كام تفاحة؟</li>
-            <li>Hoeveel broodjes wil je? — عايز كام ساندويتش؟</li>
-            <li>Hoeveel geld heb je bij je? — معاك فلوس قد إيه؟</li>
-            <li>Hoeveel kost een ticket? — التذكرة بكام؟</li>
-            <li>Hoeveel tickets moeten we kopen? — لازم نشتري كام تذكرة؟</li>
-            <li>Hoeveel kilometer is het van hier? — المسافة من هنا كام كيلومتر؟</li>
-            <li>Hoeveel minuten duurt de busrit? — رحلة الأوتوبيس بتاخد كام دقيقة؟</li>
-            <li>Hoeveel haltes zijn er nog? — فاضل كام محطة؟</li>
-            <li>Hoeveel keer per week sport je? — بتتمرن كام مرة في الأسبوع؟</li>
-            <li>Hoeveel uur slaap je per nacht? — بتنام كام ساعة كل ليلة؟</li>
-        </ul>
+    <!-- Category 1 -->
+    <section class="card" id="category-1">
+        <h2 class="section-title">1–25: الحياة اليومية والأساسيات (Het dagelijks leven)</h2>
+        <div class="sentence-grid">
+            <div class="sentence-card"><span class="sentence-num">#1</span><div class="dutch-text">Hoeveel kost dit?</div><div class="arabic-text">بكام ده؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#2</span><div class="dutch-text">Hoeveel kinderen heb je?</div><div class="arabic-text">عندك كام طفل؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#3</span><div class="dutch-text">Hoeveel kost de huur?</div><div class="arabic-text">الإيجار بكام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#4</span><div class="dutch-text">Hoeveel tijd heb je nodig?</div><div class="arabic-text">محتاج وقت قد إيه؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#5</span><div class="dutch-text">Hoeveel mensen komen er?</div><div class="arabic-text">كام شخص هييجوا؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#6</span><div class="dutch-text">Hoeveel broers heb je?</div><div class="arabic-text">عندك كام أخ؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#7</span><div class="dutch-text">Hoeveel zussen heb je?</div><div class="arabic-text">عندك كام أخت؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#8</span><div class="dutch-text">Hoeveel dagen blijf je hier?</div><div class="arabic-text">هتقعد هنا كام يوم؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#9</span><div class="dutch-text">Hoeveel uur werk je per dag?</div><div class="arabic-text">بتشتغل كام ساعة في اليوم؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#10</span><div class="dutch-text">Hoeveel verdien je per maand?</div><div class="arabic-text">بتكسب كام في الشهر؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#11</span><div class="dutch-text">Hoeveel betaal je voor elektriciteit?</div><div class="arabic-text">بتدفع كام للكهرباء؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#12</span><div class="dutch-text">Hoeveel water drink je per dag?</div><div class="arabic-text">بتشرب قد إيه مياه في اليوم؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#13</span><div class="dutch-text">Hoeveel koffie drink je?</div><div class="arabic-text">بتشرب كام قهوة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#14</span><div class="dutch-text">Hoeveel suiker wil je?</div><div class="arabic-text">عايز سكر قد إيه؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#15</span><div class="dutch-text">Hoeveel melk hebben we nog?</div><div class="arabic-text">لسه عندنا لبن قد إيه؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#16</span><div class="dutch-text">Hoeveel appels wil je kopen?</div><div class="arabic-text">عايز تشتري كام تفاحة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#17</span><div class="dutch-text">Hoeveel broodjes wil je?</div><div class="arabic-text">عايز كام ساندويتش؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#18</span><div class="dutch-text">Hoeveel geld heb je bij je?</div><div class="arabic-text">معاك فلوس قد إيه؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#19</span><div class="dutch-text">Hoeveel kost een ticket?</div><div class="arabic-text">التذكرة بكام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#20</span><div class="dutch-text">Hoeveel tickets moeten we kopen?</div><div class="arabic-text">لازم نشتري كام تذكرة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#21</span><div class="dutch-text">Hoeveel kilometer is het van hier?</div><div class="arabic-text">المسافة من هنا كام كيلومتر؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#22</span><div class="dutch-text">Hoeveel minuten duurt de busrit?</div><div class="arabic-text">رحلة الأوتوبيس بتاخد كام دقيقة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#23</span><div class="dutch-text">Hoeveel haltes zijn er nog?</div><div class="arabic-text">فاضل كام محطة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#24</span><div class="dutch-text">Hoeveel keer per week sport je?</div><div class="arabic-text">بتتمرن كام مرة في الأسبوع؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#25</span><div class="dutch-text">Hoeveel uur slaap je per nacht?</div><div class="arabic-text">بتنام كام ساعة كل ليلة؟</div></div>
+        </div>
     </section>
 
-    <section id="category-2">
-        <h2>26–50: الدراسة والعمل (Studie en werk)</h2>
-        <ul>
-            <li>Hoeveel talen spreek je? — بتتكلم كام لغة؟</li>
-            <li>Hoeveel talen wil je leren? — عايز تتعلم كام لغة؟</li>
-            <li>Hoeveel lessen heb je vandaag? — عندك كام حصة النهارده؟</li>
-            <li>Hoeveel studenten zitten er in de klas? — في كام طالب في الفصل؟</li>
-            <li>Hoeveel huiswerk heb je? — عندك واجب قد إيه؟</li>
-            <li>Hoeveel examens moet je nog doen? — لسه عليك كام امتحان؟</li>
-            <li>Hoeveel boeken heb je gelezen? — قرأت كام كتاب؟</li>
-            <li>Hoeveel woorden ken je in het Nederlands? — تعرف كام كلمة بالهولندي؟</li>
-            <li>Hoeveel fouten heb ik gemaakt? — أنا عملت كام غلطة؟</li>
-            <li>Hoeveel vragen zijn er? — فيه كام سؤال؟</li>
-            <li>Hoeveel e-mails krijg je per dag? — بتستقبل كام إيميل في اليوم؟</li>
-            <li>Hoeveel berichten heb je ontvangen? — استقبلت كام رسالة؟</li>
-            <li>Hoeveel afspraken heb je vandaag? — عندك كام موعد النهارده؟</li>
-            <li>Hoeveel mensen werken hier? — كام شخص بيشتغل هنا؟</li>
-            <li>Hoeveel collega’s heb je? — عندك كام زميل في الشغل؟</li>
-            <li>Hoeveel ervaring heb je? — عندك خبرة قد إيه؟</li>
-            <li>Hoeveel jaar ervaring heb je als ingenieur? — عندك كام سنة خبرة كمهندس؟</li>
-            <li>Hoeveel projecten heb je geleid? — قدت كام مشروع؟</li>
-            <li>Hoeveel werknemers werken op de werf? — كام عامل بيشتغل في موقع البناء؟</li>
-            <li>Hoeveel uren moet ik werken? — لازم أشتغل كام ساعة؟</li>
-            <li>Hoeveel vakantiedagen heb ik? — عندي كام يوم إجازة؟</li>
-            <li>Hoeveel bedraagt mijn nettoloon? — صافي مرتبي كام؟</li>
-            <li>Hoeveel belasting moet ik betalen? — لازم أدفع ضرايب قد إيه؟</li>
-            <li>Hoeveel kost de verzekering? — التأمين بكام؟</li>
-            <li>Hoeveel maanden duurt het contract? — العقد مدته كام شهر؟</li>
-        </ul>
+    <!-- Category 2 -->
+    <section class="card" id="category-2">
+        <h2 class="section-title">26–50: الدراسة والعمل (Studie en werk)</h2>
+        <div class="sentence-grid">
+            <div class="sentence-card"><span class="sentence-num">#26</span><div class="dutch-text">Hoeveel talen spreek je?</div><div class="arabic-text">بتتكلم كام لغة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#27</span><div class="dutch-text">Hoeveel talen wil je leren?</div><div class="arabic-text">عايز تتعلم كام لغة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#28</span><div class="dutch-text">Hoeveel lessen heb je vandaag?</div><div class="arabic-text">عندك كام حصة النهارده؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#29</span><div class="dutch-text">Hoeveel studenten zitten er in de klas?</div><div class="arabic-text">في كام طالب في الفصل؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#30</span><div class="dutch-text">Hoeveel huiswerk heb je?</div><div class="arabic-text">عندك واجب قد إيه؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#31</span><div class="dutch-text">Hoeveel examens moet je nog doen?</div><div class="arabic-text">لسه عليك كام امتحان؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#32</span><div class="dutch-text">Hoeveel boeken heb je gelezen?</div><div class="arabic-text">قرأت كام كتاب؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#33</span><div class="dutch-text">Hoeveel woorden ken je in het Nederlands?</div><div class="arabic-text">تعرف كام كلمة بالهولندي؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#34</span><div class="dutch-text">Hoeveel fouten heb ik gemaakt?</div><div class="arabic-text">أنا عملت كام غلطة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#35</span><div class="dutch-text">Hoeveel vragen zijn er?</div><div class="arabic-text">فيه كام سؤال؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#36</span><div class="dutch-text">Hoeveel e-mails krijg je per dag?</div><div class="arabic-text">بتستقبل كام إيميل في اليوم؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#37</span><div class="dutch-text">Hoeveel berichten heb je ontvangen?</div><div class="arabic-text">استقبلت كام رسالة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#38</span><div class="dutch-text">Hoeveel afspraken heb je vandaag?</div><div class="arabic-text">عندك كام موعد النهارده؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#39</span><div class="dutch-text">Hoeveel mensen werken hier?</div><div class="arabic-text">كام شخص بيشتغل هنا؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#40</span><div class="dutch-text">Hoeveel collega’s heb je?</div><div class="arabic-text">عندك كام زميل في الشغل؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#41</span><div class="dutch-text">Hoeveel ervaring heb je?</div><div class="arabic-text">عندك خبرة قد إيه؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#42</span><div class="dutch-text">Hoeveel jaar ervaring heb je als ingenieur?</div><div class="arabic-text">عندك كام سنة خبرة كمهندس؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#43</span><div class="dutch-text">Hoeveel projecten heb je geleid?</div><div class="arabic-text">قدت كام مشروع؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#44</span><div class="dutch-text">Hoeveel werknemers werken op de werf?</div><div class="arabic-text">كام عامل بيشتغل في موقع البناء؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#45</span><div class="dutch-text">Hoeveel uren moet ik werken?</div><div class="arabic-text">لازم أشتغل كام ساعة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#46</span><div class="dutch-text">Hoeveel vakantiedagen heb ik?</div><div class="arabic-text">عندي كام يوم إجازة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#47</span><div class="dutch-text">Hoeveel bedraagt mijn nettoloon?</div><div class="arabic-text">صافي مرتبي كام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#48</span><div class="dutch-text">Hoeveel belasting moet ik betalen?</div><div class="arabic-text">لازم أدفع ضرايب قد إيه؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#49</span><div class="dutch-text">Hoeveel kost de verzekering?</div><div class="arabic-text">التأمين بكام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#50</span><div class="dutch-text">Hoeveel maanden duurt het contract?</div><div class="arabic-text">العقد مدته كام شهر؟</div></div>
+        </div>
     </section>
 
-    <section id="category-3">
-        <h2>51–75: السكن والتسوق (Wonen en winkelen)</h2>
-        <ul>
-            <li>Hoeveel kamers heeft het appartement? — الشقة فيها كام أوضة؟</li>
-            <li>Hoeveel slaapkamers zijn er? — فيه كام غرفة نوم؟</li>
-            <li>Hoeveel bedraagt de waarborg? — مبلغ التأمين على الإيجار كام؟</li>
-            <li>Hoeveel betaal je voor gas? — بتدفع كام للغاز؟</li>
-            <li>Hoeveel kost internet per maand? — الإنترنت بكام في الشهر؟</li>
-            <li>Hoeveel mensen wonen hier? — كام شخص ساكن هنا؟</li>
-            <li>Hoeveel sleutels heb je gekregen? — استلمت كام مفتاح؟</li>
-            <li>Hoeveel meubels moeten we kopen? — لازم نشتري كام قطعة أثاث؟</li>
-            <li>Hoeveel dozen moeten we verhuizen? — لازم ننقل كام صندوق؟</li>
-            <li>Hoeveel vuilniszakken hebben we nodig? — محتاجين كام كيس زبالة؟</li>
-            <li>Hoeveel kleren neem je mee? — هتاخد معاك كام قطعة ملابس؟</li>
-            <li>Hoeveel schoenen heb je gekocht? — اشتريت كام جزمة؟</li>
-            <li>Hoeveel kost deze jas? — الجاكيت ده بكام؟</li>
-            <li>Hoeveel korting krijg ik? — هاخد خصم قد إيه؟</li>
-            <li>Hoeveel betaal je in totaal? — هتدفع كام في الإجمالي؟</li>
-            <li>Hoeveel wisselgeld krijg ik terug? — هاخد كام باقي؟</li>
-            <li>Hoeveel kost een kilo aardappelen? — كيلو البطاطس بكام؟</li>
-            <li>Hoeveel gram kaas wil je? — عايز كام جرام جبنة؟</li>
-            <li>Hoeveel eieren zitten er in de doos? — في كام بيضة في العلبة؟</li>
-            <li>Hoeveel flessen water moeten we meenemen? — لازم ناخد معانا كام زجاجة مياه؟</li>
-            <li>Hoeveel porties zijn er nog? — فاضل كام حصة أكل؟</li>
-            <li>Hoeveel personen kunnen hier eten? — كام شخص يقدروا ياكلوا هنا؟</li>
-            <li>Hoeveel kost de rekening? — الحساب بكام؟</li>
-            <li>Hoeveel fooi wil je geven? — عايز تسيب بقشيش قد إيه؟</li>
-            <li>Hoeveel keer heb je dit gerecht gegeten? — أكلت الأكلة دي كام مرة؟</li>
-        </ul>
+    <!-- Category 3 -->
+    <section class="card" id="category-3">
+        <h2 class="section-title">51–75: السكن والتسوق (Wonen en winkelen)</h2>
+        <div class="sentence-grid">
+            <div class="sentence-card"><span class="sentence-num">#51</span><div class="dutch-text">Hoeveel kamers heeft het appartement?</div><div class="arabic-text">الشقة فيها كام أوضة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#52</span><div class="dutch-text">Hoeveel slaapkamers zijn er?</div><div class="arabic-text">فيه كام غرفة نوم؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#53</span><div class="dutch-text">Hoeveel bedraagt de waarborg?</div><div class="arabic-text">مبلغ التأمين على الإيجار كام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#54</span><div class="dutch-text">Hoeveel betaal je voor gas?</div><div class="arabic-text">بتدفع كام للغاز؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#55</span><div class="dutch-text">Hoeveel kost internet per maand?</div><div class="arabic-text">الإنترنت بكام في الشهر؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#56</span><div class="dutch-text">Hoeveel mensen wonen hier?</div><div class="arabic-text">كام شخص ساكن هنا؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#57</span><div class="dutch-text">Hoeveel sleutels heb je gekregen?</div><div class="arabic-text">استلمت كام مفتاح؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#58</span><div class="dutch-text">Hoeveel meubels moeten we kopen?</div><div class="arabic-text">لازم نشتري كام قطعة أثاث؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#59</span><div class="dutch-text">Hoeveel dozen moeten we verhuizen?</div><div class="arabic-text">لازم ننقل كام صندوق؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#60</span><div class="dutch-text">Hoeveel vuilniszakken hebben we nodig?</div><div class="arabic-text">محتاجين كام كيس زبالة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#61</span><div class="dutch-text">Hoeveel kleren neem je mee?</div><div class="arabic-text">هتاخد معاك كام قطعة ملابس؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#62</span><div class="dutch-text">Hoeveel schoenen heb je gekocht?</div><div class="arabic-text">اشتريت كام جزمة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#63</span><div class="dutch-text">Hoeveel kost deze jas?</div><div class="arabic-text">الجاكيت ده بكام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#64</span><div class="dutch-text">Hoeveel korting krijg ik?</div><div class="arabic-text">هاخد خصم قد إيه؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#65</span><div class="dutch-text">Hoeveel betaal je in totaal?</div><div class="arabic-text">هتدفع كام في الإجمالي؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#66</span><div class="dutch-text">Hoeveel wisselgeld krijg ik terug?</div><div class="arabic-text">هاخد كام باقي؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#67</span><div class="dutch-text">Hoeveel kost een kilo aardappelen?</div><div class="arabic-text">كيلو البطاطس بكام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#68</span><div class="dutch-text">Hoeveel gram kaas wil je?</div><div class="arabic-text">عايز كام جرام جبنة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#69</span><div class="dutch-text">Hoeveel eieren zitten er in de doos?</div><div class="arabic-text">في كام بيضة في العلبة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#70</span><div class="dutch-text">Hoeveel flessen water moeten we meenemen?</div><div class="arabic-text">لازم ناخد معانا كام زجاجة مياه؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#71</span><div class="dutch-text">Hoeveel porties zijn er nog?</div><div class="arabic-text">فاضل كام حصة أكل؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#72</span><div class="dutch-text">Hoeveel personen kunnen hier eten?</div><div class="arabic-text">كام شخص يقدروا ياكلوا هنا؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#73</span><div class="dutch-text">Hoeveel kost de rekening?</div><div class="arabic-text">الحساب بكام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#74</span><div class="dutch-text">Hoeveel fooi wil je geven?</div><div class="arabic-text">عايز تسيب بقشيش قد إيه؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#75</span><div class="dutch-text">Hoeveel keer heb je dit gerecht gegeten?</div><div class="arabic-text">أكلت الأكلة دي كام مرة؟</div></div>
+        </div>
     </section>
 
-    <section id="category-4">
-        <h2>76–100: المواصلات والبروقراطية والحياة في بلجيكا (Transport en administratie)</h2>
-        <ul>
-            <li>Hoeveel kost een treinkaartje naar Gent? — تذكرة القطار إلى خنت بكام؟</li>
-            <li>Hoeveel kost een abonnement? — الاشتراك بكام؟</li>
-            <li>Hoeveel keer moet ik overstappen? — لازم أغيّر وسيلة المواصلات كام مرة؟</li>
-            <li>Hoeveel minuten moet ik wachten? — لازم أستنى كام دقيقة؟</li>
-            <li>Hoeveel plaatsen zijn er vrij? — فيه كام مكان فاضي؟</li>
-            <li>Hoeveel bagage mag ik meenemen? — مسموح آخد أمتعة قد إيه؟</li>
-            <li>Hoeveel kilometer kan deze auto rijden? — العربية دي تقدر تمشي كام كيلومتر؟</li>
-            <li>Hoeveel benzine zit er nog in de tank? — فاضل قد إيه بنزين في الخزان؟</li>
-            <li>Hoeveel kost een rijles? — حصة تعليم السواقة بكام؟</li>
-            <li>Hoeveel lessen heb ik nog nodig? — لسه محتاج كام حصة؟</li>
-            <li>Hoeveel mensen staan er in de rij? — واقف كام شخص في الطابور؟</li>
-            <li>Hoeveel dagen ben je in België geweest? — قضيت كام يوم في بلجيكا؟</li>
-            <li>Hoeveel maanden woon je al in Harelbeke? — بقالك كام شهر ساكن في هارلبيكة؟</li>
-            <li>Hoeveel documenten moet ik indienen? — لازم أقدّم كام مستند؟</li>
-            <li>Hoeveel kopieën heb je nodig? — محتاج كام نسخة؟</li>
-            <li>Hoeveel kost de aanvraag? — طلب التقديم تكلفته كام؟</li>
-            <li>Hoeveel weken duurt de procedure? — الإجراءات بتاخد كام أسبوع؟</li>
-            <li>Hoeveel formulieren moet ik invullen? — لازم أملا كام استمارة؟</li>
-            <li>Hoeveel keer moet ik langskomen? — لازم أجي كام مرة؟</li>
-            <li>Hoeveel mensen hebben zich ingeschreven? — كام شخص سجّلوا؟</li>
-            <li>Hoeveel procent korting krijg ik? — هاخد خصم كام في المية؟</li>
-            <li>Hoeveel graden is het buiten? — درجة الحرارة بره كام؟</li>
-            <li>Hoeveel kilo weeg je? — وزنك كام كيلو؟</li>
-            <li>Hoeveel centimeter ben je lang? — طولك كام سنتيمتر؟</li>
-            <li>Hoeveel wil je er hebben? — عايز كام واحدة منهم؟</li>
-        </ul>
+    <!-- Category 4 -->
+    <section class="card" id="category-4">
+        <h2 class="section-title">76–100: المواصلات والبيروقراطية بالحياة في بلجيكا (Transport en administratie)</h2>
+        <div class="sentence-grid">
+            <div class="sentence-card"><span class="sentence-num">#76</span><div class="dutch-text">Hoeveel kost een treinkaartje naar Gent?</div><div class="arabic-text">تذكرة القطار إلى خنت بكام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#77</span><div class="dutch-text">Hoeveel kost een abonnement?</div><div class="arabic-text">الاشتراك بكام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#78</span><div class="dutch-text">Hoeveel keer moet ik overstappen?</div><div class="arabic-text">لازم أغيّر وسيلة المواصلات كام مرة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#79</span><div class="dutch-text">Hoeveel minuten moet ik wachten?</div><div class="arabic-text">لازم أستنى كام دقيقة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#80</span><div class="dutch-text">Hoeveel plaatsen zijn er vrij?</div><div class="arabic-text">فيه كام مكان فاضي؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#81</span><div class="dutch-text">Hoeveel bagage mag ik meenemen?</div><div class="arabic-text">مسموح آخد أمتعة قد إيه؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#82</span><div class="dutch-text">Hoeveel kilometer kan deze auto rijden?</div><div class="arabic-text">العربية دي تقدر تمشي كام كيلومتر؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#83</span><div class="dutch-text">Hoeveel benzine zit er nog in de tank?</div><div class="arabic-text">فاضل قد إيه بنزين في الخزان؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#84</span><div class="dutch-text">Hoeveel kost een rijles?</div><div class="arabic-text">حصة تعليم السواقة بكام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#85</span><div class="dutch-text">Hoeveel lessen heb ik nog nodig?</div><div class="arabic-text">لسه محتاج كام حصة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#86</span><div class="dutch-text">Hoeveel mensen staan er in de rij?</div><div class="arabic-text">واقف كام شخص في الطابور؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#87</span><div class="dutch-text">Hoeveel dagen ben je in België geweest?</div><div class="arabic-text">قضيت كام يوم في بلجيكا؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#88</span><div class="dutch-text">Hoeveel maanden woon je al in Harelbeke?</div><div class="arabic-text">بقالك كام شهر ساكن في هارلبيكة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#89</span><div class="dutch-text">Hoeveel documenten moet ik indienen?</div><div class="arabic-text">لازم أقدّم كام مستند؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#90</span><div class="dutch-text">Hoeveel kopieën heb je nodig?</div><div class="arabic-text">محتاج كام نسخة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#91</span><div class="dutch-text">Hoeveel kost de aanvraag?</div><div class="arabic-text">طلب التقديم تكلفته كام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#92</span><div class="dutch-text">Hoeveel weken duurt de procedure?</div><div class="arabic-text">الإجراءات بتاخد كام أسبوع؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#93</span><div class="dutch-text">Hoeveel formulieren moet ik invullen?</div><div class="arabic-text">لازم أملا كام استمارة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#94</span><div class="dutch-text">Hoeveel keer moet ik langskomen?</div><div class="arabic-text">لازم أجي كام مرة؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#95</span><div class="dutch-text">Hoeveel mensen hebben zich ingeschreven?</div><div class="arabic-text">كام شخص سجّلوا؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#96</span><div class="dutch-text">Hoeveel procent korting krijg ik?</div><div class="arabic-text">هاخد خصم كام في المية؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#97</span><div class="dutch-text">Hoeveel graden is het buiten?</div><div class="arabic-text">درجة الحرارة بره كام؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#98</span><div class="dutch-text">Hoeveel kilo weeg je?</div><div class="arabic-text">وزنك كام كيلو؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#99</span><div class="dutch-text">Hoeveel centimeter ben je lang?</div><div class="arabic-text">طولك كام سنتيمتر؟</div></div>
+            <div class="sentence-card"><span class="sentence-num">#100</span><div class="dutch-text">Hoeveel wil je er hebben?</div><div class="arabic-text">عايز كام واحدة منهم؟</div></div>
+        </div>
     </section>
 
-    <section id="common-expressions">
-        <h2>💡 أسرع التركيبات استخدامًا مع Hoeveel</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>التركيبة الهولندية</th>
-                    <th>المعنى العامي/البلجيكي</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Hoeveel kost het?</td><td>بكام؟</td></tr>
-                <tr><td>Hoeveel kost het per maand?</td><td>بكام في الشهر؟</td></tr>
-                <tr><td>Hoeveel mensen?</td><td>كام شخص؟</td></tr>
-                <tr><td>Hoeveel tijd?</td><td>وقت قد إيه؟</td></tr>
-                <tr><td>Hoeveel keer?</td><td>كام مرة؟</td></tr>
-            </tbody>
-        </table>
+    <!-- Common Expressions -->
+    <section class="card" id="common-expressions">
+        <h2 class="section-title">💡 أسرع التركيبات استخداماً مع Hoeveel</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>التركيبة الهولندية</th>
+                        <th>المعنى العامي / البلجيكي</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="dutch-cell">Hoeveel kost het?</td><td>بكام؟ / شحال الثمن؟</td></tr>
+                    <tr><td class="dutch-cell">Hoeveel kost het per maand?</td><td>بكام في الشهر؟</td></tr>
+                    <tr><td class="dutch-cell">Hoeveel mensen?</td><td>كام شخص؟</td></tr>
+                    <tr><td class="dutch-cell">Hoeveel tijd?</td><td>وقت قد إيه؟</td></tr>
+                    <tr><td class="dutch-cell">Hoeveel keer?</td><td>كام مرة؟</td></tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
-    <section id="hoeveel-vs-hoe-lang">
-        <h2>⚠️ الفرق المهم: Hoeveel vs. Hoe lang</h2>
-        <p>نستخدم <strong>Hoeveel</strong> مع العدد أو الكمية المحددة، بينما نستخدم <strong>Hoe lang</strong> عند السؤال عن المدة الزمنية المفتوحة أو الطول الفعلي.</p>
-        <ul>
-            <li><strong>Hoeveel dagen blijf je?</strong> — هتقعد كام يوم؟ (سؤال عن عدد الأيام)</li>
-            <li><strong>Hoe lang blijf je?</strong> — هتقعد لمدة قد إيه؟ (سؤال عن الاستمرارية والمدة)</li>
-        </ul>
+    <!-- Difference Section -->
+    <section class="card" id="hoeveel-vs-hoe-lang">
+        <h2 class="section-title">⚠️ الفرق المهم: Hoeveel مقابل Hoe lang</h2>
+        <div class="comparison-box">
+            <p>نستخدم <strong>Hoeveel</strong> مع الأعداد أو الوحدات المحددة والقابلة للعد، بينما نستخدم <strong>Hoe lang</strong> للسؤال عن الاستمرارية المفتوحة والمدد الزمنية العامة.</p>
+            <br>
+            <ul style="padding-right: 20px;">
+                <li><strong>Hoeveel dagen blijf je?</strong> — هتقعد كام يوم؟ (سؤال عن عدد الأيام المحدد).</li>
+                <li><strong>Hoe lang blijf je?</strong> — هتقعد لمدة قد إيه؟ (سؤال عن مدة الإقامة العامة).</li>
+            </ul>
+        </div>
     </section>
+
+</div>
+
+<!-- JavaScript for Live Filter -->
+<script>
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        let filter = this.value.toLowerCase();
+        let cards = document.querySelectorAll('.sentence-card');
+
+        cards.forEach(function(card) {
+            let dutch = card.querySelector('.dutch-text').textContent.toLowerCase();
+            let arabic = card.querySelector('.arabic-text').textContent.toLowerCase();
+            
+            if (dutch.includes(filter) || arabic.includes(filter)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
