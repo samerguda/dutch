@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة باستخدام Wanneer? (متى؟) في الهولندية</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent: #0284c7;
+            --accent-bg: #f0f9ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* شريط البحث */
+        .search-box {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        /* التبويبات (Tabs) */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: #e2e8f0;
+            color: var(--text-main);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* قوائم الجمل */
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .sentence-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .sentence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .sentence-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .dutch-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.25rem;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .arabic-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* صندوق القاعدة */
+        .rule-box {
+            background: var(--accent-bg);
+            border-right: 4px solid var(--accent);
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+        }
+
+        .rule-box h3 {
+            color: #0369a1;
+            margin-bottom: 0.75rem;
+        }
+
+        .rule-box ul {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .rule-box li {
+            font-weight: 600;
+            color: #075985;
+        }
+
+        .examples-list {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px dashed #bae6fd;
+        }
+
+        .examples-list p {
+            font-weight: bold;
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .sentence-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🇳🇱 100 جملة باستخدام Wanneer? (متى؟)</h1>
+            <p>جمل باللغة الهولندية مع الترجمة بالعربية للسؤال عن الوقت والمواعيد</p>
+        </header>
+
+        <!-- حقل البحث -->
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="filterSentences()" placeholder="ابحث عن كلمة بالهولندية أو العربية...">
+        </div>
+
+        <!-- التبويبات -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="filterTab('all', this)">الكل (100)</button>
+            <button class="tab-btn" onclick="filterTab('cat1', this)">1–25: الحياة اليومية</button>
+            <button class="tab-btn" onclick="filterTab('cat2', this)">26–50: العمل والدراسة</button>
+            <button class="tab-btn" onclick="filterTab('cat3', this)">51–75: المواعيد والحياة في بلجيكا</button>
+            <button class="tab-btn" onclick="filterTab('cat4', this)">76–100: الماضي والمستقبل</button>
+        </div>
+
+        <!-- الحاوية الرئيسية للجمل -->
+        <div id="contentArea"></div>
+
+        <!-- قاعدة مهمة والأمثلة -->
+        <div class="rule-box">
+            <h3>📌 ملاحظة مهمة:</h3>
+            <ul>
+                <li>• <strong>Wanneer?</strong> = متى؟ (للسؤال عن الوقت أو التاريخ)</li>
+                <li>• <strong>Hoe laat?</strong> = الساعة كام؟ (للسؤال عن وقت محدد)</li>
+                <li>• <strong>Sinds wanneer?</strong> = منذ متى؟</li>
+                <li>• <strong>Tot wanneer?</strong> = حتى متى؟</li>
+                <li>• <strong>Vanaf wanneer?</strong> = ابتداءً من متى؟</li>
+            </ul>
+            <div class="examples-list">
+                <p>أمثلة إضافية:</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem;">
+                    <div>• <strong>Wanneer begin je?</strong> — متى تبدأ؟</div>
+                    <div>• <strong>Hoe laat begin je?</strong> — الساعة كام هتبدأ؟</div>
+                    <div>• <strong>Sinds wanneer woon je hier?</strong> — منذ متى تسكن هنا؟</div>
+                    <div>• <strong>Tot wanneer blijf je?</strong> — حتى متى ستبقى؟</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const data = [
+            {
+                cat: "cat1",
+                title: "1–25: الحياة اليومية",
+                items: [
+                    { nl: "Wanneer kom je?", ar: "متى تأتي؟" },
+                    { nl: "Wanneer ga je?", ar: "متى تذهب؟" },
+                    { nl: "Wanneer vertrek je?", ar: "متى تغادر؟" },
+                    { nl: "Wanneer kom je terug?", ar: "متى تعود؟" },
+                    { nl: "Wanneer sta je op?", ar: "متى تستيقظ؟" },
+                    { nl: "Wanneer ga je slapen?", ar: "متى تذهب للنوم؟" },
+                    { nl: "Wanneer eet je?", ar: "متى تأكل؟" },
+                    { nl: "Wanneer ontbijt je?", ar: "متى تتناول الإفطار؟" },
+                    { nl: "Wanneer lunch je?", ar: "متى تتناول الغداء؟" },
+                    { nl: "Wanneer eet je avondeten?", ar: "متى تتناول العشاء؟" },
+                    { nl: "Wanneer drink je koffie?", ar: "متى تشرب القهوة؟" },
+                    { nl: "Wanneer douche je?", ar: "متى تستحم؟" },
+                    { nl: "Wanneer maak je het huis schoon?", ar: "متى تنظّف المنزل؟" },
+                    { nl: "Wanneer doe je de boodschappen?", ar: "متى تتسوّق؟" },
+                    { nl: "Wanneer was je je kleren?", ar: "متى تغسل ملابسك؟" },
+                    { nl: "Wanneer kook je?", ar: "متى تطبخ؟" },
+                    { nl: "Wanneer rust je uit?", ar: "متى تستريح؟" },
+                    { nl: "Wanneer sport je?", ar: "متى تمارس الرياضة؟" },
+                    { nl: "Wanneer wandel je?", ar: "متى تتمشّى؟" },
+                    { nl: "Wanneer ga je naar buiten?", ar: "متى تخرج؟" },
+                    { nl: "Wanneer ben je thuis?", ar: "متى تكون في المنزل؟" },
+                    { nl: "Wanneer ben je vrij?", ar: "متى تكون متفرغًا؟" },
+                    { nl: "Wanneer heb je tijd?", ar: "متى يكون لديك وقت؟" },
+                    { nl: "Wanneer ben je klaar?", ar: "متى تنتهي؟" },
+                    { nl: "Wanneer ga je op vakantie?", ar: "متى تذهب في إجازة؟" }
+                ]
+            },
+            {
+                cat: "cat2",
+                title: "26–50: العمل والدراسة",
+                items: [
+                    { nl: "Wanneer begin je met werken?", ar: "متى تبدأ العمل؟" },
+                    { nl: "Wanneer eindig je met werken?", ar: "متى تنتهي من العمل؟" },
+                    { nl: "Wanneer begin je met je cursus?", ar: "متى تبدأ دورتك؟" },
+                    { nl: "Wanneer heb je les?", ar: "متى لديك درس؟" },
+                    { nl: "Wanneer studeer je Nederlands?", ar: "متى تدرس الهولندية؟" },
+                    { nl: "Wanneer doe je je huiswerk?", ar: "متى تؤدي واجبك؟" },
+                    { nl: "Wanneer heb je examen?", ar: "متى لديك امتحان؟" },
+                    { nl: "Wanneer krijg je je resultaten?", ar: "متى تحصل على نتائجك؟" },
+                    { nl: "Wanneer begint de vergadering?", ar: "متى يبدأ الاجتماع؟" },
+                    { nl: "Wanneer eindigt de vergadering?", ar: "متى تنتهي الاجتماع؟" },
+                    { nl: "Wanneer heb je pauze?", ar: "متى تكون لديك استراحة؟" },
+                    { nl: "Wanneer krijg je je salaris?", ar: "متى تحصل على راتبك؟" },
+                    { nl: "Wanneer krijg ik mijn contract?", ar: "متى أحصل على عقدي؟" },
+                    { nl: "Wanneer kan ik beginnen?", ar: "متى يمكنني البدء؟" },
+                    { nl: "Wanneer kun je mij helpen?", ar: "متى تستطيع مساعدتي؟" },
+                    { nl: "Wanneer moet ik dit rapport indienen?", ar: "متى يجب أن أقدّم هذا التقرير؟" },
+                    { nl: "Wanneer moet ik het document ondertekenen?", ar: "متى يجب أن أوقّع الوثيقة؟" },
+                    { nl: "Wanneer is de deadline?", ar: "متى الموعد النهائي؟" },
+                    { nl: "Wanneer solliciteer je?", ar: "متى تتقدّم لوظيفة؟" },
+                    { nl: "Wanneer heb je een sollicitatiegesprek?", ar: "متى لديك مقابلة عمل؟" },
+                    { nl: "Wanneer hoor ik iets van jullie?", ar: "متى سأسمع منكم خبرًا؟" },
+                    { nl: "Wanneer krijg ik antwoord?", ar: "متى أحصل على إجابة؟" },
+                    { nl: "Wanneer kan ik terugbellen?", ar: "متى يمكنني معاودة الاتصال؟" },
+                    { nl: "Wanneer heb je je diploma behaald?", ar: "متى حصلت على شهادتك؟" },
+                    { nl: "Wanneer begin je met je nieuwe baan?", ar: "متى تبدأ وظيفتك الجديدة؟" }
+                ]
+            },
+            {
+                cat: "cat3",
+                title: "51–75: المواعيد والحياة في بلجيكا",
+                items: [
+                    { nl: "Wanneer heb je een afspraak?", ar: "متى لديك موعد؟" },
+                    { nl: "Wanneer is je volgende afspraak?", ar: "متى موعدك القادم؟" },
+                    { nl: "Wanneer kan ik langskomen?", ar: "متى يمكنني الحضور؟" },
+                    { nl: "Wanneer is het gemeentehuis open?", ar: "متى يكون مبنى البلدية مفتوحًا؟" },
+                    { nl: "Wanneer moet ik mij inschrijven?", ar: "متى يجب أن أسجّل نفسي؟" },
+                    { nl: "Wanneer krijg ik mijn verblijfskaart?", ar: "متى أحصل على بطاقة الإقامة؟" },
+                    { nl: "Wanneer komt de politie langs?", ar: "متى ستحضر الشرطة؟" },
+                    { nl: "Wanneer wordt mijn aanvraag behandeld?", ar: "متى تتم معالجة طلبي؟" },
+                    { nl: "Wanneer krijg ik een beslissing?", ar: "متى أحصل على قرار؟" },
+                    { nl: "Wanneer moet ik mijn documenten opsturen?", ar: "متى يجب أن أرسل مستنداتي؟" },
+                    { nl: "Wanneer is de dokter beschikbaar?", ar: "متى يكون الطبيب متاحًا؟" },
+                    { nl: "Wanneer kan ik naar de tandarts gaan?", ar: "متى يمكنني الذهاب إلى طبيب الأسنان؟" },
+                    { nl: "Wanneer opent de apotheek?", ar: "متى تفتح الصيدلية؟" },
+                    { nl: "Wanneer sluit de winkel?", ar: "متى يُغلق المتجر؟" },
+                    { nl: "Wanneer vertrekt de bus?", ar: "متى تغادر الحافلة؟" },
+                    { nl: "Wanneer komt de trein aan?", ar: "متى يصل القطار؟" },
+                    { nl: "Wanneer moet ik overstappen?", ar: "متى يجب أن أغيّر وسيلة النقل؟" },
+                    { nl: "Wanneer begint de film?", ar: "متى يبدأ الفيلم؟" },
+                    { nl: "Wanneer begint de cursus Nederlands?", ar: "متى تبدأ دورة الهولندية؟" },
+                    { nl: "Wanneer kan ik mijn pakket ophalen?", ar: "متى يمكنني استلام طردي؟" },
+                    { nl: "Wanneer wordt de rekening betaald?", ar: "متى تُدفع الفاتورة؟" },
+                    { nl: "Wanneer verloopt mijn kaart?", ar: "متى تنتهي صلاحية بطاقتي؟" },
+                    { nl: "Wanneer moet ik mijn verzekering verlengen?", ar: "متى يجب أن أجدّد تأميني؟" },
+                    { nl: "Wanneer kan ik een nieuwe afspraak maken?", ar: "متى يمكنني حجز موعد جديد؟" },
+                    { nl: "Wanneer krijg ik een bevestiging?", ar: "متى أحصل على تأكيد؟" }
+                ]
+            },
+            {
+                cat: "cat4",
+                title: "76–100: الماضي والمستقبل والمحادثة",
+                items: [
+                    { nl: "Wanneer ben je geboren?", ar: "متى وُلدت؟" },
+                    { nl: "Wanneer ben je naar België gekomen?", ar: "متى جئت إلى بلجيكا؟" },
+                    { nl: "Wanneer ben je naar hier verhuisd?", ar: "متى انتقلت إلى هنا؟" },
+                    { nl: "Wanneer heb je Nederlands geleerd?", ar: "متى تعلّمت الهولندية؟" },
+                    { nl: "Wanneer heb je hem voor het laatst gezien?", ar: "متى رأيته آخر مرة؟" },
+                    { nl: "Wanneer heb je haar gesproken?", ar: "متى تحدّثت معها؟" },
+                    { nl: "Wanneer heb je dat gekocht?", ar: "متى اشتريت ذلك؟" },
+                    { nl: "Wanneer heb je dat gehoord?", ar: "متى سمعت ذلك؟" },
+                    { nl: "Wanneer is dit gebeurd?", ar: "متى حدث هذا؟" },
+                    { nl: "Wanneer begon het probleem?", ar: "متى بدأت المشكلة؟" },
+                    { nl: "Wanneer heb je besloten om te vertrekken?", ar: "متى قرّرت المغادرة؟" },
+                    { nl: "Wanneer ben je klaar met je studie?", ar: "متى تنتهي من دراستك؟" },
+                    { nl: "Wanneer wil je trouwen?", ar: "متى تريد الزواج؟" },
+                    { nl: "Wanneer wil je verhuizen?", ar: "متى تريد الانتقال إلى مسكن آخر؟" },
+                    { nl: "Wanneer wil je op reis gaan?", ar: "متى تريد السفر؟" },
+                    { nl: "Wanneer zullen we elkaar ontmoeten?", ar: "متى سنلتقي؟" },
+                    { nl: "Wanneer spreken we elkaar weer?", ar: "متى نتحدث مجددًا؟" },
+                    { nl: "Wanneer zullen we beginnen?", ar: "متى سنبدأ؟" },
+                    { nl: "Wanneer ga je mij terugbetalen?", ar: "متى ستردّ لي المال؟" },
+                    { nl: "Wanneer ga je dat probleem oplossen?", ar: "متى ستحلّ تلك المشكلة؟" },
+                    { nl: "Wanneer zal het klaar zijn?", ar: "متى سيكون جاهزًا؟" },
+                    { nl: "Wanneer denk je terug te komen?", ar: "متى تتوقع العودة؟" },
+                    { nl: "Wanneer weet je meer?", ar: "متى ستعرف المزيد؟" },
+                    { nl: "Wanneer kan ik een antwoord verwachten?", ar: "متى يمكنني توقّع الحصول على إجابة؟" },
+                    { nl: "Wanneer zullen we elkaar weer zien?", ar: "متى سنرى بعضنا مرة أخرى؟" }
+                ]
+            }
+        ];
+
+        let activeTab = 'all';
+
+        function renderSentences() {
+            const container = document.getElementById('contentArea');
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            container.innerHTML = '';
+
+            data.forEach(group => {
+                if (activeTab !== 'all' && group.cat !== activeTab) return;
+
+                const filteredItems = group.items.filter(item => 
+                    item.nl.toLowerCase().includes(searchVal) || 
+                    item.ar.toLowerCase().includes(searchVal)
+                );
+
+                if (filteredItems.length > 0) {
+                    const section = document.createElement('section');
+                    
+                    const title = document.createElement('h2');
+                    title.className = 'section-title';
+                    title.textContent = group.title;
+                    section.appendChild(title);
+
+                    const grid = document.createElement('div');
+                    grid.className = 'sentence-list';
+
+                    filteredItems.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = 'sentence-card';
+                        card.innerHTML = `
+                            <div class="dutch-text">${item.nl}</div>
+                            <div class="arabic-text">${item.ar}</div>
+                        `;
+                        grid.appendChild(card);
+                    });
+
+                    section.appendChild(grid);
+                    container.appendChild(section);
+                }
+            });
+        }
+
+        function filterTab(category, btn) {
+            activeTab = category;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderSentences();
+        }
+
+        function filterSentences() {
+            renderSentences();
+        }
+
+        // العرض الأولي
+        renderSentences();
+    </script>
+</body>
+</html>
+```eof
+
+تم إنشاء الملف الخاص بـ **100 جملة باستخدام Wanneer? (متى؟)** بتصميم تفاعلي يتيح لك البحث، التنقل بين الأقسام عبر التبويبات، والاطلاع على الملاحظات والفروق الهامة.
