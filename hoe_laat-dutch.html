@@ -2,188 +2,609 @@
 <html lang="nl" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>100 جملة هولندية بلجيكية باستخدام Hoe laat - دليل احترافي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة هولندية بلجيكية باستخدام Hoe laat - الدليل الشامل الاحترافي</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #eff6ff;
+            --accent: #f59e0b;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: -20px auto 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Rule Cards */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 10px;
+        }
+
+        .card-header h2 {
+            font-size: 1.3rem;
+        }
+
+        .card-header icon {
+            font-size: 1.5rem;
+        }
+
+        ul.rule-list {
+            list-style: none;
+        }
+
+        ul.rule-list li {
+            position: relative;
+            padding-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul.rule-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            right: 0;
+            top: -2px;
+        }
+
+        /* Search & Controls */
+        .controls-section {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            padding-left: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .category-filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-body);
+            border: 1px solid var(--border-color);
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Table Design */
+        .table-container {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            padding: 20px;
+            background: #f1f5f9;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title h2 {
+            font-size: 1.25rem;
+            color: var(--text-main);
+        }
+
+        .badge {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+        }
+
+        th, td {
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background: #f8fafc;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .nl-text {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            text-align: left;
+            font-weight: 600;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            padding: 4px;
+            border-radius: 4px;
+            transition: color 0.2s;
+        }
+
+        .audio-btn:hover {
+            color: var(--primary);
+        }
+
+        /* Time Reference Table */
+        .grid-tables {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.75rem; }
+            .nl-text { flex-direction: row-reverse; }
+            th, td { padding: 10px 12px; font-size: 0.95rem; }
+        }
+
+        @media print {
+            .controls-section, .audio-btn { display: none; }
+            body { background: white; }
+            .table-container, .card { box-shadow: none; border: 1px solid #ccc; }
+        }
+    </style>
 </head>
 <body>
-    <!-- 
-      ====================================================
-      دليل شامل: 100 جملة بلجيكية هولندية باستخدام Hoe laat? (الساعة كام؟)
-      مرتبة في 4 تصنيفات رئيسية + شرح طريقة قراءة الوقت والأدوات الزمنية المرتبطة
-      ====================================================
-    -->
 
-    <section id="grammar-rule">
-        <h2>📌 القاعدة الاستخدامية: أداة الاستفهام Hoe laat (الساعة كام؟)</h2>
-        <p>
-            تُستخدم <strong>Hoe laat?</strong> حصريًا للسؤال عن التوقيت الدقيق أو الساعة المحددة لحدث ما.
-        </p>
-        <ul>
-            <li><strong>Om hoe laat?:</strong> (في تمام الساعة كام؟) تُستخدم عند السؤال عن موعد محدد بدقة.</li>
-            <li><strong>Vanaf hoe laat / Tot hoe laat?:</strong> للسؤال عن بداية ونهاية الدوام أو الفترة الزمنية.</li>
-        </ul>
-    </section>
+    <header>
+        <h1>100 جملة هولندية بلجيكية باستخدام Hoe laat?</h1>
+        <p>دليل عملي تفاعلي شامل للحديث عن الوقت والمواعيد بأسلوب احترافي سلس</p>
+    </header>
 
-    <section id="category-1">
-        <h2>1–25: الحياة اليومية والروتين (Het dagelijks leven)</h2>
-        <ul>
-            <li>Hoe laat is het? — الساعة كام؟</li>
-            <li>Hoe laat sta je op? — بتصحى الساعة كام؟</li>
-            <li>Hoe laat ga je slapen? — بتنام الساعة كام؟</li>
-            <li>Hoe laat vertrek je? — هتمشي الساعة كام؟</li>
-            <li>Hoe laat kom je terug? — هترجع الساعة كام؟</li>
-            <li>Hoe laat begint de les? — الدرس بيبدأ الساعة كام؟</li>
-            <li>Hoe laat eindigt de les? — الدرس بيخلص الساعة كام؟</li>
-            <li>Hoe laat begint je werk? — شغلك بيبدأ الساعة كام؟</li>
-            <li>Hoe laat ben je klaar met werken? — بتخلص شغل الساعة كام؟</li>
-            <li>Hoe laat ga je naar huis? — هتروح البيت الساعة كام؟</li>
-            <li>Hoe laat ontbijt je? — بتفطر الساعة كام؟</li>
-            <li>Hoe laat eet je lunch? — بتتغدى الساعة كام؟</li>
-            <li>Hoe laat eet je avondeten? — بتتعشى الساعة كام؟</li>
-            <li>Hoe laat drink je koffie? — بتشرب القهوة الساعة كام؟</li>
-            <li>Hoe laat neem je pauze? — بتاخد استراحة الساعة كام؟</li>
-            <li>Hoe laat kom je aan? — هتوصل الساعة كام؟</li>
-            <li>Hoe laat vertrekt de trein? — القطار بيتحرك الساعة كام؟</li>
-            <li>Hoe laat komt de bus? — الأوتوبيس بييجي الساعة كام؟</li>
-            <li>Hoe laat gaat de winkel open? — المحل بيفتح الساعة كام؟</li>
-            <li>Hoe laat sluit de winkel? — المحل بيقفل الساعة كام؟</li>
-            <li>Hoe laat opent het kantoor? — المكتب بيفتح الساعة كام؟</li>
-            <li>Hoe laat sluit het kantoor? — المكتب بيقفل الساعة كام؟</li>
-            <li>Hoe laat begint de film? — الفيلم بيبدأ الساعة كام؟</li>
-            <li>Hoe laat eindigt de film? — الفيلم بيخلص الساعة كام؟</li>
-            <li>Hoe laat begint de vergadering? — الاجتماع بيبدأ الساعة كام؟</li>
-        </ul>
-    </section>
+    <div class="container">
 
-    <section id="category-2">
-        <h2>26–50: المواعيد والدراسة والمواصلات (Afspraken en transport)</h2>
-        <ul>
-            <li>Hoe laat is onze afspraak? — موعدنا الساعة كام؟</li>
-            <li>Hoe laat moet ik er zijn? — لازم أكون هناك الساعة كام؟</li>
-            <li>Hoe laat moet ik vertrekken? — لازم أمشي الساعة كام؟</li>
-            <li>Hoe laat moet je op school zijn? — لازم تكون في المدرسة الساعة كام؟</li>
-            <li>Hoe laat moet je op het werk zijn? — لازم تكون في الشغل الساعة كام؟</li>
-            <li>Hoe laat begint het examen? — الامتحان بيبدأ الساعة كام؟</li>
-            <li>Hoe laat eindigt het examen? — الامتحان بيخلص الساعة كام؟</li>
-            <li>Hoe laat begint de cursus Nederlands? — كورس الهولندي بيبدأ الساعة كام؟</li>
-            <li>Hoe laat begint de Franse les? — درس الفرنسي بيبدأ الساعة كام؟</li>
-            <li>Hoe laat begint de online les? — الدرس الأونلاين بيبدأ الساعة كام؟</li>
-            <li>Hoe laat moet ik inloggen? — لازم أسجّل الدخول الساعة كام؟</li>
-            <li>Hoe laat begint de training? — التدريب بيبدأ الساعة كام؟</li>
-            <li>Hoe laat begint de wedstrijd? — المباراة بتبدأ الساعة كام؟</li>
-            <li>Hoe laat begint het concert? — الحفلة الموسيقية بتبدأ الساعة كام؟</li>
-            <li>Hoe laat gaan we vertrekken? — هنمشي الساعة كام؟</li>
-            <li>Hoe laat kom je me ophalen? — هتيجي تاخدني الساعة كام؟</li>
-            <li>Hoe laat haal je de kinderen op? — هتروح تجيب الأطفال الساعة كام؟</li>
-            <li>Hoe laat breng je me naar het station? — هتوديني المحطة الساعة كام؟</li>
-            <li>Hoe laat vertrekt je vlucht? — الطيارة بتاعتك بتقلع الساعة كام؟</li>
-            <li>Hoe laat landt het vliegtuig? — الطيارة بتهبط الساعة كام؟</li>
-            <li>Hoe laat moeten we inchecken? — لازم نعمل تسجيل الوصول الساعة كام؟</li>
-            <li>Hoe laat vertrekt de laatste trein? — آخر قطار بيتحرك الساعة كام؟</li>
-            <li>Hoe laat rijdt de eerste bus? — أول أوتوبيس بيتحرك الساعة كام؟</li>
-            <li>Hoe laat stopt de tram? — الترام بيقف الساعة كام؟</li>
-            <li>Hoe laat moet ik overstappen? — لازم أغيّر وسيلة المواصلات الساعة كام؟</li>
-        </ul>
-    </section>
+        <!-- Grammar & Reference Cards -->
+        <div class="grid-cards" style="margin-top: 20px;">
+            <div class="card">
+                <div class="card-header">
+                    <span>📌</span>
+                    <h2>قاعدة الاستخدام الأساسية</h2>
+                </div>
+                <p style="margin-bottom: 10px;">تُستخدم <strong>Hoe laat?</strong> حصريًا للسؤال عن التوقيت الدقيق أو الساعة المحددة لحدث ما.</p>
+                <ul class="rule-list">
+                    <li><strong>Om hoe laat?:</strong> في تمام الساعة كم؟ (تحديد دقيق)</li>
+                    <li><strong>Vanaf hoe laat?:</strong> من الساعة كم؟</li>
+                    <li><strong>Tot hoe laat?:</strong> لحد الساعة كم؟</li>
+                </ul>
+            </div>
 
-    <section id="category-3">
-        <h2>51–75: المصالح الحكومية والخدمات ومواقع العمل (Administratie en diensten)</h2>
-        <ul>
-            <li>Hoe laat gaat de apotheek open? — الصيدلية بتفتح الساعة كام؟</li>
-            <li>Hoe laat sluit de apotheek? — الصيدلية بتقفل الساعة كام؟</li>
-            <li>Hoe laat opent de supermarkt? — السوبرماركت بيفتح الساعة كام؟</li>
-            <li>Hoe laat sluit de supermarkt? — السوبرماركت بيقفل الساعة كام؟</li>
-            <li>Hoe laat opent de bakker? — المخبز بيفتح الساعة كام؟</li>
-            <li>Hoe laat sluit de bakker? — المخبز بيقفل الساعة كام؟</li>
-            <li>Hoe laat serveert het restaurant lunch? — المطعم بيقدّم الغدا الساعة كام؟</li>
-            <li>Hoe laat serveert het restaurant het avondeten? — المطعم بيقدّم العشا الساعة كام؟</li>
-            <li>Hoe laat kunnen we inchecken in het hotel? — نقدر نعمل تسجيل الوصول في الفندق الساعة كام؟</li>
-            <li>Hoe laat moeten we uitchecken? — لازم نعمل تسجيل المغادرة الساعة كام؟</li>
-            <li>Hoe laat komt de dokter? — الدكتور بييجي الساعة كام؟</li>
-            <li>Hoe laat is mijn afspraak bij de dokter? — موعدي عند الدكتور الساعة كام؟</li>
-            <li>Hoe laat opent het gemeentehuis? — مبنى البلدية بيفتح الساعة كام؟</li>
-            <li>Hoe laat sluit het gemeentehuis? — مبنى البلدية بيقفل الساعة كام؟</li>
-            <li>Hoe laat moet ik naar de gemeente gaan? — لازم أروح البلدية الساعة كام؟</li>
-            <li>Hoe laat begint de afspraak bij de gemeente? — موعد البلدية بيبدأ الساعة كام؟</li>
-            <li>Hoe laat komt de politie langs? — الشرطة هتيجي الساعة كام؟</li>
-            <li>Hoe laat komt de technicus? — الفني هييجي الساعة كام؟</li>
-            <li>Hoe laat wordt het pakket geleverd? — الطرد هيتسلّم الساعة كام؟</li>
-            <li>Hoe laat komt de loodgieter? — السباك هييجي الساعة كام؟</li>
-            <li>Hoe laat begint de bouwwerf? — موقع البناء بيبدأ الشغل الساعة كام؟</li>
-            <li>Hoe laat begint de ploeg te werken? — فريق العمل بيبدأ الساعة كام؟</li>
-            <li>Hoe laat is de werf gesloten? — موقع البناء بيكون مقفول الساعة كام؟</li>
-            <li>Hoe laat moet ik mijn werkrapport indienen? — لازم أقدّم تقرير الشغل الساعة كام؟</li>
-            <li>Hoe laat begint de veiligheidsvergadering? — اجتماع السلامة بيبدأ الساعة كام؟</li>
-        </ul>
-    </section>
+            <div class="card">
+                <div class="card-header">
+                    <span>💡</span>
+                    <h2>أدوات الاستفهام الزمنية</h2>
+                </div>
+                <ul class="rule-list">
+                    <li><strong>Hoe laat?</strong> — الساعة كام؟ (وقت محدد على الساعة)</li>
+                    <li><strong>Wanneer?</strong> — متى؟ (وقت عام، يوم، شهر، سنة)</li>
+                    <li><strong>Hoe lang?</strong> — كم المدة الزمنية؟</li>
+                </ul>
+            </div>
+        </div>
 
-    <section id="category-4">
-        <h2>76–100: الأسئلة الماضية والمستقبلية والترتيبات (Gesprekken en planning)</h2>
-        <ul>
-            <li>Hoe laat kom je vanavond? — هتيجي النهارده بالليل الساعة كام؟</li>
-            <li>Hoe laat ga je morgen weg? — هتمشي بكرة الساعة كام؟</li>
-            <li>Hoe laat ben je gisteren thuisgekomen? — رجعت البيت امبارح الساعة كام؟</li>
-            <li>Hoe laat heb je me gebeld? — اتصلت بيا الساعة كام؟</li>
-            <li>Hoe laat heb je het bericht gestuurd? — بعت الرسالة الساعة كام؟</li>
-            <li>Hoe laat heb je de e-mail ontvangen? — استلمت الإيميل الساعة كام؟</li>
-            <li>Hoe laat ben je aangekomen? — وصلت الساعة كام؟</li>
-            <li>Hoe laat ben je vertrokken? — مشيت الساعة كام؟</li>
-            <li>Hoe laat ben je wakker geworden? — صحيت من النوم الساعة كام؟</li>
-            <li>Hoe laat ben je gaan slapen? — نمت الساعة كام؟</li>
-            <li>Hoe laat heb je gegeten? — أكلت الساعة كام؟</li>
-            <li>Hoe laat heb je de trein genomen? — ركبت القطار الساعة كام؟</li>
-            <li>Hoe laat heb je de afspraak gemaakt? — حجزت الموعد الساعة كام؟</li>
-            <li>Hoe laat begint het morgen? — هيبدأ بكرة الساعة كام؟</li>
-            <li>Hoe laat eindigt het vandaag? — هيخلص النهارده الساعة كام؟</li>
-            <li>Hoe laat zullen we afspreken? — نتقابل الساعة كام؟</li>
-            <li>Hoe laat zal ik je bellen? — أتصل بيك الساعة كام؟</li>
-            <li>Hoe laat kan ik langskomen? — أقدر أعدّي عليك الساعة كام؟</li>
-            <li>Hoe laat kunnen we vertrekken? — نقدر نمشي الساعة كام؟</li>
-            <li>Hoe laat moeten we thuis zijn? — لازم نكون في البيت الساعة كام؟</li>
-            <li>Hoe laat wil je afspreken? — عايز نتقابل الساعة كام؟</li>
-            <li>Hoe laat past het jou? — أنهي وقت يناسبك؟</li>
-            <li>Hoe laat komt het jou het beste uit? — أنهي وقت أنسب لك؟</li>
-            <li>Hoe laat spreken we morgen af? — هنتقابل بكرة الساعة كام؟</li>
-            <li>Hoe laat zie ik je weer? — هشوفك تاني الساعة كام؟</li>
-        </ul>
-    </section>
+        <!-- Search and Filter Bar -->
+        <div class="controls-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 ابحث عن جملة بالهولندية أو العربية...">
+            </div>
+            <div class="category-filters">
+                <button class="filter-btn active" onclick="filterCategory('all')">الكل (100)</button>
+                <button class="filter-btn" onclick="filterCategory('cat1')">الروتين اليومي</button>
+                <button class="filter-btn" onclick="filterCategory('cat2')">المواعيد والنقل</button>
+                <button class="filter-btn" onclick="filterCategory('cat3')">الخدمات والمصالح</button>
+                <button class="filter-btn" onclick="filterCategory('cat4')">الماضي والمستقبل</button>
+            </div>
+        </div>
 
-    <section id="telling-time">
-        <h2>🕒 قراءة الساعة في الهولندية</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>الصيغة الهولندية</th>
-                    <th>المعنى بالعربية</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Het is één uur.</td><td>الساعة واحدة.</td></tr>
-                <tr><td>Het is half twee.</td><td>الساعة واحدة ونص (1:30).</td></tr>
-                <tr><td>Het is kwart over drie.</td><td>الساعة تلاتة وربع (3:15).</td></tr>
-                <tr><td>Het is kwart voor vier.</td><td>الساعة أربعة إلا ربع (3:45).</td></tr>
-                <tr><td>Het is tien over vijf.</td><td>الساعة خمسة وعشرة (5:10).</td></tr>
-                <tr><td>Het is tien voor zes.</td><td>الساعة ستة إلا عشرة (5:50).</td></tr>
-            </tbody>
-        </table>
-    </section>
+        <!-- Sentence Tables -->
+        
+        <!-- Category 1 -->
+        <div class="table-container category-group" id="cat1">
+            <div class="section-title">
+                <h2>1–25: الحياة اليومية والروتين (Het dagelijks leven)</h2>
+                <span class="badge">25 جملة</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">#</th>
+                        <th>الجملة بالهولندية (Nederlands)</th>
+                        <th>المعنى بالعربية</th>
+                    </tr>
+                </thead>
+                <tbody class="sentence-list">
+                    <tr><td>1</td><td class="nl-text"><span>Hoe laat is het?</span> <button class="audio-btn" onclick="speak('Hoe laat is het?')">🔊</button></td><td>الساعة كام؟</td></tr>
+                    <tr><td>2</td><td class="nl-text"><span>Hoe laat sta je op?</span> <button class="audio-btn" onclick="speak('Hoe laat sta je op?')">🔊</button></td><td>بتصحى الساعة كام؟</td></tr>
+                    <tr><td>3</td><td class="nl-text"><span>Hoe laat ga je slapen?</span> <button class="audio-btn" onclick="speak('Hoe laat ga je slapen?')">🔊</button></td><td>بتنام الساعة كام؟</td></tr>
+                    <tr><td>4</td><td class="nl-text"><span>Hoe laat vertrek je?</span> <button class="audio-btn" onclick="speak('Hoe laat vertrek je?')">🔊</button></td><td>هتمشي الساعة كام؟</td></tr>
+                    <tr><td>5</td><td class="nl-text"><span>Hoe laat kom je terug?</span> <button class="audio-btn" onclick="speak('Hoe laat kom je terug?')">🔊</button></td><td>هترجع الساعة كام؟</td></tr>
+                    <tr><td>6</td><td class="nl-text"><span>Hoe laat begint de les?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de les?')">🔊</button></td><td>الدرس بيبدأ الساعة كام؟</td></tr>
+                    <tr><td>7</td><td class="nl-text"><span>Hoe laat eindigt de les?</span> <button class="audio-btn" onclick="speak('Hoe laat eindigt de les?')">🔊</button></td><td>الدرس بيخلص الساعة كام؟</td></tr>
+                    <tr><td>8</td><td class="nl-text"><span>Hoe laat begint je werk?</span> <button class="audio-btn" onclick="speak('Hoe laat begint je werk?')">🔊</button></td><td>شغلك بيبدأ الساعة كام؟</td></tr>
+                    <tr><td>9</td><td class="nl-text"><span>Hoe laat ben je klaar met werken?</span> <button class="audio-btn" onclick="speak('Hoe laat ben je klaar met werken?')">🔊</button></td><td>بتخلص شغل الساعة كام؟</td></tr>
+                    <tr><td>10</td><td class="nl-text"><span>Hoe laat ga je naar huis?</span> <button class="audio-btn" onclick="speak('Hoe laat ga je naar huis?')">🔊</button></td><td>هتروح البيت الساعة كام؟</td></tr>
+                    <tr><td>11</td><td class="nl-text"><span>Hoe laat ontbijt je?</span> <button class="audio-btn" onclick="speak('Hoe laat ontbijt je?')">🔊</button></td><td>بتفطر الساعة كام؟</td></tr>
+                    <tr><td>12</td><td class="nl-text"><span>Hoe laat eet je lunch?</span> <button class="audio-btn" onclick="speak('Hoe laat eet je lunch?')">🔊</button></td><td>بتتغدى الساعة كام؟</td></tr>
+                    <tr><td>13</td><td class="nl-text"><span>Hoe laat eet je avondeten?</span> <button class="audio-btn" onclick="speak('Hoe laat eet je avondeten?')">🔊</button></td><td>بتتعشى الساعة كام؟</td></tr>
+                    <tr><td>14</td><td class="nl-text"><span>Hoe laat drink je koffie?</span> <button class="audio-btn" onclick="speak('Hoe laat drink je koffie?')">🔊</button></td><td>بتشرب القهوة الساعة كام؟</td></tr>
+                    <tr><td>15</td><td class="nl-text"><span>Hoe laat neem je pauze?</span> <button class="audio-btn" onclick="speak('Hoe laat neem je pauze?')">🔊</button></td><td>بتاخد استراحة الساعة كام؟</td></tr>
+                    <tr><td>16</td><td class="nl-text"><span>Hoe laat kom je aan?</span> <button class="audio-btn" onclick="speak('Hoe laat kom je aan?')">🔊</button></td><td>هتوصل الساعة كام؟</td></tr>
+                    <tr><td>17</td><td class="nl-text"><span>Hoe laat vertrekt de trein?</span> <button class="audio-btn" onclick="speak('Hoe laat vertrekt de trein?')">🔊</button></td><td>القطار بيتحرك الساعة كام؟</td></tr>
+                    <tr><td>18</td><td class="nl-text"><span>Hoe laat komt de bus?</span> <button class="audio-btn" onclick="speak('Hoe laat komt de bus?')">🔊</button></td><td>الأوتوبيس بييجي الساعة كام؟</td></tr>
+                    <tr><td>19</td><td class="nl-text"><span>Hoe laat gaat de winkel open?</span> <button class="audio-btn" onclick="speak('Hoe laat gaat de winkel open?')">🔊</button></td><td>المحل بيفتح الساعة كام؟</td></tr>
+                    <tr><td>20</td><td class="nl-text"><span>Hoe laat sluit de winkel?</span> <button class="audio-btn" onclick="speak('Hoe laat sluit de winkel?')">🔊</button></td><td>المحل بيقفل الساعة كام؟</td></tr>
+                    <tr><td>21</td><td class="nl-text"><span>Hoe laat opent het kantoor?</span> <button class="audio-btn" onclick="speak('Hoe laat opent het kantoor?')">🔊</button></td><td>المكتب بيفتح الساعة كام؟</td></tr>
+                    <tr><td>22</td><td class="nl-text"><span>Hoe laat sluit het kantoor?</span> <button class="audio-btn" onclick="speak('Hoe laat sluit het kantoor?')">🔊</button></td><td>المكتب بيقفل الساعة كام؟</td></tr>
+                    <tr><td>23</td><td class="nl-text"><span>Hoe laat begint de film?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de film?')">🔊</button></td><td>الفيلم بيبدأ الساعة كام؟</td></tr>
+                    <tr><td>24</td><td class="nl-text"><span>Hoe laat eindigt de film?</span> <button class="audio-btn" onclick="speak('Hoe laat eindigt de film?')">🔊</button></td><td>الفيلم بيخلص الساعة كام؟</td></tr>
+                    <tr><td>25</td><td class="nl-text"><span>Hoe laat begint de vergadering?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de vergadering?')">🔊</button></td><td>الاجتماع بيبدأ الساعة كام؟</td></tr>
+                </tbody>
+            </table>
+        </div>
 
-    <section id="time-question-words">
-        <h2>💡 الفرق بين الكلمات الزمنية المشابهة</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>الأداة</th>
-                    <th>الاستخدام</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td><strong>Hoe laat?</strong></td><td>الساعة كام؟ (لوقت محدد)</td></tr>
-                <tr><td><strong>Wanneer?</strong></td><td>إمتى؟ (لوقت أو يوم أو تاريخ عام)</td></tr>
-                <tr><td><strong>Vanaf hoe laat?</strong></td><td>من الساعة كام؟</td></tr>
-                <tr><td><strong>Tot hoe laat?</strong></td><td>لحد الساعة كام؟</td></tr>
-                <tr><td><strong>Om hoe laat?</strong></td><td>في الساعة كام؟ (تُستخدم لتحديد الموعد بدقة)</td></tr>
-            </tbody>
-        </table>
-    </section>
+        <!-- Category 2 -->
+        <div class="table-container category-group" id="cat2">
+            <div class="section-title">
+                <h2>26–50: المواعيد والدراسة والمواصلات (Afspraken en transport)</h2>
+                <span class="badge">25 جملة</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">#</th>
+                        <th>الجملة بالهولندية (Nederlands)</th>
+                        <th>المعنى بالعربية</th>
+                    </tr>
+                </thead>
+                <tbody class="sentence-list">
+                    <tr><td>26</td><td class="nl-text"><span>Hoe laat is onze afspraak?</span> <button class="audio-btn" onclick="speak('Hoe laat is onze afspraak?')">🔊</button></td><td>موعدنا الساعة كام؟</td></tr>
+                    <tr><td>27</td><td class="nl-text"><span>Hoe laat moet ik er zijn?</span> <button class="audio-btn" onclick="speak('Hoe laat moet ik er zijn?')">🔊</button></td><td>لازم أكون هناك الساعة كام؟</td></tr>
+                    <tr><td>28</td><td class="nl-text"><span>Hoe laat moet ik vertrekken?</span> <button class="audio-btn" onclick="speak('Hoe laat moet ik vertrekken?')">🔊</button></td><td>لازم أمشي الساعة كام؟</td></tr>
+                    <tr><td>29</td><td class="nl-text"><span>Hoe laat moet je op school zijn?</span> <button class="audio-btn" onclick="speak('Hoe laat moet je op school zijn?')">🔊</button></td><td>لازم تكون في المدرسة الساعة كام؟</td></tr>
+                    <tr><td>30</td><td class="nl-text"><span>Hoe laat moet je op het werk zijn?</span> <button class="audio-btn" onclick="speak('Hoe laat moet je op het werk zijn?')">🔊</button></td><td>لازم تكون في الشغل الساعة كام؟</td></tr>
+                    <tr><td>31</td><td class="nl-text"><span>Hoe laat begint het examen?</span> <button class="audio-btn" onclick="speak('Hoe laat begint het examen?')">🔊</button></td><td>الامتحان بيبدأ الساعة كام؟</td></tr>
+                    <tr><td>32</td><td class="nl-text"><span>Hoe laat eindigt het examen?</span> <button class="audio-btn" onclick="speak('Hoe laat eindigt het examen?')">🔊</button></td><td>الامتحان بيخلص الساعة كام؟</td></tr>
+                    <tr><td>33</td><td class="nl-text"><span>Hoe laat begint de cursus Nederlands?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de cursus Nederlands?')">🔊</button></td><td>كورس الهولندي بيبدأ الساعة كام؟</td></tr>
+                    <tr><td>34</td><td class="nl-text"><span>Hoe laat begint de Franse les?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de Franse les?')">🔊</button></td><td>درس الفرنسي بيبدأ الساعة كام؟</td></tr>
+                    <tr><td>35</td><td class="nl-text"><span>Hoe laat begint de online les?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de online les?')">🔊</button></td><td>الدرس الأونلاين بيبدأ الساعة كام؟</td></tr>
+                    <tr><td>36</td><td class="nl-text"><span>Hoe laat moet ik inloggen?</span> <button class="audio-btn" onclick="speak('Hoe laat moet ik inloggen?')">🔊</button></td><td>لازم أسجّل الدخول الساعة كام؟</td></tr>
+                    <tr><td>37</td><td class="nl-text"><span>Hoe laat begint de training?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de training?')">🔊</button></td><td>التدريب بيبدأ الساعة كام؟</td></tr>
+                    <tr><td>38</td><td class="nl-text"><span>Hoe laat begint de wedstrijd?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de wedstrijd?')">🔊</button></td><td>المباراة بتبدأ الساعة كام؟</td></tr>
+                    <tr><td>39</td><td class="nl-text"><span>Hoe laat begint het concert?</span> <button class="audio-btn" onclick="speak('Hoe laat begint het concert?')">🔊</button></td><td>الحفلة الموسيقية بتبدأ الساعة كام؟</td></tr>
+                    <tr><td>40</td><td class="nl-text"><span>Hoe laat gaan we vertrekken?</span> <button class="audio-btn" onclick="speak('Hoe laat gaan we vertrekken?')">🔊</button></td><td>هنمشي الساعة كام؟</td></tr>
+                    <tr><td>41</td><td class="nl-text"><span>Hoe laat kom je me ophalen?</span> <button class="audio-btn" onclick="speak('Hoe laat kom je me ophalen?')">🔊</button></td><td>هتيجي تاخدني الساعة كام؟</td></tr>
+                    <tr><td>42</td><td class="nl-text"><span>Hoe laat haal je de kinderen op?</span> <button class="audio-btn" onclick="speak('Hoe laat haal je de kinderen op?')">🔊</button></td><td>هتروح تجيب الأطفال الساعة كام؟</td></tr>
+                    <tr><td>43</td><td class="nl-text"><span>Hoe laat breng je me naar het station?</span> <button class="audio-btn" onclick="speak('Hoe laat breng je me naar het station?')">🔊</button></td><td>هتوديني المحطة الساعة كام؟</td></tr>
+                    <tr><td>44</td><td class="nl-text"><span>Hoe laat vertrekt je vlucht?</span> <button class="audio-btn" onclick="speak('Hoe laat vertrekt je vlucht?')">🔊</button></td><td>الطيارة بتاعتك بتقلع الساعة كام؟</td></tr>
+                    <tr><td>45</td><td class="nl-text"><span>Hoe laat landt het vliegtuig?</span> <button class="audio-btn" onclick="speak('Hoe laat landt het vliegtuig?')">🔊</button></td><td>الطيارة بتهبط الساعة كام؟</td></tr>
+                    <tr><td>46</td><td class="nl-text"><span>Hoe laat moeten we inchecken?</span> <button class="audio-btn" onclick="speak('Hoe laat moeten we inchecken?')">🔊</button></td><td>لازم نعمل تسجيل الوصول الساعة كام؟</td></tr>
+                    <tr><td>47</td><td class="nl-text"><span>Hoe laat vertrekt de laatste trein?</span> <button class="audio-btn" onclick="speak('Hoe laat vertrekt de laatste trein?')">🔊</button></td><td>آخر قطار بيتحرك الساعة كام؟</td></tr>
+                    <tr><td>48</td><td class="nl-text"><span>Hoe laat rijdt de eerste bus?</span> <button class="audio-btn" onclick="speak('Hoe laat rijdt de eerste bus?')">🔊</button></td><td>أول أوتوبيس بيتحرك الساعة كام؟</td></tr>
+                    <tr><td>49</td><td class="nl-text"><span>Hoe laat stopt de tram?</span> <button class="audio-btn" onclick="speak('Hoe laat stopt de tram?')">🔊</button></td><td>الترام بيقف الساعة كام؟</td></tr>
+                    <tr><td>50</td><td class="nl-text"><span>Hoe laat moet ik overstappen?</span> <button class="audio-btn" onclick="speak('Hoe laat moet ik overstappen?')">🔊</button></td><td>لازم أغيّر وسيلة المواصلات الساعة كام؟</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="table-container category-group" id="cat3">
+            <div class="section-title">
+                <h2>51–75: المصالح الحكومية والخدمات ومواقع العمل (Administratie en diensten)</h2>
+                <span class="badge">25 جملة</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">#</th>
+                        <th>الجملة بالهولندية (Nederlands)</th>
+                        <th>المعنى بالعربية</th>
+                    </tr>
+                </thead>
+                <tbody class="sentence-list">
+                    <tr><td>51</td><td class="nl-text"><span>Hoe laat gaat de apotheek open?</span> <button class="audio-btn" onclick="speak('Hoe laat gaat de apotheek open?')">🔊</button></td><td>الصيدلية بتفتح الساعة كام؟</td></tr>
+                    <tr><td>52</td><td class="nl-text"><span>Hoe laat sluit de apotheek?</span> <button class="audio-btn" onclick="speak('Hoe laat sluit de apotheek?')">🔊</button></td><td>الصيدلية بتقفل الساعة كام؟</td></tr>
+                    <tr><td>53</td><td class="nl-text"><span>Hoe laat opent de supermarkt?</span> <button class="audio-btn" onclick="speak('Hoe laat opent de supermarkt?')">🔊</button></td><td>السوبرماركت بيفتح الساعة كام؟</td></tr>
+                    <tr><td>54</td><td class="nl-text"><span>Hoe laat sluit de supermarkt?</span> <button class="audio-btn" onclick="speak('Hoe laat sluit de supermarkt?')">🔊</button></td><td>السوبرماركت بيقفل الساعة كام؟</td></tr>
+                    <tr><td>55</td><td class="nl-text"><span>Hoe laat opent de bakker?</span> <button class="audio-btn" onclick="speak('Hoe laat opent de bakker?')">🔊</button></td><td>المخبز بيفتح الساعة كام؟</td></tr>
+                    <tr><td>56</td><td class="nl-text"><span>Hoe laat sluit de bakker?</span> <button class="audio-btn" onclick="speak('Hoe laat sluit de bakker?')">🔊</button></td><td>المخبز بيقفل الساعة كام؟</td></tr>
+                    <tr><td>57</td><td class="nl-text"><span>Hoe laat serveert het restaurant lunch?</span> <button class="audio-btn" onclick="speak('Hoe laat serveert het restaurant lunch?')">🔊</button></td><td>المطعم بيقدّم الغدا الساعة كام؟</td></tr>
+                    <tr><td>58</td><td class="nl-text"><span>Hoe laat serveert het restaurant het avondeten?</span> <button class="audio-btn" onclick="speak('Hoe laat serveert het restaurant het avondeten?')">🔊</button></td><td>المطعم بيقدّم العشا الساعة كام؟</td></tr>
+                    <tr><td>59</td><td class="nl-text"><span>Hoe laat kunnen we inchecken in het hotel?</span> <button class="audio-btn" onclick="speak('Hoe laat kunnen we inchecken in het hotel?')">🔊</button></td><td>نقدر نعمل تسجيل الوصول في الفندق الساعة كام؟</td></tr>
+                    <tr><td>60</td><td class="nl-text"><span>Hoe laat moeten we uitchecken?</span> <button class="audio-btn" onclick="speak('Hoe laat moeten we uitchecken?')">🔊</button></td><td>لازم نعمل تسجيل المغادرة الساعة كام؟</td></tr>
+                    <tr><td>61</td><td class="nl-text"><span>Hoe laat komt de dokter?</span> <button class="audio-btn" onclick="speak('Hoe laat komt de dokter?')">🔊</button></td><td>الدكتور بييجي الساعة كام؟</td></tr>
+                    <tr><td>62</td><td class="nl-text"><span>Hoe laat is mijn afspraak bij de dokter?</span> <button class="audio-btn" onclick="speak('Hoe laat is mijn afspraak bij de dokter?')">🔊</button></td><td>موعدي عند الدكتور الساعة كام؟</td></tr>
+                    <tr><td>63</td><td class="nl-text"><span>Hoe laat opent het gemeentehuis?</span> <button class="audio-btn" onclick="speak('Hoe laat opent het gemeentehuis?')">🔊</button></td><td>مبنى البلدية بيفتح الساعة كام؟</td></tr>
+                    <tr><td>64</td><td class="nl-text"><span>Hoe laat sluit het gemeentehuis?</span> <button class="audio-btn" onclick="speak('Hoe laat sluit het gemeentehuis?')">🔊</button></td><td>مبنى البلدية بيقفل الساعة كام؟</td></tr>
+                    <tr><td>65</td><td class="nl-text"><span>Hoe laat moet ik naar de gemeente gaan?</span> <button class="audio-btn" onclick="speak('Hoe laat moet ik naar de gemeente gaan?')">🔊</button></td><td>لازم أروح البلدية الساعة كام؟</td></tr>
+                    <tr><td>66</td><td class="nl-text"><span>Hoe laat begint de afspraak bij de gemeente?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de afspraak bij de gemeente?')">🔊</button></td><td>موعد البلدية بيبدأ الساعة كام؟</td></tr>
+                    <tr><td>67</td><td class="nl-text"><span>Hoe laat komt de politie langs?</span> <button class="audio-btn" onclick="speak('Hoe laat komt de politie langs?')">🔊</button></td><td>الشرطة هتيجي الساعة كام؟</td></tr>
+                    <tr><td>68</td><td class="nl-text"><span>Hoe laat komt de technicus?</span> <button class="audio-btn" onclick="speak('Hoe laat komt de technicus?')">🔊</button></td><td>الفني هييجي الساعة كام؟</td></tr>
+                    <tr><td>69</td><td class="nl-text"><span>Hoe laat wordt het pakket geleverd?</span> <button class="audio-btn" onclick="speak('Hoe laat wordt het pakket geleverd?')">🔊</button></td><td>الطرد هيتسلّم الساعة كام؟</td></tr>
+                    <tr><td>70</td><td class="nl-text"><span>Hoe laat komt de loodgieter?</span> <button class="audio-btn" onclick="speak('Hoe laat komt de loodgieter?')">🔊</button></td><td>السباك هييجي الساعة كام؟</td></tr>
+                    <tr><td>71</td><td class="nl-text"><span>Hoe laat begint de bouwwerf?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de bouwwerf?')">🔊</button></td><td>موقع البناء بيبدأ الشغل الساعة كام؟</td></tr>
+                    <tr><td>72</td><td class="nl-text"><span>Hoe laat begint de ploeg te werken?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de ploeg te werken?')">🔊</button></td><td>فريق العمل بيبدأ الساعة كام؟</td></tr>
+                    <tr><td>73</td><td class="nl-text"><span>Hoe laat is de werf gesloten?</span> <button class="audio-btn" onclick="speak('Hoe laat is de werf gesloten?')">🔊</button></td><td>موقع البناء بيكون مقفول الساعة كام؟</td></tr>
+                    <tr><td>74</td><td class="nl-text"><span>Hoe laat moet ik mijn werkrapport indienen?</span> <button class="audio-btn" onclick="speak('Hoe laat moet ik mijn werkrapport indienen?')">🔊</button></td><td>لازم أقدّم تقرير الشغل الساعة كام؟</td></tr>
+                    <tr><td>75</td><td class="nl-text"><span>Hoe laat begint de veiligheidsvergadering?</span> <button class="audio-btn" onclick="speak('Hoe laat begint de veiligheidsvergadering?')">🔊</button></td><td>اجتماع السلامة بيبدأ الساعة كام؟</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Category 4 -->
+        <div class="table-container category-group" id="cat4">
+            <div class="section-title">
+                <h2>76–100: الأسئلة الماضية والمستقبلية والترتيبات (Gesprekken en planning)</h2>
+                <span class="badge">25 جملة</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">#</th>
+                        <th>الجملة بالهولندية (Nederlands)</th>
+                        <th>المعنى بالعربية</th>
+                    </tr>
+                </thead>
+                <tbody class="sentence-list">
+                    <tr><td>76</td><td class="nl-text"><span>Hoe laat kom je vanavond?</span> <button class="audio-btn" onclick="speak('Hoe laat kom je vanavond?')">🔊</button></td><td>هتيجي النهارده بالليل الساعة كام؟</td></tr>
+                    <tr><td>77</td><td class="nl-text"><span>Hoe laat ga je morgen weg?</span> <button class="audio-btn" onclick="speak('Hoe laat ga je morgen weg?')">🔊</button></td><td>هتمشي بكرة الساعة كام؟</td></tr>
+                    <tr><td>78</td><td class="nl-text"><span>Hoe laat ben je gisteren thuisgekomen?</span> <button class="audio-btn" onclick="speak('Hoe laat ben je gisteren thuisgekomen?')">🔊</button></td><td>رجعت البيت امبارح الساعة كام؟</td></tr>
+                    <tr><td>79</td><td class="nl-text"><span>Hoe laat heb je me gebeld?</span> <button class="audio-btn" onclick="speak('Hoe laat heb je me gebeld?')">🔊</button></td><td>اتصلت بيا الساعة كام؟</td></tr>
+                    <tr><td>80</td><td class="nl-text"><span>Hoe laat heb je het bericht gestuurd?</span> <button class="audio-btn" onclick="speak('Hoe laat heb je het bericht gestuurd?')">🔊</button></td><td>بعت الرسالة الساعة كام؟</td></tr>
+                    <tr><td>81</td><td class="nl-text"><span>Hoe laat heb je de e-mail ontvangen?</span> <button class="audio-btn" onclick="speak('Hoe laat heb je de e-mail ontvangen?')">🔊</button></td><td>استلمت الإيميل الساعة كام؟</td></tr>
+                    <tr><td>82</td><td class="nl-text"><span>Hoe laat ben je aangekomen?</span> <button class="audio-btn" onclick="speak('Hoe laat ben je aangekomen?')">🔊</button></td><td>وصلت الساعة كام؟</td></tr>
+                    <tr><td>83</td><td class="nl-text"><span>Hoe laat ben je vertrokken?</span> <button class="audio-btn" onclick="speak('Hoe laat ben je vertrokken?')">🔊</button></td><td>مشيت الساعة كام؟</td></tr>
+                    <tr><td>84</td><td class="nl-text"><span>Hoe laat ben je wakker geworden?</span> <button class="audio-btn" onclick="speak('Hoe laat ben je wakker geworden?')">🔊</button></td><td>صحيت من النوم الساعة كام؟</td></tr>
+                    <tr><td>85</td><td class="nl-text"><span>Hoe laat ben je gaan slapen?</span> <button class="audio-btn" onclick="speak('Hoe laat ben je gaan slapen?')">🔊</button></td><td>نمت الساعة كام؟</td></tr>
+                    <tr><td>86</td><td class="nl-text"><span>Hoe laat heb je gegeten?</span> <button class="audio-btn" onclick="speak('Hoe laat heb je gegeten?')">🔊</button></td><td>أكلت الساعة كام؟</td></tr>
+                    <tr><td>87</td><td class="nl-text"><span>Hoe laat heb je de trein genomen?</span> <button class="audio-btn" onclick="speak('Hoe laat heb je de trein genomen?')">🔊</button></td><td>ركبت القطار الساعة كام؟</td></tr>
+                    <tr><td>88</td><td class="nl-text"><span>Hoe laat heb je de afspraak gemaakt?</span> <button class="audio-btn" onclick="speak('Hoe laat heb je de afspraak gemaakt?')">🔊</button></td><td>حجزت الموعد الساعة كام؟</td></tr>
+                    <tr><td>89</td><td class="nl-text"><span>Hoe laat begint het morgen?</span> <button class="audio-btn" onclick="speak('Hoe laat begint het morgen?')">🔊</button></td><td>هيبدأ بكرة الساعة كام؟</td></tr>
+                    <tr><td>90</td><td class="nl-text"><span>Hoe laat eindigt het vandaag?</span> <button class="audio-btn" onclick="speak('Hoe laat eindigt het vandaag?')">🔊</button></td><td>هيخلص النهارده الساعة كام؟</td></tr>
+                    <tr><td>91</td><td class="nl-text"><span>Hoe laat zullen we afspreken?</span> <button class="audio-btn" onclick="speak('Hoe laat zullen we afspreken?')">🔊</button></td><td>نتقابل الساعة كام؟</td></tr>
+                    <tr><td>92</td><td class="nl-text"><span>Hoe laat zal ik je bellen?</span> <button class="audio-btn" onclick="speak('Hoe laat zal ik je bellen?')">🔊</button></td><td>أتصل بيك الساعة كام؟</td></tr>
+                    <tr><td>93</td><td class="nl-text"><span>Hoe laat kan ik langskomen?</span> <button class="audio-btn" onclick="speak('Hoe laat kan ik langskomen?')">🔊</button></td><td>أقدر أعدّي عليك الساعة كام؟</td></tr>
+                    <tr><td>94</td><td class="nl-text"><span>Hoe laat kunnen we vertrekken?</span> <button class="audio-btn" onclick="speak('Hoe laat kunnen we vertrekken?')">🔊</button></td><td>نقدر نمشي الساعة كام؟</td></tr>
+                    <tr><td>95</td><td class="nl-text"><span>Hoe laat moeten we thuis zijn?</span> <button class="audio-btn" onclick="speak('Hoe laat moeten we thuis zijn?')">🔊</button></td><td>لازم نكون في البيت الساعة كام؟</td></tr>
+                    <tr><td>96</td><td class="nl-text"><span>Hoe laat wil je afspreken?</span> <button class="audio-btn" onclick="speak('Hoe laat wil je afspreken?')">🔊</button></td><td>عايز نتقابل الساعة كام؟</td></tr>
+                    <tr><td>97</td><td class="nl-text"><span>Hoe laat past het jou?</span> <button class="audio-btn" onclick="speak('Hoe laat past het jou?')">🔊</button></td><td>أنهي وقت يناسبك؟</td></tr>
+                    <tr><td>98</td><td class="nl-text"><span>Hoe laat komt het jou het beste uit?</span> <button class="audio-btn" onclick="speak('Hoe laat komt het jou het beste uit?')">🔊</button></td><td>أنهي وقت أنسب لك؟</td></tr>
+                    <tr><td>99</td><td class="nl-text"><span>Hoe laat spreken we morgen af?</span> <button class="audio-btn" onclick="speak('Hoe laat spreken we morgen af?')">🔊</button></td><td>هنتقابل بكرة الساعة كام؟</td></tr>
+                    <tr><td>100</td><td class="nl-text"><span>Hoe laat zie ik je weer?</span> <button class="audio-btn" onclick="speak('Hoe laat zie ik je weer?')">🔊</button></td><td>شوفك تاني الساعة كام؟</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Telling Time Section -->
+        <div class="table-container" style="margin-top: 30px;">
+            <div class="section-title">
+                <h2>🕒 مرجع: قراءة الساعة في اللغة الهولندية</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>الصيغة الهولندية (Het klokkijken)</th>
+                        <th>المعنى بالعربية</th>
+                        <th>ملاحظات التوقيت</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="nl-text"><span>Het is één uur.</span> <button class="audio-btn" onclick="speak('Het is één uur.')">🔊</button></td><td>الساعة واحدة.</td><td>1:00 (تماماً)</td></tr>
+                    <tr><td class="nl-text"><span>Het is half twee.</span> <button class="audio-btn" onclick="speak('Het is half twee.')">🔊</button></td><td>الساعة واحدة ونص.</td><td>1:30 (نصف ساعة قبل الثانية)</td></tr>
+                    <tr><td class="nl-text"><span>Het is kwart over drie.</span> <button class="audio-btn" onclick="speak('Het is kwart over drie.')">🔊</button></td><td>الساعة تلاتة وربع.</td><td>3:15 (ربع ساعة بعد الثالثة)</td></tr>
+                    <tr><td class="nl-text"><span>Het is kwart voor vier.</span> <button class="audio-btn" onclick="speak('Het is kwart voor vier.')">🔊</button></td><td>الساعة أربعة إلا ربع.</td><td>3:45 (ربع ساعة قبل الرابعة)</td></tr>
+                    <tr><td class="nl-text"><span>Het is tien over vijf.</span> <button class="audio-btn" onclick="speak('Het is tien over vijf.')">🔊</button></td><td>الساعة خمسة وعشرة.</td><td>5:10</td></tr>
+                    <tr><td class="nl-text"><span>Het is tien voor zes.</span> <button class="audio-btn" onclick="speak('Het is tien voor zes.')">🔊</button></td><td>الساعة ستة إلا عشرة.</td><td>5:50</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>دليل تعلم اللغة الهولندية البلجيكية | مصمم وفق أعلى معايير صفحات الويب التعليمية</p>
+    </footer>
+
+    <!-- JavaScript logic -->
+    <script>
+        // Interactive Audio Pronunciation
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'nl-BE'; // Flemish/Dutch Pronunciation
+                utterance.rate = 0.9; // Slightly slower for clear learning
+                window.speechSynthesis.cancel(); // Stop any ongoing speech
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("عذراً، ميزة النطق الصوتي غير مدعومة في متصفحك الحالي.");
+            }
+        }
+
+        // Live Search Logic
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            const rows = document.querySelectorAll('.sentence-list tr');
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Category Filter Logic
+        function filterCategory(catId) {
+            // Update Active Button
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Show/Hide Category Containers
+            const categories = document.querySelectorAll('.category-group');
+            categories.forEach(cat => {
+                if (catId === 'all' || cat.id === catId) {
+                    cat.style.display = 'block';
+                } else {
+                    cat.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
