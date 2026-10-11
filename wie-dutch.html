@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة باستخدام Wie? (مَنْ؟) في الهولندية</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* شريط البحث */
+        .search-box {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        /* التبويبات (Tabs) */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: #e2e8f0;
+            color: var(--text-main);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* قوائم الجمل */
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .sentence-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .sentence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .sentence-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .dutch-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.25rem;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .arabic-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* صندوق الملاحظة */
+        .note-box {
+            background: #fffbeeb3;
+            border-right: 4px solid var(--accent);
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+        }
+
+        .note-box h3 {
+            color: #b45309;
+            margin-bottom: 0.75rem;
+        }
+
+        .note-box ul {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .note-box li {
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .sentence-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🇳🇱 100 جملة باستخدام Wie? (مَنْ؟)</h1>
+            <p>جمل باللغة الهولندية مع الترجمة بالعربية للمحادثة اليومية في بلجيكا</p>
+        </header>
+
+        <!-- حقل البحث -->
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="filterSentences()" placeholder="ابحث عن كلمة بالهولندية أو العربية...">
+        </div>
+
+        <!-- التبويبات -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="filterTab('all', this)">الكل (100)</button>
+            <button class="tab-btn" onclick="filterTab('cat1', this)">1–25: الأشخاص</button>
+            <button class="tab-btn" onclick="filterTab('cat2', this)">26–50: الحياة اليومية</button>
+            <button class="tab-btn" onclick="filterTab('cat3', this)">51–75: العمل والدراسة</button>
+            <button class="tab-btn" onclick="filterTab('cat4', this)">76–100: العلاقات والمواقف</button>
+        </div>
+
+        <!-- الحاوية الرئيسية للجمل -->
+        <div id="contentArea"></div>
+
+        <!-- ملاحظة مهمة -->
+        <div class="note-box">
+            <h3>ملاحظة مهمة:</h3>
+            <p style="margin-bottom: 0.5rem;">كلمة <strong>Wie</strong> تعني «مَنْ؟» عند السؤال عن شخص، وتأتي في تراكيب أساسية أخرى:</p>
+            <ul>
+                <li><strong>Met wie?</strong> — مع مَنْ؟</li>
+                <li><strong>Voor wie?</strong> — لِمَنْ؟</li>
+                <li><strong>Van wie?</strong> — مِلْك مَنْ؟ / من مَنْ؟</li>
+                <li><strong>Aan wie?</strong> — إلى مَنْ؟</li>
+                <li><strong>Bij wie?</strong> — عند مَنْ؟</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const data = [
+            {
+                cat: "cat1",
+                title: "1–25: أسئلة عن الأشخاص",
+                items: [
+                    { nl: "Wie ben jij?", ar: "مَنْ أنت؟" },
+                    { nl: "Wie is hij?", ar: "مَنْ هو؟" },
+                    { nl: "Wie is zij?", ar: "مَنْ هي؟" },
+                    { nl: "Wie zijn zij?", ar: "مَنْ هم؟" },
+                    { nl: "Wie is dat?", ar: "مَنْ هذا؟" },
+                    { nl: "Wie zijn dat?", ar: "مَنْ هؤلاء؟" },
+                    { nl: "Wie komt er?", ar: "مَنْ سيأتي؟" },
+                    { nl: "Wie gaat er mee?", ar: "مَنْ سيذهب معنا؟" },
+                    { nl: "Wie woont hier?", ar: "مَنْ يسكن هنا؟" },
+                    { nl: "Wie werkt hier?", ar: "مَنْ يعمل هنا؟" },
+                    { nl: "Wie spreekt Nederlands?", ar: "مَنْ يتحدث الهولندية؟" },
+                    { nl: "Wie spreekt Engels?", ar: "مَنْ يتحدث الإنجليزية؟" },
+                    { nl: "Wie spreekt Arabisch?", ar: "مَنْ يتحدث العربية؟" },
+                    { nl: "Wie is jouw vriend?", ar: "مَنْ صديقك؟" },
+                    { nl: "Wie is jouw vriendin?", ar: "مَنْ صديقتك؟" },
+                    { nl: "Wie is jouw buurman?", ar: "مَنْ جارك؟" },
+                    { nl: "Wie is jouw buurvrouw?", ar: "مَنْ جارتك؟" },
+                    { nl: "Wie is jouw collega?", ar: "مَنْ زميلك في العمل؟" },
+                    { nl: "Wie is jouw baas?", ar: "مَنْ مديرك؟" },
+                    { nl: "Wie is jouw leraar?", ar: "مَنْ معلّمك؟" },
+                    { nl: "Wie is jouw dokter?", ar: "مَنْ طبيبك؟" },
+                    { nl: "Wie is jouw tandarts?", ar: "مَنْ طبيب أسنانك؟" },
+                    { nl: "Wie is jouw favoriete zanger?", ar: "مَنْ مغنّيك المفضّل؟" },
+                    { nl: "Wie is jouw favoriete acteur?", ar: "مَنْ ممثلك المفضّل؟" },
+                    { nl: "Wie kent hem?", ar: "مَنْ يعرفه؟" }
+                ]
+            },
+            {
+                cat: "cat2",
+                title: "26–50: أسئلة عن الحياة اليومية",
+                items: [
+                    { nl: "Wie heeft er gebeld?", ar: "مَنْ اتصل؟" },
+                    { nl: "Wie heeft dit gedaan?", ar: "مَنْ فعل هذا؟" },
+                    { nl: "Wie heeft mijn telefoon gezien?", ar: "مَنْ رأى هاتفي؟" },
+                    { nl: "Wie heeft mijn sleutels?", ar: "مَنْ معه مفاتيحي؟" },
+                    { nl: "Wie heeft mijn tas meegenomen?", ar: "مَنْ أخذ حقيبتي معه؟" },
+                    { nl: "Wie heeft er gekookt?", ar: "مَنْ طبخ؟" },
+                    { nl: "Wie maakt het eten klaar?", ar: "مَنْ يُحضّر الطعام؟" },
+                    { nl: "Wie doet de boodschappen?", ar: "مَنْ يتسوّق لشراء الطعام؟" },
+                    { nl: "Wie maakt het huis schoon?", ar: "مَنْ ينظّف المنزل؟" },
+                    { nl: "Wie wast de kleren?", ar: "مَنْ يغسل الملابس؟" },
+                    { nl: "Wie doet de afwas?", ar: "مَنْ يغسل الأطباق؟" },
+                    { nl: "Wie opent de deur?", ar: "مَنْ يفتح الباب؟" },
+                    { nl: "Wie heeft de deur geopend?", ar: "مَنْ فتح الباب؟" },
+                    { nl: "Wie wacht op mij?", ar: "مَنْ ينتظرني؟" },
+                    { nl: "Wie belt mij morgen?", ar: "مَنْ سيتصل بي غدًا؟" },
+                    { nl: "Wie brengt mij naar het station?", ar: "مَنْ سيوصلني إلى المحطة؟" },
+                    { nl: "Wie haalt de kinderen op?", ar: "مَنْ سيصطحب الأطفال؟" },
+                    { nl: "Wie helpt mij?", ar: "مَنْ يساعدني؟" },
+                    { nl: "Wie kan mij helpen?", ar: "مَنْ يستطيع مساعدتي؟" },
+                    { nl: "Wie wil er koffie?", ar: "مَنْ يريد القهوة؟" },
+                    { nl: "Wie wil er iets eten?", ar: "مَنْ يريد أن يأكل شيئًا؟" },
+                    { nl: "Wie heeft er honger?", ar: "مَنْ يشعر بالجوع؟" },
+                    { nl: "Wie heeft er dorst?", ar: "مَنْ يشعر بالعطش؟" },
+                    { nl: "Wie is er thuis?", ar: "مَنْ موجود في المنزل؟" },
+                    { nl: "Wie is er aan de deur?", ar: "مَنْ على الباب؟" }
+                ]
+            },
+            {
+                cat: "cat3",
+                title: "51–75: العمل والدراسة في بلجيكا",
+                items: [
+                    { nl: "Wie werkt er vandaag?", ar: "مَنْ يعمل اليوم؟" },
+                    { nl: "Wie begint om acht uur?", ar: "مَنْ يبدأ الساعة الثامنة؟" },
+                    { nl: "Wie werkt er morgen?", ar: "مَنْ يعمل غدًا؟" },
+                    { nl: "Wie zoekt er werk?", ar: "مَنْ يبحث عن عمل؟" },
+                    { nl: "Wie zoekt er een job?", ar: "مَنْ يبحث عن وظيفة؟" },
+                    { nl: "Wie heeft er ervaring?", ar: "مَنْ لديه خبرة؟" },
+                    { nl: "Wie heeft er een diploma?", ar: "مَنْ لديه شهادة؟" },
+                    { nl: "Wie heeft er een contract?", ar: "مَنْ لديه عقد؟" },
+                    { nl: "Wie is verantwoordelijk?", ar: "مَنْ المسؤول؟" },
+                    { nl: "Wie is de manager?", ar: "مَنْ المدير؟" },
+                    { nl: "Wie is de ingenieur?", ar: "مَنْ المهندس؟" },
+                    { nl: "Wie heeft deze machine gerepareerd?", ar: "مَنْ أصلح هذه الآلة؟" },
+                    { nl: "Wie controleert het werk?", ar: "مَنْ يفحص العمل؟" },
+                    { nl: "Wie maakt het rapport?", ar: "مَنْ يُعدّ التقرير؟" },
+                    { nl: "Wie heeft de vergadering georganiseerd?", ar: "مَنْ نظّم الاجتماع؟" },
+                    { nl: "Wie neemt er deel aan de vergadering?", ar: "مَنْ سيشارك في الاجتماع؟" },
+                    { nl: "Wie geeft de Nederlandse les?", ar: "مَنْ يُدرّس درس الهولندية؟" },
+                    { nl: "Wie leert er Nederlands?", ar: "مَنْ يتعلّم الهولندية؟" },
+                    { nl: "Wie volgt deze cursus?", ar: "مَنْ يحضر هذه الدورة؟" },
+                    { nl: "Wie heeft het antwoord?", ar: "مَنْ لديه الإجابة؟" },
+                    { nl: "Wie weet het antwoord?", ar: "مَنْ يعرف الإجابة؟" },
+                    { nl: "Wie heeft de e-mail gestuurd?", ar: "مَنْ أرسل البريد الإلكتروني؟" },
+                    { nl: "Wie moet dit document ondertekenen?", ar: "مَنْ يجب أن يوقّع هذه الوثيقة؟" },
+                    { nl: "Wie heeft een afspraak gemaakt?", ar: "مَنْ حجز موعدًا؟" },
+                    { nl: "Wie kan morgen invallen?", ar: "مَنْ يستطيع أن يحلّ محلّ شخص غدًا؟" }
+                ]
+            },
+            {
+                cat: "cat4",
+                title: "76–100: العلاقات والمواقف المختلفة",
+                items: [
+                    { nl: "Wie ken je hier?", ar: "مَنْ تعرف هنا؟" },
+                    { nl: "Wie ken je in België?", ar: "مَنْ تعرف في بلجيكا؟" },
+                    { nl: "Wie heeft jou dat verteld?", ar: "مَنْ أخبرك بذلك؟" },
+                    { nl: "Wie heeft je dat gevraagd?", ar: "مَنْ سألك ذلك؟" },
+                    { nl: "Wie heeft jou gebeld?", ar: "مَنْ اتصل بك؟" },
+                    { nl: "Wie heeft je geholpen?", ar: "مَنْ ساعدك؟" },
+                    { nl: "Wie heeft je uitgenodigd?", ar: "مَنْ دعاك؟" },
+                    { nl: "Wie heeft je dit cadeau gegeven?", ar: "مَنْ أعطاك هذه الهدية؟" },
+                    { nl: "Wie heeft deze brief geschreven?", ar: "مَنْ كتب هذه الرسالة؟" },
+                    { nl: "Wie heeft deze foto gemaakt?", ar: "مَنْ التقط هذه الصورة؟" },
+                    { nl: "Wie heeft mijn bericht gelezen?", ar: "مَنْ قرأ رسالتي؟" },
+                    { nl: "Wie heeft er gelijk?", ar: "مَنْ على حق؟" },
+                    { nl: "Wie heeft er ongelijk?", ar: "مَنْ مخطئ؟" },
+                    { nl: "Wie betaalt de rekening?", ar: "مَنْ سيدفع الفاتورة؟" },
+                    { nl: "Wie betaalt vandaag?", ar: "مَنْ سيدفع اليوم؟" },
+                    { nl: "Wie wil met mij meegaan?", ar: "مَنْ يريد الذهاب معي؟" },
+                    { nl: "Wie komt er vanavond op bezoek?", ar: "مَنْ سيزورنا هذا المساء؟" },
+                    { nl: "Wie woont er naast jou?", ar: "مَنْ يسكن بجوارك؟" },
+                    { nl: "Wie woont er boven mij?", ar: "مَنْ يسكن فوقي؟" },
+                    { nl: "Wie woont er tegenover jou?", ar: "مَنْ يسكن أمامك؟" },
+                    { nl: "Wie heeft de beste oplossing?", ar: "مَنْ لديه أفضل حل؟" },
+                    { nl: "Wie kan dit probleem oplossen?", ar: "مَنْ يستطيع حل هذه المشكلة؟" },
+                    { nl: "Wie wil als eerste beginnen?", ar: "مَنْ يريد أن يبدأ أولًا؟" },
+                    { nl: "Wie heeft er tijd om mij te helpen?", ar: "مَنْ لديه وقت لمساعدتي؟" },
+                    { nl: "Wie weet wat er gebeurd is?", ar: "مَنْ يعرف ماذا حدث؟" }
+                ]
+            }
+        ];
+
+        let activeTab = 'all';
+
+        function renderSentences() {
+            const container = document.getElementById('contentArea');
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            container.innerHTML = '';
+
+            data.forEach(group => {
+                if (activeTab !== 'all' && group.cat !== activeTab) return;
+
+                const filteredItems = group.items.filter(item => 
+                    item.nl.toLowerCase().includes(searchVal) || 
+                    item.ar.toLowerCase().includes(searchVal)
+                );
+
+                if (filteredItems.length > 0) {
+                    const section = document.createElement('section');
+                    
+                    const title = document.createElement('h2');
+                    title.className = 'section-title';
+                    title.textContent = group.title;
+                    section.appendChild(title);
+
+                    const grid = document.createElement('div');
+                    grid.className = 'sentence-list';
+
+                    filteredItems.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = 'sentence-card';
+                        card.innerHTML = `
+                            <div class="dutch-text">${item.nl}</div>
+                            <div class="arabic-text">${item.ar}</div>
+                        `;
+                        grid.appendChild(card);
+                    });
+
+                    section.appendChild(grid);
+                    container.appendChild(section);
+                }
+            });
+        }
+
+        function filterTab(category, btn) {
+            activeTab = category;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderSentences();
+        }
+
+        function filterSentences() {
+            renderSentences();
+        }
+
+        // العرض الأولي
+        renderSentences();
+    </script>
+</body>
+</html>
