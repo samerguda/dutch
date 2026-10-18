@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة هولندية باستخدام Als</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#f1f5f9;color:#1e293b;
+ font-family:Arial,Tahoma,sans-serif;line-height:1.9
+}
+.container{max-width:1000px;margin:auto;padding:18px}
+header{
+ background:linear-gradient(135deg,#064e3b,#059669);
+ color:white;text-align:center;padding:28px 18px;
+ border-radius:18px;margin-bottom:20px
+}
+header h1{margin:0 0 8px;font-size:27px}
+.panel,.sentence{
+ background:white;border-radius:13px;padding:17px;
+ margin-bottom:14px;box-shadow:0 3px 12px #00000008
+}
+.panel{border-right:5px solid #059669}
+.panel h2{margin-top:0}
+.example{
+ background:#ecfdf5;padding:12px;border-radius:9px;
+ margin:10px 0;direction:ltr;text-align:left
+}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}
+input{
+ flex:1;min-width:200px;padding:12px;
+ border:1px solid #cbd5e1;border-radius:9px;font-size:16px
+}
+button{
+ border:0;border-radius:9px;background:#047857;color:white;
+ padding:10px 14px;font-weight:bold;cursor:pointer
+}
+button:hover{opacity:.85}
+.sentence-top{
+ display:flex;justify-content:space-between;align-items:center;
+ gap:10px;margin-bottom:8px
+}
+.number{
+ background:#d1fae5;color:#065f46;padding:2px 11px;
+ border-radius:7px;font-weight:bold
+}
+.dutch{
+ direction:ltr;text-align:left;font-size:18px;
+ font-weight:bold;color:#0f172a
+}
+.arabic{color:#475569;margin-top:7px}
+.copy-one{font-size:12px;padding:6px 10px}
+footer{text-align:center;color:#64748b;padding:20px}
+@media print{
+ body{background:white}
+ .toolbar,.copy-one,footer{display:none}
+ .sentence{break-inside:avoid;box-shadow:none;border:1px solid #ddd}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🇧🇪 100 جملة هولندية باستخدام Als</h1>
+<p>الهولندية البلجيكية اليومية مع الترجمة العربية</p>
+<p>Als = إذا / عندما / لو</p>
+</header>
+<section class="panel">
+<h2>📘 شرح Als</h2>
+<strong>1. Als = إذا (شرط)</strong>
+<div class="example">
+Als ik tijd heb, help ik je.<br>
+إذا كان لدي وقت، فسأساعدك.
+</div>
+<strong>2. Als = عندما (عادة أو موقف متكرر)</strong>
+<div class="example">
+Als ik thuiskom, drink ik koffie.<br>
+عندما أعود إلى البيت، أشرب القهوة.
+</div>
+<strong>3. Als = عندما (حدث في الماضي)</strong>
+<div class="example">
+Als kind speelde ik vaak buiten.<br>
+عندما كنت طفلًا، كنت ألعب في الخارج كثيرًا.
+</div>
+<p><strong>قاعدة مهمة:</strong> عندما تبدأ الجملة بـ Als، يأتي الفعل المصرف في الجملة التابعة في النهاية غالبًا، وبعد الفاصلة يأتي الفعل المصرف في الجملة الرئيسية مباشرةً.</p>
+<div class="example">
+Als ik tijd <b>heb</b>, <b>ga</b> ik wandelen.<br>
+إذا كان لدي وقت، أذهب للمشي.
+</div>
+</section>
+<div class="toolbar">
+<input id="search" placeholder="ابحث بالهولندية أو العربية...">
+<button onclick="copyAll()">📋 نسخ الـ100 جملة</button>
+<button onclick="window.print()">🖨️ طباعة / PDF</button>
+</div>
+<div id="sentences"></div>
+<footer>دليل تعلم الهولندية البلجيكية 🇧🇪 — 100 جملة مترجمة</footer>
+</div>
+<script>
+const data = [
+["Als ik tijd heb, bel ik je.","إذا كان لدي وقت، سأتصل بك."],
+["Als het regent, blijf ik thuis.","إذا أمطرت، سأبقى في المنزل."],
+["Als ik moe ben, ga ik vroeg slapen.","إذا كنت متعبًا، أذهب للنوم مبكرًا."],
+["Als ik honger heb, maak ik een sandwich.","إذا شعرت بالجوع، أعد شطيرة."],
+["Als ik dorst heb, drink ik water.","إذا شعرت بالعطش، أشرب الماء."],
+["Als ik vroeg wakker word, maak ik koffie.","إذا استيقظت مبكرًا، أعد القهوة."],
+["Als ik naar mijn werk ga, neem ik de bus.","عندما أذهب إلى عملي، أستقل الحافلة."],
+["Als ik thuiskom, begroet ik mijn vrouw.","عندما أعود إلى المنزل، أحيّي زوجتي."],
+["Als ik Nederlands oefen, leer ik nieuwe woorden.","عندما أتدرب على الهولندية، أتعلم كلمات جديدة."],
+["Als ik iets niet begrijp, stel ik een vraag.","إذا لم أفهم شيئًا، أطرح سؤالًا."],
+["Als je wilt, kan ik je helpen.","إذا أردت، يمكنني مساعدتك."],
+["Als je morgen komt, drinken we samen koffie.","إذا أتيت غدًا، سنشرب القهوة معًا."],
+["Als je ziek bent, moet je rusten.","إذا كنت مريضًا، يجب أن تستريح."],
+["Als je haast hebt, neem dan een taxi.","إذا كنت مستعجلًا، فاستقل سيارة أجرة."],
+["Als je hard werkt, kun je veel bereiken.","إذا عملت بجد، يمكنك تحقيق الكثير."],
+["Als je goed luistert, begrijp je meer.","إذا استمعت جيدًا، ستفهم أكثر."],
+["Als je de deur opent, zie je de tuin.","إذا فتحت الباب، سترى الحديقة."],
+["Als je links afslaat, zie je het station.","إذا انعطفت يسارًا، سترى المحطة."],
+["Als je hulp nodig hebt, bel me.","إذا احتجت إلى مساعدة، اتصل بي."],
+["Als je klaar bent, kunnen we vertrekken.","إذا انتهيت، يمكننا المغادرة."],
+["Als ik geld spaar, kan ik een auto kopen.","إذا ادخرت المال، يمكنني شراء سيارة."],
+["Als ik genoeg verdien, betaal ik mijn rekeningen.","إذا كسبت ما يكفي، أدفع فواتيري."],
+["Als de winkel open is, koop ik brood.","إذا كان المتجر مفتوحًا، أشتري الخبز."],
+["Als de prijs te hoog is, koop ik het niet.","إذا كان السعر مرتفعًا جدًا، فلن أشتريه."],
+["Als ik boodschappen doe, maak ik een lijst.","عندما أتسوق، أعد قائمة."],
+["Als ik korting krijg, koop ik twee stuks.","إذا حصلت على خصم، أشتري قطعتين."],
+["Als de bank sluit, kan ik geen geld opnemen.","إذا أغلق البنك، لا أستطيع سحب المال."],
+["Als ik mijn kaart verlies, bel ik de bank.","إذا فقدت بطاقتي، أتصل بالبنك."],
+["Als ik online betaal, bewaar ik het bewijs.","عندما أدفع عبر الإنترنت، أحتفظ بالإيصال."],
+["Als ik genoeg tijd heb, vergelijk ik de prijzen.","إذا كان لدي وقت كافٍ، أقارن الأسعار."],
+["Als ik naar school ga, neem ik mijn boeken mee.","عندما أذهب إلى المدرسة، آخذ كتبي معي."],
+["Als de les begint, zet ik mijn telefoon uit.","عندما يبدأ الدرس، أغلق هاتفي."],
+["Als ik een nieuw woord leer, schrijf ik het op.","عندما أتعلم كلمة جديدة، أكتبها."],
+["Als ik elke dag oefen, word ik beter.","إذا تدربت كل يوم، سأتحسن."],
+["Als ik fouten maak, probeer ik het opnieuw.","إذا ارتكبت أخطاء، أحاول مرة أخرى."],
+["Als ik een examen heb, studeer ik extra.","عندما يكون لدي امتحان، أدرس أكثر."],
+["Als ik iets vergeet, kijk ik in mijn notities.","إذا نسيت شيئًا، أراجع ملاحظاتي."],
+["Als de leraar spreekt, luisteren de studenten.","عندما يتحدث المعلم، يستمع الطلاب."],
+["Als ik een vraag heb, steek ik mijn hand op.","إذا كان لدي سؤال، أرفع يدي."],
+["Als ik slaag, vier ik het met mijn familie.","إذا نجحت، أحتفل مع عائلتي."],
+["Als ik naar mijn werk ga, sta ik vroeg op.","عندما أذهب إلى العمل، أستيقظ مبكرًا."],
+["Als mijn baas belt, neem ik de telefoon op.","إذا اتصل مديري، أرد على الهاتف."],
+["Als er een probleem is, zoeken we een oplossing.","إذا كانت هناك مشكلة، نبحث عن حل."],
+["Als de machine stopt, controleert de technicus haar.","إذا توقفت الآلة، يفحصها الفني."],
+["Als ik een vergadering heb, bereid ik me voor.","عندما يكون لدي اجتماع، أستعد له."],
+["Als de klant belt, geef ik hem informatie.","إذا اتصل العميل، أقدم له المعلومات."],
+["Als ik mijn werk afmaak, stuur ik het rapport.","عندما أنتهي من عملي، أرسل التقرير."],
+["Als ik een baan vind, begin ik zo snel mogelijk.","إذا وجدت وظيفة، أبدأ في أقرب وقت ممكن."],
+["Als ik een e-mail ontvang, lees ik die meteen.","عندما أتلقى بريدًا إلكترونيًا، أقرأه فورًا."],
+["Als mijn collega hulp nodig heeft, help ik hem.","إذا احتاج زميلي إلى مساعدة، أساعده."],
+["Als het koud is, draag ik een warme jas.","إذا كان الجو باردًا، أرتدي معطفًا دافئًا."],
+["Als de zon schijnt, gaan we naar buiten.","إذا كانت الشمس مشرقة، نخرج."],
+["Als het sneeuwt, rijden auto's langzamer.","عندما تتساقط الثلوج، تسير السيارات ببطء أكثر."],
+["Als het warm is, drink ik meer water.","إذا كان الجو حارًا، أشرب المزيد من الماء."],
+["Als de wind sterk is, blijf ik liever binnen.","إذا كانت الرياح قوية، أفضل البقاء في الداخل."],
+["Als het donker wordt, doe ik de lichten aan.","عندما يحل الظلام، أشعل الأنوار."],
+["Als het mooi weer is, fietsen we naar het park.","إذا كان الطقس جميلًا، نذهب بالدراجة إلى الحديقة."],
+["Als het hard waait, sluit ik de ramen.","إذا هبت الرياح بقوة، أغلق النوافذ."],
+["Als de lucht bewolkt is, kan het gaan regenen.","إذا كانت السماء غائمة، فقد يبدأ المطر."],
+["Als het onweert, blijf ik liever thuis.","إذا حدثت عاصفة رعدية، أفضل البقاء في المنزل."],
+["Als mijn vrouw kookt, help ik haar.","عندما تطبخ زوجتي، أساعدها."],
+["Als mijn kinderen thuiskomen, eten we samen.","عندما يعود أطفالي إلى المنزل، نأكل معًا."],
+["Als mijn moeder belt, praat ik graag met haar.","عندما تتصل أمي، أحب التحدث معها."],
+["Als mijn vader op bezoek komt, maken we koffie.","عندما يأتي أبي للزيارة، نعد القهوة."],
+["Als mijn broer hulp vraagt, help ik hem.","إذا طلب أخي المساعدة، أساعده."],
+["Als we samen eten, praten we over onze dag.","عندما نأكل معًا، نتحدث عن يومنا."],
+["Als de kinderen slapen, kijk ik televisie.","عندما ينام الأطفال، أشاهد التلفاز."],
+["Als mijn familie op bezoek komt, maak ik het huis schoon.","عندما تأتي عائلتي للزيارة، أنظف المنزل."],
+["Als iemand jarig is, kopen we een cadeau.","عندما يكون عيد ميلاد أحدهم، نشتري هدية."],
+["Als we tijd hebben, bezoeken we onze vrienden.","إذا كان لدينا وقت، نزور أصدقاءنا."],
+["Als ik ziek ben, maak ik een afspraak bij de dokter.","إذا كنت مريضًا، أحجز موعدًا عند الطبيب."],
+["Als ik hoofdpijn heb, probeer ik te rusten.","إذا أصبت بصداع، أحاول الراحة."],
+["Als ik me beter voel, ga ik weer werken.","عندما أشعر بتحسن، أعود إلى العمل."],
+["Als ik sport, voel ik me energieker.","عندما أمارس الرياضة، أشعر بمزيد من النشاط."],
+["Als ik vroeg slaap, word ik uitgerust wakker.","إذا نمت مبكرًا، أستيقظ مرتاحًا."],
+["Als ik veel zit, probeer ik vaker te bewegen.","إذا جلست كثيرًا، أحاول التحرك بصورة أكثر تكرارًا."],
+["Als ik gezond wil blijven, eet ik gevarieerd.","إذا أردت الحفاظ على صحتي، أتناول طعامًا متنوعًا."],
+["Als ik stress heb, ga ik een stukje wandelen.","عندما أشعر بالتوتر، أذهب للمشي قليلًا."],
+["Als ik me moe voel, neem ik een pauze.","إذا شعرت بالتعب، آخذ استراحة."],
+["Als ik genoeg slaap, kan ik me beter concentreren.","إذا نمت بما يكفي، أستطيع التركيز بشكل أفضل."],
+["Als ik de bus mis, neem ik de trein.","إذا فاتتني الحافلة، أستقل القطار."],
+["Als de trein vertraging heeft, wacht ik op het perron.","إذا تأخر القطار، أنتظر على الرصيف."],
+["Als ik naar Brussel ga, vertrek ik vroeg.","إذا ذهبت إلى بروكسل، أغادر مبكرًا."],
+["Als ik de weg niet weet, gebruik ik mijn gps.","إذا لم أعرف الطريق، أستخدم نظام الملاحة."],
+["Als het verkeer druk is, kom ik later aan.","إذا كانت حركة المرور مزدحمة، أصل متأخرًا."],
+["Als ik op vakantie ga, pak ik mijn koffer.","عندما أذهب في إجازة، أحزم حقيبتي."],
+["Als het vliegtuig landt, zet ik mijn telefoon aan.","عندما تهبط الطائرة، أشغّل هاتفي."],
+["Als ik een kaart nodig heb, zoek ik die online.","إذا احتجت إلى خريطة، أبحث عنها عبر الإنترنت."],
+["Als ik op tijd vertrek, mis ik de afspraak niet.","إذا غادرت في الوقت المناسب، لن يفوتني الموعد."],
+["Als ik aankom, stuur ik je een bericht.","عندما أصل، أرسل إليك رسالة."],
+["Als kind speelde ik elke dag buiten.","عندما كنت طفلًا، كنت ألعب في الخارج كل يوم."],
+["Als student woonde ik in een kleine kamer.","عندما كنت طالبًا، كنت أعيش في غرفة صغيرة."],
+["Als ik vroeger vakantie had, bezocht ik mijn familie.","عندما كنت أحصل على إجازة في الماضي، كنت أزور عائلتي."],
+["Als we vroeger naar zee gingen, bouwden we zandkastelen.","عندما كنا نذهب إلى البحر قديمًا، كنا نبني قلاعًا من الرمل."],
+["Als ik vroeger ziek was, zorgde mijn moeder voor mij.","عندما كنت أمرض في الماضي، كانت أمي تعتني بي."],
+["Als het vroeger regende, speelden we binnen.","عندما كانت تمطر في الماضي، كنا نلعب في الداخل."],
+["Als ik vroeger geld kreeg, kocht ik speelgoed.","عندما كنت أحصل على المال في الماضي، كنت أشتري ألعابًا."],
+["Als mijn grootouders op bezoek kwamen, aten we samen.","عندما كان أجدادي يزوروننا، كنا نأكل معًا."],
+["Als ik vroeger bang was, zocht ik mijn moeder.","عندما كنت أخاف في الماضي، كنت أبحث عن أمي."],
+["Als we vroeger vrij waren, gingen we vaak wandelen.","عندما كنا نتفرغ في الماضي، كنا نذهب للمشي كثيرًا."],
+["Als ik mijn doel bereik, ben ik trots op mezelf.","إذا حققت هدفي، سأشعر بالفخر بنفسي."],
+["Als ik elke dag leer, zal mijn Nederlands verbeteren.","إذا تعلمت كل يوم، ستتحسن لغتي الهولندية."],
+["Als ik een kans krijg, grijp ik die.","إذا حصلت على فرصة، سأغتنمها."],
+["Als ik een fout maak, leer ik ervan.","إذا ارتكبت خطأ، أتعلم منه."],
+["Als ik problemen tegenkom, geef ik niet op.","إذا واجهت مشكلات، لا أستسلم."],
+["Als ik positief blijf, kan ik verdergaan.","إذا بقيت إيجابيًا، يمكنني الاستمرار."],
+["Als ik hulp nodig heb, durf ik erom te vragen.","إذا احتجت إلى مساعدة، أجرؤ على طلبها."],
+["Als ik genoeg oefen, spreek ik vloeiender Nederlands.","إذا تدربت بما يكفي، سأتحدث الهولندية بطلاقة أكبر."],
+["Als ik mijn plannen verander, laat ik het je weten.","إذا غيرت خططي، سأخبرك."],
+["Als ik hard blijf werken, kan ik mijn dromen waarmaken.","إذا واصلت العمل بجد، يمكنني تحقيق أحلامي."]
+];
+const container = document.getElementById("sentences");
+const search = document.getElementById("search");
+function render(query = "") {
+ container.innerHTML = "";
+ const q = query.toLowerCase().trim();
+ data.forEach((item, i) => {
+  if (!item[0].toLowerCase().includes(q) &&
+      !item[1].toLowerCase().includes(q)) return;
+  const card = document.createElement("article");
+  card.className = "sentence";
+  const top = document.createElement("div");
+  top.className = "sentence-top";
+  const number = document.createElement("span");
+  number.className = "number";
+  number.textContent = i + 1;
+  const copy = document.createElement("button");
+  copy.className = "copy-one";
+  copy.textContent = "نسخ الجملة";
+  copy.onclick = async () => {
+   await navigator.clipboard.writeText(
+    `${i+1}. ${item[0]}\n${item[1]}`
+   );
+   copy.textContent = "تم النسخ ✓";
+   setTimeout(() => copy.textContent = "نسخ الجملة", 1200);
+  };
+  top.append(number, copy);
+  const nl = document.createElement("div");
+  nl.className = "dutch";
+  nl.dir = "ltr";
+  nl.textContent = item[0];
+  const ar = document.createElement("div");
+  ar.className = "arabic";
+  ar.textContent = item[1];
+  card.append(top, nl, ar);
+  container.appendChild(card);
+ });
+}
+function copyAll() {
+ const text = data.map((x,i) =>
+  `${i+1}. ${x[0]}\n${x[1]}`
+ ).join("\n\n");
+ const area = document.createElement("textarea");
+ area.value = text;
+ document.body.appendChild(area);
+ area.select();
+ try {
+  document.execCommand("copy");
+  alert("تم نسخ الجمل الـ100.");
+ } catch(e) {
+  alert("تعذر النسخ تلقائيًا. حاول تحديد النص ونسخه.");
+ }
+ area.remove();
+}
+search.addEventListener("input", () => render(search.value));
+render();
+</script>
+</body>
+</html>
