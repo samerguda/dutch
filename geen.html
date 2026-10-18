@@ -1,205 +1,410 @@
-# 🇧🇪 100 جملة هولندية بلجيكية باستخدام GEEN
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة هولندية بلجيكية باستخدام GEEN</title>
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #FDDA24;
+            --accent-color: #EF3340;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #212529;
+            --border-color: #e9ecef;
+        }
 
-Geen = لا يوجد / ليس لدي / ليس أيّ / لا أملك
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
 
-كلمة geen مهمة جدًا في الهولندية البلجيكية، وتُستخدم غالبًا لنفي الأسماء. إليك 100 جملة مع الترجمة العربية، من مستوى A1 إلى A2، مع أمثلة من الحياة اليومية والعمل والدراسة في بلجيكا.
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
 
----
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
 
-## 1. الجمل الأساسية — Basiszinnen
+        h1 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
 
-* Ik heb geen auto. — ليس لدي سيارة.
-* Ik heb geen fiets. — ليس لدي دراجة.
-* Ik heb geen geld. — ليس لدي مال.
-* Ik heb geen tijd. — ليس لدي وقت.
-* Ik heb geen werk. — ليس لدي عمل.
-* Ik heb geen huis. — ليس لدي منزل.
-* Ik heb geen kinderen. — ليس لدي أطفال.
-* Ik heb geen broer. — ليس لدي أخ.
-* Ik heb geen zus. — ليس لدي أخت.
-* Ik heb geen probleem. — ليس لدي مشكلة.
+        .intro-box {
+            background-color: #fffde7;
+            border-right: 5px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
 
----
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
 
-## 2. الطعام والشراب — Eten en drinken
+        .sentence-list {
+            list-style-type: none;
+            padding: 0;
+        }
 
-* Ik drink geen koffie. — أنا لا أشرب القهوة.
-* Ik drink geen thee. — أنا لا أشرب الشاي.
-* Ik drink geen melk. — أنا لا أشرب الحليب.
-* Ik eet geen vlees. — أنا لا آكل اللحوم.
-* Ik eet geen vis. — أنا لا آكل السمك.
-* Ik eet geen suiker. — أنا لا أتناول السكر.
-* Ik heb geen honger. — أنا لست جائعًا.
-* Ik heb geen dorst. — أنا لست عطشانًا.
-* Er is geen brood meer. — لم يعد هناك خبز.
-* We hebben geen eieren. — ليس لدينا بيض.
+        .sentence-list li {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
----
+        .sentence-list li:nth-child(even) {
+            background-color: #fafafa;
+        }
 
-## 3. المنزل والأثاث — Huis en meubels
+        .dutch {
+            direction: ltr;
+            font-weight: 600;
+            color: #004085;
+            font-family: Arial, sans-serif;
+        }
 
-* Er is geen tafel in de kamer. — لا توجد طاولة في الغرفة.
-* Er staat geen stoel in de keuken. — لا يوجد كرسي في المطبخ.
-* Ik heb geen sleutel. — ليس لدي مفتاح.
-* We hebben geen garage. — ليس لدينا مرآب.
-* Er is geen lift in het gebouw. — لا يوجد مصعد في المبنى.
-* Ik heb geen eigen kamer. — ليس لدي غرفة خاصة بي.
-* Er is geen warm water. — لا توجد مياه ساخنة.
-* We hebben geen verwarming. — ليس لدينا تدفئة.
-* Er is geen plaats voor een extra bed. — لا توجد مساحة لسرير إضافي.
-* Ik heb geen internet thuis. — ليس لدي إنترنت في المنزل.
+        .arabic {
+            color: #495057;
+        }
 
----
+        .note {
+            font-size: 0.85em;
+            color: #6c757d;
+            display: block;
+            width: 100%;
+            margin-top: 4px;
+        }
 
-## 4. العمل والوظائف — Werk en vacatures
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
 
-* Ik heb geen ervaring in België. — ليست لدي خبرة في بلجيكا.
-* Ik heb geen vast contract. — ليس لدي عقد عمل دائم.
-* Ik heb geen sollicitatiegesprek vandaag. — ليس لدي مقابلة عمل اليوم.
-* Ik heb geen antwoord gekregen. — لم أتلقَّ أي إجابة.
-* Er is geen vacature voor een ingenieur. — لا يوجد إعلان وظيفة لمهندس.
-* Ik heb geen werkvergunning nodig voor deze functie. — لا أحتاج إلى تصريح عمل لهذه الوظيفة.
-* Ik heb geen afspraak met mijn manager. — ليس لدي موعد مع مديري.
-* We hebben geen vergadering vandaag. — ليس لدينا اجتماع اليوم.
-* Ik heb geen toegang tot het systeem. — ليس لدي صلاحية الدخول إلى النظام.
-* Er is geen probleem met de planning. — لا توجد مشكلة في التخطيط.
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: center;
+        }
 
----
+        th {
+            background-color: #343a40;
+            color: white;
+        }
 
-## 5. الدراسة وتعلم الهولندية — Studie en Nederlands
+        .quiz-container {
+            background-color: #f1f3f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
 
-* Ik heb geen les vandaag. — ليس لدي درس اليوم.
-* Ik heb geen boek. — ليس لدي كتاب.
-* Ik heb geen pen. — ليس لدي قلم.
-* Ik heb geen woordenboek. — ليس لدي قاموس.
-* Ik heb geen vraag. — ليس لدي سؤال.
-* Ik heb geen antwoord. — ليس لدي إجابة.
-* Ik maak geen fouten. — أنا لا أرتكب أخطاء.
-* Ik heb geen huiswerk. — ليس لدي واجب منزلي.
-* Ik heb geen examen morgen. — ليس لدي امتحان غدًا.
-* Ik heb geen moeite met deze oefening. — لا أجد صعوبة في هذا التمرين.
+        .quiz-item {
+            margin-bottom: 20px;
+        }
 
----
+        .quiz-item p {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
 
-## 6. التسوق والمال — Winkelen en geld
+        .quiz-options {
+            list-style-type: none;
+            padding-right: 20px;
+        }
 
-* Ik heb geen bankkaart bij me. — ليس معي بطاقة بنكية.
-* Ik heb geen contant geld. — ليس لدي نقود نقدية.
-* Ik heb geen korting gekregen. — لم أحصل على خصم.
-* Er is geen maat L beschikbaar. — لا يتوفر المقاس L.
-* Ik heb geen boodschappen gedaan. — لم أشترِ مستلزمات المنزل.
-* Ik heb geen bonnetje. — ليس لدي إيصال.
-* Er is geen geld teruggegeven. — لم يُعَد إليَّ أي مال.
-* Ik heb geen abonnement. — ليس لدي اشتراك.
-* We hebben geen voorraad meer. — لم يعد لدينا مخزون.
-* Ik heb geen interesse in dit product. — ليست لدي رغبة في هذا المنتج.
+        .quiz-options li {
+            margin-bottom: 5px;
+            direction: ltr;
+            text-align: right;
+        }
 
----
+        .tip-box {
+            background-color: #e2e3e5;
+            border-right: 5px solid #383d41;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
 
-## 7. المواصلات والسفر — Vervoer en reizen
+        @media (max-width: 600px) {
+            .sentence-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .dutch {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
 
-* Ik heb geen rijbewijs. — ليس لدي رخصة قيادة.
-* Ik heb geen treinticket. — ليس لدي تذكرة قطار.
-* Er is geen bus naar het dorp. — لا توجد حافلة إلى القرية.
-* Ik heb geen plaats om te zitten. — ليس لدي مكان للجلوس.
-* Er is geen parkeerplaats vrij. — لا يوجد موقف سيارات شاغر.
-* We hebben geen vertraging. — ليس لدينا تأخير.
-* Ik heb geen bagage. — ليس لدي أمتعة.
-* Er is geen treinverbinding na middernacht. — لا توجد خدمة قطارات بعد منتصف الليل.
-* Ik heb geen navigatiesysteem. — ليس لدي نظام ملاحة.
-* We hebben geen reservatie. — ليس لدينا حجز.
+<div class="container">
 
----
+    <header>
+        <h1>🇧🇪 100 جملة هولندية بلجيكية باستخدام GEEN</h1>
+    </header>
 
-## 8. الأسرة والأصدقاء — Familie en vrienden
+    <div class="intro-box">
+        <strong>Geen</strong> = لا يوجد / ليس لدي / ليس أيّ / لا أملك<br>
+        كلمة geen مهمة جدًا في الهولندية البلجيكية، وتُستخدم غالبًا لنفي الأسماء. إليك 100 جملة مع الترجمة العربية، من مستوى A1 إلى A2، مع أمثلة من الحياة اليومية والعمل والدراسة في بلجيكا.
+    </div>
 
-* Ik heb geen familie in Gent. — ليس لدي عائلة في غنت.
-* Mijn broer heeft geen kinderen. — أخي ليس لديه أطفال.
-* Mijn vrouw heeft geen auto. — زوجتي ليس لديها سيارة.
-* Mijn vriend heeft geen tijd. — صديقي ليس لديه وقت.
-* We hebben geen gasten vandaag. — ليس لدينا ضيوف اليوم.
-* Ik heb geen contact met hem. — ليس لدي تواصل معه.
-* Zij heeft geen partner. — ليس لديها شريك.
-* Hij heeft geen vrienden in België. — ليس لديه أصدقاء في بلجيكا.
-* Ik heb geen nieuws van mijn familie. — ليس لدي أخبار عن عائلتي.
-* We hebben geen plannen voor morgen. — ليست لدينا خطط للغد.
+    <h2>1. الجمل الأساسية — Basiszinnen</h2>
+    <ul class="sentence-list">
+        <li><span class="arabic">ليس لدي سيارة.</span><span class="dutch">Ik heb geen auto.</span></li>
+        <li><span class="arabic">ليس لدي دراجة.</span><span class="dutch">Ik heb geen fiets.</span></li>
+        <li><span class="arabic">ليس لدي مال.</span><span class="dutch">Ik heb geen geld.</span></li>
+        <li><span class="arabic">ليس لدي وقت.</span><span class="dutch">Ik heb geen tijd.</span></li>
+        <li><span class="arabic">ليس لدي عمل.</span><span class="dutch">Ik heb geen werk.</span></li>
+        <li><span class="arabic">ليس لدي منزل.</span><span class="dutch">Ik heb geen huis.</span></li>
+        <li><span class="arabic">ليس لدي أطفال.</span><span class="dutch">Ik heb geen kinderen.</span></li>
+        <li><span class="arabic">ليس لدي أخ.</span><span class="dutch">Ik heb geen broer.</span></li>
+        <li><span class="arabic">ليس لدي أخت.</span><span class="dutch">Ik heb geen zus.</span></li>
+        <li><span class="arabic">ليس لدي مشكلة.</span><span class="dutch">Ik heb geen probleem.</span></li>
+    </ul>
 
----
+    <h2>2. الطعام والشراب — Eten en drinken</h2>
+    <ul class="sentence-list">
+        <li><span class="arabic">أنا لا أشرب القهوة.</span><span class="dutch">Ik drink geen koffie.</span></li>
+        <li><span class="arabic">أنا لا أشرب الشاي.</span><span class="dutch">Ik drink geen thee.</span></li>
+        <li><span class="arabic">أنا لا أشرب الحليب.</span><span class="dutch">Ik drink geen melk.</span></li>
+        <li><span class="arabic">أنا لا آكل اللحوم.</span><span class="dutch">Ik eet geen vlees.</span></li>
+        <li><span class="arabic">أنا لا آكل السمك.</span><span class="dutch">Ik eet geen vis.</span></li>
+        <li><span class="arabic">أنا لا أتناول السكر.</span><span class="dutch">Ik eet geen suiker.</span></li>
+        <li><span class="arabic">أنا لست جائعًا.</span><span class="dutch">Ik heb geen honger.</span></li>
+        <li><span class="arabic">أنا لست عطشانًا.</span><span class="dutch">Ik heb geen dorst.</span></li>
+        <li><span class="arabic">لم يعد هناك خبز.</span><span class="dutch">Er is geen brood meer.</span></li>
+        <li><span class="arabic">ليس لدينا بيض.</span><span class="dutch">We hebben geen eieren.</span></li>
+    </ul>
 
-## 9. الصحة والحياة اليومية — Gezondheid en dagelijks leven
+    <h2>3. المنزل والأثاث — Huis en meubels</h2>
+    <ul class="sentence-list">
+        <li><span class="arabic">لا توجد طاولة في الغرفة.</span><span class="dutch">Er is geen tafel in de kamer.</span></li>
+        <li><span class="arabic">لا يوجد كرسي في المطبخ.</span><span class="dutch">Er staat geen stoel in de keuken.</span></li>
+        <li><span class="arabic">ليس لدي مفتاح.</span><span class="dutch">Ik heb geen sleutel.</span></li>
+        <li><span class="arabic">ليس لدينا مرآب.</span><span class="dutch">We hebben geen garage.</span></li>
+        <li><span class="arabic">لا يوجد مصعد في المبنى.</span><span class="dutch">Er is geen lift in het gebouw.</span></li>
+        <li><span class="arabic">ليس لدي غرفة خاصة بي.</span><span class="dutch">Ik heb geen eigen kamer.</span></li>
+        <li><span class="arabic">لا توجد مياه ساخنة.</span><span class="dutch">Er is geen warm water.</span></li>
+        <li><span class="arabic">ليس لدينا تدفئة.</span><span class="dutch">We hebben geen verwarming.</span></li>
+        <li><span class="arabic">لا توجد مساحة لسرير إضافي.</span><span class="dutch">Er is geen plaats voor een extra bed.</span></li>
+        <li><span class="arabic">ليس لدي إنترنت في المنزل.</span><span class="dutch">Ik heb geen internet thuis.</span></li>
+    </ul>
 
-* Ik heb geen pijn. — ليس لدي ألم.
-* Ik heb geen koorts. — ليس لدي حمى.
-* Ik heb geen afspraak bij de dokter. — ليس لدي موعد عند الطبيب.
-* Ik heb geen medicijn nodig. — لا أحتاج إلى دواء.
-* Ik heb geen energie vandaag. — ليست لدي طاقة اليوم.
-* Ik heb geen last van mijn rug. — لا أعاني من مشكلة في ظهري.
-* Ik heb geen slaap. — لا أشعر بالنعاس.  
-  *(الأكثر طبيعية حسب السياق: Ik ben niet slaperig.)*
-* Ik heb geen reden om boos te zijn. — ليس لدي سبب لأغضب.
-* Ik heb geen zin om te koken. — ليست لدي رغبة في الطبخ.
-* Ik heb geen behoefte aan hulp. — ليست لدي حاجة إلى المساعدة.
+    <h2>4. العمل والوظائف — Werk en vacatures</h2>
+    <ul class="sentence-list">
+        <li><span class="arabic">ليست لدي خبرة في بلجيكا.</span><span class="dutch">Ik heb geen ervaring in België.</span></li>
+        <li><span class="arabic">ليس لدي عقد عمل دائم.</span><span class="dutch">Ik heb geen vast contract.</span></li>
+        <li><span class="arabic">ليس لدي مقابلة عمل اليوم.</span><span class="dutch">Ik heb geen sollicitatiegesprek vandaag.</span></li>
+        <li><span class="arabic">لم أتلقَّ أي إجابة.</span><span class="dutch">Ik heb geen antwoord gekregen.</span></li>
+        <li><span class="arabic">لا يوجد إعلان وظيفة لمهندس.</span><span class="dutch">Er is geen vacature voor een ingenieur.</span></li>
+        <li><span class="arabic">لا أحتاج إلى تصريح عمل لهذه الوظيفة.</span><span class="dutch">Ik heb geen werkvergunning nodig voor deze functie.</span></li>
+        <li><span class="arabic">ليس لدي موعد مع مديري.</span><span class="dutch">Ik heb geen afspraak met mijn manager.</span></li>
+        <li><span class="arabic">ليس لدينا اجتماع اليوم.</span><span class="dutch">We hebben geen vergadering vandaag.</span></li>
+        <li><span class="arabic">ليس لدي صلاحية الدخول إلى النظام.</span><span class="dutch">Ik heb geen toegang tot het systeem.</span></li>
+        <li><span class="arabic">لا توجد مشكلة في التخطيط.</span><span class="dutch">Er is geen probleem met de planning.</span></li>
+    </ul>
 
----
+    <h2>5. الدراسة وتعلم الهولندية — Studie en Nederlands</h2>
+    <ul class="sentence-list">
+        <li><span class="arabic">ليس لدي درس اليوم.</span><span class="dutch">Ik heb geen les vandaag.</span></li>
+        <li><span class="arabic">ليس لدي كتاب.</span><span class="dutch">Ik heb geen boek.</span></li>
+        <li><span class="arabic">ليس لدي قلم.</span><span class="dutch">Ik heb geen pen.</span></li>
+        <li><span class="arabic">ليس لدي قاموس.</span><span class="dutch">Ik heb geen woordenboek.</span></li>
+        <li><span class="arabic">ليس لدي سؤال.</span><span class="dutch">Ik heb geen vraag.</span></li>
+        <li><span class="arabic">ليس لدي إجابة.</span><span class="dutch">Ik heb geen antwoord.</span></li>
+        <li><span class="arabic">أنا لا أرتكب أخطاء.</span><span class="dutch">Ik maak geen fouten.</span></li>
+        <li><span class="arabic">ليس لدي واجب منزلي.</span><span class="dutch">Ik heb geen huiswerk.</span></li>
+        <li><span class="arabic">ليس لدي امتحان غدًا.</span><span class="dutch">Ik heb geen examen morgen.</span></li>
+        <li><span class="arabic">لا أجد صعوبة في هذا التمرين.</span><span class="dutch">Ik heb geen moeite met deze oefening.</span></li>
+    </ul>
 
-## 10. جمل مهمة للمحادثة — Handige gesprekken
+    <h2>6. التسوق والمال — Winkelen en geld</h2>
+    <ul class="sentence-list">
+        <li><span class="arabic">ليس معي بطاقة بنكية.</span><span class="dutch">Ik heb geen bankkaart bij me.</span></li>
+        <li><span class="arabic">ليس لدي نقود نقدية.</span><span class="dutch">Ik heb geen contant geld.</span></li>
+        <li><span class="arabic">لم أحصل على خصم.</span><span class="dutch">Ik heb geen korting gekregen.</span></li>
+        <li><span class="arabic">لا يتوفر المقاس L.</span><span class="dutch">Er is geen maat L beschikbaar.</span></li>
+        <li><span class="arabic">لم أشترِ مستلزمات المنزل.</span><span class="dutch">Ik heb geen boodschappen gedaan.</span></li>
+        <li><span class="arabic">ليس لدي إيصال.</span><span class="dutch">Ik heb geen bonnetje.</span></li>
+        <li><span class="arabic">لم يُعَد إليَّ أي مال.</span><span class="dutch">Er is geen geld teruggegeven.</span></li>
+        <li><span class="arabic">ليس لدي اشتراك.</span><span class="dutch">Ik heb geen abonnement.</span></li>
+        <li><span class="arabic">لم يعد لدينا مخزون.</span><span class="dutch">We hebben geen voorraad meer.</span></li>
+        <li><span class="arabic">ليست لدي رغبة في هذا المنتج.</span><span class="dutch">Ik heb geen interesse in dit product.</span></li>
+    </ul>
 
-* Geen probleem! — لا مشكلة!
-* Geen idee! — لا فكرة لدي!
-* Geen dank! — لا داعي للشكر!
-* Geen paniek! — لا داعي للذعر!
-* Ik heb geen bezwaar. — ليس لدي اعتراض.
-* Er is geen verschil. — لا يوجد فرق.
-* Dat heeft geen zin. — لا فائدة من ذلك.
-* Ik heb geen keuze. — ليس لدي خيار.
-* Er is geen bewijs. — لا يوجد دليل.
-* Ik heb geen haast. — أنا لست على عجلة من أمري.
+    <h2>7. المواصلات والسفر — Vervoer en reizen</h2>
+    <ul class="sentence-list">
+        <li><span class="arabic">ليس لدي رخصة قيادة.</span><span class="dutch">Ik heb geen rijbewijs.</span></li>
+        <li><span class="arabic">ليس لدي تذكرة قطار.</span><span class="dutch">Ik heb geen treinticket.</span></li>
+        <li><span class="arabic">لا توجد حافلة إلى القرية.</span><span class="dutch">Er is geen bus naar het dorp.</span></li>
+        <li><span class="arabic">ليس لدي مكان للجلوس.</span><span class="dutch">Ik heb geen plaats om te zitten.</span></li>
+        <li><span class="arabic">لا يوجد موقف سيارات شاغر.</span><span class="dutch">Er is geen parkeerplaats vrij.</span></li>
+        <li><span class="arabic">ليس لدينا تأخير.</span><span class="dutch">We hebben geen vertraging.</span></li>
+        <li><span class="arabic">ليس لدي أمتعة.</span><span class="dutch">Ik heb geen bagage.</span></li>
+        <li><span class="arabic">لا توجد خدمة قطارات بعد منتصف الليل.</span><span class="dutch">Er is geen treinverbinding na middernacht.</span></li>
+        <li><span class="arabic">ليس لدي نظام ملاحة.</span><span class="dutch">Ik heb geen navigatiesysteem.</span></li>
+        <li><span class="arabic">ليس لدينا حجز.</span><span class="dutch">We hebben geen reservatie.</span></li>
+    </ul>
 
----
+    <h2>8. الأسرة والأصدقاء — Familie en vrienden</h2>
+    <ul class="sentence-list">
+        <li><span class="arabic">ليس لدي عائلة في غنت.</span><span class="dutch">Ik heb geen familie in Gent.</span></li>
+        <li><span class="arabic">أخي ليس لديه أطفال.</span><span class="dutch">Mijn broer heeft geen kinderen.</span></li>
+        <li><span class="arabic">زوجتي ليس لديها سيارة.</span><span class="dutch">Mijn vrouw heeft geen auto.</span></li>
+        <li><span class="arabic">صديقي ليس لديه وقت.</span><span class="dutch">Mijn vriend heeft geen tijd.</span></li>
+        <li><span class="arabic">ليس لدينا ضيوف اليوم.</span><span class="dutch">We hebben geen gasten vandaag.</span></li>
+        <li><span class="arabic">ليس لدي تواصل معه.</span><span class="dutch">Ik heb geen contact met hem.</span></li>
+        <li><span class="arabic">ليس لديها شريك.</span><span class="dutch">Zij heeft geen partner.</span></li>
+        <li><span class="arabic">ليس لديه أصدقاء في بلجيكا.</span><span class="dutch">Hij heeft geen vrienden in België.</span></li>
+        <li><span class="arabic">ليس لدي أخبار عن عائلتي.</span><span class="dutch">Ik heb geen nieuws van mijn familie.</span></li>
+        <li><span class="arabic">ليست لدينا خطط للغد.</span><span class="dutch">We hebben geen plannen voor morgen.</span></li>
+    </ul>
 
-## الفرق المهم بين GEEN و NIET
+    <h2>9. الصحة والحياة اليومية — Gezondheid en dagelijks leven</h2>
+    <ul class="sentence-list">
+        <li><span class="arabic">ليس لدي ألم.</span><span class="dutch">Ik heb geen pijn.</span></li>
+        <li><span class="arabic">ليس لدي حمى.</span><span class="dutch">Ik heb geen koorts.</span></li>
+        <li><span class="arabic">ليس لدي موعد عند الطبيب.</span><span class="dutch">Ik heb geen afspraak bij de dokter.</span></li>
+        <li><span class="arabic">لا أحتاج إلى دواء.</span><span class="dutch">Ik heb geen medicijn nodig.</span></li>
+        <li><span class="arabic">ليست لدي طاقة اليوم.</span><span class="dutch">Ik heb geen energie vandaag.</span></li>
+        <li><span class="arabic">لا أعاني من مشكلة في ظهري.</span><span class="dutch">Ik heb geen last van mijn rug.</span></li>
+        <li>
+            <span class="arabic">لا أشعر بالنعاس.</span>
+            <span class="dutch">Ik heb geen slaap.</span>
+            <span class="note">الأكثر طبيعية حسب السياق: Ik ben niet slaperig.</span>
+        </li>
+        <li><span class="arabic">ليس لدي سبب لأغضب.</span><span class="dutch">Ik heb geen reden om boos te zijn.</span></li>
+        <li><span class="arabic">ليست لدي رغبة في الطبخ.</span><span class="dutch">Ik heb geen zin om te koken.</span></li>
+        <li><span class="arabic">ليست لدي حاجة إلى المساعدة.</span><span class="dutch">Ik heb geen behoefte aan hulp.</span></li>
+    </ul>
 
-| GEEN | NIET |
-| :--- | :--- |
-| **Ik heb geen auto.**<br>ليس لدي سيارة. | **De auto is niet duur.**<br>السيارة ليست غالية. |
-| **Ik drink geen koffie.**<br>لا أشرب القهوة عمومًا. | **Ik drink de koffie niet.**<br>لا أشرب القهوة المحددة. |
-| **Er is geen probleem.**<br>لا توجد مشكلة. | **Dat is niet moeilijk.**<br>هذا ليس صعبًا. |
+    <h2>10. جمل مهمة للمحادثة — Handige gesprekken</h2>
+    <ul class="sentence-list">
+        <li><span class="arabic">لا مشكلة!</span><span class="dutch">Geen probleem!</span></li>
+        <li><span class="arabic">لا فكرة لدي!</span><span class="dutch">Geen idee!</span></li>
+        <li><span class="arabic">لا داعي للشكر!</span><span class="dutch">Geen dank!</span></li>
+        <li><span class="arabic">لا داعي للذعر!</span><span class="dutch">Geen paniek!</span></li>
+        <li><span class="arabic">ليس لدي اعتراض.</span><span class="dutch">Ik heb geen bezwaar.</span></li>
+        <li><span class="arabic">لا يوجد فرق.</span><span class="dutch">Er is geen verschil.</span></li>
+        <li><span class="arabic">لا فائدة من ذلك.</span><span class="dutch">Dat heeft geen zin.</span></li>
+        <li><span class="arabic">ليس لدي خيار.</span><span class="dutch">Ik heb geen keuze.</span></li>
+        <li><span class="arabic">لا يوجد دليل.</span><span class="dutch">Er is geen bewijs.</span></li>
+        <li><span class="arabic">أنا لست على عجلة من أمري.</span><span class="dutch">Ik heb geen haast.</span></li>
+    </ul>
 
-### القاعدة السهلة:
-* **geen + اسم:** عندما تنفي وجود شيء أو امتلاك شيء أو تنفي اسمًا غير محدد.
-* **niet:** عندما تنفي صفة أو فعلًا أو مكانًا أو جزءًا آخر من الجملة.
+    <h2>الفرق المهم بين GEEN و NIET</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>GEEN</th>
+                <th>NIET</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td dir="ltr"><strong>Ik heb geen auto.</strong><br><span dir="rtl">ليس لدي سيارة.</span></td>
+                <td dir="ltr"><strong>De auto is niet duur.</strong><br><span dir="rtl">السيارة ليست غالية.</span></td>
+            </tr>
+            <tr>
+                <td dir="ltr"><strong>Ik drink geen koffie.</strong><br><span dir="rtl">لا أشرب القهوة عمومًا.</span></td>
+                <td dir="ltr"><strong>Ik drink de koffie niet.</strong><br><span dir="rtl">لا أشرب القهوة المحددة.</span></td>
+            </tr>
+            <tr>
+                <td dir="ltr"><strong>Er is geen probleem.</strong><br><span dir="rtl">لا توجد مشكلة.</span></td>
+                <td dir="ltr"><strong>Dat is niet moeilijk.</strong><br><span dir="rtl">هذا ليس صعبًا.</span></td>
+            </tr>
+        </tbody>
+    </table>
 
----
+    <div class="intro-box">
+        <strong>القاعدة السهلة:</strong>
+        <ul>
+            <li><strong>geen + اسم:</strong> عندما تنفي وجود شيء أو امتلاك شيء أو تنفي اسمًا غير محدد.</li>
+            <li><strong>niet:</strong> عندما تنفي صفة أو فعلًا أو مكانًا أو جزءًا آخر من الجملة.</li>
+        </ul>
+    </div>
 
-## اختبر نفسك
+    <div class="quiz-container">
+        <h2>اختبر نفسك</h2>
+        
+        <div class="quiz-item">
+            <p>1. ليس لدي سيارة.</p>
+            <ul class="quiz-options">
+                <li>a) Ik heb niet auto.</li>
+                <li><strong>b) Ik heb geen auto.</strong></li>
+                <li>c) Ik ben geen auto.</li>
+            </ul>
+        </div>
 
-1. **ليس لدي سيارة.**
-   * [ ] Ik heb niet auto.
-   * [x] **Ik heb geen auto.**
-   * [ ] Ik ben geen auto.
+        <div class="quiz-item">
+            <p>2. أنا لا أشرب القهوة.</p>
+            <ul class="quiz-options">
+                <li><strong>a) Ik drink geen koffie.</strong></li>
+                <li>b) Ik drink niet koffie.</li>
+                <li>c) Ik geen drink koffie.</li>
+            </ul>
+        </div>
 
-2. **أنا لا أشرب القهوة.**
-   * [x] **Ik drink geen koffie.**
-   * [ ] Ik drink niet koffie.
-   * [ ] Ik geen drink koffie.
+        <div class="quiz-item">
+            <p>3. السيارة ليست غالية.</p>
+            <ul class="quiz-options">
+                <li>a) De auto is geen duur.</li>
+                <li><strong>b) De auto is niet duur.</strong></li>
+                <li>c) De auto niet is duur.</li>
+            </ul>
+        </div>
 
-3. **السيارة ليست غالية.**
-   * [ ] De auto is geen duur.
-   * [x] **De auto is niet duur.**
-   * [ ] De auto niet is duur.
+        <div class="quiz-item">
+            <p>4. لا توجد مشكلة.</p>
+            <ul class="quiz-options">
+                <li><strong>a) Geen probleem.</strong></li>
+                <li>b) Niet probleem.</li>
+                <li>c) Geen is probleem.</li>
+            </ul>
+        </div>
 
-4. **لا توجد مشكلة.**
-   * [x] **Geen probleem.**
-   * [ ] Niet probleem.
-   * [ ] Geen is probleem.
+        <div class="quiz-item">
+            <p>5. ليس لدي وقت.</p>
+            <ul class="quiz-options">
+                <li>a) Ik heb niet tijd.</li>
+                <li>b) Ik ben geen tijd.</li>
+                <li><strong>c) Ik heb geen tijd.</strong></li>
+            </ul>
+        </div>
+    </div>
 
-5. **ليس لدي وقت.**
-   * [ ] Ik heb niet tijd.
-   * [ ] Ik ben geen tijd.
-   * [x] **Ik heb geen tijd.**
+    <div class="tip-box">
+        <strong>💡 نصيحة للحفظ:</strong> احفظ الجمل القصيرة أولًا: <em>Ik heb geen tijd</em>، <em>Ik heb geen geld</em>، <em>Geen probleem</em>، <em>Geen idee</em>، <em>Ik heb geen zin</em>. هذه تعبيرات مفيدة جدًا في المحادثات اليومية في فلاندرز.
+    </div>
 
----
+</div>
 
-💡 **نصيحة للحفظ:** احفظ الجمل القصيرة أولًا:  
-`Ik heb geen tijd` | `Ik heb geen geld` | `Geen probleem` | `Geen idee` | `Ik heb geen zin`  
-هذه تعبيرات مفيدة جدًا في المحادثات اليومية في فلاندرز.
+</body>
+</html>
