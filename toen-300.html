@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>300 جملة هولندية باستخدام TOEN</title>
+<style>
+:root{--bg:#f2f6fb;--card:#fff;--ink:#14213d;--mute:#5b6b85;--line:#d6e0ee;--acc:#1d4ed8;--hl:#fde68a;color-scheme:light}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1726;--card:#18233a;--ink:#e8eefb;--mute:#9fb0cc;--line:#2a3a58;--acc:#7aa2ff;--hl:#5b4a0f;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 "Segoe UI",Tahoma,Arial,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.7rem;margin:.2em 0}
+h2{font-size:1.15rem;margin:1.8em 0 .6em}
+.intro,.rule{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:2}
+input{flex:1;min-width:180px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit}
+button{padding:10px 14px;border:1px solid var(--acc);border-radius:8px;background:transparent;color:var(--acc);font:inherit;cursor:pointer}
+button[aria-pressed=true]{background:var(--acc);color:var(--bg)}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+ol{list-style:none;margin:0;padding:0}
+li{padding:12px 4px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:2.4em 1fr;gap:4px 8px}
+li .n{color:var(--mute);font-size:.85rem;grid-row:span 2;padding-top:.3em}
+.nl{direction:ltr;text-align:left;font-weight:600;font-size:1.05rem}
+.ar{color:var(--mute)}
+.hide-ar .ar{display:none}
+mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 2px}
+.ex{direction:ltr;text-align:left;margin:.3em 0}
+#empty{display:none;color:var(--mute);padding:16px 0}
+</style>
+</head>
+<body>
+<main>
+<h1>🇳🇱 300 جملة هولندية باستخدام TOEN</h1>
+<div class="intro">
+<p>كلمة <b>TOEN</b> معناها «عندما» أو «حينما» في الماضي، وتُستخدم غالبًا للحديث عن حدث أو وقت محدد في الماضي.</p>
+<p class="ex"><mark>Toen</mark> ik jong was, woonde ik in Egypte. — عندما كنت صغيرًا، كنت أعيش في مصر.</p>
+<p class="ex"><mark>Toen</mark> ik thuiskwam, was mijn vrouw aan het koken. — عندما وصلت إلى المنزل، كانت زوجتي تطبخ.</p>
+<p>ملاحظة: بعد toen في الجملة التابعة يأتي الفعل عادةً في نهاية الجزء التابع، مثل: Toen ik thuiskwam.</p>
+</div>
+<div class="tools">
+<input id="q" type="search" placeholder="ابحث بالهولندية أو العربية…" aria-label="بحث">
+<button id="t" aria-pressed="false">إخفاء الترجمة</button>
+</div>
+<div id="groups"></div>
+<p id="empty">لا توجد نتائج مطابقة.</p>
+<h2>قاعدة مهمة لتثبيت TOEN</h2>
+<div class="rule">
+<p class="ex">Toen ik klein was, woonde ik in Egypte. — عندما كنت صغيرًا، كنت أعيش في مصر.</p>
+<p class="ex">Ik was blij toen ik het goede nieuws hoorde. — كنت سعيدًا عندما سمعت الخبر الجيد.</p>
+<p class="ex">Toen ik thuiskwam, ging ik meteen slapen. — عندما وصلت إلى المنزل، ذهبت للنوم فورًا.</p>
+<p>تذكّر: TOEN تُستخدم عادةً مع حدث أو فترة محددة في الماضي، بينما ALS تُستخدم غالبًا مع الحاضر أو المستقبل أو الأحداث المتكررة.</p>
+</div>
+</main>
+<script>
+// لإضافة مجموعة جديدة: أضف عنصرًا إلى DATA بالشكل ["العنوان", ["هولندي|عربي", ...]]
+const DATA=[
+["المجموعة الأولى: الحياة اليومية",[
+"Toen ik wakker werd, was het zeven uur.|عندما استيقظت، كانت الساعة السابعة.",
+"Toen ik opstond, was het nog donker.|عندما نهضت من السرير، كان الجو لا يزال مظلمًا.",
+"Toen ik naar de keuken ging, rook ik koffie.|عندما ذهبت إلى المطبخ، شممت رائحة القهوة.",
+"Toen ik mijn ontbijt at, keek ik naar het nieuws.|عندما تناولت إفطاري، شاهدت الأخبار.",
+"Toen ik de deur opende, zag ik mijn buurman.|عندما فتحت الباب، رأيت جاري.",
+"Toen ik naar buiten ging, begon het te regenen.|عندما خرجت، بدأ المطر.",
+"Toen ik thuiskwam, was iedereen thuis.|عندما وصلت إلى المنزل، كان الجميع في البيت.",
+"Toen ik de televisie aanzette, begon het programma.|عندما شغّلت التلفاز، بدأ البرنامج.",
+"Toen ik mijn telefoon pakte, zag ik drie berichten.|عندما أمسكت هاتفي، رأيت ثلاث رسائل.",
+"Toen ik mijn moeder belde, was ze aan het koken.|عندما اتصلت بأمي، كانت تطبخ.",
+"Toen ik de koelkast opende, zag ik geen melk.|عندما فتحت الثلاجة، لم أرَ حليبًا.",
+"Toen ik mijn koffie dronk, las ik de krant.|عندما شربت قهوتي، قرأت الجريدة.",
+"Toen ik mijn schoenen aantrok, hoorde ik de bel.|عندما ارتديت حذائي، سمعت جرس الباب.",
+"Toen ik de deur sloot, merkte ik dat het koud was.|عندما أغلقت الباب، لاحظت أن الجو كان باردًا.",
+"Toen ik mijn kamer opruimde, vond ik mijn sleutels.|عندما رتبت غرفتي، وجدت مفاتيحي.",
+"Toen ik het licht aandeed, zag ik een insect.|عندما أضأت النور، رأيت حشرة.",
+"Toen ik naar bed ging, was ik erg moe.|عندما ذهبت إلى السرير، كنت متعبًا جدًا.",
+"Toen ik mijn wekker hoorde, werd ik meteen wakker.|عندما سمعت المنبه، استيقظت فورًا.",
+"Toen ik mijn tanden poetste, dacht ik aan mijn werk.|عندما نظفت أسناني، فكرت في عملي.",
+"Toen ik de badkamer verliet, was de vloer nat.|عندما غادرت الحمام، كانت الأرضية مبللة.",
+"Toen ik mijn kleren waste, brak de wasmachine.|عندما غسلت ملابسي، تعطلت الغسالة.",
+"Toen ik de afwas deed, kwam mijn vrouw thuis.|عندما غسلت الأطباق، عادت زوجتي إلى المنزل.",
+"Toen ik het eten klaarmaakte, belde mijn vriend.|عندما كنت أحضّر الطعام، اتصل صديقي.",
+"Toen ik de tafel dekte, kwamen de kinderen binnen.|عندما جهزت المائدة، دخل الأطفال.",
+"Toen ik de soep proefde, vond ik die te zout.|عندما تذوقت الحساء، وجدته مالحًا جدًا.",
+"Toen ik het raam opende, kwam er frisse lucht binnen.|عندما فتحت النافذة، دخل هواء منعش.",
+"Toen ik de vuilnis buitenzette, zag ik de buurvrouw.|عندما أخرجت القمامة، رأيت جارتي.",
+"Toen ik de trap opliep, hoorde ik iemand praten.|عندما صعدت الدرج، سمعت شخصًا يتحدث.",
+"Toen ik de lift nam, ontmoette ik mijn buurman.|عندما استعملت المصعد، قابلت جاري.",
+"Toen ik de sleutel omdraaide, ging de deur open.|عندما أدرت المفتاح، انفتح الباب.",
+"Toen ik de computer aanzette, verscheen er een foutmelding.|عندما شغّلت الكمبيوتر، ظهرت رسالة خطأ.",
+"Toen ik mijn e-mails controleerde, vond ik een belangrijke brief.|عندما راجعت رسائلي الإلكترونية، وجدت رسالة مهمة.",
+"Toen ik mijn telefoon oplaadde, viel de stroom uit.|عندما شحنت هاتفي، انقطعت الكهرباء.",
+"Toen ik mijn bril zocht, lag die op tafel.|عندما بحثت عن نظارتي، كانت على الطاولة.",
+"Toen ik mijn jas aantrok, voelde ik de kou.|عندما ارتديت معطفي، شعرت بالبرد.",
+"Toen ik de verwarming aanzette, werd de kamer warmer.|عندما شغّلت التدفئة، أصبحت الغرفة أدفأ.",
+"Toen ik de deurbel hoorde, deed ik open.|عندما سمعت جرس الباب، فتحت الباب.",
+"Toen ik het pakket ontving, was ik blij.|عندما استلمت الطرد، كنت سعيدًا.",
+"Toen ik de brief las, begreep ik het probleem.|عندما قرأت الرسالة، فهمت المشكلة.",
+"Toen ik de vloer schoonmaakte, brak mijn dweil.|عندما نظفت الأرضية، انكسرت ممسحتي.",
+"Toen ik de planten water gaf, begon de zon te schijnen.|عندما سقيت النباتات، بدأت الشمس تشرق.",
+"Toen ik de gordijnen opende, zag ik de tuin.|عندما فتحت الستائر، رأيت الحديقة.",
+"Toen ik de klok bekeek, zag ik dat ik laat was.|عندما نظرت إلى الساعة، رأيت أنني تأخرت.",
+"Toen ik mijn tas inpakte, vergat ik mijn paspoort.|عندما جهزت حقيبتي، نسيت جواز سفري.",
+"Toen ik mijn sleutels verloor, raakte ik in paniek.|عندما فقدت مفاتيحي، شعرت بالذعر.",
+"Toen ik de kast opende, viel een boek eruit.|عندما فتحت الخزانة، سقط منها كتاب.",
+"Toen ik de muziek uitzette, hoorde ik de vogels.|عندما أوقفت الموسيقى، سمعت الطيور.",
+"Toen ik mijn bed opmaakte, vond ik een muntstuk.|عندما رتبت سريري، وجدت قطعة نقدية.",
+"Toen ik de deur achter me dichtdeed, vergat ik mijn paraplu.|عندما أغلقت الباب خلفي، نسيت مظلتي.",
+"Toen ik eindelijk ging zitten, voelde ik me ontspannen.|عندما جلست أخيرًا، شعرت بالاسترخاء."
+]],
+["المجموعة الثانية: العمل والوظائف",[
+"Toen ik op kantoor aankwam, was mijn baas er al.|عندما وصلت إلى المكتب، كان مديري موجودًا بالفعل.",
+"Toen ik mijn computer opstartte, begon de vergadering.|عندما شغّلت الكمبيوتر، بدأ الاجتماع.",
+"Toen ik het rapport las, ontdekte ik een fout.|عندما قرأت التقرير، اكتشفت خطأ.",
+"Toen ik mijn collega belde, nam hij niet op.|عندما اتصلت بزميلي، لم يرد.",
+"Toen ik de klant ontmoette, stelde ik mezelf voor.|عندما قابلت العميل، عرّفت بنفسي.",
+"Toen ik de e-mail verstuurde, vergat ik de bijlage.|عندما أرسلت البريد الإلكتروني، نسيت المرفق.",
+"Toen ik naar mijn werk vertrok, was het druk op de weg.|عندما انطلقت إلى عملي، كان الطريق مزدحمًا.",
+"Toen ik de vergadering binnenkwam, keek iedereen naar mij.|عندما دخلت الاجتماع، نظر الجميع إليّ.",
+"Toen ik mijn presentatie gaf, stelde iemand een vraag.|عندما قدمت عرضي، طرح أحدهم سؤالًا.",
+"Toen ik het project afrondde, voelde ik me trots.|عندما أنهيت المشروع، شعرت بالفخر.",
+"Toen ik de tekeningen controleerde, vond ik een probleem.|عندما راجعت الرسومات، وجدت مشكلة.",
+"Toen ik de machine inspecteerde, hoorde ik een vreemd geluid.|عندما فحصت الماكينة، سمعت صوتًا غريبًا.",
+"Toen ik de pomp startte, begon de motor te trillen.|عندما شغّلت المضخة، بدأ المحرك يهتز.",
+"Toen ik de leiding controleerde, ontdekte ik een lek.|عندما فحصت الأنبوب، اكتشفت تسربًا.",
+"Toen ik de werkzaamheden plande, hield ik rekening met de veiligheid.|عندما خططت للأعمال، راعيت السلامة.",
+"Toen ik de werf bezocht, waren de arbeiders aan het werk.|عندما زرت موقع العمل، كان العمال يعملون.",
+"Toen ik de instructies uitlegde, begreep iedereen het plan.|عندما شرحت التعليمات، فهم الجميع الخطة.",
+"Toen ik het probleem meldde, reageerde de manager snel.|عندما أبلغت عن المشكلة، استجاب المدير بسرعة.",
+"Toen ik het contract ondertekende, was ik opgelucht.|عندما وقعت العقد، شعرت بالارتياح.",
+"Toen ik mijn salaris ontving, betaalde ik de huur.|عندما استلمت راتبي، دفعت الإيجار.",
+"Toen ik naar mijn baas ging, was hij bezig.|عندما ذهبت إلى مديري، كان مشغولًا.",
+"Toen ik de planning veranderde, informeerde ik het team.|عندما غيرت الجدول الزمني، أبلغت الفريق.",
+"Toen ik de materialen bestelde, controleerde ik de prijzen.|عندما طلبت المواد، راجعت الأسعار.",
+"Toen ik de offerte ontving, vergeleek ik de kosten.|عندما استلمت عرض السعر، قارنت التكاليف.",
+"Toen ik de klant antwoordde, legde ik alles duidelijk uit.|عندما رددت على العميل، شرحت كل شيء بوضوح.",
+"Toen ik de vergadering leidde, maakte ik aantekeningen.|عندما أدرت الاجتماع، دوّنت ملاحظات.",
+"Toen ik een fout maakte, gaf ik dat eerlijk toe.|عندما ارتكبت خطأ، اعترفت به بصراحة.",
+"Toen ik hulp nodig had, vroeg ik mijn collega om advies.|عندما احتجت إلى المساعدة، طلبت نصيحة زميلي.",
+"Toen ik de deadline zag, begon ik sneller te werken.|عندما رأيت الموعد النهائي، بدأت أعمل بسرعة أكبر.",
+"Toen ik het werk controleerde, ontdekte ik enkele gebreken.|عندما فحصت العمل، اكتشفت بعض العيوب.",
+"Toen ik de veiligheidshelm opzette, betrad ik de werf.|عندما ارتديت خوذة السلامة، دخلت موقع العمل.",
+"Toen ik de brandpomp testte, werkte alles goed.|عندما اختبرت مضخة الحريق، كان كل شيء يعمل جيدًا.",
+"Toen ik het HVAC-systeem onderzocht, vond ik een defect.|عندما فحصت نظام التكييف والتهوية، وجدت عطلًا.",
+"Toen ik de temperatuur mat, was het te warm.|عندما قست درجة الحرارة، كانت مرتفعة جدًا.",
+"Toen ik het onderhoud uitvoerde, ontdekte ik slijtage.|عندما نفذت الصيانة، اكتشفت تآكلًا.",
+"Toen ik het verslag schreef, gebruikte ik de meetresultaten.|عندما كتبت التقرير، استخدمت نتائج القياس.",
+"Toen ik de vergadering verliet, wist ik wat ik moest doen.|عندما غادرت الاجتماع، عرفت ما يجب علي فعله.",
+"Toen ik de klant bezocht, bespraken we de planning.|عندما زرت العميل، ناقشنا الجدول الزمني.",
+"Toen ik mijn cv verstuurde, hoopte ik op een antwoord.|عندما أرسلت سيرتي الذاتية، كنت آمل في تلقي رد.",
+"Toen ik voor een sollicitatiegesprek kwam, was ik zenuwachtig.|عندما حضرت مقابلة العمل، كنت متوترًا.",
+"Toen ik de vacature las, herkende ik mijn ervaring.|عندما قرأت إعلان الوظيفة، وجدت أن خبرتي مناسبة.",
+"Toen ik mijn diploma liet zien, stelde de werkgever meer vragen.|عندما عرضت شهادتي، طرح صاحب العمل مزيدًا من الأسئلة.",
+"Toen ik mijn nieuwe baan begon, leerde ik veel.|عندما بدأت وظيفتي الجديدة، تعلمت الكثير.",
+"Toen ik een opleiding volgde, verbeterde mijn kennis.|عندما التحقت بدورة تدريبية، تحسنت معرفتي.",
+"Toen ik de cursus afrondde, ontving ik een certificaat.|عندما أنهيت الدورة، استلمت شهادة.",
+"Toen ik feedback kreeg, paste ik mijn werk aan.|عندما تلقيت ملاحظات، عدّلت عملي.",
+"Toen ik de resultaten presenteerde, was de directeur tevreden.|عندما عرضت النتائج، كان المدير راضيًا.",
+"Toen ik het budget controleerde, ontdekte ik extra kosten.|عندما راجعت الميزانية، اكتشفت تكاليف إضافية.",
+"Toen ik naar huis ging, was mijn werkdag voorbij.|عندما ذهبت إلى المنزل، انتهى يوم عملي.",
+"Toen ik terugkeek op mijn carrière, was ik trots op mijn ervaring.|عندما نظرت إلى مسيرتي المهنية، شعرت بالفخر بخبرتي."
+]],
+["المجموعة الثالثة: العائلة والأصدقاء",[
+"Toen ik mijn vrouw ontmoette, was ik erg verlegen.|عندما قابلت زوجتي، كنت خجولًا جدًا.",
+"Toen we elkaar leerden kennen, praatten we elke dag.|عندما تعارفنا، كنا نتحدث كل يوم.",
+"Toen ik haar voor het eerst zag, glimlachte ze.|عندما رأيتها لأول مرة، ابتسمت.",
+"Toen we trouwden, waren onze families blij.|عندما تزوجنا، كانت عائلتانا سعيدتين.",
+"Toen mijn vrouw thuiskwam, maakte ik thee.|عندما عادت زوجتي إلى المنزل، أعددت الشاي.",
+"Toen mijn kinderen wakker werden, begonnen ze te spelen.|عندما استيقظ أطفالي، بدأوا اللعب.",
+"Toen de kinderen honger kregen, maakten we sandwiches.|عندما شعر الأطفال بالجوع، أعددنا شطائر.",
+"Toen mijn moeder belde, vertelde ik haar het nieuws.|عندما اتصلت أمي، أخبرتها بالأخبار.",
+"Toen mijn vader ziek werd, bezocht ik hem.|عندما مرض أبي، زرته.",
+"Toen mijn broer verhuisde, hielpen we hem.|عندما انتقل أخي إلى منزل جديد، ساعدناه.",
+"Toen mijn zus afstudeerde, vierden we haar succes.|عندما تخرجت أختي، احتفلنا بنجاحها.",
+"Toen mijn vriend op bezoek kwam, dronken we koffie.|عندما جاء صديقي لزيارتي، شربنا القهوة.",
+"Toen mijn buurman hulp nodig had, hielp ik hem.|عندما احتاج جاري إلى المساعدة، ساعدته.",
+"Toen we samen aten, vertelden we verhalen.|عندما تناولنا الطعام معًا، حكينا القصص.",
+"Toen mijn dochter thuiskwam, vertelde ze over school.|عندما عادت ابنتي إلى المنزل، تحدثت عن المدرسة.",
+"Toen mijn zoon viel, begon hij te huilen.|عندما سقط ابني، بدأ بالبكاء.",
+"Toen mijn vrouw lachte, moest ik ook lachen.|عندما ضحكت زوجتي، اضطررت إلى الضحك أيضًا.",
+"Toen mijn ouders op bezoek kwamen, kookte ik hun favoriete gerecht.|عندما جاء والداي للزيارة، طبخت لهما طبقهما المفضل.",
+"Toen we onze familie bezochten, namen we cadeaus mee.|عندما زرنا عائلتنا، أخذنا معنا هدايا.",
+"Toen mijn vriend trouwde, droeg ik een mooi pak.|عندما تزوج صديقي، ارتديت بدلة جميلة.",
+"Toen mijn broer zijn baan verloor, steunden we hem.|عندما فقد أخي وظيفته، دعمناه.",
+"Toen mijn zus een baby kreeg, feliciteerde ik haar.|عندما أنجبت أختي طفلًا، هنأتها.",
+"Toen de baby huilde, pakte zijn moeder hem op.|عندما بكى الطفل، حملته أمه.",
+"Toen mijn grootvader jong was, werkte hij op een boerderij.|عندما كان جدي شابًا، كان يعمل في مزرعة.",
+"Toen mijn grootmoeder kookte, rook het hele huis heerlijk.|عندما كانت جدتي تطبخ، فاحت رائحة جميلة في المنزل كله.",
+"Toen mijn ouders trouwden, woonden ze in een klein huis.|عندما تزوج والداي، كانا يعيشان في منزل صغير.",
+"Toen ik mijn jeugdherinneringen vertelde, luisterde iedereen aandachtig.|عندما رويت ذكريات طفولتي، استمع الجميع بانتباه.",
+"Toen we vroeger samen speelden, vergaten we de tijd.|عندما كنا نلعب معًا قديمًا، كنا ننسى الوقت.",
+"Toen mijn vriend verdrietig was, luisterde ik naar hem.|عندما كان صديقي حزينًا، استمعت إليه.",
+"Toen we ruzie kregen, spraken we later alles uit.|عندما تشاجرنا، تحدثنا لاحقًا عن كل شيء.",
+"Toen ik sorry zei, accepteerde ze mijn excuses.|عندما قلت آسف، قبلت اعتذاري.",
+"Toen mijn familie arriveerde, zette ik koffie.|عندما وصلت عائلتي، أعددت القهوة.",
+"Toen we de verjaardag vierden, zongen we samen.|عندما احتفلنا بعيد الميلاد، غنينا معًا.",
+"Toen mijn vrouw jarig was, kocht ik bloemen.|عندما كان عيد ميلاد زوجتي، اشتريت زهورًا.",
+"Toen ik een cadeau kreeg, bedankte ik iedereen.|عندما تلقيت هدية، شكرت الجميع.",
+"Toen mijn vriend verhuisde, miste ik hem.|عندما انتقل صديقي إلى مكان آخر، افتقدته.",
+"Toen we afscheid namen, beloofden we contact te houden.|عندما ودعنا بعضنا، وعدنا بالحفاظ على التواصل.",
+"Toen mijn ouders ouder werden, hielp ik hen vaker.|عندما تقدم والداي في العمر، أصبحت أساعدهما أكثر.",
+"Toen mijn neef op bezoek kwam, speelden we voetbal.|عندما جاء ابن عمي للزيارة، لعبنا كرة القدم.",
+"Toen mijn tante belde, nodigde ze ons uit voor het diner.|عندما اتصلت عمتي، دعتنا إلى العشاء.",
+"Toen mijn oom arriveerde, stond iedereen op.|عندما وصل عمي، وقف الجميع.",
+"Toen de familie samenkwam, maakten we veel foto’s.|عندما اجتمعت العائلة، التقطنا صورًا كثيرة.",
+"Toen mijn kind leerde fietsen, was ik erg trots.|عندما تعلم طفلي ركوب الدراجة، شعرت بفخر كبير.",
+"Toen mijn dochter haar eerste woord zei, glimlachte iedereen.|عندما قالت ابنتي كلمتها الأولى، ابتسم الجميع.",
+"Toen mijn zoon naar school ging, zwaaide ik hem uit.|عندما ذهب ابني إلى المدرسة، لوحت له مودعًا.",
+"Toen mijn vrouw me verraste, wist ik niet wat ik moest zeggen.|عندما فاجأتني زوجتي، لم أعرف ماذا أقول.",
+"Toen mijn vriend me hielp, vergat ik dat niet.|عندما ساعدني صديقي، لم أنسَ ذلك.",
+"Toen we samen op vakantie gingen, hadden we veel plezier.|عندما ذهبنا في إجازة معًا، استمتعنا كثيرًا.",
+"Toen mijn familie afscheid nam, voelde ik me verdrietig.|عندما ودعتني عائلتي، شعرت بالحزن.",
+"Toen ik aan mijn familie dacht, voelde ik me gelukkig.|عندما فكرت في عائلتي، شعرت بالسعادة."
+]]
+];
+const root=document.getElementById('groups'),q=document.getElementById('q'),empty=document.getElementById('empty');
+let n=0;
+DATA.forEach(([title,items])=>{
+  const sec=document.createElement('section'),h=document.createElement('h2'),ol=document.createElement('ol');
+  h.textContent=title;
+  items.forEach(s=>{
+    const [nl,ar]=s.split('|'),li=document.createElement('li');
+    li.innerHTML='<span class="n">'+(++n)+'</span><span class="nl">'+nl.replace(/^Toen|\btoen\b/,m=>'<mark>'+m+'</mark>')+'</span><span class="ar">'+ar+'</span>';
+    li.dataset.s=(nl+' '+ar).toLowerCase();
+    ol.appendChild(li);
+  });
+  sec.append(h,ol);root.appendChild(sec);
+});
+q.addEventListener('input',()=>{
+  const v=q.value.trim().toLowerCase();let shown=0;
+  root.querySelectorAll('li').forEach(li=>{const ok=!v||li.dataset.s.includes(v);li.style.display=ok?'':'none';if(ok)shown++;});
+  root.querySelectorAll('section').forEach(s=>s.style.display=[...s.querySelectorAll('li')].some(l=>l.style.display!=='none')?'':'none');
+  empty.style.display=shown?'none':'block';
+});
+const t=document.getElementById('t');
+t.addEventListener('click',()=>{
+  const on=document.body.classList.toggle('hide-ar');
+  t.setAttribute('aria-pressed',on);t.textContent=on?'إظهار الترجمة':'إخفاء الترجمة';
+});
+</script>
+</body>
+</html>
