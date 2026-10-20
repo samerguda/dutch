@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nederlands - Te Zinnenlijst (101 Zinnen)</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --row-hover: #f1f5f9;
+            --accent: #d97706;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-light);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .stats-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        thead th {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 16px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        thead th.rtl-header {
+            text-align: right;
+        }
+
+        thead th.num-header {
+            text-align: center;
+            width: 70px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--border);
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        tbody tr:hover {
+            background-color: var(--row-hover);
+        }
+
+        td {
+            padding: 16px 20px;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+
+        td.num {
+            text-align: center;
+            font-weight: bold;
+            color: var(--accent);
+            font-size: 15px;
+        }
+
+        td.nl {
+            direction: ltr;
+            text-align: left;
+            color: #0f172a;
+            font-weight: 500;
+            width: 45%;
+        }
+
+        td.ar {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Amiri', 'Traditional Arabic', 'Segoe UI', Tahoma, sans-serif;
+            font-size: 18px;
+            color: #1e293b;
+            width: 45%;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
+            td, thead th {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+
+            td.ar {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Nederlands - Arabisch Zinnenlijst</h1>
+            <p>قائمة الجمل الهولندية والعربية مع الترقيم</p>
+            <span class="stats-badge">101 Zinnen / جملة</span>
+        </header>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="num-header">#</th>
+                        <th>Nederlands</th>
+                        <th class="rtl-header">العربية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="num">1</td><td class="nl">Het is te koud vandaag.</td><td class="ar">الجو بارد أكثر من اللازم اليوم.</td></tr>
+                    <tr><td class="num">2</td><td class="nl">Het is te warm in huis.</td><td class="ar">الجو حار أكثر من اللازم في البيت.</td></tr>
+                    <tr><td class="num">3</td><td class="nl">Deze tas is te zwaar.</td><td class="ar">هذه الحقيبة ثقيلة أكثر من اللازم.</td></tr>
+                    <tr><td class="num">4</td><td class="nl">De koffie is te heet.</td><td class="ar">القهوة ساخنة أكثر من اللازم.</td></tr>
+                    <tr><td class="num">5</td><td class="nl">Deze oefening is te moeilijk.</td><td class="ar">هذا التمرين صعب أكثر من اللازم.</td></tr>
+                    <tr><td class="num">6</td><td class="nl">De kamer is te klein.</td><td class="ar">الغرفة صغيرة أكثر من اللازم.</td></tr>
+                    <tr><td class="num">7</td><td class="nl">De huur is te duur.</td><td class="ar">الإيجار غالي أكثر من اللازم.</td></tr>
+                    <tr><td class="num">8</td><td class="nl">Je praat te snel.</td><td class="ar">أنت تتكلم بسرعة أكثر من اللازم.</td></tr>
+                    <tr><td class="num">9</td><td class="nl">Je werkt te veel.</td><td class="ar">أنت تعمل أكثر من اللازم.</td></tr>
+                    <tr><td class="num">10</td><td class="nl">Ik ben te moe om te werken.</td><td class="ar">أنا متعب أكثر من اللازم لكي أعمل.</td></tr>
+                    <tr><td class="num">11</td><td class="nl">Ik probeer Nederlands te leren.</td><td class="ar">أحاول أن أتعلم الهولندية.</td></tr>
+                    <tr><td class="num">12</td><td class="nl">Ik wil beter Nederlands spreken.</td><td class="ar">أريد أن أتحدث الهولندية بشكل أفضل.</td></tr>
+                    <tr><td class="num">13</td><td class="nl">Ik vergeet soms te oefenen.</td><td class="ar">أنسى أحيانًا أن أتدرّب.</td></tr>
+                    <tr><td class="num">14</td><td class="nl">Ik probeer op tijd te komen.</td><td class="ar">أحاول أن آتي في الموعد.</td></tr>
+                    <tr><td class="num">15</td><td class="nl">Ik beloof je te helpen.</td><td class="ar">أعدك أن أساعدك.</td></tr>
+                    <tr><td class="num">16</td><td class="nl">Het is belangrijk om goed te luisteren.</td><td class="ar">من المهم أن تستمع جيدًا.</td></tr>
+                    <tr><td class="num">17</td><td class="nl">Het is moeilijk om alles te begrijpen.</td><td class="ar">من الصعب أن أفهم كل شيء.</td></tr>
+                    <tr><td class="num">18</td><td class="nl">Ik heb tijd om te studeren.</td><td class="ar">لدي وقت للدراسة.</td></tr>
+                    <tr><td class="num">19</td><td class="nl">Ik heb geen tijd om te koken.</td><td class="ar">ليس لدي وقت لكي أطبخ.</td></tr>
+                    <tr><td class="num">20</td><td class="nl">Ik ga proberen vroeger te slapen.</td><td class="ar">سأحاول أن أنام مبكرًا.</td></tr>
+                    <tr><td class="num">21</td><td class="nl">Hij is te jong om alleen te reizen.</td><td class="ar">هو صغير جدًا ليسافر وحده.</td></tr>
+                    <tr><td class="num">22</td><td class="nl">Je bent te laat.</td><td class="ar">أنت متأخر.</td></tr>
+                    <tr><td class="num">23</td><td class="nl">Ik ben te vroeg op het werk.</td><td class="ar">وصلت إلى العمل مبكرًا أكثر من اللازم.</td></tr>
+                    <tr><td class="num">24</td><td class="nl">Er
