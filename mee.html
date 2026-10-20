@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nederlands - Mee (102 Zinnen)</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --row-hover: #f1f5f9;
+            --accent: #d97706;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-light);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .stats-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-light);
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        thead th {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 16px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        thead th.rtl-header {
+            text-align: right;
+        }
+
+        thead th.num-header {
+            text-align: center;
+            width: 70px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--border);
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        tbody tr:hover {
+            background-color: var(--row-hover);
+        }
+
+        td {
+            padding: 16px 20px;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+
+        td.num {
+            text-align: center;
+            font-weight: bold;
+            color: var(--accent);
+            font-size: 15px;
+        }
+
+        td.nl {
+            direction: ltr;
+            text-align: left;
+            color: #0f172a;
+            font-weight: 500;
+            width: 45%;
+        }
+
+        td.ar {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Amiri', 'Traditional Arabic', 'Segoe UI', Tahoma, sans-serif;
+            font-size: 18px;
+            color: #1e293b;
+            width: 45%;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
+            td, thead th {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+
+            td.ar {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Nederlands - Arabisch Zinnenlijst</h1>
+            <p>قائمة الجمل الهولندية والعربية (الأفعال المركبة مع mee)</p>
+            <span class="stats-badge">102 Zinnen / جملة</span>
+        </header>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="num-header">#</th>
+                        <th>Nederlands</th>
+                        <th class="rtl-header">العربية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="num">1</td><td class="nl">Ga je mee?</td><td class="ar">هل ستأتي معنا؟</td></tr>
+                    <tr><td class="num">2</td><td class="nl">Ik ga mee.</td><td class="ar">سأذهب معكم.</td></tr>
+                    <tr><td class="num">3</td><td class="nl">Kom je mee naar de winkel?</td><td class="ar">هل ستأتي معي إلى المتجر؟</td></tr>
+                    <tr><td class="num">4</td><td class="nl">Mag ik mee?</td><td class="ar">هل يمكنني الذهاب معكم؟</td></tr>
+                    <tr><td class="num">5</td><td class="nl">Mijn vrouw gaat mee.</td><td class="ar">زوجتي ستأتي معي.</td></tr>
+                    <tr><td class="num">6</td><td class="nl">Ga je morgen mee naar school?</td><td class="ar">هل ستأتي معي إلى المدرسة غدًا؟</td></tr>
+                    <tr><td class="num">7</td><td class="nl">Ik neem mijn telefoon mee.</td><td class="ar">سآخذ هاتفي معي.</td></tr>
+                    <tr><td class="num">8</td><td class="nl">Neem je je paspoort mee?</td><td class="ar">هل ستأخذ جواز سفرك معك؟</td></tr>
+                    <tr><td class="num">9</td><td class="nl">Vergeet je sleutels niet mee te nemen.</td><td class="ar">لا تنسَ أن تأخذ مفاتيحك معك.</td></tr>
+                    <tr><td class="num">10</td><td class="nl">Ik neem een paraplu mee.</td><td class="ar">سآخذ مظلة معي.</td></tr>
+                    <tr><td class="num">11</td><td class="nl">Doe je mee?</td><td class="ar">هل ستشارك؟</td></tr>
+                    <tr><td class="num">12</td><td class="nl">Ik doe mee aan de cursus.</td><td class="ar">أشارك في الدورة.</td></tr>
+                    <tr><td class="num">13</td><td class="nl">Hij doet mee aan de wedstrijd.</td><td class="ar">هو يشارك في المسابقة.</td></tr>
+                    <tr><td class="num">14</td><td class="nl">Wil je met ons meedoen?</td><td class="ar">هل تريد المشاركة معنا؟</td></tr>
+                    <tr><td class="num">15</td><td class="nl">Iedereen mag meedoen.</td><td class="ar">يمكن للجميع المشاركة.</td></tr>
+                    <tr><td class="num">16</td><td class="nl">Ik neem mijn lunch mee naar het werk.</td><td class="ar">آخذ غدائي معي إلى العمل.</td></tr>
+                    <tr><td class="num">17</td><td class="nl">Neem wat water mee.</td><td class="ar">خذ بعض الماء معك.</td></tr>
+                    <tr><td class="num">18</td><td class="nl">Ik breng mijn broer mee.</td><td class="ar">سأحضر أخي معي.</td></tr>
+                    <tr><td class="num">19</td><td class="nl">Breng je vrienden mee.</td><td class="ar">أحضر أصدقاءك معك.</td></tr>
+                    <tr><td class="num">20</td><td class="nl">Mijn collega komt mee.</td><td class="ar">زميلي سيأتي معي.</td></tr>
+                    <tr><td class="num">21</td><td class="nl">Ik ga met mijn vrouw mee.</td><td class="ar">سأذهب مع زوجتي.</td></tr>
+                    <tr><td class="num">22</td><td class="nl">Ga je met de kinderen mee?</td><td class="ar">هل ستذهب مع الأطفال؟</td></tr>
+                    <tr><td class="num">23</td><td class="nl">Neem warme kleren mee.</td><td class="ar">خذ ملابس دافئة معك.</td></tr>
+                    <tr><td class="num">24</td><td class="nl">Ik neem mijn laptop mee.</td><td class="ar">سآخذ حاسوبي المحمول معي.</td></tr>
+                    <tr><td class="num">25</td><td class="nl">Heb je je documenten mee?</td><td class="ar">هل أحضرت مستنداتك معك؟</td></tr>
+                    <tr><td class="num">26</td><td class="nl">Ik heb mijn identiteitskaart mee.</td><td class="ar">بطاقة هويتي معي.</td></tr>
+                    <tr><td class="num">27</td><td class="nl">Neem je medicijnen mee?</td><td class="ar">هل تأخذ أدويتك معك؟</td></tr>
+                    <tr><td class="num">28</td><td class="nl">Zij neemt haar dochter mee.</td><td class="ar">هي تأخذ ابنتها معها.</td></tr>
+                    <tr><td class="num">29</td><td class="nl">Hij neemt zijn zoon mee naar het park.</td><td class="ar">يأخذ ابنه معه إلى الحديقة.</td></tr>
+                    <tr><td class="num">30</td><td class="nl">We nemen eten mee voor onderweg.</td><td class="ar">سنأخذ طعامًا معنا للطريق.</td></tr>
+                    <tr><td class="num">31</td><td class="nl">Ik luister mee.</td><td class="ar">أستمع معكم.</td></tr>
+                    <tr><td class="num">32</td><td class="nl">Luister je even mee?</td><td class="ar">هل تستمع معي قليلًا؟</td></tr>
+                    <tr><td class="num">33</td><td class="nl">Ik kijk mee.</td><td class="ar">أتابع معكم.</td></tr>
+                    <tr><td class="num">34</td><td class="nl">Wil je even meekijken?</td><td class="ar">هل يمكنك إلقاء نظرة معي؟</td></tr>
+                    <tr><td class="num">35</td><td class="nl">Ik denk met je mee.</td><td class="ar">أفكر معك لإيجاد حل.</td></tr>
+                    <tr><td class="num">36</td><td class="nl">Kun je even meedenken?</td><td class="ar">هل يمكنك مساعدتي في التفكير؟</td></tr>
+                    <tr><td class="num">37</td><td class="nl">Ik werk mee aan het project.</td><td class="ar">أشارك في العمل على المشروع.</td></tr>
+                    <tr><td class="num">38</td><td class="nl">Iedereen moet meewerken.</td><td class="ar">يجب على الجميع التعاون.</td></tr>
+                    <tr><td class="num">39</td><td class="nl">Mijn collega werkt goed mee.</td><td class="ar">زميلي يتعاون جيدًا.</td></tr>
+                    <tr><td class="num">40</td><td class="nl">Bedankt dat je meewerkt.</td><td class="ar">شكرًا لتعاونك.</td></tr>
+                    <tr><td class="num">41</td><td class="nl">Ik help mee in de keuken.</td><td class="ar">أساعد في المطبخ.</td></tr>
+                    <tr><td class="num">42</td><td class="nl">Help je even mee?</td><td class="ar">هل تساعد قليلًا؟</td></tr>
+                    <tr><td class="num">43</td><td class="nl">We ruimen samen mee op.</td><td class="ar">نشارك جميعًا في الترتيب.</td></tr>
+                    <tr><td class="num">44</td><td class="nl">Ik eet vanavond mee.</td><td class="ar">سأتناول الطعام معكم هذا المساء.</td></tr>
+                    <tr><td class="num">45</td><td class="nl">Eet je met ons mee?</td><td class="ar">هل ستتناول الطعام معنا؟</td></tr>
+                    <tr><td class="num">46</td><td class="nl">Mijn broer blijft mee-eten.</td><td class="ar">أخي سيبقى ليتناول الطعام معنا.</td></tr>
+                    <tr><td class="num">47</td><td class="nl">Ik neem een vriend mee naar het feest.</td><td class="ar">سآخذ صديقًا معي إلى الحفلة.</td></tr>
+                    <tr><td class="num">48</td><td class="nl">Mag mijn vrouw ook mee?</td><td class="ar">هل يمكن لزوجتي أن تأتي أيضًا؟</td></tr>
+                    <tr><td class="num">49</td><td class="nl">De kinderen mogen mee naar buiten.</td><td class="ar">يمكن للأطفال الخروج معنا.</td></tr>
+                    <tr><td class="num">50</td><td class="nl">Ik ga mee met de bus.</td><td class="ar">سأذهب معكم بالحافلة.</td></tr>
+                    <tr><td class="num">51</td><td class="nl">Neem je fiets mee.</td><td class="ar">خذ دراجتك معك.</td></tr>
+                    <tr><td class="num">52</td><td class="nl">Ik neem mijn gereedschap mee naar de werf.</td><td class="ar">آخذ أدواتي معي إلى موقع العمل.</td></tr>
+                    <tr><td class="num">53</td><td class="nl">De ingenieur neemt de plannen mee.</td><td class="ar">المهندس يأخذ المخططات معه.</td></tr>
+                    <tr><td class="num">54</td><td class="nl">Neem je veiligheidshelm mee?</td><td class="ar">هل أخذت خوذة السلامة معك؟</td></tr>
+                    <tr><td class="num">55</td><td class="nl">Ik doe mee aan de vergadering.</td><td class="ar">أشارك في الاجتماع.</td></tr>
+                    <tr><td class="num">56</td><td class="nl">Doe je morgen ook mee?</td><td class="ar">هل ستشارك غدًا أيضًا؟</td></tr>
+                    <tr><td class="num">57</td><td class="nl">Ik wil graag meedoen.</td><td class="ar">أريد المشاركة بكل سرور.</td></tr>
+                    <tr><td class="num">58</td><td class="nl">Hij wil niet meedoen.</td><td class="ar">هو لا يريد المشاركة.</td></tr>
+                    <tr><td class="num">59</td><td class="nl">We doen allemaal mee.</td><td class="ar">نحن جميعًا نشارك.</td></tr>
+                    <tr><td class="num">60</td><td class="nl">Ik neem mijn cv mee naar het gesprek.</td><td class="ar">سأأخذ سيرتي الذاتية معي إلى المقابلة.</td></tr>
+                    <tr><td class="num">61</td><td class="nl">Neem je diploma's mee.</td><td class="ar">خذ شهاداتك معك.</td></tr>
+                    <tr><td class="num">62</td><td class="nl">Ik ga mee naar VDAB.</td><td class="ar">سأذهب معك إلى VDAB.</td></tr>
+                    <tr><td class="num">63</td><td class="nl">Mijn vrouw gaat mee naar de afspraak.</td><td class="ar">زوجتي سترافقني إلى الموعد.</td></tr>
+                    <tr><td class="num">64</td><td class="nl">Ik neem mijn kind mee naar de dokter.</td><td class="ar">سآخذ طفلي معي إلى الطبيب.</td></tr>
+                    <tr><td class="num">65</td><td class="nl">Neem je jas mee, het regent.</td><td class="ar">خذ معطفك معك، فالمطر يهطل.</td></tr>
+                    <tr><td class="num">66</td><td class="nl">Ik neem iets te drinken mee.</td><td class="ar">سآخذ شيئًا للشرب معي.</td></tr>
+                    <tr><td class="num">67</td><td class="nl">We nemen broodjes mee.</td><td class="ar">سنأخذ شطائر معنا.</td></tr>
+                    <tr><td class="num">68</td><td class="nl">Ik neem mijn boek mee naar de les.</td><td class="ar">آخذ كتابي معي إلى الدرس.</td></tr>
+                    <tr><td class="num">69</td><td class="nl">Kan ik iemand meenemen?</td><td class="ar">هل يمكنني إحضار شخص معي؟</td></tr>
+                    <tr><td class="num">70</td><td class="nl">Je mag een vriend meenemen.</td><td class="ar">يمكنك أن تأخذ صديقًا معك.</td></tr>
+                    <tr><td class="num">71</td><td class="nl">Zij neemt haar moeder mee naar de winkel.</td><td class="ar">تأخذ أمها معها إلى المتجر.</td></tr>
+                    <tr><td class="num">72</td><td class="nl">Hij neemt zijn collega mee naar de klant.</td><td class="ar">يأخذ زميله معه إلى العميل.</td></tr>
+                    <tr><td class="num">73</td><td class="nl">Ik neem deel aan de activiteit.</td><td class="ar">أشارك في النشاط.</td></tr>
+                    <tr><td class="num">74</td><td class="nl">Wil je meehelpen?</td><td class="ar">هل تريد المساعدة معنا؟</td></tr>
+                    <tr><td class="num">75</td><td class="nl">Ik help mee met koken.</td><td class="ar">أساعد في الطهي.</td></tr>
+                    <tr><td class="num">76</td><td class="nl">Mijn kinderen helpen mee in huis.</td><td class="ar">أطفالي يساعدون في المنزل.</td></tr>
+                    <tr><td class="num">77</td><td class="nl">Iedereen helpt mee met opruimen.</td><td class="ar">الجميع يساعد في الترتيب.</td></tr>
+                    <tr><td class="num">78</td><td class="nl">Ik doe mee met de Nederlandse les.</td><td class="ar">أشارك في درس الهولندية.</td></tr>
+                    <tr><td class="num">79</td><td class="nl">Mijn vriend doet mee met sporten.</td><td class="ar">صديقي يشارك في ممارسة الرياضة.</td></tr>
+                    <tr><td class="num">80</td><td class="nl">Ik neem mijn sporttas mee.</td><td class="ar">سآخذ حقيبة الرياضة معي.</td></tr>
+                    <tr><td class="num">81</td><td class="nl">Neem je handdoek mee naar het zwembad.</td><td class="ar">خذ منشفتك معك إلى المسبح.</td></tr>
+                    <tr><td class="num">82</td><td class="nl">Ga je mee wandelen?</td><td class="ar">هل ستأتي للمشي معي؟</td></tr>
+                    <tr><td class="num">83</td><td class="nl">Ik ga graag mee fietsen.</td><td class="ar">يسعدني أن أذهب معكم لركوب الدراجة.</td></tr>
+                    <tr><td class="num">84</td><td class="nl">We nemen de hond mee.</td><td class="ar">سنأخذ الكلب معنا.</td></tr>
+                    <tr><td class="num">85</td><td class="nl">Neem wat fruit mee voor de kinderen.</td><td class="ar">خذ بعض الفاكهة للأطفال.</td></tr>
+                    <tr><td class="num">86</td><td class="nl">Ik neem mijn oplader mee.</td><td class="ar">سآخذ الشاحن معي.</td></tr>
+                    <tr><td class="num">87</td><td class="nl">Heb je alles meegenomen?</td><td class="ar">هل أخذت كل شيء معك؟</td></tr>
+                    <tr><td class="num">88</td><td class="nl">Ik ben mijn portefeuille vergeten mee te nemen.</td><td class="ar">نسيت أن آخذ محفظتي معي.</td></tr>
+                    <tr><td class="num">89</td><td class="nl">Neem dit formulier mee naar het gemeentehuis.</td><td class="ar">خذ هذه الاستمارة معك إلى البلدية.</td></tr>
+                    <tr><td class="num">90</td><td class="nl">Ik ga mee naar de gemeente.</td><td class="ar">سأذهب معك إلى البلدية.</td></tr>
+                    <tr><td class="num">91</td><td class="nl">Mijn buurman helpt mee.</td><td class="ar">جاري يساعد معنا.</td></tr>
+                    <tr><td class="num">92</td><td class="nl">We denken samen mee over een oplossing.</td><td class="ar">نفكر معًا في حل.</td></tr>
+                    <tr><td class="num">93</td><td class="nl">Ik praat graag mee.</td><td class="ar">أحب المشاركة في الحديث.</td></tr>
+                    <tr><td class="num">94</td><td class="nl">Mag ik even meepraten?</td><td class="ar">هل يمكنني المشاركة في الحديث قليلًا؟</td></tr>
+                    <tr><td class="num">95</td><td class="nl">Iedereen mag zijn mening meegeven.</td><td class="ar">يمكن للجميع تقديم رأيهم.</td></tr>
+                    <tr><td class="num">96</td><td class="nl">Neem je ervaring mee in je sollicitatie.</td><td class="ar">استفد من خبرتك في طلب الوظيفة.</td></tr>
+                    <tr><td class="num">97</td><td class="nl">Ik neem mijn werkervaring mee naar het gesprek.</td><td class="ar">سأعرض خبرتي العملية في المقابلة.</td></tr>
+                    <tr><td class="num">98</td><td class="nl">We nemen de kinderen mee op vakantie.</td><td class="ar">سنأخذ الأطفال معنا في العطلة.</td></tr>
+                    <tr><td class="num">99</td><td class="nl">Ik ga mee, als je dat goed vindt.</td><td class="ar">سأذهب معك إذا كنت توافق.</td></tr>
+                    <tr><td class="num">100</td><td class="nl">Bedankt dat je me bent meegekomen.</td><td class="ar">شكرًا لأنك جئت معي.</td></tr>
+                    <tr><td class="num">101</td><td class="nl">Wil je de boodschappen meenemen?</td><td class="ar">هل يمكنك أخذ المشتريات معك؟</td></tr>
+                    <tr><td class="num">102</td><td class="nl">Ik neem de vuilniszak mee naar buiten.</td><td class="ar">سآخذ كيس القمامة إلى الخارج.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>Nederlands - Arabisch Leerboek &copy; 2026</p>
+        </footer>
+    </div>
+
+</body>
+</html>
