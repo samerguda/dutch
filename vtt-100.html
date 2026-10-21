@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة هولندية باستخدام VTT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 30px 15px;
+            color: #eee;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, #f39c12, #e74c3c, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+        .flag {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .rule-box {
+            background: rgba(243, 156, 18, 0.15);
+            border-right: 4px solid #f39c12;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: right;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .rule-box code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            color: #f1c40f;
+        }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 25px 0;
+        }
+        .controls button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #eee;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .controls button:hover, .controls button.active {
+            background: #e74c3c;
+            border-color: #e74c3c;
+            transform: translateY(-2px);
+        }
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto 25px;
+            display: block;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: #eee;
+            font-size: 1rem;
+            text-align: center;
+        }
+        .search-box:focus {
+            outline: none;
+            border-color: #e74c3c;
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .search-box::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        .sentence-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 15px;
+            padding: 18px 22px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .sentence-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-5px);
+            border-color: rgba(231, 76, 60, 0.5);
+        }
+        .sentence-card.hidden {
+            display: none;
+        }
+        .number {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            min-width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .content {
+            flex: 1;
+        }
+        .dutch {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #f1c40f;
+            margin-bottom: 5px;
+            direction: ltr;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+        .arabic {
+            font-size: 1rem;
+            color: #bbb;
+            line-height: 1.6;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .stats {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        .section-title {
+            text-align: center;
+            margin: 35px 0 20px;
+            font-size: 1.3rem;
+            color: #9b59b6;
+            border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+            padding-bottom: 10px;
+        }
+        .note-box {
+            background: rgba(155, 89, 182, 0.1);
+            border-right: 4px solid #9b59b6;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+            .dutch { font-size: 1rem; }
+            .arabic { font-size: 0.9rem; }
+            .sentence-card { padding: 14px 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="flag">🇧🇪</span>
+            <h1>100 جملة هولندية باستخدام VTT</h1>
+            <p style="color: #aaa; margin-top: 10px;">Voltooid Tegenwoordige Tijd — الماضي القريب</p>
+            <div class="rule-box">
+                <strong>📌 القاعدة:</strong>
+                <code>Hebben / Zijn + voltooid deelwoord</code><br>
+                <span style="color: #bbb;">(التصريف الثالث للفعل + الفعل المساعد)</span>
+            </div>
+        </header>
+
+        <input type="text" class="search-box" id="searchInput" placeholder="🔍 ابحث عن جملة...">
+
+        <div class="controls">
+            <button onclick="filterSentences('all')" class="active" data-filter="all">الكل</button>
+            <button onclick="filterSentences('hebben')" data-filter="hebben">Hebben</button>
+            <button onclick="filterSentences('zijn')" data-filter="zijn">Zijn</button>
+            <button onclick="filterSentences('vraag')" data-filter="vraag">أسئلة</button>
+            <button onclick="filterSentences('negatief')" data-filter="negatief">نفي</button>
+        </div>
+
+        <div id="sentencesContainer"></div>
+
+        <div class="note-box">
+            <strong>⚠️ ملاحظة مهمة:</strong><br>
+            • <code style="color:#f1c40f;">Hebben</code> + التصريف الثالث: <em>Ik heb gewerkt.</em><br>
+            • <code style="color:#f1c40f;">Zijn</code> + التصريف الثالث: <em>Ik ben gegaan.</em><br>
+            • معظم الأفعال تستخدم <strong>hebben</strong>، بينما كثير من أفعال الانتقال وتغيير الحالة تستخدم <strong>zijn</strong>.
+        </div>
+
+        <div class="stats" id="stats"></div>
+    </div>
+
+    <script>
+        // البيانات: كل جملة مع التصنيف
+        const sentences = [
+            // 1-10
+            { nl: "Ik heb gewerkt.", ar: "أنا عملت.", type: "hebben" },
+            { nl: "Ik heb gegeten.", ar: "أنا أكلت.", type: "hebben" },
+            { nl: "Ik heb gedronken.", ar: "أنا شربت.", type: "hebben" },
+            { nl: "Ik heb Nederlands geleerd.", ar: "أنا تعلمت الهولندية.", type: "hebben" },
+            { nl: "Ik heb mijn huiswerk gemaakt.", ar: "أنا عملت واجبي.", type: "hebben" },
+            { nl: "Ik heb koffie gedronken.", ar: "أنا شربت القهوة.", type: "hebben" },
+            { nl: "Ik heb de deur geopend.", ar: "أنا فتحت الباب.", type: "hebben" },
+            { nl: "Ik heb de deur gesloten.", ar: "أنا أغلقت الباب.", type: "hebben" },
+            { nl: "Ik heb mijn kamer opgeruimd.", ar: "أنا رتبت غرفتي.", type: "hebben" },
+            { nl: "Ik heb een film gezien.", ar: "أنا شاهدت فيلمًا.", type: "hebben" },
+            // 11-20
+            { nl: "Ik heb een boek gelezen.", ar: "أنا قرأت كتابًا.", type: "hebben" },
+            { nl: "Ik heb muziek geluisterd.", ar: "أنا استمعت إلى الموسيقى.", type: "hebben" },
+            { nl: "Ik heb mijn moeder gebeld.", ar: "أنا اتصلت بأمي.", type: "hebben" },
+            { nl: "Ik heb mijn vriend geholpen.", ar: "أنا ساعدت صديقي.", type: "hebben" },
+            { nl: "Ik heb boodschappen gedaan.", ar: "أنا تسوقت.", type: "hebben" },
+            { nl: "Ik heb brood gekocht.", ar: "أنا اشتريت خبزًا.", type: "hebben" },
+            { nl: "Ik heb mijn sleutels gevonden.", ar: "أنا وجدت مفاتيحي.", type: "hebben" },
+            { nl: "Ik heb mijn telefoon verloren.", ar: "أنا أضعت هاتفي.", type: "hebben" },
+            { nl: "Ik heb de trein gemist.", ar: "أنا فاتني القطار.", type: "hebben" },
+            { nl: "Ik heb de bus genomen.", ar: "أنا ركبت الحافلة.", type: "hebben" },
+            // 21-30 (zijn)
+            { nl: "Ik ben naar huis gegaan.", ar: "أنا ذهبت إلى المنزل.", type: "zijn" },
+            { nl: "Ik ben naar België gekomen.", ar: "أنا جئت إلى بلجيكا.", type: "zijn" },
+            { nl: "Ik ben vroeg opgestaan.", ar: "أنا استيقظت مبكرًا.", type: "zijn" },
+            { nl: "Ik ben laat wakker geworden.", ar: "أنا استيقظت متأخرًا.", type: "zijn" },
+            { nl: "Ik ben naar school gegaan.", ar: "أنا ذهبت إلى المدرسة.", type: "zijn" },
+            { nl: "Ik ben naar mijn werk gefietst.", ar: "أنا ذهبت إلى عملي بالدراجة.", type: "zijn" },
+            { nl: "Ik ben naar Brussel gereden.", ar: "أنا ذهبت إلى بروكسل بالسيارة.", type: "zijn" },
+            { nl: "Ik ben in Antwerpen geweest.", ar: "أنا كنت في أنتويرب.", type: "zijn" },
+            { nl: "Ik ben thuis gebleven.", ar: "أنا بقيت في المنزل.", type: "zijn" },
+            { nl: "Ik ben snel teruggekomen.", ar: "أنا عدت بسرعة.", type: "zijn" },
+            // 31-40 (vragen)
+            { nl: "Heb je gegeten?", ar: "هل أكلت؟", type: "vraag" },
+            { nl: "Heb je koffie gedronken?", ar: "هل شربت القهوة؟", type: "vraag" },
+            { nl: "Heb je Nederlands gesproken?", ar: "هل تحدثت الهولندية؟", type: "vraag" },
+            { nl: "Heb je de e-mail gelezen?", ar: "هل قرأت البريد الإلكتروني؟", type: "vraag" },
+            { nl: "Heb je de deur gesloten?", ar: "هل أغلقت الباب؟", type: "vraag" },
+            { nl: "Heb je je huiswerk gemaakt?", ar: "هل عملت واجبك؟", type: "vraag" },
+            { nl: "Heb je de dokter gebeld?", ar: "هل اتصلت بالطبيب؟", type: "vraag" },
+            { nl: "Heb je de boodschappen gekocht?", ar: "هل اشتريت المشتريات؟", type: "vraag" },
+            { nl: "Heb je goed geslapen?", ar: "هل نمت جيدًا؟", type: "vraag" },
+            { nl: "Heb je de film gezien?", ar: "هل شاهدت الفيلم؟", type: "vraag" },
+            // 41-50 (negatief)
+            { nl: "Ik heb vandaag niet gewerkt.", ar: "أنا لم أعمل اليوم.", type: "negatief" },
+            { nl: "Ik heb nog niet gegeten.", ar: "أنا لم آكل بعد.", type: "negatief" },
+            { nl: "Ik heb mijn sleutels niet gevonden.", ar: "لم أجد مفاتيحي.", type: "negatief" },
+            { nl: "Ik heb de brief niet ontvangen.", ar: "لم أستلم الرسالة.", type: "negatief" },
+            { nl: "Ik heb hem niet gezien.", ar: "أنا لم أره.", type: "negatief" },
+            { nl: "Ik heb dat niet begrepen.", ar: "أنا لم أفهم ذلك.", type: "negatief" },
+            { nl: "Ik heb geen koffie gedronken.", ar: "أنا لم أشرب أي قهوة.", type: "negatief" },
+            { nl: "Ik heb geen tijd gehad.", ar: "لم يكن لدي وقت.", type: "negatief" },
+            { nl: "Ik ben niet naar school gegaan.", ar: "أنا لم أذهب إلى المدرسة.", type: "negatief" },
+            { nl: "Ik ben niet thuis gebleven.", ar: "أنا لم أبقَ في المنزل.", type: "negatief" },
+            // 51-60 (tijd)
+            { nl: "Ik heb gisteren veel gewerkt.", ar: "أنا عملت كثيرًا أمس.", type: "hebben" },
+            { nl: "Ik heb gisteren mijn kamer schoongemaakt.", ar: "أنا نظفت غرفتي أمس.", type: "hebben" },
+            { nl: "Ik heb vanochtend gedoucht.", ar: "أنا استحممت هذا الصباح.", type: "hebben" },
+            { nl: "Ik heb vanmorgen ontbeten.", ar: "أنا تناولت الإفطار هذا الصباح.", type: "hebben" },
+            { nl: "Ik heb gisteren mijn familie bezocht.", ar: "أنا زرت عائلتي أمس.", type: "hebben" },
+            { nl: "Ik heb vorige week een nieuwe jas gekocht.", ar: "اشتريت معطفًا جديدًا الأسبوع الماضي.", type: "hebben" },
+            { nl: "Ik heb gisteren met mijn vrouw gesproken.", ar: "تحدثت مع زوجتي أمس.", type: "hebben" },
+            { nl: "Ik heb mijn afspraak bevestigd.", ar: "أكدت موعدي.", type: "hebben" },
+            { nl: "Ik heb de rekening betaald.", ar: "دفعت الفاتورة.", type: "hebben" },
+            { nl: "Ik heb mijn cv verstuurd.", ar: "أرسلت سيرتي الذاتية.", type: "hebben" },
+            // 61-70 (derde persoon / meervoud)
+            { nl: "Zij heeft lekker gekookt.", ar: "هي طبخت طعامًا لذيذًا.", type: "hebben" },
+            { nl: "Hij heeft een nieuwe auto gekocht.", ar: "هو اشترى سيارة جديدة.", type: "hebben" },
+            { nl: "Mijn vrouw heeft boodschappen gedaan.", ar: "زوجتي قامت بالتسوق.", type: "hebben" },
+            { nl: "Mijn broer heeft mij gebeld.", ar: "أخي اتصل بي.", type: "hebben" },
+            { nl: "Mijn vriend heeft een baan gevonden.", ar: "صديقي وجد وظيفة.", type: "hebben" },
+            { nl: "De kinderen hebben buiten gespeeld.", ar: "الأطفال لعبوا في الخارج.", type: "hebben" },
+            { nl: "Wij hebben samen gegeten.", ar: "نحن أكلنا معًا.", type: "hebben" },
+            { nl: "Wij hebben Nederlands geoefend.", ar: "نحن تدربنا على الهولندية.", type: "hebben" },
+            { nl: "Wij hebben een wandeling gemaakt.", ar: "نحن تمشينا.", type: "hebben" },
+            { nl: "Zij hebben het huis schoongemaakt.", ar: "هم نظفوا المنزل.", type: "hebben" },
+            // 71-80
+            { nl: "Ik heb mijn werk afgemaakt.", ar: "أنا أنهيت عملي.", type: "hebben" },
+            { nl: "Ik heb een fout gemaakt.", ar: "أنا ارتكبت خطأ.", type: "hebben" },
+            { nl: "Ik heb de vraag beantwoord.", ar: "أنا أجبت عن السؤال.", type: "hebben" },
+            { nl: "Ik heb de les begrepen.", ar: "أنا فهمت الدرس.", type: "hebben" },
+            { nl: "Ik heb mijn best gedaan.", ar: "أنا بذلت قصارى جهدي.", type: "hebben" },
+            { nl: "Ik heb een sollicitatiegesprek gehad.", ar: "أجريت مقابلة عمل.", type: "hebben" },
+            { nl: "Ik heb een cursus gevolgd.", ar: "التحقت بدورة.", type: "hebben" },
+            { nl: "Ik heb een formulier ingevuld.", ar: "ملأت استمارة.", type: "hebben" },
+            { nl: "Ik heb mijn documenten ingediend.", ar: "قدمت مستنداتي.", type: "hebben" },
+            { nl: "Ik heb een e-mail geschreven.", ar: "كتبت بريدًا إلكترونيًا.", type: "hebben" },
+            // 81-90 (vragen met zijn)
+            { nl: "Ben je al aangekomen?", ar: "هل وصلت بالفعل؟", type: "vraag" },
+            { nl: "Ben je op tijd gekomen?", ar: "هل جئت في الموعد؟", type: "vraag" },
+            { nl: "Ben je naar de supermarkt geweest?", ar: "هل ذهبت إلى السوبرماركت؟", type: "vraag" },
+            { nl: "Ben je ooit in Nederland geweest?", ar: "هل سبق لك أن زرت هولندا؟", type: "vraag" },
+            { nl: "Ben je vroeg vertrokken?", ar: "هل غادرت مبكرًا؟", type: "vraag" },
+            { nl: "Ben je met de trein gekomen?", ar: "هل جئت بالقطار؟", type: "vraag" },
+            { nl: "Ben je thuisgekomen?", ar: "هل وصلت إلى المنزل؟", type: "vraag" },
+            { nl: "Ben je moe geworden?", ar: "هل أصبحت متعبًا؟", type: "vraag" },
+            { nl: "Ben je gevallen?", ar: "هل سقطت؟", type: "vraag" },
+            { nl: "Ben je verhuisd?", ar: "هل انتقلت إلى منزل آخر؟", type: "vraag" },
+            // 91-100
+            { nl: "Ik heb eindelijk een baan gevonden.", ar: "أخيرًا وجدت وظيفة.", type: "hebben" },
+            { nl: "Ik heb vandaag veel geleerd.", ar: "تعلمت الكثير اليوم.", type: "hebben" },
+            { nl: "Ik heb mijn Nederlands verbeterd.", ar: "حسّنت لغتي الهولندية.", type: "hebben" },
+            { nl: "Ik heb mijn buurman ontmoet.", ar: "قابلت جاري.", type: "hebben" },
+            { nl: "Ik heb het probleem opgelost.", ar: "حللت المشكلة.", type: "hebben" },
+            { nl: "Ik heb mijn wachtwoord veranderd.", ar: "غيرت كلمة المرور الخاصة بي.", type: "hebben" },
+            { nl: "Ik heb de computer aangezet.", ar: "شغّلت الكمبيوتر.", type: "hebben" },
+            { nl: "Ik heb het licht uitgedaan.", ar: "أطفأت الضوء.", type: "hebben" },
+            { nl: "Ik heb mijn afspraak verplaatst.", ar: "غيّرت موعدي.", type: "hebben" },
+            { nl: "Ik heb alles goed voorbereid.", ar: "حضرت كل شيء جيدًا.", type: "hebben" }
+        ];
+
+        let currentFilter = 'all';
+
+        function renderSentences(filter = 'all', searchTerm = '') {
+            const container = document.getElementById('sentencesContainer');
+            container.innerHTML = '';
+            
+            let count = 0;
+            const term = searchTerm.toLowerCase().trim();
+            
+            sentences.forEach((s, i) => {
+                const matchesFilter = filter === 'all' || s.type === filter;
+                const matchesSearch = !term || s.nl.toLowerCase().includes(term) || s.ar.includes(term);
+                
+                if (!matchesFilter || !matchesSearch) return;
+                
+                count++;
+                const card = document.createElement('div');
+                card.className = 'sentence-card';
+                card.innerHTML = `
+                    <div class="number">${i + 1}</div>
+                    <div class="content">
+                        <div class="dutch">${s.nl}</div>
+                        <div class="arabic">${s.ar}</div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            
+            document.getElementById('stats').textContent = `عرض ${count} من أصل ${sentences.length} جملة`;
+        }
+
+        function filterSentences(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.controls button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.filter === filter);
+            });
+            renderSentences(filter, document.getElementById('searchInput').value);
+        }
+
+        document.getElementById('searchInput').addEventListener('input', function() {
+            renderSentences(currentFilter, this.value);
+        });
+
+        // عرض أولي
+        renderSentences();
+    </script>
+</body>
+</html>
