@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جمل هولندية: أنا لا أحتاج – Ik heb … niet nodig</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    }
+    body {
+      background: #f5f7fb;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 1100px;
+      width: 100%;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #1e2b3c;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+    .subhead {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      background: #e9ecf2;
+      display: inline-block;
+      padding: 0.5rem 2rem;
+      border-radius: 40px;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 2.5rem 0 1.5rem 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0a2942;
+      border-right: 6px solid #10b981;
+      padding-right: 1.2rem;
+    }
+    .section-title .badge {
+      background: #10b981;
+      color: white;
+      font-size: 1rem;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .sentence-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1rem 1.4rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      transition: background 0.15s ease, box-shadow 0.15s ease;
+      border: 1px solid #eef2f6;
+    }
+    .sentence-card:hover {
+      background: #fafdff;
+      box-shadow: 0 8px 18px -6px rgba(16, 185, 129, 0.12);
+      border-color: #b8e6d9;
+    }
+    .dutch {
+      font-weight: 600;
+      color: #0d2b45;
+      font-size: 1.08rem;
+      direction: ltr;
+      text-align: left;
+      flex: 1 1 55%;
+      padding-left: 0.5rem;
+      line-height: 1.5;
+    }
+    .arabic {
+      font-weight: 500;
+      color: #1f3a5f;
+      font-size: 1.08rem;
+      text-align: right;
+      direction: rtl;
+      flex: 1 1 40%;
+      line-height: 1.6;
+      padding-right: 0.5rem;
+    }
+    .number {
+      font-weight: 600;
+      color: #7e8c9e;
+      font-size: 0.9rem;
+      min-width: 2.2rem;
+      display: inline-block;
+      text-align: left;
+      direction: ltr;
+    }
+    .note {
+      background: #eef6ff;
+      border-radius: 14px;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0 0.5rem 0;
+      color: #1e4d7c;
+      border-right: 6px solid #10b981;
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+    .highlight {
+      background: #d1fae5;
+      border-radius: 8px;
+      padding: 0.1rem 0.5rem;
+      font-weight: 700;
+      color: #065f46;
+      direction: ltr;
+      display: inline-block;
+    }
+    .grammar-box {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.5rem 1.8rem;
+      margin: 2.5rem 0 1rem 0;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #dce5ef;
+    }
+    .grammar-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: #0a2942;
+      border-right: 5px solid #10b981;
+      padding-right: 1rem;
+    }
+    .grammar-item {
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+    }
+    .grammar-item strong {
+      color: #065f46;
+      font-size: 1.1rem;
+    }
+    .grammar-item code {
+      background: #eef2f6;
+      padding: 0.2rem 0.6rem;
+      border-radius: 8px;
+      direction: ltr;
+      display: inline-block;
+      font-weight: 600;
+      color: #0d2b45;
+    }
+    .example {
+      color: #4b5563;
+      margin-right: 1rem;
+      font-size: 1rem;
+    }
+    .footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #8b9aab;
+      font-size: 0.9rem;
+      border-top: 1px solid #dce5ef;
+      padding-top: 1.5rem;
+    }
+    @media (max-width: 700px) {
+      .sentence-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .dutch, .arabic {
+        flex: 1 1 100%;
+        text-align: left;
+        padding: 0;
+      }
+      .arabic {
+        text-align: right;
+        border-top: 1px dashed #dfe8f2;
+        padding-top: 0.5rem;
+        margin-top: 0.3rem;
+      }
+      .number {
+        margin-bottom: 0.2rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>🇳🇱 100 جملة هولندية باستخدام «أنا لا أحتاج»</h1>
+  <div style="text-align:center;">
+    <span class="subhead">Ik heb … niet nodig / geen … nodig</span>
+  </div>
+
+  <div class="note">
+    <strong>📌 القاعدة الأساسية:</strong> 
+    <span style="direction:ltr; display:inline-block; font-weight:600;">Ik heb geen [اسم] nodig.</span> = أنا لا أحتاج إلى [شيء].
+    <br>مع <strong>dat</strong> نستخدم <strong>niet</strong>: 
+    <span style="direction:ltr; display:inline-block; font-weight:600;">Ik heb dat niet nodig.</span> = أنا لا أحتاج إلى ذلك.
+  </div>
+
+  <div class="section-title">
+    <span>📋 100 جملة – «أنا لا أحتاج إلى …»</span>
+    <span class="badge">100</span>
+  </div>
+  <div class="grid">
+    <!-- 1 -->
+    <div class="sentence-card"><span class="number">1.</span><span class="dutch">Ik heb geen hulp nodig.</span><span class="arabic">أنا لا أحتاج إلى مساعدة.</span></div>
+    <!-- 2 -->
+    <div class="sentence-card"><span class="number">2.</span><span class="dutch">Ik heb geen geld nodig.</span><span class="arabic">أنا لا أحتاج إلى المال.</span></div>
+    <!-- 3 -->
+    <div class="sentence-card"><span class="number">3.</span><span class="dutch">Ik heb geen auto nodig.</span><span class="arabic">أنا لا أحتاج إلى سيارة.</span></div>
+    <!-- 4 -->
+    <div class="sentence-card"><span class="number">4.</span><span class="dutch">Ik heb geen taxi nodig.</span><span class="arabic">أنا لا أحتاج إلى سيارة أجرة.</span></div>
+    <!-- 5 -->
+    <div class="sentence-card"><span class="number">5.</span><span class="dutch">Ik heb geen bus nodig.</span><span class="arabic">أنا لا أحتاج إلى حافلة.</span></div>
+    <!-- 6 -->
+    <div class="sentence-card"><span class="number">6.</span><span class="dutch">Ik heb geen nieuwe telefoon nodig.</span><span class="arabic">أنا لا أحتاج إلى هاتف جديد.</span></div>
+    <!-- 7 -->
+    <div class="sentence-card"><span class="number">7.</span><span class="dutch">Ik heb geen computer nodig.</span><span class="arabic">أنا لا أحتاج إلى كمبيوتر.</span></div>
+    <!-- 8 -->
+    <div class="sentence-card"><span class="number">8.</span><span class="dutch">Ik heb geen laptop nodig.</span><span class="arabic">أنا لا أحتاج إلى لابتوب.</span></div>
+    <!-- 9 -->
+    <div class="sentence-card"><span class="number">9.</span><span class="dutch">Ik heb geen pen nodig.</span><span class="arabic">أنا لا أحتاج إلى قلم.</span></div>
+    <!-- 10 -->
+    <div class="sentence-card"><span class="number">10.</span><span class="dutch">Ik heb geen papier nodig.</span><span class="arabic">أنا لا أحتاج إلى ورق.</span></div>
+    <!-- 11 -->
+    <div class="sentence-card"><span class="number">11.</span><span class="dutch">Ik heb geen uitleg nodig.</span><span class="arabic">أنا لا أحتاج إلى شرح.</span></div>
+    <!-- 12 -->
+    <div class="sentence-card"><span class="number">12.</span><span class="dutch">Ik heb geen advies nodig.</span><span class="arabic">أنا لا أحتاج إلى نصيحة.</span></div>
+    <!-- 13 -->
+    <div class="sentence-card"><span class="number">13.</span><span class="dutch">Ik heb geen toestemming nodig.</span><span class="arabic">أنا لا أحتاج إلى إذن.</span></div>
+    <!-- 14 -->
+    <div class="sentence-card"><span class="number">14.</span><span class="dutch">Ik heb geen afspraak nodig.</span><span class="arabic">أنا لا أحتاج إلى موعد.</span></div>
+    <!-- 15 -->
+    <div class="sentence-card"><span class="number">15.</span><span class="dutch">Ik heb geen ticket nodig.</span><span class="arabic">أنا لا أحتاج إلى تذكرة.</span></div>
+    <!-- 16 -->
+    <div class="sentence-card"><span class="number">16.</span><span class="dutch">Ik heb geen kaart nodig.</span><span class="arabic">أنا لا أحتاج إلى بطاقة.</span></div>
+    <!-- 17 -->
+    <div class="sentence-card"><span class="number">17.</span><span class="dutch">Ik heb geen paspoort nodig.</span><span class="arabic">أنا لا أحتاج إلى جواز سفر.</span></div>
+    <!-- 18 -->
+    <div class="sentence-card"><span class="number">18.</span><span class="dutch">Ik heb geen kopie nodig.</span><span class="arabic">أنا لا أحتاج إلى نسخة.</span></div>
+    <!-- 19 -->
+    <div class="sentence-card"><span class="number">19.</span><span class="dutch">Ik heb geen handtekening nodig.</span><span class="arabic">أنا لا أحتاج إلى توقيع.</span></div>
+    <!-- 20 -->
+    <div class="sentence-card"><span class="number">20.</span><span class="dutch">Ik heb geen bewijs nodig.</span><span class="arabic">أنا لا أحتاج إلى إثبات.</span></div>
+    <!-- 21 -->
+    <div class="sentence-card"><span class="number">21.</span><span class="dutch">Ik heb vandaag geen hulp nodig.</span><span class="arabic">أنا لا أحتاج إلى مساعدة اليوم.</span></div>
+    <!-- 22 -->
+    <div class="sentence-card"><span class="number">22.</span><span class="dutch">Ik heb nu geen geld nodig.</span><span class="arabic">أنا لا أحتاج إلى المال الآن.</span></div>
+    <!-- 23 -->
+    <div class="sentence-card"><span class="number">23.</span><span class="dutch">Ik heb morgen geen auto nodig.</span><span class="arabic">أنا لا أحتاج إلى سيارة غدًا.</span></div>
+    <!-- 24 -->
+    <div class="sentence-card"><span class="number">24.</span><span class="dutch">Ik heb voorlopig niets nodig.</span><span class="arabic">أنا لا أحتاج إلى أي شيء في الوقت الحالي.</span></div>
+    <!-- 25 -->
+    <div class="sentence-card"><span class="number">25.</span><span class="dutch">Ik heb op dit moment geen informatie nodig.</span><span class="arabic">أنا لا أحتاج إلى معلومات في هذه اللحظة.</span></div>
+    <!-- 26 -->
+    <div class="sentence-card"><span class="number">26.</span><span class="dutch">Ik heb geen extra tijd nodig.</span><span class="arabic">أنا لا أحتاج إلى وقت إضافي.</span></div>
+    <!-- 27 -->
+    <div class="sentence-card"><span class="number">27.</span><span class="dutch">Ik heb geen pauze nodig.</span><span class="arabic">أنا لا أحتاج إلى استراحة.</span></div>
+    <!-- 28 -->
+    <div class="sentence-card"><span class="number">28.</span><span class="dutch">Ik heb geen vakantie nodig.</span><span class="arabic">أنا لا أحتاج إلى إجازة.</span></div>
+    <!-- 29 -->
+    <div class="sentence-card"><span class="number">29.</span><span class="dutch">Ik heb geen nieuwe kleren nodig.</span><span class="arabic">أنا لا أحتاج إلى ملابس جديدة.</span></div>
+    <!-- 30 -->
+    <div class="sentence-card"><span class="number">30.</span><span class="dutch">Ik heb geen jas nodig.</span><span class="arabic">أنا لا أحتاج إلى معطف.</span></div>
+    <!-- 31 -->
+    <div class="sentence-card"><span class="number">31.</span><span class="dutch">Ik heb geen paraplu nodig.</span><span class="arabic">أنا لا أحتاج إلى مظلة.</span></div>
+    <!-- 32 -->
+    <div class="sentence-card"><span class="number">32.</span><span class="dutch">Ik heb geen bril nodig.</span><span class="arabic">أنا لا أحتاج إلى نظارة.</span></div>
+    <!-- 33 -->
+    <div class="sentence-card"><span class="number">33.</span><span class="dutch">Ik heb geen horloge nodig.</span><span class="arabic">أنا لا أحتاج إلى ساعة يد.</span></div>
+    <!-- 34 -->
+    <div class="sentence-card"><span class="number">34.</span><span class="dutch">Ik heb geen sleutel nodig.</span><span class="arabic">أنا لا أحتاج إلى مفتاح.</span></div>
+    <!-- 35 -->
+    <div class="sentence-card"><span class="number">35.</span><span class="dutch">Ik heb geen tas nodig.</span><span class="arabic">أنا لا أحتاج إلى حقيبة.</span></div>
+    <!-- 36 -->
+    <div class="sentence-card"><span class="number">36.</span><span class="dutch">Ik heb geen stoel nodig.</span><span class="arabic">أنا لا أحتاج إلى كرسي.</span></div>
+    <!-- 37 -->
+    <div class="sentence-card"><span class="number">37.</span><span class="dutch">Ik heb geen tafel nodig.</span><span class="arabic">أنا لا أحتاج إلى طاولة.</span></div>
+    <!-- 38 -->
+    <div class="sentence-card"><span class="number">38.</span><span class="dutch">Ik heb geen bed nodig.</span><span class="arabic">أنا لا أحتاج إلى سرير.</span></div>
+    <!-- 39 -->
+    <div class="sentence-card"><span class="number">39.</span><span class="dutch">Ik heb geen kamer nodig.</span><span class="arabic">أنا لا أحتاج إلى غرفة.</span></div>
+    <!-- 40 -->
+    <div class="sentence-card"><span class="number">40.</span><span class="dutch">Ik heb geen hotel nodig.</span><span class="arabic">أنا لا أحتاج إلى فندق.</span></div>
+    <!-- 41 -->
+    <div class="sentence-card"><span class="number">41.</span><span class="dutch">Ik heb geen dokter nodig.</span><span class="arabic">أنا لا أحتاج إلى طبيب.</span></div>
+    <!-- 42 -->
+    <div class="sentence-card"><span class="number">42.</span><span class="dutch">Ik heb geen medicijnen nodig.</span><span class="arabic">أنا لا أحتاج إلى أدوية.</span></div>
+    <!-- 43 -->
+    <div class="sentence-card"><span class="number">43.</span><span class="dutch">Ik heb geen ziekenhuis nodig.</span><span class="arabic">أنا لا أحتاج إلى مستشفى.</span></div>
+    <!-- 44 -->
+    <div class="sentence-card"><span class="number">44.</span><span class="dutch">Ik heb geen ambulance nodig.</span><span class="arabic">أنا لا أحتاج إلى سيارة إسعاف.</span></div>
+    <!-- 45 -->
+    <div class="sentence-card"><span class="number">45.</span><span class="dutch">Ik heb geen behandeling nodig.</span><span class="arabic">أنا لا أحتاج إلى علاج.</span></div>
+    <!-- 46 -->
+    <div class="sentence-card"><span class="number">46.</span><span class="dutch">Ik heb geen extra rust nodig.</span><span class="arabic">أنا لا أحتاج إلى راحة إضافية.</span></div>
+    <!-- 47 -->
+    <div class="sentence-card"><span class="number">47.</span><span class="dutch">Ik heb geen dieet nodig.</span><span class="arabic">أنا لا أحتاج إلى نظام غذائي.</span></div>
+    <!-- 48 -->
+    <div class="sentence-card"><span class="number">48.</span><span class="dutch">Ik heb geen sportschool nodig.</span><span class="arabic">أنا لا أحتاج إلى صالة رياضية.</span></div>
+    <!-- 49 -->
+    <div class="sentence-card"><span class="number">49.</span><span class="dutch">Ik heb geen trainer nodig.</span><span class="arabic">أنا لا أحتاج إلى مدرب.</span></div>
+    <!-- 50 -->
+    <div class="sentence-card"><span class="number">50.</span><span class="dutch">Ik heb geen speciale apparatuur nodig.</span><span class="arabic">أنا لا أحتاج إلى معدات خاصة.</span></div>
+    <!-- 51 -->
+    <div class="sentence-card"><span class="number">51.</span><span class="dutch">Ik heb geen nieuwe baan nodig.</span><span class="arabic">أنا لا أحتاج إلى وظيفة جديدة.</span></div>
+    <!-- 52 -->
+    <div class="sentence-card"><span class="number">52.</span><span class="dutch">Ik heb geen collega nodig.</span><span class="arabic">أنا لا أحتاج إلى زميل.</span></div>
+    <!-- 53 -->
+    <div class="sentence-card"><span class="number">53.</span><span class="dutch">Ik heb geen vergadering nodig.</span><span class="arabic">أنا لا أحتاج إلى اجتماع.</span></div>
+    <!-- 54 -->
+    <div class="sentence-card"><span class="number">54.</span><span class="dutch">Ik heb geen cursus nodig.</span><span class="arabic">أنا لا أحتاج إلى دورة.</span></div>
+    <!-- 55 -->
+    <div class="sentence-card"><span class="number">55.</span><span class="dutch">Ik heb geen extra opleiding nodig.</span><span class="arabic">أنا لا أحتاج إلى تدريب إضافي.</span></div>
+    <!-- 56 -->
+    <div class="sentence-card"><span class="number">56.</span><span class="dutch">Ik heb geen nieuwe ervaring nodig.</span><span class="arabic">أنا لا أحتاج إلى خبرة جديدة.</span></div>
+    <!-- 57 -->
+    <div class="sentence-card"><span class="number">57.</span><span class="dutch">Ik heb geen hulp van mijn collega nodig.</span><span class="arabic">أنا لا أحتاج إلى مساعدة زميلي.</span></div>
+    <!-- 58 -->
+    <div class="sentence-card"><span class="number">58.</span><span class="dutch">Ik heb geen toestemming van mijn baas nodig.</span><span class="arabic">أنا لا أحتاج إلى إذن مديري.</span></div>
+    <!-- 59 -->
+    <div class="sentence-card"><span class="number">59.</span><span class="dutch">Ik heb geen nieuwe documenten nodig.</span><span class="arabic">أنا لا أحتاج إلى مستندات جديدة.</span></div>
+    <!-- 60 -->
+    <div class="sentence-card"><span class="number">60.</span><span class="dutch">Ik heb geen extra informatie nodig.</span><span class="arabic">أنا لا أحتاج إلى معلومات إضافية.</span></div>
+    <!-- 61 -->
+    <div class="sentence-card"><span class="number">61.</span><span class="dutch">Ik heb geen woordenboek nodig.</span><span class="arabic">أنا لا أحتاج إلى قاموس.</span></div>
+    <!-- 62 -->
+    <div class="sentence-card"><span class="number">62.</span><span class="dutch">Ik heb geen vertaling nodig.</span><span class="arabic">أنا لا أحتاج إلى ترجمة.</span></div>
+    <!-- 63 -->
+    <div class="sentence-card"><span class="number">63.</span><span class="dutch">Ik heb geen Engelse les nodig.</span><span class="arabic">أنا لا أحتاج إلى درس إنجليزي.</span></div>
+    <!-- 64 -->
+    <div class="sentence-card"><span class="number">64.</span><span class="dutch">Ik heb geen Nederlandse les nodig.</span><span class="arabic">أنا لا أحتاج إلى درس هولندي.</span></div>
+    <!-- 65 -->
+    <div class="sentence-card"><span class="number">65.</span><span class="dutch">Ik heb geen leraar nodig.</span><span class="arabic">أنا لا أحتاج إلى معلم.</span></div>
+    <!-- 66 -->
+    <div class="sentence-card"><span class="number">66.</span><span class="dutch">Ik heb geen boek nodig.</span><span class="arabic">أنا لا أحتاج إلى كتاب.</span></div>
+    <!-- 67 -->
+    <div class="sentence-card"><span class="number">67.</span><span class="dutch">Ik heb geen schrift nodig.</span><span class="arabic">أنا لا أحتاج إلى كراسة.</span></div>
+    <!-- 68 -->
+    <div class="sentence-card"><span class="number">68.</span><span class="dutch">Ik heb geen examen nodig.</span><span class="arabic">أنا لا أحتاج إلى امتحان.</span></div>
+    <!-- 69 -->
+    <div class="sentence-card"><span class="number">69.</span><span class="dutch">Ik heb geen extra oefening nodig.</span><span class="arabic">أنا لا أحتاج إلى تدريب إضافي.</span></div>
+    <!-- 70 -->
+    <div class="sentence-card"><span class="number">70.</span><span class="dutch">Ik heb geen moeilijke uitleg nodig.</span><span class="arabic">أنا لا أحتاج إلى شرح صعب.</span></div>
+    <!-- 71 -->
+    <div class="sentence-card"><span class="number">71.</span><span class="dutch">Ik heb geen suiker nodig.</span><span class="arabic">أنا لا أحتاج إلى سكر.</span></div>
+    <!-- 72 -->
+    <div class="sentence-card"><span class="number">72.</span><span class="dutch">Ik heb geen zout nodig.</span><span class="arabic">أنا لا أحتاج إلى ملح.</span></div>
+    <!-- 73 -->
+    <div class="sentence-card"><span class="number">73.</span><span class="dutch">Ik heb geen melk nodig.</span><span class="arabic">أنا لا أحتاج إلى حليب.</span></div>
+    <!-- 74 -->
+    <div class="sentence-card"><span class="number">74.</span><span class="dutch">Ik heb geen koffie nodig.</span><span class="arabic">أنا لا أحتاج إلى قهوة.</span></div>
+    <!-- 75 -->
+    <div class="sentence-card"><span class="number">75.</span><span class="dutch">Ik heb geen thee nodig.</span><span class="arabic">أنا لا أحتاج إلى شاي.</span></div>
+    <!-- 76 -->
+    <div class="sentence-card"><span class="number">76.</span><span class="dutch">Ik heb geen brood nodig.</span><span class="arabic">أنا لا أحتاج إلى خبز.</span></div>
+    <!-- 77 -->
+    <div class="sentence-card"><span class="number">77.</span><span class="dutch">Ik heb geen vlees nodig.</span><span class="arabic">أنا لا أحتاج إلى لحم.</span></div>
+    <!-- 78 -->
+    <div class="sentence-card"><span class="number">78.</span><span class="dutch">Ik heb geen water nodig.</span><span class="arabic">أنا لا أحتاج إلى ماء.</span></div>
+    <!-- 79 -->
+    <div class="sentence-card"><span class="number">79.</span><span class="dutch">Ik heb geen boodschappen nodig.</span><span class="arabic">أنا لا أحتاج إلى مشتريات.</span></div>
+    <!-- 80 -->
+    <div class="sentence-card"><span class="number">80.</span><span class="dutch">Ik heb geen restaurant nodig.</span><span class="arabic">أنا لا أحتاج إلى مطعم.</span></div>
+    <!-- 81 -->
+    <div class="sentence-card"><span class="number">81.</span><span class="dutch">Ik heb niemand nodig.</span><span class="arabic">أنا لا أحتاج إلى أحد.</span></div>
+    <!-- 82 -->
+    <div class="sentence-card"><span class="number">82.</span><span class="dutch">Ik heb niemand anders nodig.</span><span class="arabic">أنا لا أحتاج إلى أي شخص آخر.</span></div>
+    <!-- 83 -->
+    <div class="sentence-card"><span class="number">83.</span><span class="dutch">Ik heb geen andere oplossing nodig.</span><span class="arabic">أنا لا أحتاج إلى حل آخر.</span></div>
+    <!-- 84 -->
+    <div class="sentence-card"><span class="number">84.</span><span class="dutch">Ik heb geen reden nodig.</span><span class="arabic">أنا لا أحتاج إلى سبب.</span></div>
+    <!-- 85 -->
+    <div class="sentence-card"><span class="number">85.</span><span class="dutch">Ik heb geen toestemming van jou nodig.</span><span class="arabic">أنا لا أحتاج إلى إذنك.</span></div>
+    <!-- 86 -->
+    <div class="sentence-card"><span class="number">86.</span><span class="dutch">Ik heb geen excuses nodig.</span><span class="arabic">أنا لا أحتاج إلى أعذار.</span></div>
+    <!-- 87 -->
+    <div class="sentence-card"><span class="number">87.</span><span class="dutch">Ik heb geen discussie nodig.</span><span class="arabic">أنا لا أحتاج إلى نقاش.</span></div>
+    <!-- 88 -->
+    <div class="sentence-card"><span class="number">88.</span><span class="dutch">Ik heb geen problemen nodig.</span><span class="arabic">أنا لا أحتاج إلى مشاكل.</span></div>
+    <!-- 89 -->
+    <div class="sentence-card"><span class="number">89.</span><span class="dutch">Ik heb geen stress nodig.</span><span class="arabic">أنا لا أحتاج إلى توتر.</span></div>
+    <!-- 90 -->
+    <div class="sentence-card"><span class="number">90.</span><span class="dutch">Ik heb geen zorgen nodig.</span><span class="arabic">أنا لا أحتاج إلى هموم.</span></div>
+    <!-- 91 -->
+    <div class="sentence-card"><span class="number">91.</span><span class="dutch">Ik heb dat niet nodig.</span><span class="arabic">أنا لا أحتاج إلى ذلك.</span></div>
+    <!-- 92 -->
+    <div class="sentence-card"><span class="number">92.</span><span class="dutch">Ik heb dit niet nodig.</span><span class="arabic">أنا لا أحتاج إلى هذا.</span></div>
+    <!-- 93 -->
+    <div class="sentence-card"><span class="number">93.</span><span class="dutch">Ik heb het niet nodig.</span><span class="arabic">أنا لا أحتاج إليه.</span></div>
+    <!-- 94 -->
+    <div class="sentence-card"><span class="number">94.</span><span class="dutch">Ik heb ze niet nodig.</span><span class="arabic">أنا لا أحتاج إليها / إليهم.</span></div>
+    <!-- 95 -->
+    <div class="sentence-card"><span class="number">95.</span><span class="dutch">Ik heb dat nu niet nodig.</span><span class="arabic">أنا لا أحتاج إلى ذلك الآن.</span></div>
+    <!-- 96 -->
+    <div class="sentence-card"><span class="number">96.</span><span class="dutch">Ik heb dat vandaag niet nodig.</span><span class="arabic">أنا لا أحتاج إلى ذلك اليوم.</span></div>
+    <!-- 97 -->
+    <div class="sentence-card"><span class="number">97.</span><span class="dutch">Ik heb dat echt niet nodig.</span><span class="arabic">أنا حقًا لا أحتاج إلى ذلك.</span></div>
+    <!-- 98 -->
+    <div class="sentence-card"><span class="number">98.</span><span class="dutch">Ik heb dat helemaal niet nodig.</span><span class="arabic">أنا لا أحتاج إلى ذلك إطلاقًا.</span></div>
+    <!-- 99 -->
+    <div class="sentence-card"><span class="number">99.</span><span class="dutch">Ik denk dat ik dat niet nodig heb.</span><span class="arabic">أعتقد أنني لا أحتاج إلى ذلك.</span></div>
+    <!-- 100 -->
+    <div class="sentence-card"><span class="number">100.</span><span class="dutch">Bedankt, maar ik heb dat niet nodig.</span><span class="arabic">شكرًا، لكنني لا أحتاج إلى ذلك.</span></div>
+  </div>
+
+  <!-- صندوق شرح الفروق الثلاثة -->
+  <div class="grammar-box">
+    <h3>📘 احفظ الفرق بين 3 تراكيب مهمة</h3>
+    <div class="grammar-item">
+      <strong>1. Ik heb geen … nodig.</strong> <span class="example">(لا أحتاج إلى شيء اسمي)</span><br>
+      <code>Ik heb geen auto nodig.</code> — لا أحتاج إلى سيارة.
+    </div>
+    <div class="grammar-item">
+      <strong>2. Ik heb dat niet nodig.</strong> <span class="example">(أنا لا أحتاج إلى ذلك)</span><br>
+      <code>Ik heb dat niet nodig.</code> — أنا لا أحتاج إلى ذلك.
+    </div>
+    <div class="grammar-item">
+      <strong>3. Ik hoef niet …</strong> <span class="example">(لست مضطرًا إلى فعل شيء)</span><br>
+      <code>Ik hoef niet te werken.</code> — لست مضطرًا إلى العمل.
+    </div>
+    <div style="background: #f0fdf4; padding: 1rem 1.2rem; border-radius: 12px; margin-top: 1rem; border-right: 5px solid #10b981;">
+      <strong style="color: #065f46;">💡 ملاحظة مهمة:</strong> مع الأسماء نستخدم غالبًا <strong>geen</strong>، ومع <strong>dat</strong> نستخدم <strong>niet</strong>. أما <strong>Ik hoef niet te...</strong> فتعني أنك لست مضطرًا إلى القيام بفعل، وليس بالضرورة أنك لا تحتاج إليه.
+    </div>
+  </div>
+
+  <div class="footer">
+    ✓ 100 جملة – «أنا لا أحتاج» | مع الترجمة العربية والشرح
+  </div>
+</div>
+</body>
+</html>
