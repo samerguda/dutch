@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>150 جملة هولندية — الماضي التام مع nog niet</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  header {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  header .subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+    background: rgba(255,255,255,0.15);
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+
+  .flags { font-size: 1.5em; margin-bottom: 10px; }
+
+  .original {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-right: 6px solid #ff6b35;
+  }
+
+  .original h2 {
+    color: #1e3c72;
+    font-size: 1.2em;
+    margin-bottom: 12px;
+  }
+
+  .original .sentence {
+    font-size: 1.3em;
+    color: #ff6b35;
+    font-weight: bold;
+    margin: 8px 0;
+    direction: ltr;
+    text-align: left;
+  }
+
+  .original .meaning {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 12px;
+  }
+
+  .structure {
+    background: #f0f4f8;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 0.95em;
+    line-height: 1.9;
+  }
+
+  .structure span {
+    display: inline-block;
+    background: #e3ecf5;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin: 2px;
+    direction: ltr;
+  }
+
+  .section {
+    background: #fff;
+    border-radius: 15px;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    overflow: hidden;
+  }
+
+  .section-header {
+    background: linear-gradient(90deg, #ff6b35, #ff8c42);
+    color: #fff;
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background 0.3s;
+    user-select: none;
+  }
+
+  .section-header:hover {
+    background: linear-gradient(90deg, #ff5722, #ff7043);
+  }
+
+  .section-header .count {
+    background: rgba(255,255,255,0.3);
+    padding: 3px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+  }
+
+  .section-header .arrow {
+    transition: transform 0.3s;
+    font-size: 1.2em;
+  }
+
+  .section.open .arrow { transform: rotate(180deg); }
+
+  .section-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .section.open .section-body {
+    max-height: 5000px;
+  }
+
+  .sentence-item {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .sentence-item:hover { background: #fafafa; }
+
+  .sentence-item:last-child { border-bottom: none; }
+
+  .num {
+    background: #1e3c72;
+    color: #fff;
+    min-width: 38px;
+    height: 28px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .texts { flex: 1; }
+
+  .nl {
+    direction: ltr;
+    text-align: left;
+    color: #1e3c72;
+    font-weight: 600;
+    font-size: 1.05em;
+    margin-bottom: 4px;
+  }
+
+  .ar {
+    color: #666;
+    font-size: 0.98em;
+  }
+
+  .note {
+    background: #fff3cd;
+    border-right: 5px solid #ffc107;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-top: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+
+  .note h3 {
+    color: #856404;
+    margin-bottom: 12px;
+    font-size: 1.1em;
+  }
+
+  .note p {
+    color: #664d03;
+    line-height: 1.8;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+  }
+
+  .note table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .note th, .note td {
+    padding: 8px 12px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .note th {
+    background: #ffc107;
+    color: #664d03;
+  }
+
+  .note td:first-child { direction: ltr; font-weight: bold; }
+
+  .btn-top {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ff6b35;
+    color: #fff;
+    border: none;
+    font-size: 1.4em;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 100;
+  }
+
+  .btn-top.show { display: block; }
+
+  @media (max-width: 600px) {
+    body { padding: 10px; }
+    header h1 { font-size: 1.4em; }
+    .sentence-item { padding: 10px 12px; }
+    .nl { font-size: 0.95em; }
+    .ar { font-size: 0.9em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="flags">🇧🇪 🇸🇦</div>
+    <h1>150 جملة هولندية</h1>
+    <div class="subtitle">الماضي التام (VTT) مع nog niet = «لم ... بعد»</div>
+  </header>
+
+  <div class="original">
+    <h2>الجملة الأصلية والنموذج</h2>
+    <div class="sentence">Ik heb nog niet gegeten.</div>
+    <div class="meaning">المعنى: أنا لم آكل بعد.</div>
+    <div class="structure">
+      <strong>التركيب النحوي:</strong><br>
+      <span>Ik</span> = الفاعل &nbsp;•&nbsp;
+      <span>heb</span> = فعل مساعد (VTT) &nbsp;•&nbsp;
+      <span>nog niet</span> = ليس بعد &nbsp;•&nbsp;
+      <span>gegeten</span> = التصريف الثالث من eten
+    </div>
+  </div>
+
+  <!-- القسم 1 -->
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span>١–٣٠: أفراد العائلة</span>
+      <span><span class="count">30 جملة</span> <span class="arrow">▼</span></span>
+    </div>
+    <div class="section-body">
+      <div class="sentence-item"><span class="num">1</span><div class="texts"><div class="nl">Ik heb nog niet gegeten.</div><div class="ar">أنا لم آكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">2</span><div class="texts"><div class="nl">Mijn vader heeft nog niet gegeten.</div><div class="ar">أبي لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">3</span><div class="texts"><div class="nl">Mijn moeder heeft nog niet gegeten.</div><div class="ar">أمي لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">4</span><div class="texts"><div class="nl">Mijn broer heeft nog niet gegeten.</div><div class="ar">أخي لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">5</span><div class="texts"><div class="nl">Mijn zus heeft nog niet gegeten.</div><div class="ar">أختي لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">6</span><div class="texts"><div class="nl">Mijn zoon heeft nog niet gegeten.</div><div class="ar">ابني لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">7</span><div class="texts"><div class="nl">Mijn dochter heeft nog niet gegeten.</div><div class="ar">ابنتي لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">8</span><div class="texts"><div class="nl">Mijn man heeft nog niet gegeten.</div><div class="ar">زوجي لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">9</span><div class="texts"><div class="nl">Mijn vrouw heeft nog niet gegeten.</div><div class="ar">زوجتي لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">10</span><div class="texts"><div class="nl">Mijn opa heeft nog niet gegeten.</div><div class="ar">جدي لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">11</span><div class="texts"><div class="nl">Mijn oma heeft nog niet gegeten.</div><div class="ar">جدتي لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">12</span><div class="texts"><div class="nl">Mijn oom heeft nog niet gegeten.</div><div class="ar">عمي لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">13</span><div class="texts"><div class="nl">Mijn tante heeft nog niet gegeten.</div><div class="ar">عمتي لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">14</span><div class="texts"><div class="nl">Mijn neef heeft nog niet gegeten.</div><div class="ar">ابن عمي لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">15</span><div class="texts"><div class="nl">Mijn nicht heeft nog niet gegeten.</div><div class="ar">ابنة عمي لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">16</span><div class="texts"><div class="nl">Mijn schoonvader heeft nog niet gegeten.</div><div class="ar">والد زوجتي لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">17</span><div class="texts"><div class="nl">Mijn schoonmoeder heeft nog niet gegeten.</div><div class="ar">والدة زوجتي لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">18</span><div class="texts"><div class="nl">Mijn zwager heeft nog niet gegeten.</div><div class="ar">أخو زوجتي لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">19</span><div class="texts"><div class="nl">Mijn schoonzus heeft nog niet gegeten.</div><div class="ar">أخت زوجتي لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">20</span><div class="texts"><div class="nl">Mijn kleinzoon heeft nog niet gegeten.</div><div class="ar">حفيدي لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">21</span><div class="texts"><div class="nl">Mijn kleindochter heeft nog niet gegeten.</div><div class="ar">حفيدتي لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">22</span><div class="texts"><div class="nl">Mijn stiefvader heeft nog niet gegeten.</div><div class="ar">زوج أمي لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">23</span><div class="texts"><div class="nl">Mijn stiefmoeder heeft nog niet gegeten.</div><div class="ar">زوجة أبي لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">24</span><div class="texts"><div class="nl">Mijn stiefbroer heeft nog niet gegeten.</div><div class="ar">أخي غير الشقيق لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">25</span><div class="texts"><div class="nl">Mijn stiefzus heeft nog niet gegeten.</div><div class="ar">أختي غير الشقيقة لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">26</span><div class="texts"><div class="nl">Mijn halfbroer heeft nog niet gegeten.</div><div class="ar">أخي من أحد الوالدين لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">27</span><div class="texts"><div class="nl">Mijn halfzus heeft nog niet gegeten.</div><div class="ar">أختي من أحد الوالدين لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">28</span><div class="texts"><div class="nl">Mijn schoonzoon heeft nog niet gegeten.</div><div class="ar">زوج ابنتي لم يأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">29</span><div class="texts"><div class="nl">Mijn schoondochter heeft nog niet gegeten.</div><div class="ar">زوجة ابني لم تأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">30</span><div class="texts"><div class="nl">Mijn hele familie heeft nog niet gegeten.</div><div class="ar">عائلتي كلها لم تأكل بعد.</div></div></div>
+    </div>
+  </div>
+
+  <!-- القسم 2 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span>٣١–٦٠: الأكل والشرب</span>
+      <span><span class="count">30 جملة</span> <span class="arrow">▼</span></span>
+    </div>
+    <div class="section-body">
+      <div class="sentence-item"><span class="num">31</span><div class="texts"><div class="nl">Ik heb nog niet gedronken.</div><div class="ar">أنا لم أشرب بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">32</span><div class="texts"><div class="nl">Ik heb nog niet ontbeten.</div><div class="ar">أنا لم أتناول الإفطار بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">33</span><div class="texts"><div class="nl">Ik heb nog niet geluncht.</div><div class="ar">أنا لم أتناول الغداء بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">34</span><div class="texts"><div class="nl">Ik heb nog niet gedoucht.</div><div class="ar">أنا لم أستحم بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">35</span><div class="texts"><div class="nl">Ik heb nog niet geslapen.</div><div class="ar">أنا لم أنم بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">36</span><div class="texts"><div class="nl">Ik heb nog niet gekookt.</div><div class="ar">أنا لم أطبخ بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">37</span><div class="texts"><div class="nl">Ik heb nog niet gebakken.</div><div class="ar">أنا لم أخبز بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">38</span><div class="texts"><div class="nl">Ik heb nog niet gegeten vandaag.</div><div class="ar">أنا لم آكل اليوم بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">39</span><div class="texts"><div class="nl">Ik heb nog niet genoeg gegeten.</div><div class="ar">أنا لم آكل ما يكفي بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">40</span><div class="texts"><div class="nl">Ik heb nog niet veel gegeten.</div><div class="ar">أنا لم آكل كثيرًا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">41</span><div class="texts"><div class="nl">Mijn vader heeft nog niet gedronken.</div><div class="ar">أبي لم يشرب بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">42</span><div class="texts"><div class="nl">Mijn moeder heeft nog niet ontbeten.</div><div class="ar">أمي لم تتناول الإفطار بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">43</span><div class="texts"><div class="nl">Mijn broer heeft nog niet geluncht.</div><div class="ar">أخي لم يتناول الغداء بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">44</span><div class="texts"><div class="nl">Mijn zus heeft nog niet gekookt.</div><div class="ar">أختي لم تطبخ بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">45</span><div class="texts"><div class="nl">Mijn zoon heeft nog niet geslapen.</div><div class="ar">ابني لم ينم بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">46</span><div class="texts"><div class="nl">Mijn dochter heeft nog niet gedoucht.</div><div class="ar">ابنتي لم تستحم بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">47</span><div class="texts"><div class="nl">Mijn vrouw heeft nog niet ontbeten.</div><div class="ar">زوجتي لم تتناول الإفطار بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">48</span><div class="texts"><div class="nl">Mijn man heeft nog niet gedronken.</div><div class="ar">زوجي لم يشرب بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">49</span><div class="texts"><div class="nl">Mijn opa heeft nog niet geluncht.</div><div class="ar">جدي لم يتناول الغداء بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">50</span><div class="texts"><div class="nl">Mijn oma heeft nog niet gekookt.</div><div class="ar">جدتي لم تطبخ بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">51</span><div class="texts"><div class="nl">Wij hebben nog niet gegeten.</div><div class="ar">نحن لم نأكل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">52</span><div class="texts"><div class="nl">Jullie hebben nog niet gegeten.</div><div class="ar">أنتم لم تأكلوا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">53</span><div class="texts"><div class="nl">Zij hebben nog niet gegeten.</div><div class="ar">هم لم يأكلوا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">54</span><div class="texts"><div class="nl">Mijn ouders hebben nog niet gegeten.</div><div class="ar">والداي لم يأكلا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">55</span><div class="texts"><div class="nl">Mijn broers hebben nog niet gegeten.</div><div class="ar">إخوتي لم يأكلوا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">56</span><div class="texts"><div class="nl">Mijn zussen hebben nog niet gegeten.</div><div class="ar">أخواتي لم يأكلن بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">57</span><div class="texts"><div class="nl">Mijn kinderen hebben nog niet gegeten.</div><div class="ar">أطفالي لم يأكلوا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">58</span><div class="texts"><div class="nl">Mijn grootouders hebben nog niet gegeten.</div><div class="ar">أجدادي لم يأكلوا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">59</span><div class="texts"><div class="nl">Mijn schoonouders hebben nog niet gegeten.</div><div class="ar">والدا زوجتي لم يأكلا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">60</span><div class="texts"><div class="nl">Mijn neven hebben nog niet gegeten.</div><div class="ar">أبناء عمي لم يأكلوا بعد.</div></div></div>
+    </div>
+  </div>
+
+  <!-- القسم 3 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span>٦١–٩٠: الأعمال اليومية</span>
+      <span><span class="count">30 جملة</span> <span class="arrow">▼</span></span>
+    </div>
+    <div class="section-body">
+      <div class="sentence-item"><span class="num">61</span><div class="texts"><div class="nl">Ik heb nog niet gewerkt.</div><div class="ar">أنا لم أعمل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">62</span><div class="texts"><div class="nl">Ik heb nog niet gestudeerd.</div><div class="ar">أنا لم أدرس بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">63</span><div class="texts"><div class="nl">Ik heb nog niet geleerd.</div><div class="ar">أنا لم أتعلم بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">64</span><div class="texts"><div class="nl">Ik heb nog niet gebeld.</div><div class="ar">أنا لم أتصل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">65</span><div class="texts"><div class="nl">Ik heb nog niet geantwoord.</div><div class="ar">أنا لم أرد بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">66</span><div class="texts"><div class="nl">Ik heb nog niet betaald.</div><div class="ar">أنا لم أدفع بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">67</span><div class="texts"><div class="nl">Ik heb nog niet gewinkeld.</div><div class="ar">أنا لم أتسوق بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">68</span><div class="texts"><div class="nl">Ik heb nog niet schoongemaakt.</div><div class="ar">أنا لم أنظف بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">69</span><div class="texts"><div class="nl">Ik heb nog niet afgewassen.</div><div class="ar">أنا لم أغسل الأطباق بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">70</span><div class="texts"><div class="nl">Ik heb nog niet opgeruimd.</div><div class="ar">أنا لم أرتب بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">71</span><div class="texts"><div class="nl">Ik heb mijn huiswerk nog niet gemaakt.</div><div class="ar">أنا لم أنجز واجبي بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">72</span><div class="texts"><div class="nl">Ik heb mijn kamer nog niet opgeruimd.</div><div class="ar">أنا لم أرتب غرفتي بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">73</span><div class="texts"><div class="nl">Ik heb mijn tanden nog niet gepoetst.</div><div class="ar">أنا لم أنظف أسناني بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">74</span><div class="texts"><div class="nl">Ik heb mijn kleren nog niet gewassen.</div><div class="ar">أنا لم أغسل ملابسي بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">75</span><div class="texts"><div class="nl">Ik heb mijn bed nog niet opgemaakt.</div><div class="ar">أنا لم أرتب سريري بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">76</span><div class="texts"><div class="nl">Mijn vader heeft nog niet gewerkt.</div><div class="ar">أبي لم يعمل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">77</span><div class="texts"><div class="nl">Mijn moeder heeft nog niet schoongemaakt.</div><div class="ar">أمي لم تنظف بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">78</span><div class="texts"><div class="nl">Mijn broer heeft nog niet gestudeerd.</div><div class="ar">أخي لم يدرس بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">79</span><div class="texts"><div class="nl">Mijn zus heeft nog niet gebeld.</div><div class="ar">أختي لم تتصل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">80</span><div class="texts"><div class="nl">Mijn zoon heeft zijn huiswerk nog niet gemaakt.</div><div class="ar">ابني لم ينجز واجبه بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">81</span><div class="texts"><div class="nl">Mijn dochter heeft haar kamer nog niet opgeruimd.</div><div class="ar">ابنتي لم ترتب غرفتها بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">82</span><div class="texts"><div class="nl">Mijn vrouw heeft nog niet betaald.</div><div class="ar">زوجتي لم تدفع بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">83</span><div class="texts"><div class="nl">Mijn man heeft nog niet gewinkeld.</div><div class="ar">زوجي لم يتسوق بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">84</span><div class="texts"><div class="nl">Mijn opa heeft nog niet gebeld.</div><div class="ar">جدي لم يتصل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">85</span><div class="texts"><div class="nl">Mijn oma heeft nog niet afgewassen.</div><div class="ar">جدتي لم تغسل الأطباق بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">86</span><div class="texts"><div class="nl">Mijn ouders hebben nog niet gewerkt.</div><div class="ar">والداي لم يعملا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">87</span><div class="texts"><div class="nl">Mijn kinderen hebben nog niet gestudeerd.</div><div class="ar">أطفالي لم يدرسوا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">88</span><div class="texts"><div class="nl">Mijn broer en zus hebben nog niet gebeld.</div><div class="ar">أخي وأختي لم يتصلا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">89</span><div class="texts"><div class="nl">Mijn vrouw en ik hebben nog niet schoongemaakt.</div><div class="ar">أنا وزوجتي لم ننظف بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">90</span><div class="texts"><div class="nl">Mijn familie heeft nog niet opgeruimd.</div><div class="ar">عائلتي لم ترتب بعد.</div></div></div>
+    </div>
+  </div>
+
+  <!-- القسم 4 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span>٩١–١٢٠: الحركة والخروج والتواصل (مع zijn)</span>
+      <span><span class="count">30 جملة</span> <span class="arrow">▼</span></span>
+    </div>
+    <div class="section-body">
+      <div class="sentence-item"><span class="num">91</span><div class="texts"><div class="nl">Ik ben nog niet vertrokken.</div><div class="ar">أنا لم أغادر بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">92</span><div class="texts"><div class="nl">Ik ben nog niet aangekomen.</div><div class="ar">أنا لم أصل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">93</span><div class="texts"><div class="nl">Ik ben nog niet teruggekomen.</div><div class="ar">أنا لم أعد بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">94</span><div class="texts"><div class="nl">Ik ben nog niet naar huis gegaan.</div><div class="ar">أنا لم أذهب إلى المنزل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">95</span><div class="texts"><div class="nl">Ik ben nog niet naar buiten gegaan.</div><div class="ar">أنا لم أخرج بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">96</span><div class="texts"><div class="nl">Ik ben nog niet naar school gegaan.</div><div class="ar">أنا لم أذهب إلى المدرسة بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">97</span><div class="texts"><div class="nl">Ik ben nog niet naar mijn werk gegaan.</div><div class="ar">أنا لم أذهب إلى عملي بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">98</span><div class="texts"><div class="nl">Ik ben nog niet begonnen.</div><div class="ar">أنا لم أبدأ بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">99</span><div class="texts"><div class="nl">Ik ben nog niet klaar.</div><div class="ar">أنا لم أنتهِ بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">100</span><div class="texts"><div class="nl">Ik ben nog niet wakker geworden.</div><div class="ar">أنا لم أستيقظ بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">101</span><div class="texts"><div class="nl">Mijn vader is nog niet vertrokken.</div><div class="ar">أبي لم يغادر بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">102</span><div class="texts"><div class="nl">Mijn moeder is nog niet aangekomen.</div><div class="ar">أمي لم تصل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">103</span><div class="texts"><div class="nl">Mijn broer is nog niet teruggekomen.</div><div class="ar">أخي لم يعد بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">104</span><div class="texts"><div class="nl">Mijn zus is nog niet naar huis gegaan.</div><div class="ar">أختي لم تذهب إلى المنزل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">105</span><div class="texts"><div class="nl">Mijn zoon is nog niet naar school gegaan.</div><div class="ar">ابني لم يذهب إلى المدرسة بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">106</span><div class="texts"><div class="nl">Mijn dochter is nog niet wakker geworden.</div><div class="ar">ابنتي لم تستيقظ بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">107</span><div class="texts"><div class="nl">Mijn vrouw is nog niet vertrokken.</div><div class="ar">زوجتي لم تغادر بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">108</span><div class="texts"><div class="nl">Mijn man is nog niet aangekomen.</div><div class="ar">زوجي لم يصل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">109</span><div class="texts"><div class="nl">Mijn opa is nog niet naar buiten gegaan.</div><div class="ar">جدي لم يخرج بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">110</span><div class="texts"><div class="nl">Mijn oma is nog niet teruggekomen.</div><div class="ar">جدتي لم تعد بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">111</span><div class="texts"><div class="nl">Mijn ouders zijn nog niet vertrokken.</div><div class="ar">والداي لم يغادرا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">112</span><div class="texts"><div class="nl">Mijn kinderen zijn nog niet aangekomen.</div><div class="ar">أطفالي لم يصلوا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">113</span><div class="texts"><div class="nl">Mijn broers zijn nog niet teruggekomen.</div><div class="ar">إخوتي لم يعودوا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">114</span><div class="texts"><div class="nl">Mijn zussen zijn nog niet naar huis gegaan.</div><div class="ar">أخواتي لم يذهبن إلى المنزل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">115</span><div class="texts"><div class="nl">Mijn grootouders zijn nog niet wakker geworden.</div><div class="ar">أجدادي لم يستيقظوا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">116</span><div class="texts"><div class="nl">Mijn vrienden zijn nog niet aangekomen.</div><div class="ar">أصدقائي لم يصلوا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">117</span><div class="texts"><div class="nl">Mijn vrouw en ik zijn nog niet vertrokken.</div><div class="ar">أنا وزوجتي لم نغادر بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">118</span><div class="texts"><div class="nl">Mijn familie is nog niet aangekomen.</div><div class="ar">عائلتي لم تصل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">119</span><div class="texts"><div class="nl">Mijn zoon en dochter zijn nog niet naar school gegaan.</div><div class="ar">ابني وابنتي لم يذهبا إلى المدرسة بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">120</span><div class="texts"><div class="nl">Mijn ouders zijn nog niet naar huis gegaan.</div><div class="ar">والداي لم يذهبا إلى المنزل بعد.</div></div></div>
+    </div>
+  </div>
+
+  <!-- القسم 5 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span>١٢١–١٥٠: أفعال متنوعة بنفس فكرة «لم أفعل بعد»</span>
+      <span><span class="count">30 جملة</span> <span class="arrow">▼</span></span>
+    </div>
+    <div class="section-body">
+      <div class="sentence-item"><span class="num">121</span><div class="texts"><div class="nl">Ik heb mijn werk nog niet afgemaakt.</div><div class="ar">أنا لم أنهِ عملي بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">122</span><div class="texts"><div class="nl">Ik heb de deur nog niet geopend.</div><div class="ar">أنا لم أفتح الباب بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">123</span><div class="texts"><div class="nl">Ik heb het raam nog niet gesloten.</div><div class="ar">أنا لم أغلق النافذة بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">124</span><div class="texts"><div class="nl">Ik heb de film nog niet gezien.</div><div class="ar">أنا لم أشاهد الفيلم بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">125</span><div class="texts"><div class="nl">Ik heb dat boek nog niet gelezen.</div><div class="ar">أنا لم أقرأ ذلك الكتاب بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">126</span><div class="texts"><div class="nl">Ik heb de e-mail nog niet verstuurd.</div><div class="ar">أنا لم أرسل البريد الإلكتروني بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">127</span><div class="texts"><div class="nl">Ik heb mijn vriend nog niet ontmoet.</div><div class="ar">أنا لم أقابل صديقي بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">128</span><div class="texts"><div class="nl">Ik heb mijn sleutels nog niet gevonden.</div><div class="ar">أنا لم أجد مفاتيحي بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">129</span><div class="texts"><div class="nl">Ik heb mijn telefoon nog niet opgeladen.</div><div class="ar">أنا لم أشحن هاتفي بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">130</span><div class="texts"><div class="nl">Ik heb de was nog niet gedaan.</div><div class="ar">أنا لم أغسل الملابس بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">131</span><div class="texts"><div class="nl">Mijn vader heeft de auto nog niet gewassen.</div><div class="ar">أبي لم يغسل السيارة بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">132</span><div class="texts"><div class="nl">Mijn moeder heeft de boodschappen nog niet gedaan.</div><div class="ar">أمي لم تشترِ مستلزمات المنزل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">133</span><div class="texts"><div class="nl">Mijn broer heeft de film nog niet gezien.</div><div class="ar">أخي لم يشاهد الفيلم بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">134</span><div class="texts"><div class="nl">Mijn zus heeft dat boek nog niet gelezen.</div><div class="ar">أختي لم تقرأ ذلك الكتاب بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">135</span><div class="texts"><div class="nl">Mijn zoon heeft zijn tanden nog niet gepoetst.</div><div class="ar">ابني لم ينظف أسنانه بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">136</span><div class="texts"><div class="nl">Mijn dochter heeft de e-mail nog niet verstuurd.</div><div class="ar">ابنتي لم ترسل البريد الإلكتروني بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">137</span><div class="texts"><div class="nl">Mijn vrouw heeft het eten nog niet klaargemaakt.</div><div class="ar">زوجتي لم تحضّر الطعام بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">138</span><div class="texts"><div class="nl">Mijn man heeft de deur nog niet geopend.</div><div class="ar">زوجي لم يفتح الباب بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">139</span><div class="texts"><div class="nl">Mijn opa heeft zijn medicijnen nog niet ingenomen.</div><div class="ar">جدي لم يتناول أدويته بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">140</span><div class="texts"><div class="nl">Mijn oma heeft haar vriendin nog niet ontmoet.</div><div class="ar">جدتي لم تقابل صديقتها بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">141</span><div class="texts"><div class="nl">Mijn ouders hebben het huis nog niet verkocht.</div><div class="ar">والداي لم يبيعا المنزل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">142</span><div class="texts"><div class="nl">Mijn kinderen hebben hun kamer nog niet opgeruimd.</div><div class="ar">أطفالي لم يرتبوا غرفتهم بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">143</span><div class="texts"><div class="nl">Mijn broers hebben hun werk nog niet afgemaakt.</div><div class="ar">إخوتي لم ينهوا عملهم بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">144</span><div class="texts"><div class="nl">Mijn zussen hebben de boodschappen nog niet gedaan.</div><div class="ar">أخواتي لم يشترين مستلزمات المنزل بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">145</span><div class="texts"><div class="nl">Mijn grootouders hebben de film nog niet gezien.</div><div class="ar">أجدادي لم يشاهدوا الفيلم بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">146</span><div class="texts"><div class="nl">Mijn schoonouders hebben ons nog niet bezocht.</div><div class="ar">والدا زوجتي لم يزورانا بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">147</span><div class="texts"><div class="nl">Mijn neef heeft mij nog niet teruggebeld.</div><div class="ar">ابن عمي لم يعاود الاتصال بي بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">148</span><div class="texts"><div class="nl">Mijn nicht heeft haar examen nog niet gemaakt.</div><div class="ar">ابنة عمي لم تؤدِّ امتحانها بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">149</span><div class="texts"><div class="nl">Mijn familie heeft onze nieuwe woning nog niet gezien.</div><div class="ar">عائلتي لم ترَ منزلنا الجديد بعد.</div></div></div>
+      <div class="sentence-item"><span class="num">150</span><div class="texts"><div class="nl">Wij hebben onze familie nog niet bezocht.</div><div class="ar">نحن لم نزُر عائلتنا بعد.</div></div></div>
+    </div>
+  </div>
+
+  <!-- القاعدة -->
+  <div class="note">
+    <h3>⚠️ قاعدة مهمة جدًا للحفظ</h3>
+    <p>هناك فعلان مساعدان في الماضي التام الهولندي:</p>
+    <p>• <strong>hebben</strong>: مثل <span dir="ltr">Ik heb nog niet gegeten.</span></p>
+    <p>• <strong>zijn</strong>: مثل <span dir="ltr">Ik ben nog niet vertrokken.</span></p>
+    <table>
+      <tr><th>الفاعل</th><th>الفعل المساعد</th></tr>
+      <tr><td>Ik</td><td>heb / ben</td></tr>
+      <tr><td>Jij</td><td>hebt / bent</td></tr>
+      <tr><td>Hij / Zij / Het</td><td>heeft / is</td></tr>
+      <tr><td>Wij</td><td>hebben / zijn</td></tr>
+      <tr><td>Jullie</td><td>hebben / zijn</td></tr>
+      <tr><td>Zij (هم)</td><td>hebben / zijn</td></tr>
+    </table>
+    <p style="margin-top:12px;">📌 ملاحظة: الجمل من ١ إلى ٣٠، ومن ٤١ إلى ٩٠، ومن ١٢١ إلى ١٥٠ تستخدم تركيب <strong>nog niet</strong> مع الماضي التام. أما الجمل من ٩١ إلى ١٢٠ فتستخدم غالبًا <strong>zijn</strong> مع أفعال الحركة والتغير.</p>
+  </div>
+
+</div>
+
+<button class="btn-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
+
+<script>
+  function toggle(header) {
+    const section = header.parentElement;
+    section.classList.toggle('open');
+  }
+
+  // فتح القسم الأول افتراضيًا — البقية مغلقة
+  document.querySelectorAll('.section').forEach((s, i) => {
+    if (i > 0) s.classList.remove('open');
+  });
+
+  // زر العودة للأعلى
+  window.addEventListener('scroll', () => {
+    document.getElementById('btnTop').classList.toggle('show', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
