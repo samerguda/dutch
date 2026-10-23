@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحروف الهولندية (الفلامانية) ونطقها 🇧🇪</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, 'Noto Naskh Arabic', Arial, sans-serif;
+            background: linear-gradient(145deg, #1a1e2b 0%, #2a2f42 100%);
+            color: #eef2ff;
+            padding: 1.5rem 1rem;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(20, 25, 40, 0.75);
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.7), inset 0 1px 3px rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        h1 {
+            font-size: 2.1rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: #ffd966;
+            text-shadow: 0 2px 10px rgba(255, 200, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+        .subhead {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #b0c4de;
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #3e4b6b;
+            padding-bottom: 1rem;
+            font-weight: 400;
+        }
+        .flag {
+            font-size: 1.8rem;
+            vertical-align: middle;
+        }
+
+        /* بطاقات الأقسام */
+        .section-card {
+            background: #1e2538;
+            border-radius: 1.5rem;
+            padding: 1.5rem 1.2rem;
+            margin-bottom: 2.5rem;
+            border-right: 6px solid #ffb347;
+            box-shadow: 0 12px 20px -8px black;
+            transition: 0.15s ease;
+        }
+        .section-card h2 {
+            color: #ffc857;
+            font-size: 1.7rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #3c4a66;
+            padding-bottom: 0.6rem;
+        }
+        .section-card h3 {
+            color: #9bb7e0;
+            font-size: 1.3rem;
+            margin: 1.4rem 0 0.8rem;
+            font-weight: 500;
+        }
+
+        /* جداول */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            background: #151b28;
+            border-radius: 1rem;
+            overflow: hidden;
+            font-size: 0.98rem;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+        }
+        th {
+            background: #2e3a52;
+            color: #ffdb8e;
+            font-weight: 600;
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 2px solid #f0b34b;
+        }
+        td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #2a3349;
+            text-align: center;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover {
+            background: #26304a;
+            transition: 0.1s;
+        }
+        .ar {
+            font-family: 'Noto Naskh Arabic', 'Segoe UI', Tahoma, sans-serif;
+            font-weight: 500;
+        }
+        .letter-highlight {
+            font-weight: 700;
+            color: #ffcf6e;
+            font-size: 1.1rem;
+        }
+
+        /* أزرار واختبار */
+        .quiz-option {
+            background: #2a334b;
+            border: 2px solid #3d4d70;
+            border-radius: 2rem;
+            padding: 0.7rem 1.3rem;
+            margin: 0.4rem 0.3rem;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.15s;
+            font-size: 1.05rem;
+            color: #e0e9ff;
+            user-select: none;
+        }
+        .quiz-option:hover {
+            background: #3f4d6e;
+            border-color: #ffb347;
+        }
+        .quiz-option.selected {
+            background: #ffb347;
+            color: #0b0f17;
+            border-color: #ffd966;
+            font-weight: bold;
+        }
+        .quiz-question {
+            background: #121a26;
+            padding: 1.2rem 1.2rem;
+            border-radius: 1.5rem;
+            margin-bottom: 1.2rem;
+            border-left: 6px solid #ffb347;
+        }
+        .quiz-question p {
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+        .btn {
+            background: #ffb347;
+            border: none;
+            color: #0b111c;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 0.9rem 2rem;
+            border-radius: 3rem;
+            cursor: pointer;
+            transition: 0.15s;
+            box-shadow: 0 6px 0 #a0661c;
+            margin: 1rem 0.5rem 1rem 0;
+            border: 1px solid #ffe09c;
+        }
+        .btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #a0661c;
+        }
+        .btn-secondary {
+            background: #3e4b68;
+            box-shadow: 0 6px 0 #1e2438;
+            color: white;
+        }
+        .btn-secondary:active {
+            box-shadow: 0 2px 0 #1e2438;
+        }
+        .result-area {
+            background: #0f1a26;
+            border-radius: 1.5rem;
+            padding: 1.4rem;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            border: 1px solid #5f7a9e;
+        }
+        .correct {
+            color: #9fe09f;
+        }
+        .wrong {
+            color: #f79b9b;
+        }
+        .inline-code {
+            background: #0b111c;
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            font-family: monospace;
+            color: #ffcf6e;
+            direction: ltr;
+            display: inline-block;
+        }
+        .note {
+            background: #2c1e12;
+            padding: 1rem 1.2rem;
+            border-radius: 1.2rem;
+            border-right: 4px solid #ffb347;
+            margin: 1rem 0;
+            font-size: 0.98rem;
+            color: #ffdbb5;
+        }
+        .note strong {
+            color: #ffbf5e;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        @media (max-width: 650px) {
+            .container { padding: 1.2rem; }
+            h1 { font-size: 1.6rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            th, td { padding: 8px 4px; font-size: 0.85rem; }
+        }
+        .audio-icon {
+            cursor: pointer;
+            color: #ffc857;
+            font-size: 1.2rem;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🇧🇪 الحروف الهولندية (الفلامانية) ونطقها</h1>
+    <div class="subhead">شرح مبسّط بالعربي — G و CH و SCH — الحركات القصيرة والطويلة — اختبار في النهاية</div>
+
+    <!-- 1. الحروف الـ26 -->
+    <div class="section-card">
+        <h2>📌 1. الحروف الهولندية الـ26</h2>
+        <p style="margin-bottom: 1rem; color:#cbd5e1;">النطق العربي تقريبي، والأفضل سماع الصوت الأصلي.</p>
+        <table>
+            <thead><tr><th>الحرف</th><th>اسمه بالهولندي</th><th>النطق التقريبي</th></tr></thead>
+            <tbody>
+                <tr><td><span class="letter-highlight">A a</span></td><td>aa</td><td class="ar">آ</td></tr>
+                <tr><td><span class="letter-highlight">B b</span></td><td>bee</td><td class="ar">بي</td></tr>
+                <tr><td><span class="letter-highlight">C c</span></td><td>cee</td><td class="ar">سي</td></tr>
+                <tr><td><span class="letter-highlight">D d</span></td><td>dee</td><td class="ar">دي</td></tr>
+                <tr><td><span class="letter-highlight">E e</span></td><td>ee</td><td class="ar">إي</td></tr>
+                <tr><td><span class="letter-highlight">F f</span></td><td>ef</td><td class="ar">إِف</td></tr>
+                <tr><td><span class="letter-highlight">G g</span></td><td>gee</td><td class="ar">خِه / غ خفيفة</td></tr>
+                <tr><td><span class="letter-highlight">H h</span></td><td>haa</td><td class="ar">ها</td></tr>
+                <tr><td><span class="letter-highlight">I i</span></td><td>ie</td><td class="ar">إي</td></tr>
+                <tr><td><span class="letter-highlight">J j</span></td><td>jee</td><td class="ar">يي</td></tr>
+                <tr><td><span class="letter-highlight">K k</span></td><td>kaa</td><td class="ar">كا</td></tr>
+                <tr><td><span class="letter-highlight">L l</span></td><td>el</td><td class="ar">إِل</td></tr>
+                <tr><td><span class="letter-highlight">M m</span></td><td>em</td><td class="ar">إِم</td></tr>
+                <tr><td><span class="letter-highlight">N n</span></td><td>en</td><td class="ar">إِن</td></tr>
+                <tr><td><span class="letter-highlight">O o</span></td><td>oo</td><td class="ar">أو</td></tr>
+                <tr><td><span class="letter-highlight">P p</span></td><td>pee</td><td class="ar">پي</td></tr>
+                <tr><td><span class="letter-highlight">Q q</span></td><td>kuu</td><td class="ar">كيو</td></tr>
+                <tr><td><span class="letter-highlight">R r</span></td><td>er</td><td class="ar">إِر</td></tr>
+                <tr><td><span class="letter-highlight">S s</span></td><td>es</td><td class="ar">إِس</td></tr>
+                <tr><td><span class="letter-highlight">T t</span></td><td>tee</td><td class="ar">تي</td></tr>
+                <tr><td><span class="letter-highlight">U u</span></td><td>uu</td><td class="ar">بين أُو وإي، مع تدوير الشفتين</td></tr>
+                <tr><td><span class="letter-highlight">V v</span></td><td>vee</td><td class="ar">ڤي</td></tr>
+                <tr><td><span class="letter-highlight">W w</span></td><td>wee</td><td class="ar">واي قريبة من ڤي خفيفة</td></tr>
+                <tr><td><span class="letter-highlight">X x</span></td><td>iks</td><td class="ar">إكس</td></tr>
+                <tr><td><span class="letter-highlight">Y y</span></td><td>ij / Griekse ij</td><td class="ar">غالبًا آي</td></tr>
+                <tr><td><span class="letter-highlight">Z z</span></td><td>zet</td><td class="ar">زِت</td></tr>
+            </tbody>
+        </table>
+        <div class="note"><strong>ملاحظة مهمة:</strong> أسماء الحروف شيء، ونطقها داخل الكلمات شيء آخر. مثلًا اسم الحرف G هو gee، لكن صوته داخل كلمة goed مختلف تمامًا.</div>
+    </div>
+
+    <!-- 2. قاعدة G CH SCH -->
+    <div class="section-card">
+        <h2>🔊 2. نطق G و CH و SCH</h2>
+        <h3>G g — صوت خ / احتكاك حلقي</h3>
+        <p>في الفلامانية غالبًا أخف من النطق الهولندي الشائع في هولندا، ويختلف حسب المنطقة.</p>
+        <ul style="margin-right: 1.6rem; margin-bottom: 1rem; color: #d3e0ff;">
+            <li><strong>goed</strong> — جيد / بخير</li>
+            <li><strong>geld</strong> — مال</li>
+            <li><strong>graag</strong> — بسرور</li>
+            <li><strong>gaan</strong> — يذهبون / يذهب</li>
+        </ul>
+        <h3>CH — غالبًا نفس عائلة صوت G</h3>
+        <ul style="margin-right: 1.6rem; margin-bottom: 1rem; color: #d3e0ff;">
+            <li><strong>acht</strong> — ثمانية</li>
+            <li><strong>licht</strong> — ضوء</li>
+            <li><strong>lachen</strong> — يضحك</li>
+            <li><strong>lichaam</strong> — جسم</li>
+        </ul>
+        <h3>SCH — غالبًا S + صوت CH</h3>
+        <ul style="margin-right: 1.6rem; margin-bottom: 1rem; color: #d3e0ff;">
+            <li><strong>school</strong> — مدرسة</li>
+            <li><strong>schrijven</strong> — يكتب</li>
+            <li><strong>schip</strong> — سفينة</li>
+            <li><strong>misschien</strong> — ربما</li>
+        </ul>
+        <div class="note"><strong>انتبه:</strong> في بداية school تسمع S ثم صوتًا حلقيًا؛ لا تنطقها «ش».</div>
+    </div>
+
+    <!-- 3. تفصيل G CH SCH -->
+    <div class="section-card">
+        <h2>📖 3. حالات G و CH و SCH بالتفصيل</h2>
+        <h3>الحالة الأولى: G</h3>
+        <table><thead><tr><th>المثال</th><th>المعنى</th><th>النطق التقريبي</th></tr></thead><tbody>
+            <tr><td>goed</td><td>جيد</td><td>خوت</td></tr>
+            <tr><td>groot</td><td>كبير</td><td>خروت</td></tr>
+            <tr><td>groen</td><td>أخضر</td><td>خرون</td></tr>
+            <tr><td>gaan</td><td>يذهب</td><td>خان</td></tr>
+            <tr><td>graag</td><td>بسرور</td><td>خراخ</td></tr>
+            <tr><td>morgen</td><td>غدًا</td><td>مورخِن</td></tr>
+            <tr><td>zeggen</td><td>يقول</td><td>زِخِن</td></tr>
+            <tr><td>liggen</td><td>يستلقي / يقع</td><td>لِخِن</td></tr>
+        </tbody></table>
+        <p style="margin: 0.8rem 0;">تدريب: حاول إخراج الصوت من مؤخرة الفم أو الحلق، مع استمرار الهواء، وليس مثل حرف K الذي يتوقف عنده الهواء لحظة.</p>
+
+        <h3>الحالة الثانية: CH</h3>
+        <table><thead><tr><th>المثال</th><th>المعنى</th><th>النطق التقريبي</th></tr></thead><tbody>
+            <tr><td>acht</td><td>ثمانية</td><td>آخت</td></tr>
+            <tr><td>echt</td><td>حقًا / حقيقي</td><td>إخت</td></tr>
+            <tr><td>nacht</td><td>ليلة</td><td>ناخت</td></tr>
+            <tr><td>lachen</td><td>يضحك</td><td>لاخِن</td></tr>
+            <tr><td>pech</td><td>سوء حظ</td><td>پِخ</td></tr>
+            <tr><td>licht</td><td>ضوء / خفيف</td><td>لِخت</td></tr>
+            <tr><td>dochter</td><td>ابنة</td><td>دوختَر</td></tr>
+            <tr><td>techniek</td><td>تقنية</td><td>تِخنيك</td></tr>
+        </tbody></table>
+
+        <h3>الحالة الثالثة: SCH</h3>
+        <table><thead><tr><th>المثال</th><th>المعنى</th><th>النطق التقريبي</th></tr></thead><tbody>
+            <tr><td>school</td><td>مدرسة</td><td>سْخول</td></tr>
+            <tr><td>schoon</td><td>نظيف / جميل</td><td>سْخون</td></tr>
+            <tr><td>schip</td><td>سفينة</td><td>سْخِپ</td></tr>
+            <tr><td>schrift</td><td>دفتر / كتابة</td><td>سْخريفت</td></tr>
+            <tr><td>schilder</td><td>رسام</td><td>سْخيلدَر</td></tr>
+            <tr><td>misschien</td><td>ربما</td><td>مِسْخين</td></tr>
+            <tr><td>geschiedenis</td><td>تاريخ</td><td>خِسخيدينِس</td></tr>
+        </tbody></table>
+    </div>
+
+    <!-- 4. الحروف المتحركة -->
+    <div class="section-card">
+        <h2>🔤 4. الحروف المتحركة: A E I O U</h2>
+        <p>هذه من أهم القواعد؛ لأن تغيير طول الحركة قد يغيّر معنى الكلمة.</p>
+        <table>
+            <thead><tr><th>الحركة</th><th>مثال</th><th>المعنى</th></tr></thead>
+            <tbody>
+                <tr><td>A قصيرة</td><td>man</td><td>رجل</td></tr>
+                <tr><td>AA طويلة</td><td>maan</td><td>قمر</td></tr>
+                <tr><td>E قصيرة</td><td>bed</td><td>سرير</td></tr>
+                <tr><td>EE طويلة</td><td>been</td><td>ساق</td></tr>
+                <tr><td>I قصيرة</td><td>vis</td><td>سمكة</td></tr>
+                <tr><td>IE</td><td>fiets</td><td>دراجة</td></tr>
+                <tr><td>O قصيرة</td><td>bot</td><td>عظم</td></tr>
+                <tr><td>OO طويلة</td><td>boot</td><td>قارب</td></tr>
+            </tbody>
+        </table>
+        <div class="note">تصحيح مفيد: كلمة vis تعني سمكة في الهولندية الحديثة أيضًا، وليست مقصورة على استعمال قديم؛ المثال يوضح الحركة القصيرة /ɪ/.</div>
+
+        <h3>نطق U و UU</h3>
+        <table>
+            <thead><tr><th>الكلمة</th><th>المعنى</th><th>ملاحظة</th></tr></thead>
+            <tbody>
+                <tr><td>bus</td><td>حافلة</td><td>U قصيرة</td></tr>
+                <tr><td>put</td><td>بئر</td><td>U قصيرة</td></tr>
+                <tr><td>buur</td><td>جار</td><td>UU طويلة</td></tr>
+                <tr><td>muur</td><td>حائط</td><td>UU طويلة</td></tr>
+                <tr><td>duur</td><td>غالٍ / مكلف</td><td>UU طويلة</td></tr>
+            </tbody>
+        </table>
+        <p>حرف U الهولندي ليس مطابقًا تمامًا للعربية. قرّب الشفتين كما لو كنت ستقول «أو»، لكن حاول نطق صوت قريب من «إي» مع إبقاء الشفتين مدورتين.</p>
+    </div>
+
+    <!-- 5. الحروف المزدوجة والمركبة -->
+    <div class="section-card">
+        <h2>🔡 5. الحروف المزدوجة والمركبة</h2>
+        <table>
+            <thead><tr><th>التركيب</th><th>النطق التقريبي</th><th>مثال</th><th>المعنى</th></tr></thead>
+            <tbody>
+                <tr><td>EI</td><td>آي</td><td>klein</td><td>صغير</td></tr>
+                <tr><td>IJ</td><td>آي</td><td>tijd</td><td>وقت</td></tr>
+                <tr><td>OU</td><td>أَوْ</td><td>koud</td><td>بارد</td></tr>
+                <tr><td>AU</td><td>أَوْ</td><td>blauw</td><td>أزرق</td></tr>
+                <tr><td>OE</td><td>أو</td><td>boek</td><td>كتاب</td></tr>
+                <tr><td>UI</td><td>صوت مركب خاص</td><td>huis</td><td>منزل</td></tr>
+                <tr><td>EU</td><td>بين إِ وأُو مع تدوير الشفتين</td><td>deur</td><td>باب</td></tr>
+                <tr><td>IE</td><td>إي</td><td>niet</td><td>لا</td></tr>
+                <tr><td>AA</td><td>آ طويلة</td><td>naam</td><td>اسم</td></tr>
+                <tr><td>EE</td><td>إي طويلة</td><td>heet</td><td>ساخن / اسمه</td></tr>
+                <tr><td>OO</td><td>أو طويلة</td><td>rood</td><td>أحمر</td></tr>
+                <tr><td>UU</td><td>صوت U طويل</td><td>muur</td><td>حائط</td></tr>
+                <tr><td>NG</td><td>نْغ متصلة</td><td>lang</td><td>طويل</td></tr>
+                <tr><td>NK</td><td>نْك متصلة</td><td>bank</td><td>بنك / مقعد</td></tr>
+                <tr><td>TJ</td><td>تش تقريبًا</td><td>beetje</td><td>قليلًا</td></tr>
+                <tr><td>SJ</td><td>ش</td><td>sjaal</td><td>وشاح</td></tr>
+                <tr><td>NJ</td><td>نْي تقريبًا</td><td>oranje</td><td>برتقالي</td></tr>
+            </tbody>
+        </table>
+        <div class="note"><strong>قاعدة ذهبية:</strong> EI و IJ لهما النطق نفسه تقريبًا في الهولندية القياسية، وكذلك AU و OU في كثير من الكلمات، لكن الكتابة الصحيحة تُحفظ مع كل كلمة.</div>
+    </div>
+
+    <!-- 6. حالات أخرى -->
+    <div class="section-card">
+        <h2>📋 6. حالات أخرى مهمة في النطق</h2>
+        <table>
+            <thead><tr><th>التركيب</th><th>القاعدة</th><th>مثال</th></tr></thead>
+            <tbody>
+                <tr><td>V</td><td>غالبًا ڤ، وقد يقترب من F في بعض اللهجات</td><td>vader — أب</td></tr>
+                <tr><td>W</td><td>صوت بين W الإنجليزية وV الخفيفة</td><td>water — ماء</td></tr>
+                <tr><td>Z</td><td>ز</td><td>zon — شمس</td></tr>
+                <tr><td>S</td><td>س</td><td>stoel — كرسي</td></tr>
+                <tr><td>J</td><td>ي</td><td>jaar — سنة</td></tr>
+                <tr><td>C قبل E أو I</td><td>غالبًا S في الكلمات الدخيلة</td><td>centrum — مركز</td></tr>
+                <tr><td>C في مواضع أخرى</td><td>قد تُنطق K</td><td>café — مقهى</td></tr>
+                <tr><td>-en في نهاية الفعل</td><td>قد تُخفف N في الكلام اليومي</td><td>werken — يعمل</td></tr>
+                <tr><td>-ig في نهاية بعض الصفات</td><td>صوت قريب من خ في كثير من النطق الفلاماني</td><td>lastig — صعب / مزعج</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 7. اختبر نفسك -->
+    <div class="section-card" id="quiz">
+        <h2>🧪 7. اختبر نفسك</h2>
+        <div id="quizContainer"></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1.5rem;">
+            <button class="btn" id="checkBtn">تحقق من الإجابات</button>
+            <button class="btn btn-secondary" id="resetBtn">إعادة الاختبار</button>
+        </div>
+        <div id="resultArea" class="result-area" style="display: none;"></div>
+    </div>
+</div>
+<script>
+    // بيانات الاختبار
+    const questions = [
+        {
+            question: "1. كيف تنطق SCH في كلمة school؟",
+            options: ["ش", "س ثم صوت CH", "ك"],
+            correct: 1
+        },
+        {
+            question: "2. ما النطق التقريبي لـ IJ في tijd؟",
+            options: ["آي", "أو", "إي"],
+            correct: 0
+        },
+        {
+            question: "3. أي كلمة تعني «قمر»؟",
+            options: ["man", "maan", "muur"],
+            correct: 1
+        },
+        {
+            question: "4. ما معنى كلمة fiets؟",
+            options: ["باب", "كتاب", "دراجة"],
+            correct: 2
+        },
+        {
+            question: "5. كيف يخرج صوت G غالبًا في الفلامانية؟",
+            options: ["من الحلق مع احتكاك الهواء", "مثل ب تمامًا", "مثل م"],
+            correct: 0
+        }
+    ];
+
+    let userAnswers = new Array(questions.length).fill(null);
+    let quizContainer = document.getElementById('quizContainer');
+    let resultArea = document.getElementById('resultArea');
+
+    function renderQuiz() {
+        quizContainer.innerHTML = '';
+        questions.forEach((q, qIndex) => {
+            const qDiv = document.createElement('div');
+            qDiv.className = 'quiz-question';
+            const qP = document.createElement('p');
+            qP.textContent = q.question;
+            qDiv.appendChild(qP);
+
+            const optionsDiv = document.createElement('div');
+            optionsDiv.style.display = 'flex';
+            optionsDiv.style.flexWrap = 'wrap';
+            q.options.forEach((opt, oIndex) => {
+                const optSpan = document.createElement('span');
+                optSpan.className = 'quiz-option';
+                if (userAnswers[qIndex] === oIndex) {
+                    optSpan.classList.add('selected');
+                }
+                optSpan.textContent = opt;
+                optSpan.dataset.qIndex = qIndex;
+                optSpan.dataset.oIndex = oIndex;
+                optSpan.addEventListener('click', () => {
+                    // إزالة selected من كل خيارات هذا السؤال
+                    const parent = optSpan.parentElement;
+                    Array.from(parent.children).forEach(child => child.classList.remove('selected'));
+                    optSpan.classList.add('selected');
+                    userAnswers[qIndex] = oIndex;
+                });
+                optionsDiv.appendChild(optSpan);
+            });
+            qDiv.appendChild(optionsDiv);
+            quizContainer.appendChild(qDiv);
+        });
+    }
+
+    function checkAnswers() {
+        let score = 0;
+        let details = '';
+        for (let i = 0; i < questions.length; i++) {
+            const correctIndex = questions[i].correct;
+            const userAns = userAnswers[i];
+            if (userAns === correctIndex) {
+                score++;
+                details += `<div class="correct">✅ سؤال ${i+1}: إجابة صحيحة</div>`;
+            } else {
+                const correctText = questions[i].options[correctIndex];
+                details += `<div class="wrong">❌ سؤال ${i+1}: إجابتك ${userAns !== null ? questions[i].options[userAns] : 'لم تجب'} — الصحيح: ${correctText}</div>`;
+            }
+        }
+        resultArea.style.display = 'block';
+        resultArea.innerHTML = `<h3 style="color:#ffd966;">نتيجتك: ${score} من ${questions.length}</h3>${details}`;
+    }
+
+    function resetQuiz() {
+        userAnswers = new Array(questions.length).fill(null);
+        renderQuiz();
+        resultArea.style.display = 'none';
+        resultArea.innerHTML = '';
+    }
+
+    // التهيئة
+    renderQuiz();
+    document.getElementById('checkBtn').addEventListener('click', checkAnswers);
+    document.getElementById('resetBtn').addEventListener('click', resetQuiz);
+</script>
+</body>
+</html>
