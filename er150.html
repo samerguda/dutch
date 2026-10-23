@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>150 جملة هولندية مع ER — المدينة والشارع والمحلات</title>
+<style>
+  :root{
+    --bg:#f4f6f8;
+    --card:#ffffff;
+    --primary:#1a3a5c;
+    --accent:#c8102e;      /* أحمر بلجيكي */
+    --accent2:#fdda24;     /* أصفر بلجيكي */
+    --text:#222;
+    --muted:#5a6b7b;
+    --border:#dde3e9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Segoe UI","Tahoma","Arial",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
+  }
+  header{
+    background:linear-gradient(135deg,var(--primary),#2c5a8a);
+    color:#fff;
+    padding:40px 20px 30px;
+    text-align:center;
+    border-bottom:6px solid var(--accent);
+    position:relative;
+  }
+  header::after{
+    content:"🇧🇪";
+    position:absolute;
+    top:12px;
+    left:18px;
+    font-size:28px;
+  }
+  header h1{
+    margin:0 0 10px;
+    font-size:1.9rem;
+  }
+  header p{
+    margin:0;
+    color:#dfe9f3;
+    font-size:1rem;
+  }
+  .wrap{
+    max-width:980px;
+    margin:0 auto;
+    padding:24px 16px 60px;
+  }
+  .intro{
+    background:var(--card);
+    border-right:5px solid var(--accent2);
+    border-radius:10px;
+    padding:16px 20px;
+    margin-bottom:28px;
+    box-shadow:0 2px 6px rgba(0,0,0,.05);
+    color:var(--muted);
+    font-size:.97rem;
+  }
+  section{
+    margin-bottom:34px;
+  }
+  section h2{
+    color:var(--primary);
+    font-size:1.25rem;
+    margin:0 0 14px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--accent2);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  section h2 .num{
+    background:var(--accent);
+    color:#fff;
+    font-size:.8rem;
+    border-radius:20px;
+    padding:2px 12px;
+    white-space:nowrap;
+  }
+  ol.sentences{
+    list-style:none;
+    counter-reset:item;
+    margin:0;
+    padding:0;
+  }
+  ol.sentences li{
+    counter-increment:item;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px 16px 12px 52px;
+    margin-bottom:10px;
+    position:relative;
+    box-shadow:0 1px 3px rgba(0,0,0,.04);
+    transition:transform .15s, box-shadow .15s;
+  }
+  ol.sentences li:hover{
+    transform:translateX(-3px);
+    box-shadow:0 3px 10px rgba(26,58,92,.12);
+  }
+  ol.sentences li::before{
+    content:counter(item);
+    position:absolute;
+    left:10px;
+    top:12px;
+    background:var(--primary);
+    color:#fff;
+    font-size:.72rem;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+  }
+  .nl{
+    display:block;
+    font-weight:600;
+    color:var(--primary);
+    direction:ltr;
+    text-align:left;
+    font-size:1.02rem;
+  }
+  .ar{
+    display:block;
+    color:var(--muted);
+    font-size:.95rem;
+    margin-top:2px;
+  }
+  mark{
+    background:var(--accent2);
+    color:#000;
+    padding:0 4px;
+    border-radius:3px;
+    font-weight:700;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 1px 4px rgba(0,0,0,.06);
+    font-size:.95rem;
+  }
+  thead{
+    background:var(--primary);
+    color:#fff;
+  }
+  th,td{
+    padding:10px 14px;
+    text-align:right;
+    border-bottom:1px solid var(--border);
+  }
+  tbody tr:nth-child(even){background:#f8fafc;}
+  tbody tr:hover{background:#eef4fa;}
+  td.nl-cell{
+    direction:ltr;
+    text-align:left;
+    font-weight:600;
+    color:var(--primary);
+  }
+  .note{
+    background:#fff8e1;
+    border-right:5px solid var(--accent2);
+    border-radius:10px;
+    padding:16px 20px;
+    margin-top:10px;
+  }
+  .note h3{
+    margin:0 0 10px;
+    color:var(--primary);
+    font-size:1.05rem;
+  }
+  .note ul{
+    margin:8px 0;
+    padding-right:20px;
+  }
+  .note li{margin-bottom:6px;}
+  .note .ex{
+    direction:ltr;
+    text-align:left;
+    display:block;
+    color:var(--primary);
+    font-weight:600;
+  }
+  footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:.85rem;
+    padding:20px;
+    border-top:1px solid var(--border);
+  }
+  @media(max-width:560px){
+    header h1{font-size:1.4rem;}
+    ol.sentences li{padding-right:12px;}
+    .nl,.ar{font-size:.92rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>150 جملة هولندية باستخدام ER</h1>
+  <p>مفردات المدينة والشارع والمحلات — مع الترجمة العربية</p>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    هذا التدريب مخصص للناطقين بالعربية الذين يتعلمون الهولندية في بلجيكا. تركّز الجمل على كلمة
+    <strong>ER</strong> واستخداماتها المختلفة، مع مفردات الشوارع، والإشارات المرورية، والمحلات،
+    والمواصلات، والاتجاهات. كلمة <strong>ER</strong> مظللة بالأصفر في كل جملة لتسهيل الملاحظة.
+  </div>
+
+  <!-- القسم 1 -->
+  <section>
+    <h2><span class="num">1–30</span> ER بمعنى «هناك / يوجد»</h2>
+    <ol class="sentences">
+      <li><span class="nl"><mark>Er</mark> is een supermarkt in deze straat.</span><span class="ar">يوجد سوبر ماركت في هذا الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een apotheek naast de bakker.</span><span class="ar">توجد صيدلية بجانب المخبز.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een bushalte voor het station.</span><span class="ar">توجد محطة حافلات أمام المحطة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een verkeerslicht op de hoek.</span><span class="ar">توجد إشارة مرور عند ناصية الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een bank tegenover het gemeentehuis.</span><span class="ar">يوجد بنك مقابل مبنى البلدية.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een politieagent op straat.</span><span class="ar">يوجد شرطي في الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een parkeerplaats achter het gebouw.</span><span class="ar">يوجد موقف سيارات خلف المبنى.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een restaurant in het centrum.</span><span class="ar">يوجد مطعم في وسط المدينة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een bakkerij aan de overkant.</span><span class="ar">يوجد مخبز في الجهة المقابلة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een bushokje bij de halte.</span><span class="ar">يوجد مأوى للحافلات عند المحطة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een winkel naast de kapper.</span><span class="ar">يوجد محل بجانب صالون الحلاقة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een brug over de rivier.</span><span class="ar">يوجد جسر فوق النهر.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een zebrapad voor de school.</span><span class="ar">يوجد ممر مشاة أمام المدرسة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een ziekenhuis buiten het centrum.</span><span class="ar">يوجد مستشفى خارج وسط المدينة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een fietsenwinkel in deze buurt.</span><span class="ar">يوجد محل دراجات في هذا الحي.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een tankstation langs de weg.</span><span class="ar">توجد محطة وقود على الطريق.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een markt op het plein.</span><span class="ar">يوجد سوق في الساحة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een bibliotheek achter de kerk.</span><span class="ar">توجد مكتبة خلف الكنيسة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een hotel tegenover het station.</span><span class="ar">يوجد فندق مقابل المحطة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een tramhalte in deze straat.</span><span class="ar">توجد محطة ترام في هذا الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een bakker op de hoek.</span><span class="ar">يوجد خباز عند ناصية الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een speeltuin in het park.</span><span class="ar">توجد ساحة ألعاب في الحديقة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een garage naast mijn huis.</span><span class="ar">يوجد مرآب بجانب منزلي.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een voetgangerszone in het centrum.</span><span class="ar">توجد منطقة للمشاة في وسط المدينة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een rotonde aan het einde van de straat.</span><span class="ar">توجد دوّار عند نهاية الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een apotheek tegenover de supermarkt.</span><span class="ar">توجد صيدلية مقابل السوبر ماركت.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een ondergrondse parking bij het winkelcentrum.</span><span class="ar">يوجد موقف سيارات تحت الأرض عند مركز التسوق.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een bushalte dicht bij mijn woning.</span><span class="ar">توجد محطة حافلات بالقرب من منزلي.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een restaurant aan deze boulevard.</span><span class="ar">يوجد مطعم في هذا الشارع الواسع.</span></li>
+      <li><span class="nl"><mark>Er</mark> is een informatiebord bij de ingang.</span><span class="ar">توجد لوحة معلومات عند المدخل.</span></li>
+    </ol>
+  </section>
+
+  <!-- القسم 2 -->
+  <section>
+    <h2><span class="num">31–60</span> ER مع الكمية والأشياء الموجودة</h2>
+    <ol class="sentences" start="31">
+      <li><span class="nl"><mark>Er</mark> zijn veel winkels in het centrum.</span><span class="ar">توجد محلات كثيرة في وسط المدينة.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn drie verkeerslichten op deze weg.</span><span class="ar">توجد ثلاث إشارات مرور على هذا الطريق.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel auto’s op straat.</span><span class="ar">توجد سيارات كثيرة في الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn twee bakkers in mijn buurt.</span><span class="ar">يوجد مخبزان في حيي.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn vijf bushaltes in deze wijk.</span><span class="ar">توجد خمس محطات حافلات في هذا الحي.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel fietsers op de weg.</span><span class="ar">يوجد كثير من راكبي الدراجات على الطريق.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn enkele parkeerplaatsen achter het gebouw.</span><span class="ar">توجد بعض أماكن انتظار السيارات خلف المبنى.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel restaurants op dit plein.</span><span class="ar">توجد مطاعم كثيرة في هذه الساحة.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn twee apotheken in deze straat.</span><span class="ar">توجد صيدليتان في هذا الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel voetgangers bij het station.</span><span class="ar">يوجد كثير من المشاة عند المحطة.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn drie supermarkten in de buurt.</span><span class="ar">توجد ثلاثة متاجر سوبر ماركت في المنطقة.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel borden langs de weg.</span><span class="ar">توجد لافتات كثيرة على طول الطريق.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn enkele taxi’s voor het hotel.</span><span class="ar">توجد بعض سيارات الأجرة أمام الفندق.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel gebouwen in het centrum.</span><span class="ar">توجد مبانٍ كثيرة في وسط المدينة.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn twee bruggen over de rivier.</span><span class="ar">يوجد جسران فوق النهر.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel mensen op de markt.</span><span class="ar">يوجد أشخاص كثيرون في السوق.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn vier winkels naast het station.</span><span class="ar">توجد أربعة محلات بجانب المحطة.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn weinig parkeerplaatsen in deze straat.</span><span class="ar">توجد أماكن انتظار قليلة في هذا الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel fietsen voor de school.</span><span class="ar">توجد دراجات كثيرة أمام المدرسة.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn verschillende cafés op het plein.</span><span class="ar">توجد مقاهٍ متنوعة في الساحة.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn tien huizen in deze straat.</span><span class="ar">توجد عشرة منازل في هذا الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn twee tankstations langs deze weg.</span><span class="ar">توجد محطتا وقود على طول هذا الطريق.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel toeristen in het stadscentrum.</span><span class="ar">يوجد سياح كثيرون في مركز المدينة.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn enkele banken tegenover het gemeentehuis.</span><span class="ar">توجد بعض البنوك مقابل مبنى البلدية.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel verkeersborden bij de rotonde.</span><span class="ar">توجد إشارات مرورية كثيرة عند الدوّار.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn drie bushokjes in deze buurt.</span><span class="ar">توجد ثلاثة مآوٍ للحافلات في هذا الحي.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel winkels in het winkelcentrum.</span><span class="ar">توجد محلات كثيرة في مركز التسوق.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn weinig auto’s in deze voetgangerszone.</span><span class="ar">توجد سيارات قليلة في منطقة المشاة هذه.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn verschillende straten rond het plein.</span><span class="ar">توجد شوارع مختلفة حول الساحة.</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn veel mensen bij de tramhalte.</span><span class="ar">يوجد أشخاص كثيرون عند محطة الترام.</span></li>
+    </ol>
+  </section>
+
+  <!-- القسم 3 -->
+  <section>
+    <h2><span class="num">61–90</span> ER للسؤال عن المكان والاتجاهات</h2>
+    <ol class="sentences" start="61">
+      <li><span class="nl">Is <mark>er</mark> een supermarkt in de buurt?</span><span class="ar">هل يوجد سوبر ماركت بالقرب من هنا؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een apotheek in deze straat?</span><span class="ar">هل توجد صيدلية في هذا الشارع؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> hier een bushalte?</span><span class="ar">هل توجد محطة حافلات هنا؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een bank in het centrum?</span><span class="ar">هل يوجد بنك في وسط المدينة؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een parkeerplaats in de buurt?</span><span class="ar">هل يوجد موقف سيارات قريب؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een bakker tegenover het station?</span><span class="ar">هل يوجد مخبز مقابل المحطة؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een verkeerslicht aan de volgende straat?</span><span class="ar">هل توجد إشارة مرور عند الشارع التالي؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een restaurant op dit plein?</span><span class="ar">هل يوجد مطعم في هذه الساحة؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een fietsenstalling bij het station?</span><span class="ar">هل يوجد موقف للدراجات عند المحطة؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een openbaar toilet in het winkelcentrum?</span><span class="ar">هل توجد دورة مياه عامة في مركز التسوق؟</span></li>
+      <li><span class="nl">Waar is <mark>er</mark> een geldautomaat?</span><span class="ar">أين توجد ماكينة صراف آلي؟</span></li>
+      <li><span class="nl">Waar is <mark>er</mark> een goede bakker?</span><span class="ar">أين يوجد مخبز جيد؟</span></li>
+      <li><span class="nl">Waar is <mark>er</mark> een bushalte?</span><span class="ar">أين توجد محطة الحافلات؟</span></li>
+      <li><span class="nl">Waar is <mark>er</mark> een goedkope supermarkt?</span><span class="ar">أين يوجد سوبر ماركت رخيص؟</span></li>
+      <li><span class="nl">Waar is <mark>er</mark> een parkeerplaats?</span><span class="ar">أين يوجد موقف سيارات؟</span></li>
+      <li><span class="nl">Waar is <mark>er</mark> een apotheek die open is?</span><span class="ar">أين توجد صيدلية مفتوحة؟</span></li>
+      <li><span class="nl">Waar is <mark>er</mark> een restaurant met vegetarisch eten?</span><span class="ar">أين يوجد مطعم يقدم طعامًا نباتيًا؟</span></li>
+      <li><span class="nl">Waar is <mark>er</mark> een fietsenwinkel?</span><span class="ar">أين يوجد محل للدراجات؟</span></li>
+      <li><span class="nl">Waar is <mark>er</mark> een politiebureau?</span><span class="ar">أين يوجد مركز الشرطة؟</span></li>
+      <li><span class="nl">Waar is <mark>er</mark> een postkantoor?</span><span class="ar">أين يوجد مكتب البريد؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> hier een zebrapad?</span><span class="ar">هل يوجد ممر مشاة هنا؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> verderop een rotonde?</span><span class="ar">هل يوجد دوّار في الأمام؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een tramhalte in deze richting?</span><span class="ar">هل توجد محطة ترام في هذا الاتجاه؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een tankstation langs de snelweg?</span><span class="ar">هل توجد محطة وقود على الطريق السريع؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een winkel aan de overkant?</span><span class="ar">هل يوجد محل في الجهة المقابلة؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een ingang aan de achterkant?</span><span class="ar">هل يوجد مدخل في الخلف؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een uitgang aan de linkerkant?</span><span class="ar">هل يوجد مخرج على الجانب الأيسر؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een lift in dit gebouw?</span><span class="ar">هل يوجد مصعد في هذا المبنى؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een voetgangersoversteekplaats bij de school?</span><span class="ar">هل يوجد معبر مشاة عند المدرسة؟</span></li>
+      <li><span class="nl">Is <mark>er</mark> een bushalte dicht bij het ziekenhuis?</span><span class="ar">هل توجد محطة حافلات بالقرب من المستشفى؟</span></li>
+    </ol>
+  </section>
+
+  <!-- القسم 4 -->
+  <section>
+    <h2><span class="num">91–120</span> ER مع الأفعال اليومية في المدينة</h2>
+    <ol class="sentences" start="91">
+      <li><span class="nl">Ik woon in een straat waar <mark>er</mark> veel winkels zijn.</span><span class="ar">أسكن في شارع توجد فيه محلات كثيرة.</span></li>
+      <li><span class="nl"><mark>Er</mark> rijden veel bussen door het centrum.</span><span class="ar">تمر حافلات كثيرة عبر وسط المدينة.</span></li>
+      <li><span class="nl"><mark>Er</mark> stoppen hier veel trams.</span><span class="ar">تتوقف ترامّات كثيرة هنا.</span></li>
+      <li><span class="nl"><mark>Er</mark> staan veel auto’s voor de supermarkt.</span><span class="ar">توجد سيارات كثيرة متوقفة أمام السوبر ماركت.</span></li>
+      <li><span class="nl"><mark>Er</mark> lopen veel mensen over het zebrapad.</span><span class="ar">يعبر كثير من الناس ممر المشاة.</span></li>
+      <li><span class="nl"><mark>Er</mark> fietst een man langs de rivier.</span><span class="ar">يركب رجل دراجته بمحاذاة النهر.</span></li>
+      <li><span class="nl"><mark>Er</mark> rijdt een bus naar het station.</span><span class="ar">تسير حافلة إلى المحطة.</span></li>
+      <li><span class="nl"><mark>Er</mark> wacht een vrouw bij de bushalte.</span><span class="ar">تنتظر امرأة عند محطة الحافلات.</span></li>
+      <li><span class="nl"><mark>Er</mark> staat een politieauto op de hoek.</span><span class="ar">توجد سيارة شرطة عند ناصية الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> loopt een kind naar de school.</span><span class="ar">يمشي طفل نحو المدرسة.</span></li>
+      <li><span class="nl"><mark>Er</mark> werken veel mensen in het centrum.</span><span class="ar">يعمل كثير من الناس في وسط المدينة.</span></li>
+      <li><span class="nl"><mark>Er</mark> winkelen veel mensen op zaterdag.</span><span class="ar">يتسوق كثير من الناس يوم السبت.</span></li>
+      <li><span class="nl"><mark>Er</mark> wandelen veel mensen in het park.</span><span class="ar">يتنزه كثير من الناس في الحديقة.</span></li>
+      <li><span class="nl"><mark>Er</mark> rijdt een tram langs het gemeentehuis.</span><span class="ar">يمر ترام بمحاذاة مبنى البلدية.</span></li>
+      <li><span class="nl"><mark>Er</mark> staat een lange rij voor de bakker.</span><span class="ar">يوجد طابور طويل أمام المخبز.</span></li>
+      <li><span class="nl"><mark>Er</mark> komen veel klanten naar deze winkel.</span><span class="ar">يأتي كثير من الزبائن إلى هذا المحل.</span></li>
+      <li><span class="nl"><mark>Er</mark> vertrekken bussen vanaf dit station.</span><span class="ar">تنطلق الحافلات من هذه المحطة.</span></li>
+      <li><span class="nl"><mark>Er</mark> komen taxi’s aan bij het hotel.</span><span class="ar">تصل سيارات الأجرة إلى الفندق.</span></li>
+      <li><span class="nl"><mark>Er</mark> rijdt een vrachtwagen door de straat.</span><span class="ar">تسير شاحنة عبر الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> steken mensen over bij het verkeerslicht.</span><span class="ar">يعبر الناس الطريق عند إشارة المرور.</span></li>
+      <li><span class="nl"><mark>Er</mark> staan fietsen voor het gebouw.</span><span class="ar">توجد دراجات أمام المبنى.</span></li>
+      <li><span class="nl"><mark>Er</mark> parkeren veel mensen in deze straat.</span><span class="ar">يركن كثير من الناس سياراتهم في هذا الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> verkoopt een winkel verse groenten.</span><span class="ar">يبيع أحد المحلات خضروات طازجة.</span></li>
+      <li><span class="nl"><mark>Er</mark> worden wegenwerken uitgevoerd in het centrum.</span><span class="ar">تُجرى أعمال طرق في وسط المدينة.</span></li>
+      <li><span class="nl"><mark>Er</mark> is veel verkeer tijdens de spits.</span><span class="ar">توجد حركة مرور كثيفة خلال ساعة الذروة.</span></li>
+      <li><span class="nl"><mark>Er</mark> rijdt weinig verkeer op zondagmorgen.</span><span class="ar">حركة المرور قليلة صباح الأحد.</span></li>
+      <li><span class="nl"><mark>Er</mark> wandelen toeristen door de oude stad.</span><span class="ar">يتجول السياح في المدينة القديمة.</span></li>
+      <li><span class="nl"><mark>Er</mark> staan mensen aan het loket.</span><span class="ar">يقف أشخاص عند شباك الخدمة.</span></li>
+      <li><span class="nl"><mark>Er</mark> rijdt een ambulance door de straat.</span><span class="ar">تمر سيارة إسعاف عبر الشارع.</span></li>
+      <li><span class="nl"><mark>Er</mark> wordt gewerkt aan de brug.</span><span class="ar">تُجرى أعمال صيانة على الجسر.</span></li>
+    </ol>
+  </section>
+
+  <!-- القسم 5 -->
+  <section>
+    <h2><span class="num">121–150</span> ER في المحادثات والمواقف الواقعية</h2>
+    <ol class="sentences" start="121">
+      <li><span class="nl">Ik zoek een supermarkt, maar <mark>er</mark> is <mark>er</mark> geen in deze straat.</span><span class="ar">أبحث عن سوبر ماركت، لكن لا يوجد واحد في هذا الشارع.</span></li>
+      <li><span class="nl">Zijn <mark>er</mark> hier winkels die laat openblijven?</span><span class="ar">هل توجد هنا محلات تظل مفتوحة حتى وقت متأخر؟</span></li>
+      <li><span class="nl"><mark>Er</mark> is <mark>er</mark> één naast het station.</span><span class="ar">يوجد واحد بجانب المحطة.</span></li>
+      <li><span class="nl">Hoeveel apotheken zijn <mark>er</mark> in deze buurt?</span><span class="ar">كم عدد الصيدليات في هذا الحي؟</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn <mark>er</mark> twee tegenover het ziekenhuis.</span><span class="ar">توجد اثنتان مقابل المستشفى.</span></li>
+      <li><span class="nl">Zijn <mark>er</mark> nog parkeerplaatsen vrij?</span><span class="ar">هل ما زالت هناك أماكن انتظار شاغرة؟</span></li>
+      <li><span class="nl">Nee, <mark>er</mark> zijn <mark>er</mark> geen meer vrij.</span><span class="ar">لا، لم تعد هناك أماكن شاغرة.</span></li>
+      <li><span class="nl">Hoeveel bushaltes zijn <mark>er</mark> tot het centrum?</span><span class="ar">كم محطة حافلات توجد حتى وسط المدينة؟</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn <mark>er</mark> vier tot het centrum.</span><span class="ar">توجد أربع محطات حتى وسط المدينة.</span></li>
+      <li><span class="nl">Is <mark>er</mark> nog een bakker open?</span><span class="ar">هل ما زال هناك مخبز مفتوح؟</span></li>
+      <li><span class="nl">Ja, <mark>er</mark> is <mark>er</mark> één op de hoek.</span><span class="ar">نعم، يوجد واحد عند ناصية الشارع.</span></li>
+      <li><span class="nl">Zijn <mark>er</mark> hier fietspaden?</span><span class="ar">هل توجد هنا مسارات للدراجات؟</span></li>
+      <li><span class="nl">Ja, <mark>er</mark> zijn <mark>er</mark> veel in deze buurt.</span><span class="ar">نعم، يوجد الكثير منها في هذا الحي.</span></li>
+      <li><span class="nl">Hoeveel verkeerslichten zijn <mark>er</mark> op deze route?</span><span class="ar">كم إشارة مرور توجد على هذا الطريق؟</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn <mark>er</mark> ongeveer zes.</span><span class="ar">يوجد حوالي ستة.</span></li>
+      <li><span class="nl">Zijn <mark>er</mark> veel winkels in Harelbeke?</span><span class="ar">هل توجد محلات كثيرة في هارلبكة؟</span></li>
+      <li><span class="nl">Ja, <mark>er</mark> zijn <mark>er</mark> verschillende in het centrum.</span><span class="ar">نعم، توجد عدة محلات في وسط المدينة.</span></li>
+      <li><span class="nl">Is <mark>er</mark> een geldautomaat in dit gebouw?</span><span class="ar">هل توجد ماكينة صراف آلي في هذا المبنى؟</span></li>
+      <li><span class="nl">Nee, maar <mark>er</mark> is <mark>er</mark> één naast de bank.</span><span class="ar">لا، ولكن توجد واحدة بجانب البنك.</span></li>
+      <li><span class="nl">Hoeveel restaurants zijn <mark>er</mark> op dit plein?</span><span class="ar">كم مطعمًا يوجد في هذه الساحة؟</span></li>
+      <li><span class="nl"><mark>Er</mark> zijn <mark>er</mark> minstens vijf.</span><span class="ar">يوجد خمسة على الأقل.</span></li>
+      <li><span class="nl">Is <mark>er</mark> een bushalte aan de overkant?</span><span class="ar">هل توجد محطة حافلات في الجهة المقابلة؟</span></li>
+      <li><span class="nl">Ja, <mark>er</mark> is <mark>er</mark> een tegenover de supermarkt.</span><span class="ar">نعم، توجد واحدة مقابل السوبر ماركت.</span></li>
+      <li><span class="nl">Zijn <mark>er</mark> wegenwerken in deze straat?</span><span class="ar">هل توجد أعمال طرق في هذا الشارع؟</span></li>
+      <li><span class="nl">Ja, <mark>er</mark> wordt aan de riolering gewerkt.</span><span class="ar">نعم، تُجرى أعمال على شبكة الصرف الصحي.</span></li>
+      <li><span class="nl">Is <mark>er</mark> veel verkeer in de ochtend?</span><span class="ar">هل توجد حركة مرور كثيفة في الصباح؟</span></li>
+      <li><span class="nl">Ja, <mark>er</mark> staan dan vaak files.</span><span class="ar">نعم، غالبًا ما تحدث اختناقات مرورية حينها.</span></li>
+      <li><span class="nl">Zijn <mark>er</mark> hier winkels waar ik brood kan kopen?</span><span class="ar">هل توجد هنا محلات يمكنني شراء الخبز منها؟</span></li>
+      <li><span class="nl">Ja, <mark>er</mark> zijn <mark>er</mark> twee in de buurt.</span><span class="ar">نعم، يوجد اثنان في المنطقة القريبة.</span></li>
+      <li><span class="nl">Is <mark>er</mark> een veilige plek om de straat over te steken?</span><span class="ar">هل يوجد مكان آمن لعبور الشارع؟</span></li>
+    </ol>
+  </section>
+
+  <!-- القسم 6: مفردات -->
+  <section>
+    <h2><span class="num">مفردات</span> أهم كلمات المدينة والشارع</h2>
+    <table>
+      <thead>
+        <tr><th>الهولندية</th><th>العربية</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nl-cell">de straat</td><td>الشارع</td></tr>
+        <tr><td class="nl-cell">de weg</td><td>الطريق</td></tr>
+        <tr><td class="nl-cell">het kruispunt</td><td>تقاطع الطرق</td></tr>
+        <tr><td class="nl-cell">de hoek</td><td>ناصية الشارع</td></tr>
+        <tr><td class="nl-cell">het verkeerslicht</td><td>إشارة المرور الضوئية</td></tr>
+        <tr><td class="nl-cell">het verkeersbord</td><td>لافتة مرورية</td></tr>
+        <tr><td class="nl-cell">het zebrapad</td><td>ممر المشاة</td></tr>
+        <tr><td class="nl-cell">de rotonde</td><td>الدوّار</td></tr>
+        <tr><td class="nl-cell">het voetpad</td><td>الرصيف</td></tr>
+        <tr><td class="nl-cell">het fietspad</td><td>مسار الدراجات</td></tr>
+        <tr><td class="nl-cell">de bushalte</td><td>محطة الحافلات</td></tr>
+        <tr><td class="nl-cell">het busstation</td><td>محطة الحافلات الرئيسية</td></tr>
+        <tr><td class="nl-cell">het treinstation</td><td>محطة القطار</td></tr>
+        <tr><td class="nl-cell">de tramhalte</td><td>محطة الترام</td></tr>
+        <tr><td class="nl-cell">de winkel</td><td>المحل</td></tr>
+        <tr><td class="nl-cell">de supermarkt</td><td>السوبر ماركت</td></tr>
+        <tr><td class="nl-cell">de bakkerij</td><td>المخبز</td></tr>
+        <tr><td class="nl-cell">de slager</td><td>الجزار</td></tr>
+        <tr><td class="nl-cell">de apotheek</td><td>الصيدلية</td></tr>
+        <tr><td class="nl-cell">de kapper</td><td>الحلاق</td></tr>
+        <tr><td class="nl-cell">de kledingwinkel</td><td>محل الملابس</td></tr>
+        <tr><td class="nl-cell">de fietsenwinkel</td><td>محل الدراجات</td></tr>
+        <tr><td class="nl-cell">de bank</td><td>البنك</td></tr>
+        <tr><td class="nl-cell">de geldautomaat</td><td>ماكينة الصراف الآلي</td></tr>
+        <tr><td class="nl-cell">het gemeentehuis</td><td>مبنى البلدية</td></tr>
+        <tr><td class="nl-cell">het ziekenhuis</td><td>المستشفى</td></tr>
+        <tr><td class="nl-cell">de politie</td><td>الشرطة</td></tr>
+        <tr><td class="nl-cell">de parking</td><td>موقف السيارات</td></tr>
+        <tr><td class="nl-cell">het tankstation</td><td>محطة الوقود</td></tr>
+        <tr><td class="nl-cell">het winkelcentrum</td><td>مركز التسوق</td></tr>
+        <tr><td class="nl-cell">het plein</td><td>الساحة</td></tr>
+        <tr><td class="nl-cell">de brug</td><td>الجسر</td></tr>
+        <tr><td class="nl-cell">de rivier</td><td>النهر</td></tr>
+        <tr><td class="nl-cell">de ingang</td><td>المدخل</td></tr>
+        <tr><td class="nl-cell">de uitgang</td><td>المخرج</td></tr>
+        <tr><td class="nl-cell">de verkeersdrukte</td><td>ازدحام المرور</td></tr>
+        <tr><td class="nl-cell">de file</td><td>الاختناق المروري</td></tr>
+        <tr><td class="nl-cell">de omleiding</td><td>الطريق البديل</td></tr>
+        <tr><td class="nl-cell">de wegwerkzaamheden</td><td>أعمال الطرق</td></tr>
+        <tr><td class="nl-cell">de voetganger</td><td>المشاة</td></tr>
+        <tr><td class="nl-cell">de fietser</td><td>راكب الدراجة</td></tr>
+        <tr><td class="nl-cell">de automobilist</td><td>سائق السيارة</td></tr>
+        <tr><td class="nl-cell">de overkant</td><td>الجهة المقابلة</td></tr>
+        <tr><td class="nl-cell">rechtdoor</td><td>إلى الأمام مباشرة</td></tr>
+        <tr><td class="nl-cell">linksaf</td><td>انعطف يسارًا</td></tr>
+        <tr><td class="nl-cell">rechtsaf</td><td>انعطف يمينًا</td></tr>
+        <tr><td class="nl-cell">naast</td><td>بجانب</td></tr>
+        <tr><td class="nl-cell">tegenover</td><td>مقابل</td></tr>
+        <tr><td class="nl-cell">tussen</td><td>بين</td></tr>
+        <tr><td class="nl-cell">dichtbij</td><td>قريب</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- القسم 7: شرح ER -->
+  <section>
+    <h2><span class="num">شرح</span> افهم الفرق بين استخدامات ER</h2>
+    <div class="note">
+      <h3>1) ER = يوجد / توجد</h3>
+      <p><span class="ex">Er is een apotheek.</span> توجد صيدلية.</p>
+      <p><span class="ex">Er zijn veel winkels.</span> توجد محلات كثيرة.</p>
+
+      <h3>2) ER = هناك شيء أو عدد منه</h3>
+      <p><span class="ex">Hoeveel winkels zijn er?</span> كم محلًا يوجد؟</p>
+      <p><span class="ex">Er zijn er drie.</span> يوجد ثلاثة منها.</p>
+      <p style="color:#8a6d00;">في المثال الأخير: <strong>er</strong> الأولى تعني «يوجد»، والثانية تعني «منها».</p>
+
+      <h3>3) ER مع المكان</h3>
+      <p><span class="ex">Ik woon er.</span> أنا أسكن هناك.</p>
+      <p><span class="ex">Ik ga er morgen naartoe.</span> سأذهب إلى هناك غدًا.</p>
+
+      <h3>4) ER مع النفي</h3>
+      <p><span class="ex">Er is geen bank.</span> لا يوجد بنك.</p>
+      <p><span class="ex">Er zijn geen parkeerplaatsen.</span> لا توجد أماكن انتظار سيارات.</p>
+
+      <h3>ملاحظة مهمة</h3>
+      <p>في الهولندية نستخدم غالبًا <strong>er is</strong> مع المفرد، و<strong>er zijn</strong> مع الجمع.
+      أما في جملة مثل <span class="ex">Er zijn er drie</span>، فالأولى تعني «يوجد»، والثانية تعني «منها».</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  تدريب عملي على استخدام ER في الهولندية البلجيكية — 150 جملة مع الترجمة العربية
+</footer>
+
+</body>
+</html>
