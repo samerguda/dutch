@@ -128,13 +128,23 @@
   section.group li:nth-child(even){background:#fafcff;}
   section.group li:hover{background:var(--primary-light);}
   .nl{
-    display:block;
+    display:flex;
+    gap:8px;
+    align-items:baseline;
     font-weight:700;
     color:var(--primary);
     font-size:1.04rem;
     direction:ltr;
     text-align:left;
     margin-bottom:2px;
+  }
+  .nl .idx{
+    color:var(--muted);
+    font-weight:600;
+    font-size:.85rem;
+    min-width:2.2em;
+    text-align:right;
+    flex-shrink:0;
   }
   .nl .zodra{
     color:var(--accent);
@@ -268,26 +278,26 @@
   <section class="group">
     <h2><span class="num">1–20</span> المطر والطقس الممطر</h2>
     <ul>
-      <li><span class="nl"><span class="zodra">Zodra</span> het regent, neem ik mijn paraplu.</span><span class="ar">بمجرد أن تمطر، آخذ مظلتي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de regen begint, ga ik naar binnen.</span><span class="ar">بمجرد أن يبدأ المطر، أدخل إلى الداخل.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het hard regent, blijf ik thuis.</span><span class="ar">بمجرد أن تمطر بغزارة، أبقى في المنزل.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de eerste druppels vallen, sluit ik het raam.</span><span class="ar">بمجرد سقوط أول قطرات المطر، أغلق النافذة.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de regen stopt, ga ik wandelen.</span><span class="ar">بمجرد توقف المطر، أذهب للمشي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het buiten nat wordt, trek ik mijn regenjas aan.</span><span class="ar">بمجرد أن يصبح الجو في الخارج ممطرًا، أرتدي معطف المطر.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de bui voorbij is, vertrek ik naar het werk.</span><span class="ar">بمجرد انتهاء الزخة المطرية، أغادر إلى العمل.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het begint te druppelen, haal ik mijn paraplu uit mijn tas.</span><span class="ar">بمجرد أن يبدأ الرذاذ، أخرج مظلتي من حقيبتي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de regen sterker wordt, zoek ik beschutting.</span><span class="ar">بمجرد أن يشتد المطر، أبحث عن مأوى.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het weer droog is, zet ik mijn fiets buiten.</span><span class="ar">بمجرد أن يجف الجو مجددًا، أضع دراجتي في الخارج.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de lucht donker wordt, verwacht ik regen.</span><span class="ar">بمجرد أن تصبح السماء داكنة، أتوقع المطر.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de regen tegen het raam tikt, hoor ik het geluid.</span><span class="ar">بمجرد أن يطرق المطر النافذة، أسمع صوته.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het begint te stortregenen, stop ik met fietsen.</span><span class="ar">بمجرد أن يبدأ المطر الغزير جدًا، أتوقف عن ركوب الدراجة.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de straten nat worden, rijd ik langzamer.</span><span class="ar">بمجرد أن تبتل الشوارع، أقود ببطء أكثر.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de regen ophoudt, open ik het raam.</span><span class="ar">بمجرد أن يتوقف المطر، أفتح النافذة.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> er een regenbui aankomt, haal ik de was binnen.</span><span class="ar">بمجرد اقتراب زخة مطرية، أدخل الغسيل إلى المنزل.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het de hele dag regent, blijf ik liever binnen.</span><span class="ar">بمجرد أن تمطر طوال اليوم، أفضل البقاء في الداخل.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de regen voorbijtrekt, wordt het buiten rustiger.</span><span class="ar">بمجرد مرور السحب الممطرة، يصبح الجو في الخارج أكثر هدوءًا.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> mijn jas nat wordt, hang ik hem te drogen.</span><span class="ar">بمجرد أن يبتل معطفي، أعلقه ليجف.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de weersvoorspelling regen aangeeft, neem ik een paraplu mee.</span><span class="ar">بمجرد أن تتوقع النشرة الجوية المطر، آخذ مظلة معي.</span></li>
+      <li><span class="nl"><span class="idx">1.</span><span><span class="zodra">Zodra</span> het regent, neem ik mijn paraplu.</span></span><span class="ar">بمجرد أن تمطر، آخذ مظلتي.</span></li>
+      <li><span class="nl"><span class="idx">2.</span><span><span class="zodra">Zodra</span> de regen begint, ga ik naar binnen.</span></span><span class="ar">بمجرد أن يبدأ المطر، أدخل إلى الداخل.</span></li>
+      <li><span class="nl"><span class="idx">3.</span><span><span class="zodra">Zodra</span> het hard regent, blijf ik thuis.</span></span><span class="ar">بمجرد أن تمطر بغزارة، أبقى في المنزل.</span></li>
+      <li><span class="nl"><span class="idx">4.</span><span><span class="zodra">Zodra</span> de eerste druppels vallen, sluit ik het raam.</span></span><span class="ar">بمجرد سقوط أول قطرات المطر، أغلق النافذة.</span></li>
+      <li><span class="nl"><span class="idx">5.</span><span><span class="zodra">Zodra</span> de regen stopt, ga ik wandelen.</span></span><span class="ar">بمجرد توقف المطر، أذهب للمشي.</span></li>
+      <li><span class="nl"><span class="idx">6.</span><span><span class="zodra">Zodra</span> het buiten nat wordt, trek ik mijn regenjas aan.</span></span><span class="ar">بمجرد أن يصبح الجو في الخارج ممطرًا، أرتدي معطف المطر.</span></li>
+      <li><span class="nl"><span class="idx">7.</span><span><span class="zodra">Zodra</span> de bui voorbij is, vertrek ik naar het werk.</span></span><span class="ar">بمجرد انتهاء الزخة المطرية، أغادر إلى العمل.</span></li>
+      <li><span class="nl"><span class="idx">8.</span><span><span class="zodra">Zodra</span> het begint te druppelen, haal ik mijn paraplu uit mijn tas.</span></span><span class="ar">بمجرد أن يبدأ الرذاذ، أخرج مظلتي من حقيبتي.</span></li>
+      <li><span class="nl"><span class="idx">9.</span><span><span class="zodra">Zodra</span> de regen sterker wordt, zoek ik beschutting.</span></span><span class="ar">بمجرد أن يشتد المطر، أبحث عن مأوى.</span></li>
+      <li><span class="nl"><span class="idx">10.</span><span><span class="zodra">Zodra</span> het weer droog is, zet ik mijn fiets buiten.</span></span><span class="ar">بمجرد أن يجف الجو مجددًا، أضع دراجتي في الخارج.</span></li>
+      <li><span class="nl"><span class="idx">11.</span><span><span class="zodra">Zodra</span> de lucht donker wordt, verwacht ik regen.</span></span><span class="ar">بمجرد أن تصبح السماء داكنة، أتوقع المطر.</span></li>
+      <li><span class="nl"><span class="idx">12.</span><span><span class="zodra">Zodra</span> de regen tegen het raam tikt, hoor ik het geluid.</span></span><span class="ar">بمجرد أن يطرق المطر النافذة، أسمع صوته.</span></li>
+      <li><span class="nl"><span class="idx">13.</span><span><span class="zodra">Zodra</span> het begint te stortregenen, stop ik met fietsen.</span></span><span class="ar">بمجرد أن يبدأ المطر الغزير جدًا، أتوقف عن ركوب الدراجة.</span></li>
+      <li><span class="nl"><span class="idx">14.</span><span><span class="zodra">Zodra</span> de straten nat worden, rijd ik langzamer.</span></span><span class="ar">بمجرد أن تبتل الشوارع، أقود ببطء أكثر.</span></li>
+      <li><span class="nl"><span class="idx">15.</span><span><span class="zodra">Zodra</span> de regen ophoudt, open ik het raam.</span></span><span class="ar">بمجرد أن يتوقف المطر، أفتح النافذة.</span></li>
+      <li><span class="nl"><span class="idx">16.</span><span><span class="zodra">Zodra</span> er een regenbui aankomt, haal ik de was binnen.</span></span><span class="ar">بمجرد اقتراب زخة مطرية، أدخل الغسيل إلى المنزل.</span></li>
+      <li><span class="nl"><span class="idx">17.</span><span><span class="zodra">Zodra</span> het de hele dag regent, blijf ik liever binnen.</span></span><span class="ar">بمجرد أن تمطر طوال اليوم، أفضل البقاء في الداخل.</span></li>
+      <li><span class="nl"><span class="idx">18.</span><span><span class="zodra">Zodra</span> de regen voorbijtrekt, wordt het buiten rustiger.</span></span><span class="ar">بمجرد مرور السحب الممطرة، يصبح الجو في الخارج أكثر هدوءًا.</span></li>
+      <li><span class="nl"><span class="idx">19.</span><span><span class="zodra">Zodra</span> mijn jas nat wordt, hang ik hem te drogen.</span></span><span class="ar">بمجرد أن يبتل معطفي، أعلقه ليجف.</span></li>
+      <li><span class="nl"><span class="idx">20.</span><span><span class="zodra">Zodra</span> de weersvoorspelling regen aangeeft, neem ik een paraplu mee.</span></span><span class="ar">بمجرد أن تتوقع النشرة الجوية المطر، آخذ مظلة معي.</span></li>
     </ul>
   </section>
 
@@ -295,21 +305,21 @@
   <section class="group">
     <h2><span class="num">21–35</span> الشمس والجو الجميل</h2>
     <ul>
-      <li><span class="nl"><span class="zodra">Zodra</span> de zon schijnt, ga ik naar buiten.</span><span class="ar">بمجرد أن تشرق الشمس، أخرج إلى الخارج.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het zonnig wordt, zet ik mijn zonnebril op.</span><span class="ar">بمجرد أن يصبح الجو مشمسًا، أرتدي نظارتي الشمسية.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de wolken verdwijnen, maken we een wandeling.</span><span class="ar">بمجرد أن تختفي الغيوم، نذهب للتنزه.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het warmer wordt, draag ik lichtere kleren.</span><span class="ar">بمجرد أن يصبح الجو أدفأ، أرتدي ملابس أخف.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de temperatuur stijgt, open ik de ramen.</span><span class="ar">بمجرد أن ترتفع درجة الحرارة، أفتح النوافذ.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de zon doorbreekt, gaan de kinderen buiten spelen.</span><span class="ar">بمجرد أن تظهر الشمس بين الغيوم، يخرج الأطفال للعب.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het mooi weer is, eten we buiten.</span><span class="ar">بمجرد أن يصبح الطقس جميلًا، نتناول الطعام في الخارج.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de lucht helder wordt, zie ik de blauwe hemel.</span><span class="ar">بمجرد أن تصبح السماء صافية، أرى السماء الزرقاء.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de zon ondergaat, wordt het koeler.</span><span class="ar">بمجرد أن تغرب الشمس، يصبح الجو أبرد.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het warm genoeg is, ga ik fietsen.</span><span class="ar">بمجرد أن يصبح الجو دافئًا بما يكفي، أذهب لركوب الدراجة.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de zon fel schijnt, zoek ik wat schaduw.</span><span class="ar">بمجرد أن تكون أشعة الشمس قوية، أبحث عن بعض الظل.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het buiten aangenaam wordt, gaan we op het terras zitten.</span><span class="ar">بمجرد أن يصبح الجو لطيفًا في الخارج، نجلس في الشرفة.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de lente begint, worden de dagen langer.</span><span class="ar">بمجرد أن يبدأ الربيع، تصبح الأيام أطول.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de zon verschijnt, wordt iedereen vrolijker.</span><span class="ar">بمجرد ظهور الشمس، يصبح الجميع أكثر سعادة.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het droog en zonnig is, was ik mijn auto.</span><span class="ar">بمجرد أن يصبح الجو جافًا ومشمسًا، أغسل سيارتي.</span></li>
+      <li><span class="nl"><span class="idx">21.</span><span><span class="zodra">Zodra</span> de zon schijnt, ga ik naar buiten.</span></span><span class="ar">بمجرد أن تشرق الشمس، أخرج إلى الخارج.</span></li>
+      <li><span class="nl"><span class="idx">22.</span><span><span class="zodra">Zodra</span> het zonnig wordt, zet ik mijn zonnebril op.</span></span><span class="ar">بمجرد أن يصبح الجو مشمسًا، أرتدي نظارتي الشمسية.</span></li>
+      <li><span class="nl"><span class="idx">23.</span><span><span class="zodra">Zodra</span> de wolken verdwijnen, maken we een wandeling.</span></span><span class="ar">بمجرد أن تختفي الغيوم، نذهب للتنزه.</span></li>
+      <li><span class="nl"><span class="idx">24.</span><span><span class="zodra">Zodra</span> het warmer wordt, draag ik lichtere kleren.</span></span><span class="ar">بمجرد أن يصبح الجو أدفأ، أرتدي ملابس أخف.</span></li>
+      <li><span class="nl"><span class="idx">25.</span><span><span class="zodra">Zodra</span> de temperatuur stijgt, open ik de ramen.</span></span><span class="ar">بمجرد أن ترتفع درجة الحرارة، أفتح النوافذ.</span></li>
+      <li><span class="nl"><span class="idx">26.</span><span><span class="zodra">Zodra</span> de zon doorbreekt, gaan de kinderen buiten spelen.</span></span><span class="ar">بمجرد أن تظهر الشمس بين الغيوم، يخرج الأطفال للعب.</span></li>
+      <li><span class="nl"><span class="idx">27.</span><span><span class="zodra">Zodra</span> het mooi weer is, eten we buiten.</span></span><span class="ar">بمجرد أن يصبح الطقس جميلًا، نتناول الطعام في الخارج.</span></li>
+      <li><span class="nl"><span class="idx">28.</span><span><span class="zodra">Zodra</span> de lucht helder wordt, zie ik de blauwe hemel.</span></span><span class="ar">بمجرد أن تصبح السماء صافية، أرى السماء الزرقاء.</span></li>
+      <li><span class="nl"><span class="idx">29.</span><span><span class="zodra">Zodra</span> de zon ondergaat, wordt het koeler.</span></span><span class="ar">بمجرد أن تغرب الشمس، يصبح الجو أبرد.</span></li>
+      <li><span class="nl"><span class="idx">30.</span><span><span class="zodra">Zodra</span> het warm genoeg is, ga ik fietsen.</span></span><span class="ar">بمجرد أن يصبح الجو دافئًا بما يكفي، أذهب لركوب الدراجة.</span></li>
+      <li><span class="nl"><span class="idx">31.</span><span><span class="zodra">Zodra</span> de zon fel schijnt, zoek ik wat schaduw.</span></span><span class="ar">بمجرد أن تكون أشعة الشمس قوية، أبحث عن بعض الظل.</span></li>
+      <li><span class="nl"><span class="idx">32.</span><span><span class="zodra">Zodra</span> het buiten aangenaam wordt, gaan we op het terras zitten.</span></span><span class="ar">بمجرد أن يصبح الجو لطيفًا في الخارج، نجلس في الشرفة.</span></li>
+      <li><span class="nl"><span class="idx">33.</span><span><span class="zodra">Zodra</span> de lente begint, worden de dagen langer.</span></span><span class="ar">بمجرد أن يبدأ الربيع، تصبح الأيام أطول.</span></li>
+      <li><span class="nl"><span class="idx">34.</span><span><span class="zodra">Zodra</span> de zon verschijnt, wordt iedereen vrolijker.</span></span><span class="ar">بمجرد ظهور الشمس، يصبح الجميع أكثر سعادة.</span></li>
+      <li><span class="nl"><span class="idx">35.</span><span><span class="zodra">Zodra</span> het droog en zonnig is, was ik mijn auto.</span></span><span class="ar">بمجرد أن يصبح الجو جافًا ومشمسًا، أغسل سيارتي.</span></li>
     </ul>
   </section>
 
@@ -317,21 +327,21 @@
   <section class="group">
     <h2><span class="num">36–50</span> البرد والصقيع والثلج</h2>
     <ul>
-      <li><span class="nl"><span class="zodra">Zodra</span> het koud wordt, trek ik mijn winterjas aan.</span><span class="ar">بمجرد أن يصبح الجو باردًا، أرتدي معطف الشتاء.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de temperatuur onder nul daalt, kan het vriezen.</span><span class="ar">بمجرد أن تنخفض درجة الحرارة إلى ما دون الصفر، قد يتجمد الماء.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het begint te sneeuwen, blijven we thuis.</span><span class="ar">بمجرد أن يبدأ تساقط الثلوج، نبقى في المنزل.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de sneeuw valt, worden de straten wit.</span><span class="ar">بمجرد تساقط الثلوج، تصبح الشوارع بيضاء.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het glad wordt, rijd ik voorzichtig.</span><span class="ar">بمجرد أن تصبح الطرق زلقة، أقود بحذر.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de vorst begint, bescherm ik mijn planten.</span><span class="ar">بمجرد أن يبدأ الصقيع، أحمي نباتاتي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het ijs smelt, wordt de weg minder glad.</span><span class="ar">بمجرد أن يذوب الجليد، يصبح الطريق أقل انزلاقًا.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de wind koud aanvoelt, doe ik mijn handschoenen aan.</span><span class="ar">بمجرد أن أشعر ببرودة الرياح، أرتدي قفازاتي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de sneeuw ophoudt, maken de kinderen een sneeuwpop.</span><span class="ar">بمجرد توقف الثلوج، يصنع الأطفال رجل ثلج.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het buiten vriest, controleer ik de verwarming.</span><span class="ar">بمجرد أن يتجمد الجو في الخارج، أتحقق من التدفئة.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de temperatuur daalt, sluit ik alle ramen.</span><span class="ar">بمجرد انخفاض درجة الحرارة، أغلق جميع النوافذ.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> mijn handen koud worden, ga ik naar binnen.</span><span class="ar">بمجرد أن تصبح يداي باردتين، أدخل إلى المنزل.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de sneeuw smelt, wordt de grond nat.</span><span class="ar">بمجرد ذوبان الثلج، تصبح الأرض مبتلة.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het winter wordt, draag ik warme sokken.</span><span class="ar">بمجرد حلول الشتاء، أرتدي جوارب دافئة.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de ijsvorming begint, strooit de gemeente zout op de wegen.</span><span class="ar">بمجرد بدء تكوّن الجليد، ترش البلدية الملح على الطرق.</span></li>
+      <li><span class="nl"><span class="idx">36.</span><span><span class="zodra">Zodra</span> het koud wordt, trek ik mijn winterjas aan.</span></span><span class="ar">بمجرد أن يصبح الجو باردًا، أرتدي معطف الشتاء.</span></li>
+      <li><span class="nl"><span class="idx">37.</span><span><span class="zodra">Zodra</span> de temperatuur onder nul daalt, kan het vriezen.</span></span><span class="ar">بمجرد أن تنخفض درجة الحرارة إلى ما دون الصفر، قد يتجمد الماء.</span></li>
+      <li><span class="nl"><span class="idx">38.</span><span><span class="zodra">Zodra</span> het begint te sneeuwen, blijven we thuis.</span></span><span class="ar">بمجرد أن يبدأ تساقط الثلوج، نبقى في المنزل.</span></li>
+      <li><span class="nl"><span class="idx">39.</span><span><span class="zodra">Zodra</span> de sneeuw valt, worden de straten wit.</span></span><span class="ar">بمجرد تساقط الثلوج، تصبح الشوارع بيضاء.</span></li>
+      <li><span class="nl"><span class="idx">40.</span><span><span class="zodra">Zodra</span> het glad wordt, rijd ik voorzichtig.</span></span><span class="ar">بمجرد أن تصبح الطرق زلقة، أقود بحذر.</span></li>
+      <li><span class="nl"><span class="idx">41.</span><span><span class="zodra">Zodra</span> de vorst begint, bescherm ik mijn planten.</span></span><span class="ar">بمجرد أن يبدأ الصقيع، أحمي نباتاتي.</span></li>
+      <li><span class="nl"><span class="idx">42.</span><span><span class="zodra">Zodra</span> het ijs smelt, wordt de weg minder glad.</span></span><span class="ar">بمجرد أن يذوب الجليد، يصبح الطريق أقل انزلاقًا.</span></li>
+      <li><span class="nl"><span class="idx">43.</span><span><span class="zodra">Zodra</span> de wind koud aanvoelt, doe ik mijn handschoenen aan.</span></span><span class="ar">بمجرد أن أشعر ببرودة الرياح، أرتدي قفازاتي.</span></li>
+      <li><span class="nl"><span class="idx">44.</span><span><span class="zodra">Zodra</span> de sneeuw ophoudt, maken de kinderen een sneeuwpop.</span></span><span class="ar">بمجرد توقف الثلوج، يصنع الأطفال رجل ثلج.</span></li>
+      <li><span class="nl"><span class="idx">45.</span><span><span class="zodra">Zodra</span> het buiten vriest, controleer ik de verwarming.</span></span><span class="ar">بمجرد أن يتجمد الجو في الخارج، أتحقق من التدفئة.</span></li>
+      <li><span class="nl"><span class="idx">46.</span><span><span class="zodra">Zodra</span> de temperatuur daalt, sluit ik alle ramen.</span></span><span class="ar">بمجرد انخفاض درجة الحرارة، أغلق جميع النوافذ.</span></li>
+      <li><span class="nl"><span class="idx">47.</span><span><span class="zodra">Zodra</span> mijn handen koud worden, ga ik naar binnen.</span></span><span class="ar">بمجرد أن تصبح يداي باردتين، أدخل إلى المنزل.</span></li>
+      <li><span class="nl"><span class="idx">48.</span><span><span class="zodra">Zodra</span> de sneeuw smelt, wordt de grond nat.</span></span><span class="ar">بمجرد ذوبان الثلج، تصبح الأرض مبتلة.</span></li>
+      <li><span class="nl"><span class="idx">49.</span><span><span class="zodra">Zodra</span> het winter wordt, draag ik warme sokken.</span></span><span class="ar">بمجرد حلول الشتاء، أرتدي جوارب دافئة.</span></li>
+      <li><span class="nl"><span class="idx">50.</span><span><span class="zodra">Zodra</span> de ijsvorming begint, strooit de gemeente zout op de wegen.</span></span><span class="ar">بمجرد بدء تكوّن الجليد، ترش البلدية الملح على الطرق.</span></li>
     </ul>
   </section>
 
@@ -339,21 +349,21 @@
   <section class="group">
     <h2><span class="num">51–65</span> الرياح والعواصف والرعد</h2>
     <ul>
-      <li><span class="nl"><span class="zodra">Zodra</span> de wind aantrekt, doe ik mijn jas dicht.</span><span class="ar">بمجرد أن تشتد الرياح، أغلق معطفي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het hard waait, blijf ik uit de buurt van bomen.</span><span class="ar">بمجرد أن تهب الرياح بقوة، أبتعد عن الأشجار.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> er een storm aankomt, haal ik de tuinmeubels naar binnen.</span><span class="ar">بمجرد اقتراب عاصفة، أدخل أثاث الحديقة إلى المنزل.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het begint te onweren, blijf ik binnen.</span><span class="ar">بمجرد أن تبدأ العاصفة الرعدية، أبقى في الداخل.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> ik de donder hoor, sluit ik de ramen.</span><span class="ar">بمجرد أن أسمع الرعد، أغلق النوافذ.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> ik de bliksem zie, blijf ik op een veilige plek.</span><span class="ar">بمجرد أن أرى البرق، أبقى في مكان آمن.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de storm sterker wordt, waarschuw ik mijn familie.</span><span class="ar">بمجرد أن تشتد العاصفة، أحذر عائلتي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de wind gaat liggen, ga ik naar buiten.</span><span class="ar">بمجرد أن تهدأ الرياح، أخرج إلى الخارج.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de takken beginnen te bewegen, merk ik dat het harder waait.</span><span class="ar">بمجرد أن تبدأ الأغصان في الحركة، ألاحظ أن الرياح تشتد.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de storm voorbij is, controleer ik mijn tuin.</span><span class="ar">بمجرد انتهاء العاصفة، أتفقد حديقتي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het onweersalarm klinkt, zoek ik een veilige schuilplaats.</span><span class="ar">بمجرد صدور إنذار العاصفة الرعدية، أبحث عن مأوى آمن.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de wind mijn paraplu omklapt, doe ik hem dicht.</span><span class="ar">بمجرد أن تقلب الرياح مظلتي، أغلقها.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de storm begint, blijven de fietsers van de weg.</span><span class="ar">بمجرد أن تبدأ العاصفة، يبتعد راكبو الدراجات عن الطريق.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de wind gaat liggen, wordt het buiten rustiger.</span><span class="ar">بمجرد أن تهدأ الرياح، يصبح الجو أكثر هدوءًا في الخارج.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het weer gevaarlijk wordt, volg ik de waarschuwingen.</span><span class="ar">بمجرد أن يصبح الطقس خطيرًا، أتبع التحذيرات.</span></li>
+      <li><span class="nl"><span class="idx">51.</span><span><span class="zodra">Zodra</span> de wind aantrekt, doe ik mijn jas dicht.</span></span><span class="ar">بمجرد أن تشتد الرياح، أغلق معطفي.</span></li>
+      <li><span class="nl"><span class="idx">52.</span><span><span class="zodra">Zodra</span> het hard waait, blijf ik uit de buurt van bomen.</span></span><span class="ar">بمجرد أن تهب الرياح بقوة، أبتعد عن الأشجار.</span></li>
+      <li><span class="nl"><span class="idx">53.</span><span><span class="zodra">Zodra</span> er een storm aankomt, haal ik de tuinmeubels naar binnen.</span></span><span class="ar">بمجرد اقتراب عاصفة، أدخل أثاث الحديقة إلى المنزل.</span></li>
+      <li><span class="nl"><span class="idx">54.</span><span><span class="zodra">Zodra</span> het begint te onweren, blijf ik binnen.</span></span><span class="ar">بمجرد أن تبدأ العاصفة الرعدية، أبقى في الداخل.</span></li>
+      <li><span class="nl"><span class="idx">55.</span><span><span class="zodra">Zodra</span> ik de donder hoor, sluit ik de ramen.</span></span><span class="ar">بمجرد أن أسمع الرعد، أغلق النوافذ.</span></li>
+      <li><span class="nl"><span class="idx">56.</span><span><span class="zodra">Zodra</span> ik de bliksem zie, blijf ik op een veilige plek.</span></span><span class="ar">بمجرد أن أرى البرق، أبقى في مكان آمن.</span></li>
+      <li><span class="nl"><span class="idx">57.</span><span><span class="zodra">Zodra</span> de storm sterker wordt, waarschuw ik mijn familie.</span></span><span class="ar">بمجرد أن تشتد العاصفة، أحذر عائلتي.</span></li>
+      <li><span class="nl"><span class="idx">58.</span><span><span class="zodra">Zodra</span> de wind gaat liggen, ga ik naar buiten.</span></span><span class="ar">بمجرد أن تهدأ الرياح، أخرج إلى الخارج.</span></li>
+      <li><span class="nl"><span class="idx">59.</span><span><span class="zodra">Zodra</span> de takken beginnen te bewegen, merk ik dat het harder waait.</span></span><span class="ar">بمجرد أن تبدأ الأغصان في الحركة، ألاحظ أن الرياح تشتد.</span></li>
+      <li><span class="nl"><span class="idx">60.</span><span><span class="zodra">Zodra</span> de storm voorbij is, controleer ik mijn tuin.</span></span><span class="ar">بمجرد انتهاء العاصفة، أتفقد حديقتي.</span></li>
+      <li><span class="nl"><span class="idx">61.</span><span><span class="zodra">Zodra</span> het onweersalarm klinkt, zoek ik een veilige schuilplaats.</span></span><span class="ar">بمجرد صدور إنذار العاصفة الرعدية، أبحث عن مأوى آمن.</span></li>
+      <li><span class="nl"><span class="idx">62.</span><span><span class="zodra">Zodra</span> de wind mijn paraplu omklapt, doe ik hem dicht.</span></span><span class="ar">بمجرد أن تقلب الرياح مظلتي، أغلقها.</span></li>
+      <li><span class="nl"><span class="idx">63.</span><span><span class="zodra">Zodra</span> de storm begint, blijven de fietsers van de weg.</span></span><span class="ar">بمجرد أن تبدأ العاصفة، يبتعد راكبو الدراجات عن الطريق.</span></li>
+      <li><span class="nl"><span class="idx">64.</span><span><span class="zodra">Zodra</span> de wind gaat liggen, wordt het buiten rustiger.</span></span><span class="ar">بمجرد أن تهدأ الرياح، يصبح الجو أكثر هدوءًا في الخارج.</span></li>
+      <li><span class="nl"><span class="idx">65.</span><span><span class="zodra">Zodra</span> het weer gevaarlijk wordt, volg ik de waarschuwingen.</span></span><span class="ar">بمجرد أن يصبح الطقس خطيرًا، أتبع التحذيرات.</span></li>
     </ul>
   </section>
 
@@ -361,21 +371,21 @@
   <section class="group">
     <h2><span class="num">66–80</span> الغيوم والضباب والرطوبة</h2>
     <ul>
-      <li><span class="nl"><span class="zodra">Zodra</span> de lucht bewolkt wordt, verwacht ik regen.</span><span class="ar">بمجرد أن تصبح السماء غائمة، أتوقع المطر.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de mist opkomt, rijd ik langzamer.</span><span class="ar">بمجرد أن يبدأ الضباب في الظهور، أقود ببطء أكثر.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het zicht slechter wordt, gebruik ik mijn mistlichten.</span><span class="ar">بمجرد أن تصبح الرؤية أسوأ، أستخدم مصابيح الضباب.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de mist optrekt, wordt de weg duidelijker.</span><span class="ar">بمجرد أن ينقشع الضباب، يصبح الطريق أوضح.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de wolken donker worden, neem ik een paraplu mee.</span><span class="ar">بمجرد أن تصبح الغيوم داكنة، آخذ مظلة معي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de lucht opklaart, zien we de zon weer.</span><span class="ar">بمجرد أن تصفو السماء، نرى الشمس مجددًا.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het vochtig wordt, droogt mijn was langzamer.</span><span class="ar">بمجرد أن يصبح الجو رطبًا، يجف الغسيل ببطء أكثر.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de dauw verschijnt, glinsteren de grassprieten.</span><span class="ar">بمجرد ظهور الندى، تلمع شفرات العشب.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de bewolking toeneemt, wordt het buiten donkerder.</span><span class="ar">بمجرد أن تزداد الغيوم، يصبح الجو أكثر ظلمة في الخارج.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de lucht grijs wordt, trek ik mijn regenjas aan.</span><span class="ar">بمجرد أن تصبح السماء رمادية، أرتدي معطف المطر.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het mistig wordt, zet ik mijn autoverlichting aan.</span><span class="ar">بمجرد أن يصبح الجو ضبابيًا، أشغّل أضواء سيارتي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de wolken breken, komt de zon tevoorschijn.</span><span class="ar">بمجرد أن تتفرق الغيوم، تظهر الشمس.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de lucht droog wordt, kan de was buiten drogen.</span><span class="ar">بمجرد أن يصبح الهواء جافًا، يمكن للغسيل أن يجف في الخارج.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de luchtvochtigheid stijgt, voelt het warmer aan.</span><span class="ar">بمجرد ارتفاع رطوبة الهواء، نشعر بأن الجو أدفأ.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het weer omslaat, pas ik mijn kleding aan.</span><span class="ar">بمجرد أن يتغير الطقس، أغيّر ملابسي بما يناسبه.</span></li>
+      <li><span class="nl"><span class="idx">66.</span><span><span class="zodra">Zodra</span> de lucht bewolkt wordt, verwacht ik regen.</span></span><span class="ar">بمجرد أن تصبح السماء غائمة، أتوقع المطر.</span></li>
+      <li><span class="nl"><span class="idx">67.</span><span><span class="zodra">Zodra</span> de mist opkomt, rijd ik langzamer.</span></span><span class="ar">بمجرد أن يبدأ الضباب في الظهور، أقود ببطء أكثر.</span></li>
+      <li><span class="nl"><span class="idx">68.</span><span><span class="zodra">Zodra</span> het zicht slechter wordt, gebruik ik mijn mistlichten.</span></span><span class="ar">بمجرد أن تصبح الرؤية أسوأ، أستخدم مصابيح الضباب.</span></li>
+      <li><span class="nl"><span class="idx">69.</span><span><span class="zodra">Zodra</span> de mist optrekt, wordt de weg duidelijker.</span></span><span class="ar">بمجرد أن ينقشع الضباب، يصبح الطريق أوضح.</span></li>
+      <li><span class="nl"><span class="idx">70.</span><span><span class="zodra">Zodra</span> de wolken donker worden, neem ik een paraplu mee.</span></span><span class="ar">بمجرد أن تصبح الغيوم داكنة، آخذ مظلة معي.</span></li>
+      <li><span class="nl"><span class="idx">71.</span><span><span class="zodra">Zodra</span> de lucht opklaart, zien we de zon weer.</span></span><span class="ar">بمجرد أن تصفو السماء، نرى الشمس مجددًا.</span></li>
+      <li><span class="nl"><span class="idx">72.</span><span><span class="zodra">Zodra</span> het vochtig wordt, droogt mijn was langzamer.</span></span><span class="ar">بمجرد أن يصبح الجو رطبًا، يجف الغسيل ببطء أكثر.</span></li>
+      <li><span class="nl"><span class="idx">73.</span><span><span class="zodra">Zodra</span> de dauw verschijnt, glinsteren de grassprieten.</span></span><span class="ar">بمجرد ظهور الندى، تلمع شفرات العشب.</span></li>
+      <li><span class="nl"><span class="idx">74.</span><span><span class="zodra">Zodra</span> de bewolking toeneemt, wordt het buiten donkerder.</span></span><span class="ar">بمجرد أن تزداد الغيوم، يصبح الجو أكثر ظلمة في الخارج.</span></li>
+      <li><span class="nl"><span class="idx">75.</span><span><span class="zodra">Zodra</span> de lucht grijs wordt, trek ik mijn regenjas aan.</span></span><span class="ar">بمجرد أن تصبح السماء رمادية، أرتدي معطف المطر.</span></li>
+      <li><span class="nl"><span class="idx">76.</span><span><span class="zodra">Zodra</span> het mistig wordt, zet ik mijn autoverlichting aan.</span></span><span class="ar">بمجرد أن يصبح الجو ضبابيًا، أشغّل أضواء سيارتي.</span></li>
+      <li><span class="nl"><span class="idx">77.</span><span><span class="zodra">Zodra</span> de wolken breken, komt de zon tevoorschijn.</span></span><span class="ar">بمجرد أن تتفرق الغيوم، تظهر الشمس.</span></li>
+      <li><span class="nl"><span class="idx">78.</span><span><span class="zodra">Zodra</span> de lucht droog wordt, kan de was buiten drogen.</span></span><span class="ar">بمجرد أن يصبح الهواء جافًا، يمكن للغسيل أن يجف في الخارج.</span></li>
+      <li><span class="nl"><span class="idx">79.</span><span><span class="zodra">Zodra</span> de luchtvochtigheid stijgt, voelt het warmer aan.</span></span><span class="ar">بمجرد ارتفاع رطوبة الهواء، نشعر بأن الجو أدفأ.</span></li>
+      <li><span class="nl"><span class="idx">80.</span><span><span class="zodra">Zodra</span> het weer omslaat, pas ik mijn kleding aan.</span></span><span class="ar">بمجرد أن يتغير الطقس، أغيّر ملابسي بما يناسبه.</span></li>
     </ul>
   </section>
 
@@ -383,26 +393,26 @@
   <section class="group">
     <h2><span class="num">81–100</span> الفصول ودرجات الحرارة والنشرة الجوية</h2>
     <ul>
-      <li><span class="nl"><span class="zodra">Zodra</span> de lente begint, bloeien de bloemen.</span><span class="ar">بمجرد أن يبدأ الربيع، تتفتح الأزهار.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de zomer aanbreekt, gaan we vaker naar het strand.</span><span class="ar">بمجرد حلول الصيف، نذهب إلى الشاطئ بشكل أكثر تكرارًا.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de herfst begint, vallen de bladeren.</span><span class="ar">بمجرد أن يبدأ الخريف، تتساقط الأوراق.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de winter aanbreekt, worden de dagen korter.</span><span class="ar">بمجرد حلول الشتاء، تصبح الأيام أقصر.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de temperatuur twintig graden bereikt, draag ik een T-shirt.</span><span class="ar">بمجرد أن تصل درجة الحرارة إلى عشرين درجة، أرتدي قميصًا خفيفًا.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het dertig graden wordt, drink ik meer water.</span><span class="ar">بمجرد أن تصبح الحرارة ثلاثين درجة، أشرب المزيد من الماء.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de temperatuur onder vijf graden zakt, draag ik een dikke jas.</span><span class="ar">بمجرد أن تنخفض الحرارة إلى أقل من خمس درجات، أرتدي معطفًا سميكًا.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het begint te hagelen, zet ik mijn auto onder een afdak.</span><span class="ar">بمجرد أن يبدأ تساقط البَرَد، أضع سيارتي تحت سقف واقٍ.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de hagelbui stopt, controleer ik mijn auto.</span><span class="ar">بمجرد توقف زخة البَرَد، أتفقد سيارتي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de hittegolf begint, vermijd ik zware inspanningen.</span><span class="ar">بمجرد أن تبدأ موجة الحر، أتجنب المجهود الشاق.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het weerbericht verschijnt, controleer ik de voorspelling.</span><span class="ar">بمجرد ظهور النشرة الجوية، أتحقق من التوقعات.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de weerman voor storm waarschuwt, blijf ik alert.</span><span class="ar">بمجرد أن يحذر خبير الطقس من عاصفة، أبقى متيقظًا.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de weersvoorspelling verandert, pas ik mijn plannen aan.</span><span class="ar">بمجرد أن تتغير توقعات الطقس، أعدّل خططي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> er vorst wordt voorspeld, bescherm ik mijn planten.</span><span class="ar">بمجرد توقع الصقيع، أحمي نباتاتي.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de temperatuur weer stijgt, smelt de sneeuw.</span><span class="ar">بمجرد ارتفاع درجة الحرارة مجددًا، يذوب الثلج.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de zon ondergaat, daalt de temperatuur.</span><span class="ar">بمجرد غروب الشمس، تنخفض درجة الحرارة.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de eerste sneeuw valt, maken we foto's.</span><span class="ar">بمجرد تساقط أول ثلج، نلتقط الصور.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> de regenboog verschijnt, maak ik een foto.</span><span class="ar">بمجرد ظهور قوس قزح، ألتقط صورة.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het weerbericht slecht weer voorspelt, blijf ik liever thuis.</span><span class="ar">بمجرد أن تتوقع النشرة الجوية طقسًا سيئًا، أفضل البقاء في المنزل.</span></li>
-      <li><span class="nl"><span class="zodra">Zodra</span> het weer beter wordt, hervatten we onze activiteiten.</span><span class="ar">بمجرد أن يتحسن الطقس، نستأنف أنشطتنا.</span></li>
+      <li><span class="nl"><span class="idx">81.</span><span><span class="zodra">Zodra</span> de lente begint, bloeien de bloemen.</span></span><span class="ar">بمجرد أن يبدأ الربيع، تتفتح الأزهار.</span></li>
+      <li><span class="nl"><span class="idx">82.</span><span><span class="zodra">Zodra</span> de zomer aanbreekt, gaan we vaker naar het strand.</span></span><span class="ar">بمجرد حلول الصيف، نذهب إلى الشاطئ بشكل أكثر تكرارًا.</span></li>
+      <li><span class="nl"><span class="idx">83.</span><span><span class="zodra">Zodra</span> de herfst begint, vallen de bladeren.</span></span><span class="ar">بمجرد أن يبدأ الخريف، تتساقط الأوراق.</span></li>
+      <li><span class="nl"><span class="idx">84.</span><span><span class="zodra">Zodra</span> de winter aanbreekt, worden de dagen korter.</span></span><span class="ar">بمجرد حلول الشتاء، تصبح الأيام أقصر.</span></li>
+      <li><span class="nl"><span class="idx">85.</span><span><span class="zodra">Zodra</span> de temperatuur twintig graden bereikt, draag ik een T-shirt.</span></span><span class="ar">بمجرد أن تصل درجة الحرارة إلى عشرين درجة، أرتدي قميصًا خفيفًا.</span></li>
+      <li><span class="nl"><span class="idx">86.</span><span><span class="zodra">Zodra</span> het dertig graden wordt, drink ik meer water.</span></span><span class="ar">بمجرد أن تصبح الحرارة ثلاثين درجة، أشرب المزيد من الماء.</span></li>
+      <li><span class="nl"><span class="idx">87.</span><span><span class="zodra">Zodra</span> de temperatuur onder vijf graden zakt, draag ik een dikke jas.</span></span><span class="ar">بمجرد أن تنخفض الحرارة إلى أقل من خمس درجات، أرتدي معطفًا سميكًا.</span></li>
+      <li><span class="nl"><span class="idx">88.</span><span><span class="zodra">Zodra</span> het begint te hagelen, zet ik mijn auto onder een afdak.</span></span><span class="ar">بمجرد أن يبدأ تساقط البَرَد، أضع سيارتي تحت سقف واقٍ.</span></li>
+      <li><span class="nl"><span class="idx">89.</span><span><span class="zodra">Zodra</span> de hagelbui stopt, controleer ik mijn auto.</span></span><span class="ar">بمجرد توقف زخة البَرَد، أتفقد سيارتي.</span></li>
+      <li><span class="nl"><span class="idx">90.</span><span><span class="zodra">Zodra</span> de hittegolf begint, vermijd ik zware inspanningen.</span></span><span class="ar">بمجرد أن تبدأ موجة الحر، أتجنب المجهود الشاق.</span></li>
+      <li><span class="nl"><span class="idx">91.</span><span><span class="zodra">Zodra</span> het weerbericht verschijnt, controleer ik de voorspelling.</span></span><span class="ar">بمجرد ظهور النشرة الجوية، أتحقق من التوقعات.</span></li>
+      <li><span class="nl"><span class="idx">92.</span><span><span class="zodra">Zodra</span> de weerman voor storm waarschuwt, blijf ik alert.</span></span><span class="ar">بمجرد أن يحذر خبير الطقس من عاصفة، أبقى متيقظًا.</span></li>
+      <li><span class="nl"><span class="idx">93.</span><span><span class="zodra">Zodra</span> de weersvoorspelling verandert, pas ik mijn plannen aan.</span></span><span class="ar">بمجرد أن تتغير توقعات الطقس، أعدّل خططي.</span></li>
+      <li><span class="nl"><span class="idx">94.</span><span><span class="zodra">Zodra</span> er vorst wordt voorspeld, bescherm ik mijn planten.</span></span><span class="ar">بمجرد توقع الصقيع، أحمي نباتاتي.</span></li>
+      <li><span class="nl"><span class="idx">95.</span><span><span class="zodra">Zodra</span> de temperatuur weer stijgt, smelt de sneeuw.</span></span><span class="ar">بمجرد ارتفاع درجة الحرارة مجددًا، يذوب الثلج.</span></li>
+      <li><span class="nl"><span class="idx">96.</span><span><span class="zodra">Zodra</span> de zon ondergaat, daalt de temperatuur.</span></span><span class="ar">بمجرد غروب الشمس، تنخفض درجة الحرارة.</span></li>
+      <li><span class="nl"><span class="idx">97.</span><span><span class="zodra">Zodra</span> de eerste sneeuw valt, maken we foto's.</span></span><span class="ar">بمجرد تساقط أول ثلج، نلتقط الصور.</span></li>
+      <li><span class="nl"><span class="idx">98.</span><span><span class="zodra">Zodra</span> de regenboog verschijnt, maak ik een foto.</span></span><span class="ar">بمجرد ظهور قوس قزح، ألتقط صورة.</span></li>
+      <li><span class="nl"><span class="idx">99.</span><span><span class="zodra">Zodra</span> het weerbericht slecht weer voorspelt, blijf ik liever thuis.</span></span><span class="ar">بمجرد أن تتوقع النشرة الجوية طقسًا سيئًا، أفضل البقاء في المنزل.</span></li>
+      <li><span class="nl"><span class="idx">100.</span><span><span class="zodra">Zodra</span> het weer beter wordt, hervatten we onze activiteiten.</span></span><span class="ar">بمجرد أن يتحسن الطقس، نستأنف أنشطتنا.</span></li>
     </ul>
   </section>
 
