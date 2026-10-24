@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100 جملة هولندية باستخدام Vanavond</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+      background: #f5f7fa;
+      color: #1e2a3a;
+      padding: 2rem 1rem;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      padding: 2.5rem 2rem;
+      border: 1px solid #e6edf5;
+    }
+    .flag-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .flag-header span {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #0b2a4a;
+      letter-spacing: -0.02em;
+    }
+    .subhead {
+      color: #4a5f73;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    .note-box {
+      background: #eef6ff;
+      border-right: 6px solid #1e7eeb;
+      padding: 1.2rem 1.5rem;
+      border-radius: 16px;
+      margin: 1.6rem 0 2.2rem 0;
+      color: #103a5e;
+      font-size: 1rem;
+    }
+    .note-box strong {
+      color: #0b2a4a;
+      font-weight: 700;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0b2a4a;
+      margin: 2.5rem 0 1.2rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 3px solid #d0e2f5;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .section-title span {
+      background: #1e7eeb;
+      color: white;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.2rem 1rem;
+      letter-spacing: 0.3px;
+    }
+    .sentence-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .sentence-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      background: #f9fcff;
+      padding: 0.7rem 1.1rem;
+      border-radius: 14px;
+      border: 1px solid #e2eefb;
+      transition: background 0.2s;
+    }
+    .sentence-item:hover {
+      background: #e7f2fe;
+      border-color: #b8d6fb;
+    }
+    .sentence-number {
+      min-width: 2.2rem;
+      font-weight: 700;
+      color: #1e7eeb;
+      font-size: 0.95rem;
+      text-align: left;
+      direction: ltr;
+      font-family: 'Segoe UI', monospace;
+    }
+    .sentence-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.4rem 0.8rem;
+      flex: 1;
+    }
+    .dutch {
+      font-weight: 600;
+      color: #0b2a4a;
+      direction: ltr;
+      unicode-bidi: embed;
+      font-size: 1.05rem;
+      background: #ffffff;
+      padding: 0.15rem 0.6rem;
+      border-radius: 8px;
+      border: 1px solid #d6e6fa;
+      display: inline-block;
+    }
+    .arabic {
+      color: #1e3a5f;
+      font-size: 1.02rem;
+      font-weight: 400;
+    }
+    .grammar-box {
+      background: #f1f8f1;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      margin: 2.8rem 0 1.8rem 0;
+      border: 1px solid #cfe6cf;
+    }
+    .grammar-box h3 {
+      font-size: 1.4rem;
+      color: #1b5e2a;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .grammar-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .grammar-list li {
+      font-size: 1.05rem;
+      padding-right: 0.5rem;
+    }
+    .grammar-list code {
+      background: #ffffff;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-family: 'Segoe UI', monospace;
+      font-weight: 600;
+      direction: ltr;
+      unicode-bidi: embed;
+      display: inline-block;
+      border: 1px solid #c2ddc2;
+      color: #1e4620;
+    }
+    .grammar-list .ar {
+      color: #2b4b2b;
+      margin-right: 0.5rem;
+    }
+    .exercise-box {
+      background: #fff8e7;
+      border: 2px dashed #e6b84c;
+      border-radius: 22px;
+      padding: 1.8rem 2rem;
+      margin-top: 2rem;
+    }
+    .exercise-box h3 {
+      font-size: 1.35rem;
+      color: #7a4d00;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+    .exercise-box p {
+      font-size: 1.08rem;
+      color: #4d3a0e;
+    }
+    .exercise-box .answer {
+      background: #ffffff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 0.8rem;
+      border: 1px solid #e6b84c;
+      font-weight: 600;
+      color: #1e2a3a;
+      direction: ltr;
+      unicode-bidi: embed;
+    }
+    .footer-note {
+      text-align: center;
+      margin-top: 2.8rem;
+      color: #6e8aa8;
+      font-size: 0.95rem;
+      border-top: 1px solid #dbe8f5;
+      padding-top: 1.5rem;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.6rem; }
+      .sentence-item { flex-wrap: wrap; padding: 0.6rem 0.9rem; }
+      .sentence-content { gap: 0.2rem 0.5rem; }
+      .dutch { font-size: 0.95rem; }
+      .arabic { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="flag-header">
+    <span>🇳🇱</span>
+    <h1>100 جملة هولندية باستخدام Vanavond</h1>
+  </div>
+  <p class="subhead">Vanavond = هذا المساء / الليلة</p>
+
+  <div class="note-box">
+    <strong>📌 تُستخدم عند الحديث عن شيء يحدث أو سيحدث في مساء اليوم.</strong><br>
+    إليك 100 جملة مرقمة مع الترجمة العربية، بالهولندية المستخدمة في بلجيكا.
+  </div>
+
+  <!-- 1-25 -->
+  <div class="section-title">
+    <span>1–25</span> الحياة اليومية
+  </div>
+  <div class="sentence-grid">
+    <div class="sentence-item"><span class="sentence-number">1.</span><div class="sentence-content"><span class="dutch">Ik werk vanavond.</span><span class="arabic">— سأعمل هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">2.</span><div class="sentence-content"><span class="dutch">Ik blijf vanavond thuis.</span><span class="arabic">— سأبقى في المنزل هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">3.</span><div class="sentence-content"><span class="dutch">Wat doe je vanavond?</span><span class="arabic">— ماذا ستفعل هذا المساء؟</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">4.</span><div class="sentence-content"><span class="dutch">Ik ga vanavond koken.</span><span class="arabic">— سأطبخ هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">5.</span><div class="sentence-content"><span class="dutch">We eten vanavond samen.</span><span class="arabic">— سنتناول الطعام معًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">6.</span><div class="sentence-content"><span class="dutch">Ik ben vanavond vrij.</span><span class="arabic">— أنا متفرغ هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">7.</span><div class="sentence-content"><span class="dutch">Zij werkt vanavond niet.</span><span class="arabic">— هي لا تعمل هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">8.</span><div class="sentence-content"><span class="dutch">Mijn vrouw komt vanavond thuis.</span><span class="arabic">— زوجتي ستعود إلى المنزل هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">9.</span><div class="sentence-content"><span class="dutch">Ik ga vanavond vroeg slapen.</span><span class="arabic">— سأذهب للنوم مبكرًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">10.</span><div class="sentence-content"><span class="dutch">We kijken vanavond televisie.</span><span class="arabic">— سنشاهد التلفاز هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">11.</span><div class="sentence-content"><span class="dutch">Ik maak vanavond mijn huis schoon.</span><span class="arabic">— سأنظف منزلي هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">12.</span><div class="sentence-content"><span class="dutch">Hij gaat vanavond douchen.</span><span class="arabic">— سيستحم هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">13.</span><div class="sentence-content"><span class="dutch">Ik was vanavond erg moe.</span><span class="arabic">— كنت متعبًا جدًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">14.</span><div class="sentence-content"><span class="dutch">We hebben vanavond bezoek.</span><span class="arabic">— لدينا ضيوف هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">15.</span><div class="sentence-content"><span class="dutch">Ik moet vanavond studeren.</span><span class="arabic">— يجب أن أدرس هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">16.</span><div class="sentence-content"><span class="dutch">Ga je vanavond naar buiten?</span><span class="arabic">— هل ستخرج هذا المساء؟</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">17.</span><div class="sentence-content"><span class="dutch">Ik blijf vanavond alleen.</span><span class="arabic">— سأبقى وحدي هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">18.</span><div class="sentence-content"><span class="dutch">Mijn kinderen gaan vanavond vroeg naar bed.</span><span class="arabic">— أطفالي سيذهبون إلى الفراش مبكرًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">19.</span><div class="sentence-content"><span class="dutch">We praten vanavond met elkaar.</span><span class="arabic">— سنتحدث مع بعضنا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">20.</span><div class="sentence-content"><span class="dutch">Ik heb vanavond geen tijd.</span><span class="arabic">— ليس لدي وقت هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">21.</span><div class="sentence-content"><span class="dutch">Vanavond maak ik pasta.</span><span class="arabic">— سأُعد المعكرونة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">22.</span><div class="sentence-content"><span class="dutch">Zij leest vanavond een boek.</span><span class="arabic">— ستقرأ كتابًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">23.</span><div class="sentence-content"><span class="dutch">Ik luister vanavond naar muziek.</span><span class="arabic">— سأستمع إلى الموسيقى هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">24.</span><div class="sentence-content"><span class="dutch">We drinken vanavond koffie.</span><span class="arabic">— سنشرب القهوة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">25.</span><div class="sentence-content"><span class="dutch">Ik ga vanavond even wandelen.</span><span class="arabic">— سأذهب للمشي قليلًا هذا المساء.</span></div></div>
+  </div>
+
+  <!-- 26-50 -->
+  <div class="section-title">
+    <span>26–50</span> المواعيد والخروج والمواصلات
+  </div>
+  <div class="sentence-grid">
+    <div class="sentence-item"><span class="sentence-number">26.</span><div class="sentence-content"><span class="dutch">Heb je vanavond tijd?</span><span class="arabic">— هل لديك وقت هذا المساء؟</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">27.</span><div class="sentence-content"><span class="dutch">We gaan vanavond naar het restaurant.</span><span class="arabic">— سنذهب إلى المطعم هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">28.</span><div class="sentence-content"><span class="dutch">Ik ontmoet vanavond een vriend.</span><span class="arabic">— سأقابل صديقًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">29.</span><div class="sentence-content"><span class="dutch">De trein vertrekt vanavond om acht uur.</span><span class="arabic">— ينطلق القطار هذا المساء في الساعة الثامنة.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">30.</span><div class="sentence-content"><span class="dutch">Ik neem vanavond de bus.</span><span class="arabic">— سأستقل الحافلة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">31.</span><div class="sentence-content"><span class="dutch">We gaan vanavond naar Kortrijk.</span><span class="arabic">— سنذهب إلى كورتريك هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">32.</span><div class="sentence-content"><span class="dutch">Zij komt vanavond met de auto.</span><span class="arabic">— ستأتي بالسيارة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">33.</span><div class="sentence-content"><span class="dutch">Ik moet vanavond boodschappen doen.</span><span class="arabic">— يجب أن أشتري مستلزمات المنزل هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">34.</span><div class="sentence-content"><span class="dutch">Is de supermarkt vanavond open?</span><span class="arabic">— هل السوبرماركت مفتوح هذا المساء؟</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">35.</span><div class="sentence-content"><span class="dutch">We spreken vanavond om zeven uur af.</span><span class="arabic">— سنلتقي هذا المساء في الساعة السابعة.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">36.</span><div class="sentence-content"><span class="dutch">Ik ga vanavond naar de sportschool.</span><span class="arabic">— سأذهب إلى صالة الألعاب الرياضية هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">37.</span><div class="sentence-content"><span class="dutch">Hij brengt me vanavond naar huis.</span><span class="arabic">— سيوصلني إلى المنزل هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">38.</span><div class="sentence-content"><span class="dutch">We gaan vanavond naar de bioscoop.</span><span class="arabic">— سنذهب إلى السينما هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">39.</span><div class="sentence-content"><span class="dutch">Ik reserveer vanavond een tafel.</span><span class="arabic">— سأحجز طاولة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">40.</span><div class="sentence-content"><span class="dutch">Zij gaat vanavond uit met haar vrienden.</span><span class="arabic">— ستخرج هذا المساء مع أصدقائها.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">41.</span><div class="sentence-content"><span class="dutch">Ik moet vanavond op de bus wachten.</span><span class="arabic">— يجب أن أنتظر الحافلة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">42.</span><div class="sentence-content"><span class="dutch">Hoe laat kom je vanavond thuis?</span><span class="arabic">— في أي ساعة ستعود إلى المنزل هذا المساء؟</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">43.</span><div class="sentence-content"><span class="dutch">We gaan vanavond niet ver weg.</span><span class="arabic">— لن نذهب إلى مكان بعيد هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">44.</span><div class="sentence-content"><span class="dutch">Ik haal je vanavond op.</span><span class="arabic">— سأمر لاصطحابك هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">45.</span><div class="sentence-content"><span class="dutch">De winkel sluit vanavond om negen uur.</span><span class="arabic">— يغلق المتجر هذا المساء في الساعة التاسعة.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">46.</span><div class="sentence-content"><span class="dutch">Ik ga vanavond naar de apotheek.</span><span class="arabic">— سأذهب إلى الصيدلية هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">47.</span><div class="sentence-content"><span class="dutch">We wandelen vanavond door het centrum.</span><span class="arabic">— سنتجول في وسط المدينة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">48.</span><div class="sentence-content"><span class="dutch">Zij heeft vanavond een afspraak.</span><span class="arabic">— لديها موعد هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">49.</span><div class="sentence-content"><span class="dutch">Ik kom vanavond iets later.</span><span class="arabic">— سأصل متأخرًا قليلًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">50.</span><div class="sentence-content"><span class="dutch">Tot vanavond!</span><span class="arabic">— أراك هذا المساء!</span></div></div>
+  </div>
+
+  <!-- 51-75 -->
+  <div class="section-title">
+    <span>51–75</span> الدراسة والعمل واللغة
+  </div>
+  <div class="sentence-grid">
+    <div class="sentence-item"><span class="sentence-number">51.</span><div class="sentence-content"><span class="dutch">Ik leer vanavond Nederlands.</span><span class="arabic">— سأتعلم الهولندية هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">52.</span><div class="sentence-content"><span class="dutch">Ik oefen vanavond mijn uitspraak.</span><span class="arabic">— سأتدرب على النطق هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">53.</span><div class="sentence-content"><span class="dutch">We maken vanavond onze huiswerkopdrachten.</span><span class="arabic">— سننجز واجباتنا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">54.</span><div class="sentence-content"><span class="dutch">Ik schrijf vanavond honderd zinnen.</span><span class="arabic">— سأكتب مئة جملة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">55.</span><div class="sentence-content"><span class="dutch">Zij volgt vanavond een online cursus.</span><span class="arabic">— ستتابع دورة عبر الإنترنت هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">56.</span><div class="sentence-content"><span class="dutch">Ik herhaal vanavond de nieuwe woorden.</span><span class="arabic">— سأراجع الكلمات الجديدة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">57.</span><div class="sentence-content"><span class="dutch">Vanavond leer ik tien nieuwe werkwoorden.</span><span class="arabic">— سأتعلم عشرة أفعال جديدة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">58.</span><div class="sentence-content"><span class="dutch">Ik begrijp deze grammatica nog niet, dus ik oefen vanavond.</span><span class="arabic">— لا أفهم هذه القواعد بعد، لذلك سأتدرب هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">59.</span><div class="sentence-content"><span class="dutch">Ik werk vanavond aan mijn cv.</span><span class="arabic">— سأعمل على سيرتي الذاتية هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">60.</span><div class="sentence-content"><span class="dutch">Ik zoek vanavond vacatures.</span><span class="arabic">— سأبحث عن وظائف شاغرة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">61.</span><div class="sentence-content"><span class="dutch">Ik stuur vanavond mijn sollicitatie.</span><span class="arabic">— سأرسل طلب التوظيف هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">62.</span><div class="sentence-content"><span class="dutch">Mijn collega werkt vanavond thuis.</span><span class="arabic">— زميلي يعمل من المنزل هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">63.</span><div class="sentence-content"><span class="dutch">We bespreken vanavond het project.</span><span class="arabic">— سنناقش المشروع هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">64.</span><div class="sentence-content"><span class="dutch">Ik bereid vanavond mijn presentatie voor.</span><span class="arabic">— سأُحضّر عرضي التقديمي هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">65.</span><div class="sentence-content"><span class="dutch">Ik lees vanavond een technisch document.</span><span class="arabic">— سأقرأ مستندًا فنيًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">66.</span><div class="sentence-content"><span class="dutch">Vanavond oefen ik mijn Nederlands met mijn vrouw.</span><span class="arabic">— سأتدرب على الهولندية مع زوجتي هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">67.</span><div class="sentence-content"><span class="dutch">Ik kijk vanavond naar een Nederlandse les.</span><span class="arabic">— سأشاهد درسًا في الهولندية هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">68.</span><div class="sentence-content"><span class="dutch">Ik maak vanavond aantekeningen.</span><span class="arabic">— سأدوّن ملاحظات هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">69.</span><div class="sentence-content"><span class="dutch">Ik wil vanavond iets nieuws leren.</span><span class="arabic">— أريد أن أتعلم شيئًا جديدًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">70.</span><div class="sentence-content"><span class="dutch">Ik controleer vanavond mijn e-mails.</span><span class="arabic">— سأراجع رسائل البريد الإلكتروني هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">71.</span><div class="sentence-content"><span class="dutch">We plannen vanavond onze week.</span><span class="arabic">— سنخطط لأسبوعنا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">72.</span><div class="sentence-content"><span class="dutch">Ik werk vanavond aan mijn website.</span><span class="arabic">— سأعمل على موقعي الإلكتروني هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">73.</span><div class="sentence-content"><span class="dutch">Zij studeert vanavond voor haar examen.</span><span class="arabic">— ستدرس لامتحانها هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">74.</span><div class="sentence-content"><span class="dutch">Ik zoek vanavond informatie over mijn opleiding.</span><span class="arabic">— سأبحث عن معلومات حول دراستي هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">75.</span><div class="sentence-content"><span class="dutch">Ik ga vanavond op tijd stoppen met werken.</span><span class="arabic">— سأتوقف عن العمل في الوقت المناسب هذا المساء.</span></div></div>
+  </div>
+
+  <!-- 76-100 -->
+  <div class="section-title">
+    <span>76–100</span> المشاعر والصحة والطعام والمحادثات
+  </div>
+  <div class="sentence-grid">
+    <div class="sentence-item"><span class="sentence-number">76.</span><div class="sentence-content"><span class="dutch">Ik ben vanavond heel gelukkig.</span><span class="arabic">— أنا سعيد جدًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">77.</span><div class="sentence-content"><span class="dutch">Ben je vanavond moe?</span><span class="arabic">— هل أنت متعب هذا المساء؟</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">78.</span><div class="sentence-content"><span class="dutch">Ik voel me vanavond niet zo goed.</span><span class="arabic">— لا أشعر أنني بخير كثيرًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">79.</span><div class="sentence-content"><span class="dutch">Ik wil vanavond lekker ontspannen.</span><span class="arabic">— أريد الاسترخاء والاستمتاع هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">80.</span><div class="sentence-content"><span class="dutch">We eten vanavond kip met rijst.</span><span class="arabic">— سنتناول الدجاج مع الأرز هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">81.</span><div class="sentence-content"><span class="dutch">Wat eten we vanavond?</span><span class="arabic">— ماذا سنتناول على العشاء هذا المساء؟</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">82.</span><div class="sentence-content"><span class="dutch">Ik maak vanavond een gezonde maaltijd.</span><span class="arabic">— سأُعد وجبة صحية هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">83.</span><div class="sentence-content"><span class="dutch">Drink vanavond voldoende water.</span><span class="arabic">— اشرب كمية كافية من الماء هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">84.</span><div class="sentence-content"><span class="dutch">Ik ga vanavond niet laat slapen.</span><span class="arabic">— لن أذهب للنوم متأخرًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">85.</span><div class="sentence-content"><span class="dutch">Ik wil vanavond acht uur slapen.</span><span class="arabic">— أريد أن أنام ثماني ساعات هذه الليلة.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">86.</span><div class="sentence-content"><span class="dutch">We vieren vanavond haar verjaardag.</span><span class="arabic">— سنحتفل بعيد ميلادها هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">87.</span><div class="sentence-content"><span class="dutch">Ik bel mijn moeder vanavond.</span><span class="arabic">— سأتصل بأمي هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">88.</span><div class="sentence-content"><span class="dutch">Mijn broer komt vanavond op bezoek.</span><span class="arabic">— سيأتي أخي لزيارتنا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">89.</span><div class="sentence-content"><span class="dutch">We praten vanavond over onze toekomst.</span><span class="arabic">— سنتحدث عن مستقبلنا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">90.</span><div class="sentence-content"><span class="dutch">Ik stuur je vanavond een bericht.</span><span class="arabic">— سأرسل لك رسالة هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">91.</span><div class="sentence-content"><span class="dutch">Kun je me vanavond helpen?</span><span class="arabic">— هل يمكنك مساعدتي هذا المساء؟</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">92.</span><div class="sentence-content"><span class="dutch">Ik weet nog niet wat ik vanavond ga doen.</span><span class="arabic">— لا أعرف بعد ماذا سأفعل هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">93.</span><div class="sentence-content"><span class="dutch">Misschien blijf ik vanavond thuis.</span><span class="arabic">— ربما سأبقى في المنزل هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">94.</span><div class="sentence-content"><span class="dutch">Als het niet regent, gaan we vanavond wandelen.</span><span class="arabic">— إذا لم تمطر، فسنذهب للمشي هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">95.</span><div class="sentence-content"><span class="dutch">Als ik tijd heb, bel ik je vanavond.</span><span class="arabic">— إذا كان لدي وقت، فسأتصل بك هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">96.</span><div class="sentence-content"><span class="dutch">Ik heb vanavond geen zin om te koken.</span><span class="arabic">— لا أرغب في الطبخ هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">97.</span><div class="sentence-content"><span class="dutch">Waarom ben je vanavond zo stil?</span><span class="arabic">— لماذا أنت هادئ جدًا هذا المساء؟</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">98.</span><div class="sentence-content"><span class="dutch">Het wordt vanavond koud.</span><span class="arabic">— سيصبح الجو باردًا هذا المساء.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">99.</span><div class="sentence-content"><span class="dutch">Ik hoop dat je vanavond goed slaapt.</span><span class="arabic">— أتمنى أن تنام جيدًا هذه الليلة.</span></div></div>
+    <div class="sentence-item"><span class="sentence-number">100.</span><div class="sentence-content"><span class="dutch">Wat ga je vanavond doen voordat je naar bed gaat?</span><span class="arabic">— ماذا ستفعل هذا المساء قبل أن تذهب إلى الفراش؟</span></div></div>
+  </div>
+
+  <!-- Grammar Box -->
+  <div class="grammar-box">
+    <h3>📌 قواعد مهمة لكلمة Vanavond</h3>
+    <ul class="grammar-list">
+      <li><code>Vanavond werk ik.</code> <span class="ar">— هذا المساء سأعمل.</span></li>
+      <li><code>Ik werk vanavond.</code> <span class="ar">— سأعمل هذا المساء.</span></li>
+      <li style="margin-top:0.3rem;">الجملتان صحيحتان، ويمكن وضع <strong>vanavond</strong> في بداية الجملة أو وسطها.</li>
+      <li style="margin-top:0.3rem;">انتبه أيضًا للفرق:</li>
+      <li><code>Vanavond</code> <span class="ar">= هذا المساء / الليلة.</span></li>
+      <li><code>Vannacht</code> <span class="ar">= الليلة، وخاصةً خلال ساعات الليل المتأخرة أو وقت النوم.</span></li>
+      <li><code>Gisterenavond</code> <span class="ar">= مساء أمس.</span></li>
+      <li><code>Morgenavond</code> <span class="ar">= مساء الغد.</span></li>
+      <li><code>Elke avond</code> <span class="ar">= كل مساء.</span></li>
+    </ul>
+  </div>
+
+  <!-- Exercise Box -->
+  <div class="exercise-box">
+    <h3>📝 تدريب سريع</h3>
+    <p>ترجم إلى الهولندية: «سأدرس الهولندية هذا المساء، ثم سأتصل بزوجتي».</p>
+    <div class="answer">Ik studeer vanavond Nederlands, dan bel ik mijn vrouw.</div>
+  </div>
+
+  <div class="footer-note">
+    🇳🇱 100 جملة هولندية باستخدام Vanavond — مع الترجمة العربية
+  </div>
+
+</div>
+</body>
+</html>
