@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andere – 100 جملة هولندية مع الترجمة العربية</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', 'Noto Sans Arabic', system-ui, sans-serif;
+      background: #f5f7fb;
+      color: #1a1f36;
+      padding: 24px 16px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* header */
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1e293b;
+      background: linear-gradient(135deg, #1e3a5f, #2b5a8c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .header p {
+      font-size: 1.15rem;
+      color: #475569;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e9edf4;
+      color: #1e3a5f;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    /* quick grammar note */
+    .grammar-box {
+      background: #ffffff;
+      border-right: 5px solid #2b5a8c;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .grammar-box h2 {
+      font-size: 1.3rem;
+      color: #1e3a5f;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .grammar-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .grammar-box li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eef2f7;
+      color: #334155;
+      font-size: 1rem;
+    }
+
+    .grammar-box li:last-child {
+      border-bottom: none;
+    }
+
+    .grammar-box strong {
+      color: #1e3a5f;
+      font-weight: 700;
+    }
+
+    .grammar-box .example {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-right: 6px;
+    }
+
+    /* sections */
+    .section {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #edf2f7;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      color: #1e3a5f;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 .num-badge {
+      background: #2b5a8c;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 2px 12px;
+      border-radius: 30px;
+      margin-right: auto;
+      order: 2;
+    }
+
+    /* sentence list */
+    .sentence-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .sentence-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      padding: 10px 12px;
+      background: #f8fafc;
+      border-radius: 10px;
+      transition: background 0.15s;
+      border-right: 3px solid #cbd5e1;
+    }
+
+    .sentence-item:hover {
+      background: #eef4fc;
+      border-right-color: #2b5a8c;
+    }
+
+    .sentence-num {
+      display: inline-block;
+      min-width: 36px;
+      font-weight: 700;
+      color: #64748b;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .dutch {
+      font-weight: 600;
+      color: #0f172a;
+      font-size: 1.05rem;
+      margin-left: 4px;
+      direction: ltr;
+      unicode-bidi: embed;
+      text-align: left;
+    }
+
+    .arabic {
+      color: #475569;
+      font-size: 0.95rem;
+      margin-right: 8px;
+      direction: rtl;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .separator {
+      color: #94a3b8;
+      margin: 0 4px;
+      font-weight: 300;
+    }
+
+    /* summary table */
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+
+    .summary-table th {
+      background: #1e3a5f;
+      color: #fff;
+      padding: 12px 10px;
+      text-align: right;
+      font-weight: 600;
+    }
+
+    .summary-table th:first-child {
+      border-radius: 0 10px 0 0;
+    }
+
+    .summary-table th:last-child {
+      border-radius: 10px 0 0 0;
+    }
+
+    .summary-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #334155;
+    }
+
+    .summary-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .summary-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .summary-table .dutch-term {
+      font-weight: 700;
+      color: #1e3a5f;
+      direction: ltr;
+      unicode-bidi: embed;
+      display: inline-block;
+    }
+
+    .key-expressions {
+      background: #f0f7ff;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      border: 1px dashed #a0c4e8;
+    }
+
+    .key-expressions h3 {
+      color: #1e3a5f;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .key-expressions ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 16px;
+    }
+
+    .key-expressions li {
+      padding: 6px 0;
+      font-size: 0.95rem;
+      color: #1e293b;
+      border-bottom: 1px solid #dbeafe;
+    }
+
+    .key-expressions li .nl {
+      font-weight: 600;
+      direction: ltr;
+      unicode-bidi: embed;
+      display: inline-block;
+    }
+
+    .key-expressions li .ar {
+      color: #475569;
+      margin-right: 4px;
+    }
+
+    /* responsive */
+    @media (min-width: 700px) {
+      .sentence-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 16px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .header h1 {
+        font-size: 1.6rem;
+      }
+
+      .sentence-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+
+      .dutch {
+        margin-left: 0;
+      }
+
+      .arabic {
+        margin-right: 0;
+      }
+
+      .key-expressions ul {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-table {
+        font-size: 0.85rem;
+      }
+
+      .summary-table th,
+      .summary-table td {
+        padding: 8px 6px;
+      }
+    }
+
+    .footer {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin-top: 40px;
+      padding-bottom: 20px;
+    }
+
+    .footer a {
+      color: #2b5a8c;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1>🇳🇱 Andere — 100 جملة هولندية</h1>
+      <p>جمل يومية مستخدمة في بلجيكا مع الترجمة العربية</p>
+      <div class="badge">معنى andere: آخر / أخرى / مختلفون — حسب تركيب الجملة</div>
+    </div>
+
+    <!-- GRAMMAR QUICK NOTE -->
+    <div class="grammar-box">
+      <h2>📌 ملاحظة سريعة</h2>
+      <ul>
+        <li><strong>ander</strong> = آخر مع اسم مفرد محايد <span class="example">— een ander huis</span></li>
+        <li><strong>andere</strong> = أخرى أو آخر مع أسماء الجمع والأسماء من نوع de <span class="example">— andere mensen</span></li>
+        <li><strong>een andere</strong> = شخص أو شيء آخر <span class="example">— een andere baan</span></li>
+        <li><strong>iets anders</strong> = شيء آخر <span class="example">— Ik wil iets anders.</span></li>
+        <li><strong>iemand anders</strong> = شخص آخر <span class="example">— Vraag iemand anders.</span></li>
+        <li><strong>anders</strong> = بطريقة مختلفة / وإلا <span class="example">— Ik doe het anders.</span></li>
+        <li><strong>verschillende</strong> = مختلفون / متنوعون / عدة <span class="example">— verschillende mogelijkheden</span></li>
+      </ul>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section">
+      <h2>أولًا: جمل يومية باستخدام Andere <span class="num-badge">20 جملة</span></h2>
+      <div class="sentence-grid">
+        <div class="sentence-item"><span class="sentence-num">1</span><span class="dutch">Ik wil andere schoenen.</span><span class="separator">—</span><span class="arabic">أريد أحذية أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">2</span><span class="dutch">Heb je andere plannen?</span><span class="separator">—</span><span class="arabic">هل لديك خطط أخرى؟</span></div>
+        <div class="sentence-item"><span class="sentence-num">3</span><span class="dutch">Ik zoek een andere baan.</span><span class="separator">—</span><span class="arabic">أبحث عن وظيفة أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">4</span><span class="dutch">We hebben andere problemen.</span><span class="separator">—</span><span class="arabic">لدينا مشاكل أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">5</span><span class="dutch">Zij draagt andere kleren.</span><span class="separator">—</span><span class="arabic">هي ترتدي ملابس أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">6</span><span class="dutch">Ik wil andere koffie.</span><span class="separator">—</span><span class="arabic">أريد قهوة مختلفة.</span></div>
+        <div class="sentence-item"><span class="sentence-num">7</span><span class="dutch">Heb je andere ideeën?</span><span class="separator">—</span><span class="arabic">هل لديك أفكار أخرى؟</span></div>
+        <div class="sentence-item"><span class="sentence-num">8</span><span class="dutch">We nemen andere bussen.</span><span class="separator">—</span><span class="arabic">سنستقل حافلات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">9</span><span class="dutch">Ik heb andere vragen.</span><span class="separator">—</span><span class="arabic">لدي أسئلة أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">10</span><span class="dutch">Hij woont in een andere stad.</span><span class="separator">—</span><span class="arabic">هو يعيش في مدينة أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">11</span><span class="dutch">Ik wil andere mensen ontmoeten.</span><span class="separator">—</span><span class="arabic">أريد مقابلة أشخاص آخرين.</span></div>
+        <div class="sentence-item"><span class="sentence-num">12</span><span class="dutch">Zij kiest andere kleuren.</span><span class="separator">—</span><span class="arabic">هي تختار ألوانًا أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">13</span><span class="dutch">We zoeken andere oplossingen.</span><span class="separator">—</span><span class="arabic">نبحث عن حلول أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">14</span><span class="dutch">Ik gebruik andere woorden.</span><span class="separator">—</span><span class="arabic">أستخدم كلمات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">15</span><span class="dutch">Hebben jullie andere kamers?</span><span class="separator">—</span><span class="arabic">هل لديكم غرف أخرى؟</span></div>
+        <div class="sentence-item"><span class="sentence-num">16</span><span class="dutch">Ik wil andere schoenen kopen.</span><span class="separator">—</span><span class="arabic">أريد شراء أحذية أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">17</span><span class="dutch">Hij heeft andere interesses.</span><span class="separator">—</span><span class="arabic">لديه اهتمامات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">18</span><span class="dutch">We bezoeken andere plaatsen.</span><span class="separator">—</span><span class="arabic">نزور أماكن أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">19</span><span class="dutch">Ik heb andere documenten nodig.</span><span class="separator">—</span><span class="arabic">أحتاج إلى مستندات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">20</span><span class="dutch">Zij werkt op andere dagen.</span><span class="separator">—</span><span class="arabic">هي تعمل في أيام أخرى.</span></div>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section">
+      <h2>ثانيًا: Andere في العمل والدراسة <span class="num-badge">20 جملة</span></h2>
+      <div class="sentence-grid">
+        <div class="sentence-item"><span class="sentence-num">21</span><span class="dutch">Ik zoek andere vacatures.</span><span class="separator">—</span><span class="arabic">أبحث عن وظائف شاغرة أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">22</span><span class="dutch">Zijn er andere mogelijkheden?</span><span class="separator">—</span><span class="arabic">هل توجد إمكانيات أخرى؟</span></div>
+        <div class="sentence-item"><span class="sentence-num">23</span><span class="dutch">Ik wil andere werkzaamheden doen.</span><span class="separator">—</span><span class="arabic">أريد القيام بأعمال أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">24</span><span class="dutch">We gebruiken andere machines.</span><span class="separator">—</span><span class="arabic">نستخدم آلات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">25</span><span class="dutch">Mijn collega heeft andere taken.</span><span class="separator">—</span><span class="arabic">زميلي لديه مهام أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">26</span><span class="dutch">Ik heb andere werkervaring.</span><span class="separator">—</span><span class="arabic">لدي خبرة عملية مختلفة.</span></div>
+        <div class="sentence-item"><span class="sentence-num">27</span><span class="dutch">Deze bedrijven zoeken andere werknemers.</span><span class="separator">—</span><span class="arabic">هذه الشركات تبحث عن موظفين آخرين.</span></div>
+        <div class="sentence-item"><span class="sentence-num">28</span><span class="dutch">Ik wil andere cursussen volgen.</span><span class="separator">—</span><span class="arabic">أريد الالتحاق بدورات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">29</span><span class="dutch">We hebben andere lesboeken nodig.</span><span class="separator">—</span><span class="arabic">نحتاج إلى كتب دراسية أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">30</span><span class="dutch">De docent geeft andere voorbeelden.</span><span class="separator">—</span><span class="arabic">المدرس يعطي أمثلة أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">31</span><span class="dutch">Ik zoek andere technische opleidingen.</span><span class="separator">—</span><span class="arabic">أبحث عن برامج تدريب تقنية أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">32</span><span class="dutch">Andere bedrijven betalen beter.</span><span class="separator">—</span><span class="arabic">شركات أخرى تدفع بشكل أفضل.</span></div>
+        <div class="sentence-item"><span class="sentence-num">33</span><span class="dutch">Mijn baas heeft andere plannen.</span><span class="separator">—</span><span class="arabic">مديري لديه خطط أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">34</span><span class="dutch">We moeten andere methodes proberen.</span><span class="separator">—</span><span class="arabic">يجب أن نجرب طرقًا أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">35</span><span class="dutch">Ik wil andere software leren gebruiken.</span><span class="separator">—</span><span class="arabic">أريد تعلم استخدام برامج أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">36</span><span class="dutch">Deze functie heeft andere eisen.</span><span class="separator">—</span><span class="arabic">هذه الوظيفة لها متطلبات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">37</span><span class="dutch">Ik vergelijk andere vacatures.</span><span class="separator">—</span><span class="arabic">أقارن بين وظائف شاغرة أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">38</span><span class="dutch">Andere collega’s helpen mij.</span><span class="separator">—</span><span class="arabic">زملاء آخرون يساعدونني.</span></div>
+        <div class="sentence-item"><span class="sentence-num">39</span><span class="dutch">Ik heb andere documenten voor mijn sollicitatie.</span><span class="separator">—</span><span class="arabic">لدي مستندات أخرى لطلب التوظيف.</span></div>
+        <div class="sentence-item"><span class="sentence-num">40</span><span class="dutch">We bespreken andere projecten.</span><span class="separator">—</span><span class="arabic">نناقش مشاريع أخرى.</span></div>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section">
+      <h2>ثالثًا: Andere في المدينة والمواصلات <span class="num-badge">20 جملة</span></h2>
+      <div class="sentence-grid">
+        <div class="sentence-item"><span class="sentence-num">41</span><span class="dutch">We nemen andere straten.</span><span class="separator">—</span><span class="arabic">نسلك شوارع أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">42</span><span class="dutch">Ik zoek andere winkels.</span><span class="separator">—</span><span class="arabic">أبحث عن متاجر أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">43</span><span class="dutch">Zijn er andere bushaltes in de buurt?</span><span class="separator">—</span><span class="arabic">هل توجد مواقف حافلات أخرى بالقرب من هنا؟</span></div>
+        <div class="sentence-item"><span class="sentence-num">44</span><span class="dutch">Deze trein stopt op andere stations.</span><span class="separator">—</span><span class="arabic">هذا القطار يتوقف في محطات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">45</span><span class="dutch">Ik wil andere routes proberen.</span><span class="separator">—</span><span class="arabic">أريد تجربة طرق أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">46</span><span class="dutch">We bezoeken andere steden in België.</span><span class="separator">—</span><span class="arabic">نزور مدنًا أخرى في بلجيكا.</span></div>
+        <div class="sentence-item"><span class="sentence-num">47</span><span class="dutch">Zijn er andere supermarkten hier?</span><span class="separator">—</span><span class="arabic">هل توجد متاجر سوبر ماركت أخرى هنا؟</span></div>
+        <div class="sentence-item"><span class="sentence-num">48</span><span class="dutch">Ik gebruik andere wegen naar mijn werk.</span><span class="separator">—</span><span class="arabic">أستخدم طرقًا أخرى للوصول إلى عملي.</span></div>
+        <div class="sentence-item"><span class="sentence-num">49</span><span class="dutch">Andere bussen vertrekken vanaf dit station.</span><span class="separator">—</span><span class="arabic">حافلات أخرى تنطلق من هذه المحطة.</span></div>
+        <div class="sentence-item"><span class="sentence-num">50</span><span class="dutch">We zoeken andere parkeerplaatsen.</span><span class="separator">—</span><span class="arabic">نبحث عن أماكن أخرى لركن السيارات.</span></div>
+        <div class="sentence-item"><span class="sentence-num">51</span><span class="dutch">Ik wil andere restaurants proberen.</span><span class="separator">—</span><span class="arabic">أريد تجربة مطاعم أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">52</span><span class="dutch">Zijn er andere apotheken open?</span><span class="separator">—</span><span class="arabic">هل توجد صيدليات أخرى مفتوحة؟</span></div>
+        <div class="sentence-item"><span class="sentence-num">53</span><span class="dutch">Ik moet andere treinen nemen.</span><span class="separator">—</span><span class="arabic">يجب أن أستقل قطارات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">54</span><span class="dutch">We gaan naar andere winkels.</span><span class="separator">—</span><span class="arabic">نذهب إلى متاجر أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">55</span><span class="dutch">Andere straten zijn vandaag afgesloten.</span><span class="separator">—</span><span class="arabic">شوارع أخرى مغلقة اليوم.</span></div>
+        <div class="sentence-item"><span class="sentence-num">56</span><span class="dutch">Ik zoek andere adressen.</span><span class="separator">—</span><span class="arabic">أبحث عن عناوين أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">57</span><span class="dutch">We kunnen andere haltes gebruiken.</span><span class="separator">—</span><span class="arabic">يمكننا استخدام مواقف أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">58</span><span class="dutch">Zijn er andere fietsen beschikbaar?</span><span class="separator">—</span><span class="arabic">هل توجد دراجات أخرى متاحة؟</span></div>
+        <div class="sentence-item"><span class="sentence-num">59</span><span class="dutch">Ik wil andere plaatsen bezoeken.</span><span class="separator">—</span><span class="arabic">أريد زيارة أماكن أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">60</span><span class="dutch">Andere wegen zijn sneller.</span><span class="separator">—</span><span class="arabic">طرق أخرى أسرع.</span></div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section">
+      <h2>رابعًا: Andere في المنزل والحياة اليومية <span class="num-badge">15 جملة</span></h2>
+      <div class="sentence-grid">
+        <div class="sentence-item"><span class="sentence-num">61</span><span class="dutch">Ik heb andere kleren nodig.</span><span class="separator">—</span><span class="arabic">أحتاج إلى ملابس أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">62</span><span class="dutch">We kopen andere meubels.</span><span class="separator">—</span><span class="arabic">نشتري أثاثًا آخر.</span></div>
+        <div class="sentence-item"><span class="sentence-num">63</span><span class="dutch">Zij maakt andere gerechten.</span><span class="separator">—</span><span class="arabic">هي تحضّر أطباقًا أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">64</span><span class="dutch">Ik wil andere groenten eten.</span><span class="separator">—</span><span class="arabic">أريد تناول خضروات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">65</span><span class="dutch">We hebben andere handdoeken nodig.</span><span class="separator">—</span><span class="arabic">نحتاج إلى مناشف أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">66</span><span class="dutch">Hij koopt andere schoenen voor zijn werk.</span><span class="separator">—</span><span class="arabic">يشتري أحذية أخرى لعمله.</span></div>
+        <div class="sentence-item"><span class="sentence-num">67</span><span class="dutch">Ik zoek andere recepten.</span><span class="separator">—</span><span class="arabic">أبحث عن وصفات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">68</span><span class="dutch">We gebruiken andere schoonmaakmiddelen.</span><span class="separator">—</span><span class="arabic">نستخدم مواد تنظيف أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">69</span><span class="dutch">Zij heeft andere huishoudelijke taken.</span><span class="separator">—</span><span class="arabic">لديها مهام منزلية أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">70</span><span class="dutch">Ik wil andere lakens kopen.</span><span class="separator">—</span><span class="arabic">أريد شراء ملاءات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">71</span><span class="dutch">We hebben andere lampen nodig.</span><span class="separator">—</span><span class="arabic">نحتاج إلى مصابيح أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">72</span><span class="dutch">Hij kiest andere gordijnen.</span><span class="separator">—</span><span class="arabic">هو يختار ستائر أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">73</span><span class="dutch">Ik probeer andere producten.</span><span class="separator">—</span><span class="arabic">أجرب منتجات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">74</span><span class="dutch">We maken andere gerechten klaar.</span><span class="separator">—</span><span class="arabic">نحضّر أطباقًا أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">75</span><span class="dutch">Zij koopt andere bloemen.</span><span class="separator">—</span><span class="arabic">هي تشتري زهورًا أخرى.</span></div>
+      </div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section">
+      <h2>خامسًا: Andere في المحادثات والمقارنة <span class="num-badge">15 جملة</span></h2>
+      <div class="sentence-grid">
+        <div class="sentence-item"><span class="sentence-num">76</span><span class="dutch">Andere mensen denken anders.</span><span class="separator">—</span><span class="arabic">أشخاص آخرون يفكرون بطريقة مختلفة.</span></div>
+        <div class="sentence-item"><span class="sentence-num">77</span><span class="dutch">Ik wil andere keuzes maken.</span><span class="separator">—</span><span class="arabic">أريد اتخاذ اختيارات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">78</span><span class="dutch">We hebben andere meningen.</span><span class="separator">—</span><span class="arabic">لدينا آراء مختلفة.</span></div>
+        <div class="sentence-item"><span class="sentence-num">79</span><span class="dutch">Hij vertelt andere verhalen.</span><span class="separator">—</span><span class="arabic">هو يروي قصصًا أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">80</span><span class="dutch">Andere kinderen spelen buiten.</span><span class="separator">—</span><span class="arabic">أطفال آخرون يلعبون في الخارج.</span></div>
+        <div class="sentence-item"><span class="sentence-num">81</span><span class="dutch">Ik begrijp andere culturen beter.</span><span class="separator">—</span><span class="arabic">أفهم الثقافات الأخرى بشكل أفضل.</span></div>
+        <div class="sentence-item"><span class="sentence-num">82</span><span class="dutch">Zij heeft andere gewoontes.</span><span class="separator">—</span><span class="arabic">لديها عادات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">83</span><span class="dutch">We luisteren naar andere muziek.</span><span class="separator">—</span><span class="arabic">نستمع إلى موسيقى أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">84</span><span class="dutch">Andere talen zijn ook interessant.</span><span class="separator">—</span><span class="arabic">اللغات الأخرى ممتعة أيضًا.</span></div>
+        <div class="sentence-item"><span class="sentence-num">85</span><span class="dutch">Ik wil andere mensen helpen.</span><span class="separator">—</span><span class="arabic">أريد مساعدة أشخاص آخرين.</span></div>
+        <div class="sentence-item"><span class="sentence-num">86</span><span class="dutch">We hebben andere verwachtingen.</span><span class="separator">—</span><span class="arabic">لدينا توقعات مختلفة.</span></div>
+        <div class="sentence-item"><span class="sentence-num">87</span><span class="dutch">Andere oplossingen zijn mogelijk.</span><span class="separator">—</span><span class="arabic">توجد حلول أخرى ممكنة.</span></div>
+        <div class="sentence-item"><span class="sentence-num">88</span><span class="dutch">Ik wil andere antwoorden horen.</span><span class="separator">—</span><span class="arabic">أريد سماع إجابات أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">89</span><span class="dutch">Zij stelt andere vragen.</span><span class="separator">—</span><span class="arabic">هي تطرح أسئلة أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">90</span><span class="dutch">Andere voorbeelden maken het duidelijker.</span><span class="separator">—</span><span class="arabic">أمثلة أخرى تجعل الأمر أكثر وضوحًا.</span></div>
+      </div>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="section">
+      <h2>سادسًا: جمل أطول لمستوى A2 <span class="num-badge">10 جمل</span></h2>
+      <div class="sentence-grid">
+        <div class="sentence-item"><span class="sentence-num">91</span><span class="dutch">Ik wil een andere baan zoeken omdat ik meer ervaring wil opdoen.</span><span class="separator">—</span><span class="arabic">أريد البحث عن وظيفة أخرى لأنني أريد اكتساب المزيد من الخبرة.</span></div>
+        <div class="sentence-item"><span class="sentence-num">92</span><span class="dutch">We moeten andere mogelijkheden onderzoeken voordat we beslissen.</span><span class="separator">—</span><span class="arabic">يجب أن ندرس إمكانيات أخرى قبل أن نقرر.</span></div>
+        <div class="sentence-item"><span class="sentence-num">93</span><span class="dutch">Als deze winkel gesloten is, gaan we naar andere winkels.</span><span class="separator">—</span><span class="arabic">إذا كان هذا المتجر مغلقًا، فسنذهب إلى متاجر أخرى.</span></div>
+        <div class="sentence-item"><span class="sentence-num">94</span><span class="dutch">Mijn vrouw heeft andere plannen voor het weekend.</span><span class="separator">—</span><span class="arabic">زوجتي لديها خطط أخرى لعطلة نهاية الأسبوع.</span></div>
+        <div class="sentence-item"><span class="sentence-num">95</span><span class="dutch">Ik gebruik andere woorden wanneer ik Nederlands spreek.</span><span class="separator">—</span><span class="arabic">أستخدم كلمات أخرى عندما أتحدث الهولندية.</span></div>
+        <div class="sentence-item"><span class="sentence-num">96</span><span class="dutch">Sommige mensen kiezen andere routes om sneller op hun werk te komen.</span><span class="separator">—</span><span class="arabic">بعض الناس يختارون طرقًا أخرى للوصول إلى عملهم بسرعة أكبر.</span></div>
+        <div class="sentence-item"><span class="sentence-num">97</span><span class="dutch">We hebben andere oplossingen nodig omdat dit plan niet werkt.</span><span class="separator">—</span><span class="arabic">نحتاج إلى حلول أخرى لأن هذه الخطة لا تنجح.</span></div>
+        <div class="sentence-item"><span class="sentence-num">98</span><span class="dutch">Ik wil met andere collega’s samenwerken om meer te leren.</span><span class="separator">—</span><span class="arabic">أريد العمل مع زملاء آخرين لكي أتعلم المزيد.</span></div>
+        <div class="sentence-item"><span class="sentence-num">99</span><span class="dutch">Als je andere vragen hebt, kun je mij altijd bellen.</span><span class="separator">—</span><span class="arabic">إذا كانت لديك أسئلة أخرى، يمكنك الاتصال بي في أي وقت.</span></div>
+        <div class="sentence-item"><span class="sentence-num">100</span><span class="dutch">Iedereen heeft andere behoeften en daarom moeten we verschillende oplossingen zoeken.</span><span class="separator">—</span><span class="arabic">لكل شخص احتياجات مختلفة، ولذلك يجب أن نبحث عن حلول متنوعة.</span></div>
+      </div>
+    </div>
+
+    <!-- SUMMARY TABLE -->
+    <div class="section">
+      <h2>📋 ملخص مهم للحفظ</h2>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>الهولندية</th>
+            <th>المعنى</th>
+            <th>مثال</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="dutch-term">ander</span></td><td>آخر، مع اسم مفرد محايد</td><td><span class="dutch-term">een ander huis</span> — منزل آخر</td></tr>
+          <tr><td><span class="dutch-term">andere</span></td><td>آخر/أخرى، مع الجمع أو اسم من نوع de</td><td><span class="dutch-term">andere mensen</span> — أشخاص آخرون</td></tr>
+          <tr><td><span class="dutch-term">een andere</span></td><td>شيء أو شخص آخر</td><td><span class="dutch-term">een andere baan</span> — وظيفة أخرى</td></tr>
+          <tr><td><span class="dutch-term">iets anders</span></td><td>شيء آخر</td><td><span class="dutch-term">Ik wil iets anders.</span> — أريد شيئًا آخر.</td></tr>
+          <tr><td><span class="dutch-term">iemand anders</span></td><td>شخص آخر</td><td><span class="dutch-term">Vraag iemand anders.</span> — اسأل شخصًا آخر.</td></tr>
+          <tr><td><span class="dutch-term">anders</span></td><td>بطريقة مختلفة / وإلا</td><td><span class="dutch-term">Ik doe het anders.</span> — سأفعل ذلك بطريقة مختلفة.</td></tr>
+          <tr><td><span class="dutch-term">verschillende</span></td><td>مختلفون / متنوعون / عدة</td><td><span class="dutch-term">verschillende mogelijkheden</span> — إمكانيات متنوعة</td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-expressions">
+        <h3>⭐ احفظ خصوصًا هذه التعبيرات الخمسة (كثيرة الاستخدام في بلجيكا)</h3>
+        <ul>
+          <li><span class="nl">Ik wil iets anders.</span> <span class="ar">— أريد شيئًا آخر.</span></li>
+          <li><span class="nl">Ik zoek een andere baan.</span> <span class="ar">— أبحث عن وظيفة أخرى.</span></li>
+          <li><span class="nl">Heb je andere ideeën?</span> <span class="ar">— هل لديك أفكار أخرى؟</span></li>
+          <li><span class="nl">Vraag het aan iemand anders.</span> <span class="ar">— اسأل شخصًا آخر عن ذلك.</span></li>
+          <li><span class="nl">We moeten het anders doen.</span> <span class="ar">— يجب أن نفعل ذلك بطريقة مختلفة.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      🇧🇪 100 جملة هولندية يومية باستخدام <strong>Andere</strong> — مع الترجمة العربية
+    </div>
+
+  </div>
+</body>
+</html>
