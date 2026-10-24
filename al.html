@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة هولندية باستخدام AL</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
+            color: #1a1a2e;
+            padding: 20px 15px;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 50, 0.12);
+            padding: 30px 25px 40px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            color: #0b1b3a;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            border-bottom: 4px solid #3b6ef5;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        .title-wrap {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .subtitle {
+            color: #4a5568;
+            font-size: 1rem;
+            margin-top: 12px;
+            background: #eef2ff;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #1a2b6d;
+            margin: 35px 0 15px;
+            padding-right: 12px;
+            border-right: 6px solid #3b6ef5;
+            background: linear-gradient(to left, #f5f8ff, transparent);
+            padding: 10px 12px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .note {
+            background: #fff9e6;
+            border-right: 5px solid #f5b800;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 25px 0 10px;
+            font-size: 0.95rem;
+            color: #3d3d3d;
+        }
+
+        .note strong {
+            color: #b47c00;
+        }
+
+        .summary {
+            background: #e9f2ff;
+            border-radius: 18px;
+            padding: 22px 20px;
+            margin-top: 40px;
+            border: 1px solid #c7dbff;
+        }
+
+        .summary h3 {
+            color: #0b2a6b;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary h3::before {
+            content: "📌";
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+            font-size: 0.95rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        th {
+            background: #1f3c88;
+            color: #ffffff;
+            padding: 12px 15px;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #ffffff;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: #f8faff;
+        }
+
+        .example-card {
+            background: #fafbff;
+            padding: 12px 18px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #e6ecff;
+            transition: all 0.15s ease;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .example-card:hover {
+            background: #ffffff;
+            border-color: #3b6ef5;
+            box-shadow: 0 4px 10px rgba(59, 110, 245, 0.08);
+        }
+
+        .nl {
+            font-weight: 600;
+            color: #0b1b3a;
+            direction: ltr;
+            display: inline-block;
+            text-align: left;
+            min-width: 220px;
+            flex: 1;
+        }
+
+        .ar {
+            color: #2d3e6b;
+            font-size: 0.95rem;
+            flex: 2;
+            text-align: right;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed #cdd9f0;
+            font-size: 0.9rem;
+            color: #5f6c8a;
+        }
+
+        .footer-note span {
+            font-weight: 600;
+            color: #1f3c88;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 18px 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .example-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .nl {
+                min-width: auto;
+                font-size: 0.95rem;
+            }
+
+            .ar {
+                font-size: 0.9rem;
+                width: 100%;
+                text-align: right;
+            }
+
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="title-wrap">
+        <h1>🇧🇪 ١٠٠ جملة هولندية باستخدام AL</h1>
+        <div class="subtitle">مع الترجمة العربية — مقسمة حسب المعنى والاستخدام</div>
+    </div>
+
+    <!-- 1 -->
+    <h2>١. AL بمعنى «بالفعل»</h2>
+    <ul>
+        <li class="example-card"><span class="nl">Ik ben al klaar.</span><span class="ar">انتهيت بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ik heb al gegeten.</span><span class="ar">أكلت بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Hij is al thuis.</span><span class="ar">هو في المنزل بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Zij heeft al betaald.</span><span class="ar">هي دفعت بالفعل.</span></li>
+        <li class="example-card"><span class="nl">De trein is al vertrokken.</span><span class="ar">القطار غادر بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ik heb al koffie gedronken.</span><span class="ar">شربت القهوة بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Heb je al gegeten?</span><span class="ar">هل أكلت بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Ben je al wakker?</span><span class="ar">هل استيقظت بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Ik heb al een antwoord gekregen.</span><span class="ar">تلقيت إجابة بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Mijn vrouw is al op het werk.</span><span class="ar">زوجتي في العمل بالفعل.</span></li>
+        <li class="example-card"><span class="nl">De winkel is al open.</span><span class="ar">المتجر مفتوح بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ik heb al een afspraak gemaakt.</span><span class="ar">حددت موعدًا بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Heb je al gedoucht?</span><span class="ar">هل استحممت بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Hij heeft al gebeld.</span><span class="ar">لقد اتصل بالفعل.</span></li>
+        <li class="example-card"><span class="nl">We zijn al begonnen.</span><span class="ar">لقد بدأنا بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ik heb al mijn huiswerk gemaakt.</span><span class="ar">أنجزت واجبي المنزلي بالفعل.</span></li>
+        <li class="example-card"><span class="nl">De kinderen slapen al.</span><span class="ar">الأطفال نائمون بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ik ken deze man al.</span><span class="ar">أنا أعرف هذا الرجل بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Zij heeft al een baan gevonden.</span><span class="ar">لقد وجدت وظيفة بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ben je al klaar met werken?</span><span class="ar">هل انتهيت من العمل بالفعل؟</span></li>
+    </ul>
+
+    <!-- 2 -->
+    <h2>٢. AL بمعنى «منذ مدة»</h2>
+    <ul>
+        <li class="example-card"><span class="nl">Ik woon al twee jaar in België.</span><span class="ar">أسكن في بلجيكا منذ سنتين.</span></li>
+        <li class="example-card"><span class="nl">Ik leer al zes maanden Nederlands.</span><span class="ar">أتعلم الهولندية منذ ستة أشهر.</span></li>
+        <li class="example-card"><span class="nl">Hij werkt hier al tien jaar.</span><span class="ar">يعمل هنا منذ عشر سنوات.</span></li>
+        <li class="example-card"><span class="nl">We kennen elkaar al lang.</span><span class="ar">نعرف بعضنا منذ زمن طويل.</span></li>
+        <li class="example-card"><span class="nl">Ik wacht al een uur.</span><span class="ar">أنتظر منذ ساعة.</span></li>
+        <li class="example-card"><span class="nl">Zij studeert al drie jaar.</span><span class="ar">تدرس منذ ثلاث سنوات.</span></li>
+        <li class="example-card"><span class="nl">Ik ben al een week ziek.</span><span class="ar">أنا مريض منذ أسبوع.</span></li>
+        <li class="example-card"><span class="nl">We wonen al lang in dit huis.</span><span class="ar">نسكن في هذا المنزل منذ زمن طويل.</span></li>
+        <li class="example-card"><span class="nl">Hij zoekt al maanden werk.</span><span class="ar">يبحث عن عمل منذ أشهر.</span></li>
+        <li class="example-card"><span class="nl">Ik gebruik deze computer al vijf jaar.</span><span class="ar">أستخدم هذا الكمبيوتر منذ خمس سنوات.</span></li>
+        <li class="example-card"><span class="nl">Ik ben al sinds zes uur wakker.</span><span class="ar">أنا مستيقظ منذ الساعة السادسة.</span></li>
+        <li class="example-card"><span class="nl">Zij werkt al sinds maandag.</span><span class="ar">هي تعمل منذ يوم الاثنين.</span></li>
+        <li class="example-card"><span class="nl">We wachten al sinds de ochtend.</span><span class="ar">ننتظر منذ الصباح.</span></li>
+        <li class="example-card"><span class="nl">Ik ken hem al sinds mijn jeugd.</span><span class="ar">أعرفه منذ طفولتي.</span></li>
+        <li class="example-card"><span class="nl">Het regent al de hele dag.</span><span class="ar">إنها تمطر طوال اليوم.</span></li>
+        <li class="example-card"><span class="nl">Ik oefen al weken deze grammatica.</span><span class="ar">أتدرب على هذه القواعد منذ أسابيع.</span></li>
+        <li class="example-card"><span class="nl">Hij woont al sinds 2020 in Gent.</span><span class="ar">يسكن في خنت منذ عام 2020.</span></li>
+        <li class="example-card"><span class="nl">We zijn al uren onderweg.</span><span class="ar">نحن في الطريق منذ ساعات.</span></li>
+        <li class="example-card"><span class="nl">Ik werk al de hele ochtend.</span><span class="ar">أعمل طوال الصباح.</span></li>
+        <li class="example-card"><span class="nl">Zij wacht al een tijdje op de bus.</span><span class="ar">تنتظر الحافلة منذ فترة.</span></li>
+    </ul>
+
+    <!-- 3 -->
+    <h2>٣. AL في الأسئلة اليومية</h2>
+    <ul>
+        <li class="example-card"><span class="nl">Heb je al ontbeten?</span><span class="ar">هل تناولت الإفطار بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Heb je al koffie gezet?</span><span class="ar">هل أعددت القهوة بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Heb je al boodschappen gedaan?</span><span class="ar">هل تسوقت بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Ben je al naar de dokter geweest?</span><span class="ar">هل ذهبت إلى الطبيب بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Heb je al Nederlands geleerd vandaag?</span><span class="ar">هل درست الهولندية اليوم بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Heb je al met je vrouw gesproken?</span><span class="ar">هل تحدثت مع زوجتك بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Heb je al een e-mail gestuurd?</span><span class="ar">هل أرسلت بريدًا إلكترونيًا بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Is de bus al aangekomen?</span><span class="ar">هل وصلت الحافلة بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Is de vergadering al begonnen?</span><span class="ar">هل بدأ الاجتماع بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Heb je al een antwoord van het bedrijf gekregen?</span><span class="ar">هل تلقيت ردًا من الشركة بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Heb je al een afspraak bij de gemeente gemaakt?</span><span class="ar">هل حددت موعدًا في البلدية بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Heb je al je documenten verzameld?</span><span class="ar">هل جمعت مستنداتك كلها بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Is de winkel al gesloten?</span><span class="ar">هل أغلق المتجر بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Heb je al naar deze vacature gekeken?</span><span class="ar">هل اطلعت على إعلان الوظيفة هذا بالفعل؟</span></li>
+        <li class="example-card"><span class="nl">Heb je al je cv verstuurd?</span><span class="ar">هل أرسلت سيرتك الذاتية بالفعل؟</span></li>
+    </ul>
+
+    <!-- 4 -->
+    <h2>٤. AL بمعنى «جميع / كل»</h2>
+    <ul>
+        <li class="example-card"><span class="nl">Al mijn vrienden wonen in België.</span><span class="ar">جميع أصدقائي يسكنون في بلجيكا.</span></li>
+        <li class="example-card"><span class="nl">Al mijn documenten liggen op tafel.</span><span class="ar">جميع مستنداتي موجودة على الطاولة.</span></li>
+        <li class="example-card"><span class="nl">Al mijn kinderen zijn thuis.</span><span class="ar">جميع أطفالي في المنزل.</span></li>
+        <li class="example-card"><span class="nl">Al mijn collega’s spreken Nederlands.</span><span class="ar">جميع زملائي يتحدثون الهولندية.</span></li>
+        <li class="example-card"><span class="nl">Al deze boeken zijn interessant.</span><span class="ar">كل هذه الكتب ممتعة.</span></li>
+        <li class="example-card"><span class="nl">Al die mensen wachten buiten.</span><span class="ar">كل هؤلاء الناس ينتظرون في الخارج.</span></li>
+        <li class="example-card"><span class="nl">Al mijn geld zit op de bank.</span><span class="ar">كل أموالي موجودة في البنك.</span></li>
+        <li class="example-card"><span class="nl">Al onze afspraken staan in de agenda.</span><span class="ar">جميع مواعيدنا موجودة في جدول المواعيد.</span></li>
+        <li class="example-card"><span class="nl">Al mijn kleren zijn gewassen.</span><span class="ar">كل ملابسي قد غُسلت.</span></li>
+        <li class="example-card"><span class="nl">Al deze winkels zijn vandaag open.</span><span class="ar">كل هذه المتاجر مفتوحة اليوم.</span></li>
+        <li class="example-card"><span class="nl">Al mijn collega’s zijn op tijd gekomen.</span><span class="ar">وصل جميع زملائي في الموعد.</span></li>
+        <li class="example-card"><span class="nl">Al het eten is klaar.</span><span class="ar">كل الطعام جاهز.</span></li>
+        <li class="example-card"><span class="nl">Al het werk is gedaan.</span><span class="ar">كل العمل أُنجز.</span></li>
+        <li class="example-card"><span class="nl">Al het geld is op.</span><span class="ar">انتهت كل الأموال.</span></li>
+        <li class="example-card"><span class="nl">Al mijn vragen zijn beantwoord.</span><span class="ar">تمت الإجابة عن جميع أسئلتي.</span></li>
+    </ul>
+
+    <!-- 5 -->
+    <h2>٥. AL مع كلمات الزمن والتعبيرات الشائعة</h2>
+    <ul>
+        <li class="example-card"><span class="nl">Het is al laat.</span><span class="ar">لقد أصبح الوقت متأخرًا بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Het is al zeven uur.</span><span class="ar">الساعة السابعة بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Het is al oktober.</span><span class="ar">نحن في أكتوبر بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Het is al winter.</span><span class="ar">لقد حل الشتاء بالفعل.</span></li>
+        <li class="example-card"><span class="nl">We zijn al bijna thuis.</span><span class="ar">نحن بالفعل على وشك الوصول إلى المنزل.</span></li>
+        <li class="example-card"><span class="nl">Ik ben al onderweg.</span><span class="ar">أنا في الطريق بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ik kom al!</span><span class="ar">أنا قادم حالًا!</span></li>
+        <li class="example-card"><span class="nl">Dat weet ik al.</span><span class="ar">أعرف ذلك بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Dat heb ik al gedaan.</span><span class="ar">لقد فعلت ذلك بالفعل.</span></li>
+        <li class="example-card"><span class="nl">We hebben al genoeg tijd gehad.</span><span class="ar">لقد حصلنا بالفعل على وقت كافٍ.</span></li>
+        <li class="example-card"><span class="nl">Hij is al veel beter.</span><span class="ar">لقد أصبح أفضل بكثير بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ik heb al genoeg gegeten.</span><span class="ar">لقد أكلت ما يكفي بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ik ben al klaar om te vertrekken.</span><span class="ar">أنا مستعد للمغادرة بالفعل.</span></li>
+        <li class="example-card"><span class="nl">De kinderen zijn al naar school.</span><span class="ar">ذهب الأطفال إلى المدرسة بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ik heb al lang niet meer gevoetbald.</span><span class="ar">لم ألعب كرة القدم منذ وقت طويل.</span></li>
+        <li class="example-card"><span class="nl">We hebben al veel geleerd.</span><span class="ar">لقد تعلمنا الكثير بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ik heb al bijna alles ingepakt.</span><span class="ar">لقد حزمت كل شيء تقريبًا بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Zij is al teruggekomen.</span><span class="ar">لقد عادت بالفعل.</span></li>
+        <li class="example-card"><span class="nl">Ik heb al eerder over dit probleem gehoord.</span><span class="ar">سمعت عن هذه المشكلة من قبل.</span></li>
+        <li class="example-card"><span class="nl">Dat is al de tweede keer.</span><span class="ar">هذه هي المرة الثانية بالفعل.</span></li>
+    </ul>
+
+    <!-- 6 -->
+    <h2>٦. AL في تراكيب متقدمة</h2>
+    <ul>
+        <li class="example-card"><span class="nl">Al is het moeilijk, ik blijf proberen.</span><span class="ar">حتى لو كان الأمر صعبًا، سأواصل المحاولة.</span></li>
+        <li class="example-card"><span class="nl">Al ben ik moe, ik moet nog werken.</span><span class="ar">رغم أنني متعب، ما زال عليّ العمل.</span></li>
+        <li class="example-card"><span class="nl">Al regent het, we gaan toch wandelen.</span><span class="ar">حتى لو أمطرت، سنذهب للتمشية على أي حال.</span></li>
+        <li class="example-card"><span class="nl">Al heeft hij weinig ervaring, hij werkt hard.</span><span class="ar">رغم أن خبرته قليلة، فإنه يعمل بجد.</span></li>
+        <li class="example-card"><span class="nl">Al ken ik de stad niet goed, ik kan de weg vinden.</span><span class="ar">رغم أنني لا أعرف المدينة جيدًا، يمكنني إيجاد الطريق.</span></li>
+        <li class="example-card"><span class="nl">Al is het laat, ik moet mijn huiswerk afmaken.</span><span class="ar">رغم أن الوقت متأخر، يجب أن أنهي واجبي.</span></li>
+        <li class="example-card"><span class="nl">Al heb ik geen auto, ik kan met de trein reizen.</span><span class="ar">رغم أنني لا أملك سيارة، يمكنني السفر بالقطار.</span></li>
+        <li class="example-card"><span class="nl">Al spreekt hij weinig Nederlands, hij probeert te communiceren.</span><span class="ar">رغم أنه يتحدث الهولندية قليلًا، فإنه يحاول التواصل.</span></li>
+        <li class="example-card"><span class="nl">Al was ik moe, ik heb toch doorgewerkt.</span><span class="ar">رغم أنني كنت متعبًا، واصلت العمل مع ذلك.</span></li>
+        <li class="example-card"><span class="nl">Al heb ik weinig tijd, ik oefen elke dag Nederlands.</span><span class="ar">رغم أن وقتي قليل، أتدرب على الهولندية كل يوم.</span></li>
+    </ul>
+
+    <!-- ملخص -->
+    <div class="summary">
+        <h3>ملخص مهم للحفظ</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>التعبير</th>
+                    <th>المعنى</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><span dir="ltr">al gedaan</span></td><td>فُعل بالفعل</td></tr>
+                <tr><td><span dir="ltr">al klaar</span></td><td>انتهى بالفعل / جاهز بالفعل</td></tr>
+                <tr><td><span dir="ltr">al twee jaar</span></td><td>منذ سنتين</td></tr>
+                <tr><td><span dir="ltr">al lang</span></td><td>منذ زمن طويل</td></tr>
+                <tr><td><span dir="ltr">al mijn vrienden</span></td><td>جميع أصدقائي</td></tr>
+                <tr><td><span dir="ltr">al het werk</span></td><td>كل العمل</td></tr>
+                <tr><td><span dir="ltr">al bijna</span></td><td>تقريبًا بالفعل / أوشك على</td></tr>
+                <tr><td><span dir="ltr">al eerder</span></td><td>من قبل</td></tr>
+                <tr><td><span dir="ltr">al is het moeilijk</span></td><td>حتى لو كان صعبًا</td></tr>
+                <tr><td><span dir="ltr">al sinds maandag</span></td><td>منذ يوم الاثنين</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="note">
+        <strong>الفرق الذي يجب أن تتذكره:</strong><br>
+        <span dir="ltr">Ik werk hier al twee jaar.</span> — أعمل هنا منذ سنتين، وما زلت أعمل هنا.<br>
+        <span dir="ltr">Ik heb al gewerkt.</span> — لقد عملت بالفعل.<br>
+        الأولى تعبّر عن مدة مستمرة حتى الآن، والثانية عن عمل حدث بالفعل.
+    </div>
+
+    <div class="footer-note">
+        <span>🇧🇪 ١٠٠ جملة هولندية باستخدام AL</span> — مع الترجمة العربية
+    </div>
+</div>
+</body>
+</html>
