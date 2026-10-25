@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة هولندية باستخدام van</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, 'Arial', sans-serif;
+    background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+  header {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+  }
+  header::before {
+    content: "🇳🇱";
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+  }
+  header h1 {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+  }
+  header p {
+    font-size: 1em;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+  .intro {
+    background: #eaf7f0;
+    padding: 20px;
+    border-right: 5px solid #71b280;
+    margin: 20px;
+    border-radius: 8px;
+    line-height: 1.7;
+    font-size: 0.95em;
+  }
+  .intro strong { color: #134e5e; }
+  section {
+    padding: 0 20px 20px;
+  }
+  .section-title {
+    background: linear-gradient(90deg, #134e5e, #3d8b7a);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin: 25px 0 15px;
+    font-size: 1.15em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .num {
+    background: #fff;
+    color: #134e5e;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85em;
+  }
+  .sentence {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s, transform 0.2s;
+    border-radius: 6px;
+  }
+  .sentence:hover {
+    background: #eef9f3;
+    transform: translateX(-3px);
+  }
+  .sentence:last-child { border-bottom: none; }
+  .num-badge {
+    background: #ff6b35;
+    color: #fff;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8em;
+    flex-shrink: 0;
+  }
+  .texts { flex: 1; }
+  .nl {
+    color: #134e5e;
+    font-weight: 600;
+    font-size: 1.05em;
+    direction: ltr;
+    text-align: right;
+    margin-bottom: 4px;
+  }
+  .nl .van {
+    color: #ff6b35;
+    background: #ffe8d9;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+  .ar {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+  .summary {
+    background: #eaf7f0;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px dashed #3d8b7a;
+  }
+  .summary h2 {
+    color: #134e5e;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+  }
+  th, td {
+    padding: 10px;
+    text-align: right;
+    border-bottom: 1px solid #c8e6d6;
+  }
+  th {
+    background: #134e5e;
+    color: #fff;
+    font-weight: 600;
+  }
+  tr:nth-child(even) { background: #fff; }
+  tr:nth-child(odd) { background: #f0faf5; }
+  td:nth-child(2) { direction: ltr; text-align: left; color: #134e5e; font-weight: 500; }
+  .note {
+    margin-top: 15px;
+    padding: 12px;
+    background: #fff3cd;
+    border-right: 4px solid #f7931e;
+    border-radius: 6px;
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #134e5e;
+    color: #fff;
+    font-size: 0.9em;
+  }
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.4em; }
+    .nl { font-size: 0.95em; }
+    .ar { font-size: 0.85em; }
+    .num-badge { min-width: 28px; height: 28px; font-size: 0.75em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>100 جملة هولندية باستخدام <span style="color:#fff;text-shadow:0 0 10px #fff;">van</span></h1>
+    <p>دليل شامل لتعلّم حرف الجر van — مع الترجمة العربية وأمثلة من الحياة اليومية في بلجيكا</p>
+  </header>
+
+  <div class="intro">
+    كلمة <strong>van</strong> لها معانٍ متعددة حسب السياق: من، خاص بـ / ملكية، عن، مصنوع من، ابتداءً من.
+  </div>
+
+  <section>
+    <h2 class="section-title"><span class="num">1</span> van بمعنى «من»</h2>
+    <div class="sentence"><span class="num-badge">1</span><div class="texts"><div class="nl">Ik kom <span class="van">van</span> mijn werk.</div><div class="ar">أنا قادم من عملي.</div></div></div>
+    <div class="sentence"><span class="num-badge">2</span><div class="texts"><div class="nl">Ik kom <span class="van">van</span> school.</div><div class="ar">أنا قادم من المدرسة.</div></div></div>
+    <div class="sentence"><span class="num-badge">3</span><div class="texts"><div class="nl">Hij komt <span class="van">van</span> de markt.</div><div class="ar">هو قادم من السوق.</div></div></div>
+    <div class="sentence"><span class="num-badge">4</span><div class="texts"><div class="nl">Zij komt <span class="van">van</span> haar werk.</div><div class="ar">هي قادمة من عملها.</div></div></div>
+    <div class="sentence"><span class="num-badge">5</span><div class="texts"><div class="nl">We komen <span class="van">van</span> het station.</div><div class="ar">نحن قادمون من المحطة.</div></div></div>
+    <div class="sentence"><span class="num-badge">6</span><div class="texts"><div class="nl">Ik kom net <span class="van">van</span> de dokter.</div><div class="ar">لقد عدت للتو من الطبيب.</div></div></div>
+    <div class="sentence"><span class="num-badge">7</span><div class="texts"><div class="nl">Hij komt <span class="van">van</span> de supermarkt.</div><div class="ar">هو قادم من السوبرماركت.</div></div></div>
+    <div class="sentence"><span class="num-badge">8</span><div class="texts"><div class="nl">De trein komt <span class="van">van</span> Brussel.</div><div class="ar">القطار قادم من بروكسل.</div></div></div>
+    <div class="sentence"><span class="num-badge">9</span><div class="texts"><div class="nl">Ik ben moe <span class="van">van</span> het werken.</div><div class="ar">أنا متعب من العمل.</div></div></div>
+    <div class="sentence"><span class="num-badge">10</span><div class="texts"><div class="nl">Ze komt <span class="van">van</span> haar vriendin.</div><div class="ar">هي قادمة من عند صديقتها.</div></div></div>
+    <div class="sentence"><span class="num-badge">11</span><div class="texts"><div class="nl">Ik krijg een bericht <span class="van">van</span> mijn baas.</div><div class="ar">أتلقى رسالة من مديري.</div></div></div>
+    <div class="sentence"><span class="num-badge">12</span><div class="texts"><div class="nl">Dit cadeau is <span class="van">van</span> mijn vrouw.</div><div class="ar">هذه الهدية من زوجتي.</div></div></div>
+    <div class="sentence"><span class="num-badge">13</span><div class="texts"><div class="nl">Ik heb een e-mail <span class="van">van</span> VDAB ontvangen.</div><div class="ar">تلقيت بريدًا إلكترونيًا من VDAB.</div></div></div>
+    <div class="sentence"><span class="num-badge">14</span><div class="texts"><div class="nl">Hij is afkomstig <span class="van">van</span> Egypte.</div><div class="ar">هو من أصل مصري.</div></div></div>
+    <div class="sentence"><span class="num-badge">15</span><div class="texts"><div class="nl">We vertrekken <span class="van">van</span> hier.</div><div class="ar">نحن ننطلق من هنا.</div></div></div>
+    <div class="sentence"><span class="num-badge">16</span><div class="texts"><div class="nl">Ik loop <span class="van">van</span> huis naar het station.</div><div class="ar">أمشي من المنزل إلى المحطة.</div></div></div>
+    <div class="sentence"><span class="num-badge">17</span><div class="texts"><div class="nl">De bus vertrekt <span class="van">van</span> halte drie.</div><div class="ar">تنطلق الحافلة من الموقف الثالث.</div></div></div>
+    <div class="sentence"><span class="num-badge">18</span><div class="texts"><div class="nl">Ik kom <span class="van">van</span> een afspraak.</div><div class="ar">أنا قادم من موعد.</div></div></div>
+    <div class="sentence"><span class="num-badge">19</span><div class="texts"><div class="nl">Zij komt <span class="van">van</span> de kapper.</div><div class="ar">هي قادمة من مصفف الشعر.</div></div></div>
+    <div class="sentence"><span class="num-badge">20</span><div class="texts"><div class="nl">Hij komt <span class="van">van</span> een sollicitatiegesprek.</div><div class="ar">هو قادم من مقابلة عمل.</div></div></div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">2</span> van بمعنى الملكية «لـ / خاص بـ»</h2>
+    <div class="sentence"><span class="num-badge">21</span><div class="texts"><div class="nl">Dit is de auto <span class="van">van</span> mijn vader.</div><div class="ar">هذه سيارة أبي.</div></div></div>
+    <div class="sentence"><span class="num-badge">22</span><div class="texts"><div class="nl">Dat is de fiets <span class="van">van</span> mijn vrouw.</div><div class="ar">تلك دراجة زوجتي.</div></div></div>
+    <div class="sentence"><span class="num-badge">23</span><div class="texts"><div class="nl">Dit is het huis <span class="van">van</span> mijn broer.</div><div class="ar">هذا منزل أخي.</div></div></div>
+    <div class="sentence"><span class="num-badge">24</span><div class="texts"><div class="nl">De naam <span class="van">van</span> de straat is onbekend.</div><div class="ar">اسم الشارع غير معروف.</div></div></div>
+    <div class="sentence"><span class="num-badge">25</span><div class="texts"><div class="nl">Dit is de telefoon <span class="van">van</span> mijn collega.</div><div class="ar">هذا هاتف زميلي.</div></div></div>
+    <div class="sentence"><span class="num-badge">26</span><div class="texts"><div class="nl">Waar is de sleutel <span class="van">van</span> de deur?</div><div class="ar">أين مفتاح الباب؟</div></div></div>
+    <div class="sentence"><span class="num-badge">27</span><div class="texts"><div class="nl">Dat is de tas <span class="van">van</span> mijn dochter.</div><div class="ar">تلك حقيبة ابنتي.</div></div></div>
+    <div class="sentence"><span class="num-badge">28</span><div class="texts"><div class="nl">De kleur <span class="van">van</span> mijn auto is zwart.</div><div class="ar">لون سيارتي أسود.</div></div></div>
+    <div class="sentence"><span class="num-badge">29</span><div class="texts"><div class="nl">Dit is het kantoor <span class="van">van</span> de directeur.</div><div class="ar">هذا مكتب المدير.</div></div></div>
+    <div class="sentence"><span class="num-badge">30</span><div class="texts"><div class="nl">De fiets <span class="van">van</span> mijn buurman is nieuw.</div><div class="ar">دراجة جاري جديدة.</div></div></div>
+    <div class="sentence"><span class="num-badge">31</span><div class="texts"><div class="nl">Ik ken de naam <span class="van">van</span> deze winkel.</div><div class="ar">أعرف اسم هذا المحل.</div></div></div>
+    <div class="sentence"><span class="num-badge">32</span><div class="texts"><div class="nl">Dit is het nummer <span class="van">van</span> mijn telefoon.</div><div class="ar">هذا رقم هاتفي.</div></div></div>
+    <div class="sentence"><span class="num-badge">33</span><div class="texts"><div class="nl">De kinderen <span class="van">van</span> mijn vrouw zijn thuis.</div><div class="ar">أطفال زوجتي في المنزل.</div></div></div>
+    <div class="sentence"><span class="num-badge">34</span><div class="texts"><div class="nl">De documenten <span class="van">van</span> de klant liggen hier.</div><div class="ar">مستندات العميل هنا.</div></div></div>
+    <div class="sentence"><span class="num-badge">35</span><div class="texts"><div class="nl">De deur <span class="van">van</span> het gebouw is gesloten.</div><div class="ar">باب المبنى مغلق.</div></div></div>
+    <div class="sentence"><span class="num-badge">36</span><div class="texts"><div class="nl">De computer <span class="van">van</span> mijn collega werkt niet.</div><div class="ar">كمبيوتر زميلي لا يعمل.</div></div></div>
+    <div class="sentence"><span class="num-badge">37</span><div class="texts"><div class="nl">De eigenaar <span class="van">van</span> het restaurant is vriendelijk.</div><div class="ar">صاحب المطعم ودود.</div></div></div>
+    <div class="sentence"><span class="num-badge">38</span><div class="texts"><div class="nl">De prijs <span class="van">van</span> deze jas is hoog.</div><div class="ar">سعر هذا المعطف مرتفع.</div></div></div>
+    <div class="sentence"><span class="num-badge">39</span><div class="texts"><div class="nl">Het dak <span class="van">van</span> het gebouw is beschadigd.</div><div class="ar">سقف المبنى متضرر.</div></div></div>
+    <div class="sentence"><span class="num-badge">40</span><div class="texts"><div class="nl">De sleutel <span class="van">van</span> mijn auto ligt op tafel.</div><div class="ar">مفتاح سيارتي على الطاولة.</div></div></div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">3</span> van بمعنى «بعض / من الكمية»</h2>
+    <div class="sentence"><span class="num-badge">41</span><div class="texts"><div class="nl">Ik drink een glas <span class="van">van</span> het water.</div><div class="ar">أشرب كوبًا من الماء.</div></div></div>
+    <div class="sentence"><span class="num-badge">42</span><div class="texts"><div class="nl">Wil je een stukje <span class="van">van</span> de taart?</div><div class="ar">هل تريد قطعة من الكعكة؟</div></div></div>
+    <div class="sentence"><span class="num-badge">43</span><div class="texts"><div class="nl">Ik eet een deel <span class="van">van</span> de maaltijd.</div><div class="ar">آكل جزءًا من الوجبة.</div></div></div>
+    <div class="sentence"><span class="num-badge">44</span><div class="texts"><div class="nl">Een <span class="van">van</span> mijn vrienden woont in Gent.</div><div class="ar">أحد أصدقائي يسكن في خنت.</div></div></div>
+    <div class="sentence"><span class="num-badge">45</span><div class="texts"><div class="nl">Een <span class="van">van</span> mijn collega's spreekt Nederlands.</div><div class="ar">أحد زملائي يتحدث الهولندية.</div></div></div>
+    <div class="sentence"><span class="num-badge">46</span><div class="texts"><div class="nl">Twee <span class="van">van</span> de kinderen zijn thuis.</div><div class="ar">اثنان من الأطفال في المنزل.</div></div></div>
+    <div class="sentence"><span class="num-badge">47</span><div class="texts"><div class="nl">Veel <span class="van">van</span> mijn vrienden werken in België.</div><div class="ar">كثير من أصدقائي يعملون في بلجيكا.</div></div></div>
+    <div class="sentence"><span class="num-badge">48</span><div class="texts"><div class="nl">Sommige <span class="van">van</span> deze winkels zijn gesloten.</div><div class="ar">بعض هذه المحلات مغلقة.</div></div></div>
+    <div class="sentence"><span class="num-badge">49</span><div class="texts"><div class="nl">Ik heb een deel <span class="van">van</span> het geld betaald.</div><div class="ar">دفعت جزءًا من المال.</div></div></div>
+    <div class="sentence"><span class="num-badge">50</span><div class="texts"><div class="nl">Een <span class="van">van</span> deze antwoorden is juist.</div><div class="ar">إحدى هذه الإجابات صحيحة.</div></div></div>
+    <div class="sentence"><span class="num-badge">51</span><div class="texts"><div class="nl">Ik heb veel <span class="van">van</span> deze boeken gelezen.</div><div class="ar">قرأت الكثير من هذه الكتب.</div></div></div>
+    <div class="sentence"><span class="num-badge">52</span><div class="texts"><div class="nl">Drie <span class="van">van</span> mijn collega's zijn afwezig.</div><div class="ar">ثلاثة من زملائي غائبون.</div></div></div>
+    <div class="sentence"><span class="num-badge">53</span><div class="texts"><div class="nl">Een <span class="van">van</span> de deuren is open.</div><div class="ar">أحد الأبواب مفتوح.</div></div></div>
+    <div class="sentence"><span class="num-badge">54</span><div class="texts"><div class="nl">Veel <span class="van">van</span> de werknemers komen met de bus.</div><div class="ar">كثير من الموظفين يأتون بالحافلة.</div></div></div>
+    <div class="sentence"><span class="num-badge">55</span><div class="texts"><div class="nl">Een <span class="van">van</span> mijn dromen is een eigen huis.</div><div class="ar">أحد أحلامي امتلاك منزل خاص.</div></div></div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">4</span> van بمعنى «عن / بسبب»</h2>
+    <div class="sentence"><span class="num-badge">56</span><div class="texts"><div class="nl">Wat vind je <span class="van">van</span> deze film?</div><div class="ar">ما رأيك في هذا الفيلم؟</div></div></div>
+    <div class="sentence"><span class="num-badge">57</span><div class="texts"><div class="nl">Wat denk je <span class="van">van</span> mijn idee?</div><div class="ar">ما رأيك في فكرتي؟</div></div></div>
+    <div class="sentence"><span class="num-badge">58</span><div class="texts"><div class="nl">Ik hou <span class="van">van</span> muziek.</div><div class="ar">أنا أحب الموسيقى.</div></div></div>
+    <div class="sentence"><span class="num-badge">59</span><div class="texts"><div class="nl">Zij houdt <span class="van">van</span> haar familie.</div><div class="ar">هي تحب عائلتها.</div></div></div>
+    <div class="sentence"><span class="num-badge">60</span><div class="texts"><div class="nl">Hij houdt <span class="van">van</span> voetbal.</div><div class="ar">هو يحب كرة القدم.</div></div></div>
+    <div class="sentence"><span class="num-badge">61</span><div class="texts"><div class="nl">Ik ben bang <span class="van">van</span> honden.</div><div class="ar">أنا أخاف من الكلاب.</div></div></div>
+    <div class="sentence"><span class="num-badge">62</span><div class="texts"><div class="nl">Ik word moe <span class="van">van</span> dit lawaai.</div><div class="ar">أشعر بالتعب بسبب هذه الضوضاء.</div></div></div>
+    <div class="sentence"><span class="num-badge">63</span><div class="texts"><div class="nl">Hij is ziek geworden <span class="van">van</span> het eten.</div><div class="ar">مرض بسبب الطعام.</div></div></div>
+    <div class="sentence"><span class="num-badge">64</span><div class="texts"><div class="nl">Ik schrik <span class="van">van</span> het harde geluid.</div><div class="ar">أفزع من الصوت المرتفع.</div></div></div>
+    <div class="sentence"><span class="num-badge">65</span><div class="texts"><div class="nl">Wat weet je <span class="van">van</span> België?</div><div class="ar">ماذا تعرف عن بلجيكا؟</div></div></div>
+    <div class="sentence"><span class="num-badge">66</span><div class="texts"><div class="nl">Ik heb gehoord <span class="van">van</span> deze school.</div><div class="ar">سمعت عن هذه المدرسة.</div></div></div>
+    <div class="sentence"><span class="num-badge">67</span><div class="texts"><div class="nl">Ik droom <span class="van">van</span> een betere toekomst.</div><div class="ar">أحلم بمستقبل أفضل.</div></div></div>
+    <div class="sentence"><span class="num-badge">68</span><div class="texts"><div class="nl">Zij geniet <span class="van">van</span> haar vakantie.</div><div class="ar">هي تستمتع بعطلتها.</div></div></div>
+    <div class="sentence"><span class="num-badge">69</span><div class="texts"><div class="nl">Hij houdt <span class="van">van</span> koken.</div><div class="ar">هو يحب الطبخ.</div></div></div>
+    <div class="sentence"><span class="num-badge">70</span><div class="texts"><div class="nl">Ik ben overtuigd <span class="van">van</span> zijn ervaring.</div><div class="ar">أنا مقتنع بخبرته.</div></div></div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">5</span> van في المواد والأشياء</h2>
+    <div class="sentence"><span class="num-badge">71</span><div class="texts"><div class="nl">De tafel is <span class="van">van</span> hout.</div><div class="ar">الطاولة مصنوعة من الخشب.</div></div></div>
+    <div class="sentence"><span class="num-badge">72</span><div class="texts"><div class="nl">De ring is <span class="van">van</span> goud.</div><div class="ar">الخاتم مصنوع من الذهب.</div></div></div>
+    <div class="sentence"><span class="num-badge">73</span><div class="texts"><div class="nl">De fles is <span class="van">van</span> plastic.</div><div class="ar">الزجاجة مصنوعة من البلاستيك.</div></div></div>
+    <div class="sentence"><span class="num-badge">74</span><div class="texts"><div class="nl">Dit shirt is <span class="van">van</span> katoen.</div><div class="ar">هذا القميص مصنوع من القطن.</div></div></div>
+    <div class="sentence"><span class="num-badge">75</span><div class="texts"><div class="nl">De muur is <span class="van">van</span> beton.</div><div class="ar">الحائط مصنوع من الخرسانة.</div></div></div>
+    <div class="sentence"><span class="num-badge">76</span><div class="texts"><div class="nl">Deze stoel is <span class="van">van</span> metaal.</div><div class="ar">هذا الكرسي مصنوع من المعدن.</div></div></div>
+    <div class="sentence"><span class="num-badge">77</span><div class="texts"><div class="nl">De deur is <span class="van">van</span> glas.</div><div class="ar">الباب مصنوع من الزجاج.</div></div></div>
+    <div class="sentence"><span class="num-badge">78</span><div class="texts"><div class="nl">De brug is <span class="van">van</span> staal.</div><div class="ar">الجسر مصنوع من الفولاذ.</div></div></div>
+    <div class="sentence"><span class="num-badge">79</span><div class="texts"><div class="nl">De doos is <span class="van">van</span> karton.</div><div class="ar">الصندوق مصنوع من الكرتون.</div></div></div>
+    <div class="sentence"><span class="num-badge">80</span><div class="texts"><div class="nl">Het gebouw is <span class="van">van</span> steen.</div><div class="ar">المبنى مصنوع من الحجر.</div></div></div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">6</span> van في الوقت والعمل والحياة اليومية</h2>
+    <div class="sentence"><span class="num-badge">81</span><div class="texts"><div class="nl">Ik werk <span class="van">van</span> maandag tot vrijdag.</div><div class="ar">أعمل من الاثنين إلى الجمعة.</div></div></div>
+    <div class="sentence"><span class="num-badge">82</span><div class="texts"><div class="nl">De winkel is open <span class="van">van</span> negen tot zes.</div><div class="ar">المحل مفتوح من التاسعة إلى السادسة.</div></div></div>
+    <div class="sentence"><span class="num-badge">83</span><div class="texts"><div class="nl"><span class="van">Van</span>avond studeer ik thuis.</div><div class="ar">سأدرس في المنزل هذا المساء.</div></div></div>
+    <div class="sentence"><span class="num-badge">84</span><div class="texts"><div class="nl"><span class="van">Van</span>morgen was het erg koud.</div><div class="ar">كان الجو باردًا جدًا هذا الصباح.</div></div></div>
+    <div class="sentence"><span class="num-badge">85</span><div class="texts"><div class="nl">Ik werk <span class="van">van</span> acht uur tot vier uur.</div><div class="ar">أعمل من الساعة الثامنة إلى الرابعة.</div></div></div>
+    <div class="sentence"><span class="num-badge">86</span><div class="texts"><div class="nl">We zijn <span class="van">van</span> plan om morgen te vertrekken.</div><div class="ar">نخطط للمغادرة غدًا.</div></div></div>
+    <div class="sentence"><span class="num-badge">87</span><div class="texts"><div class="nl">Ik verander <span class="van">van</span> baan.</div><div class="ar">أغيّر وظيفتي.</div></div></div>
+    <div class="sentence"><span class="num-badge">88</span><div class="texts"><div class="nl">Hij verandert <span class="van">van</span> mening.</div><div class="ar">هو يغيّر رأيه.</div></div></div>
+    <div class="sentence"><span class="num-badge">89</span><div class="texts"><div class="nl">Ik ben <span class="van">van</span> plan Nederlands te leren.</div><div class="ar">أنوي تعلم الهولندية.</div></div></div>
+    <div class="sentence"><span class="num-badge">90</span><div class="texts"><div class="nl"><span class="van">Van</span> hier tot het station is het tien minuten lopen.</div><div class="ar">من هنا إلى المحطة عشر دقائق مشيًا.</div></div></div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">7</span> تعبيرات هولندية مهمة باستخدام van</h2>
+    <div class="sentence"><span class="num-badge">91</span><div class="texts"><div class="nl">Ik ben <span class="van">van</span> mening dat dit beter is.</div><div class="ar">أرى أن هذا أفضل.</div></div></div>
+    <div class="sentence"><span class="num-badge">92</span><div class="texts"><div class="nl">Hij is <span class="van">van</span> beroep ingenieur.</div><div class="ar">مهنتة مهندس.</div></div></div>
+    <div class="sentence"><span class="num-badge">93</span><div class="texts"><div class="nl">Dat is vriendelijk <span class="van">van</span> je.</div><div class="ar">هذا لطف منك.</div></div></div>
+    <div class="sentence"><span class="num-badge">94</span><div class="texts"><div class="nl">Het hangt <span class="van">van</span> het weer af.</div><div class="ar">هذا يعتمد على الطقس.</div></div></div>
+    <div class="sentence"><span class="num-badge">95</span><div class="texts"><div class="nl">Ik ben onder de indruk <span class="van">van</span> zijn werk.</div><div class="ar">أنا معجب بعمله.</div></div></div>
+    <div class="sentence"><span class="num-badge">96</span><div class="texts"><div class="nl">We zijn op de hoogte <span class="van">van</span> het probleem.</div><div class="ar">نحن على علم بالمشكلة.</div></div></div>
+    <div class="sentence"><span class="num-badge">97</span><div class="texts"><div class="nl">Hij maakt gebruik <span class="van">van</span> de computer.</div><div class="ar">هو يستخدم الكمبيوتر.</div></div></div>
+    <div class="sentence"><span class="num-badge">98</span><div class="texts"><div class="nl">Ik ben trots op mijn werk.</div><div class="ar">أنا فخور بعملي.</div></div></div>
+    <div class="sentence"><span class="num-badge">99</span><div class="texts"><div class="nl">Ze is verliefd op hem.</div><div class="ar">هي واقعة في حبه.</div></div></div>
+    <div class="sentence"><span class="num-badge">100</span><div class="texts"><div class="nl">Ik ben afhankelijk <span class="van">van</span> het openbaar vervoer.</div><div class="ar">أنا أعتمد على وسائل النقل العام.</div></div></div>
+  </section>
+
+  <div class="summary">
+    <h2>📌 ملخص سريع</h2>
+    <table>
+      <thead>
+        <tr><th>التعبير</th><th>المعنى</th><th>مثال</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>van mijn werk</td><td>من عملي</td><td>Ik kom van mijn werk.</td></tr>
+        <tr><td>de auto van mijn vader</td><td>سيارة أبي</td><td>De auto van mijn vader.</td></tr>
+        <tr><td>een van mijn vrienden</td><td>أحد أصدقائي</td><td>Een van mijn vrienden.</td></tr>
+        <tr><td>houden van</td><td>يحب</td><td>Ik hou van muziek.</td></tr>
+        <tr><td>gemaakt van</td><td>مصنوع من</td><td>Gemaakt van hout.</td></tr>
+        <tr><td>van maandag tot vrijdag</td><td>من الاثنين إلى الجمعة</td><td>Ik werk van maandag tot vrijdag.</td></tr>
+        <tr><td>afhangen van</td><td>يعتمد على</td><td>Het hangt van jou af.</td></tr>
+        <tr><td>gebruikmaken van</td><td>يستخدم / يستفيد من</td><td>Ik maak gebruik van de bus.</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <strong>مهم جدًا:</strong> في الهولندية البلجيكية، تعبير <strong>houden van</strong> شائع للتعبير عن الحب أو الإعجاب، بينما <strong>een van mijn vrienden</strong> تعني «أحد أصدقائي». أما <strong>van … tot …</strong> فتُستخدم للتعبير عن البداية والنهاية، مثل الوقت أو المسافة.
+    </div>
+  </div>
+
+  <footer>
+    🇳🇱 100 جملة هولندية باستخدام van — مع الترجمة العربية
+  </footer>
+</div>
+</body>
+</html>
