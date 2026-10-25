@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة هولندية باستخدام aan</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+  header {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+  }
+  header::before {
+    content: "🇳🇱";
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+  }
+  header h1 {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+  }
+  header p {
+    font-size: 1em;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+  .intro {
+    background: #fff8f0;
+    padding: 20px;
+    border-right: 5px solid #ff6b35;
+    margin: 20px;
+    border-radius: 8px;
+    line-height: 1.7;
+    font-size: 0.95em;
+  }
+  .intro strong { color: #ff6b35; }
+  section {
+    padding: 0 20px 20px;
+  }
+  .section-title {
+    background: linear-gradient(90deg, #2a5298, #4a7bc8);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin: 25px 0 15px;
+    font-size: 1.15em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .num {
+    background: #fff;
+    color: #2a5298;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85em;
+  }
+  .sentence {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s, transform 0.2s;
+    border-radius: 6px;
+  }
+  .sentence:hover {
+    background: #f0f6ff;
+    transform: translateX(-3px);
+  }
+  .sentence:last-child { border-bottom: none; }
+  .num-badge {
+    background: #ff6b35;
+    color: #fff;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8em;
+    flex-shrink: 0;
+  }
+  .texts { flex: 1; }
+  .nl {
+    color: #1e3c72;
+    font-weight: 600;
+    font-size: 1.05em;
+    direction: ltr;
+    text-align: right;
+    margin-bottom: 4px;
+  }
+  .nl .aan {
+    color: #ff6b35;
+    background: #ffe8d9;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+  .ar {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+  .summary {
+    background: #f0f6ff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px dashed #4a7bc8;
+  }
+  .summary h2 {
+    color: #2a5298;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+  }
+  th, td {
+    padding: 10px;
+    text-align: right;
+    border-bottom: 1px solid #d0dff0;
+  }
+  th {
+    background: #2a5298;
+    color: #fff;
+    font-weight: 600;
+  }
+  tr:nth-child(even) { background: #fff; }
+  tr:nth-child(odd) { background: #eaf2fb; }
+  td:nth-child(2) { direction: ltr; text-align: left; color: #1e3c72; font-weight: 500; }
+  .note {
+    margin-top: 15px;
+    padding: 12px;
+    background: #fff3cd;
+    border-right: 4px solid #f7931e;
+    border-radius: 6px;
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e3c72;
+    color: #fff;
+    font-size: 0.9em;
+  }
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.4em; }
+    .nl { font-size: 0.95em; }
+    .ar { font-size: 0.85em; }
+    .num-badge { min-width: 28px; height: 28px; font-size: 0.75em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>100 جملة هولندية باستخدام <span style="color:#fff;text-shadow:0 0 10px #fff;">aan</span></h1>
+    <p>دليل شامل لتعلّم حرف الجر aan — مع الترجمة العربية</p>
+  </header>
+
+  <div class="intro">
+    كلمة <strong>aan</strong> من حروف الجر المهمة جدًا في الهولندية البلجيكية، ومعناها يتغير حسب السياق: عند، على، إلى، مُشغَّل، أو مرتبط بشيء.
+  </div>
+
+  <section>
+    <h2 class="section-title"><span class="num">1</span> عند / بجانب شخص أو مكان</h2>
+    <div class="sentence"><span class="num-badge">1</span><div class="texts"><div class="nl">Ik zit <span class="aan">aan</span> tafel.</div><div class="ar">أنا جالس على المائدة.</div></div></div>
+    <div class="sentence"><span class="num-badge">2</span><div class="texts"><div class="nl">Ik zit <span class="aan">aan</span> het raam.</div><div class="ar">أنا جالس عند النافذة.</div></div></div>
+    <div class="sentence"><span class="num-badge">3</span><div class="texts"><div class="nl">Hij staat <span class="aan">aan</span> de deur.</div><div class="ar">هو واقف عند الباب.</div></div></div>
+    <div class="sentence"><span class="num-badge">4</span><div class="texts"><div class="nl">Zij zit <span class="aan">aan</span> mijn rechterkant.</div><div class="ar">هي جالسة على يميني.</div></div></div>
+    <div class="sentence"><span class="num-badge">5</span><div class="texts"><div class="nl">De winkel ligt <span class="aan">aan</span> deze straat.</div><div class="ar">المحل يقع على هذا الشارع.</div></div></div>
+    <div class="sentence"><span class="num-badge">6</span><div class="texts"><div class="nl">Ik wacht <span class="aan">aan</span> de ingang.</div><div class="ar">أنا أنتظر عند المدخل.</div></div></div>
+    <div class="sentence"><span class="num-badge">7</span><div class="texts"><div class="nl">We zitten <span class="aan">aan</span> dezelfde tafel.</div><div class="ar">نحن نجلس على نفس الطاولة.</div></div></div>
+    <div class="sentence"><span class="num-badge">8</span><div class="texts"><div class="nl">Hij staat <span class="aan">aan</span> de bushalte.</div><div class="ar">هو واقف عند موقف الحافلة.</div></div></div>
+    <div class="sentence"><span class="num-badge">9</span><div class="texts"><div class="nl">Ik woon <span class="aan">aan</span> een drukke straat.</div><div class="ar">أنا أسكن على شارع مزدحم.</div></div></div>
+    <div class="sentence"><span class="num-badge">10</span><div class="texts"><div class="nl">De school ligt <span class="aan">aan</span> de overkant.</div><div class="ar">المدرسة تقع على الجانب المقابل.</div></div></div>
+    <div class="sentence"><span class="num-badge">11</span><div class="texts"><div class="nl">Ze zit <span class="aan">aan</span> het stuur.</div><div class="ar">هي تجلس خلف عجلة القيادة.</div></div></div>
+    <div class="sentence"><span class="num-badge">12</span><div class="texts"><div class="nl">Ik sta <span class="aan">aan</span> jouw kant.</div><div class="ar">أنا في صفك.</div></div></div>
+    <div class="sentence"><span class="num-badge">13</span><div class="texts"><div class="nl">De kinderen zitten <span class="aan">aan</span> tafel.</div><div class="ar">الأطفال جالسون إلى المائدة.</div></div></div>
+    <div class="sentence"><span class="num-badge">14</span><div class="texts"><div class="nl">Hij wacht <span class="aan">aan</span> de uitgang.</div><div class="ar">هو ينتظر عند المخرج.</div></div></div>
+    <div class="sentence"><span class="num-badge">15</span><div class="texts"><div class="nl">We ontmoeten elkaar <span class="aan">aan</span> het station.</div><div class="ar">سنلتقي عند المحطة.</div></div></div>
+    <div class="sentence"><span class="num-badge">16</span><div class="texts"><div class="nl">Er hangt een klok <span class="aan">aan</span> de muur.</div><div class="ar">توجد ساعة معلقة على الحائط.</div></div></div>
+    <div class="sentence"><span class="num-badge">17</span><div class="texts"><div class="nl">Er staat een fiets <span class="aan">aan</span> de muur.</div><div class="ar">توجد دراجة بجانب الحائط.</div></div></div>
+    <div class="sentence"><span class="num-badge">18</span><div class="texts"><div class="nl">Ik zit <span class="aan">aan</span> het bureau.</div><div class="ar">أنا جالس إلى المكتب.</div></div></div>
+    <div class="sentence"><span class="num-badge">19</span><div class="texts"><div class="nl">De auto staat <span class="aan">aan</span> de straatkant.</div><div class="ar">السيارة واقفة بجانب الشارع.</div></div></div>
+    <div class="sentence"><span class="num-badge">20</span><div class="texts"><div class="nl">Ze staat <span class="aan">aan</span> de balie.</div><div class="ar">هي واقفة عند مكتب الاستقبال.</div></div></div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">2</span> على / مُعلَّق على شيء</h2>
+    <div class="sentence"><span class="num-badge">21</span><div class="texts"><div class="nl">Mijn jas hangt <span class="aan">aan</span> de kapstok.</div><div class="ar">معطفي معلّق على علاقة الملابس.</div></div></div>
+    <div class="sentence"><span class="num-badge">22</span><div class="texts"><div class="nl">De sleutel hangt <span class="aan">aan</span> de deur.</div><div class="ar">المفتاح معلّق على الباب.</div></div></div>
+    <div class="sentence"><span class="num-badge">23</span><div class="texts"><div class="nl">De foto hangt <span class="aan">aan</span> de muur.</div><div class="ar">الصورة معلّقة على الحائط.</div></div></div>
+    <div class="sentence"><span class="num-badge">24</span><div class="texts"><div class="nl">Ik heb een tas <span class="aan">aan</span> mijn schouder.</div><div class="ar">لدي حقيبة على كتفي.</div></div></div>
+    <div class="sentence"><span class="num-badge">25</span><div class="texts"><div class="nl">Hij draagt een horloge <span class="aan">aan</span> zijn pols.</div><div class="ar">هو يرتدي ساعة في معصمه.</div></div></div>
+    <div class="sentence"><span class="num-badge">26</span><div class="texts"><div class="nl">Er hangt een lamp <span class="aan">aan</span> het plafond.</div><div class="ar">يوجد مصباح معلّق في السقف.</div></div></div>
+    <div class="sentence"><span class="num-badge">27</span><div class="texts"><div class="nl">De poster hangt <span class="aan">aan</span> de muur.</div><div class="ar">الملصق معلّق على الحائط.</div></div></div>
+    <div class="sentence"><span class="num-badge">28</span><div class="texts"><div class="nl">Ik heb een pleister <span class="aan">aan</span> mijn vinger.</div><div class="ar">لدي لاصقة طبية على إصبعي.</div></div></div>
+    <div class="sentence"><span class="num-badge">29</span><div class="texts"><div class="nl">Ze draagt oorbellen <span class="aan">aan</span> haar oren.</div><div class="ar">هي ترتدي أقراطًا في أذنيها.</div></div></div>
+    <div class="sentence"><span class="num-badge">30</span><div class="texts"><div class="nl">Er zit verf <span class="aan">aan</span> mijn handen.</div><div class="ar">يوجد طلاء على يديّ.</div></div></div>
+    <div class="sentence"><span class="num-badge">31</span><div class="texts"><div class="nl">De deur zit <span class="aan">aan</span> de linkerkant.</div><div class="ar">الباب موجود على الجانب الأيسر.</div></div></div>
+    <div class="sentence"><span class="num-badge">32</span><div class="texts"><div class="nl">Het label hangt <span class="aan">aan</span> de jas.</div><div class="ar">البطاقة معلّقة بالمعطف.</div></div></div>
+    <div class="sentence"><span class="num-badge">33</span><div class="texts"><div class="nl">De spiegel hangt <span class="aan">aan</span> de muur.</div><div class="ar">المرآة معلّقة على الحائط.</div></div></div>
+    <div class="sentence"><span class="num-badge">34</span><div class="texts"><div class="nl">Hij heeft modder <span class="aan">aan</span> zijn schoenen.</div><div class="ar">يوجد طين على حذائه.</div></div></div>
+    <div class="sentence"><span class="num-badge">35</span><div class="texts"><div class="nl">Er zit een vlek <span class="aan">aan</span> mijn broek.</div><div class="ar">توجد بقعة على سروالي.</div></div></div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">3</span> تشغيل الأجهزة وإطفاؤها</h2>
+    <div class="sentence"><span class="num-badge">36</span><div class="texts"><div class="nl">Doe het licht <span class="aan">aan</span>.</div><div class="ar">شغّل الضوء.</div></div></div>
+    <div class="sentence"><span class="num-badge">37</span><div class="texts"><div class="nl">Ik doe de televisie <span class="aan">aan</span>.</div><div class="ar">أنا أشغّل التلفاز.</div></div></div>
+    <div class="sentence"><span class="num-badge">38</span><div class="texts"><div class="nl">Zet de computer <span class="aan">aan</span>.</div><div class="ar">شغّل الكمبيوتر.</div></div></div>
+    <div class="sentence"><span class="num-badge">39</span><div class="texts"><div class="nl">De verwarming staat <span class="aan">aan</span>.</div><div class="ar">التدفئة تعمل.</div></div></div>
+    <div class="sentence"><span class="num-badge">40</span><div class="texts"><div class="nl">Het alarm staat <span class="aan">aan</span>.</div><div class="ar">جهاز الإنذار مُفعّل.</div></div></div>
+    <div class="sentence"><span class="num-badge">41</span><div class="texts"><div class="nl">Laat de radio <span class="aan">aan</span>.</div><div class="ar">اترك الراديو يعمل.</div></div></div>
+    <div class="sentence"><span class="num-badge">42</span><div class="texts"><div class="nl">Doe de lamp <span class="aan">aan</span>.</div><div class="ar">شغّل المصباح.</div></div></div>
+    <div class="sentence"><span class="num-badge">43</span><div class="texts"><div class="nl">Mijn telefoon staat nog <span class="aan">aan</span>.</div><div class="ar">هاتفي ما زال يعمل.</div></div></div>
+    <div class="sentence"><span class="num-badge">44</span><div class="texts"><div class="nl">Zet de airconditioning <span class="aan">aan</span>.</div><div class="ar">شغّل تكييف الهواء.</div></div></div>
+    <div class="sentence"><span class="num-badge">45</span><div class="texts"><div class="nl">De motor staat <span class="aan">aan</span>.</div><div class="ar">المحرك يعمل.</div></div></div>
+    <div class="sentence"><span class="num-badge">46</span><div class="texts"><div class="nl">De oven staat <span class="aan">aan</span>.</div><div class="ar">الفرن يعمل.</div></div></div>
+    <div class="sentence"><span class="num-badge">47</span><div class="texts"><div class="nl">Doe het licht uit en weer <span class="aan">aan</span>.</div><div class="ar">أطفئ الضوء ثم شغّله مرة أخرى.</div></div></div>
+    <div class="sentence"><span class="num-badge">48</span><div class="texts"><div class="nl">De computer gaat automatisch <span class="aan">aan</span>.</div><div class="ar">الكمبيوتر يعمل تلقائيًا.</div></div></div>
+    <div class="sentence"><span class="num-badge">49</span><div class="texts"><div class="nl">Waarom staat de televisie <span class="aan">aan</span>?</div><div class="ar">لماذا التلفاز يعمل؟</div></div></div>
+    <div class="sentence"><span class="num-badge">50</span><div class="texts"><div class="nl">Ik laat mijn telefoon de hele nacht <span class="aan">aan</span>.</div><div class="ar">أترك هاتفي يعمل طوال الليل.</div></div></div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">4</span> الملابس والارتداء</h2>
+    <div class="sentence"><span class="num-badge">51</span><div class="texts"><div class="nl">Ik trek mijn jas <span class="aan">aan</span>.</div><div class="ar">أرتدي معطفي.</div></div></div>
+    <div class="sentence"><span class="num-badge">52</span><div class="texts"><div class="nl">Trek je schoenen <span class="aan">aan</span>.</div><div class="ar">ارتدِ حذاءك.</div></div></div>
+    <div class="sentence"><span class="num-badge">53</span><div class="texts"><div class="nl">Ik doe mijn bril <span class="aan">aan</span>.</div><div class="ar">أضع نظارتي.</div></div></div>
+    <div class="sentence"><span class="num-badge">54</span><div class="texts"><div class="nl">Hij trekt zijn werkbroek <span class="aan">aan</span>.</div><div class="ar">هو يرتدي سروال العمل.</div></div></div>
+    <div class="sentence"><span class="num-badge">55</span><div class="texts"><div class="nl">Zij doet haar handschoenen <span class="aan">aan</span>.</div><div class="ar">هي ترتدي قفازيها.</div></div></div>
+    <div class="sentence"><span class="num-badge">56</span><div class="texts"><div class="nl">Trek een warme trui <span class="aan">aan</span>.</div><div class="ar">ارتدِ كنزة دافئة.</div></div></div>
+    <div class="sentence"><span class="num-badge">57</span><div class="texts"><div class="nl">Ik trek mijn werkkleding <span class="aan">aan</span>.</div><div class="ar">أرتدي ملابس العمل.</div></div></div>
+    <div class="sentence"><span class="num-badge">58</span><div class="texts"><div class="nl">Doe je veiligheidsschoenen <span class="aan">aan</span>.</div><div class="ar">ارتدِ حذاء السلامة.</div></div></div>
+    <div class="sentence"><span class="num-badge">59</span><div class="texts"><div class="nl">Hij trekt zijn regenjas <span class="aan">aan</span>.</div><div class="ar">هو يرتدي معطف المطر.</div></div></div>
+    <div class="sentence"><span class="num-badge">60</span><div class="texts"><div class="nl">Ik trek mijn schoenen <span class="aan">aan</span> voordat ik vertrek.</div><div class="ar">أرتدي حذائي قبل أن أغادر.</div></div></div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">5</span> أفعال وتعبيرات شائعة مع aan</h2>
+    <div class="sentence"><span class="num-badge">61</span><div class="texts"><div class="nl">Ik denk <span class="aan">aan</span> jou.</div><div class="ar">أنا أفكر فيك.</div></div></div>
+    <div class="sentence"><span class="num-badge">62</span><div class="texts"><div class="nl">Ik werk <span class="aan">aan</span> een project.</div><div class="ar">أنا أعمل على مشروع.</div></div></div>
+    <div class="sentence"><span class="num-badge">63</span><div class="texts"><div class="nl">Zij werkt <span class="aan">aan</span> haar Nederlands.</div><div class="ar">هي تعمل على تحسين لغتها الهولندية.</div></div></div>
+    <div class="sentence"><span class="num-badge">64</span><div class="texts"><div class="nl">Ik begin <span class="aan">aan</span> mijn huiswerk.</div><div class="ar">أبدأ واجبي المنزلي.</div></div></div>
+    <div class="sentence"><span class="num-badge">65</span><div class="texts"><div class="nl">Hij neemt deel <span class="aan">aan</span> de vergadering.</div><div class="ar">هو يشارك في الاجتماع.</div></div></div>
+    <div class="sentence"><span class="num-badge">66</span><div class="texts"><div class="nl">Ik twijfel <span class="aan">aan</span> zijn verhaal.</div><div class="ar">أنا أشك في روايته.</div></div></div>
+    <div class="sentence"><span class="num-badge">67</span><div class="texts"><div class="nl">We wennen <span class="aan">aan</span> het nieuwe huis.</div><div class="ar">نحن نعتاد على المنزل الجديد.</div></div></div>
+    <div class="sentence"><span class="num-badge">68</span><div class="texts"><div class="nl">Ik ben gewend <span class="aan">aan</span> het koude weer.</div><div class="ar">أنا معتاد على الطقس البارد.</div></div></div>
+    <div class="sentence"><span class="num-badge">69</span><div class="texts"><div class="nl">Zij denkt <span class="aan">aan</span> haar familie.</div><div class="ar">هي تفكر في عائلتها.</div></div></div>
+    <div class="sentence"><span class="num-badge">70</span><div class="texts"><div class="nl">Hij werkt <span class="aan">aan</span> de installatie.</div><div class="ar">هو يعمل على التركيب.</div></div></div>
+    <div class="sentence"><span class="num-badge">71</span><div class="texts"><div class="nl">Ik besteed veel tijd <span class="aan">aan</span> mijn studie.</div><div class="ar">أخصص وقتًا طويلًا لدراستي.</div></div></div>
+    <div class="sentence"><span class="num-badge">72</span><div class="texts"><div class="nl">Zij heeft behoefte <span class="aan">aan</span> rust.</div><div class="ar">هي بحاجة إلى الراحة.</div></div></div>
+    <div class="sentence"><span class="num-badge">73</span><div class="texts"><div class="nl">Ik heb geen behoefte <span class="aan">aan</span> problemen.</div><div class="ar">أنا لست بحاجة إلى مشاكل.</div></div></div>
+    <div class="sentence"><span class="num-badge">74</span><div class="texts"><div class="nl">Hij geeft antwoord <span class="aan">aan</span> de klant.</div><div class="ar">هو يجيب العميل.</div></div></div>
+    <div class="sentence"><span class="num-badge">75</span><div class="texts"><div class="nl">Ik vraag informatie <span class="aan">aan</span> de gemeente.</div><div class="ar">أطلب معلومات من البلدية.</div></div></div>
+    <div class="sentence"><span class="num-badge">76</span><div class="texts"><div class="nl">Zij schrijft een brief <span class="aan">aan</span> haar werkgever.</div><div class="ar">هي تكتب رسالة إلى صاحب عملها.</div></div></div>
+    <div class="sentence"><span class="num-badge">77</span><div class="texts"><div class="nl">Ik geef mijn documenten <span class="aan">aan</span> de medewerker.</div><div class="ar">أعطي مستنداتي للموظف.</div></div></div>
+    <div class="sentence"><span class="num-badge">78</span><div class="texts"><div class="nl">Hij denkt <span class="aan">aan</span> een nieuwe baan.</div><div class="ar">هو يفكر في وظيفة جديدة.</div></div></div>
+    <div class="sentence"><span class="num-badge">79</span><div class="texts"><div class="nl">We werken samen <span class="aan">aan</span> dit plan.</div><div class="ar">نحن نعمل معًا على هذه الخطة.</div></div></div>
+    <div class="sentence"><span class="num-badge">80</span><div class="texts"><div class="nl">Ik houd me <span class="aan">aan</span> de regels.</div><div class="ar">أنا ألتزم بالقواعد.</div></div></div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">6</span> العمل والحياة اليومية في بلجيكا</h2>
+    <div class="sentence"><span class="num-badge">81</span><div class="texts"><div class="nl">Ik meld me <span class="aan">aan</span> bij VDAB.</div><div class="ar">أسجّل نفسي لدى VDAB.</div></div></div>
+    <div class="sentence"><span class="num-badge">82</span><div class="texts"><div class="nl">Ik schrijf me <span class="aan">aan</span> de balie in.</div><div class="ar">أسجّل نفسي عند مكتب الاستقبال.</div></div></div>
+    <div class="sentence"><span class="num-badge">83</span><div class="texts"><div class="nl">Ik neem deel <span class="aan">aan</span> een Nederlandse cursus.</div><div class="ar">أشارك في دورة للغة الهولندية.</div></div></div>
+    <div class="sentence"><span class="num-badge">84</span><div class="texts"><div class="nl">Ik werk <span class="aan">aan</span> een technisch rapport.</div><div class="ar">أعمل على تقرير فني.</div></div></div>
+    <div class="sentence"><span class="num-badge">85</span><div class="texts"><div class="nl">De ingenieur werkt <span class="aan">aan</span> de plannen.</div><div class="ar">المهندس يعمل على المخططات.</div></div></div>
+    <div class="sentence"><span class="num-badge">86</span><div class="texts"><div class="nl">Ik denk <span class="aan">aan</span> mijn sollicitatiegesprek.</div><div class="ar">أفكر في مقابلة العمل الخاصة بي.</div></div></div>
+    <div class="sentence"><span class="num-badge">87</span><div class="texts"><div class="nl">Ik geef mijn cv <span class="aan">aan</span> de recruiter.</div><div class="ar">أعطي سيرتي الذاتية لمسؤول التوظيف.</div></div></div>
+    <div class="sentence"><span class="num-badge">88</span><div class="texts"><div class="nl">De monteur werkt <span class="aan">aan</span> de airconditioning.</div><div class="ar">الفني يعمل على تكييف الهواء.</div></div></div>
+    <div class="sentence"><span class="num-badge">89</span><div class="texts"><div class="nl">Ik werk <span class="aan">aan</span> de werf.</div><div class="ar">أنا أعمل في موقع البناء.</div></div></div>
+    <div class="sentence"><span class="num-badge">90</span><div class="texts"><div class="nl">Hij neemt deel <span class="aan">aan</span> een opleiding.</div><div class="ar">هو يشارك في تدريب.</div></div></div>
+    <div class="sentence"><span class="num-badge">91</span><div class="texts"><div class="nl">Ik meld me <span class="aan">aan</span> voor de cursus.</div><div class="ar">أسجّل في الدورة.</div></div></div>
+    <div class="sentence"><span class="num-badge">92</span><div class="texts"><div class="nl">Zij vraagt hulp <span class="aan">aan</span> haar collega.</div><div class="ar">هي تطلب المساعدة من زميلها.</div></div></div>
+    <div class="sentence"><span class="num-badge">93</span><div class="texts"><div class="nl">Ik geef mijn adres <span class="aan">aan</span> de gemeente.</div><div class="ar">أعطي عنواني للبلدية.</div></div></div>
+    <div class="sentence"><span class="num-badge">94</span><div class="texts"><div class="nl">Hij werkt <span class="aan">aan</span> een nieuw systeem.</div><div class="ar">هو يعمل على نظام جديد.</div></div></div>
+    <div class="sentence"><span class="num-badge">95</span><div class="texts"><div class="nl">Ik besteed aandacht <span class="aan">aan</span> de veiligheid.</div><div class="ar">أنا أهتم بالسلامة.</div></div></div>
+    <div class="sentence"><span class="num-badge">96</span><div class="texts"><div class="nl">We werken <span class="aan">aan</span> de verbetering van het gebouw.</div><div class="ar">نحن نعمل على تحسين المبنى.</div></div></div>
+    <div class="sentence"><span class="num-badge">97</span><div class="texts"><div class="nl">Ik ben <span class="aan">aan</span> het werk.</div><div class="ar">أنا في العمل / أعمل الآن.</div></div></div>
+    <div class="sentence"><span class="num-badge">98</span><div class="texts"><div class="nl">Hij is <span class="aan">aan</span> het koken.</div><div class="ar">هو يطبخ الآن.</div></div></div>
+    <div class="sentence"><span class="num-badge">99</span><div class="texts"><div class="nl">Ik ben <span class="aan">aan</span> het leren.</div><div class="ar">أنا أتعلم الآن.</div></div></div>
+    <div class="sentence"><span class="num-badge">100</span><div class="texts"><div class="nl">We zijn <span class="aan">aan</span> het wachten op de bus.</div><div class="ar">نحن ننتظر الحافلة الآن.</div></div></div>
+  </section>
+
+  <div class="summary">
+    <h2>📌 ملخص مهم</h2>
+    <table>
+      <thead>
+        <tr><th>التركيب</th><th>المعنى</th><th>مثال</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>aan tafel</td><td>على المائدة</td><td>Ik zit aan tafel.</td></tr>
+        <tr><td>aan de muur</td><td>على الحائط</td><td>De foto hangt aan de muur.</td></tr>
+        <tr><td>het licht aandoen</td><td>تشغيل الضوء</td><td>Doe het licht aan.</td></tr>
+        <tr><td>denken aan</td><td>يفكر في</td><td>Ik denk aan jou.</td></tr>
+        <tr><td>werken aan</td><td>يعمل على</td><td>Ik werk aan een project.</td></tr>
+        <tr><td>wennen aan</td><td>يعتاد على</td><td>Ik wen aan het weer.</td></tr>
+        <tr><td>zich aanmelden</td><td>يسجّل نفسه</td><td>Ik meld me aan.</td></tr>
+        <tr><td>aan het + فعل</td><td>يقوم بالفعل الآن</td><td>Ik ben aan het werken.</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <strong>ملحوظة:</strong> لا تترجم كلمة <strong>aan</strong> دائمًا إلى «على» أو «عند»؛ فالمعنى يتحدد حسب الفعل والتعبير المستخدم.
+    </div>
+  </div>
+
+  <footer>
+    🇳🇱 100 جملة هولندية باستخدام aan — مع الترجمة العربية
+  </footer>
+</div>
+</body>
+</html>
