@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نبض الكون · cosmic pulse</title>
+    <title>200 جملة هاتفية بالهولندية 🇧🇪 | مع الترجمة العربية</title>
     <style>
         * {
             margin: 0;
@@ -12,311 +12,643 @@
         }
 
         body {
-            background: #0a0f1e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: system-ui, 'Segoe UI', monospace;
-            overflow: hidden;
+            padding: 20px;
+            color: #1a1a2e;
         }
 
-        canvas {
-            display: block;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.3));
-            cursor: crosshair;
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        /* subtle overlay to enhance depth */
-        .glow-overlay {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background: radial-gradient(circle at 50% 50%, transparent 30%, #0a0f1e 90%);
-            z-index: 2;
-            mix-blend-mode: multiply;
-        }
-
-        /* tiny hint for interaction */
-        .hint {
-            position: fixed;
-            bottom: 18px;
-            left: 0;
-            right: 0;
+        header {
             text-align: center;
-            color: rgba(180, 230, 255, 0.5);
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .flag {
+            font-size: 2rem;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+
+        .category {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #2a5298, #1e3c72);
+            color: white;
+            padding: 18px 25px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .category-header:hover {
+            background: linear-gradient(135deg, #3a6bc8, #2a5298);
+        }
+
+        .category-header .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .category-header.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        .category-content {
+            max-height: 5000px;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .category-content.collapsed {
+            max-height: 0;
+        }
+
+        .sentence {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 25px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .sentence:hover {
+            background: #f0f5ff;
+        }
+
+        .sentence:last-child {
+            border-bottom: none;
+        }
+
+        .sentence-number {
+            background: #1e3c72;
+            color: white;
+            min-width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .dutch {
+            flex: 1;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1e3c72;
+            direction: ltr;
+            text-align: left;
+            min-width: 200px;
+        }
+
+        .arabic {
+            flex: 1;
+            font-size: 1rem;
+            color: #555;
+            min-width: 200px;
+        }
+
+        .practice-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .practice-section h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .dialogue {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .dialogue-line {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .dialogue-line.you {
+            background: #e3f2fd;
+            border-right: 4px solid #1e3c72;
+        }
+
+        .dialogue-line.employee {
+            background: #fff3e0;
+            border-right: 4px solid #e65100;
+        }
+
+        .dialogue-line .speaker {
+            font-weight: bold;
             font-size: 0.9rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            z-index: 3;
-            pointer-events: none;
-            text-shadow: 0 0 12px #00aaff;
-            font-weight: 300;
-            backdrop-filter: blur(2px);
-            font-family: 'Courier New', monospace;
+            margin-bottom: 4px;
+            color: #666;
+        }
+
+        .dialogue-line .dutch-text {
+            font-weight: 600;
+            color: #1e3c72;
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 3px;
+        }
+
+        .dialogue-line .arabic-text {
+            color: #555;
+        }
+
+        .tip {
+            background: #e8f5e9;
+            border-right: 4px solid #2e7d32;
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .tip strong {
+            color: #2e7d32;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 25px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+
+            .sentence {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .dutch, .arabic {
+                min-width: 100%;
+            }
+
+            .sentence-number {
+                display: none;
+            }
+
+            .category-header {
+                font-size: 1.05rem;
+                padding: 14px 18px;
+            }
+
+            .sentence {
+                padding: 12px 18px;
+            }
         }
     </style>
 </head>
 <body>
-    <canvas id="cosmicCanvas"></canvas>
-    <div class="glow-overlay"></div>
-    <div class="hint">⚡ أمواج الخيال ⚡</div>
+    <div class="container">
+        <header>
+            <h1>📞 200 جملة هاتفية بالهولندية <span class="flag">🇧🇪</span></h1>
+            <p>مع الترجمة العربية — من بداية المكالمة حتى إنهائها</p>
+            <p style="font-size: 0.9rem; color: #888; margin-top: 5px;">مستوى A1–A2 | عمل، مواعيد، شركات، دوائر حكومية</p>
+        </header>
+
+        <input type="text" class="search-box" id="searchBox" placeholder="🔍 ابحث عن جملة بالهولندية أو العربية...">
+
+        <div id="categories"></div>
+
+        <div class="practice-section" id="practiceSection">
+            <h2>🎯 تدريب عملي: مكالمة كاملة بالهولندية</h2>
+            <div class="dialogue">
+                <div class="dialogue-line you">
+                    <div class="speaker">👤 أنت (Jij)</div>
+                    <div class="dutch-text">Goedemorgen, u spreekt met Samer. Ik bel omdat ik werk zoek.</div>
+                    <div class="arabic-text">صباح الخير، معك سامر. أتصل لأنني أبحث عن عمل.</div>
+                </div>
+                <div class="dialogue-line employee">
+                    <div class="speaker">💼 الموظف (Medewerker)</div>
+                    <div class="dutch-text">Goedemorgen. Wat voor werk zoekt u?</div>
+                    <div class="arabic-text">صباح الخير. ما نوع العمل الذي تبحث عنه؟</div>
+                </div>
+                <div class="dialogue-line you">
+                    <div class="speaker">👤 أنت (Jij)</div>
+                    <div class="dutch-text">Ik ben mechanisch ingenieur, maar ik zoek ook tijdelijk werk.</div>
+                    <div class="arabic-text">أنا مهندس ميكانيكي، لكنني أبحث أيضًا عن عمل مؤقت.</div>
+                </div>
+                <div class="dialogue-line employee">
+                    <div class="speaker">💼 الموظف (Medewerker)</div>
+                    <div class="dutch-text">Kunt u uw cv per e-mail sturen?</div>
+                    <div class="arabic-text">هل يمكنك إرسال سيرتك الذاتية بالبريد الإلكتروني؟</div>
+                </div>
+                <div class="dialogue-line you">
+                    <div class="speaker">👤 أنت (Jij)</div>
+                    <div class="dutch-text">Ja, natuurlijk. Naar welk e-mailadres kan ik mijn cv sturen?</div>
+                    <div class="arabic-text">نعم، بالطبع. إلى أي بريد إلكتروني يمكنني إرسال سيرتي الذاتية؟</div>
+                </div>
+                <div class="dialogue-line employee">
+                    <div class="speaker">💼 الموظف (Medewerker)</div>
+                    <div class="dutch-text">Ik stuur u het e-mailadres per sms.</div>
+                    <div class="arabic-text">سأرسل لك البريد الإلكتروني عبر رسالة نصية.</div>
+                </div>
+                <div class="dialogue-line you">
+                    <div class="speaker">👤 أنت (Jij)</div>
+                    <div class="dutch-text">Hartelijk bedankt. Ik stuur mijn cv vandaag nog. Fijne dag!</div>
+                    <div class="arabic-text">شكرًا جزيلًا. سأرسل سيرتي الذاتية اليوم. أتمنى لك يومًا سعيدًا!</div>
+                </div>
+            </div>
+            <div class="tip">
+                <strong>💡 نصيحة للتدريب:</strong> احفظ يوميًا 20 جملة، واقرأ الجملة الهولندية بصوت مرتفع ثم غطِّ الترجمة العربية وحاول فهمها دون مساعدة. ركّز خصوصًا على الجمل من 81 إلى 100 لأنها مفيدة عند الاتصال بشركات الـ Interim في بلجيكا.
+            </div>
+        </div>
+
+        <div class="footer">
+            🇧🇪 200 جملة هولندية للمكالمات الهاتفية — مع الترجمة العربية | مستوى A1–A2
+        </div>
+    </div>
 
     <script>
-        (function() {
-            const canvas = document.getElementById('cosmicCanvas');
-            const ctx = canvas.getContext('2d');
-
-            // ---- configuration ----
-            const CONFIG = {
-                particleCount: 380,          // slightly more for lushness
-                baseRadius: 2.2,
-                speedFactor: 0.55,
-                waveAmplitude: 38,
-                waveFrequency: 0.012,
-                glowBlur: 18,
-                hueShiftSpeed: 0.15,
-                pointerInfluence: 0.12,
-                pointerRadius: 200,
-                maxLineDistance: 130,
-            };
-
-            // ---- state ----
-            let width, height;
-            let particles = [];
-            let time = 0;
-            let hueBase = 200;
-            let mouse = { x: null, y: null, active: false };
-
-            // ---- resize & init ----
-            function resizeCanvas() {
-                width = window.innerWidth;
-                height = window.innerHeight;
-                canvas.width = width;
-                canvas.height = height;
-
-                // re-seed particles on resize for better distribution
-                initParticles();
+        const data = [
+            {
+                title: "1. بداية المكالمة والتحية (1–20)",
+                sentences: [
+                    ["Hallo, goedemorgen.", "مرحبًا، صباح الخير."],
+                    ["Hallo, goedemiddag.", "مرحبًا، مساء الخير (بعد الظهر)."],
+                    ["Goedenavond.", "مساء الخير."],
+                    ["Met wie spreek ik?", "مع مَن أتحدث؟"],
+                    ["Met wie spreek ik, alstublieft?", "مع مَن أتحدث، من فضلك؟"],
+                    ["U spreekt met Samer.", "أنت تتحدث مع سامر."],
+                    ["Mijn naam is Samer.", "اسمي سامر."],
+                    ["Ik bel u even.", "أتصل بك للحظة."],
+                    ["Ik bel u vandaag.", "أتصل بك اليوم."],
+                    ["Ik bel naar aanleiding van uw e-mail.", "أتصل بخصوص بريدك الإلكتروني."],
+                    ["Ik bel over een afspraak.", "أتصل بخصوص موعد."],
+                    ["Ik heb een vraag.", "لدي سؤال."],
+                    ["Komt het gelegen?", "هل الوقت مناسب؟"],
+                    ["Heeft u even tijd?", "هل لديك بعض الوقت؟"],
+                    ["Spreek ik met meneer Janssens?", "هل أتحدث مع السيد يانسنس؟"],
+                    ["Spreek ik met mevrouw Peeters?", "هل أتحدث مع السيدة بيترس؟"],
+                    ["Fijn dat u opneemt.", "سعيد لأنك رددت على المكالمة."],
+                    ["Bedankt dat u de telefoon opneemt.", "شكرًا لردك على الهاتف."],
+                    ["Sorry dat ik u stoor.", "آسف على إزعاجك."],
+                    ["Ik hoop dat alles goed gaat.", "أتمنى أن تكون الأمور بخير."]
+                ]
+            },
+            {
+                title: "2. الرد على الهاتف (21–40)",
+                sentences: [
+                    ["Hallo, met Samer.", "مرحبًا، معك سامر."],
+                    ["Ja, u spreekt met mij.", "نعم، أنت تتحدث معي."],
+                    ["Goedemorgen, waarmee kan ik u helpen?", "صباح الخير، كيف يمكنني مساعدتك؟"],
+                    ["Wie kan ik helpen?", "مَن يمكنني مساعدته؟"],
+                    ["Waar gaat uw vraag over?", "ما موضوع سؤالك؟"],
+                    ["Waarvoor belt u precies?", "لماذا تتصل تحديدًا؟"],
+                    ["Een ogenblik, alstublieft.", "لحظة من فضلك."],
+                    ["Ik luister.", "أنا أستمع."],
+                    ["Ja, natuurlijk.", "نعم، بالطبع."],
+                    ["Dat klopt.", "هذا صحيح."],
+                    ["Dat begrijp ik.", "أنا أفهم ذلك."],
+                    ["Geen probleem.", "لا مشكلة."],
+                    ["Ik zal u helpen.", "سأساعدك."],
+                    ["Ik zal het even nakijken.", "سأتحقق من ذلك."],
+                    ["Ik weet het niet zeker.", "لست متأكدًا."],
+                    ["Kunt u mij dat uitleggen?", "هل يمكنك توضيح ذلك لي؟"],
+                    ["Dat is een goede vraag.", "هذا سؤال جيد."],
+                    ["Ik heb de informatie bij de hand.", "المعلومات متوفرة لدي."],
+                    ["Ik verbind u door.", "سأحوّلك إلى شخص آخر."],
+                    ["U bent bij de juiste persoon.", "لقد وصلت إلى الشخص المناسب."]
+                ]
+            },
+            {
+                title: "3. طلب التكرار والفهم (41–60)",
+                sentences: [
+                    ["Kunt u dat herhalen, alstublieft?", "هل يمكنك تكرار ذلك من فضلك؟"],
+                    ["Kunt u wat langzamer spreken?", "هل يمكنك التحدث ببطء أكثر؟"],
+                    ["Ik heb u niet goed verstaan.", "لم أسمعك جيدًا."],
+                    ["Sorry, wat zei u?", "عذرًا، ماذا قلت؟"],
+                    ["Kunt u dat spellen?", "هل يمكنك تهجئة ذلك؟"],
+                    ["Hoe schrijft u uw naam?", "كيف تكتب اسمك؟"],
+                    ["Kunt u uw naam herhalen?", "هل يمكنك تكرار اسمك؟"],
+                    ["Kunt u uw telefoonnummer geven?", "هل يمكنك إعطائي رقم هاتفك؟"],
+                    ["Mag ik uw e-mailadres noteren?", "هل يمكنني تدوين بريدك الإلكتروني؟"],
+                    ["Wat bedoelt u precies?", "ماذا تقصد تحديدًا؟"],
+                    ["Ik begrijp de vraag niet helemaal.", "لا أفهم السؤال تمامًا."],
+                    ["Kunt u een voorbeeld geven?", "هل يمكنك إعطاء مثال؟"],
+                    ["Spreekt u Engels?", "هل تتحدث الإنجليزية؟"],
+                    ["Mijn Nederlands is nog niet perfect.", "لغتي الهولندية ليست مثالية بعد."],
+                    ["Ik leer momenteel Nederlands.", "أتعلم الهولندية حاليًا."],
+                    ["Kunt u eenvoudige woorden gebruiken?", "هل يمكنك استخدام كلمات بسيطة؟"],
+                    ["Ik begrijp een beetje Nederlands.", "أفهم القليل من الهولندية."],
+                    ["Mag ik even nadenken?", "هل يمكنني التفكير للحظة؟"],
+                    ["Kunt u dat via e-mail sturen?", "هل يمكنك إرسال ذلك عبر البريد الإلكتروني؟"],
+                    ["Nu begrijp ik het.", "الآن فهمت."]
+                ]
+            },
+            {
+                title: "4. الاتصال بشركة أو مكتب (61–80)",
+                sentences: [
+                    ["Ik bel naar uw bedrijf.", "أتصل بشركتكم."],
+                    ["Ik wil graag informatie ontvangen.", "أود الحصول على معلومات."],
+                    ["Ik heb uw website bezocht.", "لقد زرت موقعكم الإلكتروني."],
+                    ["Ik heb uw vacature gezien.", "رأيت إعلان الوظيفة الخاص بكم."],
+                    ["Ik bel over een openstaande vacature.", "أتصل بخصوص وظيفة شاغرة."],
+                    ["Ik wil graag met de verantwoordelijke spreken.", "أود التحدث مع المسؤول."],
+                    ["Kan ik de personeelsdienst spreken?", "هل يمكنني التحدث مع قسم الموارد البشرية؟"],
+                    ["Kan ik met de manager spreken?", "هل يمكنني التحدث مع المدير؟"],
+                    ["Is de verantwoordelijke aanwezig?", "هل المسؤول موجود؟"],
+                    ["Wanneer is hij beschikbaar?", "متى يكون متاحًا؟"],
+                    ["Wanneer kan ik terugbellen?", "متى يمكنني معاودة الاتصال؟"],
+                    ["Kunt u mij doorverbinden met de juiste afdeling?", "هل يمكنك تحويلي إلى القسم المناسب؟"],
+                    ["Naar welke afdeling moet ik bellen?", "إلى أي قسم يجب أن أتصل؟"],
+                    ["Ik heb een vraag over mijn dossier.", "لدي سؤال بخصوص ملفي."],
+                    ["Ik wil graag mijn gegevens controleren.", "أود التحقق من بياناتي."],
+                    ["Kunt u mijn dossier opzoeken?", "هل يمكنك البحث عن ملفي؟"],
+                    ["Mijn dossiernummer is hier beschikbaar.", "رقم ملفي متوفر لدي."],
+                    ["Ik heb gisteren een bericht ontvangen.", "تلقيت رسالة أمس."],
+                    ["Ik heb nog geen antwoord gekregen.", "لم أتلقَّ ردًا بعد."],
+                    ["Bedankt voor uw informatie.", "شكرًا على المعلومات."]
+                ]
+            },
+            {
+                title: "5. البحث عن عمل والمكالمات مع شركات Interim (81–100)",
+                sentences: [
+                    ["Ik bel omdat ik werk zoek.", "أتصل لأنني أبحث عن عمل."],
+                    ["Ik ben op zoek naar een tijdelijke baan.", "أبحث عن وظيفة مؤقتة."],
+                    ["Ik zoek werk in de regio Kortrijk.", "أبحث عن عمل في منطقة كورتريك."],
+                    ["Heeft u momenteel vacatures?", "هل لديكم وظائف شاغرة حاليًا؟"],
+                    ["Zijn er vacatures in de productie?", "هل توجد وظائف في الإنتاج؟"],
+                    ["Heeft u werk in de verpakking?", "هل لديكم عمل في التعبئة والتغليف؟"],
+                    ["Ik ben beschikbaar om onmiddellijk te beginnen.", "أنا متاح للبدء فورًا."],
+                    ["Ik kan volgende week beginnen.", "يمكنني البدء الأسبوع المقبل."],
+                    ["Ik heb ervaring als mechanisch ingenieur.", "لدي خبرة كمهندس ميكانيكي."],
+                    ["Ik heb meer dan tien jaar ervaring.", "لدي خبرة تزيد على عشر سنوات."],
+                    ["Ik heb ervaring met HVAC-installaties.", "لدي خبرة في أنظمة التدفئة والتهوية وتكييف الهواء."],
+                    ["Ik zoek een functie als werfleider of projectingenieur.", "أبحث عن وظيفة مسؤول موقع أو مهندس مشاريع."],
+                    ["Ik kan mijn cv per e-mail sturen.", "يمكنني إرسال سيرتي الذاتية بالبريد الإلكتروني."],
+                    ["Naar welk e-mailadres kan ik mijn cv sturen?", "إلى أي بريد إلكتروني يمكنني إرسال سيرتي الذاتية؟"],
+                    ["Hebt u mijn cv ontvangen?", "هل استلمتم سيرتي الذاتية؟"],
+                    ["Is er een mogelijkheid voor een sollicitatiegesprek?", "هل توجد إمكانية لإجراء مقابلة عمل؟"],
+                    ["Wat zijn de werktijden?", "ما ساعات العمل؟"],
+                    ["Wat is het uurloon?", "كم أجر الساعة؟"],
+                    ["Is er vervoer naar het bedrijf?", "هل توجد وسيلة نقل إلى الشركة؟"],
+                    ["Wanneer kan ik een antwoord verwachten?", "متى يمكنني توقع الرد؟"]
+                ]
+            },
+            {
+                title: "6. حجز موعد وتغييره (101–120)",
+                sentences: [
+                    ["Ik wil graag een afspraak maken.", "أود حجز موعد."],
+                    ["Is er deze week nog een plaats vrij?", "هل يوجد موعد متاح هذا الأسبوع؟"],
+                    ["Wanneer bent u beschikbaar?", "متى تكون متاحًا؟"],
+                    ["Welke dagen zijn mogelijk?", "ما الأيام المتاحة؟"],
+                    ["Past maandag voor u?", "هل يناسبك يوم الاثنين؟"],
+                    ["Kan ik dinsdag langskomen?", "هل يمكنني الحضور يوم الثلاثاء؟"],
+                    ["Hoe laat begint de afspraak?", "في أي ساعة يبدأ الموعد؟"],
+                    ["Om hoe laat moet ik aanwezig zijn?", "في أي ساعة يجب أن أكون موجودًا؟"],
+                    ["Ik wil mijn afspraak bevestigen.", "أريد تأكيد موعدي."],
+                    ["Ik wil mijn afspraak verplaatsen.", "أريد تغيير موعدي."],
+                    ["Ik moet mijn afspraak annuleren.", "يجب أن ألغي موعدي."],
+                    ["Is het mogelijk om de afspraak uit te stellen?", "هل يمكن تأجيل الموعد؟"],
+                    ["Kan ik een andere datum kiezen?", "هل يمكنني اختيار تاريخ آخر؟"],
+                    ["Ik ben iets te laat.", "سأتأخر قليلًا."],
+                    ["Ik ben onderweg.", "أنا في الطريق."],
+                    ["Ik zal op tijd zijn.", "سأكون في الموعد."],
+                    ["Kunt u mij het adres geven?", "هل يمكنك إعطائي العنوان؟"],
+                    ["Moet ik documenten meenemen?", "هل يجب أن أحضر مستندات؟"],
+                    ["Krijg ik een bevestiging per e-mail?", "هل سأحصل على تأكيد عبر البريد الإلكتروني؟"],
+                    ["Bedankt voor het maken van de afspraak.", "شكرًا لحجز الموعد."]
+                ]
+            },
+            {
+                title: "7. المكالمات المتعلقة بالبلدية والإقامة (121–140)",
+                sentences: [
+                    ["Ik bel over mijn verblijfsdocument.", "أتصل بخصوص وثيقة إقامتي."],
+                    ["Ik wil graag informatie over mijn aanvraag.", "أريد معلومات عن طلبي."],
+                    ["Is mijn aanvraag al behandeld?", "هل تمت معالجة طلبي؟"],
+                    ["Is mijn dossier volledig?", "هل ملفي مكتمل؟"],
+                    ["Ontbreken er nog documenten?", "هل توجد مستندات ناقصة؟"],
+                    ["Welke documenten moet ik indienen?", "ما المستندات التي يجب أن أقدمها؟"],
+                    ["Kan ik de documenten per e-mail opsturen?", "هل يمكنني إرسال المستندات بالبريد الإلكتروني؟"],
+                    ["Ik wil mijn adres laten registreren.", "أريد تسجيل عنواني."],
+                    ["Ik heb een vraag over mijn inschrijving.", "لدي سؤال عن تسجيلي."],
+                    ["Is mijn inschrijving in orde?", "هل تسجيلي مكتمل؟"],
+                    ["Wanneer kan ik mijn attest ophalen?", "متى يمكنني استلام شهادتي؟"],
+                    ["Kan ik een afspraak maken bij de gemeente?", "هل يمكنني حجز موعد في البلدية؟"],
+                    ["Ik heb een brief van de gemeente ontvangen.", "تلقيت خطابًا من البلدية."],
+                    ["Kunt u mij uitleggen wat deze brief betekent?", "هل يمكنك شرح معنى هذا الخطاب؟"],
+                    ["Ik wil weten welke stappen ik moet volgen.", "أريد معرفة الخطوات التي يجب اتباعها."],
+                    ["Moet ik persoonlijk langskomen?", "هل يجب أن أحضر شخصيًا؟"],
+                    ["Hoe lang duurt de procedure?", "كم تستغرق الإجراءات؟"],
+                    ["Wanneer krijg ik een antwoord?", "متى سأحصل على رد؟"],
+                    ["Kunt u mij een schriftelijke bevestiging sturen?", "هل يمكنك إرسال تأكيد مكتوب لي؟"],
+                    ["Bedankt voor uw hulp met mijn dossier.", "شكرًا لمساعدتي في ملفي."]
+                ]
+            },
+            {
+                title: "8. المكالمات الطبية والتأمين (141–160)",
+                sentences: [
+                    ["Ik bel om een afspraak bij de dokter te maken.", "أتصل لحجز موعد لدى الطبيب."],
+                    ["Is de dokter vandaag beschikbaar?", "هل الطبيب متاح اليوم؟"],
+                    ["Ik voel me niet goed.", "لا أشعر أنني بخير."],
+                    ["Ik wil graag een afspraak voor morgen.", "أود موعدًا للغد."],
+                    ["Ik ben aangesloten bij Solidaris.", "أنا مشترك في سوليداريس."],
+                    ["Ik heb een vraag over mijn ziekenfonds.", "لدي سؤال بخصوص صندوق التأمين الصحي."],
+                    ["Welke documenten hebt u nodig?", "ما المستندات التي تحتاجون إليها؟"],
+                    ["Hoe kan ik mijn documenten indienen?", "كيف يمكنني تقديم مستنداتي؟"],
+                    ["Is mijn aansluiting in orde?", "هل اشتراكي مكتمل؟"],
+                    ["Ik wil mijn terugbetaling controleren.", "أريد التحقق من التعويض المالي الخاص بي."],
+                    ["Is mijn aanvraag voor terugbetaling ontvangen?", "هل استلمتم طلب التعويض؟"],
+                    ["Hoeveel krijg ik terugbetaald?", "كم سأسترد من المال؟"],
+                    ["Wanneer wordt het bedrag gestort?", "متى سيتم تحويل المبلغ؟"],
+                    ["Ik heb mijn document nog niet ontvangen.", "لم أستلم وثيقتي بعد."],
+                    ["Kunt u mij een kopie sturen?", "هل يمكنك إرسال نسخة لي؟"],
+                    ["Kan ik dit online regelen?", "هل يمكنني إنجاز ذلك عبر الإنترنت؟"],
+                    ["Heb ik hiervoor een afspraak nodig?", "هل أحتاج إلى موعد لهذا الأمر؟"],
+                    ["Kunt u mij met de juiste dienst verbinden?", "هل يمكنك تحويلي إلى القسم المختص؟"],
+                    ["Ik wil graag weten wat mijn rechten zijn.", "أود معرفة حقوقي."],
+                    ["Alvast bedankt voor uw antwoord.", "شكرًا مقدمًا على ردكم."]
+                ]
+            },
+            {
+                title: "9. مشكلات الهاتف وترك رسالة (161–180)",
+                sentences: [
+                    ["De verbinding is niet goed.", "الاتصال ليس جيدًا."],
+                    ["Ik hoor u niet goed.", "لا أسمعك جيدًا."],
+                    ["U valt steeds weg.", "صوتك ينقطع باستمرار."],
+                    ["Kunt u mij beter horen?", "هل يمكنك سماعي بشكل أفضل؟"],
+                    ["Ik bel u straks terug.", "سأتصل بك مرة أخرى بعد قليل."],
+                    ["Kunt u mij later terugbellen?", "هل يمكنك الاتصال بي لاحقًا؟"],
+                    ["Mijn batterij is bijna leeg.", "بطارية هاتفي أوشكت على النفاد."],
+                    ["Mijn telefoon viel uit.", "انطفأ هاتفي."],
+                    ["Sorry, de verbinding is verbroken.", "عذرًا، انقطع الاتصال."],
+                    ["Ik heb uw oproep gemist.", "فاتتني مكالمتك."],
+                    ["Ik zag dat u mij gebeld had.", "رأيت أنك اتصلت بي."],
+                    ["Ik bel terug zodra ik kan.", "سأعاود الاتصال بمجرد أن أستطيع."],
+                    ["Mag ik een bericht achterlaten?", "هل يمكنني ترك رسالة؟"],
+                    ["Kunt u een boodschap voor hem achterlaten?", "هل يمكنك ترك رسالة له؟"],
+                    ["Wilt u mijn naam noteren?", "هل يمكنك تدوين اسمي؟"],
+                    ["Wilt u mijn nummer noteren?", "هل يمكنك تدوين رقمي؟"],
+                    ["Kunt u zeggen dat ik gebeld heb?", "هل يمكنك إخباره بأنني اتصلت؟"],
+                    ["Ik ben momenteel niet beschikbaar.", "أنا غير متاح حاليًا."],
+                    ["Spreek een bericht in na de pieptoon.", "اترك رسالة صوتية بعد سماع الصافرة."],
+                    ["Ik zal uw bericht beantwoorden.", "سأرد على رسالتك."]
+                ]
+            },
+            {
+                title: "10. إنهاء المكالمة والتأكيد (181–200)",
+                sentences: [
+                    ["Bedankt voor uw tijd.", "شكرًا على وقتك."],
+                    ["Bedankt voor uw hulp.", "شكرًا على مساعدتك."],
+                    ["Bedankt voor de uitleg.", "شكرًا على الشرح."],
+                    ["Dat is duidelijk.", "الأمر واضح."],
+                    ["Ik heb alles begrepen.", "لقد فهمت كل شيء."],
+                    ["Ik zal de documenten opsturen.", "سأرسل المستندات."],
+                    ["Ik zal u op de hoogte houden.", "سأبقيك على اطلاع."],
+                    ["Ik wacht op uw antwoord.", "سأنتظر ردك."],
+                    ["Ik neem morgen opnieuw contact op.", "سأتواصل معك مجددًا غدًا."],
+                    ["Ik zal u later een e-mail sturen.", "سأرسل لك بريدًا إلكترونيًا لاحقًا."],
+                    ["Kunt u bevestigen wat we hebben afgesproken?", "هل يمكنك تأكيد ما اتفقنا عليه؟"],
+                    ["Dus de afspraak is op maandag om tien uur?", "إذن الموعد يوم الاثنين الساعة العاشرة؟"],
+                    ["Ik herhaal het even om zeker te zijn.", "سأكرر الأمر للتأكد."],
+                    ["Bedankt om dit te regelen.", "شكرًا لترتيب هذا الأمر."],
+                    ["Nog een prettige dag!", "أتمنى لك يومًا سعيدًا."],
+                    ["Fijne avond!", "أمسية سعيدة!"],
+                    ["Tot binnenkort!", "أراك قريبًا!"],
+                    ["Tot morgen!", "أراك غدًا!"],
+                    ["Dag, en bedankt!", "إلى اللقاء، وشكرًا!"],
+                    ["Tot ziens, en nogmaals bedankt voor uw tijd.", "إلى اللقاء، وشكرًا مرة أخرى على وقتك."]
+                ]
             }
+        ];
 
-            // ---- particle creation ----
-            function initParticles() {
-                particles = [];
-                for (let i = 0; i < CONFIG.particleCount; i++) {
-                    // random positions with bias to center (more density in middle)
-                    const angle = Math.random() * Math.PI * 2;
-                    const radius = Math.pow(Math.random(), 1.5) * Math.min(width, height) * 0.45;
-                    const x = width / 2 + Math.cos(angle) * radius;
-                    const y = height / 2 + Math.sin(angle) * radius;
+        let globalIndex = 1;
 
-                    // random velocity / drift
-                    const vx = (Math.random() - 0.5) * CONFIG.speedFactor;
-                    const vy = (Math.random() - 0.5) * CONFIG.speedFactor;
+        function renderCategories(filterText = '') {
+            const container = document.getElementById('categories');
+            container.innerHTML = '';
+            globalIndex = 1;
 
-                    // unique phase offset for wave
-                    const phase = Math.random() * Math.PI * 2;
-                    // size variation
-                    const size = CONFIG.baseRadius * (0.6 + Math.random() * 1.2);
-                    // hue offset for individual particles
-                    const hueOffset = (Math.random() - 0.5) * 40;
-
-                    particles.push({
-                        x, y,
-                        vx, vy,
-                        baseX: x,
-                        baseY: y,
-                        size,
-                        phase,
-                        hueOffset,
-                        // store initial random for smoother wave
-                        seed: Math.random() * 100,
-                    });
-                }
-            }
-
-            // ---- mouse tracking ----
-            function handleMouseMove(e) {
-                mouse.x = e.clientX;
-                mouse.y = e.clientY;
-                mouse.active = true;
-            }
-
-            function handleMouseLeave() {
-                mouse.active = false;
-                mouse.x = null;
-                mouse.y = null;
-            }
-
-            // ---- animation loop ----
-            function draw() {
-                // update time & hue
-                time += 0.01;
-                hueBase = (hueBase + CONFIG.hueShiftSpeed) % 360;
-
-                // clear with dark translucent overlay for trail effect (subtle)
-                ctx.clearRect(0, 0, width, height);
-                
-                // deep space background with slight gradient
-                const gradient = ctx.createRadialGradient(
-                    width / 2, height / 2, 0,
-                    width / 2, height / 2, Math.max(width, height) * 0.8
-                );
-                gradient.addColorStop(0, '#0b132b');
-                gradient.addColorStop(0.7, '#060a14');
-                gradient.addColorStop(1, '#010101');
-                ctx.fillStyle = gradient;
-                ctx.fillRect(0, 0, width, height);
-
-                // ---- 1. draw glowing particles (with wave motion) ----
-                ctx.shadowColor = '#3af0ff';
-                ctx.shadowBlur = CONFIG.glowBlur;
-                ctx.globalCompositeOperation = 'lighter'; // luminous blending
-
-                for (let p of particles) {
-                    // wave offset based on time & position
-                    const waveX = Math.sin(time * 2.5 + p.baseY * 0.02 + p.phase) * CONFIG.waveAmplitude * 0.4;
-                    const waveY = Math.cos(time * 2.0 + p.baseX * 0.02 + p.phase + 1.2) * CONFIG.waveAmplitude * 0.4;
-
-                    // gentle drift (slow orbital flow)
-                    p.baseX += p.vx * 0.2;
-                    p.baseY += p.vy * 0.2;
-
-                    // wrap around edges softly (keep inside canvas)
-                    if (p.baseX < -50) p.baseX = width + 50;
-                    if (p.baseX > width + 50) p.baseX = -50;
-                    if (p.baseY < -50) p.baseY = height + 50;
-                    if (p.baseY > height + 50) p.baseY = -50;
-
-                    // apply wave + mouse influence
-                    let targetX = p.baseX + waveX;
-                    let targetY = p.baseY + waveY;
-
-                    // subtle mouse attraction / repulsion (creative: gentle repulsion)
-                    if (mouse.active && mouse.x !== null && mouse.y !== null) {
-                        const dx = targetX - mouse.x;
-                        const dy = targetY - mouse.y;
-                        const dist = Math.hypot(dx, dy);
-                        if (dist < CONFIG.pointerRadius && dist > 0.5) {
-                            const force = (1 - dist / CONFIG.pointerRadius) * CONFIG.pointerInfluence;
-                            // push away (repulsion) for dynamic feel
-                            targetX += (dx / dist) * force * 45;
-                            targetY += (dy / dist) * force * 45;
-                        }
-                    }
-
-                    // final position with smoothing (lerp for fluidity)
-                    p.x += (targetX - p.x) * 0.12;
-                    p.y += (targetY - p.y) * 0.12;
-
-                    // per-particle color
-                    const hue = (hueBase + p.hueOffset + time * 15) % 360;
-                    const light = 60 + Math.sin(time * 3 + p.seed) * 15;
-                    const alpha = 0.75 + Math.sin(time * 2 + p.seed) * 0.2;
-
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.size * (0.9 + Math.sin(time * 4 + p.seed) * 0.15), 0, Math.PI * 2);
-                    ctx.fillStyle = `hsla(${hue}, 90%, ${light}%, ${alpha})`;
-                    ctx.fill();
-
-                    // extra tiny glow dot inside
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.size * 0.45, 0, Math.PI * 2);
-                    ctx.fillStyle = `hsla(${hue}, 100%, 80%, 0.9)`;
-                    ctx.fill();
-                }
-
-                // ---- 2. connecting lines (cosmic web) ----
-                ctx.shadowBlur = 12;
-                ctx.shadowColor = '#6cf';
-                ctx.lineWidth = 1.2;
-
-                // use only a subset for performance & aesthetics (draw lines only if close enough)
-                for (let i = 0; i < particles.length; i++) {
-                    const a = particles[i];
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const b = particles[j];
-                        const dx = a.x - b.x;
-                        const dy = a.y - b.y;
-                        const distSq = dx * dx + dy * dy;
-
-                        if (distSq < CONFIG.maxLineDistance * CONFIG.maxLineDistance && distSq > 0.1) {
-                            const dist = Math.sqrt(distSq);
-                            const alpha = (1 - dist / CONFIG.maxLineDistance) * 0.35;
-                            if (alpha < 0.02) continue;
-
-                            // line color based on average hue
-                            const hue = (hueBase + (a.hueOffset + b.hueOffset) * 0.5 + time * 20) % 360;
-                            ctx.beginPath();
-                            ctx.moveTo(a.x, a.y);
-                            ctx.lineTo(b.x, b.y);
-                            ctx.strokeStyle = `hsla(${hue}, 85%, 65%, ${alpha})`;
-                            ctx.stroke();
-                        }
-                    }
-                }
-
-                // ---- 3. central luminous core (drawn last for glow overlay) ----
-                ctx.shadowBlur = 45;
-                ctx.shadowColor = '#0cf';
-                ctx.globalCompositeOperation = 'lighter';
-
-                const coreRadius = 22 + Math.sin(time * 2.5) * 6;
-                const coreGradient = ctx.createRadialGradient(
-                    width / 2, height / 2, 0,
-                    width / 2, height / 2, coreRadius * 2.8
-                );
-                coreGradient.addColorStop(0, `hsla(${hueBase + 10}, 100%, 75%, 0.9)`);
-                coreGradient.addColorStop(0.5, `hsla(${hueBase + 40}, 90%, 55%, 0.4)`);
-                coreGradient.addColorStop(1, 'transparent');
-
-                ctx.beginPath();
-                ctx.arc(width / 2, height / 2, coreRadius * 2.8, 0, Math.PI * 2);
-                ctx.fillStyle = coreGradient;
-                ctx.fill();
-
-                // extra tiny bright center
-                ctx.shadowBlur = 30;
-                ctx.beginPath();
-                ctx.arc(width / 2, height / 2, coreRadius * 0.6, 0, Math.PI * 2);
-                ctx.fillStyle = `hsla(${hueBase + 60}, 100%, 90%, 0.9)`;
-                ctx.fill();
-
-                // reset composite & shadow
-                ctx.shadowBlur = 0;
-                ctx.shadowColor = 'transparent';
-                ctx.globalCompositeOperation = 'source-over';
-
-                requestAnimationFrame(draw);
-            }
-
-            // ---- setup event listeners ----
-            function init() {
-                resizeCanvas();
-                window.addEventListener('resize', resizeCanvas);
-                window.addEventListener('mousemove', handleMouseMove);
-                window.addEventListener('mouseleave', handleMouseLeave);
-                // also support touch for mobile
-                window.addEventListener('touchmove', (e) => {
-                    if (e.touches.length > 0) {
-                        mouse.x = e.touches[0].clientX;
-                        mouse.y = e.touches[0].clientY;
-                        mouse.active = true;
-                    }
-                }, { passive: true });
-                window.addEventListener('touchend', () => {
-                    mouse.active = false;
+            data.forEach((cat, catIndex) => {
+                const filteredSentences = cat.sentences.filter(([nl, ar]) => {
+                    if (!filterText) return true;
+                    const q = filterText.toLowerCase();
+                    return nl.toLowerCase().includes(q) || ar.includes(filterText);
                 });
 
-                // start animation
-                draw();
-            }
+                if (filteredSentences.length === 0) return;
 
-            // kick off
-            init();
-        })();
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'category';
+
+                const header = document.createElement('div');
+                header.className = 'category-header';
+                header.innerHTML = `<span>${cat.title}</span><span class="toggle-icon">▼</span>`;
+                header.addEventListener('click', () => {
+                    header.classList.toggle('collapsed');
+                    content.classList.toggle('collapsed');
+                });
+
+                const content = document.createElement('div');
+                content.className = 'category-content';
+
+                filteredSentences.forEach(([nl, ar]) => {
+                    const sentenceDiv = document.createElement('div');
+                    sentenceDiv.className = 'sentence';
+
+                    const numSpan = document.createElement('span');
+                    numSpan.className = 'sentence-number';
+                    numSpan.textContent = globalIndex;
+
+                    const nlSpan = document.createElement('span');
+                    nlSpan.className = 'dutch';
+                    nlSpan.textContent = nl;
+
+                    const arSpan = document.createElement('span');
+                    arSpan.className = 'arabic';
+                    arSpan.textContent = ar;
+
+                    sentenceDiv.appendChild(numSpan);
+                    sentenceDiv.appendChild(nlSpan);
+                    sentenceDiv.appendChild(arSpan);
+                    content.appendChild(sentenceDiv);
+                    globalIndex++;
+                });
+
+                categoryDiv.appendChild(header);
+                categoryDiv.appendChild(content);
+                container.appendChild(categoryDiv);
+            });
+
+            if (container.children.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color:white; padding:30px; font-size:1.2rem;">🔍 لا توجد نتائج مطابقة للبحث</p>';
+            }
+        }
+
+        // Initial render
+        renderCategories();
+
+        // Search functionality
+        document.getElementById('searchBox').addEventListener('input', (e) => {
+            renderCategories(e.target.value.trim());
+        });
     </script>
 </body>
 </html>
