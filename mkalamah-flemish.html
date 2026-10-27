@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>200 جملة مكالمات تلفون بالهولندية البلجيكية – هارلبِيك</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f7fc;
+            font-family: 'Segoe UI', Tahoma, 'Arial', sans-serif;
+            padding: 2rem 1rem;
+            color: #1e2b3c;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 2.5rem 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0b3b5c;
+            border-right: 6px solid #f5a623;
+            padding-right: 1.2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .subhead {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px dashed #cbd5e1;
+            font-size: 1rem;
+            color: #2c4a6e;
+            align-items: center;
+        }
+
+        .subhead span {
+            background: #e8f0fe;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .flag {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #1e4e6f;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #f0e6d2;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2 i {
+            font-style: normal;
+            background: #f5a623;
+            color: white;
+            font-size: 1rem;
+            padding: 0.15rem 0.8rem;
+            border-radius: 40px;
+            margin-right: 0.5rem;
+        }
+
+        .section-desc {
+            background: #eef4ff;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            margin: 1rem 0 1.2rem;
+            color: #1e3a5f;
+            font-size: 1rem;
+            border-right: 4px solid #f5a623;
+        }
+
+        .sentence-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sentence-item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            background: #f9fcff;
+            padding: 0.7rem 1.2rem;
+            border-radius: 18px;
+            border: 1px solid #e2edf7;
+            transition: background 0.15s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .sentence-item:hover {
+            background: #e7f0fb;
+            border-color: #b8d0e8;
+        }
+
+        .number {
+            font-weight: 700;
+            color: #f5a623;
+            min-width: 3.2rem;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+        }
+
+        .dutch {
+            font-weight: 600;
+            color: #0a3146;
+            font-size: 1.1rem;
+            margin-left: 0.5rem;
+            word-break: break-word;
+        }
+
+        .arabic {
+            color: #2b4d6e;
+            font-size: 1rem;
+            margin-right: 0.3rem;
+            word-break: break-word;
+        }
+
+        .example-block {
+            background: #1e3a5f;
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 28px;
+            margin: 2rem 0;
+        }
+
+        .example-block h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #ffd966;
+            font-weight: 600;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .example-card {
+            background: #2b4d6e;
+            padding: 1rem 1.3rem;
+            border-radius: 20px;
+            border: 1px solid #4f7ea0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .example-card .dutch-word {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #ffd966;
+            line-height: 1.4;
+        }
+
+        .example-card .meaning {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 0.4rem;
+        }
+
+        .example-card .example-sentence {
+            font-size: 0.95rem;
+            background: #1e3850;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            display: inline-block;
+            color: #d4e6ff;
+        }
+
+        .advice {
+            background: #fef7e6;
+            border-right: 6px solid #f5a623;
+            padding: 1.5rem 2rem;
+            border-radius: 24px;
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: #2e3f53;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+        }
+
+        .advice strong {
+            color: #b16d1a;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #7b8ea3;
+            border-top: 1px solid #d9e3ed;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 1.5rem 1rem; }
+            h1 { font-size: 1.7rem; }
+            .sentence-item { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+            .number { min-width: auto; }
+            .dutch { font-size: 1rem; }
+            .example-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🇧🇪 200 جملة مكالمات تلفون بالهولندية البلجيكية – هارلبِيك (Harelbeke)</h1>
+        <div class="subhead">
+            <span>📞 لهجة فلاندرز اليومية</span>
+            <span>🗣️ West-Vlaams / Harelbeke</span>
+            <span>🔊 200 جملة + تعبيرات محلية</span>
+        </div>
+
+        <!-- القسم 1 -->
+        <h2><i>1</i> بداية المكالمة والتحية <small style="font-size:0.8rem; font-weight:400; color:#6b7f99;">(1–25)</small></h2>
+        <div class="sentence-grid">
+            <div class="sentence-item"><span class="number">1.</span><span class="dutch">Hallo, met Samer.</span><span class="arabic">— ألو، معاك سامر.</span></div>
+            <div class="sentence-item"><span class="number">2.</span><span class="dutch">Goeiemorgen, met Samer.</span><span class="arabic">— صباح الخير، معاك سامر.</span></div>
+            <div class="sentence-item"><span class="number">3.</span><span class="dutch">Goeiemiddag, met Samer.</span><span class="arabic">— مساء الخير، معاك سامر.</span></div>
+            <div class="sentence-item"><span class="number">4.</span><span class="dutch">Goeienavond, met Samer.</span><span class="arabic">— مساء الخير، معاك سامر.</span></div>
+            <div class="sentence-item"><span class="number">5.</span><span class="dutch">Hallo, goeiedag!</span><span class="arabic">— أهلًا، يوم سعيد!</span></div>
+            <div class="sentence-item"><span class="number">6.</span><span class="dutch">Spreek ik met meneer Jan?</span><span class="arabic">— هل بتكلم مع السيد يان؟</span></div>
+            <div class="sentence-item"><span class="number">7.</span><span class="dutch">Spreek ik met mevrouw De Smet?</span><span class="arabic">— هل بتكلم مع السيدة دي سميت؟</span></div>
+            <div class="sentence-item"><span class="number">8.</span><span class="dutch">Wie spreekt er, alstublieft?</span><span class="arabic">— مين بيتكلم، لو سمحت؟</span></div>
+            <div class="sentence-item"><span class="number">9.</span><span class="dutch">Met wie spreek ik?</span><span class="arabic">— مع مين بتكلم؟</span></div>
+            <div class="sentence-item"><span class="number">10.</span><span class="dutch">Dag, alles goed?</span><span class="arabic">— أهلًا، كل شيء تمام؟</span></div>
+            <div class="sentence-item"><span class="number">11.</span><span class="dutch">Ça va?</span><span class="arabic">— عامل إيه؟ (تعبير شائع في بلجيكا).</span></div>
+            <div class="sentence-item"><span class="number">12.</span><span class="dutch">Ja, alles goed, en met jou?</span><span class="arabic">— أيوه، كله تمام، وإنت؟</span></div>
+            <div class="sentence-item"><span class="number">13.</span><span class="dutch">Goed, merci!</span><span class="arabic">— كويس، شكرًا!</span></div>
+            <div class="sentence-item"><span class="number">14.</span><span class="dutch">Merci om op te nemen.</span><span class="arabic">— شكرًا إنك رديت على المكالمة.</span></div>
+            <div class="sentence-item"><span class="number">15.</span><span class="dutch">Bedankt dat je terugbelt.</span><span class="arabic">— شكرًا إنك بتتصل تاني.</span></div>
+            <div class="sentence-item"><span class="number">16.</span><span class="dutch">Ik bel je even.</span><span class="arabic">— بتصل بيك بسرعة.</span></div>
+            <div class="sentence-item"><span class="number">17.</span><span class="dutch">Ik bel u in verband met mijn afspraak.</span><span class="arabic">— بتصل بحضرتك بخصوص موعدي.</span></div>
+            <div class="sentence-item"><span class="number">18.</span><span class="dutch">Ik had een vraagje.</span><span class="arabic">— كان عندي سؤال صغير.</span></div>
+            <div class="sentence-item"><span class="number">19.</span><span class="dutch">Heb je efkes tijd?</span><span class="arabic">— عندك وقت لحظة؟ (efkes تعبير فلمنكي بمعنى even).</span></div>
+            <div class="sentence-item"><span class="number">20.</span><span class="dutch">Komt het gelegen?</span><span class="arabic">— هل الوقت مناسب؟</span></div>
+            <div class="sentence-item"><span class="number">21.</span><span class="dutch">Stoor ik je?</span><span class="arabic">— هل أنا بزعجك؟</span></div>
+            <div class="sentence-item"><span class="number">22.</span><span class="dutch">Sorry dat ik zo laat bel.</span><span class="arabic">— آسف إني بتصل متأخر كده.</span></div>
+            <div class="sentence-item"><span class="number">23.</span><span class="dutch">Ik hoop dat ik niet stoor.</span><span class="arabic">— أتمنى ما أكونش بزعجك.</span></div>
+            <div class="sentence-item"><span class="number">24.</span><span class="dutch">Ik bel vanuit Harelbeke.</span><span class="arabic">— بتصل من هارلبِيك.</span></div>
+            <div class="sentence-item"><span class="number">25.</span><span class="dutch">Zeg maar, ik luister.</span><span class="arabic">— اتفضل، أنا سامعك.</span></div>
+        </div>
+
+        <!-- القسم 2 -->
+        <h2><i>2</i> فهم الكلام وطلب الإعادة <small style="font-size:0.8rem; font-weight:400; color:#6b7f99;">(26–50)</small></h2>
+        <div class="sentence-grid">
+            <div class="sentence-item"><span class="number">26.</span><span class="dutch">Sorry, ik heb je niet goed verstaan.</span><span class="arabic">— معلش، ما سمعتكش كويس.</span></div>
+            <div class="sentence-item"><span class="number">27.</span><span class="dutch">Kunt u dat herhalen, alstublieft?</span><span class="arabic">— ممكن تكرر ده، لو سمحت؟</span></div>
+            <div class="sentence-item"><span class="number">28.</span><span class="dutch">Kun je dat nog eens zeggen?</span><span class="arabic">— ممكن تقول ده تاني؟</span></div>
+            <div class="sentence-item"><span class="number">29.</span><span class="dutch">Wat zei je juist?</span><span class="arabic">— إنت قلت إيه بالضبط؟</span></div>
+            <div class="sentence-item"><span class="number">30.</span><span class="dutch">Ik versta je niet goed.</span><span class="arabic">— مش سامعك كويس.</span></div>
+            <div class="sentence-item"><span class="number">31.</span><span class="dutch">De verbinding is slecht.</span><span class="arabic">— الاتصال سيئ.</span></div>
+            <div class="sentence-item"><span class="number">32.</span><span class="dutch">Je valt precies weg.</span><span class="arabic">— صوتك بيقطع.</span></div>
+            <div class="sentence-item"><span class="number">33.</span><span class="dutch">Ik hoor je bijna niet.</span><span class="arabic">— مش سامعك تقريبًا.</span></div>
+            <div class="sentence-item"><span class="number">34.</span><span class="dutch">Kun je wat luider spreken?</span><span class="arabic">— ممكن تتكلم بصوت أعلى شوية؟</span></div>
+            <div class="sentence-item"><span class="number">35.</span><span class="dutch">Spreek maar wat trager, alsjeblieft.</span><span class="arabic">— اتكلم أبطأ شوية لو سمحت.</span></div>
+            <div class="sentence-item"><span class="number">36.</span><span class="dutch">Wil je wat trager praten?</span><span class="arabic">— ممكن تتكلم أبطأ؟</span></div>
+            <div class="sentence-item"><span class="number">37.</span><span class="dutch">Mijn Nederlands is nog niet zo goed.</span><span class="arabic">— الهولندي بتاعي لسه مش قوي.</span></div>
+            <div class="sentence-item"><span class="number">38.</span><span class="dutch">Ik ben Nederlands aan het leren.</span><span class="arabic">— أنا بتعلم هولندي.</span></div>
+            <div class="sentence-item"><span class="number">39.</span><span class="dutch">Kunt u wat eenvoudiger spreken?</span><span class="arabic">— ممكن تتكلم بطريقة أبسط؟</span></div>
+            <div class="sentence-item"><span class="number">40.</span><span class="dutch">Wat betekent dat juist?</span><span class="arabic">— ده معناه إيه بالضبط؟</span></div>
+            <div class="sentence-item"><span class="number">41.</span><span class="dutch">Hoe schrijf je dat?</span><span class="arabic">— إزاي بتكتب الكلمة دي؟</span></div>
+            <div class="sentence-item"><span class="number">42.</span><span class="dutch">Kun je dat spellen?</span><span class="arabic">— ممكن تهجّي الكلمة؟</span></div>
+            <div class="sentence-item"><span class="number">43.</span><span class="dutch">Is dat met een S of een Z?</span><span class="arabic">— دي بحرف S ولا Z؟</span></div>
+            <div class="sentence-item"><span class="number">44.</span><span class="dutch">Mag ik dat even noteren?</span><span class="arabic">— ممكن أكتب ده بسرعة؟</span></div>
+            <div class="sentence-item"><span class="number">45.</span><span class="dutch">Een momentje, alstublieft.</span><span class="arabic">— لحظة واحدة لو سمحت.</span></div>
+            <div class="sentence-item"><span class="number">46.</span><span class="dutch">Wacht efkes.</span><span class="arabic">— استنى لحظة (فلمنكي).</span></div>
+            <div class="sentence-item"><span class="number">47.</span><span class="dutch">Ik zoek het even op.</span><span class="arabic">— هدور على المعلومة بسرعة.</span></div>
+            <div class="sentence-item"><span class="number">48.</span><span class="dutch">Nu versta ik je.</span><span class="arabic">— دلوقتي فهمت كلامك.</span></div>
+            <div class="sentence-item"><span class="number">49.</span><span class="dutch">Ah ja, ik begrijp het.</span><span class="arabic">— آه، أيوه، فهمت.</span></div>
+            <div class="sentence-item"><span class="number">50.</span><span class="dutch">Oké, da’s duidelijk.</span><span class="arabic">— تمام، كده واضح.</span></div>
+        </div>
+
+        <!-- القسم 3 -->
+        <h2><i>3</i> الاتصال بشركة أو مكتب <small style="font-size:0.8rem; font-weight:400; color:#6b7f99;">(51–75)</small></h2>
+        <div class="sentence-grid">
+            <div class="sentence-item"><span class="number">51.</span><span class="dutch">Ik bel naar uw kantoor.</span><span class="arabic">— بتصل بمكتبكم.</span></div>
+            <div class="sentence-item"><span class="number">52.</span><span class="dutch">Ik heb een vraag over mijn dossier.</span><span class="arabic">— عندي سؤال عن ملفي.</span></div>
+            <div class="sentence-item"><span class="number">53.</span><span class="dutch">Ik bel voor meer informatie.</span><span class="arabic">— بتصل عشان معلومات إضافية.</span></div>
+            <div class="sentence-item"><span class="number">54.</span><span class="dutch">Met welke dienst moet ik spreken?</span><span class="arabic">— المفروض أتكلم مع أي قسم؟</span></div>
+            <div class="sentence-item"><span class="number">55.</span><span class="dutch">Kunt u mij doorverbinden?</span><span class="arabic">— ممكن تحوّلني؟</span></div>
+            <div class="sentence-item"><span class="number">56.</span><span class="dutch">Mag ik de verantwoordelijke spreken?</span><span class="arabic">— ممكن أتكلم مع المسؤول؟</span></div>
+            <div class="sentence-item"><span class="number">57.</span><span class="dutch">Is de manager aanwezig?</span><span class="arabic">— هل المدير موجود؟</span></div>
+            <div class="sentence-item"><span class="number">58.</span><span class="dutch">Is er iemand beschikbaar?</span><span class="arabic">— هل فيه حد متاح؟</span></div>
+            <div class="sentence-item"><span class="number">59.</span><span class="dutch">Ik zoek de personeelsdienst.</span><span class="arabic">— بدور على قسم الموارد البشرية.</span></div>
+            <div class="sentence-item"><span class="number">60.</span><span class="dutch">Ik wil graag de planning spreken.</span><span class="arabic">— عايز أتكلم مع قسم التخطيط.</span></div>
+            <div class="sentence-item"><span class="number">61.</span><span class="dutch">Kunt u mij helpen, alstublieft?</span><span class="arabic">— ممكن تساعدني لو سمحت؟</span></div>
+            <div class="sentence-item"><span class="number">62.</span><span class="dutch">Naar welk nummer moet ik bellen?</span><span class="arabic">— أتصل على أنهي رقم؟</span></div>
+            <div class="sentence-item"><span class="number">63.</span><span class="dutch">Heb ik het juiste nummer?</span><span class="arabic">— هل ده الرقم الصحيح؟</span></div>
+            <div class="sentence-item"><span class="number">64.</span><span class="dutch">Ik denk dat ik verkeerd verbonden ben.</span><span class="arabic">— أعتقد إن المكالمة وصلتني لمكان غلط.</span></div>
+            <div class="sentence-item"><span class="number">65.</span><span class="dutch">Verbind me maar door.</span><span class="arabic">— حوّلني للقسم المطلوب.</span></div>
+            <div class="sentence-item"><span class="number">66.</span><span class="dutch">De lijn is bezet.</span><span class="arabic">— الخط مشغول.</span></div>
+            <div class="sentence-item"><span class="number">67.</span><span class="dutch">Kunt u mij straks terugbellen?</span><span class="arabic">— ممكن تتصل بيا بعد شوية؟</span></div>
+            <div class="sentence-item"><span class="number">68.</span><span class="dutch">Wanneer kan ik het best terugbellen?</span><span class="arabic">— إمتى أفضل وقت أتصل تاني؟</span></div>
+            <div class="sentence-item"><span class="number">69.</span><span class="dutch">Tot hoe laat zijn jullie bereikbaar?</span><span class="arabic">— لحد الساعة كام ممكن نتواصل معاكم؟</span></div>
+            <div class="sentence-item"><span class="number">70.</span><span class="dutch">Zijn jullie vandaag open?</span><span class="arabic">— هل أنتم فاتحين النهارده؟</span></div>
+            <div class="sentence-item"><span class="number">71.</span><span class="dutch">Wat zijn jullie openingsuren?</span><span class="arabic">— إيه مواعيد العمل؟</span></div>
+            <div class="sentence-item"><span class="number">72.</span><span class="dutch">Kan ik iemand spreken die Arabisch of Engels spreekt?</span><span class="arabic">— ممكن أتكلم مع حد بيتكلم عربي أو إنجليزي؟</span></div>
+            <div class="sentence-item"><span class="number">73.</span><span class="dutch">Is er iemand die Engels spreekt?</span><span class="arabic">— هل فيه حد بيتكلم إنجليزي؟</span></div>
+            <div class="sentence-item"><span class="number">74.</span><span class="dutch">Ik zal het kort uitleggen.</span><span class="arabic">— هوضح الموضوع باختصار.</span></div>
+            <div class="sentence-item"><span class="number">75.</span><span class="dutch">Alvast bedankt voor uw hulp.</span><span class="arabic">— شكرًا مقدمًا على مساعدتكم.</span></div>
+        </div>
+
+        <!-- القسم 4 -->
+        <h2><i>4</i> مكالمات البحث عن شغل والـ interim <small style="font-size:0.8rem; font-weight:400; color:#6b7f99;">(76–100)</small></h2>
+        <div class="sentence-grid">
+            <div class="sentence-item"><span class="number">76.</span><span class="dutch">Goeiedag, ik bel voor een vacature.</span><span class="arabic">— نهارك سعيد، بتصل بخصوص وظيفة.</span></div>
+            <div class="sentence-item"><span class="number">77.</span><span class="dutch">Ik ben op zoek naar werk.</span><span class="arabic">— بدور على شغل.</span></div>
+            <div class="sentence-item"><span class="number">78.</span><span class="dutch">Hebben jullie vacatures?</span><span class="arabic">— عندكم وظائف شاغرة؟</span></div>
+            <div class="sentence-item"><span class="number">79.</span><span class="dutch">Zoeken jullie momenteel mensen?</span><span class="arabic">— هل بتدوروا على موظفين حاليًا؟</span></div>
+            <div class="sentence-item"><span class="number">80.</span><span class="dutch">Ik heb mijn cv doorgestuurd.</span><span class="arabic">— بعتّ السيرة الذاتية بتاعتي.</span></div>
+            <div class="sentence-item"><span class="number">81.</span><span class="dutch">Hebben jullie mijn cv ontvangen?</span><span class="arabic">— هل استلمتم الـ CV بتاعي؟</span></div>
+            <div class="sentence-item"><span class="number">82.</span><span class="dutch">Ik bel even om te informeren.</span><span class="arabic">— بتصل عشان أستفسر بسرعة.</span></div>
+            <div class="sentence-item"><span class="number">83.</span><span class="dutch">Ik ben geïnteresseerd in de functie.</span><span class="arabic">— أنا مهتم بالوظيفة.</span></div>
+            <div class="sentence-item"><span class="number">84.</span><span class="dutch">Ik heb ervaring als mechanisch ingenieur.</span><span class="arabic">— عندي خبرة كمهندس ميكانيكا.</span></div>
+            <div class="sentence-item"><span class="number">85.</span><span class="dutch">Ik heb meer dan tien jaar ervaring.</span><span class="arabic">— عندي خبرة أكتر من عشر سنين.</span></div>
+            <div class="sentence-item"><span class="number">86.</span><span class="dutch">Ik heb ervaring met HVAC-installaties.</span><span class="arabic">— عندي خبرة في أنظمة التكييف والتهوية.</span></div>
+            <div class="sentence-item"><span class="number">87.</span><span class="dutch">Ik heb ook ervaring met brandbeveiliging.</span><span class="arabic">— عندي خبرة كمان في أنظمة مكافحة الحريق.</span></div>
+            <div class="sentence-item"><span class="number">88.</span><span class="dutch">Is de vacature nog beschikbaar?</span><span class="arabic">— هل الوظيفة لسه متاحة؟</span></div>
+            <div class="sentence-item"><span class="number">89.</span><span class="dutch">Wanneer kan ik op gesprek komen?</span><span class="arabic">— إمتى أقدر أجي للمقابلة؟</span></div>
+            <div class="sentence-item"><span class="number">90.</span><span class="dutch">Waar vindt het gesprek plaats?</span><span class="arabic">— المقابلة هتكون فين؟</span></div>
+            <div class="sentence-item"><span class="number">91.</span><span class="dutch">Moet ik mijn cv meebrengen?</span><span class="arabic">— لازم أجيب الـ CV معايا؟</span></div>
+            <div class="sentence-item"><span class="number">92.</span><span class="dutch">Welke documenten heb ik nodig?</span><span class="arabic">— إيه المستندات اللي محتاجها؟</span></div>
+            <div class="sentence-item"><span class="number">93.</span><span class="dutch">Is het voltijds of deeltijds?</span><span class="arabic">— الشغل دوام كامل ولا جزئي؟</span></div>
+            <div class="sentence-item"><span class="number">94.</span><span class="dutch">Is het dagwerk of ploegenwerk?</span><span class="arabic">— شغل نهاري ولا ورديات؟</span></div>
+            <div class="sentence-item"><span class="number">95.</span><span class="dutch">Wat is het uurloon?</span><span class="arabic">— كام أجر الساعة؟</span></div>
+            <div class="sentence-item"><span class="number">96.</span><span class="dutch">Wanneer kan ik beginnen?</span><span class="arabic">— إمتى أقدر أبدأ؟</span></div>
+            <div class="sentence-item"><span class="number">97.</span><span class="dutch">Ik ben onmiddellijk beschikbaar.</span><span class="arabic">— أنا متاح أبدأ فورًا.</span></div>
+            <div class="sentence-item"><span class="number">98.</span><span class="dutch">Ik woon in Harelbeke.</span><span class="arabic">— أنا ساكن في هارلبِيك.</span></div>
+            <div class="sentence-item"><span class="number">99.</span><span class="dutch">Ik kan mij verplaatsen naar Kortrijk en Gent.</span><span class="arabic">— أقدر أتنقل لكورتريك وخنت.</span></div>
+            <div class="sentence-item"><span class="number">100.</span><span class="dutch">Ik hoor graag van u.</span><span class="arabic">— أتمنى أسمع ردكم.</span></div>
+        </div>
+
+        <!-- القسم 5 -->
+        <h2><i>5</i> مكالمات المواعيد وتحديد الوقت <small style="font-size:0.8rem; font-weight:400; color:#6b7f99;">(101–125)</small></h2>
+        <div class="sentence-grid">
+            <div class="sentence-item"><span class="number">101.</span><span class="dutch">Ik bel om een afspraak te maken.</span><span class="arabic">— بتصل عشان أحدد موعد.</span></div>
+            <div class="sentence-item"><span class="number">102.</span><span class="dutch">Ik wil graag een afspraak vastleggen.</span><span class="arabic">— عايز أحجز موعد.</span></div>
+            <div class="sentence-item"><span class="number">103.</span><span class="dutch">Hebben jullie morgen tijd?</span><span class="arabic">— عندكم وقت بكرة؟</span></div>
+            <div class="sentence-item"><span class="number">104.</span><span class="dutch">Kan ik deze week langskomen?</span><span class="arabic">— ممكن أجي الأسبوع ده؟</span></div>
+            <div class="sentence-item"><span class="number">105.</span><span class="dutch">Past maandag voor u?</span><span class="arabic">— هل يوم الاثنين مناسب لحضرتك؟</span></div>
+            <div class="sentence-item"><span class="number">106.</span><span class="dutch">Kan het ook op woensdag?</span><span class="arabic">— ينفع يوم الأربعاء كمان؟</span></div>
+            <div class="sentence-item"><span class="number">107.</span><span class="dutch">Hoe laat past het voor u?</span><span class="arabic">— الساعة كام تناسب حضرتك؟</span></div>
+            <div class="sentence-item"><span class="number">108.</span><span class="dutch">Voor mij past dat perfect.</span><span class="arabic">— الموعد ده مناسب جدًا ليا.</span></div>
+            <div class="sentence-item"><span class="number">109.</span><span class="dutch">Dat komt mij niet zo goed uit.</span><span class="arabic">— الوقت ده مش مناسب أوي ليا.</span></div>
+            <div class="sentence-item"><span class="number">110.</span><span class="dutch">Kunnen we een ander moment afspreken?</span><span class="arabic">— ممكن نتفق على وقت تاني؟</span></div>
+            <div class="sentence-item"><span class="number">111.</span><span class="dutch">Mag het in de voormiddag?</span><span class="arabic">— ممكن يكون في الفترة الصباحية؟</span></div>
+            <div class="sentence-item"><span class="number">112.</span><span class="dutch">Kan het in de namiddag?</span><span class="arabic">— ينفع بعد الظهر؟</span></div>
+            <div class="sentence-item"><span class="number">113.</span><span class="dutch">Ik ben er rond negen uur.</span><span class="arabic">— هكون هناك حوالي الساعة تسعة.</span></div>
+            <div class="sentence-item"><span class="number">114.</span><span class="dutch">Ik zal op tijd zijn.</span><span class="arabic">— هكون في المعاد.</span></div>
+            <div class="sentence-item"><span class="number">115.</span><span class="dutch">Ik ben onderweg.</span><span class="arabic">— أنا في الطريق.</span></div>
+            <div class="sentence-item"><span class="number">116.</span><span class="dutch">Ik ben bijna daar.</span><span class="arabic">— قربت أوصل.</span></div>
+            <div class="sentence-item"><span class="number">117.</span><span class="dutch">Ik zal een beetje later zijn.</span><span class="arabic">— هتأخر شوية.</span></div>
+            <div class="sentence-item"><span class="number">118.</span><span class="dutch">Sorry, ik ben tien minuten te laat.</span><span class="arabic">— آسف، هتأخر عشر دقايق.</span></div>
+            <div class="sentence-item"><span class="number">119.</span><span class="dutch">Ik moet mijn afspraak verplaatsen.</span><span class="arabic">— لازم أغيّر موعدي.</span></div>
+            <div class="sentence-item"><span class="number">120.</span><span class="dutch">Ik wil mijn afspraak annuleren.</span><span class="arabic">— عايز ألغي موعدي.</span></div>
+            <div class="sentence-item"><span class="number">121.</span><span class="dutch">Kunt u de afspraak bevestigen?</span><span class="arabic">— ممكن تأكدوا الموعد؟</span></div>
+            <div class="sentence-item"><span class="number">122.</span><span class="dutch">Krijg ik een bevestiging per e-mail?</span><span class="arabic">— هل هيوصلني تأكيد بالإيميل؟</span></div>
+            <div class="sentence-item"><span class="number">123.</span><span class="dutch">Op welk adres moet ik zijn?</span><span class="arabic">— أروح على أنهي عنوان؟</span></div>
+            <div class="sentence-item"><span class="number">124.</span><span class="dutch">Kunt u mij de locatie doorsturen?</span><span class="arabic">— ممكن تبعتلي الموقع؟</span></div>
+            <div class="sentence-item"><span class="number">125.</span><span class="dutch">Tot maandag dan!</span><span class="arabic">— أشوفك يوم الاثنين إذن!</span></div>
+        </div>
+
+        <!-- القسم 6 -->
+        <h2><i>6</i> مكالمات الحياة اليومية في بلجيكا <small style="font-size:0.8rem; font-weight:400; color:#6b7f99;">(126–150)</small></h2>
+        <div class="sentence-grid">
+            <div class="sentence-item"><span class="number">126.</span><span class="dutch">Ik bel over mijn bestelling.</span><span class="arabic">— بتصل بخصوص طلبي.</span></div>
+            <div class="sentence-item"><span class="number">127.</span><span class="dutch">Mijn pakket is nog niet aangekomen.</span><span class="arabic">— الطرد بتاعي لسه موصلش.</span></div>
+            <div class="sentence-item"><span class="number">128.</span><span class="dutch">Wanneer wordt het geleverd?</span><span class="arabic">— إمتى هيتسلّم؟</span></div>
+            <div class="sentence-item"><span class="number">129.</span><span class="dutch">Ik heb iets online besteld.</span><span class="arabic">— طلبت حاجة أونلاين.</span></div>
+            <div class="sentence-item"><span class="number">130.</span><span class="dutch">Er ontbreekt iets in mijn bestelling.</span><span class="arabic">— فيه حاجة ناقصة من طلبي.</span></div>
+            <div class="sentence-item"><span class="number">131.</span><span class="dutch">Ik wil graag een klacht indienen.</span><span class="arabic">— عايز أقدّم شكوى.</span></div>
+            <div class="sentence-item"><span class="number">132.</span><span class="dutch">Ik heb een probleem met mijn factuur.</span><span class="arabic">— عندي مشكلة في الفاتورة.</span></div>
+            <div class="sentence-item"><span class="number">133.</span><span class="dutch">Het bedrag klopt niet.</span><span class="arabic">— المبلغ مش صحيح.</span></div>
+            <div class="sentence-item"><span class="number">134.</span><span class="dutch">Kunt u dat eens nakijken?</span><span class="arabic">— ممكن تراجعوا الموضوع؟</span></div>
+            <div class="sentence-item"><span class="number">135.</span><span class="dutch">Ik heb de betaling al gedaan.</span><span class="arabic">— أنا دفعت بالفعل.</span></div>
+            <div class="sentence-item"><span class="number">136.</span><span class="dutch">Ik heb nog geen antwoord gekregen.</span><span class="arabic">— لسه ما وصلنيش رد.</span></div>
+            <div class="sentence-item"><span class="number">137.</span><span class="dutch">Ik stuur u de documenten door.</span><span class="arabic">— هبعت لحضرتك المستندات.</span></div>
+            <div class="sentence-item"><span class="number">138.</span><span class="dutch">Hebt u mijn e-mail gezien?</span><span class="arabic">— هل شفت الإيميل بتاعي؟</span></div>
+            <div class="sentence-item"><span class="number">139.</span><span class="dutch">Ik heb u gisteren een bericht gestuurd.</span><span class="arabic">— بعت لحضرتك رسالة امبارح.</span></div>
+            <div class="sentence-item"><span class="number">140.</span><span class="dutch">Mijn internet werkt niet.</span><span class="arabic">— الإنترنت عندي مش شغال.</span></div>
+            <div class="sentence-item"><span class="number">141.</span><span class="dutch">Mijn telefoon is bijna plat.</span><span class="arabic">— بطارية موبايلي قربت تخلص.</span></div>
+            <div class="sentence-item"><span class="number">142.</span><span class="dutch">Ik bel u met een ander nummer.</span><span class="arabic">— هتصل بحضرتك من رقم تاني.</span></div>
+            <div class="sentence-item"><span class="number">143.</span><span class="dutch">Kunt u mij uw adres geven?</span><span class="arabic">— ممكن تديني عنوانك؟</span></div>
+            <div class="sentence-item"><span class="number">144.</span><span class="dutch">Hoe geraak ik daar?</span><span class="arabic">— إزاي أوصل هناك؟ (تعبير بلجيكي شائع).</span></div>
+            <div class="sentence-item"><span class="number">145.</span><span class="dutch">Is er parking in de buurt?</span><span class="arabic">— هل فيه موقف سيارات قريب؟</span></div>
+            <div class="sentence-item"><span class="number">146.</span><span class="dutch">Is het ver van het station?</span><span class="arabic">— هل المكان بعيد عن المحطة؟</span></div>
+            <div class="sentence-item"><span class="number">147.</span><span class="dutch">Kan ik met de bus komen?</span><span class="arabic">— أقدر أجي بالأتوبيس؟</span></div>
+            <div class="sentence-item"><span class="number">148.</span><span class="dutch">Welke bus moet ik nemen?</span><span class="arabic">— أركب أنهي أتوبيس؟</span></div>
+            <div class="sentence-item"><span class="number">149.</span><span class="dutch">Ik ben niet bekend in de buurt.</span><span class="arabic">— أنا مش عارف المنطقة كويس.</span></div>
+            <div class="sentence-item"><span class="number">150.</span><span class="dutch">Bedankt voor de informatie.</span><span class="arabic">— شكرًا على المعلومات.</span></div>
+        </div>
+
+        <!-- القسم 7 -->
+        <h2><i>7</i> مكالمات الطبيب والتأمين والبلدية <small style="font-size:0.8rem; font-weight:400; color:#6b7f99;">(151–175)</small></h2>
+        <div class="sentence-grid">
+            <div class="sentence-item"><span class="number">151.</span><span class="dutch">Ik bel om een afspraak bij de dokter te maken.</span><span class="arabic">— بتصل عشان أحجز موعد عند الدكتور.</span></div>
+            <div class="sentence-item"><span class="number">152.</span><span class="dutch">Ik voel me niet goed.</span><span class="arabic">— أنا مش حاسس إني كويس.</span></div>
+            <div class="sentence-item"><span class="number">153.</span><span class="dutch">Hebt u vandaag nog een plaatsje vrij?</span><span class="arabic">— هل عندكم مكان فاضي النهارده؟</span></div>
+            <div class="sentence-item"><span class="number">154.</span><span class="dutch">Ik ben al patiënt bij jullie.</span><span class="arabic">— أنا مريض مسجل عندكم بالفعل.</span></div>
+            <div class="sentence-item"><span class="number">155.</span><span class="dutch">Moet ik mijn identiteitskaart meebrengen?</span><span class="arabic">— لازم أجيب بطاقة الهوية؟</span></div>
+            <div class="sentence-item"><span class="number">156.</span><span class="dutch">Ik heb een vraag over mijn verzekering.</span><span class="arabic">— عندي سؤال عن التأمين بتاعي.</span></div>
+            <div class="sentence-item"><span class="number">157.</span><span class="dutch">Ik ben aangesloten bij Solidaris.</span><span class="arabic">— أنا مشترك في سوليداريس.</span></div>
+            <div class="sentence-item"><span class="number">158.</span><span class="dutch">Welke documenten hebt u nodig?</span><span class="arabic">— إيه المستندات اللي محتاجينها؟</span></div>
+            <div class="sentence-item"><span class="number">159.</span><span class="dutch">Kan ik mijn documenten per e-mail bezorgen?</span><span class="arabic">— ممكن أبعت المستندات بالإيميل؟</span></div>
+            <div class="sentence-item"><span class="number">160.</span><span class="dutch">Ik heb nog geen terugbetaling ontvangen.</span><span class="arabic">— لسه ما استلمتش التعويض.</span></div>
+            <div class="sentence-item"><span class="number">161.</span><span class="dutch">Hoe lang duurt de terugbetaling?</span><span class="arabic">— التعويض بياخد وقت قد إيه؟</span></div>
+            <div class="sentence-item"><span class="number">162.</span><span class="dutch">Ik wil graag mijn dossier controleren.</span><span class="arabic">— عايز أراجع ملفي.</span></div>
+            <div class="sentence-item"><span class="number">163.</span><span class="dutch">Ik bel naar de gemeente Harelbeke.</span><span class="arabic">— بتصل ببلدية هارلبِيك.</span></div>
+            <div class="sentence-item"><span class="number">164.</span><span class="dutch">Ik heb een vraag over mijn inschrijving.</span><span class="arabic">— عندي سؤال عن تسجيلي في البلدية.</span></div>
+            <div class="sentence-item"><span class="number">165.</span><span class="dutch">Is mijn inschrijving al in orde?</span><span class="arabic">— هل تسجيلي خلص وبقى سليم؟</span></div>
+            <div class="sentence-item"><span class="number">166.</span><span class="dutch">Welke documenten moet ik indienen?</span><span class="arabic">— إيه المستندات اللي لازم أقدّمها؟</span></div>
+            <div class="sentence-item"><span class="number">167.</span><span class="dutch">Moet ik daarvoor een afspraak maken?</span><span class="arabic">— هل لازم أحجز موعد للموضوع ده؟</span></div>
+            <div class="sentence-item"><span class="number">168.</span><span class="dutch">Ik heb mijn attest nodig.</span><span class="arabic">— محتاج الشهادة بتاعتي.</span></div>
+            <div class="sentence-item"><span class="number">169.</span><span class="dutch">Wanneer kan ik het document ophalen?</span><span class="arabic">— إمتى أقدر أستلم المستند؟</span></div>
+            <div class="sentence-item"><span class="number">170.</span><span class="dutch">Kan ik het digitaal ontvangen?</span><span class="arabic">— ممكن أستلمه إلكترونيًا؟</span></div>
+            <div class="sentence-item"><span class="number">171.</span><span class="dutch">Ik heb een vraag over mijn verblijfskaart.</span><span class="arabic">— عندي سؤال عن بطاقة الإقامة.</span></div>
+            <div class="sentence-item"><span class="number">172.</span><span class="dutch">Mijn kaart is nog niet aangekomen.</span><span class="arabic">— بطاقتي لسه موصلتش.</span></div>
+            <div class="sentence-item"><span class="number">173.</span><span class="dutch">Mijn oranje kaart is nog geldig.</span><span class="arabic">— بطاقة الإقامة البرتقالية بتاعتي لسه سارية.</span></div>
+            <div class="sentence-item"><span class="number">174.</span><span class="dutch">Ik wil graag weten wat de volgende stap is.</span><span class="arabic">— عايز أعرف إيه الخطوة الجاية.</span></div>
+            <div class="sentence-item"><span class="number">175.</span><span class="dutch">Alvast bedankt voor uw tijd.</span><span class="arabic">— شكرًا مقدمًا على وقتكم.</span></div>
+        </div>
+
+        <!-- القسم 8 -->
+        <h2><i>8</i> إنهاء المكالمة والتعبيرات المحلية <small style="font-size:0.8rem; font-weight:400; color:#6b7f99;">(176–200)</small></h2>
+        <div class="sentence-grid">
+            <div class="sentence-item"><span class="number">176.</span><span class="dutch">Oké, bedankt hé!</span><span class="arabic">— تمام، شكرًا!</span></div>
+            <div class="sentence-item"><span class="number">177.</span><span class="dutch">Merci hé!</span><span class="arabic">— شكرًا! (تعبير بلجيكي دارج).</span></div>
+            <div class="sentence-item"><span class="number">178.</span><span class="dutch">Dank u wel voor uw hulp.</span><span class="arabic">— شكرًا جزيلًا على مساعدتكم.</span></div>
+            <div class="sentence-item"><span class="number">179.</span><span class="dutch">Dat is heel vriendelijk van u.</span><span class="arabic">— ده لطف كبير من حضرتك.</span></div>
+            <div class="sentence-item"><span class="number">180.</span><span class="dutch">Geen probleem.</span><span class="arabic">— مفيش مشكلة.</span></div>
+            <div class="sentence-item"><span class="number">181.</span><span class="dutch">Da’s goed.</span><span class="arabic">— تمام، كويس.</span></div>
+            <div class="sentence-item"><span class="number">182.</span><span class="dutch">Da’s in orde.</span><span class="arabic">— كده تمام.</span></div>
+            <div class="sentence-item"><span class="number">183.</span><span class="dutch">Allez, merci!</span><span class="arabic">— تمام، شكرًا! (Allez تعبير شائع في الكلام البلجيكي).</span></div>
+            <div class="sentence-item"><span class="number">184.</span><span class="dutch">Voilà, dat was mijn vraag.</span><span class="arabic">— تمام، ده كان سؤالي.</span></div>
+            <div class="sentence-item"><span class="number">185.</span><span class="dutch">Ik zal het zo doen.</span><span class="arabic">— هعمل كده.</span></div>
+            <div class="sentence-item"><span class="number">186.</span><span class="dutch">Ik laat nog iets weten.</span><span class="arabic">— هبلغك بأي جديد.</span></div>
+            <div class="sentence-item"><span class="number">187.</span><span class="dutch">Ik bel je later nog eens.</span><span class="arabic">— هتصل بيك تاني بعدين.</span></div>
+            <div class="sentence-item"><span class="number">188.</span><span class="dutch">Bel me gerust terug.</span><span class="arabic">— اتصل بيا تاني في أي وقت.</span></div>
+            <div class="sentence-item"><span class="number">189.</span><span class="dutch">Laat maar weten, hé.</span><span class="arabic">— بلغني بس، تمام؟</span></div>
+            <div class="sentence-item"><span class="number">190.</span><span class="dutch">Tot straks!</span><span class="arabic">— أشوفك كمان شوية!</span></div>
+            <div class="sentence-item"><span class="number">191.</span><span class="dutch">Tot later!</span><span class="arabic">— أشوفك بعدين!</span></div>
+            <div class="sentence-item"><span class="number">192.</span><span class="dutch">Tot morgen!</span><span class="arabic">— أشوفك بكرة!</span></div>
+            <div class="sentence-item"><span class="number">193.</span><span class="dutch">Nog een fijne dag!</span><span class="arabic">— أتمنى لك يومًا سعيدًا!</span></div>
+            <div class="sentence-item"><span class="number">194.</span><span class="dutch">Prettige avond nog!</span><span class="arabic">— أتمنى لك بقية مساء سعيدة!</span></div>
+            <div class="sentence-item"><span class="number">195.</span><span class="dutch">Een fijn weekend gewenst!</span><span class="arabic">— أتمنى لك عطلة نهاية أسبوع سعيدة!</span></div>
+            <div class="sentence-item"><span class="number">196.</span><span class="dutch">Zorg goed voor jezelf.</span><span class="arabic">— خلي بالك من نفسك.</span></div>
+            <div class="sentence-item"><span class="number">197.</span><span class="dutch">We spreken elkaar nog.</span><span class="arabic">— هنتكلم تاني.</span></div>
+            <div class="sentence-item"><span class="number">198.</span><span class="dutch">Ik wens u nog een prettige dag.</span><span class="arabic">— أتمنى لحضرتك يومًا سعيدًا.</span></div>
+            <div class="sentence-item"><span class="number">199.</span><span class="dutch">Dag, hé!</span><span class="arabic">— سلام! (تعبير ودي).</span></div>
+            <div class="sentence-item"><span class="number">200.</span><span class="dutch">Allez, tot de volgende keer!</span><span class="arabic">— يلا، أشوفك المرة الجاية!</span></div>
+        </div>
+
+        <!-- التعبيرات المحلية -->
+        <div class="example-block">
+            <h3>🗣️ أهم 10 تعبيرات تسمعها في هارلبِيك وكورتريك</h3>
+            <div class="example-grid">
+                <div class="example-card">
+                    <div class="dutch-word">Efkes</div>
+                    <div class="meaning">لحظة صغيرة / بسرعة</div>
+                    <div class="example-sentence">Wacht efkes. — استنى لحظة.</div>
+                </div>
+                <div class="example-card">
+                    <div class="dutch-word">’t Is in orde.</div>
+                    <div class="meaning">كله تمام.</div>
+                    <div class="example-sentence">Ik bel efkes.</div>
+                </div>
+                <div class="example-card">
+                    <div class="dutch-word">Ça zal wel zijn.</div>
+                    <div class="meaning">غالبًا / أيوه، أكيد، حسب السياق.</div>
+                    <div class="example-sentence">Allez!</div>
+                </div>
+                <div class="example-card">
+                    <div class="dutch-word">Hé</div>
+                    <div class="meaning">بتتقال في نهاية الكلام للتأكيد أو لجعل النبرة ودية.</div>
+                    <div class="example-sentence">Amai!</div>
+                </div>
+                <div class="example-card">
+                    <div class="dutch-word">Zeg</div>
+                    <div class="meaning">اسمع / بقولك، حسب السياق.</div>
+                    <div class="example-sentence">’k Weet het niet. — مش عارف.</div>
+                </div>
+                <div class="example-card">
+                    <div class="dutch-word">’t Zal wel zijn.</div>
+                    <div class="meaning">غالبًا كده / أيوه، حسب السياق.</div>
+                    <div class="example-sentence">Allez, tot de volgende keer!</div>
+                </div>
+                <div class="example-card">
+                    <div class="dutch-word">Amai!</div>
+                    <div class="meaning">يا نهار! / يا سلام! للتعبير عن الدهشة.</div>
+                    <div class="example-sentence">Amai, da’s goed!</div>
+                </div>
+                <div class="example-card">
+                    <div class="dutch-word">Allez!</div>
+                    <div class="meaning">يلا / طيب / حسنًا، حسب الموقف.</div>
+                    <div class="example-sentence">Allez, merci hé!</div>
+                </div>
+                <div class="example-card">
+                    <div class="dutch-word">Wacht efkes.</div>
+                    <div class="meaning">استنى لحظة.</div>
+                    <div class="example-sentence">Wacht efkes, ik zoek het op.</div>
+                </div>
+                <div class="example-card">
+                    <div class="dutch-word">Ça va?</div>
+                    <div class="meaning">عامل إيه؟ (فرنسي/بلجيكي شائع).</div>
+                    <div class="example-sentence">Ça va, alles goed?</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- نصيحة -->
+        <div class="advice">
+            <strong>📌 نصيحة مهمة:</strong> في مكالمات البلدية، الطبيب، والتأمين استخدم <strong>u</strong> بدل <strong>je</strong> لأنها أكثر احترامًا. ومع أصحابك وزملائك ممكن تستخدم <strong>je</strong>. الجمل هنا مناسبة للهولندية البلجيكية اليومية، لكن مش كلها لهجة غرب فلاندرز المحلية الخالصة؛ اللهجة القوية في هارلبِيك ممكن تختلف في النطق والكلمات.
+        </div>
+
+        <footer>
+            🇧🇪 200 جملة مكالمات تلفون بالهولندية البلجيكية – هارلبِيك (Harelbeke) • لهجة West-Vlaams اليومية
+        </footer>
+    </div>
+</body>
+</html>
