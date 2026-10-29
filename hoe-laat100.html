@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>١٠٠ جملة هولندية باستخدام Hoe laat مع الترجمة العربية</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Noto Naskh Arabic', 'Amiri', 'Traditional Arabic', serif;
+    background: linear-gradient(135deg, #0a2818 0%, #1a4a2e 50%, #2d6a4f 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    line-height: 1.9;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fffdf7;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+  
+  header {
+    background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  header .subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+    background: rgba(255,255,255,0.15);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    margin-top: 10px;
+  }
+  
+  header .flag {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .intro {
+    background: #e8f5e9;
+    padding: 25px 30px;
+    border-bottom: 3px solid #2d6a4f;
+    font-size: 1.05em;
+    color: #444;
+  }
+  
+  .intro p { margin-bottom: 10px; }
+  
+  .intro .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: center;
+  }
+  
+  .intro .keywords span {
+    background: #2d6a4f;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 700;
+  }
+  
+  .section {
+    padding: 25px 30px;
+    border-bottom: 2px dashed #ddd;
+  }
+  
+  .section:last-of-type { border-bottom: none; }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #1b4332, #2d6a4f);
+    color: white;
+    border-radius: 12px;
+    font-size: 1.25em;
+    font-weight: 700;
+  }
+  
+  .section-header .num {
+    background: #ffb703;
+    color: #1b4332;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    direction: ltr;
+    font-weight: 800;
+  }
+  
+  .sentence {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border-right: 4px solid transparent;
+  }
+  
+  .sentence:nth-child(odd) { background: #f2f9f4; }
+  .sentence:nth-child(even) { background: #ffffff; }
+  
+  .sentence:hover {
+    background: #d8f3dc;
+    border-right-color: #2d6a4f;
+    transform: translateX(-4px);
+  }
+  
+  .num-badge {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #1b4332, #2d6a4f);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85em;
+    font-weight: 700;
+    direction: ltr;
+  }
+  
+  .text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .dutch {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 1.15em;
+    color: #1b4332;
+    font-weight: 700;
+    direction: ltr;
+    text-align: right;
+  }
+  
+  .dutch .hl {
+    color: #d00000;
+    background: #ffe8e8;
+    padding: 0 6px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+  
+  .arabic {
+    font-size: 1.15em;
+    color: #4a3020;
+    font-weight: 400;
+  }
+  
+  .summary {
+    padding: 30px;
+    background: linear-gradient(135deg, #e8f5e9, #d8f3dc);
+    margin: 20px;
+    border-radius: 15px;
+    border: 2px solid #2d6a4f;
+  }
+  
+  .summary h2 {
+    color: #1b4332;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  .summary-table th {
+    background: #2d6a4f;
+    color: white;
+    padding: 14px 12px;
+    font-size: 1em;
+  }
+  
+  .summary-table td {
+    padding: 12px;
+    border-bottom: 1px solid #c8e6c9;
+    text-align: center;
+    font-size: 1em;
+  }
+  
+  .summary-table tr:last-child td { border-bottom: none; }
+  .summary-table tr:hover td { background: #e8f5e9; }
+  
+  .summary-table .dutch-cell {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #1b4332;
+    direction: ltr;
+  }
+  
+  .summary-table .example-cell {
+    direction: ltr;
+    text-align: left;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #d00000;
+    font-style: italic;
+  }
+  
+  .rule-box {
+    margin-top: 25px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border-right: 5px solid #ffb703;
+  }
+  
+  .rule-box h3 {
+    color: #1b4332;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+  
+  .rule-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .rule-box li {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: #f2f9f4;
+    border-radius: 8px;
+    font-size: 1.05em;
+  }
+  
+  .rule-box li strong {
+    color: #d00000;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    direction: ltr;
+    display: inline-block;
+    font-size: 1.1em;
+  }
+  
+  .dialog-box {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border-right: 5px solid #2d6a4f;
+  }
+  
+  .dialog-box h3 {
+    color: #1b4332;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+  
+  .dialog-box .line {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  
+  .dialog-box .line.a { background: #e3f2fd; }
+  .dialog-box .line.b { background: #fff3e0; }
+  
+  .dialog-box .speaker {
+    font-weight: 800;
+    color: #2d6a4f;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    direction: ltr;
+    min-width: 25px;
+  }
+  
+  .dialog-box .nl {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #1b4332;
+    direction: ltr;
+  }
+  
+  .dialog-box .ar {
+    color: #4a3020;
+  }
+  
+  .warning-box {
+    margin-top: 20px;
+    padding: 18px 22px;
+    background: #fff3e0;
+    border-radius: 12px;
+    border-right: 5px solid #d00000;
+    font-size: 1.05em;
+  }
+  
+  .warning-box strong {
+    color: #d00000;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    direction: ltr;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: #1b4332;
+    color: #a8d5ba;
+    font-size: 0.95em;
+  }
+  
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    header { padding: 25px 15px; }
+    header h1 { font-size: 1.5em; }
+    .section { padding: 15px; }
+    .sentence { padding: 10px 8px; flex-wrap: wrap; }
+    .num-badge { width: 34px; height: 34px; font-size: 0.75em; }
+    .dutch { font-size: 1em; }
+    .arabic { font-size: 1em; }
+    .section-header { font-size: 1em; padding: 10px 12px; }
+    .summary { padding: 15px; margin: 10px; }
+    .summary-table td, .summary-table th { padding: 8px 5px; font-size: 0.85em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="flag">🇳🇱</div>
+    <h1>١٠٠ جملة هولندية باستخدام Hoe laat</h1>
+    <div class="subtitle">مع الترجمة العربية بالتشكيل الكامل</div>
+  </header>
+
+  <div class="intro">
+    <p><strong>Hoe laat</strong> تعني: السَّاعَةُ كَمْ؟ / فِي أَيِّ وَقْتٍ؟</p>
+    <div class="keywords">
+      <span>الساعة كم؟</span>
+      <span>في أي وقت؟</span>
+      <span>المواعيد</span>
+      <span>المواصلات</span>
+      <span>الحياة اليومية</span>
+    </div>
+  </div>
+
+  <!-- 1-25 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">1 – 25</span>
+      السؤال عن الوقت والمواعيد
+    </div>
+
+    <div class="sentence"><div class="num-badge">1</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> is het?</div><div class="arabic">كَمِ السَّاعَةُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">2</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> is het nu?</div><div class="arabic">كَمِ السَّاعَةُ الْآنَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">3</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begint de les?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَبْدَأُ الدَّرْسُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">4</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> eindigt de les?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَنْتَهِي الدَّرْسُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">5</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begin je met werken?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَبْدَأُ الْعَمَلَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">6</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> stop je met werken?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَنْهِي الْعَمَلَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">7</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> sta je op?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَسْتَيْقِظُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">8</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> ga je slapen?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَذْهَبُ لِلنَّوْمِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">9</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> vertrek je?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَغَادِرُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">10</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> kom je terug?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَعُودُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">11</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> kom je thuis?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَصِلُ إِلَى الْبَيْتِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">12</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> ga je naar huis?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَذْهَبُ إِلَى الْبَيْتِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">13</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begint de film?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَبْدَأُ الْفِيلْمُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">14</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> eindigt de film?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَنْتَهِي الْفِيلْمُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">15</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> opent de winkel?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَفْتَحُ الْمَتْجَرُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">16</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> sluit de winkel?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يُغْلَقُ الْمَتْجَرُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">17</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begint de vergadering?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَبْدَأُ الِاجْتِمَاعُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">18</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begint je afspraak?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَبْدَأُ مَوْعِدُكَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">19</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> moet ik komen?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَجِبُ أَنْ آتِيَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">20</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> moet ik vertrekken?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَجِبُ أَنْ أُغَادِرَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">21</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> eet je ontbijt?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَتَنَاوَلُ الْإِفْطَارَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">22</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> eet je lunch?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَتَنَاوَلُ الْغَدَاءَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">23</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> eet je avondeten?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَتَنَاوَلُ الْعَشَاءَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">24</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> drink je koffie?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَشْرَبُ الْقَهْوَةَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">25</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> ga je naar bed?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَذْهَبُ إِلَى الْفِرَاشِ؟</div></div></div>
+  </div>
+
+  <!-- 26-50 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">26 – 50</span>
+      المواصلات والعمل
+    </div>
+
+    <div class="sentence"><div class="num-badge">26</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> vertrekt de bus?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَنْطَلِقُ الْحَافِلَةُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">27</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> komt de bus aan?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَصِلُ الْحَافِلَةُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">28</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> vertrekt de trein?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَنْطَلِقُ الْقِطَارُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">29</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> komt de trein aan?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَصِلُ الْقِطَارُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">30</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> gaat de tram?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَنْطَلِقُ الْتْرَامُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">31</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> vertrekt de volgende bus?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَنْطَلِقُ الْحَافِلَةُ التَّالِيَةُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">32</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> komt de volgende trein?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَصِلُ الْقِطَارُ التَّالِي؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">33</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> moet ik op het station zijn?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَجِبُ أَنْ أَكُونَ فِي الْمَحَطَّةِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">34</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> vertrekt de trein naar Gent?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَنْطَلِقُ الْقِطَارُ إِلَى غِنْت؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">35</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> vertrekt de bus naar Kortrijk?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَنْطَلِقُ الْحَافِلَةُ إِلَى كُورْتْرَيْك؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">36</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begint mijn werkdag?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَبْدَأُ يَوْمُ عَمَلِي؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">37</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> heb je pauze?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَأْخُذُ اسْتِرَاحَةً؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">38</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> eindigt mijn shift?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَنْتَهِي وَرْدِيَّتِي؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">39</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> moet ik op het werk zijn?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَجِبُ أَنْ أَكُونَ فِي الْعَمَلِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">40</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begint het sollicitatiegesprek?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَبْدَأُ مُقَابَلَةُ التَّوْظِيفِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">41</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> moet ik naar de dokter?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَجِبُ أَنْ أَذْهَبَ إِلَى الطَّبِيبِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">42</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> opent de apotheek?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَفْتَحُ الصَّيْدَلِيَّةُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">43</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> sluit het gemeentehuis?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يُغْلَقُ مَبْنَى الْبَلَدِيَّةِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">44</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begint de cursus Nederlands?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَبْدَأُ دَوْرَةُ الْهُولَنْدِيَّةِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">45</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begint de online les?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَبْدَأُ الدَّرْسُ عَبْرَ الْإِنْتَرْنِتِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">46</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> moet ik inloggen?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَجِبُ أَنْ أُسَجِّلَ الدُّخُولَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">47</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begint de wedstrijd?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَبْدَأُ الْمُبَارَاةُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">48</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> gaan we weg?</div><div class="arabic">فِي أَيِّ سَاعَةٍ سَنُغَادِرُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">49</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> spreken we af?</div><div class="arabic">فِي أَيِّ سَاعَةٍ نَلْتَقِي؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">50</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> ben je beschikbaar?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَكُونُ مُتَاحًا؟</div></div></div>
+  </div>
+
+  <!-- 51-75 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">51 – 75</span>
+      أسئلة يومية ومحادثات
+    </div>
+
+    <div class="sentence"><div class="num-badge">51</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> word je wakker?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَسْتَيْقِظُ مِنَ النَّوْمِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">52</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> ga je douchen?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَسْتَحِمُّ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">53</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> poets je je tanden?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تُنَظِّفُ أَسْنَانَكَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">54</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> maak je het eten klaar?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تُجَهِّزُ الطَّعَامَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">55</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> kom je thuis van je werk?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَعُودُ مِنْ عَمَلِكَ إِلَى الْبَيْتِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">56</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> ga je boodschappen doen?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَذْهَبُ لِشِرَاءِ الْحَاجِيَاتِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">57</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> ga je naar de sportschool?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَذْهَبُ إِلَى صَالَةِ الرِّيَاضَةِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">58</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begin je met studeren?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَبْدَأُ الْمُذَاكَرَةَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">59</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> maak je je huiswerk?</div><div class="arabic">فِي أَيِّ سَاعَةٍ تَحُلُّ وَاجِبَكَ الْمَنْزِلِيَّ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">60</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> bel je me?</div><div class="arabic">فِي أَيِّ سَاعَةٍ سَتَتَّصِلُ بِي؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">61</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> kan ik je bellen?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يُمْكِنُنِي الِاتِّصَالُ بِكَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">62</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> kom je morgen?</div><div class="arabic">فِي أَيِّ سَاعَةٍ سَتَأْتِي غَدًا؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">63</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> vertrek je morgen?</div><div class="arabic">فِي أَيِّ سَاعَةٍ سَتُغَادِرُ غَدًا؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">64</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> ben je gisteren thuisgekomen?</div><div class="arabic">فِي أَيِّ سَاعَةٍ عُدْتَ إِلَى الْبَيْتِ أَمْسِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">65</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> ben je gisteren vertrokken?</div><div class="arabic">فِي أَيِّ سَاعَةٍ غَادَرْتَ أَمْسِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">66</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> is het afgelopen?</div><div class="arabic">فِي أَيِّ سَاعَةٍ انْتَهَى الْأَمْرُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">67</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> was je afspraak?</div><div class="arabic">فِي أَيِّ سَاعَةٍ كَانَ مَوْعِدُكَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">68</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begint het feest?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَبْدَأُ الْحَفْلُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">69</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> komen de gasten?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَأْتِي الضُّيُوفُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">70</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> gaan de kinderen slapen?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَذْهَبُ الْأَطْفَالُ إِلَى النَّوْمِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">71</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> begint de winkeluitverkoop?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يَبْدَأُ التَّخْفِيضُ فِي الْمَتْجَرِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">72</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> kunnen we vertrekken?</div><div class="arabic">فِي أَيِّ سَاعَةٍ يُمْكِنُنَا الْمُغَادَرَةُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">73</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> zullen we afspreken?</div><div class="arabic">فِي أَيِّ سَاعَةٍ سَنَتَّفِقُ عَلَى اللِّقَاءِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">74</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> past het jou?</div><div class="arabic">فِي أَيِّ وَقْتٍ يُنَاسِبُكَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">75</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> komt het jou het beste uit?</div><div class="arabic">مَا الْوَقْتُ الْأَنْسَبُ لَكَ؟</div></div></div>
+  </div>
+
+  <!-- 76-100 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">76 – 100</span>
+      الإجابة عن سؤال Hoe laat
+    </div>
+
+    <div class="sentence"><div class="num-badge">76</div><div class="text-block"><div class="dutch">Het is één uur.</div><div class="arabic">السَّاعَةُ الْوَاحِدَةُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">77</div><div class="text-block"><div class="dutch">Het is twee uur.</div><div class="arabic">السَّاعَةُ الثَّانِيَةُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">78</div><div class="text-block"><div class="dutch">Het is half drie.</div><div class="arabic">السَّاعَةُ الثَّانِيَةُ وَالنِّصْفُ. (٢:٣٠)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">79</div><div class="text-block"><div class="dutch">Het is kwart over drie.</div><div class="arabic">السَّاعَةُ الثَّالِثَةُ وَالرُّبْعُ. (٣:١٥)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">80</div><div class="text-block"><div class="dutch">Het is kwart voor vier.</div><div class="arabic">السَّاعَةُ الرَّابِعَةُ إِلَّا رُبْعًا. (٣:٤٥)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">81</div><div class="text-block"><div class="dutch">Het is vijf over vier.</div><div class="arabic">السَّاعَةُ الرَّابِعَةُ وَخَمْسُ دَقَائِقَ. (٤:٠٥)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">82</div><div class="text-block"><div class="dutch">Het is tien over vijf.</div><div class="arabic">السَّاعَةُ الْخَامِسَةُ وَعَشْرُ دَقَائِقَ. (٥:١٠)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">83</div><div class="text-block"><div class="dutch">Het is twintig over zes.</div><div class="arabic">السَّاعَةُ السَّادِسَةُ وَعِشْرُونَ دَقِيقَةً. (٦:٢٠)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">84</div><div class="text-block"><div class="dutch">Het is vijf voor zeven.</div><div class="arabic">السَّاعَةُ السَّابِعَةُ إِلَّا خَمْسَ دَقَائِقَ. (٦:٥٥)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">85</div><div class="text-block"><div class="dutch">Het is tien voor acht.</div><div class="arabic">السَّاعَةُ الثَّامِنَةُ إِلَّا عَشْرَ دَقَائِقَ. (٧:٥٠)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">86</div><div class="text-block"><div class="dutch">Om acht uur.</div><div class="arabic">فِي السَّاعَةِ الثَّامِنَةِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">87</div><div class="text-block"><div class="dutch">Om half negen.</div><div class="arabic">فِي السَّاعَةِ الثَّامِنَةِ وَالنِّصْفِ. (٨:٣٠)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">88</div><div class="text-block"><div class="dutch">Om kwart over negen.</div><div class="arabic">فِي التَّاسِعَةِ وَالرُّبْعِ. (٩:١٥)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">89</div><div class="text-block"><div class="dutch">Om kwart voor tien.</div><div class="arabic">فِي الْعَاشِرَةِ إِلَّا رُبْعًا. (٩:٤٥)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">90</div><div class="text-block"><div class="dutch">Om twaalf uur 's middags.</div><div class="arabic">فِي السَّاعَةِ الثَّانِيَةَ عَشْرَةَ ظُهْرًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">91</div><div class="text-block"><div class="dutch">Om twaalf uur 's nachts.</div><div class="arabic">فِي مُنْتَصَفِ اللَّيْلِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">92</div><div class="text-block"><div class="dutch">Ik begin om zeven uur.</div><div class="arabic">أَبْدَأُ فِي السَّاعَةِ السَّابِعَةِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">93</div><div class="text-block"><div class="dutch">Ik vertrek om half acht.</div><div class="arabic">أُغَادِرُ فِي السَّاعَةِ السَّابِعَةِ وَالنِّصْفِ. (٧:٣٠)</div></div></div>
+
+    <div class="sentence"><div class="num-badge">94</div><div class="text-block"><div class="dutch">De bus vertrekt om kwart over acht.</div><div class="arabic">تَنْطَلِقُ الْحَافِلَةُ فِي الثَّامِنَةِ وَالرُّبْعِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">95</div><div class="text-block"><div class="dutch">De les begint om negen uur precies.</div><div class="arabic">يَبْدَأُ الدَّرْسُ فِي التَّاسِعَةِ تَمَامًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">96</div><div class="text-block"><div class="dutch">Ik ben er om tien uur.</div><div class="arabic">سَأَكُونُ هُنَاكَ فِي السَّاعَةِ الْعَاشِرَةِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">97</div><div class="text-block"><div class="dutch">Ik kom rond elf uur.</div><div class="arabic">سَآتي حَوَالَيْ السَّاعَةِ الْحَادِيَةَ عَشْرَةَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">98</div><div class="text-block"><div class="dutch">Ik ben vijf minuten te laat.</div><div class="arabic">سَأَتَأَخَّرُ خَمْسَ دَقَائِقَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">99</div><div class="text-block"><div class="dutch">Ik ben tien minuten te vroeg.</div><div class="arabic">سَأَصِلُ مُبَكِّرًا بِعَشْرِ دَقَائِقَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">100</div><div class="text-block"><div class="dutch"><span class="hl">Hoe laat</span> zullen we elkaar morgen zien?</div><div class="arabic">فِي أَيِّ سَاعَةٍ سَنَلْتَقِي غَدًا؟</div></div></div>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary">
+    <h2>📌 قاعدة مهمة جدًا في الهولندية البلجيكية</h2>
+
+    <div class="rule-box">
+      <ul>
+        <li><strong>Hoe laat?</strong> = الساعة كام؟ (السؤال عن الوقت).</li>
+        <li><strong>Om hoe laat?</strong> = في الساعة كام؟ (السؤال عن موعد حدث).</li>
+        <li><strong>Wanneer?</strong> = متى؟ (سؤال أوسع عن الوقت أو اليوم أو التاريخ).</li>
+      </ul>
+    </div>
+
+    <div class="dialog-box">
+      <h3>💬 مثال باللهجة المستخدمة في فلاندرز:</h3>
+      <div class="line a">
+        <span class="speaker">A:</span>
+        <span class="nl">Hoe laat spreken we morgen af?</span>
+        <span class="ar">— فِي أَيِّ سَاعَةٍ سَنَلْتَقِي غَدًا؟</span>
+      </div>
+      <div class="line b">
+        <span class="speaker">B:</span>
+        <span class="nl">Om half acht.</span>
+        <span class="ar">— فِي السَّاعَةِ السَّابِعَةِ وَالنِّصْفِ صَبَاحًا أَوْ مَسَاءً، حَسَبَ السِّيَاقِ.</span>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      ⚠️ <strong>تنبيه:</strong> في الهولندية، <strong>half acht</strong> تعني ٧:٣٠، وليس ٨:٣٠.
+    </div>
+  </div>
+
+  <footer>
+    🇳🇱 ١٠٠ جملة هولندية باستخدام Hoe laat — مع الترجمة العربية بالتشكيل الكامل
+  </footer>
+
+</div>
+</body>
+</html>
