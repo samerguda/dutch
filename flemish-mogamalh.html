@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>١٠٠ جملة مجاملات باللهجة الهولندية في هارلبيك</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+            background: #f5f0eb;
+            color: #2e241e;
+            padding: 25px 15px;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fffcf9;
+            border-radius: 30px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e8ddd4;
+        }
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #4a3728;
+            text-align: center;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            border-bottom: 3px dashed #d9c7b8;
+            padding-bottom: 20px;
+        }
+        .flag-sub {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #7a6a5c;
+            margin-bottom: 40px;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .flag-sub span {
+            background: #f0e8e0;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-style: normal;
+            color: #4d3e33;
+            font-weight: 500;
+        }
+        .note-box {
+            background: #faf3ec;
+            border-right: 5px solid #c7a98b;
+            padding: 18px 22px;
+            margin-bottom: 45px;
+            border-radius: 14px;
+            font-size: 1rem;
+            color: #4f3f33;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .note-box strong {
+            color: #8b5e3c;
+        }
+        .section {
+            margin-bottom: 50px;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #5b3e2b;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+            border-right: 6px solid #b99b80;
+            padding-right: 16px;
+        }
+        .section-title small {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #9a8776;
+            background: #f3ebe4;
+            padding: 2px 14px;
+            border-radius: 30px;
+        }
+        .section-title .nl-sub {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #9a8776;
+            direction: ltr;
+            display: inline-block;
+            margin-right: 6px;
+        }
+        .phrase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+        .phrase-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 18px 20px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eee3d9;
+            transition: all 0.15s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .phrase-card:hover {
+            border-color: #cfb8a4;
+            box-shadow: 0 8px 18px rgba(150, 120, 90, 0.08);
+            transform: translateY(-2px);
+        }
+        .nl {
+            direction: ltr;
+            text-align: left;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #2c1f16;
+            letter-spacing: 0.2px;
+            line-height: 1.5;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .nl .tag {
+            font-size: 0.7rem;
+            font-weight: 500;
+            background: #e7d9cc;
+            color: #5f4d3e;
+            padding: 2px 9px;
+            border-radius: 30px;
+            direction: rtl;
+            white-space: nowrap;
+        }
+        .ar {
+            font-size: 1rem;
+            color: #3a2d24;
+            background: #f9f4ef;
+            padding: 8px 12px;
+            border-radius: 10px;
+            line-height: 1.6;
+            border-right: 3px solid #dcc8b8;
+        }
+        .pron {
+            font-size: 0.9rem;
+            color: #7b6b5e;
+            font-style: italic;
+            direction: ltr;
+            text-align: left;
+            background: #fcf8f4;
+            padding: 5px 12px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 3px;
+            align-self: flex-start;
+            border: 1px dashed #d9cbbc;
+        }
+        .key-phrases {
+            background: #f2e9e1;
+            border-radius: 24px;
+            padding: 30px 25px;
+            margin-top: 50px;
+            border: 1px solid #e0d0c0;
+        }
+        .key-phrases h2 {
+            font-size: 1.9rem;
+            color: #412f22;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .key-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+        }
+        .key-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 16px 14px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border: 1px solid #decfc2;
+        }
+        .key-item .nl {
+            font-size: 1.1rem;
+            justify-content: center;
+            margin-bottom: 4px;
+        }
+        .key-item .ar {
+            background: transparent;
+            border: none;
+            font-weight: 600;
+            color: #7a5b43;
+            padding: 4px 0 0;
+        }
+        .footer-note {
+            margin-top: 40px;
+            padding: 20px 24px;
+            background: #f5ede6;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: #4f3f33;
+            line-height: 1.8;
+            border-right: 6px solid #b99b80;
+        }
+        .footer-note strong {
+            color: #7a4d2e;
+        }
+        .footer-note ul {
+            margin-top: 10px;
+            padding-right: 25px;
+        }
+        .footer-note li {
+            margin-bottom: 5px;
+        }
+        .badge {
+            display: inline-block;
+            background: #dccbbc;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #3d2d20;
+        }
+        @media (max-width: 650px) {
+            .container { padding: 20px 15px; }
+            h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.4rem; }
+            .phrase-grid { grid-template-columns: 1fr; }
+            .key-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 400px) {
+            .key-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🇧🇪 ١٠٠ جملة مجاملات باللهجة الهولندية</h1>
+        <div class="flag-sub">
+            <span>هارلبِك (Harelbeke)</span>
+            <span>كورتريك — فلاندرز الغربية</span>
+            <span>لهجة الحياة اليومية</span>
+        </div>
+
+        <div class="note-box">
+            <strong>📌 ملاحظة:</strong> دي هولندية بلجيكية يومية، وبعض الكلمات والنطق محليّان. مش كل جملة تعتبر حكرًا على هارلبِك، لأن اللهجة المحلية نفسها بتختلف من شخص للتاني. النطق التقريبي مكتوب بالعربي لتسهيل القراءة، والترجمة بالمصري.
+        </div>
+
+        <!-- ١. المجاملات والتحية -->
+        <div class="section">
+            <div class="section-title">
+                ١. المجاملات والتحية
+                <small class="nl-sub">Begroetingen en beleefdheden</small>
+            </div>
+            <div class="phrase-grid">
+                <div class="phrase-card"><div class="nl">Goeiemorgen! <span class="tag">تحية</span></div><div class="ar">صبح الخير!</div><div class="pron">خُويَمُورخَن</div></div>
+                <div class="phrase-card"><div class="nl">Goeiemiddag! <span class="tag">تحية</span></div><div class="ar">مساء الخير بعد الضهر!</div><div class="pron">خُويَمِداخ</div></div>
+                <div class="phrase-card"><div class="nl">Goeienavond! <span class="tag">تحية</span></div><div class="ar">مساء الخير!</div><div class="pron">خُويَنَافُنت</div></div>
+                <div class="phrase-card"><div class="nl">Alles goed? <span class="tag">سؤال</span></div><div class="ar">كل حاجة تمام؟</div><div class="pron">آلِس خوت</div></div>
+                <div class="phrase-card"><div class="nl">Alles goed, en met jou?</div><div class="ar">كله تمام، وإنت؟</div><div class="pron">آلِس خوت، أَن مِت ياو</div></div>
+                <div class="phrase-card"><div class="nl">Hoe is ’t? <span class="tag">عامية</span></div><div class="ar">أخبارك إيه؟</div><div class="pron">هو إِس ت</div></div>
+                <div class="phrase-card"><div class="nl">Ça va? <span class="tag">فرنسي</span></div><div class="ar">تمام؟</div><div class="pron">سا ڤا</div></div>
+                <div class="phrase-card"><div class="nl">Goed, merci!</div><div class="ar">كويس، شكرًا!</div><div class="pron">خوت، ميرسي</div></div>
+                <div class="phrase-card"><div class="nl">En met u?</div><div class="ar">وحضرتك؟</div><div class="pron">أَن مِت أو</div></div>
+                <div class="phrase-card"><div class="nl">Fijn u te zien!</div><div class="ar">سعيد إني شوفت حضرتك!</div><div class="pron">فاين أو تِ زين</div></div>
+            </div>
+        </div>
+
+        <!-- ٢. الشكر والرد على الشكر -->
+        <div class="section">
+            <div class="section-title">
+                ٢. الشكر والرد على الشكر
+                <small class="nl-sub">Bedanken</small>
+            </div>
+            <div class="phrase-grid">
+                <div class="phrase-card"><div class="nl">Merci!</div><div class="ar">شكرًا!</div><div class="pron">ميرسي</div></div>
+                <div class="phrase-card"><div class="nl">Merci hé!</div><div class="ar">شكرًا بجد!</div><div class="pron">ميرسي هي</div></div>
+                <div class="phrase-card"><div class="nl">Dank u wel!</div><div class="ar">شكرًا لحضرتك!</div><div class="pron">دانك أو ڤيل</div></div>
+                <div class="phrase-card"><div class="nl">Dank u vriendelijk!</div><div class="ar">شكرًا جزيلًا لحضرتك!</div><div class="pron">دانك أو ڤريندِلك</div></div>
+                <div class="phrase-card"><div class="nl">Bedankt voor de hulp!</div><div class="ar">شكرًا على المساعدة!</div><div class="pron">بِدانكت ڤور دِ هُلب</div></div>
+                <div class="phrase-card"><div class="nl">Merci voor alles!</div><div class="ar">شكرًا على كل حاجة!</div><div class="pron">ميرسي ڤور آلِس</div></div>
+                <div class="phrase-card"><div class="nl">Da’s heel vriendelijk van u.</div><div class="ar">ده لطف كبير من حضرتك.</div><div class="pron">داس هيل ڤريندِلك ڤان أو</div></div>
+                <div class="phrase-card"><div class="nl">Geen probleem!</div><div class="ar">مفيش مشكلة!</div><div class="pron">خين پرُبليم</div></div>
+                <div class="phrase-card"><div class="nl">Geen moeite!</div><div class="ar">ولا تعب ولا حاجة!</div><div class="pron">خين مويتِ</div></div>
+                <div class="phrase-card"><div class="nl">Graag gedaan!</div><div class="ar">العفو، بكل سرور!</div><div class="pron">خراخ خِدان</div></div>
+            </div>
+        </div>
+
+        <!-- ٣. مجاملات عن الشكل والملابس -->
+        <div class="section">
+            <div class="section-title">
+                ٣. مجاملات عن الشكل والملابس
+                <small class="nl-sub">Complimentjes</small>
+            </div>
+            <div class="phrase-grid">
+                <div class="phrase-card"><div class="nl">Ge ziet er goed uit!</div><div class="ar">شكلك حلو!</div><div class="pron">خِ زيت إر خوت أوت</div></div>
+                <div class="phrase-card"><div class="nl">Ge ziet er goed uit vandaag!</div><div class="ar">شكلك حلو النهارده!</div><div class="pron">خِ زيت إر خوت أوت ڤانداخ</div></div>
+                <div class="phrase-card"><div class="nl">Mooie jas!</div><div class="ar">جاكيت جميل!</div><div class="pron">مويِ ياس</div></div>
+                <div class="phrase-card"><div class="nl">Mooie schoenen!</div><div class="ar">جزمة جميلة!</div><div class="pron">مويِ سخونِن</div></div>
+                <div class="phrase-card"><div class="nl">Toffe trui!</div><div class="ar">بلوفر جميل!</div><div class="pron">تُفِ ترُوي</div></div>
+                <div class="phrase-card"><div class="nl">Da’s een schoon kleedje! <span class="tag">محلي</span></div><div class="ar">فستان جميل!</div><div class="pron">داس إن سخون كليدجِ</div></div>
+                <div class="phrase-card"><div class="nl">Dat staat u goed!</div><div class="ar">ده لايق عليك!</div><div class="pron">دات ستات أو خوت</div></div>
+                <div class="phrase-card"><div class="nl">Ge hebt een mooie glimlach.</div><div class="ar">ابتسامتك جميلة.</div><div class="pron">خِ هيبت إن مويِ خليمْلاخ</div></div>
+                <div class="phrase-card"><div class="nl">Ge ziet er fris uit!</div><div class="ar">شكلك منتعش!</div><div class="pron">خِ زيت إر فريس أوت</div></div>
+                <div class="phrase-card"><div class="nl">Ge ziet er jong uit!</div><div class="ar">شكلك أصغر من سنك!</div><div class="pron">خِ زيت إر يونغ أوت</div></div>
+            </div>
+        </div>
+
+        <!-- ٤. مجاملات عن الشخصية والأخلاق -->
+        <div class="section">
+            <div class="section-title">
+                ٤. مجاملات عن الشخصية والأخلاق
+                <small class="nl-sub">Persoonlijkheid</small>
+            </div>
+            <div class="phrase-grid">
+                <div class="phrase-card"><div class="nl">Ge zijt heel vriendelijk.</div><div class="ar">إنت لطيف جدًا.</div><div class="pron">خِ زايت هيل ڤريندِلك</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt echt behulpzaam.</div><div class="ar">إنت فعلًا بتحب تساعد.</div><div class="pron">خِ زايت إخت بِهُلپزايم</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt ne goeie mens. <span class="tag">عامية</span></div><div class="ar">إنت إنسان طيب.</div><div class="pron">خِ زايت نِ خويِ مِنس</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt heel aangenaam.</div><div class="ar">التعامل معاك مريح جدًا.</div><div class="pron">خِ زايت هيل آنخِنام</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt altijd vriendelijk.</div><div class="ar">إنت دايمًا لطيف.</div><div class="pron">خِ زايت آلتايت ڤريندِلك</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt echt sympathiek.</div><div class="ar">إنت شخص محبوب ولطيف.</div><div class="pron">خِ زايت إخت سيمپاتيك</div></div>
+                <div class="phrase-card"><div class="nl">Ge hebt een goed hart.</div><div class="ar">قلبك طيب.</div><div class="pron">خِ هيبت إن خوت هارت</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt heel geduldig.</div><div class="ar">إنت صبور جدًا.</div><div class="pron">خِ زايت هيل خِدُلدِخ</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt altijd bereid om te helpen.</div><div class="ar">إنت دايمًا مستعد تساعد.</div><div class="pron">خِ زايت آلتايت بِرايت أُم تِ هيلپِن</div></div>
+                <div class="phrase-card"><div class="nl">Ik apprecieer dat echt.</div><div class="ar">أنا بقدّر ده فعلًا.</div><div class="pron">إك آپريسير دات إخت</div></div>
+            </div>
+        </div>
+
+        <!-- ٥. مجاملات في الشغل -->
+        <div class="section">
+            <div class="section-title">
+                ٥. مجاملات في الشغل
+                <small class="nl-sub">Complimentjes op het werk</small>
+            </div>
+            <div class="phrase-grid">
+                <div class="phrase-card"><div class="nl">Goed gedaan!</div><div class="ar">شغل ممتاز!</div><div class="pron">خوت خِدان</div></div>
+                <div class="phrase-card"><div class="nl">Goed bezig!</div><div class="ar">إنت ماشي كويس جدًا!</div><div class="pron">خوت بِزيخ</div></div>
+                <div class="phrase-card"><div class="nl">Knap werk!</div><div class="ar">شغل رائع!</div><div class="pron">كناپ ڤيرك</div></div>
+                <div class="phrase-card"><div class="nl">Mooi werk!</div><div class="ar">شغل جميل!</div><div class="pron">مويِ ڤيرك</div></div>
+                <div class="phrase-card"><div class="nl">Dat hebt ge goed gedaan.</div><div class="ar">إنت عملت ده كويس.</div><div class="pron">دات هيبت خِ خوت خِدان</div></div>
+                <div class="phrase-card"><div class="nl">Ge werkt heel nauwkeurig.</div><div class="ar">إنت شغلك دقيق جدًا.</div><div class="pron">خِ ڤيركت هيل ناوكُيرِخ</div></div>
+                <div class="phrase-card"><div class="nl">Ge werkt snel!</div><div class="ar">إنت بتشتغل بسرعة!</div><div class="pron">خِ ڤيركت سنيل</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt een goeie collega.</div><div class="ar">إنت زميل ممتاز.</div><div class="pron">خِ زايت إن خويِ كولّيخا</div></div>
+                <div class="phrase-card"><div class="nl">Bedankt om te helpen.</div><div class="ar">شكرًا إنك ساعدت.</div><div class="pron">بِدانكت أُم تِ هيلپِن</div></div>
+                <div class="phrase-card"><div class="nl">Ik ben content van uw werk. <span class="tag">بلجيكي</span></div><div class="ar">أنا راضي عن شغلك.</div><div class="pron">إك بين كونتِنت ڤان أو ڤيرك</div></div>
+            </div>
+        </div>
+
+        <!-- ٦. لما حد يعمل لك خدمة -->
+        <div class="section">
+            <div class="section-title">
+                ٦. لما حد يعمل لك خدمة
+                <small class="nl-sub">Dienst en attentie</small>
+            </div>
+            <div class="phrase-grid">
+                <div class="phrase-card"><div class="nl">Da’s heel lief van u!</div><div class="ar">ده ذوق كبير من حضرتك!</div><div class="pron">داس هيل ليف ڤان أو</div></div>
+                <div class="phrase-card"><div class="nl">Ge moet dat niet doen!</div><div class="ar">ما كانش لازم تتعب نفسك!</div><div class="pron">خِ موت دات نيت دون</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt te goed!</div><div class="ar">إنت طيب أوي!</div><div class="pron">خِ زايت تِ خوت</div></div>
+                <div class="phrase-card"><div class="nl">Dat waardeer ik enorm.</div><div class="ar">أنا بقدّر ده جدًا.</div><div class="pron">دات ڤاردير إك إنورم</div></div>
+                <div class="phrase-card"><div class="nl">Ge hebt mij echt geholpen.</div><div class="ar">إنت ساعدتني فعلًا.</div><div class="pron">خِ هيبت مَي إخت خِهولپِن</div></div>
+                <div class="phrase-card"><div class="nl">Ik zal dat niet vergeten.</div><div class="ar">مش هنسى ده.</div><div class="pron">إك زال دات نيت ڤِرختِن</div></div>
+                <div class="phrase-card"><div class="nl">Dat is heel attent van u.</div><div class="ar">دي لفتة جميلة من حضرتك.</div><div class="pron">دات إس هيل آتِنت ڤان أو</div></div>
+                <div class="phrase-card"><div class="nl">Ge denkt altijd aan anderen.</div><div class="ar">إنت دايمًا بتفكر في غيرك.</div><div class="pron">خِ دينكت آلتايت آن آندِرِن</div></div>
+                <div class="phrase-card"><div class="nl">Merci om aan mij te denken.</div><div class="ar">شكرًا إنك افتكرتني.</div><div class="pron">ميرسي أُم آن مَي تِ دينكِن</div></div>
+                <div class="phrase-card"><div class="nl">Ik ben u heel dankbaar.</div><div class="ar">أنا ممتن جدًا لحضرتك.</div><div class="pron">إك بين أو هيل دانكبار</div></div>
+            </div>
+        </div>
+
+        <!-- ٧. المجاملات بين الجيران -->
+        <div class="section">
+            <div class="section-title">
+                ٧. المجاملات بين الجيران
+                <small class="nl-sub">Buren</small>
+            </div>
+            <div class="phrase-grid">
+                <div class="phrase-card"><div class="nl">Dag buurman!</div><div class="ar">أهلًا يا جاري!</div><div class="pron">داخ بُورمان</div></div>
+                <div class="phrase-card"><div class="nl">Dag buurvrouw!</div><div class="ar">أهلًا يا جارتي!</div><div class="pron">داخ بُورڤراو</div></div>
+                <div class="phrase-card"><div class="nl">Alles in orde, buur?</div><div class="ar">كله تمام يا جار؟</div><div class="pron">آلِس إن أُردِ، بُور</div></div>
+                <div class="phrase-card"><div class="nl">Fijn u hier te zien.</div><div class="ar">سعيد إني شوفت حضرتك هنا.</div><div class="pron">فاين أو هير تِ زين</div></div>
+                <div class="phrase-card"><div class="nl">Ge hebt een mooie tuin!</div><div class="ar">عندك جنينة جميلة!</div><div class="pron">خِ هيبت إن مويِ تُين</div></div>
+                <div class="phrase-card"><div class="nl">Uw huis ziet er mooi uit.</div><div class="ar">بيتك شكله جميل.</div><div class="pron">أو هُويس زيت إر مويِ أوت</div></div>
+                <div class="phrase-card"><div class="nl">Wat een mooie bloemen!</div><div class="ar">يا لها من زهور جميلة!</div><div class="pron">ڤات إن مويِ بلومِن</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt een goeie buur.</div><div class="ar">إنت جار كويس.</div><div class="pron">خِ زايت إن خويِ بُور</div></div>
+                <div class="phrase-card"><div class="nl">Als ge iets nodig hebt, laat maar weten.</div><div class="ar">لو احتجت حاجة، قولي.</div><div class="pron">آلس خِ إتس نودِخ هيبت، لات مار ڤيتِن</div></div>
+                <div class="phrase-card"><div class="nl">Tot de volgende keer, hé!</div><div class="ar">أشوفك المرة الجاية!</div><div class="pron">تُت دِ ڤولخِندِ كير، هي</div></div>
+            </div>
+        </div>
+
+        <!-- ٨. مجاملات في المحلات والمقاهي -->
+        <div class="section">
+            <div class="section-title">
+                ٨. مجاملات في المحلات والمقاهي
+                <small class="nl-sub">In de winkel en het café</small>
+            </div>
+            <div class="phrase-grid">
+                <div class="phrase-card"><div class="nl">Alstublieft.</div><div class="ar">اتفضل / من فضلك.</div><div class="pron">آلستُبليفت</div></div>
+                <div class="phrase-card"><div class="nl">Dank u, vriendelijke mens! <span class="tag">ودية</span></div><div class="ar">شكرًا يا إنسان طيب!</div><div class="pron">دانك أو، ڤريندِلكِ مِنس</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt heel behulpzaam, merci.</div><div class="ar">إنت متعاون جدًا، شكرًا.</div><div class="pron">خِ زايت هيل بِهُلپزايم، ميرسي</div></div>
+                <div class="phrase-card"><div class="nl">Da’s een goeie keuze!</div><div class="ar">ده اختيار كويس!</div><div class="pron">داس إن خويِ كُوزِ</div></div>
+                <div class="phrase-card"><div class="nl">Dat ziet er lekker uit!</div><div class="ar">ده شكله شهي!</div><div class="pron">دات زيت إر ليكِر أوت</div></div>
+                <div class="phrase-card"><div class="nl">’t Was heel lekker!</div><div class="ar">الأكل كان لذيذ جدًا!</div><div class="pron">ت ڤاس هيل ليكِر</div></div>
+                <div class="phrase-card"><div class="nl">We hebben goed gegeten.</div><div class="ar">إحنا أكلنا كويس.</div><div class="pron">ڤِ هيبِن خوت خِخيتِن</div></div>
+                <div class="phrase-card"><div class="nl">De bediening was heel vriendelijk.</div><div class="ar">الخدمة كانت لطيفة جدًا.</div><div class="pron">دِ بِدينِخ ڤاس هيل ڤريندِلك</div></div>
+                <div class="phrase-card"><div class="nl">Een fijne dag nog!</div><div class="ar">أتمنى لك بقية يوم سعيدة!</div><div class="pron">إن فاينِ داخ نوخ</div></div>
+                <div class="phrase-card"><div class="nl">Een prettig weekend!</div><div class="ar">عطلة نهاية أسبوع سعيدة!</div><div class="pron">إن پريتِخ ويكِند</div></div>
+            </div>
+        </div>
+
+        <!-- ٩. مجاملات مع الأصدقاء والمعارف -->
+        <div class="section">
+            <div class="section-title">
+                ٩. مجاملات مع الأصدقاء والمعارف
+                <small class="nl-sub">Vrienden en kennissen</small>
+            </div>
+            <div class="phrase-grid">
+                <div class="phrase-card"><div class="nl">Tof u te zien!</div><div class="ar">حلو إني شوفتك!</div><div class="pron">تُف أو تِ زين</div></div>
+                <div class="phrase-card"><div class="nl">Amai, da’s goed! <span class="tag">فلمنكي</span></div><div class="ar">واو، ده جميل!</div><div class="pron">آماي، داس خوت</div></div>
+                <div class="phrase-card"><div class="nl">Da’s plezant!</div><div class="ar">ده ممتع!</div><div class="pron">داس پليزانت</div></div>
+                <div class="phrase-card"><div class="nl">Ge zijt nen toffe! <span class="tag">ودية</span></div><div class="ar">إنت شخص لطيف جدًا!</div><div class="pron">خِ زايت نِن تُفِ</div></div>
+                <div class="phrase-card"><div class="nl">We komen goed overeen.</div><div class="ar">إحنا متفاهمين كويس.</div><div class="pron">ڤِ كومِن خوت أوڤِريِن</div></div>
+                <div class="phrase-card"><div class="nl">’t Is altijd plezant met u.</div><div class="ar">الوقت معاك دايمًا ممتع.</div><div class="pron">ت إس آلتايت پليزانت مِت أو</div></div>
+                <div class="phrase-card"><div class="nl">Ge maakt mij aan ’t lachen.</div><div class="ar">إنت بتضحكني.</div><div class="pron">خِ ماكت مَي آن ت لاخِن</div></div>
+                <div class="phrase-card"><div class="nl">Ik heb u graag.</div><div class="ar">أنا بحبك / بحب وجودك.</div><div class="pron">إك هيب أو خراخ</div></div>
+                <div class="phrase-card"><div class="nl">We moeten nog eens afspreken.</div><div class="ar">لازم نتقابل تاني.</div><div class="pron">ڤِ موتِن نوخ إنس آفسپريكِن</div></div>
+                <div class="phrase-card"><div class="nl">Tot binnenkort, hé!</div><div class="ar">أشوفك قريب!</div><div class="pron">تُت بينِنكُرت، هي</div></div>
+            </div>
+        </div>
+
+        <!-- ١٠. المجاملات والتمنيات عند الوداع -->
+        <div class="section">
+            <div class="section-title">
+                ١٠. المجاملات والتمنيات عند الوداع
+                <small class="nl-sub">Afscheid en wensen</small>
+            </div>
+            <div class="phrase-grid">
+                <div class="phrase-card"><div class="nl">Nog een fijne dag!</div><div class="ar">أتمنى لك يومًا جميلًا!</div><div class="pron">نوخ إن فاينِ داخ</div></div>
+                <div class="phrase-card"><div class="nl">Maak er een mooie dag van!</div><div class="ar">خلّي يومك جميل!</div><div class="pron">ماك إر إن مويِ داخ ڤان</div></div>
+                <div class="phrase-card"><div class="nl">Succes vandaag!</div><div class="ar">بالتوفيق النهارده!</div><div class="pron">سُوكسِس ڤانداخ</div></div>
+                <div class="phrase-card"><div class="nl">Veel succes ermee!</div><div class="ar">أتمنى لك التوفيق في الموضوع ده!</div><div class="pron">ڤيل سُوكسِس إرمي</div></div>
+                <div class="phrase-card"><div class="nl">Veel beterschap!</div><div class="ar">ألف سلامة!</div><div class="pron">ڤيل بِتِرسخاپ</div></div>
+                <div class="phrase-card"><div class="nl">Proficiat!</div><div class="ar">مبروك!</div><div class="pron">پرُفيشيات</div></div>
+                <div class="phrase-card"><div class="nl">Dikke proficiat!</div><div class="ar">ألف مبروك!</div><div class="pron">ديكِ پرُفيشيات</div></div>
+                <div class="phrase-card"><div class="nl">Geniet ervan!</div><div class="ar">استمتع بيها!</div><div class="pron">خِنيت إرڤان</div></div>
+                <div class="phrase-card"><div class="nl">Doe de groeten aan uw vrouw.</div><div class="ar">سلّم لي على زوجتك.</div><div class="pron">دو دِ خروتِن آن أو ڤراو</div></div>
+                <div class="phrase-card"><div class="nl">Zorg goed voor uzelf, hé!</div><div class="ar">خلي بالك من نفسك!</div><div class="pron">زورخ خوت ڤور أوزيلف، هي</div></div>
+            </div>
+        </div>
+
+        <!-- أهم ١٠ تعبيرات تحفظها الأول -->
+        <div class="key-phrases">
+            <h2>🔑 أهم ١٠ تعبيرات تحفظها الأول</h2>
+            <div class="key-grid">
+                <div class="key-item"><div class="nl">Amai, tof!</div><div class="ar">واو، جميل!</div></div>
+                <div class="key-item"><div class="nl">Alles goed?</div><div class="ar">كله تمام؟</div></div>
+                <div class="key-item"><div class="nl">Da’s lief van u!</div><div class="ar">ده ذوق منك!</div></div>
+                <div class="key-item"><div class="nl">Goed bezig!</div><div class="ar">شغلك ممتاز!</div></div>
+                <div class="key-item"><div class="nl">Merci hé!</div><div class="ar">شكرًا بجد!</div></div>
+                <div class="key-item"><div class="nl">Ge ziet er goed uit!</div><div class="ar">شكلك حلو!</div></div>
+                <div class="key-item"><div class="nl">Tof u te zien!</div><div class="ar">حلو إني شوفتك!</div></div>
+                <div class="key-item"><div class="nl">Da’s plezant!</div><div class="ar">ده ممتع!</div></div>
+                <div class="key-item"><div class="nl">Goed gedaan!</div><div class="ar">شغل ممتاز!</div></div>
+                <div class="key-item"><div class="nl">Dikke proficiat!</div><div class="ar">ألف مبروك!</div></div>
+            </div>
+        </div>
+
+        <!-- مفتاح اللهجة المحلية -->
+        <div class="footer-note">
+            <strong>📖 مفتاح اللهجة المحلية:</strong>
+            <ul>
+                <li><strong>Ge</strong> بدل Je؟ لأ — انتبه: في لهجات فلاندرز، <strong>ge/gij</strong> تُستخدم بدل je/jij بمعنى «إنت».</li>
+                <li><strong>Gij zijt</strong> = Jij bent = إنت تكون / إنت.</li>
+                <li><strong>Ge hebt</strong> = Je hebt = عندك / إنت عملت.</li>
+                <li><strong>Amai</strong> = واو! / يا سلام!</li>
+                <li><strong>Tof</strong> = جميل، لطيف، أو رائع.</li>
+                <li><strong>Zenne / hé</strong> ممكن تظهر في الكلام المحلي للتأكيد أو لجعل العبارة ودية، لكن استخدامها يعتمد على المتحدث والسياق.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
