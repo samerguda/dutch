@@ -1,0 +1,628 @@
+١٠٠ جملة هولندية باستخدام Nog<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>١٠٠ جملة هولندية باستخدام Nog مع الترجمة العربية</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Noto Naskh Arabic', 'Amiri', 'Traditional Arabic', serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    line-height: 1.9;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fffdf7;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    overflow: hidden;
+  }
+  
+  header {
+    background: linear-gradient(135deg, #e94560 0%, #c23152 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  header .subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+    background: rgba(255,255,255,0.15);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    margin-top: 10px;
+  }
+  
+  header .flag {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .intro {
+    background: #f0f4f8;
+    padding: 25px 30px;
+    border-bottom: 3px solid #e94560;
+    font-size: 1.05em;
+    color: #444;
+  }
+  
+  .intro p { margin-bottom: 10px; }
+  
+  .intro .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: center;
+  }
+  
+  .intro .keywords span {
+    background: #e94560;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 700;
+  }
+  
+  .section {
+    padding: 25px 30px;
+    border-bottom: 2px dashed #ddd;
+  }
+  
+  .section:last-of-type { border-bottom: none; }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #0f3460, #1a1a2e);
+    color: white;
+    border-radius: 12px;
+    font-size: 1.25em;
+    font-weight: 700;
+  }
+  
+  .section-header .num {
+    background: #e94560;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    direction: ltr;
+  }
+  
+  .sentence {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border-right: 4px solid transparent;
+  }
+  
+  .sentence:nth-child(odd) { background: #f8f9fc; }
+  .sentence:nth-child(even) { background: #ffffff; }
+  
+  .sentence:hover {
+    background: #fff3f5;
+    border-right-color: #e94560;
+    transform: translateX(-4px);
+  }
+  
+  .num-badge {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #0f3460, #1a1a2e);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85em;
+    font-weight: 700;
+    direction: ltr;
+  }
+  
+  .text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .dutch {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 1.15em;
+    color: #0f3460;
+    font-weight: 700;
+    direction: ltr;
+    text-align: right;
+  }
+  
+  .dutch .nog-highlight {
+    color: #e94560;
+    background: #ffe8ed;
+    padding: 0 6px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+  
+  .arabic {
+    font-size: 1.15em;
+    color: #2d5016;
+    font-weight: 400;
+  }
+  
+  .summary {
+    padding: 30px;
+    background: linear-gradient(135deg, #fff8e7, #fff3d6);
+    margin: 20px;
+    border-radius: 15px;
+    border: 2px solid #f0c14b;
+  }
+  
+  .summary h2 {
+    color: #8b4513;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  .summary-table th {
+    background: #8b4513;
+    color: white;
+    padding: 14px 12px;
+    font-size: 1em;
+  }
+  
+  .summary-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f0e0c0;
+    text-align: center;
+    font-size: 1em;
+  }
+  
+  .summary-table tr:last-child td { border-bottom: none; }
+  .summary-table tr:hover td { background: #fff8e7; }
+  
+  .summary-table .dutch-cell {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #0f3460;
+    direction: ltr;
+  }
+  
+  .summary-table .example-cell {
+    direction: ltr;
+    text-align: left;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #c23152;
+    font-style: italic;
+  }
+  
+  .difference {
+    margin-top: 25px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border-right: 5px solid #e94560;
+  }
+  
+  .difference h3 {
+    color: #c23152;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+  
+  .difference ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .difference li {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background: #f8f9fc;
+    border-radius: 8px;
+    font-size: 1.05em;
+  }
+  
+  .difference li strong {
+    color: #e94560;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    direction: ltr;
+    display: inline-block;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: #1a1a2e;
+    color: #8899aa;
+    font-size: 0.95em;
+  }
+  
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    header { padding: 25px 15px; }
+    header h1 { font-size: 1.5em; }
+    .section { padding: 15px; }
+    .sentence { padding: 10px 8px; flex-wrap: wrap; }
+    .num-badge { width: 34px; height: 34px; font-size: 0.75em; }
+    .dutch { font-size: 1em; }
+    .arabic { font-size: 1em; }
+    .section-header { font-size: 1em; padding: 10px 12px; }
+    .summary { padding: 15px; margin: 10px; }
+    .summary-table td, .summary-table th { padding: 8px 5px; font-size: 0.85em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="flag">🇳🇱</div>
+    <h1>١٠٠ جملة هولندية باستخدام Nog</h1>
+    <div class="subtitle">مع الترجمة العربية بالتشكيل الكامل</div>
+  </header>
+
+  <div class="intro">
+    <p>كلمة <strong>nog</strong> من الكلمات المهمة جدًا في الهولندية، ومعناها يتغيّر حسب الجملة:</p>
+    <div class="keywords">
+      <span>ما زال</span>
+      <span>لا يزال</span>
+      <span>بعد</span>
+      <span>أيضًا</span>
+      <span>إضافي</span>
+      <span>حتى الآن</span>
+    </div>
+  </div>
+
+  <!-- 1-25 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">1 – 25</span>
+      Nog بمعنى «ما زال / لا يزال»
+    </div>
+
+    <div class="sentence"><div class="num-badge">1</div><div class="text-block"><div class="dutch">Ik ben <span class="nog-highlight">nog</span> thuis.</div><div class="arabic">أَنَا مَا زِلْتُ فِي الْبَيْتِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">2</div><div class="text-block"><div class="dutch">Ik ben <span class="nog-highlight">nog</span> moe.</div><div class="arabic">أَنَا مَا زِلْتُ مُتْعَبًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">3</div><div class="text-block"><div class="dutch">Hij slaapt <span class="nog-highlight">nog</span>.</div><div class="arabic">هُوَ مَا زَالَ نَائِمًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">4</div><div class="text-block"><div class="dutch">Zij werkt <span class="nog-highlight">nog</span>.</div><div class="arabic">هِيَ مَا زَالَتْ تَعْمَلُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">5</div><div class="text-block"><div class="dutch">We zijn <span class="nog-highlight">nog</span> bezig.</div><div class="arabic">نَحْنُ مَا زِلْنَا مَشْغُولِينَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">6</div><div class="text-block"><div class="dutch">Ik leer <span class="nog-highlight">nog</span> Nederlands.</div><div class="arabic">أَنَا مَا زِلْتُ أَتَعَلَّمُ الْهُولَنْدِيَّةَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">7</div><div class="text-block"><div class="dutch">Hij woont <span class="nog-highlight">nog</span> in België.</div><div class="arabic">هُوَ مَا زَالَ يَسْكُنُ فِي بَلْجِيكَا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">8</div><div class="text-block"><div class="dutch">Mijn vrouw is <span class="nog-highlight">nog</span> op het werk.</div><div class="arabic">زَوْجَتِي مَا زَالَتْ فِي الْعَمَلِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">9</div><div class="text-block"><div class="dutch">De winkel is <span class="nog-highlight">nog</span> open.</div><div class="arabic">الْمَتْجَرُ مَا زَالَ مَفْتُوحًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">10</div><div class="text-block"><div class="dutch">De bus is <span class="nog-highlight">nog</span> onderweg.</div><div class="arabic">الْحَافِلَةُ مَا زَالَتْ فِي الطَّرِيقِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">11</div><div class="text-block"><div class="dutch">Ik ben <span class="nog-highlight">nog</span> niet klaar.</div><div class="arabic">لَمْ أَنْتَهِ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">12</div><div class="text-block"><div class="dutch">Hij is <span class="nog-highlight">nog</span> niet thuis.</div><div class="arabic">هُوَ لَمْ يَصِلْ إِلَى الْبَيْتِ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">13</div><div class="text-block"><div class="dutch">We hebben <span class="nog-highlight">nog</span> tijd.</div><div class="arabic">لَا يَزَالُ لَدَيْنَا وَقْتٌ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">14</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> werk.</div><div class="arabic">لَا يَزَالُ لَدَيَّ عَمَلٌ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">15</div><div class="text-block"><div class="dutch">Zij is <span class="nog-highlight">nog</span> jong.</div><div class="arabic">هِيَ مَا زَالَتْ شَابَّةً.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">16</div><div class="text-block"><div class="dutch">Het regent <span class="nog-highlight">nog</span>.</div><div class="arabic">مَا زَالَتِ الْأَمْطَارُ تَهْطِلُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">17</div><div class="text-block"><div class="dutch">Ik woon <span class="nog-highlight">nog</span> bij mijn ouders.</div><div class="arabic">مَا زِلْتُ أَسْكُنُ مَعَ وَالِدَيَّ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">18</div><div class="text-block"><div class="dutch">Hij is <span class="nog-highlight">nog</span> ziek.</div><div class="arabic">هُوَ مَا زَالَ مَرِيضًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">19</div><div class="text-block"><div class="dutch">De kinderen spelen <span class="nog-highlight">nog</span>.</div><div class="arabic">الْأَطْفَالُ مَا زَالُوا يَلْعَبُونَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">20</div><div class="text-block"><div class="dutch">Ik ben <span class="nog-highlight">nog</span> aan het eten.</div><div class="arabic">أَنَا مَا زِلْتُ أَتَنَاوَلُ الطَّعَامَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">21</div><div class="text-block"><div class="dutch">We wachten <span class="nog-highlight">nog</span>.</div><div class="arabic">نَحْنُ مَا زِلْنَا نَنْتَظِرُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">22</div><div class="text-block"><div class="dutch">De vergadering is <span class="nog-highlight">nog</span> bezig.</div><div class="arabic">الِاجْتِمَاعُ مَا زَالَ جَارِيًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">23</div><div class="text-block"><div class="dutch">Hij werkt <span class="nog-highlight">nog</span> steeds hier.</div><div class="arabic">هُوَ مَا زَالَ يَعْمَلُ هُنَا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">24</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> steeds hoofdpijn.</div><div class="arabic">مَا زَالَ الصُّدَاعُ يُؤْلِمُنِي.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">25</div><div class="text-block"><div class="dutch">Ben je <span class="nog-highlight">nog</span> wakker?</div><div class="arabic">هَلْ مَا زِلْتَ مُسْتَيْقِظًا؟</div></div></div>
+  </div>
+
+  <!-- 26-50 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">26 – 50</span>
+      Nog بمعنى «بعد / حتى الآن»
+    </div>
+
+    <div class="sentence"><div class="num-badge">26</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> niet gegeten.</div><div class="arabic">لَمْ آكُلْ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">27</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> niet gedoucht.</div><div class="arabic">لَمْ أَسْتَحِمَّ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">28</div><div class="text-block"><div class="dutch">Hij heeft <span class="nog-highlight">nog</span> niet gebeld.</div><div class="arabic">لَمْ يَتَّصِلْ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">29</div><div class="text-block"><div class="dutch">We hebben <span class="nog-highlight">nog</span> niet betaald.</div><div class="arabic">لَمْ نَدْفَعْ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">30</div><div class="text-block"><div class="dutch">Zij heeft <span class="nog-highlight">nog</span> niet geantwoord.</div><div class="arabic">لَمْ تُجِبْ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">31</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> geen baan.</div><div class="arabic">لَيْسَ لَدَيَّ عَمَلٌ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">32</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> geen rijbewijs.</div><div class="arabic">لَيْسَ لَدَيَّ رُخْصَةُ قِيَادَةٍ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">33</div><div class="text-block"><div class="dutch">We hebben <span class="nog-highlight">nog</span> geen antwoord.</div><div class="arabic">لَيْسَ لَدَيْنَا رَدٌّ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">34</div><div class="text-block"><div class="dutch">Hij heeft <span class="nog-highlight">nog</span> geen ervaring.</div><div class="arabic">لَيْسَتْ لَدَيْهِ خِبْرَةٌ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">35</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> geen afspraak gemaakt.</div><div class="arabic">لَمْ أَحْجُزْ مَوْعِدًا بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">36</div><div class="text-block"><div class="dutch">Heb je al gegeten?</div><div class="arabic">هَلْ أَكَلْتَ بِالْفِعْلِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">37</div><div class="text-block"><div class="dutch">Nee, ik heb <span class="nog-highlight">nog</span> niet gegeten.</div><div class="arabic">لَا، لَمْ آكُلْ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">38</div><div class="text-block"><div class="dutch">Ben je al klaar?</div><div class="arabic">هَلِ انْتَهَيْتَ بِالْفِعْلِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">39</div><div class="text-block"><div class="dutch">Nee, ik ben <span class="nog-highlight">nog</span> niet klaar.</div><div class="arabic">لَا، لَمْ أَنْتَهِ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">40</div><div class="text-block"><div class="dutch">Is hij al aangekomen?</div><div class="arabic">هَلْ وَصَلَ بِالْفِعْلِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">41</div><div class="text-block"><div class="dutch">Nee, hij is <span class="nog-highlight">nog</span> niet aangekomen.</div><div class="arabic">لَا، لَمْ يَصِلْ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">42</div><div class="text-block"><div class="dutch">Ik weet het <span class="nog-highlight">nog</span> niet.</div><div class="arabic">لَا أَعْرِفُ ذَلِكَ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">43</div><div class="text-block"><div class="dutch">We weten het <span class="nog-highlight">nog</span> niet zeker.</div><div class="arabic">لَا نَعْرِفُ ذَلِكَ بِالتَّأْكِيدِ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">44</div><div class="text-block"><div class="dutch">Ik begrijp het <span class="nog-highlight">nog</span> niet.</div><div class="arabic">لَمْ أَفْهَمْ ذَلِكَ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">45</div><div class="text-block"><div class="dutch">Hij kan <span class="nog-highlight">nog</span> niet autorijden.</div><div class="arabic">هُوَ لَا يَسْتَطِيعُ قِيَادَةَ السَّيَّارَةِ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">46</div><div class="text-block"><div class="dutch">Ik spreek <span class="nog-highlight">nog</span> niet goed Nederlands.</div><div class="arabic">لَا أَتَحَدَّثُ الْهُولَنْدِيَّةَ بِشَكْلٍ جَيِّدٍ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">47</div><div class="text-block"><div class="dutch">Ik heb de brief <span class="nog-highlight">nog</span> niet ontvangen.</div><div class="arabic">لَمْ أَسْتَلِمِ الرِّسَالَةَ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">48</div><div class="text-block"><div class="dutch">De trein is <span class="nog-highlight">nog</span> niet vertrokken.</div><div class="arabic">لَمْ يُغَادِرِ الْقِطَارُ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">49</div><div class="text-block"><div class="dutch">Mijn bestelling is <span class="nog-highlight">nog</span> niet aangekomen.</div><div class="arabic">لَمْ يَصِلْ طَلَبِي بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">50</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> nooit in Nederland gewerkt.</div><div class="arabic">لَمْ أَعْمَلْ فِي هُولَنْدَا قَطُّ.</div></div></div>
+  </div>
+
+  <!-- 51-70 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">51 – 70</span>
+      Nog بمعنى «إضافي / آخر»
+    </div>
+
+    <div class="sentence"><div class="num-badge">51</div><div class="text-block"><div class="dutch">Ik wil <span class="nog-highlight">nog</span> een kop koffie.</div><div class="arabic">أُرِيدُ فِنْجَانَ قَهْوَةٍ آخَرَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">52</div><div class="text-block"><div class="dutch">Mag ik <span class="nog-highlight">nog</span> een glas water?</div><div class="arabic">هَلْ يُمْكِنُنِي أَنْ أَحْصُلَ عَلَى كَأْسِ مَاءٍ آخَرَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">53</div><div class="text-block"><div class="dutch">Ik wil <span class="nog-highlight">nog</span> een broodje.</div><div class="arabic">أُرِيدُ شَطِيرَةً أُخْرَى.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">54</div><div class="text-block"><div class="dutch">Neem <span class="nog-highlight">nog</span> een koekje.</div><div class="arabic">خُذْ بِسْكُوِيتَةً أُخْرَى.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">55</div><div class="text-block"><div class="dutch">Wil je <span class="nog-highlight">nog</span> wat thee?</div><div class="arabic">هَلْ تُرِيدُ بَعْضَ الشَّايِ أَيْضًا؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">56</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> een vraag.</div><div class="arabic">لَدَيَّ سُؤَالٌ آخَرُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">57</div><div class="text-block"><div class="dutch">Heb je <span class="nog-highlight">nog</span> een minuut?</div><div class="arabic">هَلْ لَدَيْكَ دَقِيقَةٌ إِضَافِيَّةٌ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">58</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> een idee.</div><div class="arabic">لَدَيَّ فِكْرَةٌ أُخْرَى.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">59</div><div class="text-block"><div class="dutch">We hebben <span class="nog-highlight">nog</span> een probleem.</div><div class="arabic">لَدَيْنَا مُشْكِلَةٌ أُخْرَى.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">60</div><div class="text-block"><div class="dutch">Ik zoek <span class="nog-highlight">nog</span> een kamer.</div><div class="arabic">أَبْحَثُ عَنْ غُرْفَةٍ أُخْرَى.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">61</div><div class="text-block"><div class="dutch">Ik wil <span class="nog-highlight">nog</span> twee dagen blijven.</div><div class="arabic">أُرِيدُ أَنْ أَبْقَى يَوْمَيْنِ إِضَافِيَّيْنِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">62</div><div class="text-block"><div class="dutch">Wacht <span class="nog-highlight">nog</span> even.</div><div class="arabic">انْتَظِرْ قَلِيلًا بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">63</div><div class="text-block"><div class="dutch">Kun je <span class="nog-highlight">nog</span> even helpen?</div><div class="arabic">هَلْ يُمْكِنُكَ الْمُسَاعَدَةُ قَلِيلًا بَعْدُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">64</div><div class="text-block"><div class="dutch">Ik wil <span class="nog-highlight">nog</span> iets zeggen.</div><div class="arabic">أُرِيدُ أَنْ أَقُولَ شَيْئًا آخَرَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">65</div><div class="text-block"><div class="dutch">Heb je <span class="nog-highlight">nog</span> iets nodig?</div><div class="arabic">هَلْ تَحْتَاجُ إِلَى شَيْءٍ آخَرَ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">66</div><div class="text-block"><div class="dutch">Ik koop <span class="nog-highlight">nog</span> wat brood.</div><div class="arabic">سَأَشْتَرِي بَعْضَ الْخُبْزِ أَيْضًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">67</div><div class="text-block"><div class="dutch">We moeten <span class="nog-highlight">nog</span> wat boodschappen doen.</div><div class="arabic">يَجِبُ أَنْ نَشْتَرِيَ بَعْضَ الْحَاجِيَاتِ أَيْضًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">68</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> wat geld nodig.</div><div class="arabic">أَحْتَاجُ إِلَى بَعْضِ الْمَالِ الْإِضَافِيِّ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">69</div><div class="text-block"><div class="dutch">Doe er <span class="nog-highlight">nog</span> een beetje zout bij.</div><div class="arabic">أَضِفْ إِلَيْهِ قَلِيلًا مِنَ الْمِلْحِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">70</div><div class="text-block"><div class="dutch">Ik wil <span class="nog-highlight">nog</span> een keer proberen.</div><div class="arabic">أُرِيدُ أَنْ أُحَاوِلَ مَرَّةً أُخْرَى.</div></div></div>
+  </div>
+
+  <!-- 71-85 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">71 – 85</span>
+      Nog مع الوقت والكمية
+    </div>
+
+    <div class="sentence"><div class="num-badge">71</div><div class="text-block"><div class="dutch">Het is <span class="nog-highlight">nog</span> vroeg.</div><div class="arabic">مَا زَالَ الْوَقْتُ مُبَكِّرًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">72</div><div class="text-block"><div class="dutch">Het is <span class="nog-highlight">nog</span> te vroeg.</div><div class="arabic">مَا زَالَ الْوَقْتُ مُبَكِّرًا جِدًّا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">73</div><div class="text-block"><div class="dutch">Het is <span class="nog-highlight">nog</span> niet laat.</div><div class="arabic">لَمْ يَتَأَخَّرِ الْوَقْتُ بَعْدُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">74</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> vijf minuten.</div><div class="arabic">لَدَيَّ خَمْسُ دَقَائِقَ أُخْرَى.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">75</div><div class="text-block"><div class="dutch">We moeten <span class="nog-highlight">nog</span> tien kilometer rijden.</div><div class="arabic">يَجِبُ أَنْ نَقُودَ عَشَرَةَ كِيلُومِتْرَاتٍ إِضَافِيَّةً.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">76</div><div class="text-block"><div class="dutch">Het duurt <span class="nog-highlight">nog</span> een uur.</div><div class="arabic">سَيَسْتَغْرِقُ الْأَمْرُ سَاعَةً أُخْرَى.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">77</div><div class="text-block"><div class="dutch">Ik blijf <span class="nog-highlight">nog</span> een week.</div><div class="arabic">سَأَبْقَى أُسْبُوعًا آخَرَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">78</div><div class="text-block"><div class="dutch">Hij blijft <span class="nog-highlight">nog</span> twee maanden.</div><div class="arabic">سَيَبْقَى شَهْرَيْنِ إِضَافِيَّيْنِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">79</div><div class="text-block"><div class="dutch">We hebben <span class="nog-highlight">nog</span> genoeg tijd.</div><div class="arabic">مَا زَالَ لَدَيْنَا وَقْتٌ كَافٍ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">80</div><div class="text-block"><div class="dutch">Er zijn <span class="nog-highlight">nog</span> drie plaatsen vrij.</div><div class="arabic">لَا تَزَالُ هُنَاكَ ثَلَاثَةُ أَمَاكِنَ شَاغِرَةٍ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">81</div><div class="text-block"><div class="dutch">Er zijn <span class="nog-highlight">nog</span> veel mensen buiten.</div><div class="arabic">مَا زَالَ هُنَاكَ كَثِيرٌ مِنَ النَّاسِ فِي الْخَارِجِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">82</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> maar tien euro.</div><div class="arabic">لَمْ يَبْقَ مَعِي سِوَى عَشَرَةِ يُورُوهَاتٍ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">83</div><div class="text-block"><div class="dutch"><span class="nog-highlight">Nog</span> één dag!</div><div class="arabic">يَوْمٌ وَاحِدٌ فَقَطْ بَعْدُ!</div></div></div>
+
+    <div class="sentence"><div class="num-badge">84</div><div class="text-block"><div class="dutch"><span class="nog-highlight">Nog</span> even geduld, alsjeblieft.</div><div class="arabic">مَزِيدًا مِنَ الصَّبْرِ قَلِيلًا، مِنْ فَضْلِكَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">85</div><div class="text-block"><div class="dutch">We zijn er <span class="nog-highlight">nog</span> niet.</div><div class="arabic">لَمْ نَصِلْ إِلَى هُنَاكَ بَعْدُ.</div></div></div>
+  </div>
+
+  <!-- 86-100 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">86 – 100</span>
+      تعبيرات شائعة باستخدام Nog
+    </div>
+
+    <div class="sentence"><div class="num-badge">86</div><div class="text-block"><div class="dutch"><span class="nog-highlight">Nog</span>maals bedankt!</div><div class="arabic">شُكْرًا مَرَّةً أُخْرَى!</div></div></div>
+
+    <div class="sentence"><div class="num-badge">87</div><div class="text-block"><div class="dutch">Tot <span class="nog-highlight">nog</span> toe gaat alles goed.</div><div class="arabic">حَتَّى الْآنَ، كُلُّ شَيْءٍ يَسِيرُ بِشَكْلٍ جَيِّدٍ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">88</div><div class="text-block"><div class="dutch">Ik wil <span class="nog-highlight">nog</span> steeds die baan.</div><div class="arabic">مَا زِلْتُ أُرِيدُ تِلْكَ الْوَظِيفَةَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">89</div><div class="text-block"><div class="dutch">Hij woont <span class="nog-highlight">nog</span> altijd in Harelbeke.</div><div class="arabic">هُوَ لَا يَزَالُ يَسْكُنُ فِي هَارِلْبَيْكَه.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">90</div><div class="text-block"><div class="dutch">Heb je <span class="nog-highlight">nog</span> contact met hem?</div><div class="arabic">هَلْ مَا زِلْتَ عَلَى تَوَاصُلٍ مَعَهُ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">91</div><div class="text-block"><div class="dutch">Ik heb <span class="nog-highlight">nog</span> nooit zoiets gezien.</div><div class="arabic">لَمْ أَرَ شَيْئًا مِثْلَ هَذَا مِنْ قَبْلُ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">92</div><div class="text-block"><div class="dutch">Dat moet <span class="nog-highlight">nog</span> gebeuren.</div><div class="arabic">يَجِبُ أَنْ يَحْدُثَ ذَلِكَ لَاحِقًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">93</div><div class="text-block"><div class="dutch">Ik moet <span class="nog-highlight">nog</span> naar de supermarkt.</div><div class="arabic">مَا زَالَ عَلَيَّ أَنْ أَذْهَبَ إِلَى السُّوبَرْمَارْكِت.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">94</div><div class="text-block"><div class="dutch">We moeten <span class="nog-highlight">nog</span> naar de dokter.</div><div class="arabic">مَا زَالَ عَلَيْنَا أَنْ نَذْهَبَ إِلَى الطَّبِيبِ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">95</div><div class="text-block"><div class="dutch">Ik moet <span class="nog-highlight">nog</span> solliciteren.</div><div class="arabic">مَا زَالَ عَلَيَّ أَنْ أُقَدِّمَ طَلَبَاتِ تَوْظِيفٍ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">96</div><div class="text-block"><div class="dutch">Ik moet mijn cv <span class="nog-highlight">nog</span> aanpassen.</div><div class="arabic">مَا زَالَ عَلَيَّ أَنْ أُعَدِّلَ سِيرَتِي الذَّاتِيَّةَ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">97</div><div class="text-block"><div class="dutch">Heb je <span class="nog-highlight">nog</span> interesse in de functie?</div><div class="arabic">هَلْ مَا زِلْتَ مُهْتَمًّا بِالْوَظِيفَةِ؟</div></div></div>
+
+    <div class="sentence"><div class="num-badge">98</div><div class="text-block"><div class="dutch">Ik kom zo <span class="nog-highlight">nog</span> terug.</div><div class="arabic">سَأَعُودُ بَعْدَ قَلِيلٍ.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">99</div><div class="text-block"><div class="dutch">Dat weet ik <span class="nog-highlight">nog</span> goed.</div><div class="arabic">مَا زِلْتُ أَتَذَكَّرُ ذَلِكَ جَيِّدًا.</div></div></div>
+
+    <div class="sentence"><div class="num-badge">100</div><div class="text-block"><div class="dutch">Ik wil <span class="nog-highlight">nog</span> veel Nederlands leren.</div><div class="arabic">أُرِيدُ أَنْ أَتَعَلَّمَ الْكَثِيرَ مِنَ الْهُولَنْدِيَّةِ بَعْدُ.</div></div></div>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary">
+    <h2>📝 ملخص سريع للحفظ</h2>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>التعبير</th>
+          <th>المعنى بالعربية</th>
+          <th>مثال</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dutch-cell">nog</td>
+          <td>ما زال / إضافي</td>
+          <td class="example-cell">Ik werk nog.</td>
+        </tr>
+        <tr>
+          <td class="dutch-cell">nog niet</td>
+          <td>ليس بعد</td>
+          <td class="example-cell">Ik ben nog niet klaar.</td>
+        </tr>
+        <tr>
+          <td class="dutch-cell">nog steeds</td>
+          <td>ما زال حتى الآن</td>
+          <td class="example-cell">Ik wacht nog steeds.</td>
+        </tr>
+        <tr>
+          <td class="dutch-cell">nog een</td>
+          <td>واحد آخر</td>
+          <td class="example-cell">Nog een koffie.</td>
+        </tr>
+        <tr>
+          <td class="dutch-cell">nog nooit</td>
+          <td>لم يحدث قط</td>
+          <td class="example-cell">Ik heb nog nooit gevlogen.</td>
+        </tr>
+        <tr>
+          <td class="dutch-cell">nog even</td>
+          <td>قليلًا بعد / لحظة أخرى</td>
+          <td class="example-cell">Wacht nog even.</td>
+        </tr>
+        <tr>
+          <td class="dutch-cell">nog maar</td>
+          <td>لم يتبقَّ سوى</td>
+          <td class="example-cell">Nog maar vijf minuten.</td>
+        </tr>
+        <tr>
+          <td class="dutch-cell">nogmaals</td>
+          <td>مرة أخرى</td>
+          <td class="example-cell">Nogmaals bedankt.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="difference">
+      <h3>⚠️ الفرق المهم:</h3>
+      <ul>
+        <li><strong>Ik werk nog.</strong> = ما زلت أعمل.</li>
+        <li><strong>Ik werk nog niet.</strong> = لم أبدأ العمل بعد.</li>
+        <li><strong>Ik werk nog steeds.</strong> = ما زلت أعمل حتى الآن.</li>
+        <li><strong>Ik wil nog werken.</strong> = ما زلت أريد العمل / أريد أن أعمل أيضًا، حسب السياق.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    🇳🇱 ١٠٠ جملة هولندية باستخدام Nog — مع الترجمة العربية بالتشكيل الكامل
+  </footer>
+
+</div>
+</body>
+</html>
