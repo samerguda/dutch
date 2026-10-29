@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة فلمنكية باستخدام Amai</title>
+
+<style>
+:root {
+  --primary: #174b3b;
+  --accent: #d7f2df;
+  --bg: #f4f7f5;
+  --text: #202b26;
+  --muted: #64736b;
+}
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, "Noto Sans Arabic", sans-serif;
+  line-height: 1.8;
+}
+
+header {
+  background: linear-gradient(135deg, #123b30, #28785a);
+  color: white;
+  padding: 35px 18px;
+  text-align: center;
+  border-radius: 0 0 28px 28px;
+}
+
+header h1 { margin: 0 0 10px; font-size: 28px; }
+header p { margin: 6px auto; max-width: 600px; }
+
+.container {
+  max-width: 900px;
+  margin: 22px auto;
+  padding: 0 14px 35px;
+}
+
+.intro, .controls, .sentence, .vocab {
+  background: white;
+  border-radius: 15px;
+  padding: 16px;
+  margin-bottom: 13px;
+  box-shadow: 0 3px 12px #153d2b0a;
+}
+
+.intro { border-right: 5px solid #35966b; }
+
+.ama i {
+  font-style: normal;
+  font-weight: bold;
+  color: #18744b;
+}
+
+.controls {
+  position: sticky;
+  top: 5px;
+  z-index: 5;
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+input {
+  flex: 1;
+  min-width: 180px;
+  padding: 12px;
+  border: 1px solid #d5e1da;
+  border-radius: 10px;
+  font-size: 16px;
+  direction: rtl;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  padding: 11px 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover { opacity: .88; }
+
+.sentence {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.number {
+  background: var(--accent);
+  color: var(--primary);
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.dutch {
+  direction: ltr;
+  text-align: left;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+
+.arabic {
+  font-size: 16px;
+  margin: 0;
+  color: #526159;
+}
+
+.mini-copy {
+  margin-top: 8px;
+  background: #edf5ef;
+  color: #174b3b;
+  padding: 6px 10px;
+}
+
+.vocab h2 { margin-top: 0; color: var(--primary); }
+.vocab li { margin-bottom: 7px; }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 20px;
+  font-size: 13px;
+}
+
+#count { color: var(--primary); font-weight: bold; }
+.hidden { display: none !important; }
+
+@media (max-width: 480px) {
+  header h1 { font-size: 23px; }
+  .sentence { grid-template-columns: 34px 1fr; padding: 12px; }
+  .dutch { font-size: 16px; }
+  .arabic { font-size: 15px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <h1>🇧🇪 100 جملة فلمنكية مع Amai</h1>
+  <p>تعلّم التعبير البلجيكي الشهير من خلال مواقف الحياة اليومية</p>
+  <p>اللهجة الفلمنكية • ترجمة عربية • مستوى A1–B1</p>
+</header>
+
+<main class="container">
+
+  <section class="intro">
+    <h2>ما معنى Amai؟</h2>
+    <p>
+      كلمة <b>Amai</b> تعبير شائع في فلاندرز البلجيكية.
+      يتغيّر معناها حسب نبرة الصوت والموقف:
+    </p>
+    <ul>
+      <li><b>Amai, wat mooi!</b> — واو، ما أجمل هذا!</li>
+      <li><b>Amai, dat is duur!</b> — يا إلهي، هذا غالي!</li>
+      <li><b>Amai, ik ben moe.</b> — يا إلهي، أنا متعب!</li>
+    </ul>
+    <p>ملاحظة: الجمل التالية هولندية بلجيكية طبيعية، وبعض التعبيرات تختلف من منطقة لأخرى.</p>
+  </section>
+
+  <section class="controls">
+    <input id="search" type="search"
+      placeholder="ابحث بالكلمة الهولندية أو الترجمة العربية..."
+      aria-label="البحث في الجمل">
+    <button onclick="copyAll()">نسخ الجمل</button>
+    <button onclick="resetSearch()">عرض الكل</button>
+  </section>
+
+  <p>عدد الجمل الظاهرة: <span id="count">100</span></p>
+  <div id="sentences"></div>
+
+  <section class="vocab">
+    <h2>تعبيرات مهمة للمذاكرة</h2>
+    <ul>
+      <li><b>Amai zeg!</b> — يا إلهي! / يا سلام!</li>
+      <li><b>Amai, amai!</b> — يا ساتر! / يا له من أمر!</li>
+      <li><b>Wat een...</b> — يا له من...!</li>
+      <li><b>Echt waar?</b> — حقًا؟</li>
+      <li><b>Dat meen je niet!</b> — لا يمكن أن تكون جادًا!</li>
+      <li><b>Da's straf!</b> — هذا مذهل! (تعبير بلجيكي دارج)</li>
+      <li><b>Ik kan het niet geloven.</b> — لا أستطيع تصديق ذلك.</li>
+      <li><b>Zo zeg!</b> — يا سلام! / يا له من شيء!</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  صُمّمت الصفحة لمساعدتك على تعلّم الهولندية البلجيكية يومًا بعد يوم 🇧🇪
+</footer>
+
+<script>
+const data = [
+["Amai, wat mooi!","واو، ما أجمل هذا!"],
+["Amai, dat is duur!","يا إلهي، هذا غالي!"],
+["Amai, ik ben moe.","يا إلهي، أنا متعب."],
+["Amai, wat een verrassing!","يا لها من مفاجأة!"],
+["Amai, dat wist ik niet.","واو، لم أكن أعرف ذلك."],
+["Amai, jij bent vroeg!","واو، أنت جئت مبكرًا!"],
+["Amai, wat is het koud vandaag!","يا إلهي، الجو بارد اليوم!"],
+["Amai, het regent weer!","يا إلهي، إنها تمطر مجددًا!"],
+["Amai, wat een drukte!","يا إلهي، ما كل هذه الزحمة!"],
+["Amai, dat is ongelooflijk!","واو، هذا لا يُصدَّق!"],
+
+["Amai, jij hebt hard gewerkt!","واو، لقد عملت بجد!"],
+["Amai, wat zie je er goed uit!","واو، تبدو رائعًا!"],
+["Amai, dat smaakt lekker!","واو، طعمه لذيذ!"],
+["Amai, wat een grote auto!","يا لها من سيارة كبيرة!"],
+["Amai, dat is een goed idee!","واو، هذه فكرة جيدة!"],
+["Amai, wat ben je snel!","واو، أنت سريع جدًا!"],
+["Amai, dat heb je goed gedaan!","أحسنت، لقد فعلت ذلك جيدًا!"],
+["Amai, wat een mooie dag!","يا له من يوم جميل!"],
+["Amai, ik heb honger!","يا إلهي، أنا جائع!"],
+["Amai, ik heb dorst!","يا إلهي، أنا عطشان!"],
+
+["Amai, wat een lawaai!","يا إلهي، ما هذه الضوضاء!"],
+["Amai, de trein is weer te laat!","يا إلهي، القطار متأخر مجددًا!"],
+["Amai, wat een lange rij!","يا إلهي، ما هذا الطابور الطويل!"],
+["Amai, dat kost veel geld!","يا إلهي، هذا يكلف الكثير من المال!"],
+["Amai, ik ben mijn sleutels vergeten!","يا إلهي، لقد نسيت مفاتيحي!"],
+["Amai, mijn batterij is bijna leeg!","يا إلهي، بطاريتي أوشكت على النفاد!"],
+["Amai, wat een chaos!","يا إلهي، ما هذه الفوضى!"],
+["Amai, dat was spannend!","يا إلهي، كان ذلك مثيرًا!"],
+["Amai, ik schrok mij een hoedje!","يا إلهي، لقد أفزعتني بشدة!"],
+["Amai, dat was op het nippertje!","يا إلهي، لقد نجونا في آخر لحظة!"],
+
+["Amai, wat ben jij grappig!","واو، أنت مضحك جدًا!"],
+["Amai, jij spreekt goed Nederlands!","واو، أنت تتحدث الهولندية جيدًا!"],
+["Amai, wat heb je veel geleerd!","واو، لقد تعلمت الكثير!"],
+["Amai, je uitspraak is veel beter!","واو، نطقك أصبح أفضل بكثير!"],
+["Amai, je maakt grote vooruitgang!","واو، أنت تحرز تقدمًا كبيرًا!"],
+["Amai, dat begrijp je snel!","واو، أنت تفهم بسرعة!"],
+["Amai, je bent echt behulpzaam!","واو، أنت متعاون حقًا!"],
+["Amai, wat ben jij vriendelijk!","واو، كم أنت ودود!"],
+["Amai, jij kent hier iedereen!","واو، أنت تعرف الجميع هنا!"],
+["Amai, wat een talent!","يا لها من موهبة!"],
+
+["Amai, wat een lekker eten!","يا له من طعام لذيذ!"],
+["Amai, deze soep is heerlijk!","واو، هذا الحساء شهي!"],
+["Amai, die frieten zijn krokant!","واو، البطاطس المقلية مقرمشة!"],
+["Amai, ik heb te veel gegeten!","يا إلهي، لقد أكلت أكثر من اللازم!"],
+["Amai, wat een grote portie!","يا إلهي، ما هذه الكمية الكبيرة!"],
+["Amai, die koffie is sterk!","واو، هذه القهوة قوية!"],
+["Amai, wat ruikt dat lekker!","واو، ما أطيب هذه الرائحة!"],
+["Amai, dat dessert ziet er geweldig uit!","واو، هذه الحلوى تبدو رائعة!"],
+["Amai, ik lust nog wel een stukje!","يا سلام، يمكنني تناول قطعة أخرى!"],
+["Amai, dat restaurant is populair!","واو، هذا المطعم مشهور!"],
+
+["Amai, wat een mooie woning!","واو، يا له من منزل جميل!"],
+["Amai, jouw tuin is prachtig!","واو، حديقتك رائعة!"],
+["Amai, wat is jouw keuken groot!","واو، ما أكبر مطبخك!"],
+["Amai, je huis is heel netjes!","واو، منزلك مرتب جدًا!"],
+["Amai, wat een uitzicht!","يا له من منظر رائع!"],
+["Amai, je hebt veel plaats!","واو، لديك مساحة كبيرة!"],
+["Amai, wat een gezellige woonkamer!","واو، يا لها من غرفة معيشة مريحة!"],
+["Amai, die meubels zijn duur!","يا إلهي، هذا الأثاث غالي!"],
+["Amai, je hebt dat zelf gemaakt?","واو، هل صنعت ذلك بنفسك؟"],
+["Amai, dat ziet er comfortabel uit!","واو، يبدو ذلك مريحًا!"],
+
+["Amai, wat een mooie fiets!","واو، يا لها من دراجة جميلة!"],
+["Amai, het verkeer staat helemaal vast!","يا إلهي، حركة المرور متوقفة تمامًا!"],
+["Amai, ik heb de bus gemist!","يا إلهي، لقد فاتتني الحافلة!"],
+["Amai, wat rijdt die auto snel!","يا إلهي، ما أسرع هذه السيارة!"],
+["Amai, het station is hier dichtbij!","واو، المحطة قريبة من هنا!"],
+["Amai, we zijn er al!","واو، لقد وصلنا بالفعل!"],
+["Amai, wat een omweg!","يا إلهي، ما أطول هذا الطريق البديل!"],
+["Amai, ik ben verkeerd gereden!","يا إلهي، لقد سلكت الطريق الخطأ!"],
+["Amai, die parking is vol!","يا إلهي، موقف السيارات ممتلئ!"],
+["Amai, wat een lange rit!","يا إلهي، يا لها من رحلة طويلة!"],
+
+["Amai, wat een mooie winkel!","واو، يا له من متجر جميل!"],
+["Amai, dat is in de aanbieding!","واو، هذا عليه عرض!"],
+["Amai, dat is veel goedkoper!","واو، هذا أرخص بكثير!"],
+["Amai, wat een dure schoenen!","يا إلهي، ما أغلى هذه الأحذية!"],
+["Amai, ik heb te veel gekocht!","يا إلهي، لقد اشتريت أشياء أكثر من اللازم!"],
+["Amai, die jas staat je goed!","واو، هذا المعطف يليق بك!"],
+["Amai, wat een koopje!","يا لها من صفقة رائعة!"],
+["Amai, de winkel is al dicht!","يا إلهي، المتجر مغلق بالفعل!"],
+["Amai, zoveel keuze!","واو، كل هذه الخيارات!"],
+["Amai, ik heb mijn portefeuille thuis gelaten!","يا إلهي، لقد تركت محفظتي في المنزل!"],
+
+["Amai, wat een drukke werkdag!","يا إلهي، يا له من يوم عمل مزدحم!"],
+["Amai, ik heb veel te doen vandaag!","يا إلهي، لدي الكثير لأفعله اليوم!"],
+["Amai, de vergadering duurde lang!","يا إلهي، استمر الاجتماع طويلًا!"],
+["Amai, dat project is ingewikkeld!","يا إلهي، هذا المشروع معقد!"],
+["Amai, je hebt dat snel opgelost!","واو، لقد حللت ذلك بسرعة!"],
+["Amai, ik ben bijna klaar!","واو، لقد أوشكت على الانتهاء!"],
+["Amai, wat een fijne collega!","واو، يا له من زميل رائع!"],
+["Amai, vandaag was het echt druk!","يا إلهي، كان اليوم مزدحمًا حقًا!"],
+["Amai, ik heb dringend vakantie nodig!","يا إلهي، أحتاج إلى إجازة بشكل عاجل!"],
+["Amai, eindelijk weekend!","يا سلام، أخيرًا عطلة نهاية الأسبوع!"],
+
+["Amai, wat een goed nieuws!","يا لها من أخبار جيدة!"],
+["Amai, dat meen je niet!","لا يمكن أن تكون جادًا!"],
+["Amai, echt waar?","حقًا؟"],
+["Amai, daar ben ik van geschrokken!","يا إلهي، لقد صُدمت من ذلك!"],
+["Amai, wat ben ik blij!","يا إلهي، كم أنا سعيد!"],
+["Amai, ik ben zo opgelucht!","يا إلهي، أشعر بارتياح كبير!"],
+["Amai, wat jammer!","يا للأسف!"],
+["Amai, dat is pech hebben!","يا لسوء الحظ!"],
+["Amai, daar had ik niet op gerekend!","يا إلهي، لم أكن أتوقع ذلك!"],
+["Amai, wat een dag!","يا له من يوم!"]
+];
+
+const list = document.getElementById("sentences");
+const search = document.getElementById("search");
+const count = document.getElementById("count");
+
+function render() {
+  const q = search.value.trim().toLowerCase();
+  list.innerHTML = "";
+
+  data.forEach((item, i) => {
+    if (!item[0].toLowerCase().includes(q) &&
+        !item[1].toLowerCase().includes(q)) return;
+
+    const card = document.createElement("article");
+    card.className = "sentence";
+
+    const number = document.createElement("div");
+    number.className = "number";
+    number.textContent = i + 1;
+
+    const content = document.createElement("div");
+
+    const dutch = document.createElement("p");
+    dutch.className = "dutch";
+    dutch.textContent = item[0];
+
+    const arabic = document.createElement("p");
+    arabic.className = "arabic";
+    arabic.textContent = item[1];
+
+    const btn = document.createElement("button");
+    btn.className = "mini-copy";
+    btn.textContent = "نسخ الجملة";
+    btn.onclick = () => copyText(item[0] + " — " + item[1]);
+
+    content.append(dutch, arabic, btn);
+    card.append(number, content);
+    list.append(card);
+  });
+
+  count.textContent = list.children.length;
+}
+
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text)
+      .then(() => alert("تم النسخ بنجاح!"))
+      .catch(() => window.prompt("انسخ النص:", text));
+  } else {
+    window.prompt("انسخ النص من هنا:", text);
+  }
+}
+
+function copyAll() {
+  const text = data.map((item, i) =>
+    `${i + 1}. ${item[0]}\n${item[1]}`
+  ).join("\n\n");
+  copyText(text);
+}
+
+function resetSearch() {
+  search.value = "";
+  render();
+}
+
+search.addEventListener("input", render);
+render();
+</script>
+</body>
+</html>
