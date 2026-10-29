@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>١٠٠ جملة هولندية باستخدام Hoe ziet … eruit?</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Naskh Arabic', 'Amiri', 'Traditional Arabic', serif;
+    background: linear-gradient(135deg, #4a1c2e 0%, #6b2843 50%, #8f3a5c 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    line-height: 1.9;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fffdf7;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+
+  header {
+    background: linear-gradient(135deg, #6b2843 0%, #4a1c2e 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  header .subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+    background: rgba(255,255,255,0.15);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    margin-top: 10px;
+  }
+
+  header .flag {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .intro {
+    background: #fceef3;
+    padding: 25px 30px;
+    border-bottom: 3px solid #6b2843;
+    font-size: 1.05em;
+    color: #444;
+  }
+
+  .intro p { margin-bottom: 10px; }
+
+  .section {
+    padding: 25px 30px;
+    border-bottom: 2px dashed #ddd;
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 14px 20px;
+    background: linear-gradient(90deg, #4a1c2e, #8f3a5c);
+    color: white;
+    border-radius: 12px;
+    font-size: 1.15em;
+    font-weight: 700;
+    flex-wrap: wrap;
+  }
+
+  .section-header .num {
+    background: #ffd54f;
+    color: #4a1c2e;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    direction: ltr;
+    font-weight: 800;
+  }
+
+  .sentence {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border-right: 4px solid transparent;
+  }
+
+  .sentence:nth-child(odd) { background: #fdf6f9; }
+  .sentence:nth-child(even) { background: #ffffff; }
+
+  .sentence:hover {
+    background: #fceef3;
+    border-right-color: #8f3a5c;
+    transform: translateX(-4px);
+  }
+
+  .num-badge {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #4a1c2e, #8f3a5c);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: 700;
+    direction: ltr;
+  }
+
+  .text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .dutch {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 1.12em;
+    color: #4a1c2e;
+    font-weight: 700;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .dutch .hl {
+    color: #c62828;
+    background: #ffebee;
+    padding: 0 6px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+
+  .arabic {
+    font-size: 1.13em;
+    color: #3d2b1f;
+    font-weight: 400;
+  }
+
+  .answers-section {
+    padding: 30px;
+    background: linear-gradient(135deg, #fceef3, #f8e0e8);
+    margin: 20px;
+    border-radius: 15px;
+    border: 2px solid #6b2843;
+  }
+
+  .answers-section h2 {
+    color: #4a1c2e;
+    margin-bottom: 20px;
+    font-size: 1.45em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .answers-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+
+  .answers-table th {
+    background: #6b2843;
+    color: white;
+    padding: 13px 12px;
+    font-size: 1em;
+  }
+
+  .answers-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f0d5e0;
+    text-align: center;
+    font-size: 1.05em;
+  }
+
+  .answers-table tr:last-child td { border-bottom: none; }
+  .answers-table tr:hover td { background: #fceef3; }
+
+  .answers-table .nl-cell {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #c62828;
+    direction: ltr;
+  }
+
+  .answers-table .ar-cell {
+    color: #3d2b1f;
+  }
+
+  .rule-box {
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border-right: 5px solid #c62828;
+    font-size: 1.05em;
+    line-height: 1.95;
+  }
+
+  .rule-box h3 {
+    color: #c62828;
+    margin-bottom: 15px;
+    font-size: 1.25em;
+  }
+
+  .rule-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .rule-box li {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background: #fdf6f9;
+    border-radius: 8px;
+  }
+
+  .rule-box li strong {
+    color: #6b2843;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    direction: ltr;
+    display: inline-block;
+  }
+
+  .example-box {
+    margin-top: 15px;
+    padding: 15px 18px;
+    background: #fff8e1;
+    border-radius: 10px;
+    border-right: 5px solid #ffb703;
+    font-size: 1.05em;
+  }
+
+  .example-box .nl {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #4a1c2e;
+    direction: ltr;
+    display: inline-block;
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: #4a1c2e;
+    color: #e8b8c8;
+    font-size: 0.95em;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    header { padding: 25px 15px; }
+    header h1 { font-size: 1.35em; }
+    .section { padding: 15px; }
+    .sentence { padding: 10px 8px; flex-wrap: wrap; }
+    .num-badge { width: 33px; height: 33px; font-size: 0.72em; }
+    .dutch { font-size: 1em; }
+    .arabic { font-size: 1em; }
+    .section-header { font-size: 1em; padding: 10px 12px; }
+    .answers-section { padding: 15px; margin: 10px; }
+    .answers-table td, .answers-table th { padding: 8px 5px; font-size: 0.85em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="flag">🇳🇱</div>
+    <h1>١٠٠ جملة هولندية باستخدام Hoe ziet … eruit?</h1>
+    <div class="subtitle">مع الترجمة العربية بالتشكيل الكامل</div>
+  </header>
+
+  <div class="intro">
+    <p>تدريب عملي على صيغة السؤال عن الشكل والمظهر: <strong>Hoe ziet … eruit؟</strong> — كيف يبدو شكل …؟</p>
+    <p style="font-size:0.95em;color:#6b2843;">كل الجمل مترقمة ومعها الترجمة العربية، للتدريب على الهولندية المستخدمة في بلجيكا.</p>
+  </div>
+
+  <!-- Section 1: 1-20 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">1 – 20</span>
+      السؤال عن الشكل والمظهر
+    </div>
+
+    <div class="sentence"><div class="num-badge">1</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zie ik eruit</span>?</div><div class="arabic">كيف أبدو؟</div></div></div>
+    <div class="sentence"><div class="num-badge">2</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zie jij eruit</span>?</div><div class="arabic">كيف يبدو شكلك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">3</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet hij eruit</span>?</div><div class="arabic">كيف يبدو شكله؟</div></div></div>
+    <div class="sentence"><div class="num-badge">4</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet zij eruit</span>?</div><div class="arabic">كيف يبدو شكلها؟</div></div></div>
+    <div class="sentence"><div class="num-badge">5</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het eruit</span>?</div><div class="arabic">كيف يبدو شكله؟</div></div></div>
+    <div class="sentence"><div class="num-badge">6</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zien wij eruit</span>?</div><div class="arabic">كيف يبدو شكلنا؟</div></div></div>
+    <div class="sentence"><div class="num-badge">7</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zien jullie eruit</span>?</div><div class="arabic">كيف يبدو شكلكم؟</div></div></div>
+    <div class="sentence"><div class="num-badge">8</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zien ze eruit</span>?</div><div class="arabic">كيف يبدو شكلهم؟</div></div></div>
+    <div class="sentence"><div class="num-badge">9</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je vader eruit</span>?</div><div class="arabic">كيف يبدو شكل والدك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">10</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je moeder eruit</span>?</div><div class="arabic">كيف يبدو شكل والدتك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">11</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je broer eruit</span>?</div><div class="arabic">كيف يبدو شكل أخيك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">12</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je zus eruit</span>?</div><div class="arabic">كيف يبدو شكل أختك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">13</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je vrouw eruit</span>?</div><div class="arabic">كيف يبدو شكل زوجتك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">14</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je man eruit</span>?</div><div class="arabic">كيف يبدو شكل زوجك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">15</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je buurman eruit</span>?</div><div class="arabic">كيف يبدو شكل جارك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">16</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je nieuwe collega eruit</span>?</div><div class="arabic">كيف يبدو شكل زميلك الجديد؟</div></div></div>
+    <div class="sentence"><div class="num-badge">17</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de dokter eruit</span>?</div><div class="arabic">كيف يبدو شكل الطبيب؟</div></div></div>
+    <div class="sentence"><div class="num-badge">18</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de manager eruit</span>?</div><div class="arabic">كيف يبدو شكل المدير؟</div></div></div>
+    <div class="sentence"><div class="num-badge">19</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet die man eruit</span>?</div><div class="arabic">كيف يبدو شكل ذلك الرجل؟</div></div></div>
+    <div class="sentence"><div class="num-badge">20</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet die vrouw eruit</span>?</div><div class="arabic">كيف يبدو شكل تلك المرأة؟</div></div></div>
+  </div>
+
+  <!-- Section 2: 21-40 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">21 – 40</span>
+      السؤال عن الملابس والألوان
+    </div>
+
+    <div class="sentence"><div class="num-badge">21</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zie ik eruit</span> met deze jas?</div><div class="arabic">كيف أبدو بهذا المعطف؟</div></div></div>
+    <div class="sentence"><div class="num-badge">22</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zie ik eruit</span> met dit overhemd?</div><div class="arabic">كيف أبدو بهذا القميص؟</div></div></div>
+    <div class="sentence"><div class="num-badge">23</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zie ik eruit</span> in deze broek?</div><div class="arabic">كيف أبدو بهذا البنطال؟</div></div></div>
+    <div class="sentence"><div class="num-badge">24</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet hij eruit</span> in een pak?</div><div class="arabic">كيف يبدو ببدلة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">25</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet zij eruit</span> in die jurk?</div><div class="arabic">كيف تبدو بذلك الفستان؟</div></div></div>
+    <div class="sentence"><div class="num-badge">26</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet deze jas eruit</span>?</div><div class="arabic">كيف يبدو هذا المعطف؟</div></div></div>
+    <div class="sentence"><div class="num-badge">27</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet dat overhemd eruit</span>?</div><div class="arabic">كيف يبدو ذلك القميص؟</div></div></div>
+    <div class="sentence"><div class="num-badge">28</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet deze broek eruit</span>?</div><div class="arabic">كيف يبدو هذا البنطال؟</div></div></div>
+    <div class="sentence"><div class="num-badge">29</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zien deze schoenen eruit</span>?</div><div class="arabic">كيف يبدو شكل هذه الأحذية؟</div></div></div>
+    <div class="sentence"><div class="num-badge">30</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet jouw nieuwe outfit eruit</span>?</div><div class="arabic">كيف يبدو مظهرك الجديد؟</div></div></div>
+    <div class="sentence"><div class="num-badge">31</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zie ik eruit</span> met een bril?</div><div class="arabic">كيف أبدو بالنظارة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">32</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet hij eruit</span> met een baard?</div><div class="arabic">كيف يبدو بلحية؟</div></div></div>
+    <div class="sentence"><div class="num-badge">33</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet zij eruit</span> met kort haar?</div><div class="arabic">كيف تبدو بشعر قصير؟</div></div></div>
+    <div class="sentence"><div class="num-badge">34</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet deze kleur eruit</span>?</div><div class="arabic">كيف يبدو هذا اللون؟</div></div></div>
+    <div class="sentence"><div class="num-badge">35</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de blauwe jas eruit</span>?</div><div class="arabic">كيف يبدو المعطف الأزرق؟</div></div></div>
+    <div class="sentence"><div class="num-badge">36</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zien die zwarte schoenen eruit</span>?</div><div class="arabic">كيف يبدو شكل تلك الأحذية السوداء؟</div></div></div>
+    <div class="sentence"><div class="num-badge">37</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet mijn kapsel eruit</span>?</div><div class="arabic">كيف تبدو قصة شعري؟</div></div></div>
+    <div class="sentence"><div class="num-badge">38</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je nieuwe bril eruit</span>?</div><div class="arabic">كيف تبدو نظارتك الجديدة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">39</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zie ik eruit</span> op deze foto?</div><div class="arabic">كيف أبدو في هذه الصورة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">40</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet hij eruit</span> zonder baard?</div><div class="arabic">كيف يبدو من دون لحية؟</div></div></div>
+  </div>
+
+  <!-- Section 3: 41-60 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">41 – 60</span>
+      المنزل والمدينة والعمل
+    </div>
+
+    <div class="sentence"><div class="num-badge">41</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet jouw huis eruit</span>?</div><div class="arabic">كيف يبدو منزلك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">42</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je slaapkamer eruit</span>?</div><div class="arabic">كيف تبدو غرفة نومك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">43</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de keuken eruit</span>?</div><div class="arabic">كيف يبدو المطبخ؟</div></div></div>
+    <div class="sentence"><div class="num-badge">44</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de badkamer eruit</span>?</div><div class="arabic">كيف يبدو الحمام؟</div></div></div>
+    <div class="sentence"><div class="num-badge">45</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de woonkamer eruit</span>?</div><div class="arabic">كيف تبدو غرفة المعيشة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">46</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de tuin eruit</span>?</div><div class="arabic">كيف تبدو الحديقة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">47</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het gebouw eruit</span>?</div><div class="arabic">كيف يبدو المبنى؟</div></div></div>
+    <div class="sentence"><div class="num-badge">48</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet jouw straat eruit</span>?</div><div class="arabic">كيف يبدو شارعك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">49</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet Harelbeke eruit</span>?</div><div class="arabic">كيف تبدو مدينة هارلبكة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">50</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het centrum eruit</span>?</div><div class="arabic">كيف يبدو وسط المدينة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">51</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het station eruit</span>?</div><div class="arabic">كيف تبدو محطة القطار؟</div></div></div>
+    <div class="sentence"><div class="num-badge">52</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de supermarkt eruit</span>?</div><div class="arabic">كيف يبدو السوبرماركت؟</div></div></div>
+    <div class="sentence"><div class="num-badge">53</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet jouw werkplek eruit</span>?</div><div class="arabic">كيف يبدو مكان عملك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">54</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het kantoor eruit</span>?</div><div class="arabic">كيف يبدو المكتب؟</div></div></div>
+    <div class="sentence"><div class="num-badge">55</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de fabriek eruit</span>?</div><div class="arabic">كيف يبدو المصنع؟</div></div></div>
+    <div class="sentence"><div class="num-badge">56</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de bouwplaats eruit</span>?</div><div class="arabic">كيف يبدو موقع البناء؟</div></div></div>
+    <div class="sentence"><div class="num-badge">57</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de technische ruimte eruit</span>?</div><div class="arabic">كيف تبدو الغرفة الفنية؟</div></div></div>
+    <div class="sentence"><div class="num-badge">58</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de installatie eruit</span>?</div><div class="arabic">كيف تبدو المنظومة أو التجهيزات؟</div></div></div>
+    <div class="sentence"><div class="num-badge">59</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het ontwerp eruit</span>?</div><div class="arabic">كيف يبدو التصميم؟</div></div></div>
+    <div class="sentence"><div class="num-badge">60</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de nieuwe werkplaats eruit</span>?</div><div class="arabic">كيف تبدو ورشة العمل الجديدة؟</div></div></div>
+  </div>
+
+  <!-- Section 4: 61-80 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">61 – 80</span>
+      الأشياء والمواقف اليومية
+    </div>
+
+    <div class="sentence"><div class="num-badge">61</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet deze machine eruit</span>?</div><div class="arabic">كيف تبدو هذه الآلة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">62</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je nieuwe telefoon eruit</span>?</div><div class="arabic">كيف يبدو هاتفك الجديد؟</div></div></div>
+    <div class="sentence"><div class="num-badge">63</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet die auto eruit</span>?</div><div class="arabic">كيف تبدو تلك السيارة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">64</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet jouw fiets eruit</span>?</div><div class="arabic">كيف تبدو دراجتك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">65</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet deze tafel eruit</span>?</div><div class="arabic">كيف تبدو هذه الطاولة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">66</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het cadeau eruit</span>?</div><div class="arabic">كيف تبدو الهدية؟</div></div></div>
+    <div class="sentence"><div class="num-badge">67</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het eten eruit</span>?</div><div class="arabic">كيف يبدو الطعام؟</div></div></div>
+    <div class="sentence"><div class="num-badge">68</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de taart eruit</span>?</div><div class="arabic">كيف تبدو الكعكة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">69</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet dit gerecht eruit</span>?</div><div class="arabic">كيف يبدو هذا الطبق؟</div></div></div>
+    <div class="sentence"><div class="num-badge">70</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de verpakking eruit</span>?</div><div class="arabic">كيف يبدو الغلاف؟</div></div></div>
+    <div class="sentence"><div class="num-badge">71</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het document eruit</span>?</div><div class="arabic">كيف تبدو الوثيقة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">72</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het formulier eruit</span>?</div><div class="arabic">كيف يبدو النموذج؟</div></div></div>
+    <div class="sentence"><div class="num-badge">73</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de brief eruit</span>?</div><div class="arabic">كيف تبدو الرسالة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">74</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de website eruit</span>?</div><div class="arabic">كيف يبدو الموقع الإلكتروني؟</div></div></div>
+    <div class="sentence"><div class="num-badge">75</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de foto eruit</span>?</div><div class="arabic">كيف تبدو الصورة؟</div></div></div>
+    <div class="sentence"><div class="num-badge">76</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zien deze meubels eruit</span>?</div><div class="arabic">كيف يبدو شكل هذا الأثاث؟</div></div></div>
+    <div class="sentence"><div class="num-badge">77</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zien de producten eruit</span>?</div><div class="arabic">كيف تبدو المنتجات؟</div></div></div>
+    <div class="sentence"><div class="num-badge">78</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zien de kamers eruit</span>?</div><div class="arabic">كيف تبدو الغرف؟</div></div></div>
+    <div class="sentence"><div class="num-badge">79</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zien de plannen eruit</span>?</div><div class="arabic">كيف تبدو الخطط؟</div></div></div>
+    <div class="sentence"><div class="num-badge">80</div><div class="text-block"><div class="dutch"><span class="hl">Hoe zien de resultaten eruit</span>?</div><div class="arabic">كيف تبدو النتائج؟</div></div></div>
+  </div>
+
+  <!-- Section 5: 81-100 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">81 – 100</span>
+      الطقس والصحة والمستقبل
+    </div>
+
+    <div class="sentence"><div class="num-badge">81</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het weer eruit</span> vandaag?</div><div class="arabic">كيف تبدو حالة الطقس اليوم؟</div></div></div>
+    <div class="sentence"><div class="num-badge">82</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de lucht eruit</span>?</div><div class="arabic">كيف تبدو السماء؟</div></div></div>
+    <div class="sentence"><div class="num-badge">83</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de hemel eruit</span> bij zonsondergang?</div><div class="arabic">كيف تبدو السماء عند غروب الشمس؟</div></div></div>
+    <div class="sentence"><div class="num-badge">84</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de weg eruit</span> na de regen?</div><div class="arabic">كيف يبدو الطريق بعد المطر؟</div></div></div>
+    <div class="sentence"><div class="num-badge">85</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het park eruit</span> in de lente?</div><div class="arabic">كيف تبدو الحديقة في الربيع؟</div></div></div>
+    <div class="sentence"><div class="num-badge">86</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de stad eruit</span> in de winter?</div><div class="arabic">كيف تبدو المدينة في الشتاء؟</div></div></div>
+    <div class="sentence"><div class="num-badge">87</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de patiënt eruit</span>?</div><div class="arabic">كيف يبدو شكل المريض؟</div></div></div>
+    <div class="sentence"><div class="num-badge">88</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de wond eruit</span>?</div><div class="arabic">كيف يبدو الجرح؟</div></div></div>
+    <div class="sentence"><div class="num-badge">89</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet mijn huid eruit</span>?</div><div class="arabic">كيف تبدو بشرتي؟</div></div></div>
+    <div class="sentence"><div class="num-badge">90</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet je haar eruit</span> na het knippen?</div><div class="arabic">كيف يبدو شعرك بعد القص؟</div></div></div>
+    <div class="sentence"><div class="num-badge">91</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet jouw toekomst eruit</span>?</div><div class="arabic">كيف يبدو مستقبلك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">92</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet mijn toekomst eruit</span> in België?</div><div class="arabic">كيف يبدو مستقبلي في بلجيكا؟</div></div></div>
+    <div class="sentence"><div class="num-badge">93</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de planning eruit</span> voor morgen?</div><div class="arabic">كيف يبدو جدول الغد؟</div></div></div>
+    <div class="sentence"><div class="num-badge">94</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet jouw werkdag eruit</span>?</div><div class="arabic">كيف يبدو يوم عملك؟</div></div></div>
+    <div class="sentence"><div class="num-badge">95</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet een normale werkweek eruit</span>?</div><div class="arabic">كيف يبدو أسبوع العمل العادي؟</div></div></div>
+    <div class="sentence"><div class="num-badge">96</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het nieuwe project eruit</span>?</div><div class="arabic">كيف يبدو المشروع الجديد؟</div></div></div>
+    <div class="sentence"><div class="num-badge">97</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het contract eruit</span>?</div><div class="arabic">كيف يبدو العقد؟</div></div></div>
+    <div class="sentence"><div class="num-badge">98</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet de opleiding eruit</span>?</div><div class="arabic">كيف يبدو البرنامج الدراسي؟</div></div></div>
+    <div class="sentence"><div class="num-badge">99</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet het sollicitatiegesprek eruit</span>?</div><div class="arabic">كيف ستكون المقابلة الوظيفية؟</div></div></div>
+    <div class="sentence"><div class="num-badge">100</div><div class="text-block"><div class="dutch"><span class="hl">Hoe ziet alles eruit</span> als we klaar zijn?</div><div class="arabic">كيف سيبدو كل شيء عندما ننتهي؟</div></div></div>
+  </div>
+
+  <!-- Answers Section -->
+  <div class="answers-section">
+    <h2>💡 أهم الإجابات التي تحفظها مع الأسئلة</h2>
+
+    <table class="answers-table">
+      <thead>
+        <tr><th>الهولندية</th><th>العربية</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nl-cell">Het ziet er goed uit.</td><td class="ar-cell">يبدو جيدًا.</td></tr>
+        <tr><td class="nl-cell">Het ziet er mooi uit.</td><td class="ar-cell">يبدو جميلًا.</td></tr>
+        <tr><td class="nl-cell">Het ziet er slecht uit.</td><td class="ar-cell">يبدو سيئًا.</td></tr>
+        <tr><td class="nl-cell">Het ziet er vreemd uit.</td><td class="ar-cell">يبدو غريبًا.</td></tr>
+        <tr><td class="nl-cell">Het ziet er oud uit.</td><td class="ar-cell">يبدو قديمًا.</td></tr>
+        <tr><td class="nl-cell">Het ziet er nieuw uit.</td><td class="ar-cell">يبدو جديدًا.</td></tr>
+        <tr><td class="nl-cell">Het ziet er duur uit.</td><td class="ar-cell">يبدو غاليًا.</td></tr>
+        <tr><td class="nl-cell">Het ziet er goedkoop uit.</td><td class="ar-cell">يبدو رخيصًا.</td></tr>
+        <tr><td class="nl-cell">Het ziet er ingewikkeld uit.</td><td class="ar-cell">يبدو معقدًا.</td></tr>
+        <tr><td class="nl-cell">Het ziet er eenvoudig uit.</td><td class="ar-cell">يبدو بسيطًا.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="rule-box">
+      <h3>📌 القاعدة الذهبية:</h3>
+      <ul>
+        <li><strong>Hoe ziet … eruit?</strong> — كيف يبدو؟</li>
+        <li><strong>Hoe zien … eruit?</strong> — كيف يبدو شكلهم / كيف تبدو الأشياء؟</li>
+        <li><strong>Het ziet er … uit.</strong> — إنه يبدو …</li>
+      </ul>
+
+      <div class="example-box">
+        <p><span class="nl">Hoe ziet je nieuwe werk eruit?</span> — كيف يبدو عملك الجديد؟</p>
+        <p style="margin-top:8px;"><span class="nl">Het ziet er interessant uit.</span> — يبدو مثيرًا للاهتمام.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    🇳🇱 ١٠٠ جملة هولندية باستخدام Hoe ziet … eruit? — مع الترجمة العربية بالتشكيل الكامل
+  </footer>
+
+</div>
+</body>
+</html>
