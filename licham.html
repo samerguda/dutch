@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>١٠٠ جملة هولندية عن أعضاء الجسم</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Naskh Arabic', 'Amiri', 'Traditional Arabic', serif;
+    background: linear-gradient(135deg, #6b1d2e 0%, #8f2a3f 50%, #b33d52 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    line-height: 1.9;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fffdf7;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+
+  header {
+    background: linear-gradient(135deg, #8f2a3f 0%, #6b1d2e 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  header .subtitle {
+    font-size: 1.05em;
+    opacity: 0.95;
+    background: rgba(255,255,255,0.15);
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 30px;
+    margin-top: 10px;
+  }
+
+  header .flag {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .intro {
+    background: #fdf0f2;
+    padding: 22px 30px;
+    border-bottom: 3px solid #8f2a3f;
+    font-size: 1.02em;
+    color: #444;
+  }
+
+  .section {
+    padding: 25px 30px;
+    border-bottom: 2px dashed #ddd;
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 14px 20px;
+    background: linear-gradient(90deg, #6b1d2e, #b33d52);
+    color: white;
+    border-radius: 12px;
+    font-size: 1.12em;
+    font-weight: 700;
+    flex-wrap: wrap;
+  }
+
+  .section-header .num {
+    background: #ffd54f;
+    color: #6b1d2e;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    direction: ltr;
+    font-weight: 800;
+  }
+
+  .sentence {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border-right: 4px solid transparent;
+    margin-bottom: 3px;
+  }
+
+  .sentence:nth-child(odd) { background: #fdf6f7; }
+  .sentence:nth-child(even) { background: #ffffff; }
+
+  .sentence:hover {
+    background: #fdf0f2;
+    border-right-color: #b33d52;
+    transform: translateX(-4px);
+  }
+
+  .num-badge {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #6b1d2e, #b33d52);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: 700;
+    direction: ltr;
+  }
+
+  .text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .dutch {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 1.12em;
+    color: #6b1d2e;
+    font-weight: 700;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .dutch .hl {
+    color: #c62828;
+    background: #ffebee;
+    padding: 0 6px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+
+  .arabic {
+    font-size: 1.13em;
+    color: #3d2b1f;
+    font-weight: 400;
+  }
+
+  .vocab-section {
+    padding: 30px;
+    background: linear-gradient(135deg, #fdf0f2, #f8e0e4);
+    margin: 20px;
+    border-radius: 15px;
+    border: 2px solid #8f2a3f;
+  }
+
+  .vocab-section h2 {
+    color: #6b1d2e;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+
+  .vocab-table th {
+    background: #6b1d2e;
+    color: white;
+    padding: 13px 12px;
+    font-size: 1em;
+  }
+
+  .vocab-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0d5da;
+    text-align: center;
+    font-size: 1.02em;
+  }
+
+  .vocab-table tr:last-child td { border-bottom: none; }
+  .vocab-table tr:hover td { background: #fdf0f2; }
+
+  .vocab-table .nl-cell {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #c62828;
+    direction: ltr;
+  }
+
+  .vocab-table .ar-cell {
+    color: #3d2b1f;
+  }
+
+  .note-box {
+    padding: 18px 22px;
+    background: #fff8e1;
+    border-radius: 12px;
+    border-right: 5px solid #e6a800;
+    font-size: 1.03em;
+    line-height: 1.9;
+  }
+
+  .note-box strong {
+    color: #6b1d2e;
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: #6b1d2e;
+    color: #e8b8c0;
+    font-size: 0.95em;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    header { padding: 25px 15px; }
+    header h1 { font-size: 1.35em; }
+    .section { padding: 15px; }
+    .sentence { padding: 10px 8px; flex-wrap: wrap; }
+    .num-badge { width: 33px; height: 33px; font-size: 0.72em; }
+    .dutch { font-size: 1em; }
+    .arabic { font-size: 1em; }
+    .section-header { font-size: 1em; padding: 10px 12px; }
+    .vocab-section { padding: 15px; margin: 10px; }
+    .vocab-table td, .vocab-table th { padding: 7px 5px; font-size: 0.85em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="flag">🇳🇱</div>
+    <h1>١٠٠ جملة هولندية عن أعضاء الجسم</h1>
+    <div class="subtitle">مع الترجمة العربية بالتشكيل — جمل يومية مستخدمة في بلجيكا</div>
+  </header>
+
+  <div class="intro">
+    <p>هذه الجمل مصممة للاستخدام اليومي، مع التركيز على الحديث مع الطبيب والصيدلي وفي الحياة اليومية في بلجيكا.</p>
+  </div>
+
+  <!-- Section 1: 1-20 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">1 – 20</span>
+      الرأس والوجه — Het hoofd en het gezicht
+    </div>
+
+    <div class="sentence"><div class="num-badge">1</div><div class="text-block"><div class="dutch">Ik heb <span class="hl">hoofdpijn</span>.</div><div class="arabic">أُعَانِي مِنْ صُدَاعٍ.</div></div></div>
+    <div class="sentence"><div class="num-badge">2</div><div class="text-block"><div class="dutch">Mijn <span class="hl">hoofd</span> doet pijn.</div><div class="arabic">رَأْسِي يُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">3</div><div class="text-block"><div class="dutch">Ik was mijn <span class="hl">gezicht</span>.</div><div class="arabic">أَغْسِلُ وَجْهِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">4</div><div class="text-block"><div class="dutch">Mijn <span class="hl">gezicht</span> is rood.</div><div class="arabic">وَجْهِي أَحْمَرُ.</div></div></div>
+    <div class="sentence"><div class="num-badge">5</div><div class="text-block"><div class="dutch">Ik heb twee <span class="hl">ogen</span>.</div><div class="arabic">لَدَيَّ عَيْنَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">6</div><div class="text-block"><div class="dutch">Mijn <span class="hl">ogen</span> zijn moe.</div><div class="arabic">عَيْنَايَ مُتْعَبَتَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">7</div><div class="text-block"><div class="dutch">Ik kijk met mijn <span class="hl">ogen</span>.</div><div class="arabic">أَنْظُرُ بِعَيْنَيَّ.</div></div></div>
+    <div class="sentence"><div class="num-badge">8</div><div class="text-block"><div class="dutch">Ik heb een grote <span class="hl">neus</span>.</div><div class="arabic">لَدَيَّ أَنْفٌ كَبِيرٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">9</div><div class="text-block"><div class="dutch">Mijn <span class="hl">neus</span> zit verstopt.</div><div class="arabic">أَنْفِي مَسْدُودٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">10</div><div class="text-block"><div class="dutch">Ik ruik met mijn <span class="hl">neus</span>.</div><div class="arabic">أَشُمُّ بِأَنْفِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">11</div><div class="text-block"><div class="dutch">Ik heb twee <span class="hl">oren</span>.</div><div class="arabic">لَدَيَّ أُذُنَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">12</div><div class="text-block"><div class="dutch">Mijn <span class="hl">oren</span> doen pijn.</div><div class="arabic">أُذُنَايَ تُؤْلِمَانِنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">13</div><div class="text-block"><div class="dutch">Ik hoor met mijn <span class="hl">oren</span>.</div><div class="arabic">أَسْمَعُ بِأُذُنَيَّ.</div></div></div>
+    <div class="sentence"><div class="num-badge">14</div><div class="text-block"><div class="dutch">Mijn <span class="hl">mond</span> is open.</div><div class="arabic">فَمِي مَفْتُوحٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">15</div><div class="text-block"><div class="dutch">Doe je <span class="hl">mond</span> open.</div><div class="arabic">اِفْتَحْ فَمَكَ.</div></div></div>
+    <div class="sentence"><div class="num-badge">16</div><div class="text-block"><div class="dutch">Ik heb witte <span class="hl">tanden</span>.</div><div class="arabic">أَسْنَانِي بَيْضَاءُ.</div></div></div>
+    <div class="sentence"><div class="num-badge">17</div><div class="text-block"><div class="dutch">Ik poets mijn <span class="hl">tanden</span>.</div><div class="arabic">أُنَظِّفُ أَسْنَانِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">18</div><div class="text-block"><div class="dutch">Mijn <span class="hl">tong</span> is rood.</div><div class="arabic">لِسَانِي أَحْمَرُ.</div></div></div>
+    <div class="sentence"><div class="num-badge">19</div><div class="text-block"><div class="dutch">Ik proef het eten met mijn <span class="hl">tong</span>.</div><div class="arabic">أَتَذَوَّقُ الطَّعَامَ بِلِسَانِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">20</div><div class="text-block"><div class="dutch">Ik heb dikke <span class="hl">lippen</span>.</div><div class="arabic">شَفَتَايَ غَلِيظَتَانِ.</div></div></div>
+  </div>
+
+  <!-- Section 2: 21-40 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">21 – 40</span>
+      الشعر والرقبة والجذع — Haar, nek en romp
+    </div>
+
+    <div class="sentence"><div class="num-badge">21</div><div class="text-block"><div class="dutch">Mijn <span class="hl">haar</span> is zwart.</div><div class="arabic">شَعْرِي أَسْوَدُ.</div></div></div>
+    <div class="sentence"><div class="num-badge">22</div><div class="text-block"><div class="dutch">Ik was mijn <span class="hl">haar</span>.</div><div class="arabic">أَغْسِلُ شَعْرِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">23</div><div class="text-block"><div class="dutch">Mijn <span class="hl">haar</span> is kort.</div><div class="arabic">شَعْرِي قَصِيرٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">24</div><div class="text-block"><div class="dutch">Ik kam mijn <span class="hl">haar</span>.</div><div class="arabic">أُمَشِّطُ شَعْرِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">25</div><div class="text-block"><div class="dutch">Mijn <span class="hl">voorhoofd</span> is groot.</div><div class="arabic">جَبِينِي كَبِيرٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">26</div><div class="text-block"><div class="dutch">Ik heb dikke <span class="hl">wenkbrauwen</span>.</div><div class="arabic">لَدَيَّ حَوَاجِبُ كَثِيفَةٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">27</div><div class="text-block"><div class="dutch">Mijn <span class="hl">wimpers</span> zijn lang.</div><div class="arabic">رُمُوشِي طَوِيلَةٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">28</div><div class="text-block"><div class="dutch">Ik heb een <span class="hl">baard</span>.</div><div class="arabic">لَدَيَّ لِحْيَةٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">29</div><div class="text-block"><div class="dutch">Ik scheer mijn <span class="hl">baard</span>.</div><div class="arabic">أَحْلِقُ لِحْيَتِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">30</div><div class="text-block"><div class="dutch">Mijn <span class="hl">kin</span> doet pijn.</div><div class="arabic">ذَقْنِي يُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">31</div><div class="text-block"><div class="dutch">Mijn <span class="hl">nek</span> is stijf.</div><div class="arabic">رَقَبَتِي مُتَيَبِّسَةٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">32</div><div class="text-block"><div class="dutch">Ik heb <span class="hl">nekpijn</span>.</div><div class="arabic">أُعَانِي مِنْ أَلَمٍ فِي الرَّقَبَةِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">33</div><div class="text-block"><div class="dutch">Mijn <span class="hl">keel</span> doet pijn.</div><div class="arabic">حَلْقِي يُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">34</div><div class="text-block"><div class="dutch">Ik heb <span class="hl">keelpijn</span>.</div><div class="arabic">أُعَانِي مِنْ أَلَمِ الْحَلْقِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">35</div><div class="text-block"><div class="dutch">Mijn <span class="hl">schouders</span> zijn breed.</div><div class="arabic">كَتِفَايَ عَرِيضَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">36</div><div class="text-block"><div class="dutch">Mijn <span class="hl">rug</span> doet pijn.</div><div class="arabic">ظَهْرِي يُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">37</div><div class="text-block"><div class="dutch">Ik heb <span class="hl">rugpijn</span>.</div><div class="arabic">أُعَانِي مِنْ أَلَمِ الظَّهْرِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">38</div><div class="text-block"><div class="dutch">Mijn <span class="hl">borst</span> doet pijn.</div><div class="arabic">صَدْرِي يُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">39</div><div class="text-block"><div class="dutch">Ik adem met mijn <span class="hl">longen</span>.</div><div class="arabic">أَتَنَفَّسُ بِرِئَتَيَّ.</div></div></div>
+    <div class="sentence"><div class="num-badge">40</div><div class="text-block"><div class="dutch">Mijn <span class="hl">buik</span> is vol.</div><div class="arabic">بَطْنِي مُمْتَلِئٌ.</div></div></div>
+  </div>
+
+  <!-- Section 3: 41-60 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">41 – 60</span>
+      الذراعان واليدان — De armen en de handen
+    </div>
+
+    <div class="sentence"><div class="num-badge">41</div><div class="text-block"><div class="dutch">Ik heb twee <span class="hl">armen</span>.</div><div class="arabic">لَدَيَّ ذِرَاعَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">42</div><div class="text-block"><div class="dutch">Mijn <span class="hl">arm</span> doet pijn.</div><div class="arabic">ذِرَاعِي تُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">43</div><div class="text-block"><div class="dutch">Ik til mijn <span class="hl">arm</span> op.</div><div class="arabic">أَرْفَعُ ذِرَاعِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">44</div><div class="text-block"><div class="dutch">Mijn <span class="hl">elleboog</span> doet pijn.</div><div class="arabic">مِرْفَقِي يُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">45</div><div class="text-block"><div class="dutch">Ik buig mijn <span class="hl">elleboog</span>.</div><div class="arabic">أَثْنِي مِرْفَقِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">46</div><div class="text-block"><div class="dutch">Ik heb twee <span class="hl">handen</span>.</div><div class="arabic">لَدَيَّ يَدَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">47</div><div class="text-block"><div class="dutch">Ik was mijn <span class="hl">handen</span>.</div><div class="arabic">أَغْسِلُ يَدَيَّ.</div></div></div>
+    <div class="sentence"><div class="num-badge">48</div><div class="text-block"><div class="dutch">Mijn <span class="hl">handen</span> zijn koud.</div><div class="arabic">يَدَايَ بَارِدَتَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">49</div><div class="text-block"><div class="dutch">Geef me je <span class="hl">hand</span>.</div><div class="arabic">أَعْطِنِي يَدَكَ.</div></div></div>
+    <div class="sentence"><div class="num-badge">50</div><div class="text-block"><div class="dutch">Ik schrijf met mijn <span class="hl">rechterhand</span>.</div><div class="arabic">أَكْتُبُ بِيَدِي الْيُمْنَى.</div></div></div>
+    <div class="sentence"><div class="num-badge">51</div><div class="text-block"><div class="dutch">Mijn <span class="hl">linkerhand</span> is sterk.</div><div class="arabic">يَدِي الْيُسْرَى قَوِيَّةٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">52</div><div class="text-block"><div class="dutch">Ik heb tien <span class="hl">vingers</span>.</div><div class="arabic">لَدَيَّ عَشَرَةُ أَصَابِعَ.</div></div></div>
+    <div class="sentence"><div class="num-badge">53</div><div class="text-block"><div class="dutch">Mijn <span class="hl">vingers</span> zijn lang.</div><div class="arabic">أَصَابِعِي طَوِيلَةٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">54</div><div class="text-block"><div class="dutch">Ik knip mijn <span class="hl">nagels</span>.</div><div class="arabic">أُقَلِّمُ أَظَافِرِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">55</div><div class="text-block"><div class="dutch">Mijn <span class="hl">duim</span> doet pijn.</div><div class="arabic">إِبْهَامِي يُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">56</div><div class="text-block"><div class="dutch">Ik wijs met mijn <span class="hl">vinger</span>.</div><div class="arabic">أُشِيرُ بِإِصْبَعِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">57</div><div class="text-block"><div class="dutch">Ik maak een <span class="hl">vuist</span>.</div><div class="arabic">أَقْبِضُ يَدِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">58</div><div class="text-block"><div class="dutch">Ik klap in mijn <span class="hl">handen</span>.</div><div class="arabic">أُصَفِّقُ بِيَدَيَّ.</div></div></div>
+    <div class="sentence"><div class="num-badge">59</div><div class="text-block"><div class="dutch">Mijn <span class="hl">pols</span> is dik.</div><div class="arabic">مِعْصَمِي مُتَوَرِّمٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">60</div><div class="text-block"><div class="dutch">Ik draag een horloge om mijn <span class="hl">pols</span>.</div><div class="arabic">أَرْتَدِي سَاعَةً فِي مِعْصَمِي.</div></div></div>
+  </div>
+
+  <!-- Section 4: 61-80 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">61 – 80</span>
+      الساقان والقدمان — De benen en de voeten
+    </div>
+
+    <div class="sentence"><div class="num-badge">61</div><div class="text-block"><div class="dutch">Ik heb twee <span class="hl">benen</span>.</div><div class="arabic">لَدَيَّ سَاقَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">62</div><div class="text-block"><div class="dutch">Mijn <span class="hl">been</span> doet pijn.</div><div class="arabic">سَاقِي تُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">63</div><div class="text-block"><div class="dutch">Ik loop met mijn <span class="hl">benen</span>.</div><div class="arabic">أَمْشِي بِسَاقَيَّ.</div></div></div>
+    <div class="sentence"><div class="num-badge">64</div><div class="text-block"><div class="dutch">Mijn <span class="hl">knie</span> doet pijn.</div><div class="arabic">رُكْبَتِي تُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">65</div><div class="text-block"><div class="dutch">Ik buig mijn <span class="hl">knie</span>.</div><div class="arabic">أَثْنِي رُكْبَتِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">66</div><div class="text-block"><div class="dutch">Mijn <span class="hl">benen</span> zijn moe.</div><div class="arabic">سَاقَايَ مُتْعَبَتَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">67</div><div class="text-block"><div class="dutch">Ik heb sterke <span class="hl">spieren</span>.</div><div class="arabic">لَدَيَّ عَضَلَاتٌ قَوِيَّةٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">68</div><div class="text-block"><div class="dutch">Mijn <span class="hl">dijen</span> zijn gespierd.</div><div class="arabic">فَخِذَايَ عَضَلِيَّانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">69</div><div class="text-block"><div class="dutch">Mijn <span class="hl">kuiten</span> doen pijn.</div><div class="arabic">رَبْلَتَا سَاقَيَّ تُؤْلِمَانِنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">70</div><div class="text-block"><div class="dutch">Ik heb twee <span class="hl">voeten</span>.</div><div class="arabic">لَدَيَّ قَدَمَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">71</div><div class="text-block"><div class="dutch">Mijn <span class="hl">voeten</span> zijn koud.</div><div class="arabic">قَدَمَايَ بَارِدَتَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">72</div><div class="text-block"><div class="dutch">Ik was mijn <span class="hl">voeten</span>.</div><div class="arabic">أَغْسِلُ قَدَمَيَّ.</div></div></div>
+    <div class="sentence"><div class="num-badge">73</div><div class="text-block"><div class="dutch">Mijn <span class="hl">hiel</span> doet pijn.</div><div class="arabic">كَعْبِي يُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">74</div><div class="text-block"><div class="dutch">Ik heb pijn aan mijn <span class="hl">tenen</span>.</div><div class="arabic">أُعَانِي مِنْ أَلَمٍ فِي أَصَابِعِ قَدَمَيَّ.</div></div></div>
+    <div class="sentence"><div class="num-badge">75</div><div class="text-block"><div class="dutch">Ik draag schoenen aan mijn <span class="hl">voeten</span>.</div><div class="arabic">أَرْتَدِي حِذَاءً فِي قَدَمَيَّ.</div></div></div>
+    <div class="sentence"><div class="num-badge">76</div><div class="text-block"><div class="dutch">Mijn <span class="hl">enkel</span> is gezwollen.</div><div class="arabic">كَاحِلِي مُتَوَرِّمٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">77</div><div class="text-block"><div class="dutch">Ik kan niet goed <span class="hl">lopen</span>.</div><div class="arabic">لَا أَسْتَطِيعُ الْمَشْيَ جَيِّدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">78</div><div class="text-block"><div class="dutch">Ik sta op één <span class="hl">been</span>.</div><div class="arabic">أَقِفُ عَلَى سَاقٍ وَاحِدَةٍ.</div></div></div>
+    <div class="sentence"><div class="num-badge">79</div><div class="text-block"><div class="dutch">Ik strek mijn <span class="hl">benen</span>.</div><div class="arabic">أَمُدُّ سَاقَيَّ.</div></div></div>
+    <div class="sentence"><div class="num-badge">80</div><div class="text-block"><div class="dutch">Ik zit met mijn <span class="hl">benen</span> gekruist.</div><div class="arabic">أَجْلِسُ وَسَاقَايَ مُتَقَاطِعَتَانِ.</div></div></div>
+  </div>
+
+  <!-- Section 5: 81-100 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">81 – 100</span>
+      الأعضاء الداخلية والصحة — Inwendige organen en gezondheid
+    </div>
+
+    <div class="sentence"><div class="num-badge">81</div><div class="text-block"><div class="dutch">Mijn <span class="hl">hart</span> klopt snel.</div><div class="arabic">قَلْبِي يَنْبِضُ بِسُرْعَةٍ.</div></div></div>
+    <div class="sentence"><div class="num-badge">82</div><div class="text-block"><div class="dutch">Mijn <span class="hl">hart</span> is gezond.</div><div class="arabic">قَلْبِي سَلِيمٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">83</div><div class="text-block"><div class="dutch">Mijn <span class="hl">longen</span> hebben zuurstof nodig.</div><div class="arabic">رِئَتَايَ تَحْتَاجَانِ إِلَى الْأُكْسِجِينِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">84</div><div class="text-block"><div class="dutch">Mijn <span class="hl">maag</span> doet pijn.</div><div class="arabic">مَعِدَتِي تُؤْلِمُنِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">85</div><div class="text-block"><div class="dutch">Ik heb <span class="hl">maagpijn</span>.</div><div class="arabic">أُعَانِي مِنْ أَلَمِ الْمَعِدَةِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">86</div><div class="text-block"><div class="dutch">Mijn <span class="hl">nieren</span> zijn belangrijk.</div><div class="arabic">كُلْيَتَايَ مُهِمَّتَانِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">87</div><div class="text-block"><div class="dutch">Mijn <span class="hl">lever</span> werkt goed.</div><div class="arabic">كَبِدِي يَعْمَلُ بِشَكْلٍ جَيِّدٍ.</div></div></div>
+    <div class="sentence"><div class="num-badge">88</div><div class="text-block"><div class="dutch">Mijn <span class="hl">hersenen</span> hebben rust nodig.</div><div class="arabic">دِمَاغِي يَحْتَاجُ إِلَى الرَّاحَةِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">89</div><div class="text-block"><div class="dutch">Ik denk met mijn <span class="hl">hersenen</span>.</div><div class="arabic">أُفَكِّرُ بِدِمَاغِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">90</div><div class="text-block"><div class="dutch">Mijn <span class="hl">bloed</span> is rood.</div><div class="arabic">دَمِي أَحْمَرُ.</div></div></div>
+    <div class="sentence"><div class="num-badge">91</div><div class="text-block"><div class="dutch">Mijn <span class="hl">botten</span> zijn sterk.</div><div class="arabic">عِظَامِي قَوِيَّةٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">92</div><div class="text-block"><div class="dutch">Ik heb pijn in mijn <span class="hl">gewrichten</span>.</div><div class="arabic">أُعَانِي مِنْ أَلَمٍ فِي مَفَاصِلِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">93</div><div class="text-block"><div class="dutch">Mijn <span class="hl">huid</span> is droog.</div><div class="arabic">بَشَرَتِي جَافَّةٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">94</div><div class="text-block"><div class="dutch">Ik heb een <span class="hl">wond</span> op mijn hand.</div><div class="arabic">لَدَيَّ جُرْحٌ فِي يَدِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">95</div><div class="text-block"><div class="dutch">Mijn <span class="hl">lichaam</span> is moe.</div><div class="arabic">جِسْمِي مُتْعَبٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">96</div><div class="text-block"><div class="dutch">Ik heb <span class="hl">koorts</span>.</div><div class="arabic">لَدَيَّ حُمَّى.</div></div></div>
+    <div class="sentence"><div class="num-badge">97</div><div class="text-block"><div class="dutch">Ik voel me <span class="hl">ziek</span>.</div><div class="arabic">أَشْعُرُ بِأَنَّنِي مَرِيضٌ.</div></div></div>
+    <div class="sentence"><div class="num-badge">98</div><div class="text-block"><div class="dutch">Ik moet naar de <span class="hl">dokter</span>.</div><div class="arabic">يَجِبُ أَنْ أَذْهَبَ إِلَى الطَّبِيبِ.</div></div></div>
+    <div class="sentence"><div class="num-badge">99</div><div class="text-block"><div class="dutch">De dokter onderzoekt mijn <span class="hl">lichaam</span>.</div><div class="arabic">يَفْحَصُ الطَّبِيبُ جِسْمِي.</div></div></div>
+    <div class="sentence"><div class="num-badge">100</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">gezond</span> blijven.</div><div class="arabic">أُرِيدُ أَنْ أَبْقَى بِصِحَّةٍ جَيِّدَةٍ.</div></div></div>
+  </div>
+
+  <!-- Vocabulary Section -->
+  <div class="vocab-section">
+    <h2>📋 أهم مفردات أعضاء الجسم للحفظ</h2>
+
+    <table class="vocab-table">
+      <thead>
+        <tr><th>Nederlands</th><th>العربية</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nl-cell">Het hoofd</td><td class="ar-cell">الرَّأْس</td></tr>
+        <tr><td class="nl-cell">Het gezicht</td><td class="ar-cell">الْوَجْه</td></tr>
+        <tr><td class="nl-cell">Het oog</td><td class="ar-cell">الْعَيْن</td></tr>
+        <tr><td class="nl-cell">Het oor</td><td class="ar-cell">الْأُذُن</td></tr>
+        <tr><td class="nl-cell">De neus</td><td class="ar-cell">الْأَنْف</td></tr>
+        <tr><td class="nl-cell">De mond</td><td class="ar-cell">الْفَم</td></tr>
+        <tr><td class="nl-cell">De tand</td><td class="ar-cell">السِّنّ</td></tr>
+        <tr><td class="nl-cell">De tong</td><td class="ar-cell">اللِّسَان</td></tr>
+        <tr><td class="nl-cell">De nek</td><td class="ar-cell">الرَّقَبَة</td></tr>
+        <tr><td class="nl-cell">De schouder</td><td class="ar-cell">الْكَتِف</td></tr>
+        <tr><td class="nl-cell">De rug</td><td class="ar-cell">الظَّهْر</td></tr>
+        <tr><td class="nl-cell">De borst</td><td class="ar-cell">الصَّدْر</td></tr>
+        <tr><td class="nl-cell">De buik</td><td class="ar-cell">الْبَطْن</td></tr>
+        <tr><td class="nl-cell">De arm</td><td class="ar-cell">الذِّرَاع</td></tr>
+        <tr><td class="nl-cell">De hand</td><td class="ar-cell">الْيَد</td></tr>
+        <tr><td class="nl-cell">De vinger</td><td class="ar-cell">الْإِصْبَع</td></tr>
+        <tr><td class="nl-cell">Het been</td><td class="ar-cell">السَّاق</td></tr>
+        <tr><td class="nl-cell">De knie</td><td class="ar-cell">الرُّكْبَة</td></tr>
+        <tr><td class="nl-cell">De voet</td><td class="ar-cell">الْقَدَم</td></tr>
+        <tr><td class="nl-cell">De teen</td><td class="ar-cell">إِصْبَعُ الْقَدَم</td></tr>
+        <tr><td class="nl-cell">Het hart</td><td class="ar-cell">الْقَلْب</td></tr>
+        <tr><td class="nl-cell">De long</td><td class="ar-cell">الرِّئَة</td></tr>
+        <tr><td class="nl-cell">De maag</td><td class="ar-cell">الْمَعِدَة</td></tr>
+        <tr><td class="nl-cell">De hersenen</td><td class="ar-cell">الدِّمَاغ</td></tr>
+        <tr><td class="nl-cell">De huid</td><td class="ar-cell">الْجِلْد</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      📌 <strong>ملاحظة مهمة للهولندية في بلجيكا:</strong> احفظ أسماء الأعضاء مع أداة التعريف <strong>de / het</strong>؛ لأنك ستحتاجها في الحديث مع الطبيب والصيدلي وفي الحياة اليومية.
+    </div>
+  </div>
+
+  <footer>
+    🇳🇱 ١٠٠ جملة هولندية عن أعضاء الجسم — مع الترجمة العربية بالتشكيل الكامل
+  </footer>
+
+</div>
+</body>
+</html>
