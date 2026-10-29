@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>١٠٠ جملة هولندية عن النفس — mezelf, jezelf, zichzelf, onszelf</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Naskh Arabic', 'Amiri', 'Traditional Arabic', serif;
+    background: linear-gradient(135deg, #2b1a4a 0%, #3d2669 50%, #5a3d8a 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    line-height: 1.9;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fffdf7;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+
+  header {
+    background: linear-gradient(135deg, #6a4c93 0%, #4a2f78 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2.1em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  header .subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+    background: rgba(255,255,255,0.15);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    margin-top: 10px;
+  }
+
+  header .flag {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .intro {
+    background: #f3eefc;
+    padding: 25px 30px;
+    border-bottom: 3px solid #6a4c93;
+    font-size: 1.05em;
+    color: #444;
+  }
+
+  .intro p { margin-bottom: 12px; }
+
+  .pronouns-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-top: 15px;
+  }
+
+  .pronouns-table th {
+    background: #4a2f78;
+    color: white;
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  .pronouns-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e0d5f0;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  .pronouns-table tr:last-child td { border-bottom: none; }
+  .pronouns-table tr:hover td { background: #f3eefc; }
+
+  .pronouns-table .nl-cell {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #4a2f78;
+    direction: ltr;
+  }
+
+  .note-inline {
+    background: #fff3e0;
+    border-right: 5px solid #ff9800;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 1.02em;
+  }
+
+  .section {
+    padding: 25px 30px;
+    border-bottom: 2px dashed #ddd;
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 14px 20px;
+    background: linear-gradient(90deg, #4a2f78, #6a4c93);
+    color: white;
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: 700;
+    flex-wrap: wrap;
+  }
+
+  .section-header .num {
+    background: #ffb703;
+    color: #4a2f78;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    direction: ltr;
+    font-weight: 800;
+  }
+
+  .sentence {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border-right: 4px solid transparent;
+  }
+
+  .sentence:nth-child(odd) { background: #faf8ff; }
+  .sentence:nth-child(even) { background: #ffffff; }
+
+  .sentence:hover {
+    background: #f3eefc;
+    border-right-color: #6a4c93;
+    transform: translateX(-4px);
+  }
+
+  .num-badge {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #4a2f78, #6a4c93);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: 700;
+    direction: ltr;
+  }
+
+  .text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .dutch {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 1.12em;
+    color: #2d1b4e;
+    font-weight: 700;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .dutch .hl {
+    color: #c2185b;
+    background: #fce4ec;
+    padding: 0 6px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+
+  .arabic {
+    font-size: 1.13em;
+    color: #3d2b1f;
+    font-weight: 400;
+  }
+
+  .rule-section {
+    padding: 30px;
+    background: linear-gradient(135deg, #f3eefc, #e8ddf7);
+    margin: 20px;
+    border-radius: 15px;
+    border: 2px solid #6a4c93;
+  }
+
+  .rule-section h2 {
+    color: #4a2f78;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .rule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+
+  .rule-table th {
+    background: #4a2f78;
+    color: white;
+    padding: 13px 12px;
+    font-size: 1em;
+  }
+
+  .rule-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e0d5f0;
+    text-align: center;
+    font-size: 1.05em;
+  }
+
+  .rule-table tr:last-child td { border-bottom: none; }
+  .rule-table tr:hover td { background: #f3eefc; }
+
+  .rule-table .nl-cell {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #c2185b;
+    direction: ltr;
+  }
+
+  .difference-box {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border-right: 5px solid #c2185b;
+  }
+
+  .difference-box h3 {
+    color: #c2185b;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+
+  .difference-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .difference-box li {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: #faf8ff;
+    border-radius: 8px;
+    font-size: 1.05em;
+  }
+
+  .difference-box li strong {
+    color: #6a4c93;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    direction: ltr;
+    display: inline-block;
+  }
+
+  .difference-box li .ar-part {
+    color: #3d2b1f;
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: #2b1a4a;
+    color: #b8a5d8;
+    font-size: 0.95em;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    header { padding: 25px 15px; }
+    header h1 { font-size: 1.45em; }
+    .section { padding: 15px; }
+    .sentence { padding: 10px 8px; flex-wrap: wrap; }
+    .num-badge { width: 33px; height: 33px; font-size: 0.72em; }
+    .dutch { font-size: 1em; }
+    .arabic { font-size: 1em; }
+    .section-header { font-size: 1em; padding: 10px 12px; }
+    .rule-section { padding: 15px; margin: 10px; }
+    .pronouns-table td, .pronouns-table th,
+    .rule-table td, .rule-table th { padding: 8px 5px; font-size: 0.85em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="flag">🇳🇱</div>
+    <h1>١٠٠ جملة هولندية عن النفس</h1>
+    <div class="subtitle">mezelf · jezelf · zichzelf · onszelf · uzelf</div>
+  </header>
+
+  <div class="intro">
+    <p>في الهولندي بنستخدم كلمة <strong>zelf</strong> بمعنى «نفس»، لكن الضمير اللي قبلها بيتغيّر حسب الشخص.</p>
+
+    <table class="pronouns-table">
+      <thead>
+        <tr><th>بالعربي</th><th>بالهولندي</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>نفسي / أنا نفسي</td><td class="nl-cell">mezelf / mijzelf</td></tr>
+        <tr><td>نفسك (أنتَ)</td><td class="nl-cell">jezelf</td></tr>
+        <tr><td>نفسه</td><td class="nl-cell">zichzelf</td></tr>
+        <tr><td>نفسها</td><td class="nl-cell">zichzelf</td></tr>
+        <tr><td>أنفسنا</td><td class="nl-cell">onszelf</td></tr>
+        <tr><td>أنفسكم</td><td class="nl-cell">jezelf / uzelf</td></tr>
+        <tr><td>أنفسهم</td><td class="nl-cell">zichzelf</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note-inline">
+      📌 <strong>ملاحظة:</strong> <span dir="ltr" style="font-family:'Segoe UI',Arial;font-weight:700;color:#4a2f78;">mezelf, jezelf, zichzelf, onszelf</span> هي الأكثر استخدامًا في الكلام اليومي. أما <strong>zelf</strong> وحدها فغالبًا معناها «بنفسه / بنفسه شخصيًا» حسب السياق.
+    </div>
+  </div>
+
+  <!-- Section 1: Mezelf -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">1 – 20</span>
+      نفسي — <span dir="ltr" style="font-family:'Segoe UI',Arial;">Mezelf</span>
+    </div>
+
+    <div class="sentence"><div class="num-badge">1</div><div class="text-block"><div class="dutch">Ik moet <span class="hl">mezelf</span> helpen.</div><div class="arabic">يجب أن أساعد نفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">2</div><div class="text-block"><div class="dutch">Ik moet voor <span class="hl">mezelf</span> zorgen.</div><div class="arabic">يجب أن أعتني بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">3</div><div class="text-block"><div class="dutch">Ik stel <span class="hl">mezelf</span> voor.</div><div class="arabic">أُعرِّف بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">4</div><div class="text-block"><div class="dutch">Ik ken <span class="hl">mezelf</span> goed.</div><div class="arabic">أنا أعرف نفسي جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">5</div><div class="text-block"><div class="dutch">Ik geloof in <span class="hl">mezelf</span>.</div><div class="arabic">أنا أؤمن بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">6</div><div class="text-block"><div class="dutch">Ik ben trots op <span class="hl">mezelf</span>.</div><div class="arabic">أنا فخور بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">7</div><div class="text-block"><div class="dutch">Ik moet <span class="hl">mezelf</span> verbeteren.</div><div class="arabic">يجب أن أُحسِّن نفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">8</div><div class="text-block"><div class="dutch">Ik geef <span class="hl">mezelf</span> een kans.</div><div class="arabic">أعطي نفسي فرصة.</div></div></div>
+    <div class="sentence"><div class="num-badge">9</div><div class="text-block"><div class="dutch">Ik vraag <span class="hl">mezelf</span> af waarom.</div><div class="arabic">أسأل نفسي لماذا.</div></div></div>
+    <div class="sentence"><div class="num-badge">10</div><div class="text-block"><div class="dutch">Ik zeg tegen <span class="hl">mezelf</span> dat het goed komt.</div><div class="arabic">أقول لنفسي إن الأمور ستتحسن.</div></div></div>
+    <div class="sentence"><div class="num-badge">11</div><div class="text-block"><div class="dutch">Ik moet <span class="hl">mezelf</span> rustig houden.</div><div class="arabic">يجب أن أحافظ على هدوئي.</div></div></div>
+    <div class="sentence"><div class="num-badge">12</div><div class="text-block"><div class="dutch">Ik heb <span class="hl">mezelf</span> vergist.</div><div class="arabic">لقد أخطأتُ.</div></div></div>
+    <div class="sentence"><div class="num-badge">13</div><div class="text-block"><div class="dutch">Ik heb <span class="hl">mezelf</span> gewassen.</div><div class="arabic">لقد اغتسلت.</div></div></div>
+    <div class="sentence"><div class="num-badge">14</div><div class="text-block"><div class="dutch">Ik heb <span class="hl">mezelf</span> iets beloofd.</div><div class="arabic">لقد وعدت نفسي بشيء.</div></div></div>
+    <div class="sentence"><div class="num-badge">15</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">mezelf</span> ontwikkelen.</div><div class="arabic">أريد أن أُطوِّر نفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">16</div><div class="text-block"><div class="dutch">Ik dwing <span class="hl">mezelf</span> om te oefenen.</div><div class="arabic">أُجبر نفسي على التدرُّب.</div></div></div>
+    <div class="sentence"><div class="num-badge">17</div><div class="text-block"><div class="dutch">Ik moet <span class="hl">mezelf</span> concentreren.</div><div class="arabic">يجب أن أركِّز.</div></div></div>
+    <div class="sentence"><div class="num-badge">18</div><div class="text-block"><div class="dutch">Ik voel me goed over <span class="hl">mezelf</span>.</div><div class="arabic">أشعر بالرضا عن نفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">19</div><div class="text-block"><div class="dutch">Ik heb <span class="hl">mezelf</span> voorgesteld aan de buren.</div><div class="arabic">عرَّفت نفسي على الجيران.</div></div></div>
+    <div class="sentence"><div class="num-badge">20</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">mezelf</span> beter leren kennen.</div><div class="arabic">أريد أن أتعرف على نفسي بشكل أفضل.</div></div></div>
+  </div>
+
+  <!-- Section 2: Jezelf -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">21 – 40</span>
+      نفسك — <span dir="ltr" style="font-family:'Segoe UI',Arial;">Jezelf</span>
+    </div>
+
+    <div class="sentence"><div class="num-badge">21</div><div class="text-block"><div class="dutch">Je moet <span class="hl">jezelf</span> helpen.</div><div class="arabic">يجب أن تساعد نفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">22</div><div class="text-block"><div class="dutch">Je moet voor <span class="hl">jezelf</span> zorgen.</div><div class="arabic">يجب أن تعتني بنفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">23</div><div class="text-block"><div class="dutch">Je kent <span class="hl">jezelf</span> goed.</div><div class="arabic">أنت تعرف نفسك جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">24</div><div class="text-block"><div class="dutch">Je moet in <span class="hl">jezelf</span> geloven.</div><div class="arabic">يجب أن تؤمن بنفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">25</div><div class="text-block"><div class="dutch">Je bent trots op <span class="hl">jezelf</span>.</div><div class="arabic">أنت فخور بنفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">26</div><div class="text-block"><div class="dutch">Je moet <span class="hl">jezelf</span> verbeteren.</div><div class="arabic">يجب أن تُحسِّن نفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">27</div><div class="text-block"><div class="dutch">Je geeft <span class="hl">jezelf</span> te weinig tijd.</div><div class="arabic">أنت لا تمنح نفسك وقتًا كافيًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">28</div><div class="text-block"><div class="dutch">Je moet <span class="hl">jezelf</span> voorstellen.</div><div class="arabic">يجب أن تُعرِّف بنفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">29</div><div class="text-block"><div class="dutch">Je hebt <span class="hl">jezelf</span> pijn gedaan.</div><div class="arabic">لقد آذيت نفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">30</div><div class="text-block"><div class="dutch">Je moet <span class="hl">jezelf</span> ontspannen.</div><div class="arabic">يجب أن تسترخي.</div></div></div>
+    <div class="sentence"><div class="num-badge">31</div><div class="text-block"><div class="dutch">Je moet <span class="hl">jezelf</span> niet vergelijken met anderen.</div><div class="arabic">يجب ألا تقارن نفسك بالآخرين.</div></div></div>
+    <div class="sentence"><div class="num-badge">32</div><div class="text-block"><div class="dutch">Je maakt het <span class="hl">jezelf</span> moeilijk.</div><div class="arabic">أنت تجعل الأمور صعبة على نفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">33</div><div class="text-block"><div class="dutch">Je moet <span class="hl">jezelf</span> beschermen.</div><div class="arabic">يجب أن تحمي نفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">34</div><div class="text-block"><div class="dutch">Je hebt <span class="hl">jezelf</span> goed voorbereid.</div><div class="arabic">لقد أعددت نفسك جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">35</div><div class="text-block"><div class="dutch">Je moet <span class="hl">jezelf</span> vertrouwen.</div><div class="arabic">يجب أن تثق بنفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">36</div><div class="text-block"><div class="dutch">Je kunt <span class="hl">jezelf</span> redden.</div><div class="arabic">يمكنك إنقاذ نفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">37</div><div class="text-block"><div class="dutch">Je moet <span class="hl">jezelf</span> een kans geven.</div><div class="arabic">يجب أن تمنح نفسك فرصة.</div></div></div>
+    <div class="sentence"><div class="num-badge">38</div><div class="text-block"><div class="dutch">Je moet <span class="hl">jezelf</span> niet onderschatten.</div><div class="arabic">يجب ألا تقلل من قدر نفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">39</div><div class="text-block"><div class="dutch">Je hebt <span class="hl">jezelf</span> voorgesteld aan de manager.</div><div class="arabic">عرَّفت نفسك على المدير.</div></div></div>
+    <div class="sentence"><div class="num-badge">40</div><div class="text-block"><div class="dutch">Je moet <span class="hl">jezelf</span> blijven.</div><div class="arabic">يجب أن تبقى على طبيعتك.</div></div></div>
+  </div>
+
+  <!-- Section 3: Zichzelf -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">41 – 60</span>
+      نفسه / نفسها — <span dir="ltr" style="font-family:'Segoe UI',Arial;">Zichzelf</span>
+    </div>
+
+    <div class="sentence"><div class="num-badge">41</div><div class="text-block"><div class="dutch">Hij wast <span class="hl">zichzelf</span>.</div><div class="arabic">هو يغسل نفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">42</div><div class="text-block"><div class="dutch">Zij wast <span class="hl">zichzelf</span>.</div><div class="arabic">هي تغسل نفسها.</div></div></div>
+    <div class="sentence"><div class="num-badge">43</div><div class="text-block"><div class="dutch">Hij kent <span class="hl">zichzelf</span> goed.</div><div class="arabic">هو يعرف نفسه جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">44</div><div class="text-block"><div class="dutch">Zij gelooft in <span class="hl">zichzelf</span>.</div><div class="arabic">هي تؤمن بنفسها.</div></div></div>
+    <div class="sentence"><div class="num-badge">45</div><div class="text-block"><div class="dutch">Hij heeft <span class="hl">zichzelf</span> pijn gedaan.</div><div class="arabic">لقد آذى نفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">46</div><div class="text-block"><div class="dutch">Zij heeft <span class="hl">zichzelf</span> voorgesteld.</div><div class="arabic">لقد عرَّفت بنفسها.</div></div></div>
+    <div class="sentence"><div class="num-badge">47</div><div class="text-block"><div class="dutch">Hij moet voor <span class="hl">zichzelf</span> zorgen.</div><div class="arabic">يجب أن يعتني بنفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">48</div><div class="text-block"><div class="dutch">Zij moet voor <span class="hl">zichzelf</span> zorgen.</div><div class="arabic">يجب أن تعتني بنفسها.</div></div></div>
+    <div class="sentence"><div class="num-badge">49</div><div class="text-block"><div class="dutch">Hij heeft <span class="hl">zichzelf</span> vergist.</div><div class="arabic">لقد أخطأ.</div></div></div>
+    <div class="sentence"><div class="num-badge">50</div><div class="text-block"><div class="dutch">Zij heeft <span class="hl">zichzelf</span> vergist.</div><div class="arabic">لقد أخطأت.</div></div></div>
+    <div class="sentence"><div class="num-badge">51</div><div class="text-block"><div class="dutch">Hij praat tegen <span class="hl">zichzelf</span>.</div><div class="arabic">هو يتحدث مع نفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">52</div><div class="text-block"><div class="dutch">Zij praat tegen <span class="hl">zichzelf</span>.</div><div class="arabic">هي تتحدث مع نفسها.</div></div></div>
+    <div class="sentence"><div class="num-badge">53</div><div class="text-block"><div class="dutch">Hij heeft <span class="hl">zichzelf</span> iets beloofd.</div><div class="arabic">لقد وعد نفسه بشيء.</div></div></div>
+    <div class="sentence"><div class="num-badge">54</div><div class="text-block"><div class="dutch">Zij heeft <span class="hl">zichzelf</span> iets beloofd.</div><div class="arabic">لقد وعدت نفسها بشيء.</div></div></div>
+    <div class="sentence"><div class="num-badge">55</div><div class="text-block"><div class="dutch">Hij moet <span class="hl">zichzelf</span> verbeteren.</div><div class="arabic">يجب أن يُحسِّن نفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">56</div><div class="text-block"><div class="dutch">Zij wil <span class="hl">zichzelf</span> ontwikkelen.</div><div class="arabic">هي تريد أن تطوِّر نفسها.</div></div></div>
+    <div class="sentence"><div class="num-badge">57</div><div class="text-block"><div class="dutch">Hij vertrouwt <span class="hl">zichzelf</span> niet.</div><div class="arabic">هو لا يثق بنفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">58</div><div class="text-block"><div class="dutch">Zij vertrouwt <span class="hl">zichzelf</span>.</div><div class="arabic">هي تثق بنفسها.</div></div></div>
+    <div class="sentence"><div class="num-badge">59</div><div class="text-block"><div class="dutch">Hij heeft <span class="hl">zichzelf</span> gesneden.</div><div class="arabic">لقد جرح نفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">60</div><div class="text-block"><div class="dutch">Zij heeft <span class="hl">zichzelf</span> goed voorbereid.</div><div class="arabic">لقد أعدَّت نفسها جيدًا.</div></div></div>
+  </div>
+
+  <!-- Section 4: Onszelf -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">61 – 80</span>
+      أنفسنا — <span dir="ltr" style="font-family:'Segoe UI',Arial;">Onszelf</span>
+    </div>
+
+    <div class="sentence"><div class="num-badge">61</div><div class="text-block"><div class="dutch">We moeten <span class="hl">onszelf</span> helpen.</div><div class="arabic">يجب أن نساعد أنفسنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">62</div><div class="text-block"><div class="dutch">We moeten voor <span class="hl">onszelf</span> zorgen.</div><div class="arabic">يجب أن نعتني بأنفسنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">63</div><div class="text-block"><div class="dutch">We kennen <span class="hl">onszelf</span> goed.</div><div class="arabic">نحن نعرف أنفسنا جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">64</div><div class="text-block"><div class="dutch">We geloven in <span class="hl">onszelf</span>.</div><div class="arabic">نحن نؤمن بأنفسنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">65</div><div class="text-block"><div class="dutch">We moeten <span class="hl">onszelf</span> verbeteren.</div><div class="arabic">يجب أن نُحسِّن أنفسنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">66</div><div class="text-block"><div class="dutch">We geven <span class="hl">onszelf</span> meer tijd.</div><div class="arabic">نحن نمنح أنفسنا مزيدًا من الوقت.</div></div></div>
+    <div class="sentence"><div class="num-badge">67</div><div class="text-block"><div class="dutch">We moeten <span class="hl">onszelf</span> beschermen.</div><div class="arabic">يجب أن نحمي أنفسنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">68</div><div class="text-block"><div class="dutch">We hebben <span class="hl">onszelf</span> goed voorbereid.</div><div class="arabic">لقد أعددنا أنفسنا جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">69</div><div class="text-block"><div class="dutch">We moeten <span class="hl">onszelf</span> vertrouwen.</div><div class="arabic">يجب أن نثق بأنفسنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">70</div><div class="text-block"><div class="dutch">We hebben <span class="hl">onszelf</span> voorgesteld.</div><div class="arabic">لقد عرَّفنا بأنفسنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">71</div><div class="text-block"><div class="dutch">We moeten <span class="hl">onszelf</span> blijven.</div><div class="arabic">يجب أن نبقى على طبيعتنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">72</div><div class="text-block"><div class="dutch">We hebben <span class="hl">onszelf</span> een doel gesteld.</div><div class="arabic">لقد وضعنا لأنفسنا هدفًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">73</div><div class="text-block"><div class="dutch">We moeten <span class="hl">onszelf</span> niet onderschatten.</div><div class="arabic">يجب ألا نقلل من قدر أنفسنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">74</div><div class="text-block"><div class="dutch">We hebben <span class="hl">onszelf</span> vergist.</div><div class="arabic">لقد أخطأنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">75</div><div class="text-block"><div class="dutch">We moeten <span class="hl">onszelf</span> concentreren op het werk.</div><div class="arabic">يجب أن نركّز على العمل.</div></div></div>
+    <div class="sentence"><div class="num-badge">76</div><div class="text-block"><div class="dutch">We maken het <span class="hl">onszelf</span> soms moeilijk.</div><div class="arabic">نحن أحيانًا نجعل الأمور صعبة على أنفسنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">77</div><div class="text-block"><div class="dutch">We moeten <span class="hl">onszelf</span> tijd geven.</div><div class="arabic">يجب أن نعطي أنفسنا وقتًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">78</div><div class="text-block"><div class="dutch">We willen <span class="hl">onszelf</span> ontwikkelen.</div><div class="arabic">نريد أن نطوِّر أنفسنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">79</div><div class="text-block"><div class="dutch">We moeten <span class="hl">onszelf</span> rustig houden.</div><div class="arabic">يجب أن نحافظ على هدوئنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">80</div><div class="text-block"><div class="dutch">We kunnen <span class="hl">onszelf</span> redden.</div><div class="arabic">يمكننا إنقاذ أنفسنا.</div></div></div>
+  </div>
+
+  <!-- Section 5: Jullie / U -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">81 – 90</span>
+      أنفسكم — <span dir="ltr" style="font-family:'Segoe UI',Arial;">Jezelf / Uzelf</span>
+    </div>
+
+    <div class="sentence"><div class="num-badge">81</div><div class="text-block"><div class="dutch">Jullie moeten <span class="hl">jezelf</span> helpen.</div><div class="arabic">يجب عليكم مساعدة أنفسكم.</div></div></div>
+    <div class="sentence"><div class="num-badge">82</div><div class="text-block"><div class="dutch">Jullie moeten voor <span class="hl">jezelf</span> zorgen.</div><div class="arabic">يجب عليكم الاعتناء بأنفسكم.</div></div></div>
+    <div class="sentence"><div class="num-badge">83</div><div class="text-block"><div class="dutch">Jullie kennen <span class="hl">jezelf</span> goed.</div><div class="arabic">أنتم تعرفون أنفسكم جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">84</div><div class="text-block"><div class="dutch">Jullie moeten in <span class="hl">jezelf</span> geloven.</div><div class="arabic">يجب أن تؤمنوا بأنفسكم.</div></div></div>
+    <div class="sentence"><div class="num-badge">85</div><div class="text-block"><div class="dutch">Jullie moeten <span class="hl">jezelf</span> beschermen.</div><div class="arabic">يجب عليكم حماية أنفسكم.</div></div></div>
+    <div class="sentence"><div class="num-badge">86</div><div class="text-block"><div class="dutch">Jullie hebben <span class="hl">jezelf</span> goed voorbereid.</div><div class="arabic">لقد أعددتم أنفسكم جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">87</div><div class="text-block"><div class="dutch">Jullie moeten <span class="hl">jezelf</span> voorstellen.</div><div class="arabic">يجب عليكم التعريف بأنفسكم.</div></div></div>
+    <div class="sentence"><div class="num-badge">88</div><div class="text-block"><div class="dutch">Jullie moeten <span class="hl">jezelf</span> niet vergelijken met anderen.</div><div class="arabic">يجب ألا تقارنوا أنفسكم بالآخرين.</div></div></div>
+    <div class="sentence"><div class="num-badge">89</div><div class="text-block"><div class="dutch">U moet <span class="hl">uzelf</span> voorstellen.</div><div class="arabic">يجب على حضرتك أن تُعرِّف بنفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">90</div><div class="text-block"><div class="dutch">U moet goed voor <span class="hl">uzelf</span> zorgen.</div><div class="arabic">يجب على حضرتك أن تعتني بنفسك جيدًا.</div></div></div>
+  </div>
+
+  <!-- Section 6: Zij / Ze -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">91 – 100</span>
+      أنفسهم — <span dir="ltr" style="font-family:'Segoe UI',Arial;">Zichzelf</span>
+    </div>
+
+    <div class="sentence"><div class="num-badge">91</div><div class="text-block"><div class="dutch">Zij helpen <span class="hl">zichzelf</span>.</div><div class="arabic">هم يساعدون أنفسهم.</div></div></div>
+    <div class="sentence"><div class="num-badge">92</div><div class="text-block"><div class="dutch">Ze moeten voor <span class="hl">zichzelf</span> zorgen.</div><div class="arabic">يجب عليهم الاعتناء بأنفسهم.</div></div></div>
+    <div class="sentence"><div class="num-badge">93</div><div class="text-block"><div class="dutch">Ze geloven in <span class="hl">zichzelf</span>.</div><div class="arabic">هم يؤمنون بأنفسهم.</div></div></div>
+    <div class="sentence"><div class="num-badge">94</div><div class="text-block"><div class="dutch">Ze hebben <span class="hl">zichzelf</span> voorgesteld.</div><div class="arabic">لقد عرَّفوا بأنفسهم.</div></div></div>
+    <div class="sentence"><div class="num-badge">95</div><div class="text-block"><div class="dutch">Ze moeten <span class="hl">zichzelf</span> beschermen.</div><div class="arabic">يجب عليهم حماية أنفسهم.</div></div></div>
+    <div class="sentence"><div class="num-badge">96</div><div class="text-block"><div class="dutch">Ze hebben <span class="hl">zichzelf</span> goed voorbereid.</div><div class="arabic">لقد أعدّوا أنفسهم جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">97</div><div class="text-block"><div class="dutch">Ze praten tegen <span class="hl">zichzelf</span>.</div><div class="arabic">هم يتحدثون مع أنفسهم.</div></div></div>
+    <div class="sentence"><div class="num-badge">98</div><div class="text-block"><div class="dutch">Ze moeten <span class="hl">zichzelf</span> verbeteren.</div><div class="arabic">يجب عليهم تحسين أنفسهم.</div></div></div>
+    <div class="sentence"><div class="num-badge">99</div><div class="text-block"><div class="dutch">Ze hebben <span class="hl">zichzelf</span> een doel gesteld.</div><div class="arabic">لقد وضعوا لأنفسهم هدفًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">100</div><div class="text-block"><div class="dutch">Ze moeten <span class="hl">zichzelf</span> kunnen redden.</div><div class="arabic">يجب أن يكونوا قادرين على إنقاذ أنفسهم.</div></div></div>
+  </div>
+
+  <!-- Rule Section -->
+  <div class="rule-section">
+    <h2>📌 قاعدة مهمة جدًا — احفظ هذا التصريف</h2>
+
+    <table class="rule-table">
+      <thead>
+        <tr><th>الضمير</th><th>الضمير الانعكاسي</th><th>المعنى</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ik</td><td class="nl-cell">mezelf</td><td>نفسي</td></tr>
+        <tr><td>Jij</td><td class="nl-cell">jezelf</td><td>نفسك</td></tr>
+        <tr><td>Hij / Zij</td><td class="nl-cell">zichzelf</td><td>نفسه / نفسها</td></tr>
+        <tr><td>Wij</td><td class="nl-cell">onszelf</td><td>أنفسنا</td></tr>
+        <tr><td>Jullie</td><td class="nl-cell">jezelf</td><td>أنفسكم في الكلام العادي</td></tr>
+        <tr><td>U</td><td class="nl-cell">uzelf</td><td>نفسك بصيغة الاحترام</td></tr>
+        <tr><td>Zij / Ze</td><td class="nl-cell">zichzelf</td><td>أنفسهم</td></tr>
+      </tbody>
+    </table>
+
+    <div class="difference-box">
+      <h3>⚠️ انتبه للفرق:</h3>
+      <ul>
+        <li><strong>Ik was mezelf.</strong> — <span class="ar-part">أنا أغسل نفسي.</span></li>
+        <li><strong>Ik doe het zelf.</strong> — <span class="ar-part">أنا أفعل ذلك بنفسي.</span></li>
+        <li><strong>We doen het zelf.</strong> — <span class="ar-part">نحن نفعل ذلك بأنفسنا.</span></li>
+      </ul>
+      <p style="margin-top:12px;padding:12px 15px;background:#fce4ec;border-radius:8px;font-size:1.02em;">
+        <strong style="color:#c2185b;">mezelf</strong> ضمير انعكاسي، أما <strong style="color:#c2185b;">zelf</strong> فتعني «بنفسه / شخصيًا» عندما تأتي بهذه الطريقة.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    🇳🇱 ١٠٠ جملة هولندية عن النفس — mezelf · jezelf · zichzelf · onszelf · uzelf
+  </footer>
+
+</div>
+</body>
+</html>
