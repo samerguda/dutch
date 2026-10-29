@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>١٠٠ جملة هولندية باستخدام Dingen وكل تصريفاتها</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Naskh Arabic', 'Amiri', 'Traditional Arabic', serif;
+    background: linear-gradient(135deg, #5a2e0c 0%, #7a3f14 50%, #a05a20 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    line-height: 1.9;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fffdf7;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+
+  header {
+    background: linear-gradient(135deg, #7a3f14 0%, #5a2e0c 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2.1em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  header .subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+    background: rgba(255,255,255,0.15);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    margin-top: 10px;
+  }
+
+  header .flag {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .intro {
+    background: #fdf3e7;
+    padding: 25px 30px;
+    border-bottom: 3px solid #7a3f14;
+    font-size: 1.05em;
+    color: #444;
+  }
+
+  .intro p { margin-bottom: 12px; }
+
+  .meaning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .meaning-card {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border-right: 4px solid #a05a20;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-size: 1em;
+  }
+
+  .meaning-card .nl {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #7a3f14;
+    direction: ltr;
+    display: inline-block;
+  }
+
+  .forms-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-top: 15px;
+  }
+
+  .forms-table th {
+    background: #5a2e0c;
+    color: white;
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  .forms-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0e0c8;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  .forms-table tr:last-child td { border-bottom: none; }
+  .forms-table tr:hover td { background: #fdf3e7; }
+
+  .forms-table .nl-cell {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #a05a20;
+    direction: ltr;
+  }
+
+  .section {
+    padding: 25px 30px;
+    border-bottom: 2px dashed #ddd;
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 14px 20px;
+    background: linear-gradient(90deg, #5a2e0c, #a05a20);
+    color: white;
+    border-radius: 12px;
+    font-size: 1.15em;
+    font-weight: 700;
+    flex-wrap: wrap;
+  }
+
+  .section-header .num {
+    background: #ffd54f;
+    color: #5a2e0c;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    direction: ltr;
+    font-weight: 800;
+  }
+
+  .sentence {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border-right: 4px solid transparent;
+  }
+
+  .sentence:nth-child(odd) { background: #fdf8f2; }
+  .sentence:nth-child(even) { background: #ffffff; }
+
+  .sentence:hover {
+    background: #fdf3e7;
+    border-right-color: #a05a20;
+    transform: translateX(-4px);
+  }
+
+  .num-badge {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #5a2e0c, #a05a20);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: 700;
+    direction: ltr;
+  }
+
+  .text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .dutch {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 1.12em;
+    color: #5a2e0c;
+    font-weight: 700;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .dutch .hl {
+    color: #c62828;
+    background: #ffebee;
+    padding: 0 6px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+
+  .arabic {
+    font-size: 1.13em;
+    color: #3d2b1f;
+    font-weight: 400;
+  }
+
+  .rule-section {
+    padding: 30px;
+    background: linear-gradient(135deg, #fdf3e7, #f5e6d3);
+    margin: 20px;
+    border-radius: 15px;
+    border: 2px solid #7a3f14;
+  }
+
+  .rule-section h2 {
+    color: #5a2e0c;
+    margin-bottom: 20px;
+    font-size: 1.45em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .rule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+
+  .rule-table th {
+    background: #7a3f14;
+    color: white;
+    padding: 13px 12px;
+    font-size: 1em;
+  }
+
+  .rule-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f0e0c8;
+    text-align: center;
+    font-size: 1.05em;
+  }
+
+  .rule-table tr:last-child td { border-bottom: none; }
+  .rule-table tr:hover td { background: #fdf3e7; }
+
+  .rule-table .nl-cell {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #c62828;
+    direction: ltr;
+  }
+
+  .rule-table .ar-cell {
+    color: #3d2b1f;
+  }
+
+  .extra-info {
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border-right: 5px solid #c62828;
+    font-size: 1.05em;
+    line-height: 1.9;
+  }
+
+  .extra-info h3 {
+    color: #c62828;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+  }
+
+  .extra-info .nl {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #5a2e0c;
+    direction: ltr;
+    display: inline-block;
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: #5a2e0c;
+    color: #e8c8a0;
+    font-size: 0.95em;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    header { padding: 25px 15px; }
+    header h1 { font-size: 1.45em; }
+    .section { padding: 15px; }
+    .sentence { padding: 10px 8px; flex-wrap: wrap; }
+    .num-badge { width: 33px; height: 33px; font-size: 0.72em; }
+    .dutch { font-size: 1em; }
+    .arabic { font-size: 1em; }
+    .section-header { font-size: 1em; padding: 10px 12px; }
+    .rule-section { padding: 15px; margin: 10px; }
+    .rule-table td, .rule-table th,
+    .forms-table td, .forms-table th { padding: 8px 5px; font-size: 0.85em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="flag">🇳🇱</div>
+    <h1>١٠٠ جملة هولندية باستخدام Dingen</h1>
+    <div class="subtitle">وكل تصريفاتها — مع الترجمة العربية بالتشكيل الكامل</div>
+  </header>
+
+  <div class="intro">
+    <p>أولًا، مهم تعرف إن <strong>dingen</strong> ليها معنيان أساسيان حسب السياق:</p>
+    <div class="meaning-grid">
+      <div class="meaning-card"><span class="nl">het ding</span> = الشيء.</div>
+      <div class="meaning-card"><span class="nl">de dingen</span> = الأشياء، جمع ding.</div>
+      <div class="meaning-card"><span class="nl">dingen</span> كفعل = يساوم / يتفاوض على السعر (استخدام أقل شيوعًا في الحياة اليومية).</div>
+    </div>
+
+    <h3 style="margin-top:22px;color:#5a2e0c;font-size:1.15em;">📋 تصريفات كلمة Ding</h3>
+    <table class="forms-table">
+      <thead>
+        <tr><th>الهولندية</th><th>العربية</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nl-cell">het ding</td><td>الشيء</td></tr>
+        <tr><td class="nl-cell">de dingen</td><td>الأشياء</td></tr>
+        <tr><td class="nl-cell">dit ding</td><td>هذا الشيء</td></tr>
+        <tr><td class="nl-cell">dat ding</td><td>ذلك الشيء</td></tr>
+        <tr><td class="nl-cell">deze dingen</td><td>هذه الأشياء</td></tr>
+        <tr><td class="nl-cell">die dingen</td><td>تلك الأشياء</td></tr>
+        <tr><td class="nl-cell">een ding</td><td>شيءٌ ما</td></tr>
+        <tr><td class="nl-cell">geen dingen</td><td>لا أشياء / لا توجد أشياء</td></tr>
+        <tr><td class="nl-cell">allerlei dingen</td><td>شتى الأشياء</td></tr>
+        <tr><td class="nl-cell">sommige dingen</td><td>بعض الأشياء</td></tr>
+        <tr><td class="nl-cell">andere dingen</td><td>أشياء أخرى</td></tr>
+        <tr><td class="nl-cell">veel dingen</td><td>أشياء كثيرة</td></tr>
+        <tr><td class="nl-cell">weinig dingen</td><td>أشياء قليلة</td></tr>
+        <tr><td class="nl-cell">belangrijke dingen</td><td>أشياء مهمة</td></tr>
+        <tr><td class="nl-cell">zulke dingen</td><td>أشياء من هذا القبيل</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section 1: 1-20 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">1 – 20</span>
+      Ding — الشيء
+    </div>
+
+    <div class="sentence"><div class="num-badge">1</div><div class="text-block"><div class="dutch">Wat is dat <span class="hl">ding</span>?</div><div class="arabic">ما هذا الشيء؟</div></div></div>
+    <div class="sentence"><div class="num-badge">2</div><div class="text-block"><div class="dutch">Ik ken dit <span class="hl">ding</span>.</div><div class="arabic">أنا أعرف هذا الشيء.</div></div></div>
+    <div class="sentence"><div class="num-badge">3</div><div class="text-block"><div class="dutch">Wat kost dit <span class="hl">ding</span>?</div><div class="arabic">كم سعر هذا الشيء؟</div></div></div>
+    <div class="sentence"><div class="num-badge">4</div><div class="text-block"><div class="dutch">Ik heb een vreemd <span class="hl">ding</span> gevonden.</div><div class="arabic">وجدت شيئًا غريبًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">5</div><div class="text-block"><div class="dutch">Dit <span class="hl">ding</span> werkt niet.</div><div class="arabic">هذا الشيء لا يعمل.</div></div></div>
+    <div class="sentence"><div class="num-badge">6</div><div class="text-block"><div class="dutch">Waar heb je dat <span class="hl">ding</span> gekocht?</div><div class="arabic">من أين اشتريت ذلك الشيء؟</div></div></div>
+    <div class="sentence"><div class="num-badge">7</div><div class="text-block"><div class="dutch">Ik wil dat <span class="hl">ding</span> hebben.</div><div class="arabic">أريد ذلك الشيء.</div></div></div>
+    <div class="sentence"><div class="num-badge">8</div><div class="text-block"><div class="dutch">Leg dat <span class="hl">ding</span> op tafel.</div><div class="arabic">ضع ذلك الشيء على الطاولة.</div></div></div>
+    <div class="sentence"><div class="num-badge">9</div><div class="text-block"><div class="dutch">Ik begrijp dit <span class="hl">ding</span> niet.</div><div class="arabic">أنا لا أفهم هذا الشيء.</div></div></div>
+    <div class="sentence"><div class="num-badge">10</div><div class="text-block"><div class="dutch">Dat <span class="hl">ding</span> is heel duur.</div><div class="arabic">ذلك الشيء غالٍ جدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">11</div><div class="text-block"><div class="dutch">Ik heb hetzelfde <span class="hl">ding</span>.</div><div class="arabic">لدي الشيء نفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">12</div><div class="text-block"><div class="dutch">Dit <span class="hl">ding</span> is kapot.</div><div class="arabic">هذا الشيء مكسور.</div></div></div>
+    <div class="sentence"><div class="num-badge">13</div><div class="text-block"><div class="dutch">Wie heeft dat <span class="hl">ding</span> gemaakt?</div><div class="arabic">من صنع ذلك الشيء؟</div></div></div>
+    <div class="sentence"><div class="num-badge">14</div><div class="text-block"><div class="dutch">Ik gebruik dit <span class="hl">ding</span> elke dag.</div><div class="arabic">أستخدم هذا الشيء كل يوم.</div></div></div>
+    <div class="sentence"><div class="num-badge">15</div><div class="text-block"><div class="dutch">Dat <span class="hl">ding</span> hoort bij de machine.</div><div class="arabic">ذلك الشيء جزء من الآلة.</div></div></div>
+    <div class="sentence"><div class="num-badge">16</div><div class="text-block"><div class="dutch">Ik zoek een klein <span class="hl">ding</span>.</div><div class="arabic">أبحث عن شيء صغير.</div></div></div>
+    <div class="sentence"><div class="num-badge">17</div><div class="text-block"><div class="dutch">Dit <span class="hl">ding</span> is handig.</div><div class="arabic">هذا الشيء عملي.</div></div></div>
+    <div class="sentence"><div class="num-badge">18</div><div class="text-block"><div class="dutch">Dat <span class="hl">ding</span> ziet er oud uit.</div><div class="arabic">يبدو ذلك الشيء قديمًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">19</div><div class="text-block"><div class="dutch">Ik heb dat <span class="hl">ding</span> nodig.</div><div class="arabic">أحتاج إلى ذلك الشيء.</div></div></div>
+    <div class="sentence"><div class="num-badge">20</div><div class="text-block"><div class="dutch">Gooi dat <span class="hl">ding</span> niet weg.</div><div class="arabic">لا ترمِ ذلك الشيء.</div></div></div>
+  </div>
+
+  <!-- Section 2: 21-40 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">21 – 40</span>
+      Dingen — الأشياء
+    </div>
+
+    <div class="sentence"><div class="num-badge">21</div><div class="text-block"><div class="dutch">Ik heb veel <span class="hl">dingen</span> te doen.</div><div class="arabic">لدي أشياء كثيرة لأفعلها.</div></div></div>
+    <div class="sentence"><div class="num-badge">22</div><div class="text-block"><div class="dutch">Er liggen <span class="hl">dingen</span> op de tafel.</div><div class="arabic">توجد أشياء على الطاولة.</div></div></div>
+    <div class="sentence"><div class="num-badge">23</div><div class="text-block"><div class="dutch">Ik moet een paar <span class="hl">dingen</span> kopen.</div><div class="arabic">يجب أن أشتري بعض الأشياء.</div></div></div>
+    <div class="sentence"><div class="num-badge">24</div><div class="text-block"><div class="dutch">We hebben belangrijke <span class="hl">dingen</span> besproken.</div><div class="arabic">ناقشنا أشياء مهمة.</div></div></div>
+    <div class="sentence"><div class="num-badge">25</div><div class="text-block"><div class="dutch">Ik vergeet soms <span class="hl">dingen</span>.</div><div class="arabic">أنسى الأشياء أحيانًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">26</div><div class="text-block"><div class="dutch">Er zijn veel <span class="hl">dingen</span> veranderd.</div><div class="arabic">تغيّرت أشياء كثيرة.</div></div></div>
+    <div class="sentence"><div class="num-badge">27</div><div class="text-block"><div class="dutch">Ik wil je een paar <span class="hl">dingen</span> vragen.</div><div class="arabic">أريد أن أسألك عن بعض الأشياء.</div></div></div>
+    <div class="sentence"><div class="num-badge">28</div><div class="text-block"><div class="dutch">We moeten onze <span class="hl">dingen</span> meenemen.</div><div class="arabic">يجب أن نأخذ أغراضنا معنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">29</div><div class="text-block"><div class="dutch">Ik heb mijn <span class="hl">dingen</span> thuis laten liggen.</div><div class="arabic">تركت أغراضي في المنزل.</div></div></div>
+    <div class="sentence"><div class="num-badge">30</div><div class="text-block"><div class="dutch">Deze <span class="hl">dingen</span> zijn van mij.</div><div class="arabic">هذه الأشياء ملكي.</div></div></div>
+    <div class="sentence"><div class="num-badge">31</div><div class="text-block"><div class="dutch">Die <span class="hl">dingen</span> zijn niet van jou.</div><div class="arabic">تلك الأشياء ليست ملكك.</div></div></div>
+    <div class="sentence"><div class="num-badge">32</div><div class="text-block"><div class="dutch">Ik koop graag nieuwe <span class="hl">dingen</span>.</div><div class="arabic">أحب شراء أشياء جديدة.</div></div></div>
+    <div class="sentence"><div class="num-badge">33</div><div class="text-block"><div class="dutch">Er staan vreemde <span class="hl">dingen</span> op het scherm.</div><div class="arabic">توجد أشياء غريبة على الشاشة.</div></div></div>
+    <div class="sentence"><div class="num-badge">34</div><div class="text-block"><div class="dutch">We leren elke dag nieuwe <span class="hl">dingen</span>.</div><div class="arabic">نتعلم أشياء جديدة كل يوم.</div></div></div>
+    <div class="sentence"><div class="num-badge">35</div><div class="text-block"><div class="dutch">Ik heb nog veel <span class="hl">dingen</span> te leren.</div><div class="arabic">ما زال لدي الكثير لأتعلمه.</div></div></div>
+    <div class="sentence"><div class="num-badge">36</div><div class="text-block"><div class="dutch">Sommige <span class="hl">dingen</span> zijn moeilijk.</div><div class="arabic">بعض الأشياء صعبة.</div></div></div>
+    <div class="sentence"><div class="num-badge">37</div><div class="text-block"><div class="dutch">Andere <span class="hl">dingen</span> zijn gemakkelijk.</div><div class="arabic">أشياء أخرى سهلة.</div></div></div>
+    <div class="sentence"><div class="num-badge">38</div><div class="text-block"><div class="dutch">Ik wil die <span class="hl">dingen</span> niet vergeten.</div><div class="arabic">لا أريد أن أنسى تلك الأشياء.</div></div></div>
+    <div class="sentence"><div class="num-badge">39</div><div class="text-block"><div class="dutch">We hebben dezelfde <span class="hl">dingen</span> nodig.</div><div class="arabic">نحتاج إلى الأشياء نفسها.</div></div></div>
+    <div class="sentence"><div class="num-badge">40</div><div class="text-block"><div class="dutch">Ik praat graag over verschillende <span class="hl">dingen</span>.</div><div class="arabic">أحب التحدث عن أشياء مختلفة.</div></div></div>
+  </div>
+
+  <!-- Section 3: 41-60 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">41 – 60</span>
+      Dit ding / dat ding / deze dingen / die dingen
+    </div>
+
+    <div class="sentence"><div class="num-badge">41</div><div class="text-block"><div class="dutch">Dit <span class="hl">ding</span> is beter dan dat <span class="hl">ding</span>.</div><div class="arabic">هذا الشيء أفضل من ذلك الشيء.</div></div></div>
+    <div class="sentence"><div class="num-badge">42</div><div class="text-block"><div class="dutch">Deze <span class="hl">dingen</span> zijn goedkoper.</div><div class="arabic">هذه الأشياء أرخص.</div></div></div>
+    <div class="sentence"><div class="num-badge">43</div><div class="text-block"><div class="dutch">Die <span class="hl">dingen</span> zijn erg belangrijk.</div><div class="arabic">تلك الأشياء مهمة جدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">44</div><div class="text-block"><div class="dutch">Ik wil dit <span class="hl">ding</span> en niet dat <span class="hl">ding</span>.</div><div class="arabic">أريد هذا الشيء وليس ذلك الشيء.</div></div></div>
+    <div class="sentence"><div class="num-badge">45</div><div class="text-block"><div class="dutch">Waar moet ik deze <span class="hl">dingen</span> leggen?</div><div class="arabic">أين أضع هذه الأشياء؟</div></div></div>
+    <div class="sentence"><div class="num-badge">46</div><div class="text-block"><div class="dutch">Kun je die <span class="hl">dingen</span> opruimen?</div><div class="arabic">هل يمكنك ترتيب تلك الأشياء؟</div></div></div>
+    <div class="sentence"><div class="num-badge">47</div><div class="text-block"><div class="dutch">Dit <span class="hl">ding</span> is van mijn vrouw.</div><div class="arabic">هذا الشيء ملك زوجتي.</div></div></div>
+    <div class="sentence"><div class="num-badge">48</div><div class="text-block"><div class="dutch">Deze <span class="hl">dingen</span> zijn voor het werk.</div><div class="arabic">هذه الأشياء مخصصة للعمل.</div></div></div>
+    <div class="sentence"><div class="num-badge">49</div><div class="text-block"><div class="dutch">Dat <span class="hl">ding</span> daar is van mijn buurman.</div><div class="arabic">ذلك الشيء الموجود هناك ملك جاري.</div></div></div>
+    <div class="sentence"><div class="num-badge">50</div><div class="text-block"><div class="dutch">Ik heb deze <span class="hl">dingen</span> online gekocht.</div><div class="arabic">اشتريت هذه الأشياء عبر الإنترنت.</div></div></div>
+    <div class="sentence"><div class="num-badge">51</div><div class="text-block"><div class="dutch">Waarom liggen die <span class="hl">dingen</span> hier?</div><div class="arabic">لماذا توجد تلك الأشياء هنا؟</div></div></div>
+    <div class="sentence"><div class="num-badge">52</div><div class="text-block"><div class="dutch">Ik wil dat <span class="hl">ding</span> daar bekijken.</div><div class="arabic">أريد أن أفحص ذلك الشيء هناك.</div></div></div>
+    <div class="sentence"><div class="num-badge">53</div><div class="text-block"><div class="dutch">Deze <span class="hl">dingen</span> passen niet in mijn tas.</div><div class="arabic">هذه الأشياء لا تتسع في حقيبتي.</div></div></div>
+    <div class="sentence"><div class="num-badge">54</div><div class="text-block"><div class="dutch">Die <span class="hl">dingen</span> moeten naar boven.</div><div class="arabic">يجب نقل تلك الأشياء إلى الطابق العلوي.</div></div></div>
+    <div class="sentence"><div class="num-badge">55</div><div class="text-block"><div class="dutch">Ik heb dit <span class="hl">ding</span> al eerder gezien.</div><div class="arabic">رأيت هذا الشيء من قبل.</div></div></div>
+    <div class="sentence"><div class="num-badge">56</div><div class="text-block"><div class="dutch">Kun je deze <span class="hl">dingen</span> voor mij bewaren?</div><div class="arabic">هل يمكنك الاحتفاظ بهذه الأشياء من أجلي؟</div></div></div>
+    <div class="sentence"><div class="num-badge">57</div><div class="text-block"><div class="dutch">Dat <span class="hl">ding</span> is precies wat ik zoek.</div><div class="arabic">ذلك الشيء هو بالضبط ما أبحث عنه.</div></div></div>
+    <div class="sentence"><div class="num-badge">58</div><div class="text-block"><div class="dutch">Deze <span class="hl">dingen</span> zijn allemaal nieuw.</div><div class="arabic">هذه الأشياء كلها جديدة.</div></div></div>
+    <div class="sentence"><div class="num-badge">59</div><div class="text-block"><div class="dutch">Ik weet niet waar die <span class="hl">dingen</span> liggen.</div><div class="arabic">لا أعرف أين توجد تلك الأشياء.</div></div></div>
+    <div class="sentence"><div class="num-badge">60</div><div class="text-block"><div class="dutch">Zet deze <span class="hl">dingen</span> naast de deur.</div><div class="arabic">ضع هذه الأشياء بجانب الباب.</div></div></div>
+  </div>
+
+  <!-- Section 4: 61-80 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">61 – 80</span>
+      Allerlei dingen / sommige dingen / andere dingen
+    </div>
+
+    <div class="sentence"><div class="num-badge">61</div><div class="text-block"><div class="dutch">Ik doe allerlei <span class="hl">dingen</span> op mijn werk.</div><div class="arabic">أقوم بأعمال مختلفة في عملي.</div></div></div>
+    <div class="sentence"><div class="num-badge">62</div><div class="text-block"><div class="dutch">Ik wil allerlei <span class="hl">dingen</span> leren.</div><div class="arabic">أريد تعلم أشياء متنوعة.</div></div></div>
+    <div class="sentence"><div class="num-badge">63</div><div class="text-block"><div class="dutch">Sommige <span class="hl">dingen</span> begrijp ik niet.</div><div class="arabic">بعض الأشياء لا أفهمها.</div></div></div>
+    <div class="sentence"><div class="num-badge">64</div><div class="text-block"><div class="dutch">Sommige <span class="hl">dingen</span> kosten veel tijd.</div><div class="arabic">بعض الأشياء تستغرق وقتًا طويلًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">65</div><div class="text-block"><div class="dutch">We moeten andere <span class="hl">dingen</span> proberen.</div><div class="arabic">يجب أن نجرب أشياء أخرى.</div></div></div>
+    <div class="sentence"><div class="num-badge">66</div><div class="text-block"><div class="dutch">Ik heb nog andere <span class="hl">dingen</span> te doen.</div><div class="arabic">لدي أشياء أخرى يجب أن أفعلها.</div></div></div>
+    <div class="sentence"><div class="num-badge">67</div><div class="text-block"><div class="dutch">Er zijn allerlei <span class="hl">dingen</span> te zien in de stad.</div><div class="arabic">توجد أشياء متنوعة يمكن رؤيتها في المدينة.</div></div></div>
+    <div class="sentence"><div class="num-badge">68</div><div class="text-block"><div class="dutch">Ik heb verschillende <span class="hl">dingen</span> geprobeerd.</div><div class="arabic">جربت أشياء مختلفة.</div></div></div>
+    <div class="sentence"><div class="num-badge">69</div><div class="text-block"><div class="dutch">We praten over allerlei <span class="hl">dingen</span>.</div><div class="arabic">نتحدث عن شتى الأشياء.</div></div></div>
+    <div class="sentence"><div class="num-badge">70</div><div class="text-block"><div class="dutch">Sommige <span class="hl">dingen</span> zijn niet toegestaan.</div><div class="arabic">بعض الأشياء غير مسموح بها.</div></div></div>
+    <div class="sentence"><div class="num-badge">71</div><div class="text-block"><div class="dutch">Ik heb een paar <span class="hl">dingen</span> voor je gekocht.</div><div class="arabic">اشتريت لك بعض الأشياء.</div></div></div>
+    <div class="sentence"><div class="num-badge">72</div><div class="text-block"><div class="dutch">Er zijn een heleboel <span class="hl">dingen</span> die ik moet regelen.</div><div class="arabic">هناك أشياء كثيرة يجب أن أرتبها.</div></div></div>
+    <div class="sentence"><div class="num-badge">73</div><div class="text-block"><div class="dutch">Ik wil een aantal <span class="hl">dingen</span> veranderen.</div><div class="arabic">أريد تغيير بعض الأشياء.</div></div></div>
+    <div class="sentence"><div class="num-badge">74</div><div class="text-block"><div class="dutch">We hebben nog enkele <span class="hl">dingen</span> nodig.</div><div class="arabic">ما زلنا بحاجة إلى بعض الأشياء.</div></div></div>
+    <div class="sentence"><div class="num-badge">75</div><div class="text-block"><div class="dutch">Er zijn weinig <span class="hl">dingen</span> die ik niet lust.</div><div class="arabic">هناك أشياء قليلة لا أحب تناولها.</div></div></div>
+    <div class="sentence"><div class="num-badge">76</div><div class="text-block"><div class="dutch">Veel <span class="hl">dingen</span> zijn hier goedkoper.</div><div class="arabic">أشياء كثيرة أرخص هنا.</div></div></div>
+    <div class="sentence"><div class="num-badge">77</div><div class="text-block"><div class="dutch">We hebben veel <span class="hl">dingen</span> gemeen.</div><div class="arabic">هناك أشياء كثيرة مشتركة بيننا.</div></div></div>
+    <div class="sentence"><div class="num-badge">78</div><div class="text-block"><div class="dutch">Er gebeuren soms rare <span class="hl">dingen</span>.</div><div class="arabic">تحدث أحيانًا أشياء غريبة.</div></div></div>
+    <div class="sentence"><div class="num-badge">79</div><div class="text-block"><div class="dutch">Ik leer graag praktische <span class="hl">dingen</span>.</div><div class="arabic">أحب تعلم الأشياء العملية.</div></div></div>
+    <div class="sentence"><div class="num-badge">80</div><div class="text-block"><div class="dutch">We moeten ons op belangrijke <span class="hl">dingen</span> concentreren.</div><div class="arabic">يجب أن نركز على الأمور المهمة.</div></div></div>
+  </div>
+
+  <!-- Section 5: 81-100 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">81 – 100</span>
+      تعبيرات يومية باستخدام Dingen
+    </div>
+
+    <div class="sentence"><div class="num-badge">81</div><div class="text-block"><div class="dutch">Dat soort <span class="hl">dingen</span> gebeurt vaak.</div><div class="arabic">أشياء من هذا النوع تحدث كثيرًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">82</div><div class="text-block"><div class="dutch">Zulke <span class="hl">dingen</span> gebeuren nu eenmaal.</div><div class="arabic">مثل هذه الأشياء تحدث أحيانًا، فهذا هو الواقع.</div></div></div>
+    <div class="sentence"><div class="num-badge">83</div><div class="text-block"><div class="dutch">Ik heb betere <span class="hl">dingen</span> te doen.</div><div class="arabic">لدي أشياء أهم لأقوم بها.</div></div></div>
+    <div class="sentence"><div class="num-badge">84</div><div class="text-block"><div class="dutch">Er zijn belangrijkere <span class="hl">dingen</span> in het leven.</div><div class="arabic">توجد أمور أهم في الحياة.</div></div></div>
+    <div class="sentence"><div class="num-badge">85</div><div class="text-block"><div class="dutch">Dat zijn twee verschillende <span class="hl">dingen</span>.</div><div class="arabic">هذان أمران مختلفان.</div></div></div>
+    <div class="sentence"><div class="num-badge">86</div><div class="text-block"><div class="dutch">Dat zijn persoonlijke <span class="hl">dingen</span>.</div><div class="arabic">هذه أمور شخصية.</div></div></div>
+    <div class="sentence"><div class="num-badge">87</div><div class="text-block"><div class="dutch">We moeten <span class="hl">dingen</span> niet ingewikkelder maken.</div><div class="arabic">يجب ألا نجعل الأمور أكثر تعقيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">88</div><div class="text-block"><div class="dutch">Ik wil de <span class="hl">dingen</span> goed regelen.</div><div class="arabic">أريد ترتيب الأمور بشكل جيد.</div></div></div>
+    <div class="sentence"><div class="num-badge">89</div><div class="text-block"><div class="dutch">Er zijn een paar <span class="hl">dingen</span> die ik niet begrijp.</div><div class="arabic">هناك بعض الأشياء التي لا أفهمها.</div></div></div>
+    <div class="sentence"><div class="num-badge">90</div><div class="text-block"><div class="dutch">Eén <span class="hl">ding</span> is zeker.</div><div class="arabic">هناك شيء واحد مؤكد.</div></div></div>
+    <div class="sentence"><div class="num-badge">91</div><div class="text-block"><div class="dutch">Het belangrijkste <span class="hl">ding</span> is veiligheid.</div><div class="arabic">أهم شيء هو السلامة.</div></div></div>
+    <div class="sentence"><div class="num-badge">92</div><div class="text-block"><div class="dutch">Er is één <span class="hl">ding</span> dat je moet weten.</div><div class="arabic">هناك شيء واحد يجب أن تعرفه.</div></div></div>
+    <div class="sentence"><div class="num-badge">93</div><div class="text-block"><div class="dutch">Ik heb veel <span class="hl">dingen</span> aan mijn hoofd.</div><div class="arabic">لدي أمور كثيرة تشغل بالي.</div></div></div>
+    <div class="sentence"><div class="num-badge">94</div><div class="text-block"><div class="dutch">We moeten de <span class="hl">dingen</span> stap voor stap doen.</div><div class="arabic">يجب أن نقوم بالأمور خطوة بخطوة.</div></div></div>
+    <div class="sentence"><div class="num-badge">95</div><div class="text-block"><div class="dutch">Sommige <span class="hl">dingen</span> kun je niet veranderen.</div><div class="arabic">بعض الأشياء لا يمكنك تغييرها.</div></div></div>
+    <div class="sentence"><div class="num-badge">96</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">dingen</span> op mijn eigen manier doen.</div><div class="arabic">أريد القيام بالأشياء بطريقتي الخاصة.</div></div></div>
+    <div class="sentence"><div class="num-badge">97</div><div class="text-block"><div class="dutch">We hebben de <span class="hl">dingen</span> goed voorbereid.</div><div class="arabic">لقد جهزنا الأمور جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">98</div><div class="text-block"><div class="dutch">Er zijn nog een paar <span class="hl">dingen</span> te bespreken.</div><div class="arabic">لا تزال هناك بعض الأمور التي يجب مناقشتها.</div></div></div>
+    <div class="sentence"><div class="num-badge">99</div><div class="text-block"><div class="dutch">Ik wil nuttige <span class="hl">dingen</span> doen.</div><div class="arabic">أريد القيام بأشياء مفيدة.</div></div></div>
+    <div class="sentence"><div class="num-badge">100</div><div class="text-block"><div class="dutch">Kleine <span class="hl">dingen</span> kunnen een groot verschil maken.</div><div class="arabic">الأشياء الصغيرة يمكن أن تُحدث فرقًا كبيرًا.</div></div></div>
+  </div>
+
+  <!-- Rule Section -->
+  <div class="rule-section">
+    <h2>📌 قاعدة مهمة للحفظ — الفرق بين المفرد والجمع</h2>
+
+    <table class="rule-table">
+      <thead>
+        <tr><th>الهولندية</th><th>العربية</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nl-cell">Dit ding</td><td class="ar-cell">هذا الشيء.</td></tr>
+        <tr><td class="nl-cell">Deze dingen</td><td class="ar-cell">هذه الأشياء.</td></tr>
+        <tr><td class="nl-cell">Dat ding</td><td class="ar-cell">ذلك الشيء.</td></tr>
+        <tr><td class="nl-cell">Die dingen</td><td class="ar-cell">تلك الأشياء.</td></tr>
+        <tr><td class="nl-cell">Eén ding</td><td class="ar-cell">شيء واحد.</td></tr>
+        <tr><td class="nl-cell">Veel dingen</td><td class="ar-cell">أشياء كثيرة.</td></tr>
+        <tr><td class="nl-cell">Alles</td><td class="ar-cell">كل شيء.</td></tr>
+        <tr><td class="nl-cell">Iets</td><td class="ar-cell">شيء ما.</td></tr>
+        <tr><td class="nl-cell">Niets</td><td class="ar-cell">لا شيء.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="extra-info">
+      <h3>💡 معلومة إضافية:</h3>
+      <p>كلمة <span class="nl">dingen</span> يمكن أن تكون فعلًا أيضًا، بمعنى المساومة على السعر. مثال:</p>
+      <p style="margin-top:10px;padding:12px 15px;background:#fdf3e7;border-radius:8px;direction:ltr;text-align:left;font-family:'Segoe UI',Arial;">
+        <strong style="color:#c62828;">Ik ding af op de prijs.</strong>
+        <span style="display:block;direction:rtl;text-align:right;font-family:inherit;color:#3d2b1f;margin-top:4px;">— أنا أساوم على السعر.</span>
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    🇳🇱 ١٠٠ جملة هولندية باستخدام Dingen وكل تصريفاتها — مع الترجمة العربية بالتشكيل الكامل
+  </footer>
+
+</div>
+</body>
+</html>
