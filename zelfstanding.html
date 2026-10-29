@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>١٠٠ جملة هولندية باستخدام Zelfstandig</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Naskh Arabic', 'Amiri', 'Traditional Arabic', serif;
+    background: linear-gradient(135deg, #1a3a5c 0%, #1e4d6b 50%, #2a6f8f 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    line-height: 1.9;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fffdf7;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+
+  header {
+    background: linear-gradient(135deg, #1e4d6b 0%, #143a52 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2.1em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  header .subtitle {
+    font-size: 1.1em;
+    opacity: 0.95;
+    background: rgba(255,255,255,0.15);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    margin-top: 10px;
+  }
+
+  header .flag {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .intro {
+    background: #e8f2f8;
+    padding: 25px 30px;
+    border-bottom: 3px solid #1e4d6b;
+    font-size: 1.05em;
+    color: #444;
+  }
+
+  .intro p { margin-bottom: 12px; }
+
+  .meaning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .meaning-card {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border-right: 4px solid #2a6f8f;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-size: 1em;
+  }
+
+  .meaning-card .nl {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #1e4d6b;
+    direction: ltr;
+    display: inline-block;
+  }
+
+  .section {
+    padding: 25px 30px;
+    border-bottom: 2px dashed #ddd;
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 14px 20px;
+    background: linear-gradient(90deg, #143a52, #2a6f8f);
+    color: white;
+    border-radius: 12px;
+    font-size: 1.15em;
+    font-weight: 700;
+    flex-wrap: wrap;
+  }
+
+  .section-header .num {
+    background: #ffb703;
+    color: #143a52;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    direction: ltr;
+    font-weight: 800;
+  }
+
+  .sentence {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border-right: 4px solid transparent;
+  }
+
+  .sentence:nth-child(odd) { background: #f5fafd; }
+  .sentence:nth-child(even) { background: #ffffff; }
+
+  .sentence:hover {
+    background: #e8f2f8;
+    border-right-color: #2a6f8f;
+    transform: translateX(-4px);
+  }
+
+  .num-badge {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #143a52, #2a6f8f);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: 700;
+    direction: ltr;
+  }
+
+  .text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .dutch {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 1.12em;
+    color: #143a52;
+    font-weight: 700;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .dutch .hl {
+    color: #d84315;
+    background: #fbe9e7;
+    padding: 0 6px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+
+  .arabic {
+    font-size: 1.13em;
+    color: #3d2b1f;
+    font-weight: 400;
+  }
+
+  .rule-section {
+    padding: 30px;
+    background: linear-gradient(135deg, #e8f2f8, #d4e8f2);
+    margin: 20px;
+    border-radius: 15px;
+    border: 2px solid #1e4d6b;
+  }
+
+  .rule-section h2 {
+    color: #143a52;
+    margin-bottom: 20px;
+    font-size: 1.45em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .rule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .rule-table th {
+    background: #1e4d6b;
+    color: white;
+    padding: 13px 12px;
+    font-size: 1em;
+  }
+
+  .rule-table td {
+    padding: 12px;
+    border-bottom: 1px solid #d4e8f2;
+    text-align: center;
+    font-size: 1.05em;
+  }
+
+  .rule-table tr:last-child td { border-bottom: none; }
+  .rule-table tr:hover td { background: #e8f2f8; }
+
+  .rule-table .nl-cell {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: #d84315;
+    direction: ltr;
+  }
+
+  .rule-table .ar-cell {
+    color: #3d2b1f;
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: #143a52;
+    color: #a8c8d8;
+    font-size: 0.95em;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    header { padding: 25px 15px; }
+    header h1 { font-size: 1.45em; }
+    .section { padding: 15px; }
+    .sentence { padding: 10px 8px; flex-wrap: wrap; }
+    .num-badge { width: 33px; height: 33px; font-size: 0.72em; }
+    .dutch { font-size: 1em; }
+    .arabic { font-size: 1em; }
+    .section-header { font-size: 1em; padding: 10px 12px; }
+    .rule-section { padding: 15px; margin: 10px; }
+    .rule-table td, .rule-table th { padding: 8px 5px; font-size: 0.85em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="flag">🇳🇱</div>
+    <h1>١٠٠ جملة هولندية باستخدام Zelfstandig</h1>
+    <div class="subtitle">مع الترجمة العربية بالتشكيل الكامل</div>
+  </header>
+
+  <div class="intro">
+    <p>كلمة <strong>zelfstandig</strong> لها أكثر من معنى حسب السياق:</p>
+    <div class="meaning-grid">
+      <div class="meaning-card"><span class="nl">Zelfstandig</span> = مستقل / بشكل مستقل.</div>
+      <div class="meaning-card"><span class="nl">Zelfstandig werken</span> = العمل بشكل مستقل.</div>
+      <div class="meaning-card"><span class="nl">Zelfstandig wonen</span> = السكن باستقلالية.</div>
+      <div class="meaning-card"><span class="nl">Zelfstandige</span> = شخص يعمل لحسابه الخاص (مستقل مهنيًا).</div>
+      <div class="meaning-card"><span class="nl">Het zelfstandig naamwoord</span> = الاسم في قواعد اللغة الهولندية.</div>
+    </div>
+  </div>
+
+  <!-- Section 1: 1-20 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">1 – 20</span>
+      جمل عن الاستقلال والاعتماد على النفس
+    </div>
+
+    <div class="sentence"><div class="num-badge">1</div><div class="text-block"><div class="dutch">Ik ben <span class="hl">zelfstandig</span>.</div><div class="arabic">أنا مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">2</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">zelfstandig</span> zijn.</div><div class="arabic">أريد أن أكون مستقلًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">3</div><div class="text-block"><div class="dutch">Ik woon <span class="hl">zelfstandig</span>.</div><div class="arabic">أنا أعيش بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">4</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> werken.</div><div class="arabic">أستطيع العمل بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">5</div><div class="text-block"><div class="dutch">Ik leer <span class="hl">zelfstandig</span> Nederlands.</div><div class="arabic">أتعلم الهولندية بمفردي.</div></div></div>
+    <div class="sentence"><div class="num-badge">6</div><div class="text-block"><div class="dutch">Hij is heel <span class="hl">zelfstandig</span>.</div><div class="arabic">هو مستقل جدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">7</div><div class="text-block"><div class="dutch">Zij woont <span class="hl">zelfstandig</span>.</div><div class="arabic">هي تعيش باستقلالية.</div></div></div>
+    <div class="sentence"><div class="num-badge">8</div><div class="text-block"><div class="dutch">Mijn zoon is al <span class="hl">zelfstandig</span>.</div><div class="arabic">ابني مستقل بالفعل.</div></div></div>
+    <div class="sentence"><div class="num-badge">9</div><div class="text-block"><div class="dutch">Mijn dochter wil <span class="hl">zelfstandig</span> worden.</div><div class="arabic">ابنتي تريد أن تصبح مستقلة.</div></div></div>
+    <div class="sentence"><div class="num-badge">10</div><div class="text-block"><div class="dutch">Je moet <span class="hl">zelfstandig</span> leren denken.</div><div class="arabic">يجب أن تتعلم التفكير باستقلالية.</div></div></div>
+    <div class="sentence"><div class="num-badge">11</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> beslissingen nemen.</div><div class="arabic">أستطيع اتخاذ القرارات بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">12</div><div class="text-block"><div class="dutch">Zij kan <span class="hl">zelfstandig</span> reizen.</div><div class="arabic">هي تستطيع السفر بمفردها.</div></div></div>
+    <div class="sentence"><div class="num-badge">13</div><div class="text-block"><div class="dutch">Hij kan <span class="hl">zelfstandig</span> koken.</div><div class="arabic">هو يستطيع الطهي بمفرده.</div></div></div>
+    <div class="sentence"><div class="num-badge">14</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">zelfstandig</span> leven.</div><div class="arabic">أريد أن أعيش باستقلالية.</div></div></div>
+    <div class="sentence"><div class="num-badge">15</div><div class="text-block"><div class="dutch">We moeten <span class="hl">zelfstandig</span> kunnen functioneren.</div><div class="arabic">يجب أن نكون قادرين على العمل باستقلالية.</div></div></div>
+    <div class="sentence"><div class="num-badge">16</div><div class="text-block"><div class="dutch">Hij is niet helemaal <span class="hl">zelfstandig</span>.</div><div class="arabic">هو ليس مستقلًا تمامًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">17</div><div class="text-block"><div class="dutch">Zij kan goed <span class="hl">zelfstandig</span> werken.</div><div class="arabic">هي تستطيع العمل بشكل مستقل جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">18</div><div class="text-block"><div class="dutch">Ik ben financieel <span class="hl">zelfstandig</span>.</div><div class="arabic">أنا مستقل ماليًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">19</div><div class="text-block"><div class="dutch">Hij wil financieel <span class="hl">zelfstandig</span> worden.</div><div class="arabic">يريد أن يصبح مستقلًا ماليًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">20</div><div class="text-block"><div class="dutch"><span class="hl">Zelfstandig</span> zijn is belangrijk.</div><div class="arabic">الاستقلال أمر مهم.</div></div></div>
+  </div>
+
+  <!-- Section 2: 21-40 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">21 – 40</span>
+      جمل عن العمل — Zelfstandig werken
+    </div>
+
+    <div class="sentence"><div class="num-badge">21</div><div class="text-block"><div class="dutch">Ik werk graag <span class="hl">zelfstandig</span>.</div><div class="arabic">أحب العمل بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">22</div><div class="text-block"><div class="dutch">Ik kan goed <span class="hl">zelfstandig</span> werken.</div><div class="arabic">أستطيع العمل بشكل مستقل جيدًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">23</div><div class="text-block"><div class="dutch">Je moet <span class="hl">zelfstandig</span> kunnen werken.</div><div class="arabic">يجب أن تكون قادرًا على العمل بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">24</div><div class="text-block"><div class="dutch">De werkgever zoekt iemand die <span class="hl">zelfstandig</span> kan werken.</div><div class="arabic">صاحب العمل يبحث عن شخص يستطيع العمل باستقلالية.</div></div></div>
+    <div class="sentence"><div class="num-badge">25</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> problemen oplossen.</div><div class="arabic">أستطيع حل المشكلات بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">26</div><div class="text-block"><div class="dutch">Ik voer mijn taken <span class="hl">zelfstandig</span> uit.</div><div class="arabic">أنفّذ مهامي بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">27</div><div class="text-block"><div class="dutch">Hij werkt <span class="hl">zelfstandig</span> op de bouwplaats.</div><div class="arabic">هو يعمل بشكل مستقل في موقع البناء.</div></div></div>
+    <div class="sentence"><div class="num-badge">28</div><div class="text-block"><div class="dutch">De ingenieur werkt <span class="hl">zelfstandig</span> aan het project.</div><div class="arabic">المهندس يعمل بشكل مستقل على المشروع.</div></div></div>
+    <div class="sentence"><div class="num-badge">29</div><div class="text-block"><div class="dutch">Ik heb ervaring met <span class="hl">zelfstandig</span> werken.</div><div class="arabic">لدي خبرة في العمل بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">30</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> technische tekeningen maken.</div><div class="arabic">أستطيع إعداد الرسومات الفنية بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">31</div><div class="text-block"><div class="dutch">Zij kan <span class="hl">zelfstandig</span> rapporten schrijven.</div><div class="arabic">هي تستطيع كتابة التقارير بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">32</div><div class="text-block"><div class="dutch">Je moet <span class="hl">zelfstandig</span> beslissingen durven nemen.</div><div class="arabic">يجب أن تجرؤ على اتخاذ القرارات بنفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">33</div><div class="text-block"><div class="dutch">Ik werk zowel <span class="hl">zelfstandig</span> als in een team.</div><div class="arabic">أعمل بشكل مستقل وضمن فريق أيضًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">34</div><div class="text-block"><div class="dutch">Hij heeft weinig begeleiding nodig en werkt <span class="hl">zelfstandig</span>.</div><div class="arabic">يحتاج إلى إشراف قليل ويعمل باستقلالية.</div></div></div>
+    <div class="sentence"><div class="num-badge">35</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> een planning opstellen.</div><div class="arabic">أستطيع إعداد خطة عمل بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">36</div><div class="text-block"><div class="dutch">De werknemer moet <span class="hl">zelfstandig</span> kunnen handelen.</div><div class="arabic">يجب أن يكون الموظف قادرًا على التصرف باستقلالية.</div></div></div>
+    <div class="sentence"><div class="num-badge">37</div><div class="text-block"><div class="dutch">Ik ben gewend om <span class="hl">zelfstandig</span> te werken.</div><div class="arabic">أنا معتاد على العمل بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">38</div><div class="text-block"><div class="dutch">Zij lost technische problemen <span class="hl">zelfstandig</span> op.</div><div class="arabic">هي تحل المشكلات الفنية بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">39</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> installaties controleren.</div><div class="arabic">أستطيع فحص التركيبات بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">40</div><div class="text-block"><div class="dutch"><span class="hl">Zelfstandig</span> werken vraagt verantwoordelijkheid.</div><div class="arabic">العمل باستقلالية يتطلب المسؤولية.</div></div></div>
+  </div>
+
+  <!-- Section 3: 41-60 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">41 – 60</span>
+      جمل عن الحياة اليومية
+    </div>
+
+    <div class="sentence"><div class="num-badge">41</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">zelfstandig</span> boodschappen doen.</div><div class="arabic">أريد التسوق بمفردي.</div></div></div>
+    <div class="sentence"><div class="num-badge">42</div><div class="text-block"><div class="dutch">Hij kan <span class="hl">zelfstandig</span> naar het werk gaan.</div><div class="arabic">يستطيع الذهاب إلى العمل بمفرده.</div></div></div>
+    <div class="sentence"><div class="num-badge">43</div><div class="text-block"><div class="dutch">Zij kan <span class="hl">zelfstandig</span> met de bus reizen.</div><div class="arabic">تستطيع السفر بالحافلة بمفردها.</div></div></div>
+    <div class="sentence"><div class="num-badge">44</div><div class="text-block"><div class="dutch">Ik leer <span class="hl">zelfstandig</span> autorijden.</div><div class="arabic">أتعلم القيادة بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">45</div><div class="text-block"><div class="dutch">Mijn kinderen moeten <span class="hl">zelfstandig</span> leren worden.</div><div class="arabic">يجب أن يتعلم أطفالي الاعتماد على أنفسهم.</div></div></div>
+    <div class="sentence"><div class="num-badge">46</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> mijn administratie regelen.</div><div class="arabic">أستطيع تنظيم معاملاتي الإدارية بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">47</div><div class="text-block"><div class="dutch">Zij maakt <span class="hl">zelfstandig</span> haar huis schoon.</div><div class="arabic">هي تنظف منزلها بنفسها.</div></div></div>
+    <div class="sentence"><div class="num-badge">48</div><div class="text-block"><div class="dutch">Hij kan <span class="hl">zelfstandig</span> eten bereiden.</div><div class="arabic">يستطيع إعداد الطعام بنفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">49</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">zelfstandig</span> mijn afspraken plannen.</div><div class="arabic">أريد تنظيم مواعيدي بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">50</div><div class="text-block"><div class="dutch">We wonen <span class="hl">zelfstandig</span> in België.</div><div class="arabic">نحن نعيش باستقلالية في بلجيكا.</div></div></div>
+    <div class="sentence"><div class="num-badge">51</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> naar de dokter gaan.</div><div class="arabic">أستطيع الذهاب إلى الطبيب بمفردي.</div></div></div>
+    <div class="sentence"><div class="num-badge">52</div><div class="text-block"><div class="dutch">Hij regelt zijn documenten <span class="hl">zelfstandig</span>.</div><div class="arabic">هو يرتب مستنداته بنفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">53</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">zelfstandig</span> mijn problemen oplossen.</div><div class="arabic">أريد حل مشكلاتي بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">54</div><div class="text-block"><div class="dutch">Zij neemt <span class="hl">zelfstandig</span> de trein.</div><div class="arabic">هي تستقل القطار بمفردها.</div></div></div>
+    <div class="sentence"><div class="num-badge">55</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> online studeren.</div><div class="arabic">أستطيع الدراسة عبر الإنترنت بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">56</div><div class="text-block"><div class="dutch">Hij zorgt <span class="hl">zelfstandig</span> voor zijn gezin.</div><div class="arabic">هو يعتني بأسرته بنفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">57</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">zelfstandig</span> mijn geld beheren.</div><div class="arabic">أريد إدارة أموالي بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">58</div><div class="text-block"><div class="dutch">Zij kan <span class="hl">zelfstandig</span> keuzes maken.</div><div class="arabic">تستطيع اتخاذ خياراتها بنفسها.</div></div></div>
+    <div class="sentence"><div class="num-badge">59</div><div class="text-block"><div class="dutch">Ik leer <span class="hl">zelfstandig</span> nieuwe vaardigheden.</div><div class="arabic">أتعلم مهارات جديدة بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">60</div><div class="text-block"><div class="dutch">We moeten onze kinderen <span class="hl">zelfstandig</span> opvoeden.</div><div class="arabic">يجب أن نربي أطفالنا ليعتمدوا على أنفسهم.</div></div></div>
+  </div>
+
+  <!-- Section 4: 61-80 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">61 – 80</span>
+      جمل عن العمل لحسابك الخاص — Zelfstandige
+    </div>
+
+    <div class="sentence"><div class="num-badge">61</div><div class="text-block"><div class="dutch">Ik wil als <span class="hl">zelfstandige</span> werken.</div><div class="arabic">أريد العمل لحسابي الخاص.</div></div></div>
+    <div class="sentence"><div class="num-badge">62</div><div class="text-block"><div class="dutch">Hij is <span class="hl">zelfstandige</span>.</div><div class="arabic">هو يعمل لحسابه الخاص.</div></div></div>
+    <div class="sentence"><div class="num-badge">63</div><div class="text-block"><div class="dutch">Zij werkt als <span class="hl">zelfstandige</span> ingenieur.</div><div class="arabic">هي تعمل مهندسة مستقلة.</div></div></div>
+    <div class="sentence"><div class="num-badge">64</div><div class="text-block"><div class="dutch">Mijn broer is <span class="hl">zelfstandige</span> aannemer.</div><div class="arabic">أخي مقاول يعمل لحسابه الخاص.</div></div></div>
+    <div class="sentence"><div class="num-badge">65</div><div class="text-block"><div class="dutch">Ik wil een <span class="hl">zelfstandige</span> onderneming starten.</div><div class="arabic">أريد إنشاء مشروع خاص.</div></div></div>
+    <div class="sentence"><div class="num-badge">66</div><div class="text-block"><div class="dutch">Een <span class="hl">zelfstandige</span> betaalt sociale bijdragen.</div><div class="arabic">الشخص العامل لحسابه الخاص يدفع اشتراكات اجتماعية.</div></div></div>
+    <div class="sentence"><div class="num-badge">67</div><div class="text-block"><div class="dutch">Hij werkt als <span class="hl">zelfstandige</span> in de bouwsector.</div><div class="arabic">هو يعمل لحسابه الخاص في قطاع البناء.</div></div></div>
+    <div class="sentence"><div class="num-badge">68</div><div class="text-block"><div class="dutch">Zij heeft een eigen zaak als <span class="hl">zelfstandige</span>.</div><div class="arabic">لديها مشروعها الخاص بصفتها عاملة مستقلة.</div></div></div>
+    <div class="sentence"><div class="num-badge">69</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">zelfstandige</span> worden in België.</div><div class="arabic">أريد أن أعمل لحسابي الخاص في بلجيكا.</div></div></div>
+    <div class="sentence"><div class="num-badge">70</div><div class="text-block"><div class="dutch">Een <span class="hl">zelfstandige</span> moet zijn administratie bijhouden.</div><div class="arabic">يجب على العامل لحسابه الخاص متابعة إدارته وحساباته.</div></div></div>
+    <div class="sentence"><div class="num-badge">71</div><div class="text-block"><div class="dutch">Hij heeft zich als <span class="hl">zelfstandige</span> ingeschreven.</div><div class="arabic">سجّل نفسه عاملًا لحسابه الخاص.</div></div></div>
+    <div class="sentence"><div class="num-badge">72</div><div class="text-block"><div class="dutch">Ik onderzoek de voorwaarden om <span class="hl">zelfstandige</span> te worden.</div><div class="arabic">أبحث شروط العمل لحسابي الخاص.</div></div></div>
+    <div class="sentence"><div class="num-badge">73</div><div class="text-block"><div class="dutch">Een <span class="hl">zelfstandige</span> heeft vaak meer verantwoordelijkheid.</div><div class="arabic">غالبًا ما يتحمل العامل لحسابه الخاص مسؤولية أكبر.</div></div></div>
+    <div class="sentence"><div class="num-badge">74</div><div class="text-block"><div class="dutch">Zij werkt als <span class="hl">zelfstandige</span> consultant.</div><div class="arabic">هي تعمل مستشارة مستقلة.</div></div></div>
+    <div class="sentence"><div class="num-badge">75</div><div class="text-block"><div class="dutch">Ik wil eerst ervaring opdoen voordat ik <span class="hl">zelfstandige</span> word.</div><div class="arabic">أريد اكتساب الخبرة أولًا قبل أن أعمل لحسابي الخاص.</div></div></div>
+    <div class="sentence"><div class="num-badge">76</div><div class="text-block"><div class="dutch">Een <span class="hl">zelfstandige</span> kan voor verschillende klanten werken.</div><div class="arabic">يمكن للعامل المستقل العمل مع عملاء مختلفين.</div></div></div>
+    <div class="sentence"><div class="num-badge">77</div><div class="text-block"><div class="dutch">Hij is <span class="hl">zelfstandig</span> ondernemer.</div><div class="arabic">هو صاحب مشروع مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">78</div><div class="text-block"><div class="dutch">Ik wil weten hoeveel een <span class="hl">zelfstandige</span> verdient.</div><div class="arabic">أريد أن أعرف كم يكسب العامل لحسابه الخاص.</div></div></div>
+    <div class="sentence"><div class="num-badge">79</div><div class="text-block"><div class="dutch">Als <span class="hl">zelfstandige</span> moet je zelf klanten zoeken.</div><div class="arabic">إذا كنت تعمل لحسابك الخاص، فعليك البحث عن العملاء بنفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">80</div><div class="text-block"><div class="dutch">Ik wil mijn eigen <span class="hl">zelfstandige</span> activiteit beginnen.</div><div class="arabic">أريد بدء نشاطي المهني المستقل.</div></div></div>
+  </div>
+
+  <!-- Section 5: 81-100 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="num">81 – 100</span>
+      جمل عن الدراسة والقواعد والمهارات
+    </div>
+
+    <div class="sentence"><div class="num-badge">81</div><div class="text-block"><div class="dutch">Ik studeer <span class="hl">zelfstandig</span> voor mijn examen.</div><div class="arabic">أذاكر لامتحاني بمفردي.</div></div></div>
+    <div class="sentence"><div class="num-badge">82</div><div class="text-block"><div class="dutch">De student werkt <span class="hl">zelfstandig</span> aan de opdracht.</div><div class="arabic">الطالب يعمل بشكل مستقل على المهمة.</div></div></div>
+    <div class="sentence"><div class="num-badge">83</div><div class="text-block"><div class="dutch">Je moet <span class="hl">zelfstandig</span> informatie kunnen zoeken.</div><div class="arabic">يجب أن تكون قادرًا على البحث عن المعلومات بنفسك.</div></div></div>
+    <div class="sentence"><div class="num-badge">84</div><div class="text-block"><div class="dutch">Ik maak <span class="hl">zelfstandig</span> mijn huiswerk.</div><div class="arabic">أؤدي واجبي المنزلي بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">85</div><div class="text-block"><div class="dutch">Zij leert <span class="hl">zelfstandig</span> nieuwe woorden.</div><div class="arabic">هي تتعلم كلمات جديدة بمفردها.</div></div></div>
+    <div class="sentence"><div class="num-badge">86</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> een computerprogramma gebruiken.</div><div class="arabic">أستطيع استخدام برنامج كمبيوتر بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">87</div><div class="text-block"><div class="dutch">De leerling moet <span class="hl">zelfstandig</span> leren werken.</div><div class="arabic">يجب أن يتعلم التلميذ العمل بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">88</div><div class="text-block"><div class="dutch">Ik oefen <span class="hl">zelfstandig</span> mijn Nederlandse uitspraak.</div><div class="arabic">أتدرب على نطقي الهولندي بمفردي.</div></div></div>
+    <div class="sentence"><div class="num-badge">89</div><div class="text-block"><div class="dutch">Hij heeft <span class="hl">zelfstandig</span> een oplossing gevonden.</div><div class="arabic">وجد حلًا بنفسه.</div></div></div>
+    <div class="sentence"><div class="num-badge">90</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> een presentatie voorbereiden.</div><div class="arabic">أستطيع إعداد عرض تقديمي بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">91</div><div class="text-block"><div class="dutch">Een <span class="hl">zelfstandig</span> naamwoord benoemt een persoon, dier, ding of begrip.</div><div class="arabic">الاسم يدل على شخص أو حيوان أو شيء أو مفهوم.</div></div></div>
+    <div class="sentence"><div class="num-badge">92</div><div class="text-block"><div class="dutch">Het woord 'huis' is een <span class="hl">zelfstandig</span> naamwoord.</div><div class="arabic">كلمة «huis» اسم.</div></div></div>
+    <div class="sentence"><div class="num-badge">93</div><div class="text-block"><div class="dutch">'Werken' is een werkwoord, geen <span class="hl">zelfstandig</span> naamwoord.</div><div class="arabic">كلمة «werken» فعل وليست اسمًا.</div></div></div>
+    <div class="sentence"><div class="num-badge">94</div><div class="text-block"><div class="dutch">In deze zin staat een <span class="hl">zelfstandig</span> naamwoord.</div><div class="arabic">يوجد اسم في هذه الجملة.</div></div></div>
+    <div class="sentence"><div class="num-badge">95</div><div class="text-block"><div class="dutch">Ik wil <span class="hl">zelfstandig</span> grammatica oefenen.</div><div class="arabic">أريد التدرب على القواعد بمفردي.</div></div></div>
+    <div class="sentence"><div class="num-badge">96</div><div class="text-block"><div class="dutch">De docent laat ons <span class="hl">zelfstandig</span> oefenen.</div><div class="arabic">يتركنا المعلم نتدرب بشكل مستقل.</div></div></div>
+    <div class="sentence"><div class="num-badge">97</div><div class="text-block"><div class="dutch">Ik kan <span class="hl">zelfstandig</span> een e-mail schrijven.</div><div class="arabic">أستطيع كتابة بريد إلكتروني بنفسي.</div></div></div>
+    <div class="sentence"><div class="num-badge">98</div><div class="text-block"><div class="dutch">Zij heeft <span class="hl">zelfstandig</span> Nederlands geleerd.</div><div class="arabic">لقد تعلمت الهولندية بمفردها.</div></div></div>
+    <div class="sentence"><div class="num-badge">99</div><div class="text-block"><div class="dutch"><span class="hl">Zelfstandig</span> leren helpt mij om vooruit te gaan.</div><div class="arabic">يساعدني التعلم المستقل على التقدم.</div></div></div>
+    <div class="sentence"><div class="num-badge">100</div><div class="text-block"><div class="dutch">Ik wil in België <span class="hl">zelfstandig</span> en succesvol werken.</div><div class="arabic">أريد أن أعمل في بلجيكا باستقلالية ونجاح.</div></div></div>
+  </div>
+
+  <!-- Rule Section -->
+  <div class="rule-section">
+    <h2>📌 مهم للحفظ: الفرق بين هذه الكلمات</h2>
+
+    <table class="rule-table">
+      <thead>
+        <tr><th>الكلمة</th><th>المعنى بالعربية</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nl-cell">Zelfstandig</td><td class="ar-cell">مستقل / بشكل مستقل.</td></tr>
+        <tr><td class="nl-cell">Zelf</td><td class="ar-cell">بنفسه / بنفسي.</td></tr>
+        <tr><td class="nl-cell">Jezelf</td><td class="ar-cell">نفسك.</td></tr>
+        <tr><td class="nl-cell">Zelfstandige</td><td class="ar-cell">عامل لحسابه الخاص.</td></tr>
+        <tr><td class="nl-cell">Zelfstandig naamwoord</td><td class="ar-cell">اسم في قواعد اللغة.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    🇳🇱 ١٠٠ جملة هولندية باستخدام Zelfstandig — مع الترجمة العربية بالتشكيل الكامل
+  </footer>
+
+</div>
+</body>
+</html>
