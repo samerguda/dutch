@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 سؤال فلمنكي | Are you gonna...?</title>
+<style>
+:root {
+  --primary: #176b55;
+  --secondary: #e7f5ef;
+  --bg: #f4f7f6;
+  --text: #20312d;
+  --muted: #64756f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Tahoma, sans-serif;
+  line-height: 1.8;
+}
+header {
+  background: linear-gradient(135deg, #104d40, #21876b);
+  color: white;
+  padding: 36px 18px;
+  text-align: center;
+}
+header h1 { margin: 0 0 10px; font-size: 27px; }
+header p { margin: 5px 0; }
+.en-title {
+  direction: ltr;
+  font-size: 20px;
+  font-weight: bold;
+  color: #d4f8e8;
+}
+.container {
+  max-width: 900px;
+  margin: 22px auto;
+  padding: 0 14px;
+}
+.note {
+  background: white;
+  border-right: 5px solid var(--primary);
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+.toolbar {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+input {
+  flex: 1;
+  min-width: 180px;
+  padding: 13px;
+  border: 1px solid #d1ded8;
+  border-radius: 10px;
+  font-size: 16px;
+  direction: rtl;
+}
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+button:hover { opacity: .88; }
+.counter {
+  color: var(--muted);
+  margin: 12px 0;
+  font-size: 14px;
+}
+.sentence {
+  background: white;
+  border: 1px solid #e3ebe7;
+  border-radius: 13px;
+  margin-bottom: 11px;
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  box-shadow: 0 2px 5px #183d3010;
+}
+.number {
+  background: var(--secondary);
+  color: var(--primary);
+  border-radius: 9px;
+  min-width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  direction: ltr;
+}
+.content { flex: 1; min-width: 0; }
+.dutch {
+  direction: ltr;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: #155c49;
+  margin-bottom: 5px;
+}
+.arabic { font-size: 16px; }
+.hidden { display: none; }
+footer {
+  text-align: center;
+  padding: 25px;
+  color: var(--muted);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🇧🇪 الفلمنكية البلجيكية</h1>
+  <div class="en-title">ARE YOU GONNA...?</div>
+  <p>100 سؤال عملي مع الترجمة العربية</p>
+  <p>للحياة اليومية في بلجيكا</p>
+</header>
+
+<div class="container">
+  <div class="note">
+    <strong>📘 القاعدة:</strong>
+    <span dir="ltr">Ga je + werkwoord ...?</span>
+    <br>
+    معناها: هل هتـ...؟ / هل تنوي أن...؟
+    <br>
+    مثال: <span dir="ltr">Ga je morgen werken?</span>
+    = هل هتشتغل بكرة؟
+    <br>
+    <small>ملحوظة: هذا أسلوب طبيعي في الهولندية البلجيكية المحكية، وهو مناسب أيضًا للهجة فلاندرز.</small>
+  </div>
+
+  <div class="toolbar">
+    <input id="search" type="search"
+      placeholder="ابحث بالكلمة الهولندية أو العربية..."
+      oninput="filterSentences()">
+    <button onclick="toggleTranslations()">إظهار / إخفاء الترجمة</button>
+    <button onclick="copyAll()">نسخ كل الجمل</button>
+  </div>
+
+  <div class="counter" id="counter">100 جملة</div>
+  <div id="sentences"></div>
+</div>
+
+<footer>
+  Flemish Dutch · Nederlands in Vlaanderen · A1–A2
+</footer>
+
+<script>
+const data = [
+["Ga je morgen werken?","هل هتشتغل بكرة؟"],
+["Ga je vandaag naar huis?","هل هتروح البيت النهارده؟"],
+["Ga je straks boodschappen doen?","هل هتروح تشتري حاجات كمان شوية؟"],
+["Ga je vanavond koken?","هل هتطبخ الليلة؟"],
+["Ga je koffie drinken?","هل هتشرب قهوة؟"],
+["Ga je thee maken?","هل هتحضّر شاي؟"],
+["Ga je iets eten?","هل هتاكل حاجة؟"],
+["Ga je ontbijten?","هل هتفطر؟"],
+["Ga je lunchen met ons?","هل هتتغدى معانا؟"],
+["Ga je vanavond thuis eten?","هل هتتعشى في البيت الليلة؟"],
+
+["Ga je naar de winkel?","هل هتروح المحل؟"],
+["Ga je naar de supermarkt?","هل هتروح السوبر ماركت؟"],
+["Ga je naar de bakker?","هل هتروح المخبز؟"],
+["Ga je naar de slager?","هل هتروح الجزار؟"],
+["Ga je naar de apotheek?","هل هتروح الصيدلية؟"],
+["Ga je naar de dokter?","هل هتروح للدكتور؟"],
+["Ga je naar het ziekenhuis?","هل هتروح المستشفى؟"],
+["Ga je naar de tandarts?","هل هتروح لطبيب الأسنان؟"],
+["Ga je naar de kapper?","هل هتروح للحلاق؟"],
+["Ga je naar het gemeentehuis?","هل هتروح مبنى البلدية؟"],
+
+["Ga je met de bus?","هل هتروح بالأتوبيس؟"],
+["Ga je met de trein?","هل هتروح بالقطار؟"],
+["Ga je met de fiets?","هل هتروح بالعجلة؟"],
+["Ga je te voet?","هل هتروح مشيًا؟"],
+["Ga je met de auto?","هل هتروح بالعربية؟"],
+["Ga je een taxi nemen?","هل هتاخد تاكسي؟"],
+["Ga je naar Kortrijk?","هل هتروح كورترايك؟"],
+["Ga je naar Gent?","هل هتروح خنت؟"],
+["Ga je naar Brussel?","هل هتروح بروكسل؟"],
+["Ga je vandaag op reis?","هل هتسافر النهارده؟"],
+
+["Ga je Nederlands leren?","هل هتتعلم الهولندية؟"],
+["Ga je vandaag studeren?","هل هتذاكر النهارده؟"],
+["Ga je naar de les?","هل هتروح الحصة؟"],
+["Ga je online les volgen?","هل هتحضر درس أونلاين؟"],
+["Ga je je huiswerk maken?","هل هتعمل واجبك؟"],
+["Ga je dat woord opschrijven?","هل هتكتب الكلمة دي؟"],
+["Ga je de tekst lezen?","هل هتقرأ النص؟"],
+["Ga je Nederlands spreken?","هل هتتكلم هولندي؟"],
+["Ga je met mij oefenen?","هل هتتدرب معايا؟"],
+["Ga je morgen examen doen?","هل هتمتحن بكرة؟"],
+
+["Ga je solliciteren?","هل هتقدم على وظيفة؟"],
+["Ga je vandaag werken?","هل هتشتغل النهارده؟"],
+["Ga je een nieuwe job zoeken?","هل هتدور على شغل جديد؟"],
+["Ga je naar een interimkantoor?","هل هتروح مكتب توظيف مؤقت؟"],
+["Ga je je cv opsturen?","هل هتبعت سيرتك الذاتية؟"],
+["Ga je die vacature bekijken?","هل هتراجع إعلان الوظيفة ده؟"],
+["Ga je je baas bellen?","هل هتتصل بمديرك؟"],
+["Ga je vroeger vertrekken?","هل هتمشي بدري؟"],
+["Ga je overwerken?","هل هتشتغل ساعات إضافية؟"],
+["Ga je morgen vrij nemen?","هل هتاخد إجازة بكرة؟"],
+
+["Ga je me helpen?","هل هتساعدني؟"],
+["Ga je op mij wachten?","هل هتستناني؟"],
+["Ga je met me mee?","هل هتيجي معايا؟"],
+["Ga je me bellen?","هل هتتصل بيا؟"],
+["Ga je me terugbellen?","هل هتتصل بيا تاني؟"],
+["Ga je me een bericht sturen?","هل هتبعتلي رسالة؟"],
+["Ga je dat aan mij uitleggen?","هل هتشرحلي ده؟"],
+["Ga je eerlijk zijn?","هل هتكون صريح؟"],
+["Ga je het me vertellen?","هل هتحكيلي؟"],
+["Ga je me even laten weten?","هل هتبلغني؟"],
+
+["Ga je vanavond thuisblijven?","هل هتفضل في البيت الليلة؟"],
+["Ga je uitgaan?","هل هتخرج تتفسح؟"],
+["Ga je naar de cinema?","هل هتروح السينما؟"],
+["Ga je tv kijken?","هل هتتفرج على التلفزيون؟"],
+["Ga je een film kijken?","هل هتتفرج على فيلم؟"],
+["Ga je muziek luisteren?","هل هتسمع موسيقى؟"],
+["Ga je sporten?","هل هتتمرن؟"],
+["Ga je naar de fitness?","هل هتروح الجيم؟"],
+["Ga je wandelen?","هل هتروح تتمشى؟"],
+["Ga je vanavond vroeg slapen?","هل هتنام بدري الليلة؟"],
+
+["Ga je je kamer opruimen?","هل هترتب أوضتك؟"],
+["Ga je het huis schoonmaken?","هل هتنضف البيت؟"],
+["Ga je de afwas doen?","هل هتغسل المواعين؟"],
+["Ga je de was doen?","هل هتغسل الهدوم؟"],
+["Ga je de vuilnis buitenzetten?","هل هتطلع الزبالة بره؟"],
+["Ga je het bed opmaken?","هل هترتب السرير؟"],
+["Ga je de tafel dekken?","هل هتجهز السفرة؟"],
+["Ga je de deur opendoen?","هل هتفتح الباب؟"],
+["Ga je het raam sluiten?","هل هتقفل الشباك؟"],
+["Ga je de boodschappen dragen?","هل هتشيل المشتريات؟"],
+
+["Ga je morgen vroeg opstaan?","هل هتصحى بدري بكرة؟"],
+["Ga je op tijd vertrekken?","هل هتمشي في المعاد؟"],
+["Ga je op mij wachten aan het station?","هل هتستناني في المحطة؟"],
+["Ga je vandaag de trein halen?","هل هتلحق القطار النهارده؟"],
+["Ga je je ticket online kopen?","هل هتشتري تذكرتك أونلاين؟"],
+["Ga je de weg vragen?","هل هتسأل عن الطريق؟"],
+["Ga je linksaf slaan?","هل هتلف شمال؟"],
+["Ga je rechtsaf slaan?","هل هتلف يمين؟"],
+["Ga je hier uitstappen?","هل هتنزل هنا؟"],
+["Ga je aan de volgende halte uitstappen?","هل هتنزل في المحطة الجاية؟"],
+
+["Ga je morgen langskomen?","هل هتعدي علينا بكرة؟"],
+["Ga je dit weekend op bezoek?","هل هتزور حد في عطلة نهاية الأسبوع؟"],
+["Ga je met ons mee-eten?","هل هتاكل معانا؟"],
+["Ga je je familie bezoeken?","هل هتزور عيلتك؟"],
+["Ga je je vrienden uitnodigen?","هل هتعزم أصحابك؟"],
+["Ga je naar het feest komen?","هل هتيجي الحفلة؟"],
+["Ga je me morgen terugbetalen?","هل هترجعلي الفلوس بكرة؟"],
+["Ga je dat vandaag afmaken?","هل هتخلص ده النهارده؟"],
+["Ga je het proberen?","هل هتحاول؟"],
+["Ga je dat echt doen?","هل هتعمل ده بجد؟"]
+];
+
+const root = document.getElementById("sentences");
+let translationsVisible = true;
+
+function render(list) {
+  root.innerHTML = "";
+  list.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "sentence";
+
+    const num = document.createElement("div");
+    num.className = "number";
+    num.textContent = item.id;
+
+    const content = document.createElement("div");
+    content.className = "content";
+
+    const dutch = document.createElement("div");
+    dutch.className = "dutch";
+    dutch.textContent = item.nl;
+
+    const arabic = document.createElement("div");
+    arabic.className = "arabic" + (translationsVisible ? "" : " hidden");
+    arabic.textContent = item.ar;
+
+    content.append(dutch, arabic);
+    card.append(num, content);
+    root.append(card);
+  });
+
+  document.getElementById("counter").textContent =
+    `عرض ${list.length} من أصل ${data.length} جملة`;
+}
+
+function filterSentences() {
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const filtered = data
+    .map((x, i) => ({id:i+1, nl:x[0], ar:x[1]}))
+    .filter(x => x.nl.toLowerCase().includes(q) || x.ar.includes(q));
+  render(filtered);
+}
+
+function toggleTranslations() {
+  translationsVisible = !translationsVisible;
+  filterSentences();
+}
+
+function copyAll() {
+  const text = data.map((x, i) =>
+    `${i+1}. ${x[0]}\n   ${x[1]}`
+  ).join("\n\n");
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text)
+      .then(() => alert("تم نسخ الجمل الـ100!"))
+      .catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text) {
+  const area = document.createElement("textarea");
+  area.value = text;
+  document.body.appendChild(area);
+  area.select();
+  try {
+    document.execCommand("copy");
+    alert("تم نسخ الجمل!");
+  } catch(e) {
+    alert("تعذر النسخ تلقائياً. حاول تحديد النص ونسخه.");
+  }
+  area.remove();
+}
+
+render(data.map((x, i) => ({id:i+1, nl:x[0], ar:x[1]})));
+</script>
+</body>
+</html>
