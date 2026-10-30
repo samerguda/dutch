@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحضير المناسبة</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 20px;
+        font-family: Tahoma, Arial, sans-serif;
+        background: #f3f4f6;
+        color: #222;
+        line-height: 1.8;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 26px;
+        margin: 0 0 25px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 10px;
+        margin-bottom: 8px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        font-size: 17px;
+    }
+
+    .item input {
+        width: 20px;
+        height: 20px;
+        margin-top: 7px;
+        flex-shrink: 0;
+        accent-color: #2563eb;
+    }
+
+    .item:has(input:checked) {
+        background: #e8f5e9;
+        text-decoration: line-through;
+        color: #777;
+    }
+
+    @media print {
+        body {
+            background: white;
+            padding: 0;
+        }
+
+        .container {
+            box-shadow: none;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>تحضير المناسبة :</h1>
+
+    <label class="item">
+        <input type="checkbox">
+        <span>١- اختيار اللبس ( جاكت قميص بنطلون شراب حذاء حزام )</span>
+    </label>
+
+    <label class="item">
+        <input type="checkbox">
+        <span>٢- تنييم الشعر</span>
+    </label>
+
+    <label class="item">
+        <input type="checkbox">
+        <span>٣- ودوون</span>
+    </label>
+
+    <label class="item">
+        <input type="checkbox">
+        <span>٤- ملقاط</span>
+    </label>
+
+    <label class="item">
+        <input type="checkbox">
+        <span>٥- مقص شنب</span>
+    </label>
+
+    <label class="item">
+        <input type="checkbox">
+        <span>٦- مكنة حلاقة</span>
+    </label>
+
+    <label class="item">
+        <input type="checkbox">
+        <span>٧- تسويد الشعر ( الشنطة الترولي )</span>
+    </label>
+
+    <label class="item">
+        <input type="checkbox">
+        <span>٨- برفان</span>
+    </label>
+
+    <label class="item">
+        <input type="checkbox">
+        <span>٩- كوي اللبس</span>
+    </label>
+
+    <label class="item">
+        <input type="checkbox">
+        <span>١٠ - اخذ الاي دي</span>
+    </label>
+
+    <label class="item">
+        <input type="checkbox">
+        <span>١١- دواء فارس</span>
+    </label>
+</div>
+
+</body>
+</html>
