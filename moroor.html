@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عبارات مرورية بالفلمنكية مع الترجمة العربية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, 'Noto Kufi Arabic', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+            padding: 30px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #1a1a2e;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "🚦";
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.1;
+            left: -30px;
+            top: -50px;
+            transform: rotate(-15deg);
+        }
+
+        .header::after {
+            content: "🛣️";
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            right: -20px;
+            bottom: -60px;
+            transform: rotate(10deg);
+        }
+
+        .header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.15rem;
+            opacity: 0.92;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .flag-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            position: relative;
+            z-index: 1;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 18px 20px;
+            background: #f0f4f8;
+            border-bottom: 1px solid #dbe4ed;
+            flex-wrap: wrap;
+        }
+
+        .legend span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #2d4059;
+        }
+
+        .legend .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .dot.flemish {
+            background: #e67e22;
+        }
+
+        .dot.arabic {
+            background: #2980b9;
+        }
+
+        .list-wrapper {
+            padding: 10px 0 30px;
+        }
+
+        .sentence-item {
+            display: flex;
+            align-items: stretch;
+            border-bottom: 1px solid #eef2f6;
+            transition: all 0.2s ease;
+        }
+
+        .sentence-item:hover {
+            background: #f8fafc;
+            transform: scale(1.002);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .sentence-item:last-child {
+            border-bottom: none;
+        }
+
+        .number-col {
+            min-width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #ffffff;
+            background: linear-gradient(135deg, #2c3e50, #1a252f);
+            padding: 18px 12px;
+            position: relative;
+            flex-shrink: 0;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.5px;
+        }
+
+        .number-col::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 15%;
+            height: 70%;
+            width: 3px;
+            background: #f39c12;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .flemish-col {
+            flex: 1;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #c0392b;
+            background: #fff9f5;
+            border-left: 1px solid #f0e6df;
+            direction: ltr;
+            text-align: left;
+            line-height: 1.6;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            letter-spacing: 0.2px;
+        }
+
+        .arabic-col {
+            flex: 1.1;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #1a5276;
+            background: #f5f9ff;
+            line-height: 1.7;
+            direction: rtl;
+            text-align: right;
+            border-right: 3px solid transparent;
+            border-image: linear-gradient(to bottom, #3498db, #2980b9) 1;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 22px 20px;
+            background: #eef2f7;
+            color: #5d6d7e;
+            font-size: 0.92rem;
+            border-top: 1px solid #d5dfe9;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 700px) {
+            .header h1 {
+                font-size: 1.7rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .sentence-item {
+                flex-direction: column;
+                position: relative;
+                padding-top: 12px;
+                border-bottom: 2px solid #e0e8f0;
+            }
+
+            .number-col {
+                min-width: 100%;
+                justify-content: flex-start;
+                padding: 10px 20px;
+                font-size: 0.95rem;
+                border-radius: 0;
+            }
+
+            .number-col::after {
+                display: none;
+            }
+
+            .flemish-col,
+            .arabic-col {
+                padding: 12px 20px;
+                border: none;
+                font-size: 1rem;
+            }
+
+            .flemish-col {
+                background: #fff5f0;
+            }
+
+            .arabic-col {
+                background: #f0f7ff;
+                border-right: none;
+                border-top: 1px dashed #c8d6e5;
+            }
+
+            .legend {
+                gap: 15px;
+                padding: 14px;
+            }
+
+            .legend span {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .header h1 {
+                font-size: 1.35rem;
+            }
+
+            .header {
+                padding: 28px 16px;
+            }
+
+            body {
+                padding: 15px 8px;
+            }
+
+            .flemish-col,
+            .arabic-col {
+                font-size: 0.92rem;
+                padding: 10px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚦 100 عبارة مرورية بالفلمنكية</h1>
+            <p>مئة جملة عن المرور والشوارع باللهجة الفلمنكية مع الترجمة العربية — مصنّفة بالترقيم من 1 إلى 100</p>
+            <div class="flag-badge">🇧🇪 اللهجة الفلمنكية (Vlaams) — بلجيكا</div>
+        </div>
+
+        <div class="legend">
+            <span><span class="dot flemish"></span> الجملة بالفلمنكية</span>
+            <span><span class="dot arabic"></span> الترجمة العربية</span>
+        </div>
+
+        <div class="list-wrapper" id="sentenceList">
+            <!-- سيتم توليد العناصر هنا بواسطة JavaScript -->
+        </div>
+
+        <div class="footer-note">
+            ⚡ 100 جملة مرورية مزدوجة اللغة — الفلمنكية / العربية
+        </div>
+    </div>
+
+    <script>
+        // بيانات الجمل: [الفلمنكية, العربية]
+        const sentences = [
+            ["De verkeerslichten staan op rood.", "إشارات المرور الضوئية على اللون الأحمر."],
+            ["Je moet altijd voorrang geven aan voetgangers op het zebrapad.", "يجب عليك دائمًا إعطاء الأولوية للمشاة على ممر الرصيف."],
+            ["Rij niet te snel in de bebouwde kom.", "لا تقُد بسرعة كبيرة داخل المناطق المأهولة بالسكان."],
+            ["Er is een file op de ringweg.", "هناك ازدحام مروري على الطريق الدائري."],
+            ["Stop volledig bij het stopbord.", "توقف تمامًا عند لافتة قف."],
+            ["Gebruik je richtingaanwijzer bij het afslaan.", "استخدم إشارة الانعطاف عند تغيير الاتجاه."],
+            ["De maximumsnelheid op de snelweg is 120 km per uur.", "السرعة القصوى على الطريق السريع هي 120 كم في الساعة."],
+            ["Let op overstekende kinderen bij school.", "انتبه للأطفال الذين يعبرون الشارع قرب المدرسة."],
+            ["Er is een verkeersongeval gebeurd op de kruising.", "وقع حادث مروري عند التقاطع."],
+            ["Draag altijd je veiligheidsgordel in de auto.", "اربط حزام الأمان دائمًا في السيارة."],
+            ["De straat is afgesloten wegens wegenwerken.", "الشارع مغلق بسبب أعمال الطرق."],
+            ["Fietsers moeten het fietspad gebruiken.", "يجب على راكبي الدراجات استخدام ممر الدراجات."],
+            ["Geef voorrang aan het verkeer van rechts.", "أعطِ الأولوية للمرور القادم من اليمين."],
+            ["Het is verboden om te parkeren op de stoep.", "من غير المسموح الوقوف على الرصيف."],
+            ["Volg de omleidingsborden.", "اتبع لافتات التحويل."],
+            ["Rij niet door het rode licht.", "لا تعبر الضوء الأحمر."],
+            ["De bushalte is vlakbij de kerk.", "محطة الحافلات قريبة من الكنيسة."],
+            ["Tram heeft altijd voorrang.", "الترام له الأولوية دائمًا."],
+            ["Kijk goed uit bij het oversteken.", "انتبه جيدًا عند عبور الشارع."],
+            ["Er zijn wegwerkzaamheden op de brug.", "هناك أعمال طرق على الجسر."],
+            ["De verkeersdrukte is groot tijdens de spits.", "الازدحام المروري كبير خلال ساعة الذروة."],
+            ["Houd afstand tot de auto voor je.", "حافظ على مسافة الأمان من السيارة التي أمامك."],
+            ["Bij mist moet je je mistlichten aanzetten.", "عند الضباب يجب تشغيل أضواء الضباب."],
+            ["Het verkeerslicht springt op groen.", "إشارة المرور تحولت إلى اللون الأخضر."],
+            ["Sla linksaf bij de volgende straat.", "انعطف يسارًا عند الشارع التالي."],
+            ["Parkeer je auto in de parkeergarage.", "أوقف سيارتك في مبنى المواقف."],
+            ["De voetgangerszone is alleen voor voetgangers.", "منطقة المشاة مخصصة للمشاة فقط."],
+            ["Er is een controle op snelheid vandaag.", "هناك مراقبة للسرعة اليوم."],
+            ["Rij voorzichtig bij regenweer.", "قُد بحذر في الطقس الممطر."],
+            ["De rotonde heeft voorrang van rechts niet.", "الدوار لا يخضع لقاعدة الأولوية من اليمين."],
+            ["Gebruik de claxon alleen in noodgevallen.", "استخدم المنبه فقط في حالات الطوارئ."],
+            ["Kinderen moeten aan de hand oversteken.", "يجب أن يعبر الأطفال ممسكين بأيدي ذويهم."],
+            ["Er staat een flitspaal op deze weg.", "هناك رادار سرعة على هذا الطريق."],
+            ["De trein heeft voorrang op de spoorwegovergang.", "القطار له الأولوية عند معبر السكة الحديد."],
+            ["Je mag niet bellen tijdens het rijden.", "لا يجوز استخدام الهاتف أثناء القيادة."],
+            ["De straatverlichting is kapot.", "إنارة الشارع معطلة."],
+            ["Let op de putdeksels op de weg.", "انتبه لأغطية البالوعات على الطريق."],
+            ["Bij een geel licht moet je stoppen als het veilig kan.", "عند الضوء الأصفر يجب التوقف إذا كان ذلك آمنًا."],
+            ["De taxi staat te wachten op klanten.", "سيارة الأجرة تنتظر العملاء."],
+            ["Het fietspad is vrijgemaakt van sneeuw.", "ممر الدراجات تم تنظيفه من الثلج."],
+            ["Rij niet in tegenrichting.", "لا تقُد عكس الاتجاه."],
+            ["De politie regelt het verkeer op de kruising.", "الشرطة تنظم المرور عند التقاطع."],
+            ["Er is een nieuwe verkeersbord geplaatst.", "تم تركيب لافتة مرور جديدة."],
+            ["Geef voorrang aan de bus bij het wegrijden.", "أعطِ الأولوية للحافلة عند انطلاقها من المحطة."],
+            ["De weg is glad door ijzel.", "الطريق زلق بسبب الصقيع."],
+            ["Kijk in je achteruitkijkspiegel voor je van rijstrook wisselt.", "انظر في المرآة الخلفية قبل تغيير المسار."],
+            ["De maximumsnelheid in de woonwijk is 30 km/u.", "السرعة القصوى في الحي السكني هي 30 كم/س."],
+            ["Voetgangers mogen niet op de autosnelweg komen.", "لا يجوز للمشاة دخول الطريق السريع."],
+            ["Er is een noodstop gemaakt.", "تم القيام بفرملة طارئة."],
+            ["De verkeerslichten werken niet, volg de borden.", "إشارات المرور لا تعمل، اتبع اللافتات."],
+            ["Bij een ongeluk bel je 112.", "عند وقوع حادث اتصل بالرقم 112."],
+            ["Rij niet met een kapotte koplamp.", "لا تقُد بمصباح أمامي معطل."],
+            ["De parkeerplaats is vol.", "موقف السيارات ممتلئ."],
+            ["Houd je aan de verkeersregels.", "التزم بقواعد المرور."],
+            ["Er is een omleiding voor vrachtwagens.", "هناك تحويل لمسار الشاحنات."],
+            ["De straatnaam staat op het blauwe bord.", "اسم الشارع مكتوب على اللافتة الزرقاء."],
+            ["Fietsers mogen niet op de stoep rijden.", "لا يجوز لراكبي الدراجات السير على الرصيف."],
+            ["De verkeersdrempel vertraagt het verkeer.", "المطب الصناعي يبطئ حركة المرور."],
+            ["Er is een zebrapad bij de bushalte.", "هناك ممر للمشاة قرب محطة الحافلات."],
+            ["Rij niet te dicht achter een vrachtwagen.", "لا تقُد قريبًا جدًا خلف شاحنة."],
+            ["De brug is open voor scheepvaart.", "الجسر مفتوح لحركة الملاحة."],
+            ["Bij een rood knipperend licht mag je doorrijden.", "عند الضوء الأحمر الوامض يمكنك المرور."],
+            ["Er is een verkeersopstopping door een defect voertuig.", "هناك تكدس مروري بسبب مركبة معطلة."],
+            ["Gebruik de fietsbel om voetgangers te waarschuwen.", "استخدم جرس الدراجة لتنبيه المشاة."],
+            ["De spoorbomen zijn gesloten.", "حواجز السكة الحديد مغلقة."],
+            ["Neem de afrit naar Antwerpen.", "خذ مخرج الطريق نحو أنتويرب."],
+            ["Rij niet met alcohol op.", "لا تقُد تحت تأثير الكحول."],
+            ["De verkeerslichten zijn buiten werking.", "إشارات المرور خارج الخدمة."],
+            ["Er is een schoolzone met 30 km/u.", "هناك منطقة مدرسية بسرعة 30 كم/س."],
+            ["Kijk uit voor overstekend wild.", "انتبه للحيوانات البرية العابرة للطريق."],
+            ["De autosnelweg is afgesloten richting Brussel.", "الطريق السريع مغلق باتجاه بروكسل."],
+            ["Er is een pechstrook voor noodgevallen.", "هناك حارة طوارئ للحالات الطارئة."],
+            ["Draai niet om op de autosnelweg.", "لا تستدر على الطريق السريع."],
+            ["De verkeerslichten voor fietsers staan op groen.", "إشارة المرور الخاصة بالدراجات على اللون الأخضر."],
+            ["Er is een verkeerscontrole bij de grens.", "هناك مراقبة مرورية عند الحدود."],
+            ["Houd rekening met de zwakke weggebruiker.", "ضع في اعتبارك مستخدمي الطريق الضعفاء."],
+            ["De straat is éénrichtingsverkeer.", "الشارع باتجاه واحد."],
+            ["Bij een lekke band moet je naar de pechstrook.", "عند انفجار الإطار يجب التوجه إلى حارة الطوارئ."],
+            ["De verkeersborden zijn duidelijk zichtbaar.", "لافتات المرور واضحة للعيان."],
+            ["Rij stapvoets in de woonerf.", "قُد بسرعة المشي في المنطقة السكنية."],
+            ["Er is een voetgangersoversteekplaats.", "هناك معبر للمشاة."],
+            ["De auto moet technisch gekeurd worden.", "يجب فحص السيارة فنيًا."],
+            ["Er is een flitser bij het verkeerslicht.", "هناك كاميرا رادار عند إشارة المرور."],
+            ["De taxichauffeur wacht bij de standplaats.", "سائق سيارة الأجرة ينتظر في موقف التاكسي."],
+            ["Parkeren is alleen voor vergunninghouders.", "الوقوف مسموح فقط لحاملي التصاريح."],
+            ["De fietsenstalling is overvol.", "موقف الدراجات ممتلئ عن آخره."],
+            ["Rij niet door de rode kruislichten.", "لا تعبر إشارات الضوء الأحمر."],
+            ["De verkeerslichten zijn in storing.", "إشارات المرور في حالة عطل."],
+            ["Geef voorrang aan de tram.", "أعطِ الأولوية للترام."],
+            ["De straat is omgevormd tot voetgangerszone.", "الشارع تم تحويله إلى منطقة مشاة."],
+            ["Bij gladheid moet je je snelheid aanpassen.", "عند الانزلاق يجب تعديل سرعتك."],
+            ["Er is een verkeersdrempel aangelegd.", "تم إنشاء مطب صناعي."],
+            ["De bus heeft een eigen rijstrook.", "الحافلة لها مسار خاص بها."],
+            ["Kijk goed in de spiegel voor je achteruit rijdt.", "انظر جيدًا في المرآة قبل الرجوع للخلف."],
+            ["Er is een fietspad aangelegd langs het kanaal.", "تم إنشاء ممر للدراجات على طول القناة."],
+            ["De verkeerslichten zijn afgestemd op het verkeer.", "إشارات المرور مضبوطة على حركة السير."],
+            ["Rij niet op de trambaan.", "لا تسر على مسار الترام."],
+            ["De verkeersboete is hoog.", "غرامة المرور مرتفعة."],
+            ["Er is een nieuwe rotonde geopend.", "تم افتتاح دوار جديد."],
+            ["De weg is versperd door een omgevallen boom.", "الطريق مسدود بسبب شجرة ساقطة."],
+            ["Houd je aan de maximumsnelheid.", "التزم بالسرعة القصوى المسموح بها."],
+            ["De straatverlichting gaat automatisch aan.", "إنارة الشارع تعمل تلقائيًا."]
+        ];
+
+        // التحقق من العدد
+        console.log("عدد الجمل:", sentences.length);
+
+        const container = document.getElementById('sentenceList');
+
+        // بناء العناصر
+        sentences.forEach((item, index) => {
+            const flemishText = item[0];
+            const arabicText = item[1];
+            const number = index + 1;
+
+            const div = document.createElement('div');
+            div.className = 'sentence-item';
+
+            const numCol = document.createElement('div');
+            numCol.className = 'number-col';
+            numCol.textContent = number;
+
+            const flemishCol = document.createElement('div');
+            flemishCol.className = 'flemish-col';
+            flemishCol.textContent = flemishText;
+
+            const arabicCol = document.createElement('div');
+            arabicCol.className = 'arabic-col';
+            arabicCol.textContent = arabicText;
+
+            div.appendChild(numCol);
+            div.appendChild(flemishCol);
+            div.appendChild(arabicCol);
+
+            container.appendChild(div);
+        });
+
+        // إضافة ملاحظة في الكونسول للتأكيد
+        console.log("✅ تم توليد 100 جملة بنجاح.");
+    </script>
+</body>
+</html>
