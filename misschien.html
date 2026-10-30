@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 Vlaamse Zinnen - Misschien</title>
+<style>
+:root {
+  --primary: #176b55;
+  --secondary: #e8f5ef;
+  --accent: #d6a84f;
+  --bg: #f5f7f6;
+  --text: #23332e;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+}
+header {
+  background: linear-gradient(135deg,#104c40,#21866a);
+  color: white;
+  text-align: center;
+  padding: 35px 18px;
+  border-radius: 0 0 28px 28px;
+}
+header h1 { margin: 0 0 10px; font-size: 29px; }
+header p { margin: 5px 0; }
+.badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #222;
+  padding: 4px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.container {
+  max-width: 900px;
+  margin: 22px auto;
+  padding: 0 14px;
+}
+.intro, .controls, .sentence, .grammar {
+  background: white;
+  border-radius: 15px;
+  padding: 17px;
+  margin-bottom: 14px;
+  box-shadow: 0 3px 12px #00000008;
+}
+.word {
+  color: var(--primary);
+  font-size: 26px;
+  font-weight: bold;
+}
+.meaning { color: #79591a; font-weight: bold; }
+input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d5e0da;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 8px 0;
+}
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px 3px;
+  border-radius: 9px;
+  font-size: 14px;
+  cursor: pointer;
+}
+button:hover { background: #0e493b; }
+.sentence {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  transition: .2s;
+}
+.sentence:hover { transform: translateY(-2px); }
+.number {
+  background: var(--secondary);
+  color: var(--primary);
+  min-width: 39px;
+  height: 39px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 11px;
+  font-weight: bold;
+}
+.content { flex: 1; min-width: 0; }
+.dutch {
+  direction: ltr;
+  text-align: left;
+  font-size: 17px;
+  font-weight: bold;
+  color: #164e40;
+}
+.arabic { margin-top: 5px; }
+.hidden { display: none; }
+footer {
+  text-align: center;
+  color: #63766d;
+  padding: 25px 10px;
+  font-size: 13px;
+}
+@media(max-width:480px) {
+  header h1 { font-size: 24px; }
+  .sentence { padding: 13px; gap: 10px; }
+  .dutch { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🇧🇪 100 Vlaamse Zinnen</h1>
+  <p>١٠٠ جملة فلمنكية مع الترجمة العربية</p>
+  <div class="badge">MISSCHIEN = ربما / يمكن</div>
+</header>
+
+<div class="container">
+  <div class="intro">
+    <div class="word">Misschien</div>
+    <p><b>المعنى:</b> ربما، يمكن، من المحتمل.</p>
+    <p><b>الاستخدام:</b> تُستعمل عندما لا تكون متأكدًا من شيء، أو عندما تتحدث عن احتمال حدوثه.</p>
+    <p><b>مثال:</b> Misschien kom ik morgen.</p>
+    <p>ربما آتي غدًا.</p>
+  </div>
+
+  <div class="controls">
+    <label for="search"><b>ابحث في الجمل / Zoek een zin</b></label>
+    <input id="search" type="text" placeholder="اكتب كلمة بالعربية أو الهولندية..."
+      oninput="filterSentences()">
+    <button onclick="toggleTranslations()">إظهار / إخفاء الترجمة</button>
+    <button onclick="copySentences()">نسخ الجمل</button>
+    <p id="count">عدد الجمل: 100</p>
+  </div>
+
+  <div id="sentences">
+
+<div class="sentence"><div class="number">1</div><div class="content"><div class="dutch">Misschien kom ik morgen.</div><div class="arabic">ربما آتي غدًا.</div></div></div>
+<div class="sentence"><div class="number">2</div><div class="content"><div class="dutch">Misschien ben ik te laat.</div><div class="arabic">ربما أتأخر.</div></div></div>
+<div class="sentence"><div class="number">3</div><div class="content"><div class="dutch">Misschien blijft hij thuis.</div><div class="arabic">ربما يبقى في البيت.</div></div></div>
+<div class="sentence"><div class="number">4</div><div class="content"><div class="dutch">Misschien komt ze vanavond.</div><div class="arabic">ربما تأتي هذا المساء.</div></div></div>
+<div class="sentence"><div class="number">5</div><div class="content"><div class="dutch">Misschien hebben we geluk.</div><div class="arabic">ربما يحالفنا الحظ.</div></div></div>
+<div class="sentence"><div class="number">6</div><div class="content"><div class="dutch">Misschien regent het straks.</div><div class="arabic">ربما تمطر بعد قليل.</div></div></div>
+<div class="sentence"><div class="number">7</div><div class="content"><div class="dutch">Misschien is de winkel nog open.</div><div class="arabic">ربما لا يزال المحل مفتوحًا.</div></div></div>
+<div class="sentence"><div class="number">8</div><div class="content"><div class="dutch">Misschien kan ik u helpen.</div><div class="arabic">ربما أستطيع مساعدتك.</div></div></div>
+<div class="sentence"><div class="number">9</div><div class="content"><div class="dutch">Misschien begrijpen ze het niet.</div><div class="arabic">ربما لا يفهمون ذلك.</div></div></div>
+<div class="sentence"><div class="number">10</div><div class="content"><div class="dutch">Misschien is dat een goed idee.</div><div class="arabic">ربما تكون تلك فكرة جيدة.</div></div></div>
+
+<div class="sentence"><div class="number">11</div><div class="content"><div class="dutch">Misschien heb ik morgen tijd.</div><div class="arabic">ربما يكون لدي وقت غدًا.</div></div></div>
+<div class="sentence"><div class="number">12</div><div class="content"><div class="dutch">Misschien gaan we naar Kortrijk.</div><div class="arabic">ربما نذهب إلى كورترايك.</div></div></div>
+<div class="sentence"><div class="number">13</div><div class="content"><div class="dutch">Misschien neem ik de bus.</div><div class="arabic">ربما أستقل الحافلة.</div></div></div>
+<div class="sentence"><div class="number">14</div><div class="content"><div class="dutch">Misschien komt de trein wat later.</div><div class="arabic">ربما يأتي القطار متأخرًا قليلًا.</div></div></div>
+<div class="sentence"><div class="number">15</div><div class="content"><div class="dutch">Misschien is er file op de weg.</div><div class="arabic">ربما يكون هناك ازدحام مروري على الطريق.</div></div></div>
+<div class="sentence"><div class="number">16</div><div class="content"><div class="dutch">Misschien vind ik morgen werk.</div><div class="arabic">ربما أجد عملًا غدًا.</div></div></div>
+<div class="sentence"><div class="number">17</div><div class="content"><div class="dutch">Misschien belt mijn baas mij straks.</div><div class="arabic">ربما يتصل بي مديري بعد قليل.</div></div></div>
+<div class="sentence"><div class="number">18</div><div class="content"><div class="dutch">Misschien krijg ik vandaag antwoord.</div><div class="arabic">ربما أحصل على رد اليوم.</div></div></div>
+<div class="sentence"><div class="number">19</div><div class="content"><div class="dutch">Misschien moet ik langer werken.</div><div class="arabic">ربما يجب أن أعمل مدة أطول.</div></div></div>
+<div class="sentence"><div class="number">20</div><div class="content"><div class="dutch">Misschien is die vacature iets voor mij.</div><div class="arabic">ربما تكون هذه الوظيفة مناسبة لي.</div></div></div>
+
+<div class="sentence"><div class="number">21</div><div class="content"><div class="dutch">Misschien ga ik straks boodschappen doen.</div><div class="arabic">ربما أذهب للتسوق بعد قليل.</div></div></div>
+<div class="sentence"><div class="number">22</div><div class="content"><div class="dutch">Misschien koop ik wat brood.</div><div class="arabic">ربما أشتري بعض الخبز.</div></div></div>
+<div class="sentence"><div class="number">23</div><div class="content"><div class="dutch">Misschien eten we vanavond frietjes.</div><div class="arabic">ربما نتناول البطاطس المقلية هذا المساء.</div></div></div>
+<div class="sentence"><div class="number">24</div><div class="content"><div class="dutch">Misschien maak ik vandaag soep.</div><div class="arabic">ربما أُعدّ الحساء اليوم.</div></div></div>
+<div class="sentence"><div class="number">25</div><div class="content"><div class="dutch">Misschien is er nog melk in de koelkast.</div><div class="arabic">ربما لا يزال هناك حليب في الثلاجة.</div></div></div>
+<div class="sentence"><div class="number">26</div><div class="content"><div class="dutch">Misschien lust hij geen vis.</div><div class="arabic">ربما لا يحب السمك.</div></div></div>
+<div class="sentence"><div class="number">27</div><div class="content"><div class="dutch">Misschien bestellen we een pizza.</div><div class="arabic">ربما نطلب بيتزا.</div></div></div>
+<div class="sentence"><div class="number">28</div><div class="content"><div class="dutch">Misschien drink ik liever thee.</div><div class="arabic">ربما أفضل شرب الشاي.</div></div></div>
+<div class="sentence"><div class="number">29</div><div class="content"><div class="dutch">Misschien is dit restaurant duur.</div><div class="arabic">ربما يكون هذا المطعم غاليًا.</div></div></div>
+<div class="sentence"><div class="number">30</div><div class="content"><div class="dutch">Misschien eten we morgen buiten.</div><div class="arabic">ربما نتناول الطعام في الخارج غدًا.</div></div></div>
+
+<div class="sentence"><div class="number">31</div><div class="content"><div class="dutch">Misschien moet ik naar de dokter.</div><div class="arabic">ربما يجب أن أذهب إلى الطبيب.</div></div></div>
+<div class="sentence"><div class="number">32</div><div class="content"><div class="dutch">Misschien ben ik gewoon moe.</div><div class="arabic">ربما أكون متعبًا فحسب.</div></div></div>
+<div class="sentence"><div class="number">33</div><div class="content"><div class="dutch">Misschien helpt wat rust.</div><div class="arabic">ربما تساعدني بعض الراحة.</div></div></div>
+<div class="sentence"><div class="number">34</div><div class="content"><div class="dutch">Misschien voel ik me morgen beter.</div><div class="arabic">ربما أشعر بتحسن غدًا.</div></div></div>
+<div class="sentence"><div class="number">35</div><div class="content"><div class="dutch">Misschien heb ik te weinig geslapen.</div><div class="arabic">ربما لم أنم بما يكفي.</div></div></div>
+<div class="sentence"><div class="number">36</div><div class="content"><div class="dutch">Misschien moet je wat meer water drinken.</div><div class="arabic">ربما ينبغي أن تشرب مزيدًا من الماء.</div></div></div>
+<div class="sentence"><div class="number">37</div><div class="content"><div class="dutch">Misschien is het beter om thuis te blijven.</div><div class="arabic">ربما يكون من الأفضل البقاء في البيت.</div></div></div>
+<div class="sentence"><div class="number">38</div><div class="content"><div class="dutch">Misschien moet ik een afspraak maken.</div><div class="arabic">ربما يجب أن أحجز موعدًا.</div></div></div>
+<div class="sentence"><div class="number">39</div><div class="content"><div class="dutch">Misschien is het niets ernstigs.</div><div class="arabic">ربما لا يكون الأمر خطيرًا.</div></div></div>
+<div class="sentence"><div class="number">40</div><div class="content"><div class="dutch">Misschien voel je je straks beter.</div><div class="arabic">ربما تشعر بتحسن بعد قليل.</div></div></div>
+
+<div class="sentence"><div class="number">41</div><div class="content"><div class="dutch">Misschien spreken we morgen af.</div><div class="arabic">ربما نتفق على اللقاء غدًا.</div></div></div>
+<div class="sentence"><div class="number">42</div><div class="content"><div class="dutch">Misschien komt mijn vriend mee.</div><div class="arabic">ربما يأتي صديقي معنا.</div></div></div>
+<div class="sentence"><div class="number">43</div><div class="content"><div class="dutch">Misschien gaan we samen wandelen.</div><div class="arabic">ربما نذهب للتنزه معًا.</div></div></div>
+<div class="sentence"><div class="number">44</div><div class="content"><div class="dutch">Misschien zie ik je in het weekend.</div><div class="arabic">ربما أراك في عطلة نهاية الأسبوع.</div></div></div>
+<div class="sentence"><div class="number">45</div><div class="content"><div class="dutch">Misschien kunnen we eens koffie drinken.</div><div class="arabic">ربما يمكننا أن نشرب القهوة معًا يومًا ما.</div></div></div>
+<div class="sentence"><div class="number">46</div><div class="content"><div class="dutch">Misschien heeft ze geen tijd vandaag.</div><div class="arabic">ربما ليس لديها وقت اليوم.</div></div></div>
+<div class="sentence"><div class="number">47</div><div class="content"><div class="dutch">Misschien stuur ik je straks een berichtje.</div><div class="arabic">ربما أرسل لك رسالة قصيرة بعد قليل.</div></div></div>
+<div class="sentence"><div class="number">48</div><div class="content"><div class="dutch">Misschien moeten we haar eerst bellen.</div><div class="arabic">ربما ينبغي أن نتصل بها أولًا.</div></div></div>
+<div class="sentence"><div class="number">49</div><div class="content"><div class="dutch">Misschien kent hij mijn vrouw.</div><div class="arabic">ربما يعرف زوجتي.</div></div></div>
+<div class="sentence"><div class="number">50</div><div class="content"><div class="dutch">Misschien komen ze volgende week op bezoek.</div><div class="arabic">ربما يأتون لزيارتنا الأسبوع المقبل.</div></div></div>
+
+<div class="sentence"><div class="number">51</div><div class="content"><div class="dutch">Misschien leer ik snel Nederlands.</div><div class="arabic">ربما أتعلم الهولندية بسرعة.</div></div></div>
+<div class="sentence"><div class="number">52</div><div class="content"><div class="dutch">Misschien begrijp ik deze zin nu.</div><div class="arabic">ربما أفهم هذه الجملة الآن.</div></div></div>
+<div class="sentence"><div class="number">53</div><div class="content"><div class="dutch">Misschien moet ik meer oefenen.</div><div class="arabic">ربما يجب أن أتدرب أكثر.</div></div></div>
+<div class="sentence"><div class="number">54</div><div class="content"><div class="dutch">Misschien kan je dat nog eens herhalen.</div><div class="arabic">ربما يمكنك تكرار ذلك مرة أخرى.</div></div></div>
+<div class="sentence"><div class="number">55</div><div class="content"><div class="dutch">Misschien spreek ik binnenkort beter Nederlands.</div><div class="arabic">ربما أتحدث الهولندية بشكل أفضل قريبًا.</div></div></div>
+<div class="sentence"><div class="number">56</div><div class="content"><div class="dutch">Misschien maak ik nog een fout.</div><div class="arabic">ربما أرتكب خطأ آخر.</div></div></div>
+<div class="sentence"><div class="number">57</div><div class="content"><div class="dutch">Misschien weet de leerkracht het antwoord.</div><div class="arabic">ربما يعرف المعلم الإجابة.</div></div></div>
+<div class="sentence"><div class="number">58</div><div class="content"><div class="dutch">Misschien is deze oefening moeilijk.</div><div class="arabic">ربما يكون هذا التمرين صعبًا.</div></div></div>
+<div class="sentence"><div class="number">59</div><div class="content"><div class="dutch">Misschien haal ik mijn examen.</div><div class="arabic">ربما أنجح في امتحاني.</div></div></div>
+<div class="sentence"><div class="number">60</div><div class="content"><div class="dutch">Misschien begrijp ik de uitleg straks beter.</div><div class="arabic">ربما أفهم الشرح بشكل أفضل بعد قليل.</div></div></div>
+
+<div class="sentence"><div class="number">61</div><div class="content"><div class="dutch">Misschien wordt het morgen warmer.</div><div class="arabic">ربما يصبح الطقس أدفأ غدًا.</div></div></div>
+<div class="sentence"><div class="number">62</div><div class="content"><div class="dutch">Misschien gaat de zon straks schijnen.</div><div class="arabic">ربما تشرق الشمس بعد قليل.</div></div></div>
+<div class="sentence"><div class="number">63</div><div class="content"><div class="dutch">Misschien waait het vandaag hard.</div><div class="arabic">ربما تهب رياح قوية اليوم.</div></div></div>
+<div class="sentence"><div class="number">64</div><div class="content"><div class="dutch">Misschien sneeuwt het deze winter.</div><div class="arabic">ربما تتساقط الثلوج هذا الشتاء.</div></div></div>
+<div class="sentence"><div class="number">65</div><div class="content"><div class="dutch">Misschien blijft het de hele dag droog.</div><div class="arabic">ربما يظل الطقس جافًا طوال اليوم.</div></div></div>
+<div class="sentence"><div class="number">66</div><div class="content"><div class="dutch">Misschien neem ik een paraplu mee.</div><div class="arabic">ربما آخذ معي مظلة.</div></div></div>
+<div class="sentence"><div class="number">67</div><div class="content"><div class="dutch">Misschien wordt het vanavond koud.</div><div class="arabic">ربما يصبح الجو باردًا هذا المساء.</div></div></div>
+<div class="sentence"><div class="number">68</div><div class="content"><div class="dutch">Misschien blijft de mist nog even hangen.</div><div class="arabic">ربما يستمر الضباب لبعض الوقت.</div></div></div>
+<div class="sentence"><div class="number">69</div><div class="content"><div class="dutch">Misschien kunnen we buiten zitten.</div><div class="arabic">ربما يمكننا الجلوس في الخارج.</div></div></div>
+<div class="sentence"><div class="number">70</div><div class="content"><div class="dutch">Misschien klaart het straks op.</div><div class="arabic">ربما تنقشع الغيوم بعد قليل.</div></div></div>
+
+<div class="sentence"><div class="number">71</div><div class="content"><div class="dutch">Misschien heb ik mijn sleutels thuis laten liggen.</div><div class="arabic">ربما تركت مفاتيحي في البيت.</div></div></div>
+<div class="sentence"><div class="number">72</div><div class="content"><div class="dutch">Misschien ligt mijn portefeuille in de auto.</div><div class="arabic">ربما تكون محفظتي في السيارة.</div></div></div>
+<div class="sentence"><div class="number">73</div><div class="content"><div class="dutch">Misschien is mijn gsm bijna leeg.</div><div class="arabic">ربما أوشكت بطارية هاتفي على النفاد.</div></div></div>
+<div class="sentence"><div class="number">74</div><div class="content"><div class="dutch">Misschien werkt de computer niet meer.</div><div class="arabic">ربما لم يعد الكمبيوتر يعمل.</div></div></div>
+<div class="sentence"><div class="number">75</div><div class="content"><div class="dutch">Misschien heb ik het verkeerde adres.</div><div class="arabic">ربما لدي العنوان الخطأ.</div></div></div>
+<div class="sentence"><div class="number">76</div><div class="content"><div class="dutch">Misschien staat de deur nog open.</div><div class="arabic">ربما لا يزال الباب مفتوحًا.</div></div></div>
+<div class="sentence"><div class="number">77</div><div class="content"><div class="dutch">Misschien is mijn pakket al aangekomen.</div><div class="arabic">ربما وصلت طرديتي بالفعل.</div></div></div>
+<div class="sentence"><div class="number">78</div><div class="content"><div class="dutch">Misschien heb ik een bericht gemist.</div><div class="arabic">ربما فاتتني رسالة.</div></div></div>
+<div class="sentence"><div class="number">79</div><div class="content"><div class="dutch">Misschien ligt het document op tafel.</div><div class="arabic">ربما تكون الوثيقة على الطاولة.</div></div></div>
+<div class="sentence"><div class="number">80</div><div class="content"><div class="dutch">Misschien moet ik mijn wachtwoord veranderen.</div><div class="arabic">ربما يجب أن أغيّر كلمة المرور الخاصة بي.</div></div></div>
+
+<div class="sentence"><div class="number">81</div><div class="content"><div class="dutch">Misschien heb je gelijk.</div><div class="arabic">ربما تكون على حق.</div></div></div>
+<div class="sentence"><div class="number">82</div><div class="content"><div class="dutch">Misschien heb je daar een punt.</div><div class="arabic">ربما كلامك فيه وجهة نظر صحيحة.</div></div></div>
+<div class="sentence"><div class="number">83</div><div class="content"><div class="dutch">Misschien moeten we er nog eens over nadenken.</div><div class="arabic">ربما ينبغي أن نفكر في الأمر مرة أخرى.</div></div></div>
+<div class="sentence"><div class="number">84</div><div class="content"><div class="dutch">Misschien is dat niet zo'n goed idee.</div><div class="arabic">ربما لا تكون هذه فكرة جيدة جدًا.</div></div></div>
+<div class="sentence"><div class="number">85</div><div class="content"><div class="dutch">Misschien heb ik het verkeerd begrepen.</div><div class="arabic">ربما أسأت فهم الأمر.</div></div></div>
+<div class="sentence"><div class="number">86</div><div class="content"><div class="dutch">Misschien kunnen we een andere oplossing vinden.</div><div class="arabic">ربما نستطيع إيجاد حل آخر.</div></div></div>
+<div class="sentence"><div class="number">87</div><div class="content"><div class="dutch">Misschien hoeft dat niet.</div><div class="arabic">ربما لا تكون هناك حاجة إلى ذلك.</div></div></div>
+<div class="sentence"><div class="number">88</div><div class="content"><div class="dutch">Misschien is het beter om even te wachten.</div><div class="arabic">ربما يكون من الأفضل الانتظار قليلًا.</div></div></div>
+<div class="sentence"><div class="number">89</div><div class="content"><div class="dutch">Misschien verandert hij nog van gedacht.</div><div class="arabic">ربما يغيّر رأيه لاحقًا.</div></div></div>
+<div class="sentence"><div class="number">90</div><div class="content"><div class="dutch">Misschien komt alles wel in orde.</div><div class="arabic">ربما تسير الأمور على ما يرام في النهاية.</div></div></div>
+
+<div class="sentence"><div class="number">91</div><div class="content"><div class="dutch">Misschien ga ik volgend jaar op reis.</div><div class="arabic">ربما أسافر في العام المقبل.</div></div></div>
+<div class="sentence"><div class="number">92</div><div class="content"><div class="dutch">Misschien verhuis ik binnenkort.</div><div class="arabic">ربما أنتقل إلى منزل آخر قريبًا.</div></div></div>
+<div class="sentence"><div class="number">93</div><div class="content"><div class="dutch">Misschien koop ik ooit een huis.</div><div class="arabic">ربما أشتري منزلًا يومًا ما.</div></div></div>
+<div class="sentence"><div class="number">94</div><div class="content"><div class="dutch">Misschien vind ik hier een betere job.</div><div class="arabic">ربما أجد هنا وظيفة أفضل.</div></div></div>
+<div class="sentence"><div class="number">95</div><div class="content"><div class="dutch">Misschien begin ik volgende maand met een cursus.</div><div class="arabic">ربما أبدأ دورة تدريبية الشهر المقبل.</div></div></div>
+<div class="sentence"><div class="number">96</div><div class="content"><div class="dutch">Misschien leer ik ooit ook Frans.</div><div class="arabic">ربما أتعلم الفرنسية أيضًا يومًا ما.</div></div></div>
+<div class="sentence"><div class="number">97</div><div class="content"><div class="dutch">Misschien gaan we deze zomer naar zee.</div><div class="arabic">ربما نذهب إلى البحر هذا الصيف.</div></div></div>
+<div class="sentence"><div class="number">98</div><div class="content"><div class="dutch">Misschien lukt het de volgende keer wel.</div><div class="arabic">ربما تنجح المحاولة في المرة القادمة.</div></div></div>
+<div class="sentence"><div class="number">99</div><div class="content"><div class="dutch">Misschien krijg ik binnenkort goed nieuws.</div><div class="arabic">ربما أتلقى أخبارًا جيدة قريبًا.</div></div></div>
+<div class="sentence"><div class="number">100</div><div class="content"><div class="dutch">Misschien wordt morgen een betere dag.</div><div class="arabic">ربما يكون الغد يومًا أفضل.</div></div></div>
+
+  </div>
+
+  <div class="grammar">
+    <h3>📘 ملاحظات مهمة</h3>
+    <p><b>1. في بداية الجملة:</b></p>
+    <div class="dutch">Misschien kom ik morgen.</div>
+    ربما آتي غدًا.
+    <p>لاحظ أن الفعل <b>kom</b> يأتي مباشرة بعد Misschien، ثم يأتي الفاعل <b>ik</b>.</p>
+    <p><b>2. في الكلام اليومي:</b></p>
+    <div class="dutch">Misschien wel!</div>
+    ربما، نعم! / ممكن فعلًا!
+    <div class="dutch">Misschien niet.</div>
+    ربما لا.
+    <div class="dutch">Ja, misschien.</div>
+    نعم، ربما.
+    <div class="dutch">Misschien straks.</div>
+    ربما بعد قليل.
+    <p><b>3. تعبير فلمنكي شائع:</b></p>
+    <div class="dutch">Amai, misschien lukt dat wel!</div>
+    يا إلهي، ربما ينجح ذلك فعلًا!
+  </div>
+</div>
+
+<footer>
+  Vlaamse Nederlands 🇧🇪 | تعلم الهولندية البلجيكية
+  <br>100 zinnen met misschien
+</footer>
+
+<script>
+let translationsVisible = true;
+
+function toggleTranslations() {
+  translationsVisible = !translationsVisible;
+  document.querySelectorAll('.arabic').forEach(el => {
+    el.classList.toggle('hidden', !translationsVisible);
+  });
+}
+
+function filterSentences() {
+  const q = document.getElementById('search').value
+    .toLowerCase().trim();
+  let visible = 0;
+
+  document.querySelectorAll('.sentence').forEach(el => {
+    const match = el.innerText.toLowerCase().includes(q);
+    el.style.display = match ? 'flex' : 'none';
+    if (match) visible++;
+  });
+
+  document.getElementById('count').textContent =
+    'الجمل الظاهرة: ' + visible + ' من 100';
+}
+
+function copySentences() {
+  const lines = [...document.querySelectorAll('.sentence')]
+    .map(el => {
+      const number = el.querySelector('.number').innerText;
+      const dutch = el.querySelector('.dutch').innerText;
+      const arabic = el.querySelector('.arabic').innerText;
+      return number + '. ' + dutch + '\n' + arabic;
+    }).join('\n\n');
+
+  const area = document.createElement('textarea');
+  area.value = lines;
+  document.body.appendChild(area);
+  area.select();
+  try {
+    document.execCommand('copy');
+    alert('تم نسخ الجمل الـ100 مع الترجمة!');
+  } catch (e) {
+    alert('تعذر النسخ تلقائيًا. حدد النص وانسخه يدويًا.');
+  }
+  area.remove();
+}
+</script>
+</body>
+</html>
