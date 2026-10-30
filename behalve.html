@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة فلمنكية - Behalve</title>
+<style>
+:root {
+  --primary: #176b5b;
+  --bg: #f2f6f5;
+  --card: #ffffff;
+  --text: #243333;
+  --muted: #647775;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Tahoma, sans-serif;
+  line-height: 1.9;
+}
+header {
+  background: linear-gradient(135deg,#124e43,#219b7e);
+  color: white;
+  padding: 32px 18px;
+  text-align: center;
+}
+header h1 { margin: 0 0 8px; font-size: 27px; }
+header p { margin: 0; }
+.container {
+  max-width: 850px;
+  margin: 24px auto;
+  padding: 0 14px;
+}
+.info {
+  background: #e0f2ec;
+  border-right: 5px solid var(--primary);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+button {
+  border: none;
+  border-radius: 9px;
+  padding: 11px 17px;
+  background: var(--primary);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+button:hover { opacity: .88; }
+.sentence {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 9px #173b3510;
+  border: 1px solid #e4ece9;
+}
+.number {
+  display: inline-block;
+  background: #dff2eb;
+  color: #145a4b;
+  border-radius: 7px;
+  padding: 1px 10px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.nl {
+  direction: ltr;
+  text-align: left;
+  font-size: 17px;
+  font-weight: bold;
+  color: #174e43;
+  margin-bottom: 5px;
+}
+.ar {
+  font-size: 15px;
+  color: #455956;
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 25px;
+}
+@media print {
+  .controls { display: none; }
+  body { background: white; }
+  .sentence { break-inside: avoid; box-shadow: none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>100 جملة فلمنكية عن Behalve</h1>
+  <p>تعلّم الفلمنكية البلجيكية مع الترجمة العربية</p>
+</header>
+
+<div class="container">
+  <div class="info">
+    <strong>Behalve</strong> = ما عدا / باستثناء / بالإضافة إلى.
+    <br>
+    <span dir="ltr">Voorbeeld: Behalve jij, komt iedereen.</span>
+    <br>
+    مثال: الجميع سيأتي ما عداك.
+  </div>
+
+  <div class="controls">
+    <button onclick="window.print()">طباعة الجمل أو حفظها PDF</button>
+    <button onclick="copyAll()">نسخ جميع الجمل</button>
+  </div>
+
+  <div id="sentences"></div>
+</div>
+
+<footer>الفلمنكية البلجيكية 🇧🇪 | 100 جملة للتدريب اليومي</footer>
+
+<script>
+const sentences = [
+["Behalve jij, komt iedereen.","الجميع سيأتي ما عداك."],
+["Behalve maandag, ben ik elke dag vrij.","أنا متفرغ كل يوم ما عدا الاثنين."],
+["Behalve koffie drink ik ook thee.","بالإضافة إلى القهوة، أشرب الشاي أيضًا."],
+["Behalve mijn vrouw kent niemand mij hier.","لا أحد يعرفني هنا غير زوجتي."],
+["Behalve vandaag heb ik elke dag tijd.","لدي وقت كل يوم ما عدا اليوم."],
+["Behalve water heb ik niets gedronken.","لم أشرب شيئًا سوى الماء."],
+["Behalve Nederlands spreek ik ook Engels.","بالإضافة إلى الهولندية، أتحدث الإنجليزية أيضًا."],
+["Behalve jij heeft iedereen betaald.","الجميع دفعوا ما عداك."],
+["Behalve mijn broer komt niemand mee.","لن يأتي معي أحد غير أخي."],
+["Behalve in de winter fiets ik altijd.","أركب الدراجة دائمًا ما عدا في الشتاء."],
+
+["Behalve dat ene probleem is alles in orde.","كل شيء على ما يرام باستثناء تلك المشكلة."],
+["Behalve de prijs vind ik alles goed.","أرى أن كل شيء جيد باستثناء السعر."],
+["Behalve op zondag is de winkel open.","المحل مفتوح ما عدا يوم الأحد."],
+["Behalve mijn sleutels ben ik niets vergeten.","لم أنسَ شيئًا سوى مفاتيحي."],
+["Behalve een beetje moe ben ik gezond.","أنا بصحة جيدة، لكنني أشعر ببعض التعب."],
+["Behalve de kinderen was iedereen stil.","كان الجميع هادئين ما عدا الأطفال."],
+["Behalve deze maat hebben ze alles.","لديهم كل المقاسات ما عدا هذا المقاس."],
+["Behalve morgen kan ik elke dag komen.","يمكنني المجيء كل يوم ما عدا الغد."],
+["Behalve mijn baas wist niemand ervan.","لم يكن أحد يعلم بالأمر غير مديري."],
+["Behalve dat begrijp ik alles.","أنا أفهم كل شيء ما عدا ذلك."],
+
+["Wat doe je behalve werken?","ماذا تفعل بالإضافة إلى العمل؟"],
+["Wat eet je behalve brood?","ماذا تأكل بالإضافة إلى الخبز؟"],
+["Wie was er behalve jij?","من كان موجودًا غيرك؟"],
+["Wat heb je gekocht behalve melk?","ماذا اشتريت بالإضافة إلى الحليب؟"],
+["Waar ga je naartoe behalve naar je werk?","إلى أين تذهب بالإضافة إلى عملك؟"],
+["Wat spreek je behalve Arabisch?","ما اللغات التي تتحدثها بالإضافة إلى العربية؟"],
+["Wie komt er behalve je vrouw?","من سيأتي بالإضافة إلى زوجتك؟"],
+["Wat heb je nodig behalve je identiteitskaart?","ماذا تحتاج بالإضافة إلى بطاقة هويتك؟"],
+["Wat doe je in het weekend behalve slapen?","ماذا تفعل في عطلة نهاية الأسبوع بالإضافة إلى النوم؟"],
+["Wat lust je behalve pizza?","ما الأطعمة التي تحبها بالإضافة إلى البيتزا؟"],
+
+["Behalve mijn telefoon heb ik alles meegenomen.","أخذت كل شيء معي باستثناء هاتفي."],
+["Behalve de bus kun je ook de trein nemen.","يمكنك ركوب القطار أيضًا بدلًا من الحافلة."],
+["Behalve het werk heb ik veel te regelen.","لدي أمور كثيرة لأرتبها بالإضافة إلى العمل."],
+["Behalve mijn huur moet ik ook de rekeningen betalen.","عليّ دفع الفواتير بالإضافة إلى الإيجار."],
+["Behalve Nederlands wil ik Frans leren.","أريد تعلم الفرنسية بالإضافة إلى الهولندية."],
+["Behalve mijn ouders komt de hele familie.","ستأتي العائلة كلها باستثناء والديّ."],
+["Behalve de keuken is het huis helemaal schoon.","البيت نظيف تمامًا باستثناء المطبخ."],
+["Behalve een jas moet je ook handschoenen meenemen.","عليك أخذ قفازات بالإضافة إلى معطف."],
+["Behalve zijn naam weet ik niets over hem.","لا أعرف عنه شيئًا سوى اسمه."],
+["Behalve die fout was je antwoord juist.","كانت إجابتك صحيحة باستثناء ذلك الخطأ."],
+
+["Iedereen was aanwezig, behalve Tom.","كان الجميع حاضرين ما عدا توم."],
+["Ik eet alles behalve vis.","آكل كل شيء ما عدا السمك."],
+["Ik werk elke dag behalve zaterdag.","أعمل كل يوم ما عدا السبت."],
+["De bus stopt overal behalve hier.","تتوقف الحافلة في كل مكان ما عدا هنا."],
+["Ik heb alles begrepen behalve de laatste zin.","فهمت كل شيء ما عدا الجملة الأخيرة."],
+["We kunnen elke dag afspreken behalve vrijdag.","يمكننا الالتقاء كل يوم ما عدا الجمعة."],
+["Ze heeft iedereen gebeld behalve mij.","اتصلت بالجميع ما عداي."],
+["Hij drinkt alles behalve alcohol.","يشرب كل شيء ما عدا الكحول."],
+["De winkel verkoopt alles behalve brood.","يبيع المتجر كل شيء ما عدا الخبز."],
+["Ik heb alle documenten behalve mijn paspoort.","لدي كل المستندات باستثناء جواز سفري."],
+
+["Behalve dat het duur is, is het ook moeilijk.","بالإضافة إلى أنه غالي الثمن، فهو صعب أيضًا."],
+["Behalve dat hij moe is, heeft hij hoofdpijn.","بالإضافة إلى التعب، لديه صداع أيضًا."],
+["Behalve dat ze laat is, is ze haar tas vergeten.","بالإضافة إلى تأخرها، نسيت حقيبتها أيضًا."],
+["Behalve dat het regent, waait het hard.","بالإضافة إلى المطر، تهب رياح قوية."],
+["Behalve dat ik geen tijd heb, ben ik ook moe.","بالإضافة إلى أنني لا أملك وقتًا، فأنا متعب أيضًا."],
+["Behalve dat de kamer klein is, is ze ook donker.","بالإضافة إلى أن الغرفة صغيرة، فهي مظلمة أيضًا."],
+["Behalve dat hij Nederlands spreekt, spreekt hij Frans.","بالإضافة إلى الهولندية، يتحدث الفرنسية."],
+["Behalve dat het ver is, is de weg ook druk.","بالإضافة إلى بُعد المكان، فالطريق مزدحم أيضًا."],
+["Behalve dat ik moet werken, moet ik ook studeren.","بالإضافة إلى العمل، يجب أن أدرس أيضًا."],
+["Behalve dat ze vriendelijk is, is ze heel behulpzaam.","بالإضافة إلى أنها لطيفة، فهي متعاونة جدًا."],
+
+["Wie was er behalve de dokter?","من كان موجودًا غير الطبيب؟"],
+["Heb je iets gekocht behalve eten?","هل اشتريت شيئًا بالإضافة إلى الطعام؟"],
+["Kan ik iets doen behalve wachten?","هل يمكنني فعل شيء بدلًا من الانتظار؟"],
+["Is er iemand thuis behalve jij?","هل يوجد أحد في المنزل غيرك؟"],
+["Heb je nog iets nodig behalve dit?","هل تحتاج إلى شيء آخر بالإضافة إلى هذا؟"],
+["Zijn er andere opties behalve deze?","هل توجد خيارات أخرى غير هذه؟"],
+["Moet ik iets meenemen behalve mijn paspoort?","هل يجب أن أحضر شيئًا بالإضافة إلى جواز سفري؟"],
+["Kun je iets anders doen behalve klagen?","هل يمكنك فعل شيء آخر بدلًا من الشكوى؟"],
+["Heeft iedereen betaald behalve jij?","هل دفع الجميع ما عداك؟"],
+["Is alles klaar behalve de tafel?","هل كل شيء جاهز باستثناء الطاولة؟"],
+
+["Behalve mijn werk zoek ik ook een opleiding.","أبحث عن دورة دراسية بالإضافة إلى عملي."],
+["Behalve solliciteren moet ik Nederlands oefenen.","عليّ التدرب على الهولندية بالإضافة إلى التقدم للوظائف."],
+["Behalve mijn cv moet ik ook mijn diploma opsturen.","يجب أن أرسل شهادتي بالإضافة إلى سيرتي الذاتية."],
+["Behalve de dokter moet ik ook de apotheek bezoeken.","عليّ زيارة الصيدلية بالإضافة إلى الطبيب."],
+["Behalve boodschappen doen moet ik nog koken.","عليّ الطهي بالإضافة إلى شراء الاحتياجات."],
+["Behalve de huur betalen we ook elektriciteit.","ندفع الكهرباء بالإضافة إلى الإيجار."],
+["Behalve de trein kun je de bus nemen.","يمكنك ركوب الحافلة بالإضافة إلى القطار."],
+["Behalve thuis studeer ik ook in de bibliotheek.","أدرس في المكتبة بالإضافة إلى الدراسة في المنزل."],
+["Behalve mijn familie ken ik hier weinig mensen.","لا أعرف الكثير من الناس هنا باستثناء عائلتي."],
+["Behalve in Kortrijk werk ik soms ook in Gent.","أعمل أحيانًا في خنت بالإضافة إلى كورتريك."],
+
+["Behalve jij heeft niemand de vraag beantwoord.","لم يُجب أحد عن السؤال غيرك."],
+["Behalve het geld ontbreekt er niets.","لا ينقص شيء سوى المال."],
+["Behalve de regen was het een mooie dag.","كان يومًا جميلًا باستثناء المطر."],
+["Behalve een kleine vertraging verliep alles goed.","سارت الأمور جيدًا باستثناء تأخير بسيط."],
+["Behalve de kleur vind ik deze auto perfect.","أرى أن هذه السيارة مثالية باستثناء اللون."],
+["Behalve de prijs is er geen probleem.","لا توجد مشكلة باستثناء السعر."],
+["Behalve zijn accent spreekt hij heel duidelijk.","يتحدث بوضوح شديد، رغم لكنته."],
+["Behalve op feestdagen werken we normaal.","نعمل بشكل طبيعي باستثناء أيام العطلات."],
+["Behalve de laatste oefening was alles gemakkelijk.","كان كل شيء سهلًا باستثناء التمرين الأخير."],
+["Behalve mijn verjaardag vergeet ik nooit iets.","لا أنسى أي شيء عادةً، باستثناء عيد ميلادي."],
+
+["Behalve als het regent, ga ik te voet.","أذهب سيرًا على الأقدام إلا إذا أمطرت."],
+["Behalve als ik ziek ben, ga ik naar mijn werk.","أذهب إلى العمل إلا إذا كنت مريضًا."],
+["Behalve als je haast hebt, kunnen we rustig praten.","يمكننا التحدث بهدوء إلا إذا كنت مستعجلًا."],
+["Behalve als de winkel gesloten is, koop ik daar alles.","أشتري كل شيء من ذلك المتجر إلا إذا كان مغلقًا."],
+["Behalve als het te laat wordt, blijf ik nog even.","سأبقى قليلًا إلا إذا تأخر الوقت كثيرًا."],
+["Behalve als mijn vrouw werkt, eten we samen.","نتناول الطعام معًا إلا إذا كانت زوجتي تعمل."],
+["Behalve als er files zijn, ben ik er snel.","سأصل بسرعة إلا إذا كان هناك ازدحام مروري."],
+["Behalve als je het niet begrijpt, hoef je niets te vragen.","لا تحتاج إلى السؤال إلا إذا لم تفهم."],
+["Behalve als het echt nodig is, bel ik niet.","لا أتصل إلا إذا كان الأمر ضروريًا فعلًا."],
+["Behalve als ik me vergis, is de afspraak morgen.","موعدنا غدًا، ما لم أكن مخطئًا."]
+];
+
+const root = document.getElementById("sentences");
+
+sentences.forEach((item, index) => {
+  const card = document.createElement("article");
+  card.className = "sentence";
+
+  const number = document.createElement("div");
+  number.className = "number";
+  number.textContent = index + 1;
+
+  const nl = document.createElement("div");
+  nl.className = "nl";
+  nl.lang = "nl";
+  nl.textContent = item[0];
+
+  const ar = document.createElement("div");
+  ar.className = "ar";
+  ar.textContent = item[1];
+
+  card.append(number, nl, ar);
+  root.appendChild(card);
+});
+
+function copyAll() {
+  const text = sentences.map((s, i) =>
+    `${i + 1}. ${s[0]}\n${s[1]}`
+  ).join("\n\n");
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text)
+      .then(() => alert("تم نسخ جميع الجمل بنجاح!"))
+      .catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text) {
+  const area = document.createElement("textarea");
+  area.value = text;
+  document.body.appendChild(area);
+  area.select();
+  try {
+    document.execCommand("copy");
+    alert("تم نسخ الجمل!");
+  } catch {
+    alert("تعذر النسخ تلقائيًا. يمكنك تحديد الجمل ونسخها.");
+  }
+  area.remove();
+}
+</script>
+
+</body>
+</html>
