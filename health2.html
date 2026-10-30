@@ -1,1 +1,445 @@
-https://samerguda.github.io/dutch/ik-zeg-je
+<!DOCTYPE1 html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 جملة صحية بالفلمنكية - Gezondheid in het Vlaams</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        .flemish-text {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            direction: ltr;
+            text-align: left;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #16a34a;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300 flex flex-col">
+
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="bg-gradient-to-tr from-brand-600 to-emerald-400 p-2.5 rounded-2xl text-white shadow-lg shadow-brand-500/30">
+                        <i class="fa-solid font-bold fa-heart-pulse text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-extrabold bg-gradient-to-r from-brand-600 to-emerald-500 bg-clip-text text-transparent">
+                            دليل الصحة الفلمنكي
+                        </h1>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">100 جملة أساسية باللهجة الفلمنكية مع الترجمة الصوتية</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="themeToggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        <i class="fa-solid fa-moon text-lg hidden dark:block"></i>
+                        <i class="fa-solid fa-sun text-lg block dark:hidden text-amber-500"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+        <!-- Controls Section: Search & Category Filters -->
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 sm:p-6 shadow-xl border border-slate-200/60 dark:border-slate-700/50 mb-8 space-y-4">
+            
+            <!-- Search Bar -->
+            <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="searchInput" placeholder="ابحث عن كلمة باللغة العربية أو الفلمنكية..." 
+                    class="w-full pr-11 pl-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-brand-500 focus:outline-none text-slate-800 dark:text-slate-100 placeholder-slate-400 transition-all">
+                <button id="clearSearch" class="hidden absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Categories Buttons -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="categoryFilters">
+                <button data-category="all" class="cat-btn active px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap transition-all bg-brand-600 text-white shadow-md shadow-brand-600/30">
+                    <i class="fa-solid fa-border-all ml-1.5"></i> الكل (100)
+                </button>
+                <button data-category="symptoms" class="cat-btn px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600">
+                    <i class="fa-solid fa-head-side-cough ml-1.5 text-rose-500"></i> الأعراض والمشاعر
+                </button>
+                <button data-category="doctor" class="cat-btn px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600">
+                    <i class="fa-solid fa-user-doctor ml-1.5 text-blue-500"></i> عند الطبيب والصيدلية
+                </button>
+                <button data-category="diet" class="cat-btn px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600">
+                    <i class="fa-solid fa-apple-whole ml-1.5 text-emerald-500"></i> التغذية والرجيم
+                </button>
+                <button data-category="fitness" class="cat-btn px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600">
+                    <i class="fa-solid fa-person-running ml-1.5 text-amber-500"></i> الرياضة والعافية
+                </button>
+                <button data-category="emergency" class="cat-btn px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600">
+                    <i class="fa-solid fa-truck-medical ml-1.5 text-red-600"></i> الطوارئ والإسعاف
+                </button>
+                <button data-category="daily" class="cat-btn px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600">
+                    <i class="fa-solid fa-hand-holding-medical ml-1.5 text-purple-500"></i> العناية اليومية
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress and Counter Bar -->
+        <div class="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400 mb-4 px-1">
+            <span>عرض <strong id="visibleCount" class="text-brand-600 dark:text-brand-500 font-bold">100</strong> من إجمالي <strong>100</strong> جملة</span>
+            <span id="audioSupportNotice" class="text-xs bg-slate-200 dark:bg-slate-800 px-2.5 py-1 rounded-full">
+                <i class="fa-solid fa-volume-high text-brand-500 ml-1"></i> لهجة بلجيكية (nl-BE)
+            </span>
+        </div>
+
+        <!-- Sentence Cards Grid -->
+        <div id="sentencesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+            <!-- Cards will be dynamically generated by JS -->
+        </div>
+
+        <!-- Empty State Message -->
+        <div id="noResults" class="hidden text-center py-16">
+            <i class="fa-solid fa-file-circle-xmark text-5xl text-slate-300 dark:text-slate-700 mb-4"></i>
+            <h3 class="text-lg font-bold text-slate-600 dark:text-slate-400">لم يتم العثور على أي جمل تطابق بحثك</h3>
+            <p class="text-slate-400 text-sm mt-1">جرّب البحث بكلمات أخرى أو تغيير الفلتر.</p>
+        </div>
+    </main>
+
+    <!-- Toast Notification for Audio -->
+    <div id="toast" class="fixed bottom-5 left-5 transform -translate-y-10 opacity-0 transition-all duration-300 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-3 text-sm z-50 pointer-events-none">
+        <i class="fa-solid fa-volume-high text-brand-500"></i>
+        <span id="toastMsg">جاري التشغيل الصوتى...</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-6 text-center text-sm text-slate-500">
+        <p>دليل العبارات الصحية باللهجة الفلمنكية المستعملة في بلجيكا (Vlaanderen)</p>
+    </footer>
+
+    <!-- JavaScript Data and Logic -->
+    <script>
+        // Data structure containing 100 sentences with category, Flemish, Arabic, and phonetic/notes
+        const sentences = [
+            // --- الأعراض والمشاعر (1 - 20) ---
+            { id: 1, category: "symptoms", fl: "Ik voel mij niet goed.", ar: "أنا لا أستشعر بأني بخير / لست بخير.", note: "مصطلح شائع جداً ببلجيكا" },
+            { id: 2, category: "symptoms", fl: "Ik heb verschrikkelijke hoofdpijn.", ar: "لدي صداع رهيب في الرأس.", note: "hoofdpijn = صداع" },
+            { id: 3, category: "symptoms", fl: "Mijn keel doet enorm veel pijn.", ar: "حلقي يؤلمني كثيراً.", note: "keelpijn = ألم الحلق" },
+            { id: 4, category: "symptoms", fl: "Ik heb koorts en koude rillingen.", ar: "عندي حمى (حرارة) وقشعريرة برد.", note: "koorts = حرارة مرتفعة" },
+            { id: 5, category: "symptoms", fl: "Ik ben erg misselijk.", ar: "أشعر بغثيان شديد.", note: "misselijk = غثيان" },
+            { id: 6, category: "symptoms", fl: "Mijn maag doet pijn.", ar: "معدتي تؤلمني.", note: "maagpijn = ألم المعدة" },
+            { id: 7, category: "symptoms", fl: "Ik voel mij erg draaierig.", ar: "أشعر بدوار / دوخة شديدة.", note: "draaierig = دوخة" },
+            { id: 8, category: "symptoms", fl: "Ik moet de hele tijd hoesten.", ar: "أنا أسعل طوال الوقت.", note: "hoesten = السعال" },
+            { id: 9, category: "symptoms", fl: "Mijn neus zit helemaal verstopt.", ar: "أنفي مسدود بالكامل.", note: "verstopt = مسدود" },
+            { id: 10, category: "symptoms", fl: "Ik heb last van mijn rug.", ar: "أعاني من ألم في ظهري.", note: "last van = يعاني من" },
+            { id: 11, category: "symptoms", fl: "Ik voel mij uitgeput en moe.", ar: "أشعر بالإرهاق والتعب.", note: "moe = تعبان" },
+            { id: 12, category: "symptoms", fl: "Mijn buik doet heel veel pijn.", ar: "بطني يؤلمني جداً.", note: "buikpijn = ألم البطن" },
+            { id: 13, category: "symptoms", fl: "Ik heb tandpijn aan de rechterkant.", ar: "عندي ألم في أسناني في الجانب الأيمن.", note: "tandpijn = ألم أسنان" },
+            { id: 14, category: "symptoms", fl: "Ik heb moeite met ademhalen.", ar: "لدي صعوبة في التنفس.", note: "ademhalen = التنفس" },
+            { id: 15, category: "symptoms", fl: "Mijn spieren doen overal pijn.", ar: "عضلاتي تؤلمني في كل مكان.", note: "spierpijn = ألم عضلات" },
+            { id: 16, category: "symptoms", fl: "Ik heb een rode uitslag op mijn huid.", ar: "عندي طفح جلدي أحمر على بشرتي.", note: "uitslag = طفح" },
+            { id: 17, category: "symptoms", fl: "Mijn oog is rood en jeukt.", ar: "عيني حمراء وتدعو للحكة.", note: "jeuken = حكة" },
+            { id: 18, category: "symptoms", fl: "Ik heb veel last van stress.", ar: "أعاني كثيراً من الضغط النفسي / التوتر.", note: "stress = توتر" },
+            { id: 19, category: "symptoms", fl: "Mijn been is gezwollen.", ar: "ساقي متورمة.", note: "gezwollen = متورم" },
+            { id: 20, category: "symptoms", fl: "Ik heb het gevoel dat ik ga flauwvallen.", ar: "أشعر وكأنني سأغمى علي.", note: "flauwvallen = الإغماء" },
+
+            // --- عند الطبيب والصيدلية (21 - 40) ---
+            { id: 21, category: "doctor", fl: "Ik wil graag een afspraak maken bij de huisarts.", ar: "أريد تحديد موعد لدى طبيب العائلة.", note: "huisarts = طبيب الأسرة" },
+            { id: 22, category: "doctor", fl: "Heeft de dokter vandaag nog tijd?", ar: "هل لدى الطبيب وقت اليوم؟", note: "afspraak = موعد" },
+            { id: 23, category: "doctor", fl: "Waar doet het precies pijn?", ar: "أين يقع الألم بالضبط؟ (سؤال الطبيب)", note: "precies = بالضبط" },
+            { id: 24, category: "doctor", fl: "Hoe lang hebt u hier al last van?", ar: "منذ متى وأنت تعاني من هذا؟", note: "صيغة احترام u" },
+            { id: 25, category: "doctor", fl: "Kan u mij een voorschrift geven?", ar: "هل يمكنك إعطائي وصفة طبية؟", note: "voorschrift = وصفة" },
+            { id: 26, category: "doctor", fl: "Ik moet dit geneesmiddel bij de apotheker halen.", ar: "يجب أن أحضر هذا الدواء من الصيدلية.", note: "apotheker = صيدلي" },
+            { id: 27, category: "doctor", fl: "Hoeveel keer per dag moet ik dit innemen?", ar: "كم مرة في اليوم يجب أن آخذ هذا الدواء؟", note: "innemen = تناول الدواء" },
+            { id: 28, category: "doctor", fl: "Moet ik deze pillen voor of na het eten nemen?", ar: "هل أتناول هذه حبوب الدواء قبل أم بعد الأكل؟", note: "pillen = حبوب" },
+            { id: 29, category: "doctor", fl: "Zijn er bijwerkingen bij deze medicatie?", ar: "هل هناك آثار جانبيّة لهذا الدواء؟", note: "bijwerkingen = أعراض جانبيّة" },
+            { id: 30, category: "doctor", fl: "Ik ben allergisch voor penicilline.", ar: "أنا لدي حساسية من البنسلين.", note: "allergisch = حساس لـ" },
+            { id: 31, category: "doctor", fl: "De dokter heeft mij ziekteverlof geschreven.", ar: "كتب لي الطبيب إجازة مرضية.", note: "ziekteverlof = إجازة مرضية" },
+            { id: 32, category: "doctor", fl: "Ik heb een doktersattest nodig voor het werk.", ar: "أحتاج شهادة طبية للعمل.", note: "doktersattest = شهادة طبية" },
+            { id: 33, category: "doctor", fl: "Kan u mijn bloeddruk meten?", ar: "هل يمكنك قياس ضغط الدم لدي؟", note: "bloeddruk = ضغط الدم" },
+            { id: 34, category: "doctor", fl: "U moet een bloedonderzoek laten doen.", ar: "عليك إجراء تحليل دم.", note: "bloedonderzoek = فحص دم" },
+            { id: 35, category: "doctor", fl: "Ik moet naar een specialist gaan.", ar: "يجب أن أذهب إلى طبيب أخصائي.", note: "specialist = أخصائي" },
+            { id: 36, category: "doctor", fl: "Heeft u iets tegen de pijn?", ar: "هل لديك شيء ضد الألم / مسكن؟", note: "شائع في الصيدلية" },
+            { id: 37, category: "doctor", fl: "Dit is een pijnstiller op basis van paracetamol.", ar: "هذا مسكن آلام أساسه باراسيتامول.", note: "pijnstiller = مسكن" },
+            { id: 38, category: "doctor", fl: "Ik wil graag een afspraak bij de tandarts.", ar: "أود موعداً عند طبيب الأسنان.", note: "tandarts = طبيب أسنان" },
+            { id: 39, category: "doctor", fl: "De wond moet verzorgd worden.", ar: "الجرح يحتاج إلى عناية وتطهير.", note: "wond = جرح" },
+            { id: 40, category: "doctor", fl: "Vergeet uw SIS-kaart of eID niet mee te nemen.", ar: "لا تنس جلب بطاقة الهوية إلكترونية للبطاقة الصحية.", note: "eID = الهوية البلجيكية" },
+
+            // --- الغذاء والنظام الغذائي (41 - 60) ---
+            { id: 41, category: "diet", fl: "Gezonde voeding is belangrijk voor uw lichaam.", ar: "التغذية الصحية مهمة لجسمك.", note: "voeding = تغذية" },
+            { id: 42, category: "diet", fl: "Ik probeer meer groenten en fruit te eten.", ar: "أحاول أكل المزيد من الخضار الفواكه.", note: "groenten & fruit" },
+            { id: 43, category: "diet", fl: "Het is goed om twee liter water per dag te drinken.", ar: "من الجيد شرب ليترين من الماء يومياً.", note: "water drinken" },
+            { id: 44, category: "diet", fl: "Ik volg een streng dieet om af te vallen.", ar: "أتبع حمية غذائية صارمة لخسارة الوزن.", note: "afvallen = خسارة الوزن" },
+            { id: 45, category: "diet", fl: "Te veel suiker is slecht voor uw tanden en gezondheid.", ar: "السكر الزائد مضر لأسنانك وصحتك.", note: "suiker = سكر" },
+            { id: 46, category: "diet", fl: "Ik eet liever volkoren brood.", ar: "أفضل أكل الخبز الكامل (الأسمر).", note: "volkoren = حبوب كاملة" },
+            { id: 47, category: "diet", fl: "Vetten en gefrituurd eten zijn ongezond.", ar: "الدهون والأطعمة المقلية غير صحية.", note: "ongezond = غير صحي" },
+            { id: 48, category: "diet", fl: "Eet minder zout om uw bloeddruk te verlagen.", ar: "تناول ملحاً أقل لتقليل ضغط الدم.", note: "zout = ملح" },
+            { id: 49, category: "diet", fl: "Eiwitten zijn nodig voor de opbouw van spieren.", ar: "البروتينات ضرورية لبناء العضلات.", note: "eiwitten = بروتينات" },
+            { id: 50, category: "diet", fl: "Ik ben lactose-intolerant.", ar: "أنا أعاني من عدم تحمل اللاكتوز.", note: "حساسية الحليب" },
+            { id: 51, category: "diet", fl: "Verse groenten bevatten veel vitamines.", ar: "الخضراوات الطازجة تحتوي الكثير من الفيتامينات.", note: "vitamines = فيتامينات" },
+            { id: 52, category: "diet", fl: "Probeer verwerkt voedsel te vermijden.", ar: "حاول تجنب الأطعمة المصنعة.", note: "vermijden = تجنب" },
+            { id: 53, category: "diet", fl: "Een gezond ontbijt geeft energie voor de hele dag.", ar: "الإفطار الصحي يمنح طاقة لليوم بأكمله.", note: "ontbijt = إفطار" },
+            { id: 54, category: "diet", fl: "Ik drink geen gesuikerde frisdranken meer.", ar: "لم أعد أشرب المشروبات الغازية المحلاة.", note: "frisdrank = مشروب غازي" },
+            { id: 55, category: "diet", fl: "Noten en zaden bevatten gezonde vetten.", ar: "المكسرات والبذور تحتوي دهوناً صحية.", note: "noten = مكسرات" },
+            { id: 56, category: "diet", fl: "Ik probeer op mijn gewicht te letten.", ar: "أحاول الإنتباه لوزني.", note: "gewicht = وزن" },
+            { id: 57, category: "diet", fl: "Vegetarisch eten kan ook heel gezond zijn.", ar: "الأكل النباتي يمكن أن يكون صحياً جداً أيضاً.", note: "vegetarisch = نباتي" },
+            { id: 58, category: "diet", fl: "Sla geen maaltijden over.", ar: "لا تتجاوز الوجبات الغذائية.", note: "maaltijd = وجبة" },
+            { id: 59, category: "diet", fl: "Vezels zijn goed voor de spijsvertering.", ar: "الألياف مفيدة للهضم.", note: "spijsvertering = الهضم" },
+            { id: 60, category: "diet", fl: "Warme thee met honing helpt tegen keelpijn.", ar: "الشاي الدافئ مع العسل يساعد ضد ألم الحلق.", note: "honing = عسل" },
+
+            // --- الرياضة والعافية (61 - 80) ---
+            { id: 61, category: "fitness", fl: "Lichaamsbeweging is essentieel voor een goed gevoel.", ar: "النشاط البدني أساسي للشعور بالارتياح.", note: "beweging = حركة" },
+            { id: 62, category: "fitness", fl: "Ik ga drie keer per week sporten.", ar: "أذهب ممارسة الرياضة 3 مرات أسبوعياً.", note: "sporten = رياضة" },
+            { id: 63, category: "fitness", fl: "Wandelen in de natuur vermindert stress.", ar: "المشي في الطبيعة يقلل من التوتر.", note: "wandelen = مشي" },
+            { id: 64, category: "fitness", fl: "Een goede nachtrust is heel belangrijk.", ar: "النوم الجيد ليلاً مهم جداً.", note: "nachtrust = نوم الليل" },
+            { id: 65, category: "fitness", fl: "Ik doe elke ochtend rekoefeningen.", ar: "أقوم بتمارين الإطالة كل صباح.", note: "rekoefeningen = إطالة" },
+            { id: 66, category: "fitness", fl: "Fietsen is heel populair in Vlaanderen.", ar: "ركوب الدراجة محبوب جداً في فلاندرز (بلجيكا).", note: "fietsen = دراجات" },
+            { id: 67, category: "fitness", fl: "Vergeet niet op te warmen voor het lopen.", ar: "لا تنسَ الإحماء قبل الجري.", note: "opwarmen = إحماء" },
+            { id: 68, category: "fitness", fl: "Yoga helpt mij om te ontspannen.", ar: "اليوغا تساعدني على الاسترخاء.", note: "ontspannen = استرخاء" },
+            { id: 69, category: "fitness", fl: "Ik wil mijn conditie verbeteren.", ar: "أريد تحسين لياقتي البدنية.", note: "conditie = لياقة" },
+            { id: 70, category: "fitness", fl: "Drink genoeg water tijdens het sporten.", ar: "اشرب كمية كافية من الماء أثناء الرياضة.", note: "tijdens = أثناء" },
+            { id: 71, category: "fitness", fl: "Zitten is het nieuwe roken; beweeg meer!", ar: "الجلوس هو التدخين الجديد؛ تحرك أكثر!", note: "مقولة صحية شائعة" },
+            { id: 72, category: "fitness", fl: "Een gezonde geest in een gezond lichaam.", ar: "العقل السليم في الجسم السليم.", note: "مثل معروف ببلجيكا" },
+            { id: 73, category: "fitness", fl: "Ik ga graag zwemmen in het plaatselijke zwembad.", ar: "أحب الذهاب للسباحة في المسبح المحلي.", note: "zwemmen = سباحة" },
+            { id: 74, category: "fitness", fl: "Neem de trap in plaats van de lift.", ar: "استخدم الدرج بدلاً من المصعد.", note: "trap = درج" },
+            { id: 75, category: "fitness", fl: "Frisse lucht doet altijd deugd.", ar: "الهواء النقي يعود دائماً بالنفع.", note: "doet deugd = يريح/ينفع" },
+            { id: 76, category: "fitness", fl: "Ik heb spierpijn na de training van gisteren.", ar: "عندي ألم عضلات بعد تدريب الأمس.", note: "training = تدريب" },
+            { id: 77, category: "fitness", fl: "Luister altijd goed naar uw eigen lichaam.", ar: "استمع دائماً بشكل جيد لجسدك.", note: "luisteren = استماع" },
+            { id: 78, category: "fitness", fl: "Regelmatig bewegen beschermt uw hart.", ar: "الحركة المنتظمة تحمي قلبك.", note: "hart = قلب" },
+            { id: 79, category: "fitness", fl: "Ik voel mij veel fitter dan vorig jaar.", ar: "أشعر أنني بأشعري لياقة بكثير من العام الماضي.", note: "fitter = أكثر لياقة" },
+            { id: 80, category: "fitness", fl: "Meditatie helpt voor een goede mentale gezondheid.", ar: "التأمل يساعد في صحة نفسية جيدة.", note: "mentaal = نفسي/عقلي" },
+
+            // --- الطوارئ والإسعاف (81 - 90) ---
+            { id: 81, category: "emergency", fl: "Bel snel het Noodnummer 112!", ar: "اتصل بسرعة برقم الطوارئ 112!", note: "112 = طوارئ أوروبا" },
+            { id: 82, category: "emergency", fl: "Er is een ernstig ongeluk gebeurd.", ar: "وقع حادث خطير.", note: "ongeluk = حادث" },
+            { id: 83, category: "emergency", fl: "Stuur direct een ziekenwagen!", ar: "أرسلوا سيارة إسعاف فوراً!", note: "ziekenwagen = إسعاف" },
+            { id: 84, category: "emergency", fl: "Hij ademt niet meer, we moeten reanimeren.", ar: "هو لا يتنفس، علينا القيام بالإنعاش.", note: "reanimeren = إنعاش" },
+            { id: 85, category: "emergency", fl: "Waar is de spoeddienst van het ziekenhuis?", ar: "أين قسم الطوارئ بالمستشفى؟", note: "spoeddienst = طوارئ" },
+            { id: 86, category: "emergency", fl: "Zij bloedt heel hard uit haar been.", ar: "هي تنزف بغزارة من ساقها.", note: "bloeden = نزيف" },
+            { id: 87, category: "emergency", fl: "Blijf rustig, de hulpdiensten zijn onderweg.", ar: "ابقى هادئاً، خدمات الإسعاف في الطريق.", note: "onderweg = في الطريق" },
+            { id: 88, category: "emergency", fl: "Ik denk dat mijn arm gebroken is.", ar: "أظن أن ذراعي مكسورة.", note: "gebroken = مكسور" },
+            { id: 89, category: "emergency", fl: "Hij is het bewustzijn verloren.", ar: "لقد فقد الوعي.", note: "bewustzijn = وعي" },
+            { id: 90, category: "emergency", fl: "Eerste hulp verlenen is levensbelangrijk.", ar: "تقديم الإسعافات الأولية ألمر حيوي للغاية.", note: "Eerste hulp = إسعاف أولية" },
+
+            // --- العناية اليومية (91 - 100) ---
+            { id: 91, category: "daily", fl: "Was uw handen regelmatig met water en zeep.", ar: "اغسل يديك بانتظام بالماء والصابون.", note: "handen wassen" },
+            { id: 92, category: "daily", fl: "Gebruik een hydraterende crème voor een droge huid.", ar: "استخدم مرطباً للبشرة الجافة.", note: "droge huid = بشرة جافة" },
+            { id: 93, category: "daily", fl: "Poets uw tanden twee keer per dag.", ar: "نظف أسنانك بالفرشاة مرتين يومياً.", note: "poetsen = تنظيف فرشاة" },
+            { id: 94, category: "daily", fl: "Bescherm uw huid tegen de zon met zonnecrème.", ar: "احمِ بشرتك من الشمس بكريم واقي الشمس.", note: "zonnecrème = واقي شمس" },
+            { id: 95, category: "daily", fl: "Mondhygiëne voorkomt slechte adem.", ar: "نظافة الفم تمنع الرائحة الكريهة.", note: "mondhygiëne" },
+            { id: 96, category: "daily", fl: "Verlucht de slaapkamer elke dag.", ar: "قم بتهوئة غرفة النوم كل يوم.", note: "verluchten = تهوية" },
+            { id: 97, category: "daily", fl: "Draag gepaste kledij als het koud is.", ar: "ارتدِ ملابس مناسبة عندما يكون الجو برداً.", note: "koud = بارد" },
+            { id: 98, category: "daily", fl: "Roken is erg schadelijk voor de gezondheid.", ar: "التدخين ضار جداً بالصحة.", note: "roken = تدخين" },
+            { id: 99, category: "daily", fl: "Zorg goed voor uzelf en uw familie.", ar: "اعتنِ بنفسك وبأسرتك جيداً.", note: "zorgen voor = اعتناء بـ" },
+            { id: 100, category: "daily", fl: "Gezondheid is het kostbaarste bezit.", ar: "الصحة هي أثمن ما نملك.", note: "حكمة ختامية" }
+        ];
+
+        // Global State variables
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        // DOM elements
+        const grid = document.getElementById('sentencesGrid');
+        const searchInput = document.getElementById('searchInput');
+        const clearSearchBtn = document.getElementById('clearSearch');
+        const visibleCount = document.getElementById('visibleCount');
+        const noResults = document.getElementById('noResults');
+        const themeToggle = document.getElementById('themeToggle');
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toastMsg');
+
+        // Theme Toggle Logic
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Speech Synthesis Handler
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                // Cancel any ongoing speech
+                window.speechSynthesis.cancel();
+
+                const utterance = new SpeechSynthesisUtterance(text);
+                // Prefer Flemish (nl-BE) locale, fallback to Dutch (nl-NL)
+                utterance.lang = 'nl-BE';
+                utterance.rate = 0.88; // Slightly slower for language learning
+
+                // Show toast UI
+                showToast(`جاري النطق بالفلمنكية: "${text}"`);
+
+                utterance.onerror = () => {
+                    // Fallback to general Dutch if Belgian accent fails on system
+                    utterance.lang = 'nl-NL';
+                    window.speechSynthesis.speak(utterance);
+                };
+
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('متصفحك لا يدعم خاصية نطق الصوت المباشر (Speech Synthesis).');
+            }
+        }
+
+        // Show Toast Function
+        function showToast(message) {
+            toastMsg.textContent = message;
+            toast.classList.remove('opacity-0', '-translate-y-10');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', '-translate-y-10');
+            }, 2500);
+        }
+
+        // Render Cards Function
+        function renderSentences() {
+            grid.innerHTML = '';
+            
+            const filtered = sentences.filter(s => {
+                const matchesCat = (currentCategory === 'all' || s.category === currentCategory);
+                const matchesSearch = s.fl.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                      s.ar.includes(searchQuery) ||
+                                      s.id.toString() === searchQuery.trim();
+                return matchesCat && matchesSearch;
+            });
+
+            visibleCount.textContent = filtered.length;
+
+            if (filtered.length === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                
+                filtered.forEach(s => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm hover:shadow-xl border border-slate-200/80 dark:border-slate-700/60 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden';
+                    
+                    card.innerHTML = `
+                        <div>
+                            <!-- Top Card Bar -->
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800/50">
+                                    #${s.id}
+                                </span>
+                                <button onclick="speakText('${s.fl.replace(/'/g, "\\'")}')" 
+                                    title="استمع للنطق بالفلمنكية"
+                                    class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300 hover:bg-brand-600 hover:text-white dark:hover:bg-brand-500 dark:hover:text-white transition-all duration-200 flex items-center justify-center shadow-sm active:scale-95">
+                                    <i class="fa-solid fa-volume-high text-base"></i>
+                                </button>
+                            </div>
+
+                            <!-- Flemish Sentence (LTR) -->
+                            <div class="mb-3">
+                                <p class="flemish-text text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-50 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors leading-relaxed">
+                                    ${s.fl}
+                                </p>
+                            </div>
+
+                            <!-- Arabic Translation (RTL) -->
+                            <div class="mb-4">
+                                <p class="text-slate-700 dark:text-slate-300 font-medium text-base leading-relaxed">
+                                    ${s.ar}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Footer Note / Extra Info -->
+                        ${s.note ? `
+                            <div class="pt-3 border-t border-slate-100 dark:border-slate-700/50 text-xs text-slate-400 dark:text-slate-500 flex items-center gap-1.5">
+                                <i class="fa-regular fa-lightbulb text-amber-500"></i>
+                                <span>${s.note}</span>
+                            </div>
+                        ` : ''}
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        }
+
+        // Category Filter Handler
+        document.querySelectorAll('.cat-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.cat-btn').forEach(b => {
+                    b.classList.remove('bg-brand-600', 'text-white', 'shadow-md', 'shadow-brand-600/30', 'active');
+                    b.classList.add('bg-slate-100', 'dark:bg-slate-700', 'text-slate-600', 'dark:text-slate-300');
+                });
+
+                const target = e.currentTarget;
+                target.classList.remove('bg-slate-100', 'dark:bg-slate-700', 'text-slate-600', 'dark:text-slate-300');
+                target.classList.add('bg-brand-600', 'text-white', 'shadow-md', 'shadow-brand-600/30', 'active');
+
+                currentCategory = target.getAttribute('data-category');
+                renderSentences();
+            });
+        });
+
+        // Search Input Handler
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            if (searchQuery.length > 0) {
+                clearSearchBtn.classList.remove('hidden');
+            } else {
+                clearSearchBtn.classList.add('hidden');
+            }
+            renderSentences();
+        });
+
+        // Clear Search
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            searchQuery = '';
+            clearSearchBtn.classList.add('hidden');
+            renderSentences();
+        });
+
+        // Initial Load Render
+        window.addEventListener('DOMContentLoaded', () => {
+            renderSentences();
+        });
+    </script>
+</body>
+</html>
