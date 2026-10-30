@@ -1,0 +1,683 @@
+
+
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>100 سؤال فلمنكي | Did You?</title>
+
+<style>
+
+:root {
+
+  --primary: #155e75;
+
+  --secondary: #0891b2;
+
+  --bg: #f1f5f9;
+
+  --card: #ffffff;
+
+  --text: #1e293b;
+
+  --muted: #64748b;
+
+}
+
+* { box-sizing: border-box; }
+
+body {
+
+  margin: 0;
+
+  font-family: Arial, Tahoma, sans-serif;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  line-height: 1.8;
+
+}
+
+header {
+
+  background: linear-gradient(135deg, #164e63, #0891b2);
+
+  color: white;
+
+  text-align: center;
+
+  padding: 35px 15px;
+
+  border-radius: 0 0 25px 25px;
+
+}
+
+header h1 { margin: 0 0 10px; font-size: 27px; }
+
+header p { margin: 5px 0; }
+
+.container {
+
+  max-width: 900px;
+
+  margin: 22px auto;
+
+  padding: 0 14px;
+
+}
+
+.info {
+
+  background: white;
+
+  border-radius: 14px;
+
+  padding: 18px;
+
+  margin-bottom: 20px;
+
+  border-right: 5px solid var(--secondary);
+
+}
+
+.info strong { color: var(--primary); }
+
+.toolbar {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+}
+
+button, input {
+
+  font: inherit;
+
+  border-radius: 9px;
+
+  padding: 10px 14px;
+
+}
+
+button {
+
+  border: none;
+
+  background: var(--primary);
+
+  color: white;
+
+  cursor: pointer;
+
+}
+
+button:hover { background: var(--secondary); }
+
+input {
+
+  flex: 1;
+
+  min-width: 180px;
+
+  border: 1px solid #cbd5e1;
+
+  background: white;
+
+  direction: rtl;
+
+}
+
+.counter {
+
+  color: var(--muted);
+
+  margin-bottom: 12px;
+
+}
+
+.sentence {
+
+  background: var(--card);
+
+  border-radius: 13px;
+
+  padding: 16px;
+
+  margin-bottom: 12px;
+
+  box-shadow: 0 3px 12px #0f172a0b;
+
+  border: 1px solid #e2e8f0;
+
+}
+
+.topline {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 8px;
+
+}
+
+.number {
+
+  background: #cffafe;
+
+  color: #155e75;
+
+  min-width: 35px;
+
+  height: 35px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+  direction: ltr;
+
+}
+
+.english {
+
+  direction: ltr;
+
+  text-align: left;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  color: #0f4c5c;
+
+  flex: 1;
+
+}
+
+.arabic {
+
+  font-size: 16px;
+
+  color: #334155;
+
+  padding-top: 6px;
+
+}
+
+.category {
+
+  display: inline-block;
+
+  font-size: 12px;
+
+  color: #64748b;
+
+  background: #f1f5f9;
+
+  padding: 3px 8px;
+
+  border-radius: 20px;
+
+  margin-bottom: 5px;
+
+}
+
+footer {
+
+  text-align: center;
+
+  color: var(--muted);
+
+  padding: 25px 10px;
+
+}
+
+@media print {
+
+  body { background: white; }
+
+  header { background: white; color: black; border: 1px solid #ccc; }
+
+  .toolbar, .info button { display: none; }
+
+  .sentence { break-inside: avoid; box-shadow: none; }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <h1>🇧🇪 100 سؤال بالفلمنكية</h1>
+
+  <p>Did you…? | Heb je…?</p>
+
+  <p>أسئلة يومية باللهجة الفلمنكية مع الترجمة العربية</p>
+
+</header>
+
+<main class="container">
+
+  <section class="info">
+
+    <strong>📘 القاعدة:</strong>
+
+    <p dir="ltr">Did you eat? = Heb je gegeten?</p>
+
+    <p>هل أكلت؟</p>
+
+    <p>في الفلمنكية، نستخدم غالبًا <b>Heb je + اسم المفعول</b>
+
+    للسؤال عن شيء حدث في الماضي.</p>
+
+  </section>
+
+  <div class="toolbar">
+
+    <input id="search" type="search"
+
+      placeholder="ابحث بالعربية أو بالفلمنكية..."
+
+      oninput="filterSentences()">
+
+    <button onclick="showAll()">عرض الكل</button>
+
+    <button onclick="window.print()">طباعة / PDF</button>
+
+    <button onclick="copyAll()">نسخ الأسئلة</button>
+
+  </div>
+
+  <div class="counter" id="counter">١٠٠ سؤال</div>
+
+  <div id="sentences"></div>
+
+</main>
+
+<footer>
+
+  تعلم الفلمنكية خطوة بخطوة 🇧🇪
+
+  <br>100 Flemish Questions — A1/A2
+
+</footer>
+
+<script>
+
+const data = [
+
+["Heb je gegeten?","هل أكلت؟"],
+
+["Heb je gedronken?","هل شربت؟"],
+
+["Heb je ontbeten?","هل تناولت الإفطار؟"],
+
+["Heb je al geluncht?","هل تناولت الغداء بالفعل؟"],
+
+["Heb je avondeten gemaakt?","هل حضرت العشاء؟"],
+
+["Heb je koffie gedronken?","هل شربت القهوة؟"],
+
+["Heb je water gedronken?","هل شربت الماء؟"],
+
+["Heb je iets gegeten?","هل أكلت شيئًا؟"],
+
+["Heb je honger gehad?","هل شعرت بالجوع؟"],
+
+["Heb je genoeg gegeten?","هل أكلت ما يكفي؟"],
+
+["Heb je goed geslapen?","هل نمت جيدًا؟"],
+
+["Heb je vroeg opgestaan?","هل استيقظت مبكرًا؟"],
+
+["Heb je je bed opgemaakt?","هل رتبت سريرك؟"],
+
+["Heb je gedoucht?","هل استحممت؟"],
+
+["Heb je je tanden gepoetst?","هل غسلت أسنانك؟"],
+
+["Heb je je aangekleed?","هل ارتديت ملابسك؟"],
+
+["Heb je je gewassen?","هل اغتسلت؟"],
+
+["Heb je je haar gekamd?","هل مشطت شعرك؟"],
+
+["Heb je je klaargemaakt?","هل جهزت نفسك؟"],
+
+["Heb je je wekker gehoord?","هل سمعت المنبه؟"],
+
+["Heb je vandaag gewerkt?","هل عملت اليوم؟"],
+
+["Heb je naar je baas gebeld?","هل اتصلت بمديرك؟"],
+
+["Heb je je collega's gezien?","هل رأيت زملاءك؟"],
+
+["Heb je een e-mail gestuurd?","هل أرسلت بريدًا إلكترونيًا؟"],
+
+["Heb je die e-mail gelezen?","هل قرأت ذلك البريد الإلكتروني؟"],
+
+["Heb je je werk afgemaakt?","هل أنهيت عملك؟"],
+
+["Heb je een vergadering gehad?","هل كان لديك اجتماع؟"],
+
+["Heb je op tijd aangekomen?","هل وصلت في الموعد؟"],
+
+["Heb je vandaag veel gedaan?","هل أنجزت الكثير اليوم؟"],
+
+["Heb je morgen gewerkt?","هل عملت غدًا؟"],
+
+["Heb je Nederlands geleerd?","هل تعلمت الهولندية؟"],
+
+["Heb je je huiswerk gemaakt?","هل أنجزت واجبك؟"],
+
+["Heb je de les gevolgd?","هل تابعت الدرس؟"],
+
+["Heb je de leraar gesproken?","هل تحدثت مع المعلم؟"],
+
+["Heb je de vraag begrepen?","هل فهمت السؤال؟"],
+
+["Heb je het antwoord gevonden?","هل وجدت الإجابة؟"],
+
+["Heb je nieuwe woorden geleerd?","هل تعلمت كلمات جديدة؟"],
+
+["Heb je de tekst gelezen?","هل قرأت النص؟"],
+
+["Heb je de oefening gemaakt?","هل حللت التمرين؟"],
+
+["Heb je alles onthouden?","هل تذكرت كل شيء؟"],
+
+["Heb je boodschappen gedaan?","هل تسوقت لشراء احتياجات المنزل؟"],
+
+["Heb je brood gekocht?","هل اشتريت خبزًا؟"],
+
+["Heb je melk gekocht?","هل اشتريت حليبًا؟"],
+
+["Heb je de rekening betaald?","هل دفعت الفاتورة؟"],
+
+["Heb je geld afgehaald?","هل سحبت نقودًا؟"],
+
+["Heb je je bankkaart meegenomen?","هل أخذت بطاقتك البنكية معك؟"],
+
+["Heb je de prijs gezien?","هل رأيت السعر؟"],
+
+["Heb je iets online besteld?","هل طلبت شيئًا عبر الإنترنت؟"],
+
+["Heb je een nieuwe jas gekocht?","هل اشتريت معطفًا جديدًا؟"],
+
+["Heb je je wisselgeld gekregen?","هل حصلت على الباقي من النقود؟"],
+
+["Heb je de bus genomen?","هل استقليت الحافلة؟"],
+
+["Heb je de trein genomen?","هل استقليت القطار؟"],
+
+["Heb je de tram genomen?","هل استقليت الترام؟"],
+
+["Heb je je trein gemist?","هل فاتك القطار؟"],
+
+["Heb je op de bus gewacht?","هل انتظرت الحافلة؟"],
+
+["Heb je een ticket gekocht?","هل اشتريت تذكرة؟"],
+
+["Heb je de weg gevonden?","هل وجدت الطريق؟"],
+
+["Heb je de verkeerde straat genomen?","هل سلكت الشارع الخطأ؟"],
+
+["Heb je Google Maps gebruikt?","هل استخدمت خرائط جوجل؟"],
+
+["Heb je veilig thuisgekomen?","هل وصلت إلى المنزل بسلام؟"],
+
+["Heb je de afwas gedaan?","هل غسلت الأطباق؟"],
+
+["Heb je het huis schoongemaakt?","هل نظفت المنزل؟"],
+
+["Heb je de was gedaan?","هل غسلت الملابس؟"],
+
+["Heb je de vuilnis buitengezet?","هل أخرجت القمامة؟"],
+
+["Heb je je kamer opgeruimd?","هل رتبت غرفتك؟"],
+
+["Heb je de tafel gedekt?","هل جهزت مائدة الطعام؟"],
+
+["Heb je de deur gesloten?","هل أغلقت الباب؟"],
+
+["Heb je de lichten uitgedaan?","هل أطفأت الأنوار؟"],
+
+["Heb je de verwarming aangezet?","هل شغلت التدفئة؟"],
+
+["Heb je de boodschappen opgeborgen?","هل رتبت المشتريات في أماكنها؟"],
+
+["Heb je mijn bericht gezien?","هل رأيت رسالتي؟"],
+
+["Heb je mij gebeld?","هل اتصلت بي؟"],
+
+["Heb je haar gesproken?","هل تحدثت معها؟"],
+
+["Heb je hem ontmoet?","هل قابلته؟"],
+
+["Heb je je familie bezocht?","هل زرت عائلتك؟"],
+
+["Heb je je vrienden uitgenodigd?","هل دعوت أصدقاءك؟"],
+
+["Heb je sorry gezegd?","هل اعتذرت؟"],
+
+["Heb je hem geholpen?","هل ساعدته؟"],
+
+["Heb je haar bedankt?","هل شكرتها؟"],
+
+["Heb je de afspraak bevestigd?","هل أكدت الموعد؟"],
+
+["Heb je gisteren televisie gekeken?","هل شاهدت التلفاز أمس؟"],
+
+["Heb je die film gezien?","هل شاهدت ذلك الفيلم؟"],
+
+["Heb je naar muziek geluisterd?","هل استمعت إلى الموسيقى؟"],
+
+["Heb je een boek gelezen?","هل قرأت كتابًا؟"],
+
+["Heb je foto's gemaakt?","هل التقطت صورًا؟"],
+
+["Heb je gisteren gesport?","هل مارست الرياضة أمس؟"],
+
+["Heb je een wandeling gemaakt?","هل ذهبت في نزهة مشيًا؟"],
+
+["Heb je buiten gegeten?","هل أكلت خارج المنزل؟"],
+
+["Heb je het nieuws gevolgd?","هل تابعت الأخبار؟"],
+
+["Heb je een spel gespeeld?","هل لعبت لعبة؟"],
+
+["Heb je je medicijnen genomen?","هل تناولت أدويتك؟"],
+
+["Heb je de dokter gebeld?","هل اتصلت بالطبيب؟"],
+
+["Heb je een afspraak gemaakt?","هل حجزت موعدًا؟"],
+
+["Heb je je goed gevoeld?","هل شعرت أنك بخير؟"],
+
+["Heb je hoofdpijn gehad?","هل أصبت بصداع؟"],
+
+["Heb je genoeg water gedronken?","هل شربت كمية كافية من الماء؟"],
+
+["Heb je vandaag gewandeld?","هل مشيت اليوم؟"],
+
+["Heb je genoeg gerust?","هل أخذت قسطًا كافيًا من الراحة؟"],
+
+["Heb je je handen gewassen?","هل غسلت يديك؟"],
+
+["Heb je je veiligheidsgordel aangedaan?","هل ربطت حزام الأمان؟"],
+
+["Heb je dat begrepen?","هل فهمت ذلك؟"],
+
+["Heb je dat al gedaan?","هل فعلت ذلك بالفعل؟"],
+
+["Heb je dat geprobeerd?","هل جربت ذلك؟"],
+
+["Heb je ooit in België gewoond?","هل عشت في بلجيكا من قبل؟"],
+
+["Heb je ooit in Gent geweest?","هل سبق لك أن كنت في غنت؟"],
+
+["Heb je de deur op slot gedaan?","هل أغلقت الباب بالمفتاح؟"],
+
+["Heb je je sleutels gevonden?","هل وجدت مفاتيحك؟"],
+
+["Heb je het formulier ingevuld?","هل ملأت الاستمارة؟"],
+
+["Heb je de documenten meegenomen?","هل أخذت المستندات معك؟"],
+
+["Heb je alles gecontroleerd?","هل تحققت من كل شيء؟"]
+
+];
+
+const container = document.getElementById("sentences");
+
+function render(items) {
+
+  container.innerHTML = "";
+
+  items.forEach((item) => {
+
+    const number = data.indexOf(item) + 1;
+
+    const card = document.createElement("article");
+
+    card.className = "sentence";
+
+    const top = document.createElement("div");
+
+    top.className = "topline";
+
+    const badge = document.createElement("span");
+
+    badge.className = "number";
+
+    badge.textContent = number;
+
+    const english = document.createElement("div");
+
+    english.className = "english";
+
+    english.textContent = item[0];
+
+    top.append(badge, english);
+
+    const arabic = document.createElement("div");
+
+    arabic.className = "arabic";
+
+    arabic.textContent = item[1];
+
+    card.append(top, arabic);
+
+    container.appendChild(card);
+
+  });
+
+  document.getElementById("counter").textContent =
+
+    "عدد الأسئلة المعروضة: " + items.length + " من 100";
+
+}
+
+function filterSentences() {
+
+  const q = document.getElementById("search").value.trim().toLowerCase();
+
+  render(data.filter(item =>
+
+    item[0].toLowerCase().includes(q) || item[1].includes(q)
+
+  ));
+
+}
+
+function showAll() {
+
+  document.getElementById("search").value = "";
+
+  render(data);
+
+}
+
+function copyAll() {
+
+  const text = data.map((item, i) =>
+
+    (i + 1) + ". " + item[0] + "\n" + item[1]
+
+  ).join("\n\n");
+
+  if (navigator.clipboard && window.isSecureContext) {
+
+    navigator.clipboard.writeText(text)
+
+      .then(() => alert("تم نسخ الأسئلة الـ100!"))
+
+      .catch(() => fallbackCopy(text));
+
+  } else {
+
+    fallbackCopy(text);
+
+  }
+
+}
+
+function fallbackCopy(text) {
+
+  const area = document.createElement("textarea");
+
+  area.value = text;
+
+  document.body.appendChild(area);
+
+  area.select();
+
+  try {
+
+    document.execCommand("copy");
+
+    alert("تم النسخ إذا سمح المتصفح بذلك.");
+
+  } catch (e) {
+
+    alert("تعذر النسخ تلقائيًا. يمكنك تحديد النص ونسخه.");
+
+  }
+
+  area.remove();
+
+}
+
+render(data);
+
+</script>
+
+</body>
+
+</html>
