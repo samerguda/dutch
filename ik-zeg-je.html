@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 Vlaamse zinnen | أنا بقولك</title>
+<style>
+:root {
+  --bg: #f3f6fb;
+  --card: #ffffff;
+  --primary: #174ea6;
+  --accent: #f4c542;
+  --text: #172033;
+  --muted: #68758a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+header {
+  background: linear-gradient(135deg,#123b78,#2877c7);
+  color: white;
+  padding: 34px 18px;
+  text-align: center;
+}
+header h1 { margin: 0 0 10px; font-size: 28px; }
+header p { margin: 5px 0; }
+.badge {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--accent);
+  color: #172033;
+  padding: 5px 13px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 18px;
+}
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg);
+  padding: 12px 0;
+}
+input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #d5deeb;
+  border-radius: 12px;
+  font-size: 16px;
+  background: white;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+button {
+  border: 0;
+  border-radius: 9px;
+  padding: 10px 14px;
+  background: var(--primary);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+button:hover { opacity: .88; }
+#count { color: var(--muted); margin: 12px 2px; }
+.sentence {
+  background: var(--card);
+  border: 1px solid #e2e8f1;
+  border-radius: 14px;
+  padding: 17px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 10px #14213d08;
+}
+.topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.number {
+  color: var(--primary);
+  font-weight: bold;
+  background: #eaf1ff;
+  border-radius: 7px;
+  padding: 3px 10px;
+}
+.nl {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 7px 0;
+}
+.ar {
+  direction: rtl;
+  text-align: right;
+  font-size: 16px;
+  color: #344054;
+  margin: 7px 0;
+}
+.smallbtn { padding: 7px 10px; font-size: 12px; }
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 25px;
+}
+@media(max-width:480px) {
+  header h1 { font-size: 23px; }
+  .container { padding: 12px; }
+  .sentence { padding: 13px; }
+  .nl { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>100 Vlaamse Zinnen</h1>
+  <p>تعلّم الفلمنكية البلجيكية من خلال جمل يومية</p>
+  <p><strong>Ik zeg het je!</strong> — أنا بقولك!</p>
+  <span class="badge">Nederlands in Vlaanderen 🇧🇪</span>
+</header>
+
+<main class="container">
+  <div class="toolbar">
+    <input id="search" type="search"
+      placeholder="ابحث في الجمل الهولندية أو العربية..."
+      oninput="render()">
+    <div class="actions">
+      <button onclick="copyAll()">نسخ كل الجمل</button>
+      <button onclick="window.print()">طباعة / PDF</button>
+      <button onclick="document.getElementById('search').value='';render()">عرض الكل</button>
+    </div>
+  </div>
+  <p id="count"></p>
+  <div id="list"></div>
+</main>
+
+<footer>
+  Vlaams leren, stap voor stap 🇧🇪<br>
+  تعلّم الفلمنكية خطوة بخطوة
+</footer>
+
+<script>
+const sentences = [
+["Ik zeg het je.","أنا بقولك."],
+["Ik zeg het u.","أنا بقول لحضرتك."],
+["Ik zeg het je toch!","ما أنا بقولك أهو!"],
+["Ik zeg het je eerlijk.","أنا بقولك بصراحة."],
+["Ik zeg het je, hoor.","بقولك أهو، صدّقني."],
+["Ik ga u iets zeggen.","هقولك حاجة."],
+["Ik wil je iets zeggen.","عايز أقولك حاجة."],
+["Ik moet je iets zeggen.","لازم أقولك حاجة."],
+["Mag ik je iets zeggen?","ممكن أقولك حاجة؟"],
+["Weet je wat ik je zeg?","عارف أنا بقولك إيه؟"],
+
+["Ik zeg je dat het waar is.","أنا بقولك إن ده حقيقي."],
+["Ik zeg je dat het niet klopt.","أنا بقولك إن ده مش مظبوط."],
+["Ik zeg het je nog eens.","هقولك تاني."],
+["Ik zal het je nog eens zeggen.","هقولك مرة تانية."],
+["Ik heb het je al gezegd.","أنا قلتلك بالفعل."],
+["Ik heb het je toch gezegd!","مش أنا قلتلك!"],
+["Ik zei het je gisteren al.","أنا قلتلك امبارح بالفعل."],
+["Ik heb je dat toch verteld?","مش أنا حكيتلك الموضوع ده؟"],
+["Ik zeg het je voor de laatste keer.","أنا بقولك للمرة الأخيرة."],
+["Ik blijf het je zeggen.","هفضل أقولك."],
+
+["Ik zeg het je omdat ik om je geef.","أنا بقولك كده عشان إنت تهمني."],
+["Ik zeg het je voor je eigen bestwil.","أنا بقولك ده لمصلحتك."],
+["Ik zeg het je uit ervaring.","أنا بقولك ده عن تجربة."],
+["Ik zeg het je met alle respect.","أنا بقولك ده بكل احترام."],
+["Ik zeg het je zonder slechte bedoelingen.","أنا بقولك ده من غير أي نية سيئة."],
+["Ik zeg het je niet om je te kwetsen.","أنا مش بقولك ده عشان أجرحك."],
+["Ik zeg het je gewoon zoals het is.","أنا بقولك الحقيقة زي ما هي."],
+["Ik zeg het je rechtuit.","أنا بقولك بصراحة ومن غير لف ودوران."],
+["Ik zeg het je heel duidelijk.","أنا بوضحلك الكلام جدًا."],
+["Ik zeg het je omdat je het moet weten.","أنا بقولك عشان لازم تعرف."],
+
+["Ik zeg je dat je gelijk hebt.","أنا بقولك إنك عندك حق."],
+["Ik zeg je dat je ongelijk hebt.","أنا بقولك إنك غلطان."],
+["Ik zeg je dat je voorzichtig moet zijn.","أنا بقولك لازم تاخد بالك."],
+["Ik zeg je dat je moet opletten.","أنا بقولك لازم تنتبه."],
+["Ik zeg je dat je moet wachten.","أنا بقولك لازم تستنى."],
+["Ik zeg je dat je op tijd moet komen.","أنا بقولك لازم تيجي في المعاد."],
+["Ik zeg je dat je rustig moet blijven.","أنا بقولك لازم تفضل هادي."],
+["Ik zeg je dat je het kunt.","أنا بقولك إنك تقدر تعملها."],
+["Ik zeg je dat alles goed komt.","أنا بقولك إن كل حاجة هتبقى كويسة."],
+["Ik zeg je dat je niet alleen bent.","أنا بقولك إنك مش لوحدك."],
+
+["Ik zeg het je, dat is niet normaal.","بقولك، ده مش طبيعي."],
+["Ik zeg het je, dat is een goed idee.","بقولك، دي فكرة كويسة."],
+["Ik zeg het je, dat werkt niet.","بقولك، الطريقة دي مش نافعة."],
+["Ik zeg het je, dat is veel te duur.","بقولك، ده غالي أوي."],
+["Ik zeg het je, dat is echt gemakkelijk.","بقولك، ده سهل فعلًا."],
+["Ik zeg het je, dat meen ik serieus.","بقولك، أنا جاد فعلًا."],
+["Ik zeg het je, hij komt niet.","بقولك، هو مش جاي."],
+["Ik zeg het je, ze heeft gelijk.","بقولك، هي عندها حق."],
+["Ik zeg het je, we zijn te laat.","بقولك، إحنا اتأخرنا."],
+["Ik zeg het je, ik ben er klaar mee.","بقولك، أنا خلاص زهقت من الموضوع ده."],
+
+["Luister, ik zeg het je.","اسمع، أنا بقولك."],
+["Kijk, ik zeg het je.","بص، أنا بقولك."],
+["Geloof me, ik zeg het je.","صدقني، أنا بقولك."],
+["Echt waar, ik zeg het je.","والله بقولك الحقيقة."],
+["Serieus, ik zeg het je.","بجد، أنا بقولك."],
+["Ik zweer het je, ik zeg de waarheid.","أقسم لك إني بقول الحقيقة."],
+["Ik meen het, ik zeg het je.","أنا جاد، وبقولك بجد."],
+["Ik maak geen grapje, ik zeg het je.","أنا مش بهزر، أنا بقولك."],
+["Versta me niet verkeerd, ik zeg het je.","ما تفهمنيش غلط، أنا بقولك."],
+["Neem het van mij aan, ik zeg het je.","خد كلامي منّي، أنا بقولك."],
+
+["Ik zeg het je, maar luister goed.","أنا بقولك، بس اسمع كويس."],
+["Ik zeg het je, denk er eens over na.","أنا بقولك، فكّر في الموضوع."],
+["Ik zeg het je, beslis niet te snel.","أنا بقولك، ما تستعجلش في القرار."],
+["Ik zeg het je, wees niet bang.","أنا بقولك، ما تخافش."],
+["Ik zeg het je, geef niet op.","أنا بقولك، ما تستسلمش."],
+["Ik zeg het je, probeer het opnieuw.","أنا بقولك، جرّب مرة تانية."],
+["Ik zeg het je, vraag het gewoon.","أنا بقولك، اسأل وخلاص."],
+["Ik zeg het je, zeg gewoon wat je denkt.","أنا بقولك، قول اللي إنت بتفكر فيه."],
+["Ik zeg het je, maak je geen zorgen.","أنا بقولك، ما تقلقش."],
+["Ik zeg het je, blijf kalm.","أنا بقولك، خليك هادي."],
+
+["Ik wou je net iets zeggen.","كنت لسه هقولك حاجة."],
+["Ik wilde je iets vertellen.","كنت عايز أحكيلك حاجة."],
+["Ik moet je de waarheid zeggen.","لازم أقولك الحقيقة."],
+["Ik ga je eerlijk zeggen wat ik denk.","هقولك بصراحة أنا بفكر في إيه."],
+["Ik zal je zeggen hoe het zit.","هقولك الموضوع عامل إزاي."],
+["Ik kan je maar één ding zeggen.","مش هقدر أقولك غير حاجة واحدة."],
+["Ik weet niet hoe ik het je moet zeggen.","مش عارف أقولك إزاي."],
+["Ik weet niet wat ik je moet zeggen.","مش عارف أقولك إيه."],
+["Wat moet ik je nog zeggen?","لسه أقولك إيه؟"],
+["Hoe vaak moet ik het je zeggen?","أقولك كام مرة؟"],
+
+["Ik zeg het je liever persoonlijk.","أفضل أقولك الكلام ده وش لوش."],
+["Ik zeg het je straks wel.","هقولك بعد شوية."],
+["Ik zeg het je morgen.","هقولك بكرة."],
+["Ik zeg het je zodra ik het weet.","هقولك أول ما أعرف."],
+["Ik zeg het je als ik thuiskom.","هقولك لما أرجع البيت."],
+["Ik zeg het je wanneer ik tijd heb.","هقولك لما يكون عندي وقت."],
+["Ik zeg het je als er iets verandert.","هقولك لو حصل أي تغيير."],
+["Ik laat het je weten, beloofd.","هبلغك، وعد."],
+["Ik zal je op de hoogte houden.","هخليك على اطلاع."],
+["Ik kom erop terug en ik zeg het je.","هرجع للموضوع وهقولك."],
+
+["Ik zeg het je niet zomaar.","أنا مش بقولك الكلام ده من فراغ."],
+["Ik zeg het je omdat ik het zelf heb meegemaakt.","أنا بقولك ده لأني مريت بالتجربة بنفسي."],
+["Ik zeg het je, je zult er geen spijt van krijgen.","أنا بقولك، مش هتندم على ده."],
+["Ik zeg het je, je moet me vertrouwen.","أنا بقولك، لازم تثق فيّ."],
+["Ik zeg het je, dat vergeet ik nooit.","أنا بقولك، عمري ما هنسى ده."],
+["Ik zeg het je, dat is mijn mening.","أنا بقولك، ده رأيي."],
+["Ik zeg het je, iedereen maakt fouten.","أنا بقولك، كل الناس بتغلط."],
+["Ik zeg het je, niemand is perfect.","أنا بقولك، مفيش حد كامل."],
+["Ik zeg het je, samen komen we er wel.","أنا بقولك، مع بعض هنقدر نحل الموضوع."],
+["Ik zeg het je, je kunt op mij rekenen.","أنا بقولك، تقدر تعتمد عليّ."]
+];
+
+function render() {
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const filtered = sentences
+    .map((s,i) => ({s, i}))
+    .filter(x => x.s.join(' ').toLowerCase().includes(q));
+
+  document.getElementById('count').textContent =
+    `عدد الجمل المعروضة: ${filtered.length} من ${sentences.length}`;
+
+  document.getElementById('list').innerHTML = filtered.map(({s,i}) => `
+    <article class="sentence">
+      <div class="topline">
+        <span class="number">الجملة ${i+1}</span>
+        <button class="smallbtn" onclick="copyOne(${i})">نسخ الجملة</button>
+      </div>
+      <p class="nl" lang="nl">${escapeHTML(s[0])}</p>
+      <p class="ar" lang="ar">${escapeHTML(s[1])}</p>
+    </article>
+  `).join('');
+}
+
+function escapeHTML(str) {
+  return str.replace(/[&<>"']/g, c => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;',
+    '"':'&quot;', "'":'&#39;'
+  })[c]);
+}
+
+function copyOne(i) {
+  const text = `${i+1}. ${sentences[i][0]}\n${sentences[i][1]}`;
+  navigator.clipboard.writeText(text)
+    .catch(() => alert(text));
+}
+
+function copyAll() {
+  const text = sentences.map((s,i) =>
+    `${i+1}. ${s[0]}\n${s[1]}`
+  ).join('\n\n');
+
+  navigator.clipboard.writeText(text)
+    .then(() => alert('تم نسخ الجمل الـ100!'))
+    .catch(() => alert('قد لا يدعم المتصفح النسخ التلقائي.'));
+}
+
+render();
+</script>
+</body>
+</html>
