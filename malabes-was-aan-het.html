@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة فلمنكية | الملابس والماضي المستمر</title>
+<style>
+:root {
+  --primary:#176b5b;
+  --dark:#123f37;
+  --bg:#f2f6f5;
+  --card:#ffffff;
+  --text:#263936;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Tahoma,sans-serif;
+  line-height:1.9;
+}
+header{
+  background:linear-gradient(135deg,var(--dark),#259b7e);
+  color:white;
+  padding:32px 16px;
+  text-align:center;
+}
+header h1{font-size:26px;margin:0 0 8px}
+header p{margin:0;font-size:15px}
+.container{max-width:850px;margin:22px auto;padding:0 14px}
+.lesson{
+  background:#e1f2ec;
+  border-right:5px solid var(--primary);
+  border-radius:10px;
+  padding:16px;
+  margin-bottom:18px;
+}
+.lesson h2{font-size:19px;margin:0 0 8px}
+.formula{
+  direction:ltr;
+  text-align:center;
+  font-weight:bold;
+  background:white;
+  border-radius:8px;
+  padding:12px;
+  margin:10px 0;
+  color:var(--dark);
+}
+.controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:20px;
+}
+button{
+  border:0;
+  border-radius:9px;
+  padding:12px 16px;
+  background:var(--primary);
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+}
+button:hover{opacity:.88}
+.sentence{
+  background:var(--card);
+  border:1px solid #e1eae6;
+  border-radius:12px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 3px 9px #123f3709;
+}
+.number{
+  display:inline-block;
+  color:var(--primary);
+  background:#e1f2ec;
+  border-radius:7px;
+  padding:1px 10px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+.nl{
+  direction:ltr;
+  text-align:left;
+  font-size:17px;
+  font-weight:bold;
+  color:#174e43;
+  margin-bottom:6px;
+}
+.ar{font-size:15px;color:#485a55}
+footer{text-align:center;padding:24px;color:#667873}
+@media print{
+  body{background:white}
+  .controls{display:none}
+  .sentence{box-shadow:none;break-inside:avoid}
+  header{background:#176b5b!important;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>👕 100 جملة فلمنكية عن الملابس والماضي المستمر</h1>
+  <p>الهولندية البلجيكية 🇧🇪 | مع الترجمة العربية</p>
+</header>
+
+<main class="container">
+
+<section class="lesson">
+  <h2>📚 قاعدة الماضي المستمر</h2>
+  <p>نستخدم هذه الصيغة للتعبير عن فعل كان مستمرًا في لحظة معينة في الماضي.</p>
+  <div class="formula">Ik was / Wij waren + aan het + werkwoord</div>
+  <p><b>Ik was een broek aan het passen.</b></p>
+  <p>كنت أجرّب بنطالًا.</p>
+  <p><b>Wij waren kleren aan het wassen.</b></p>
+  <p>كنا نغسل الملابس.</p>
+  <p>ملاحظة: توجد أيضًا صيغ ماضية أخرى في الهولندية، لكن هذه الصيغة مناسبة للتعبير بوضوح عن الفعل الجاري في الماضي.</p>
+</section>
+
+<div class="controls">
+  <button onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
+  <button onclick="copyAll()">📋 نسخ جميع الجمل</button>
+</div>
+
+<div id="sentences"></div>
+</main>
+
+<footer>تعلم الهولندية البلجيكية خطوة بخطوة</footer>
+
+<script>
+const sentences = [
+["Ik was een nieuwe jas aan het passen.","كنت أجرّب معطفًا جديدًا."],
+["Ik was een blauwe broek aan het zoeken.","كنت أبحث عن بنطال أزرق."],
+["Ik was mijn hemd aan het strijken.","كنت أكوي قميصي."],
+["Ik was mijn kleren aan het wassen.","كنت أغسل ملابسي."],
+["Ik was mijn schoenen aan het poetsen.","كنت ألمّع حذائي."],
+["Ik was een T-shirt aan het kopen.","كنت أشتري قميصًا قطنيًا."],
+["Ik was mijn sokken aan het zoeken.","كنت أبحث عن جواربي."],
+["Ik was mijn trui aan het aantrekken.","كنت أرتدي كنزتي."],
+["Ik was mijn jas aan het uittrekken.","كنت أخلع معطفي."],
+["Ik was mijn broek aan het dichtknopen.","كنت أغلق أزرار بنطالي."],
+
+["Ik was een overhemd aan het passen.","كنت أجرّب قميصًا رسميًا."],
+["Ik was een jurk aan het uitkiezen.","كنت أختار فستانًا."],
+["Ik was een rok aan het bekijken.","كنت أتفقد تنورة."],
+["Ik was een warme trui aan het kopen.","كنت أشتري كنزة دافئة."],
+["Ik was een sjaal aan het dragen.","كنت أرتدي وشاحًا."],
+["Ik was mijn handschoenen aan het aantrekken.","كنت أرتدي قفازاتي."],
+["Ik was mijn muts aan het zoeken.","كنت أبحث عن قبعتي الشتوية."],
+["Ik was mijn riem aan het vastmaken.","كنت أربط حزامي."],
+["Ik was mijn das aan het knopen.","كنت أربط ربطة عنقي."],
+["Ik was mijn schoenen aan het uitdoen.","كنت أخلع حذائي."],
+
+["Ik was kleren aan het kopen in de winkel.","كنت أشتري الملابس من المتجر."],
+["Ik was een jas aan het vergelijken met een andere jas.","كنت أقارن معطفًا بمعطف آخر."],
+["Ik was de prijs van een broek aan het bekijken.","كنت أتفقد سعر بنطال."],
+["Ik was een maat groter aan het proberen.","كنت أجرّب مقاسًا أكبر."],
+["Ik was een kleinere maat aan het vragen.","كنت أطلب مقاسًا أصغر."],
+["Ik was in de paskamer mijn broek aan het passen.","كنت أجرّب بنطالي في غرفة القياس."],
+["Ik was aan het wachten op mijn beurt in de paskamer.","كنت أنتظر دوري في غرفة القياس."],
+["Ik was een zwarte jas aan het kiezen.","كنت أختار معطفًا أسود."],
+["Ik was de mouwen van mijn hemd aan het bekijken.","كنت أتفقد أكمام قميصي."],
+["Ik was de kwaliteit van de stof aan het controleren.","كنت أفحص جودة القماش."],
+
+["Ik was mijn witte T-shirt aan het wassen.","كنت أغسل قميصي الأبيض."],
+["Ik was mijn donkere kleren apart aan het wassen.","كنت أغسل ملابسي الداكنة بشكل منفصل."],
+["Ik was de wasmachine aan het vullen met kleren.","كنت أملأ الغسالة بالملابس."],
+["Ik was wasmiddel aan het toevoegen.","كنت أضيف مسحوق الغسيل."],
+["Ik was de natte kleren aan het ophangen.","كنت أنشر الملابس المبللة."],
+["Ik was mijn broeken aan het drogen.","كنت أجفف بناطيلي."],
+["Ik was mijn hemden aan het strijken.","كنت أكوي قمصاني."],
+["Ik was mijn kleren in de kast aan het leggen.","كنت أضع ملابسي في الخزانة."],
+["Ik was mijn sokken aan het sorteren.","كنت أفرز جواربي."],
+["Ik was een knoop aan mijn jas aan het naaien.","كنت أخيط زرًا في معطفي."],
+
+["Ik was mijn oude schoenen aan het vervangen.","كنت أستبدل حذائي القديم."],
+["Ik was mijn nieuwe sneakers aan het schoonmaken.","كنت أنظف حذائي الرياضي الجديد."],
+["Ik was mijn laarzen aan het aantrekken.","كنت أرتدي جزمي."],
+["Ik was mijn sandalen aan het zoeken.","كنت أبحث عن صندلي."],
+["Ik was mijn veters aan het strikken.","كنت أربط رباط حذائي."],
+["Ik was mijn schoenen aan het passen in de winkel.","كنت أجرّب الأحذية في المتجر."],
+["Ik was een paar zwarte schoenen aan het kopen.","كنت أشتري زوجًا من الأحذية السوداء."],
+["Ik was mijn schoenen onder het bed aan het zoeken.","كنت أبحث عن حذائي تحت السرير."],
+["Ik was mijn natte schoenen aan het drogen.","كنت أجفف حذائي المبلل."],
+["Ik was mijn sportschoenen aan het aantrekken.","كنت أرتدي حذائي الرياضي."],
+
+["Ik was mijn winterjas aan het dragen.","كنت أرتدي معطفي الشتوي."],
+["Ik was een regenjas aan het zoeken.","كنت أبحث عن معطف واقٍ من المطر."],
+["Ik was mijn paraplu aan het pakken en mijn jas aan het aantrekken.","كنت أحضر مظلتي وأرتدي معطفي."],
+["Ik was mijn sjaal strakker aan het doen.","كنت أشد الوشاح حول رقبتي."],
+["Ik was mijn muts over mijn oren aan het trekken.","كنت أسحب قبعتي لتغطي أذنيّ."],
+["Ik was warme sokken aan het aantrekken.","كنت أرتدي جوارب دافئة."],
+["Ik was mijn handschoenen aan het drogen.","كنت أجفف قفازاتي."],
+["Ik was een dikke trui aan het dragen.","كنت أرتدي كنزة سميكة."],
+["Ik was mijn natte jas aan de kapstok aan het hangen.","كنت أعلّق معطفي المبلل على علاقة الملابس."],
+["Ik was mijn regenlaarzen aan het schoonmaken.","كنت أنظف جزمي المطاطي."],
+
+["Ik was een net hemd voor het werk aan het kiezen.","كنت أختار قميصًا أنيقًا للعمل."],
+["Ik was mijn kostuum aan het aantrekken.","كنت أرتدي بدلتي الرسمية."],
+["Ik was mijn das voor de vergadering aan het knopen.","كنت أربط ربطة عنقي للاجتماع."],
+["Ik was mijn broek aan het combineren met mijn hemd.","كنت أنسق بنطالي مع قميصي."],
+["Ik was mijn werkkleren aan het klaarleggen.","كنت أجهز ملابس العمل."],
+["Ik was mijn veiligheidsschoenen aan het aantrekken.","كنت أرتدي حذاء السلامة."],
+["Ik was mijn werkjas aan het dichtdoen.","كنت أغلق سترة العمل."],
+["Ik was mijn uniform aan het strijken.","كنت أكوي زيّي الرسمي."],
+["Ik was een nette riem aan het kiezen.","كنت أختار حزامًا أنيقًا."],
+["Ik was mijn kleren voor morgen aan het klaarleggen.","كنت أجهز ملابسي للغد."],
+
+["Ik was mijn pyjama aan het aantrekken.","كنت أرتدي بيجامتي."],
+["Ik was mijn badjas aan het aantrekken.","كنت أرتدي رداء الحمام."],
+["Ik was mijn slaapkleren aan het opvouwen.","كنت أطوي ملابس النوم."],
+["Ik was mijn T-shirt aan het verwisselen.","كنت أبدّل قميصي."],
+["Ik was mijn vuile kleren in de wasmand aan het leggen.","كنت أضع ملابسي المتسخة في سلة الغسيل."],
+["Ik was mijn kast aan het opruimen.","كنت أرتب خزانة ملابسي."],
+["Ik was mijn oude kleren aan het uitzoeken.","كنت أفرز ملابسي القديمة."],
+["Ik was kleren aan het weggeven die ik niet meer droeg.","كنت أتبرع بالملابس التي لم أعد أرتديها."],
+["Ik was mijn favoriete trui aan het zoeken.","كنت أبحث عن كنزتي المفضلة."],
+["Ik was mijn kledingkast aan het organiseren.","كنت أنظم خزانة ملابسي."],
+
+["Wij waren samen kleren aan het kopen.","كنا نشتري الملابس معًا."],
+["Wij waren jassen aan het passen in de winkel.","كنا نجرّب المعاطف في المتجر."],
+["Wij waren de juiste maat aan het zoeken.","كنا نبحث عن المقاس المناسب."],
+["Wij waren de prijzen aan het vergelijken.","كنا نقارن الأسعار."],
+["Wij waren winterkleren aan het uitkiezen.","كنا نختار الملابس الشتوية."],
+["Wij waren onze kleren aan het wassen.","كنا نغسل ملابسنا."],
+["Wij waren de was aan het ophangen in de tuin.","كنا ننشر الغسيل في الحديقة."],
+["Wij waren onze schoenen aan het schoonmaken.","كنا ننظف أحذيتنا."],
+["Wij waren onze kleren voor het feest aan het kiezen.","كنا نختار ملابسنا للحفلة."],
+["Wij waren ons aan het klaarmaken om uit te gaan.","كنا نستعد للخروج."],
+
+["Wat was je aan het dragen toen ik je zag?","ماذا كنت ترتدي عندما رأيتك؟"],
+["Welke jas was je aan het passen?","أي معطف كنت تجرّب؟"],
+["Was je een nieuwe broek aan het kopen?","هل كنت تشتري بنطالًا جديدًا؟"],
+["Waarom was je je hemd aan het strijken?","لماذا كنت تكوي قميصك؟"],
+["Waar was je je schoenen aan het zoeken?","أين كنت تبحث عن حذائك؟"],
+["Was je je kleren aan het wassen toen ik belde?","هل كنت تغسل ملابسك عندما اتصلت؟"],
+["Welke kleur trui was je aan het dragen?","ما لون الكنزة التي كنت ترتديها؟"],
+["Waren jullie jassen aan het passen?","هل كنتم تجرّبون المعاطف؟"],
+["Was zij een jurk aan het kiezen voor het feest?","هل كانت تختار فستانًا للحفلة؟"],
+["Wat waren jullie aan het doen in de kledingwinkel?","ماذا كنتم تفعلون في متجر الملابس?"]
+];
+
+const root = document.getElementById("sentences");
+
+sentences.forEach((item, index) => {
+  const card = document.createElement("article");
+  card.className = "sentence";
+
+  const number = document.createElement("div");
+  number.className = "number";
+  number.textContent = index + 1;
+
+  const nl = document.createElement("div");
+  nl.className = "nl";
+  nl.lang = "nl";
+  nl.textContent = item[0];
+
+  const ar = document.createElement("div");
+  ar.className = "ar";
+  ar.textContent = item[1];
+
+  card.append(number, nl, ar);
+  root.appendChild(card);
+});
+
+function copyAll() {
+  const text = sentences.map((s, i) =>
+    `${i + 1}. ${s[0]}\n${s[1]}`
+  ).join("\n\n");
+
+  const area = document.createElement("textarea");
+  area.value = text;
+  document.body.appendChild(area);
+  area.select();
+
+  try {
+    document.execCommand("copy");
+    alert("تم نسخ الجمل. يمكنك لصقها الآن.");
+  } catch (e) {
+    alert("تعذر النسخ تلقائيًا. حاول تحديد النص ونسخه.");
+  }
+
+  area.remove();
+}
+</script>
+</body>
+</html>
