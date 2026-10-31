@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة فلمنكية | أجزاء المنزل والماضي البسيط</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  background:#f1f5f9;
+  color:#243047;
+  line-height:1.9
+}
+header{
+  background:linear-gradient(135deg,#12345a,#2563a6);
+  color:white;text-align:center;padding:32px 15px
+}
+header h1{margin:0 0 10px;font-size:27px}
+header p{margin:5px;font-size:15px}
+.container{max-width:950px;margin:25px auto;padding:0 14px}
+.info{
+  background:white;padding:18px;border-radius:14px;
+  margin-bottom:20px;border-right:5px solid #e7a83e
+}
+.info h2{margin-top:0;color:#1d4d7d;font-size:20px}
+.controls{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+input{
+  flex:1;min-width:200px;padding:13px;border:1px solid #cbd5e1;
+  border-radius:10px;font-size:16px;direction:rtl
+}
+button{
+  background:#1d4d7d;color:white;border:0;
+  border-radius:10px;padding:12px 18px;
+  font-size:15px;cursor:pointer
+}
+.card{
+  background:white;border-radius:13px;padding:17px 20px;
+  margin-bottom:13px;border:1px solid #e2e8f0;
+  box-shadow:0 3px 10px #17324d0b
+}
+.number{color:#2563a6;font-weight:bold;font-size:15px}
+.dutch{
+  direction:ltr;text-align:left;font-size:19px;
+  font-weight:bold;color:#163d65;margin:8px 0
+}
+.arabic{font-size:16px;color:#465569;margin:7px 0 0}
+.tag{
+  display:inline-block;background:#eaf2fb;color:#205487;
+  border-radius:6px;padding:2px 8px;font-size:12px
+}
+footer{text-align:center;padding:25px;color:#64748b}
+@media print{
+ body{background:white}
+ header{background:white;color:#163d65}
+ .controls,.info button{display:none}
+ .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🇧🇪 100 جملة فلمنكية عن أجزاء المنزل</h1>
+<p>De delen van het huis — De verleden tijd</p>
+<p>الهولندية البلجيكية | الماضي البسيط | ترجمة عربية</p>
+</header>
+
+<div class="container">
+<div class="info">
+<h2>📘 قاعدة سريعة للمذاكرة</h2>
+<p><b>De verleden tijd</b> = الماضي البسيط.</p>
+<p><b>Ik maakte de deur open.</b> = فتحتُ الباب.</p>
+<p><b>De deur stond open.</b> = كان الباب مفتوحًا.</p>
+<p>في الفلمنكية نستخدم نفس قواعد الماضي الهولندي، مع اختلافات بسيطة في النطق والتعبير حسب المنطقة.</p>
+</div>
+
+<div class="controls">
+<input id="search" type="text" placeholder="ابحث عن كلمة أو جملة..." oninput="filterSentences()">
+<button onclick="showAll()">عرض الكل</button>
+<button onclick="window.print()">طباعة / PDF</button>
+</div>
+
+<div id="sentences"></div>
+<footer>تعلم كل يوم 10 جمل، وكررها بصوت عالٍ 🇧🇪</footer>
+</div>
+
+<script>
+const data = [
+["Ik maakte de voordeur open.","فتحتُ الباب الأمامي."],
+["Hij sloot de achterdeur.","أغلق الباب الخلفي."],
+["De deur stond de hele nacht open.","ظل الباب مفتوحًا طوال الليل."],
+["Ik schilderde de voordeur blauw.","دهنتُ الباب الأمامي باللون الأزرق."],
+["We vervingen het slot van de deur.","استبدلنا قفل الباب."],
+["De sleutel lag naast de deur.","كان المفتاح بجانب الباب."],
+["Zij klopte op de voordeur.","طرقتْ على الباب الأمامي."],
+["Ik vergat de deur op slot te doen.","نسيتُ أن أقفل الباب بالمفتاح."],
+["De bel ging toen ik thuiskwam.","رن جرس الباب عندما وصلت إلى المنزل."],
+["Hij opende de deur voor de buurman.","فتح الباب للجار."],
+
+["Ik deed het raam open.","فتحتُ النافذة."],
+["Zij sloot alle ramen voor de regen.","أغلقت جميع النوافذ بسبب المطر."],
+["Het raam stond de hele dag open.","ظلت النافذة مفتوحة طوال اليوم."],
+["We maakten de ramen schoon.","نظفنا النوافذ."],
+["Ik zag de tuin door het raam.","رأيت الحديقة من خلال النافذة."],
+["De wind blies door het open raam.","هبّت الرياح عبر النافذة المفتوحة."],
+["Hij repareerde het kapotte raam.","أصلح النافذة المكسورة."],
+["Er lag stof op de vensterbank.","كان هناك غبار على حافة النافذة."],
+["Ik hing nieuwe gordijnen voor het raam.","علّقت ستائر جديدة أمام النافذة."],
+["De gordijnen waren gisteren vuil.","كانت الستائر متسخة أمس."],
+
+["We schilderden de muren van de woonkamer.","دهنّا جدران غرفة المعيشة."],
+["Ik hing een foto aan de muur.","علّقت صورة على الحائط."],
+["De muur was vroeger wit.","كان الحائط أبيض في الماضي."],
+["Hij boorde een gat in de muur.","حفر ثقبًا في الحائط."],
+["We verwijderden het oude behang.","أزلنا ورق الحائط القديم."],
+["Er hing een klok aan de muur.","كانت هناك ساعة معلقة على الحائط."],
+["Ik plakte een poster op mijn slaapkamerdeur.","ألصقت ملصقًا على باب غرفة نومي."],
+["De muren kregen een nieuwe kleur.","اكتسبت الجدران لونًا جديدًا."],
+["De schilder herstelde de beschadigde muur.","أصلح الدهّان الحائط المتضرر."],
+["Ik zag een barst in het plafond.","رأيت شقًا في السقف."],
+
+["Het plafond lekte na de storm.","تسرّب الماء من السقف بعد العاصفة."],
+["We verfden het plafond wit.","طلينا السقف باللون الأبيض."],
+["De lamp hing midden in de kamer.","كان المصباح معلقًا في وسط الغرفة."],
+["Ik verving de lamp in de gang.","استبدلت المصباح في الممر."],
+["De lichten gingen plotseling uit.","انطفأت الأنوار فجأة."],
+["Hij zette het licht in de keuken aan.","شغّل الضوء في المطبخ."],
+["Ik deed het licht in de badkamer uit.","أطفأت الضوء في الحمّام."],
+["De elektriciteit viel gisteren uit.","انقطعت الكهرباء أمس."],
+["We installeerden een nieuwe plafondlamp.","ركّبنا مصباح سقف جديدًا."],
+["Het plafond zag er na het schilderen mooi uit.","بدا السقف جميلًا بعد الطلاء."],
+
+["Ik stofzuigde de vloer in de woonkamer.","نظفت أرضية غرفة المعيشة بالمكنسة الكهربائية."],
+["Zij dweilde de keukenvloer.","مسحت أرضية المطبخ بالممسحة."],
+["De vloer was nat na het schoonmaken.","كانت الأرضية مبللة بعد التنظيف."],
+["We legden een nieuw tapijt in de slaapkamer.","فرشنا سجادة جديدة في غرفة النوم."],
+["Ik vond een munt onder de kast.","وجدت قطعة نقدية تحت الخزانة."],
+["De tegels in de gang waren koud.","كان البلاط في الممر باردًا."],
+["Hij repareerde de houten vloer.","أصلح الأرضية الخشبية."],
+["Er lag speelgoed op de vloer.","كانت هناك ألعاب على الأرض."],
+["Ik veegde de trap schoon.","كنست السلم ونظفته."],
+["De vloer kraakte toen ik binnenkwam.","أصدرت الأرضية صريرًا عندما دخلت."],
+
+["Ik ruimde de woonkamer op.","رتبت غرفة المعيشة."],
+["We kochten een nieuwe zetel voor de woonkamer.","اشترينا أريكة جديدة لغرفة المعيشة."],
+["Hij zette de afstandsbediening op tafel.","وضع جهاز التحكم على الطاولة."],
+["De televisie stond gisteren in de hoek.","كان التلفاز في الزاوية أمس."],
+["Ik las een boek in de zetel.","قرأت كتابًا على الأريكة."],
+["Mijn vrouw zette bloemen op de salontafel.","وضعت زوجتي زهورًا على طاولة غرفة المعيشة."],
+["We verhuisden de kast naar een andere muur.","نقلنا الخزانة إلى حائط آخر."],
+["De woonkamer zag er netjes uit.","بدت غرفة المعيشة مرتبة."],
+["Ik opende de deur naar het balkon.","فتحت الباب المؤدي إلى الشرفة."],
+["We zaten 's avonds in de woonkamer.","جلسنا في غرفة المعيشة مساءً."],
+
+["Ik kookte gisteren in de keuken.","طبختُ أمس في المطبخ."],
+["Zij waste de borden in de gootsteen.","غسلت الأطباق في حوض المطبخ."],
+["Ik zette de melk in de koelkast.","وضعت الحليب في الثلاجة."],
+["De oven werkte niet meer.","لم يعد الفرن يعمل."],
+["Hij maakte het aanrecht schoon.","نظف سطح المطبخ."],
+["We vervingen de oude koelkast.","استبدلنا الثلاجة القديمة."],
+["De pannen stonden in de kast.","كانت المقالي في الخزانة."],
+["Ik liet een glas op de keukenvloer vallen.","أسقطت كوبًا على أرضية المطبخ."],
+["Het water kookte op het fornuis.","غلى الماء على الموقد."],
+["Zij bakte gisteren een taart in de oven.","خبزت كعكة في الفرن أمس."],
+
+["Ik maakte het bed in de slaapkamer op.","رتبت السرير في غرفة النوم."],
+["Hij legde zijn kleren in de kleerkast.","وضع ملابسه في خزانة الملابس."],
+["We verschoonden de lakens.","غيّرنا ملاءات السرير."],
+["De wekker ging om zeven uur af.","رن المنبّه في الساعة السابعة."],
+["Ik sliep gisteren op de bovenverdieping.","نمت أمس في الطابق العلوي."],
+["Zij opende de kleerkast en pakte een jas.","فتحت خزانة الملابس وأخذت معطفًا."],
+["Er lag een kussen op de grond.","كانت هناك وسادة على الأرض."],
+["Ik zette mijn schoenen naast het bed.","وضعت حذائي بجانب السرير."],
+["De slaapkamer was gisteren koud.","كانت غرفة النوم باردة أمس."],
+["We hingen nieuwe gordijnen in de slaapkamer.","علّقنا ستائر جديدة في غرفة النوم."],
+
+["Ik nam een douche in de badkamer.","استحممت تحت الدش في الحمّام."],
+["Hij waste zijn gezicht aan de wastafel.","غسل وجهه عند حوض الغسيل."],
+["De spiegel hing boven de wastafel.","كانت المرآة معلقة فوق حوض الغسيل."],
+["Ik droogde mijn handen met een handdoek.","جففت يديّ بمنشفة."],
+["De kraan lekte de hele nacht.","ظل الصنبور يسرّب الماء طوال الليل."],
+["We maakten het bad schoon.","نظفنا حوض الاستحمام."],
+["Ik vergat de handdoek in de badkamer.","نسيت المنشفة في الحمّام."],
+["Zij poetste haar tanden voor het slapengaan.","نظفت أسنانها قبل النوم."],
+["Het toilet verstopte gisteren.","انسدّ المرحاض أمس."],
+["Hij verving de douchekop.","استبدل رأس الدش."],
+
+["Ik liep de trap op naar boven.","صعدت السلم إلى الطابق العلوي."],
+["We daalden de trap af naar beneden.","نزلنا السلم إلى الطابق السفلي."],
+["De gang was donker.","كان الممر مظلمًا."],
+["Ik zette mijn schoenen in de hal.","وضعت حذائي في المدخل."],
+["De kapstok hing naast de voordeur.","كانت علاقة المعاطف معلقة بجانب الباب الأمامي."],
+["We bewaarden de fietsen in de garage.","احتفظنا بالدراجات في المرآب."],
+["Hij zette de vuilnisbak buiten.","أخرج سلة القمامة إلى الخارج."],
+["Ik werkte gisteren in de kelder.","عملت أمس في القبو."],
+["De zolder stond vol met oude dozen.","كانت العلية مليئة بالصناديق القديمة."],
+["We zaten op het balkon en dronken koffie.","جلسنا في الشرفة وشربنا القهوة."]
+];
+
+const container = document.getElementById("sentences");
+
+function render(items){
+ container.innerHTML = "";
+ items.forEach((item)=>{
+   const originalNumber = data.indexOf(item) + 1;
+   const card = document.createElement("div");
+   card.className = "card";
+   card.innerHTML = `
+     <div class="number">${originalNumber.toLocaleString('ar-EG')} <span class="tag">الماضي البسيط</span></div>
+     <div class="dutch" lang="nl" dir="ltr"></div>
+     <div class="arabic"></div>`;
+   card.querySelector(".dutch").textContent = item[0];
+   card.querySelector(".arabic").textContent = item[1];
+   container.appendChild(card);
+ });
+}
+
+function filterSentences(){
+ const q = document.getElementById("search").value.toLowerCase().trim();
+ render(data.filter(item =>
+   item[0].toLowerCase().includes(q) || item[1].includes(q)
+ ));
+}
+
+function showAll(){
+ document.getElementById("search").value = "";
+ render(data);
+}
+
+render(data);
+</script>
+</body>
+</html>
