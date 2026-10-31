@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة فلمنكية - Niemand والماضي البسيط</title>
+<style>
+:root{--primary:#176b5b;--dark:#123f37;--bg:#f2f6f5;--text:#263936}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Tahoma,sans-serif;line-height:1.9}
+header{background:linear-gradient(135deg,var(--dark),#259b7e);color:white;text-align:center;padding:30px 16px}
+header h1{font-size:25px;margin:0 0 8px}
+header p{margin:0}
+.container{max-width:850px;margin:22px auto;padding:0 14px}
+.lesson{background:#e1f2ec;border-right:5px solid var(--primary);border-radius:10px;padding:16px;margin-bottom:20px}
+.lesson h2{font-size:19px;margin:0 0 8px}
+.formula{direction:ltr;text-align:center;font-weight:bold;background:white;border-radius:8px;padding:12px;color:var(--dark)}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+button{border:0;border-radius:9px;padding:12px 16px;background:var(--primary);color:white;font-size:15px;cursor:pointer}
+.sentence{background:white;border:1px solid #e1eae6;border-radius:12px;padding:15px;margin-bottom:12px;box-shadow:0 3px 9px #123f3709}
+.number{display:inline-block;color:var(--primary);background:#e1f2ec;border-radius:7px;padding:1px 10px;font-weight:bold;margin-bottom:8px}
+.nl{direction:ltr;text-align:left;font-size:17px;font-weight:bold;color:#174e43;margin-bottom:6px}
+.ar{font-size:15px;color:#485a55}
+footer{text-align:center;padding:24px;color:#667873}
+@media print{body{background:white}.controls{display:none}.sentence{box-shadow:none;break-inside:avoid}header{print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header>
+<h1>🇧🇪 100 جملة فلمنكية عن Niemand</h1>
+<p>الماضي البسيط — Verleden Tijd — مع الترجمة العربية</p>
+</header>
+
+<main class="container">
+<section class="lesson">
+<h2>📚 القاعدة</h2>
+<p><b>Niemand</b> تعني «لا أحد»، وتأتي عادةً مع فعل مفرد.</p>
+<div class="formula">Niemand + werkwoord in de verleden tijd</div>
+<p dir="ltr">Niemand kwam naar school.</p>
+<p>لم يأتِ أحد إلى المدرسة.</p>
+<p dir="ltr">Niemand heeft mij gebeld.</p>
+<p>لم يتصل بي أحد. (هذا مثال بالماضي التام، وليس الماضي البسيط.)</p>
+<p>في الجمل التالية نركز على الماضي البسيط الهولندي، مثل: kwam، ging، deed، zei، zag، wist.</p>
+</section>
+
+<div class="controls">
+<button onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
+<button onclick="copyAll()">📋 نسخ جميع الجمل</button>
+</div>
+
+<div id="sentences"></div>
+</main>
+
+<footer>تعلم الهولندية البلجيكية خطوة بخطوة</footer>
+
+<script>
+const sentences = [
+["Niemand kwam naar het werk.","لم يأتِ أحد إلى العمل."],
+["Niemand belde mij gisteren.","لم يتصل بي أحد أمس."],
+["Niemand wist het antwoord.","لم يعرف أحد الإجابة."],
+["Niemand zag de man.","لم يرَ أحد الرجل."],
+["Niemand hoorde het geluid.","لم يسمع أحد الصوت."],
+["Niemand kwam op tijd.","لم يأتِ أحد في الموعد."],
+["Niemand ging naar buiten.","لم يخرج أحد."],
+["Niemand bleef thuis.","لم يبقَ أحد في المنزل."],
+["Niemand zei iets.","لم يقل أحد شيئًا."],
+["Niemand deed zijn huiswerk.","لم يؤدِّ أحد واجبه المنزلي."],
+
+["Niemand kocht iets in de winkel.","لم يشترِ أحد شيئًا من المتجر."],
+["Niemand betaalde de rekening.","لم يدفع أحد الفاتورة."],
+["Niemand vond zijn sleutels.","لم يجد أحد مفاتيحه."],
+["Niemand opende de deur.","لم يفتح أحد الباب."],
+["Niemand sloot het raam.","لم يغلق أحد النافذة."],
+["Niemand las de brief.","لم يقرأ أحد الرسالة."],
+["Niemand schreef een bericht.","لم يكتب أحد رسالة."],
+["Niemand antwoordde op mijn vraag.","لم يُجب أحد عن سؤالي."],
+["Niemand stelde een vraag.","لم يطرح أحد سؤالًا."],
+["Niemand begreep de uitleg.","لم يفهم أحد الشرح."],
+
+["Niemand kwam naar mijn verjaardag.","لم يأتِ أحد إلى عيد ميلادي."],
+["Niemand bracht een cadeau mee.","لم يُحضر أحد هدية معه."],
+["Niemand kende mijn naam.","لم يعرف أحد اسمي."],
+["Niemand herkende mij op straat.","لم يتعرف عليّ أحد في الشارع."],
+["Niemand hielp de oude man.","لم يساعد أحد الرجل المسن."],
+["Niemand gaf mij informatie.","لم يعطني أحد معلومات."],
+["Niemand vertelde de waarheid.","لم يقل أحد الحقيقة."],
+["Niemand sprak tijdens de vergadering.","لم يتحدث أحد أثناء الاجتماع."],
+["Niemand luisterde naar de leraar.","لم يستمع أحد إلى المعلم."],
+["Niemand maakte een opmerking.","لم يُبدِ أحد أي تعليق."],
+
+["Niemand werkte gisteren op kantoor.","لم يعمل أحد في المكتب أمس."],
+["Niemand kwam naar de vergadering.","لم يأتِ أحد إلى الاجتماع."],
+["Niemand voltooide het project op tijd.","لم يُنهِ أحد المشروع في الموعد."],
+["Niemand controleerde het document.","لم يفحص أحد المستند."],
+["Niemand stuurde de e-mail.","لم يرسل أحد البريد الإلكتروني."],
+["Niemand printte het rapport.","لم يطبع أحد التقرير."],
+["Niemand vond een oplossing.","لم يجد أحد حلًا."],
+["Niemand loste het probleem op.","لم يحل أحد المشكلة."],
+["Niemand veranderde het plan.","لم يغيّر أحد الخطة."],
+["Niemand nam de verantwoordelijkheid.","لم يتحمل أحد المسؤولية."],
+
+["Niemand kookte gisteren.","لم يطبخ أحد أمس."],
+["Niemand at het ontbijt.","لم يتناول أحد الإفطار."],
+["Niemand dronk koffie.","لم يشرب أحد القهوة."],
+["Niemand bestelde een pizza.","لم يطلب أحد بيتزا."],
+["Niemand proefde de soep.","لم يتذوق أحد الحساء."],
+["Niemand waste de borden af.","لم يغسل أحد الأطباق."],
+["Niemand zette de tafel klaar.","لم يجهز أحد المائدة."],
+["Niemand ruimde de keuken op.","لم يرتب أحد المطبخ."],
+["Niemand kocht brood bij de bakker.","لم يشترِ أحد الخبز من المخبز."],
+["Niemand at de laatste boterham.","لم يأكل أحد آخر شريحة خبز."],
+
+["Niemand droeg een jas.","لم يرتدِ أحد معطفًا."],
+["Niemand vond zijn schoenen.","لم يجد أحد حذاءه."],
+["Niemand waste de kleren.","لم يغسل أحد الملابس."],
+["Niemand streek het hemd.","لم يكْوِ أحد القميص."],
+["Niemand kocht een nieuwe broek.","لم يشترِ أحد بنطالًا جديدًا."],
+["Niemand paste de jurk.","لم يجرّب أحد الفستان."],
+["Niemand droeg een das.","لم يرتدِ أحد ربطة عنق."],
+["Niemand verloor zijn muts.","لم يفقد أحد قبعته الشتوية."],
+["Niemand maakte zijn schoenen schoon.","لم ينظف أحد حذاءه."],
+["Niemand hing de jas aan de kapstok.","لم يعلّق أحد المعطف على علاقة الملابس."],
+
+["Niemand nam de bus.","لم يركب أحد الحافلة."],
+["Niemand miste de trein.","لم يفُت أحد القطار."],
+["Niemand reed met de fiets.","لم يركب أحد الدراجة."],
+["Niemand stopte bij het rode licht.","لم يتوقف أحد عند الإشارة الحمراء."],
+["Niemand vond een parkeerplaats.","لم يجد أحد موقفًا للسيارة."],
+["Niemand vroeg de weg.","لم يسأل أحد عن الطريق."],
+["Niemand verdwaalde in de stad.","لم يضلّ أحد الطريق في المدينة."],
+["Niemand wachtte aan de halte.","لم ينتظر أحد عند موقف الحافلة."],
+["Niemand betaalde voor de taxi.","لم يدفع أحد أجرة سيارة الأجرة."],
+["Niemand kwam met de auto.","لم يأتِ أحد بالسيارة."],
+
+["Niemand ging naar de dokter.","لم يذهب أحد إلى الطبيب."],
+["Niemand voelde zich ziek.","لم يشعر أحد بالمرض."],
+["Niemand nam zijn medicijnen.","لم يتناول أحد أدويته."],
+["Niemand sliep goed vannacht.","لم ينم أحد جيدًا الليلة الماضية."],
+["Niemand werd vroeg wakker.","لم يستيقظ أحد مبكرًا."],
+["Niemand liep naar het ziekenhuis.","لم يمشِ أحد إلى المستشفى."],
+["Niemand sportte gisteren.","لم يمارس أحد الرياضة أمس."],
+["Niemand dronk genoeg water.","لم يشرب أحد كمية كافية من الماء."],
+["Niemand rustte na het werk.","لم يسترح أحد بعد العمل."],
+["Niemand klaagde over de pijn.","لم يشتكِ أحد من الألم."],
+
+["Niemand kwam naar het feest.","لم يأتِ أحد إلى الحفلة."],
+["Niemand danste op de muziek.","لم يرقص أحد على أنغام الموسيقى."],
+["Niemand zong een lied.","لم يغنِّ أحد أغنية."],
+["Niemand maakte foto's.","لم يلتقط أحد صورًا."],
+["Niemand lachte om de grap.","لم يضحك أحد على النكتة."],
+["Niemand keek naar de film.","لم يشاهد أحد الفيلم."],
+["Niemand speelde een spel.","لم يلعب أحد لعبة."],
+["Niemand won de wedstrijd.","لم يفز أحد بالمباراة."],
+["Niemand verloor zijn telefoon.","لم يفقد أحد هاتفه."],
+["Niemand bleef tot middernacht.","لم يبقَ أحد حتى منتصف الليل."],
+
+["Niemand geloofde het verhaal.","لم يصدق أحد القصة."],
+["Niemand wist waar hij was.","لم يعرف أحد أين كان."],
+["Niemand dacht aan het probleem.","لم يفكر أحد في المشكلة."],
+["Niemand koos die optie.","لم يختر أحد ذلك الخيار."],
+["Niemand gaf een duidelijk antwoord.","لم يعطِ أحد إجابة واضحة."],
+["Niemand vond het moeilijk.","لم يجد أحد الأمر صعبًا."],
+["Niemand vergat die dag.","لم ينسَ أحد ذلك اليوم."],
+["Niemand veranderde van mening.","لم يغيّر أحد رأيه."],
+["Niemand deed de lichten uit.","لم يطفئ أحد الأنوار."],
+["Niemand wist wat er gebeurde.","لم يعرف أحد ما الذي حدث."]
+];
+
+const root = document.getElementById("sentences");
+
+sentences.forEach((item, index) => {
+  const card = document.createElement("article");
+  card.className = "sentence";
+
+  const number = document.createElement("div");
+  number.className = "number";
+  number.textContent = index + 1;
+
+  const nl = document.createElement("div");
+  nl.className = "nl";
+  nl.lang = "nl";
+  nl.textContent = item[0];
+
+  const ar = document.createElement("div");
+  ar.className = "ar";
+  ar.textContent = item[1];
+
+  card.append(number, nl, ar);
+  root.appendChild(card);
+});
+
+function copyAll() {
+  const text = sentences.map((s, i) =>
+    `${i + 1}. ${s[0]}\n${s[1]}`
+  ).join("\n\n");
+
+  const area = document.createElement("textarea");
+  area.value = text;
+  document.body.appendChild(area);
+  area.select();
+
+  try {
+    document.execCommand("copy");
+    alert("تم نسخ الجمل بنجاح!");
+  } catch (e) {
+    alert("تعذر النسخ تلقائيًا. حدد النص وانسخه يدويًا.");
+  }
+  area.remove();
+}
+</script>
+</body>
+</html>
