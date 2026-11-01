@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة فلمنكية - Daarna</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  background:#f1f5f9;
+  color:#172033;
+  line-height:1.9
+}
+header{
+  background:linear-gradient(135deg,#123c69,#227c9d);
+  color:white;
+  text-align:center;
+  padding:30px 15px
+}
+header h1{margin:0;font-size:27px}
+header p{margin:8px 0}
+.meaning{
+  display:inline-block;
+  background:#ffffff20;
+  padding:5px 18px;
+  border-radius:20px
+}
+.container{max-width:900px;margin:20px auto;padding:15px}
+.toolbar{
+  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px
+}
+input{
+  flex:1;min-width:180px;padding:12px;
+  border:1px solid #cbd5e1;border-radius:10px;
+  font-size:16px;direction:rtl
+}
+button{
+  border:0;border-radius:10px;padding:12px 16px;
+  background:#123c69;color:white;font-size:14px;
+  cursor:pointer
+}
+button:hover{background:#227c9d}
+.card{
+  background:white;border-radius:13px;padding:15px 18px;
+  margin-bottom:12px;box-shadow:0 3px 10px #0f172a0b;
+  border-right:5px solid #227c9d
+}
+.number{color:#227c9d;font-weight:bold;font-size:15px}
+.nl{
+  direction:ltr;text-align:left;font-size:18px;
+  font-weight:bold;color:#123c69;margin:5px 0
+}
+.ar{font-size:16px;color:#374151}
+.label{font-size:12px;color:#64748b}
+footer{text-align:center;padding:25px;color:#64748b}
+</style>
+</head>
+<body>
+<header>
+  <h1>🇧🇪 ١٠٠ جملة فلمنكية</h1>
+  <p>تعلّم استخدام كلمة Daarna في الحياة اليومية</p>
+  <div class="meaning">Daarna = بعد ذلك / بعدها</div>
+</header>
+<div class="container">
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="ابحث بالعربية أو الهولندية...">
+    <button onclick="copyAll()">نسخ جميع الجمل</button>
+  </div>
+  <div id="sentences"></div>
+  <footer>تعلم الهولندية البلجيكية 🇧🇪 — 100 جملة مترجمة</footer>
+</div>
+<script>
+const data = [
+["Ik sta op en daarna neem ik een douche.","أستيقظ وبعد ذلك أستحم."],
+["Ik ontbijt en daarna vertrek ik naar mijn werk.","أتناول الإفطار وبعد ذلك أغادر إلى عملي."],
+["Ik drink koffie en daarna begin ik te werken.","أشرب القهوة وبعدها أبدأ العمل."],
+["Ik maak mijn bed op en daarna kleed ik me aan.","أرتب سريري وبعد ذلك أرتدي ملابسي."],
+["Ik poets mijn tanden en daarna vertrek ik.","أنظف أسناني وبعد ذلك أغادر."],
+["Ik word wakker en daarna kijk ik op mijn gsm.","أستيقظ من النوم وبعدها أنظر إلى هاتفي."],
+["Ik was mijn gezicht en daarna kam ik mijn haar.","أغسل وجهي وبعد ذلك أمشط شعري."],
+["Ik maak het ontbijt klaar en daarna roep ik iedereen.","أحضّر الإفطار وبعد ذلك أنادي الجميع."],
+["Ik trek mijn jas aan en daarna ga ik naar buiten.","أرتدي معطفي وبعد ذلك أخرج."],
+["Ik sluit de deur en daarna wandel ik naar de bushalte.","أغلق الباب وبعد ذلك أمشي إلى موقف الحافلة."],
+["Ik neem de bus en daarna stap ik over op de trein.","أركب الحافلة وبعد ذلك أبدّل إلى القطار."],
+["Ik kom op mijn werk aan en daarna meld ik me aan.","أصل إلى عملي وبعد ذلك أسجل حضوري."],
+["Ik lees mijn e-mails en daarna beantwoord ik ze.","أقرأ رسائلي الإلكترونية وبعد ذلك أرد عليها."],
+["Ik controleer de planning en daarna begin ik aan mijn taak.","أراجع خطة العمل وبعد ذلك أبدأ مهمتي."],
+["Ik drink wat water en daarna ga ik verder.","أشرب بعض الماء وبعد ذلك أواصل."],
+["Ik werk twee uur en daarna neem ik een pauze.","أعمل ساعتين وبعد ذلك آخذ استراحة."],
+["Ik bel mijn collega en daarna stuur ik hem een e-mail.","أتصل بزميلي وبعد ذلك أرسل له بريدًا إلكترونيًا."],
+["Ik bespreek het probleem en daarna zoeken we een oplossing.","أناقش المشكلة وبعد ذلك نبحث عن حل."],
+["Ik maak mijn werk af en daarna ruim ik alles op.","أنهي عملي وبعد ذلك أرتب كل شيء."],
+["Ik klok uit en daarna ga ik naar huis.","أسجل خروجي من العمل وبعد ذلك أذهب إلى المنزل."],
+["Ik kom thuis en daarna trek ik comfortabele kleren aan.","أصل إلى المنزل وبعد ذلك أرتدي ملابس مريحة."],
+["Ik doe mijn schoenen uit en daarna was ik mijn handen.","أخلع حذائي وبعد ذلك أغسل يديّ."],
+["Ik maak de keuken schoon en daarna stofzuig ik de woonkamer.","أنظف المطبخ وبعد ذلك أكنس غرفة المعيشة بالمكنسة الكهربائية."],
+["Ik zet de wasmachine aan en daarna hang ik de was op.","أشغّل الغسالة وبعد ذلك أنشر الغسيل."],
+["Ik ruim de tafel af en daarna was ik de borden af.","أرفع الأطباق عن الطاولة وبعد ذلك أغسلها."],
+["Ik kook de aardappelen en daarna bak ik de vis.","أسلق البطاطس وبعد ذلك أقلي السمك."],
+["Ik snijd de groenten en daarna doe ik ze in de pot.","أقطع الخضروات وبعد ذلك أضعها في القدر."],
+["Ik dek de tafel en daarna roep ik mijn vrouw.","أجهز المائدة وبعد ذلك أنادي زوجتي."],
+["We eten samen en daarna drinken we thee.","نأكل معًا وبعد ذلك نشرب الشاي."],
+["Ik zet de restjes in de koelkast en daarna ruim ik op.","أضع بقايا الطعام في الثلاجة وبعد ذلك أرتب المكان."],
+["Ik ga naar de winkel en daarna bezoek ik de apotheek.","أذهب إلى المتجر وبعد ذلك أزور الصيدلية."],
+["Ik haal brood bij de bakker en daarna koop ik melk.","أشتري الخبز من المخبز وبعد ذلك أشتري الحليب."],
+["Ik betaal aan de kassa en daarna stop ik alles in mijn tas.","أدفع عند صندوق المحاسبة وبعد ذلك أضع كل شيء في حقيبتي."],
+["Ik vergelijk de prijzen en daarna kies ik het goedkoopste product.","أقارن الأسعار وبعد ذلك أختار المنتج الأرخص."],
+["Ik doe boodschappen en daarna breng ik alles naar huis.","أتسوق وبعد ذلك أحمل كل شيء إلى المنزل."],
+["Ik wacht op de bus en daarna stap ik aan de voorkant op.","أنتظر الحافلة وبعد ذلك أصعد من الباب الأمامي."],
+["Ik koop een treinticket en daarna zoek ik mijn perron.","أشتري تذكرة القطار وبعد ذلك أبحث عن رصيفي."],
+["Ik stap op de trein en daarna zoek ik een zitplaats.","أصعد إلى القطار وبعد ذلك أبحث عن مقعد."],
+["Ik kom in Kortrijk aan en daarna wandel ik naar het centrum.","أصل إلى كورترايك وبعد ذلك أمشي إلى وسط المدينة."],
+["Ik vraag de weg en daarna volg ik de aanwijzingen.","أسأل عن الطريق وبعد ذلك أتبع الإرشادات."],
+["Ik open mijn computer en daarna start ik het programma.","أفتح حاسوبي وبعد ذلك أشغّل البرنامج."],
+["Ik zoek informatie op en daarna schrijf ik alles op.","أبحث عن المعلومات وبعد ذلك أدوّن كل شيء."],
+["Ik maak een document en daarna sla ik het op.","أنشئ مستندًا وبعد ذلك أحفظه."],
+["Ik stuur het bestand door en daarna controleer ik mijn inbox.","أرسل الملف إلى شخص آخر وبعد ذلك أراجع صندوق الوارد."],
+["Ik volg een online les en daarna maak ik mijn oefeningen.","أحضر درسًا عبر الإنترنت وبعد ذلك أحل تدريباتي."],
+["Ik leer tien nieuwe woorden en daarna herhaal ik ze.","أتعلم عشر كلمات جديدة وبعد ذلك أراجعها."],
+["Ik luister naar het Nederlands en daarna oefen ik het spreken.","أستمع إلى الهولندية وبعد ذلك أتدرب على التحدث."],
+["Ik lees de tekst en daarna vertaal ik hem naar het Arabisch.","أقرأ النص وبعد ذلك أترجمه إلى العربية."],
+["Ik maak mijn huiswerk en daarna kijk ik mijn antwoorden na.","أحل واجبي وبعد ذلك أراجع إجاباتي."],
+["Ik ga naar de les en daarna praat ik met mijn leerkracht.","أذهب إلى الدرس وبعد ذلك أتحدث مع معلمي."],
+["Ik bel de gemeente en daarna maak ik een afspraak.","أتصل بالبلدية وبعد ذلك أحجز موعدًا."],
+["Ik verzamel mijn documenten en daarna maak ik kopieën.","أجمع مستنداتي وبعد ذلك أصنع نسخًا منها."],
+["Ik vul het formulier in en daarna onderteken ik het.","أملأ الاستمارة وبعد ذلك أوقّعها."],
+["Ik ga naar het gemeentehuis en daarna wacht ik op mijn beurt.","أذهب إلى مبنى البلدية وبعد ذلك أنتظر دوري."],
+["Ik vraag om informatie en daarna noteer ik het antwoord.","أطلب معلومات وبعد ذلك أدوّن الإجابة."],
+["Ik controleer mijn brievenbus en daarna open ik mijn post.","أفحص صندوق البريد وبعد ذلك أفتح رسائلي."],
+["Ik betaal mijn factuur en daarna bewaar ik het betalingsbewijs.","أدفع فاتورتي وبعد ذلك أحتفظ بإثبات الدفع."],
+["Ik maak een afspraak bij de dokter en daarna noteer ik de datum.","أحجز موعدًا عند الطبيب وبعد ذلك أسجل التاريخ."],
+["Ik kom bij de dokter aan en daarna schrijf ik me in.","أصل إلى عيادة الطبيب وبعد ذلك أسجل وصولي."],
+["De dokter onderzoekt me en daarna geeft hij me advies.","يفحصني الطبيب وبعد ذلك يقدم لي نصيحة."],
+["Ik haal mijn medicatie op en daarna ga ik naar huis.","أستلم دوائي وبعد ذلك أعود إلى المنزل."],
+["Ik rust een beetje uit en daarna voel ik me beter.","أستريح قليلًا وبعد ذلك أشعر بتحسن."],
+["Ik ga wandelen en daarna doe ik enkele oefeningen.","أذهب للمشي وبعد ذلك أمارس بعض التمارين."],
+["Ik train in de fitness en daarna neem ik een douche.","أتدرب في النادي الرياضي وبعد ذلك أستحم."],
+["Ik drink een eiwitshake en daarna eet ik een banaan.","أشرب مخفوق البروتين وبعد ذلك آكل موزة."],
+["Ik kom thuis van de fitness en daarna bereid ik mijn avondeten.","أعود من النادي الرياضي وبعد ذلك أحضّر عشاءي."],
+["Ik spreek af met een vriend en daarna gaan we iets drinken.","ألتقي بصديق وبعد ذلك نذهب لشرب شيء ما."],
+["Ik bezoek mijn familie en daarna spelen we samen een spel.","أزور عائلتي وبعد ذلك نلعب لعبة معًا."],
+["Mijn vrouw komt thuis en daarna eten we samen.","تعود زوجتي إلى المنزل وبعد ذلك نتناول الطعام معًا."],
+["De kinderen maken hun huiswerk en daarna mogen ze spelen.","يحل الأطفال واجباتهم وبعد ذلك يُسمح لهم باللعب."],
+["We kijken naar het nieuws en daarna bespreken we het.","نشاهد الأخبار وبعد ذلك نناقشها."],
+["Ik stuur een bericht naar mijn vriend en daarna bel ik hem.","أرسل رسالة إلى صديقي وبعد ذلك أتصل به."],
+["Ik maak een foto en daarna deel ik die met mijn familie.","ألتقط صورة وبعد ذلك أشاركها مع عائلتي."],
+["We gaan naar het park en daarna eten we een ijsje.","نذهب إلى الحديقة وبعد ذلك نأكل المثلجات."],
+["Ik bezoek een nieuwe stad en daarna maak ik foto's.","أزور مدينة جديدة وبعد ذلك ألتقط الصور."],
+["We komen aan in het hotel en daarna checken we in.","نصل إلى الفندق وبعد ذلك نسجل الدخول."],
+["Ik zet mijn bagage neer en daarna verken ik de buurt.","أضع أمتعتي وبعد ذلك أستكشف المنطقة."],
+["We nemen de trein naar Gent en daarna bezoeken we het centrum.","نستقل القطار إلى غنت وبعد ذلك نزور وسط المدينة."],
+["Ik kijk op de kaart en daarna kies ik de juiste straat.","أنظر إلى الخريطة وبعد ذلك أختار الشارع الصحيح."],
+["Ik tank mijn auto vol en daarna vertrek ik naar huis.","أملأ خزان سيارتي بالوقود وبعد ذلك أنطلق إلى المنزل."],
+["Ik parkeer de auto en daarna wandel ik naar de ingang.","أوقف السيارة وبعد ذلك أمشي إلى المدخل."],
+["Het regent hard en daarna wordt het weer droog.","تمطر بغزارة وبعد ذلك يتوقف المطر."],
+["De zon komt tevoorschijn en daarna wordt het warmer.","تظهر الشمس وبعد ذلك يصبح الطقس أدفأ."],
+["Ik trek mijn regenjas aan en daarna vertrek ik.","أرتدي معطف المطر وبعد ذلك أغادر."],
+["Ik maak een boodschappenlijstje en daarna ga ik winkelen.","أعد قائمة مشتريات وبعد ذلك أذهب للتسوق."],
+["Ik haal de vuilniszak op en daarna zet ik hem buiten.","أحضر كيس القمامة وبعد ذلك أضعه في الخارج."],
+["Ik geef de planten water en daarna open ik het raam.","أسقي النباتات وبعد ذلك أفتح النافذة."],
+["Ik voer de kat en daarna maak ik haar drinkbak schoon.","أطعم القطة وبعد ذلك أنظف وعاء الماء الخاص بها."],
+["Ik laad mijn gsm op en daarna leg ik hem op tafel.","أشحن هاتفي وبعد ذلك أضعه على الطاولة."],
+["Ik zet de televisie uit en daarna lees ik een boek.","أطفئ التلفاز وبعد ذلك أقرأ كتابًا."],
+["Ik neem een warme douche en daarna trek ik mijn pyjama aan.","أستحم بماء دافئ وبعد ذلك أرتدي ملابس النوم."],
+["Ik zet mijn wekker en daarna leg ik mijn gsm weg.","أضبط المنبه وبعد ذلك أضع هاتفي جانبًا."],
+["Ik poets mijn tanden en daarna ga ik naar bed.","أنظف أسناني وبعد ذلك أذهب إلى السرير."],
+["Ik denk na over mijn dag en daarna plan ik morgen.","أفكر في يومي وبعد ذلك أخطط ليوم الغد."],
+["Ik lees enkele pagina's en daarna doe ik het licht uit.","أقرأ بضع صفحات وبعد ذلك أطفئ الضوء."],
+["Ik ga vroeg slapen en daarna word ik uitgerust wakker.","أنام مبكرًا وبعد ذلك أستيقظ مرتاحًا."],
+["Ik maak een plan en daarna voer ik het stap voor stap uit.","أضع خطة وبعد ذلك أنفذها خطوة بخطوة."],
+["Ik maak eerst een fout en daarna probeer ik het opnieuw.","أرتكب خطأ أولًا وبعد ذلك أحاول مجددًا."],
+["Ik luister goed en daarna begrijp ik de uitleg beter.","أستمع جيدًا وبعد ذلك أفهم الشرح بصورة أفضل."],
+["Ik spaar elke maand geld en daarna betaal ik mijn rekeningen.","أدخر المال كل شهر وبعد ذلك أدفع فواتيري."],
+["Ik werk hard en daarna geniet ik van mijn vrije tijd.","أعمل بجد وبعد ذلك أستمتع بوقت فراغي."],
+["Ik sluit mijn laptop af en daarna wens ik iedereen een fijne avond.","أغلق حاسوبي المحمول وبعد ذلك أتمنى للجميع أمسية سعيدة."]
+];
+
+const root = document.getElementById("sentences");
+
+function render(items){
+  root.innerHTML = "";
+  items.forEach((item,index)=>{
+    const card = document.createElement("div");
+    card.className = "card";
+    const number = document.createElement("div");
+    number.className = "number";
+    number.textContent = "الجملة " + (data.indexOf(item)+1);
+    const nl = document.createElement("div");
+    nl.className = "nl";
+    nl.lang = "nl";
+    nl.textContent = item[0];
+    const label = document.createElement("div");
+    label.className = "label";
+    label.textContent = "الترجمة العربية";
+    const ar = document.createElement("div");
+    ar.className = "ar";
+    ar.textContent = item[1];
+    card.append(number,nl,label,ar);
+    root.appendChild(card);
+  });
+}
+
+function copyAll(){
+  const text = data.map((item,i)=>
+    `${i+1}. ${item[0]}\n${item[1]}`
+  ).join("\n\n");
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text)
+      .then(()=>alert("تم نسخ جميع الجمل بنجاح!"))
+      .catch(()=>fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text){
+  const area = document.createElement("textarea");
+  area.value = text;
+  document.body.appendChild(area);
+  area.select();
+  try{
+    document.execCommand("copy");
+    alert("تم نسخ الجمل.");
+  }catch(e){
+    alert("تعذر النسخ تلقائيًا. حدد النص وانسخه يدويًا.");
+  }
+  area.remove();
+}
+
+document.getElementById("search").addEventListener("input",function(){
+  const q = this.value.trim().toLowerCase();
+  render(data.filter(item=>
+    item[0].toLowerCase().includes(q)||item[1].includes(q)
+  ));
+});
+
+render(data);
+</script>
+</body>
+</html>
