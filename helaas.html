@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 جملة فلمنكية باستخدام Helaas</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.8;
+}
+
+header {
+    background: linear-gradient(135deg, #102a43, #1769aa);
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    border-radius: 0 0 25px 25px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+
+header p {
+    margin: 0;
+    color: #dbeafe;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+.search {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    padding: 17px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    box-shadow: 0 4px 12px #0f172a08;
+}
+
+.number {
+    background: #dbeafe;
+    color: #1d4ed8;
+    min-width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.dutch {
+    direction: ltr;
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+    color: #164e63;
+    margin-bottom: 5px;
+}
+
+.arabic {
+    color: #475569;
+    font-size: 15px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    background: #1769aa;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #124e80;
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    padding: 25px;
+}
+
+@media print {
+    body { background: white; }
+    .buttons, .search { display: none; }
+    .card { break-inside: avoid; box-shadow: none; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🇧🇪 100 جملة فلمنكية باستخدام Helaas</h1>
+    <p>تعلّم الهولندية البلجيكية مع الترجمة العربية</p>
+    <p><strong>Helaas = للأسف</strong></p>
+</header>
+
+<div class="container">
+
+    <input
+        type="search"
+        id="search"
+        class="search"
+        placeholder="ابحث عن جملة بالفلمنكية أو العربية..."
+        oninput="searchSentences()"
+    >
+
+    <div class="buttons">
+        <button onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
+        <button onclick="document.getElementById('search').value='';searchSentences()">
+            عرض الكل
+        </button>
+    </div>
+
+    <div id="sentences"></div>
+
+</div>
+
+<footer>
+    100 جملة لتعلّم كلمة Helaas في الحياة اليومية
+</footer>
+
+<script>
+const sentences = [
+["Helaas, ik kan vandaag niet komen.", "للأسف، لا أستطيع الحضور اليوم."],
+["Helaas is de winkel al dicht.", "للأسف، المتجر مغلق بالفعل."],
+["Helaas heb ik geen tijd.", "للأسف، ليس لدي وقت."],
+["Helaas ben ik mijn sleutels vergeten.", "للأسف، نسيت مفاتيحي."],
+["Helaas regent het alweer.", "للأسف، إنها تمطر مجددًا."],
+["Helaas is de bus te laat.", "للأسف، الحافلة متأخرة."],
+["Helaas heb ik de trein gemist.", "للأسف، فاتني القطار."],
+["Helaas kan ik je niet helpen.", "للأسف، لا أستطيع مساعدتك."],
+["Helaas is er geen plaats meer.", "للأسف، لم يعد هناك مكان."],
+["Helaas hebben we geen brood meer.", "للأسف، لم يعد لدينا خبز."],
+["Helaas is mijn afspraak geannuleerd.", "للأسف، تم إلغاء موعدي."],
+["Helaas kan ik morgen niet werken.", "للأسف، لا أستطيع العمل غدًا."],
+["Helaas heb ik het verkeerde adres.", "للأسف، لدي العنوان الخطأ."],
+["Helaas is mijn telefoon leeg.", "للأسف، بطارية هاتفي فارغة."],
+["Helaas heb ik mijn portefeuille thuis laten liggen.", "للأسف، تركت محفظتي في المنزل."],
+["Helaas is de dokter vandaag niet beschikbaar.", "للأسف، الطبيب غير متاح اليوم."],
+["Helaas moet ik langer wachten.", "للأسف، يجب أن أنتظر مدة أطول."],
+["Helaas is mijn bestelling nog niet aangekomen.", "للأسف، طلبي لم يصل بعد."],
+["Helaas hebben we de wedstrijd verloren.", "للأسف، خسرنا المباراة."],
+["Helaas heeft hij geen antwoord gegeven.", "للأسف، لم يعطِ إجابة."],
+["Helaas kan zij niet mee.", "للأسف، لا تستطيع الذهاب معنا."],
+["Helaas zijn de tickets uitverkocht.", "للأسف، التذاكر نفدت."],
+["Helaas is het vandaag te koud om buiten te zitten.", "للأسف، الجو بارد جدًا للجلوس في الخارج اليوم."],
+["Helaas heb ik mijn paraplu niet bij.", "للأسف، ليس معي مظلتي."],
+["Helaas werkt de lift niet.", "للأسف، المصعد لا يعمل."],
+["Helaas is de computer kapot.", "للأسف، الكمبيوتر معطّل."],
+["Helaas ben ik te laat vertrokken.", "للأسف، انطلقت متأخرًا جدًا."],
+["Helaas heb ik de boodschap verkeerd begrepen.", "للأسف، فهمت الرسالة بشكل خاطئ."],
+["Helaas is er een probleem met de verwarming.", "للأسف، هناك مشكلة في التدفئة."],
+["Helaas kunnen we dat niet veranderen.", "للأسف، لا يمكننا تغيير ذلك."],
+["Helaas heb ik vandaag geen geld bij.", "للأسف، ليس معي مال اليوم."],
+["Helaas is de parking volzet.", "للأسف، موقف السيارات ممتلئ."],
+["Helaas heb ik geen ervaring met dat programma.", "للأسف، ليست لدي خبرة بهذا البرنامج."],
+["Helaas spreekt hij geen Nederlands.", "للأسف، هو لا يتحدث الهولندية."],
+["Helaas begrijp ik die Vlaamse uitdrukking niet.", "للأسف، لا أفهم هذا التعبير الفلمنكي."],
+["Helaas heb ik de e-mail niet ontvangen.", "للأسف، لم أتلقَّ البريد الإلكتروني."],
+["Helaas is mijn afspraak naar volgende week verplaatst.", "للأسف، تم نقل موعدي إلى الأسبوع المقبل."],
+["Helaas kan ik niet langer blijven.", "للأسف، لا أستطيع البقاء مدة أطول."],
+["Helaas is de soep al op.", "للأسف، الشوربة نفدت بالفعل."],
+["Helaas heb ik geen wisselgeld.", "للأسف، ليس لدي فكة."],
+["Helaas is de trein afgeschaft.", "للأسف، تم إلغاء القطار."],
+["Helaas moet ik mijn plannen aanpassen.", "للأسف، يجب أن أعدّل خططي."],
+["Helaas is mijn fiets gestolen.", "للأسف، سُرقت دراجتي."],
+["Helaas heb ik mijn bril thuis vergeten.", "للأسف، نسيت نظارتي في المنزل."],
+["Helaas kan ik je vandaag niet terugbellen.", "للأسف، لا أستطيع معاودة الاتصال بك اليوم."],
+["Helaas is het restaurant volgeboekt.", "للأسف، المطعم محجوز بالكامل."],
+["Helaas hebben we niet genoeg ingrediënten.", "للأسف، ليس لدينا ما يكفي من المكونات."],
+["Helaas is de prijs hoger dan verwacht.", "للأسف، السعر أعلى مما توقعت."],
+["Helaas heb ik het formulier verkeerd ingevuld.", "للأسف، ملأت الاستمارة بطريقة خاطئة."],
+["Helaas ontbreekt er een document.", "للأسف، هناك مستند ناقص."],
+["Helaas is mijn aanvraag nog niet goedgekeurd.", "للأسف، لم تتم الموافقة على طلبي بعد."],
+["Helaas moet ik opnieuw een afspraak maken.", "للأسف، يجب أن أحجز موعدًا مرة أخرى."],
+["Helaas kan ik niet aan de opleiding deelnemen.", "للأسف، لا أستطيع المشاركة في الدورة."],
+["Helaas is de les online geannuleerd.", "للأسف، أُلغي الدرس عبر الإنترنت."],
+["Helaas heb ik de instructies niet goed gelezen.", "للأسف، لم أقرأ التعليمات جيدًا."],
+["Helaas is mijn batterij bijna leeg.", "للأسف، بطاريتي أوشكت على النفاد."],
+["Helaas is het internet heel traag.", "للأسف، الإنترنت بطيء جدًا."],
+["Helaas kan ik het bestand niet openen.", "للأسف، لا أستطيع فتح الملف."],
+["Helaas heb ik het verkeerde bestand doorgestuurd.", "للأسف، أرسلت الملف الخطأ."],
+["Helaas is de vergadering uitgesteld.", "للأسف، تم تأجيل الاجتماع."],
+["Helaas is mijn collega ziek.", "للأسف، زميلي مريض."],
+["Helaas is er vandaag niemand op kantoor.", "للأسف، لا يوجد أحد في المكتب اليوم."],
+["Helaas kan ik niet vroeger vertrekken.", "للأسف، لا أستطيع المغادرة في وقت أبكر."],
+["Helaas heb ik de deadline gemist.", "للأسف، فاتني الموعد النهائي."],
+["Helaas is het werk nog niet klaar.", "للأسف، العمل لم ينتهِ بعد."],
+["Helaas hebben ze iemand anders gekozen.", "للأسف، اختاروا شخصًا آخر."],
+["Helaas heb ik de job niet gekregen.", "للأسف، لم أحصل على الوظيفة."],
+["Helaas is mijn sollicitatie afgewezen.", "للأسف، تم رفض طلبي للتوظيف."],
+["Helaas verdien ik momenteel niet genoeg.", "للأسف، لا أكسب ما يكفي حاليًا."],
+["Helaas kan ik die kosten niet betalen.", "للأسف، لا أستطيع دفع تلك التكاليف."],
+["Helaas is de huur weer gestegen.", "للأسف، ارتفع الإيجار مرة أخرى."],
+["Helaas is er geen korting op dit product.", "للأسف، لا يوجد خصم على هذا المنتج."],
+["Helaas is mijn favoriete broodje uitverkocht.", "للأسف، نفدت شطيرتي المفضلة."],
+["Helaas is de melk zuur geworden.", "للأسف، أصبح الحليب حامضًا."],
+["Helaas heb ik te veel zout in het eten gedaan.", "للأسف، وضعت ملحًا كثيرًا في الطعام."],
+["Helaas is de koffie koud geworden.", "للأسف، بردت القهوة."],
+["Helaas lust mijn zoon dat niet.", "للأسف، ابني لا يحب ذلك الطعام."],
+["Helaas zijn we de weg kwijt.", "للأسف، لقد ضللنا الطريق."],
+["Helaas heb ik de afslag gemist.", "للأسف، فاتني المخرج."],
+["Helaas staat er veel file op de snelweg.", "للأسف، هناك ازدحام شديد على الطريق السريع."],
+["Helaas is er geen parkeerplaats vrij.", "للأسف، لا يوجد مكان شاغر لركن السيارة."],
+["Helaas rijdt de tram vandaag niet.", "للأسف، الترام لا يعمل اليوم."],
+["Helaas is mijn abonnement verlopen.", "للأسف، انتهى اشتراكي."],
+["Helaas ben ik mijn bankkaart kwijt.", "للأسف، فقدت بطاقتي البنكية."],
+["Helaas werkt de betaalautomaat niet.", "للأسف، جهاز الدفع لا يعمل."],
+["Helaas ben ik mijn pincode vergeten.", "للأسف، نسيت الرقم السري."],
+["Helaas is de apotheek al gesloten.", "للأسف، الصيدلية مغلقة بالفعل."],
+["Helaas is mijn afspraak bij de tandarts verplaatst.", "للأسف، تم تغيير موعدي عند طبيب الأسنان."],
+["Helaas voel ik me vandaag niet goed.", "للأسف، لا أشعر أنني بخير اليوم."],
+["Helaas heb ik slecht geslapen.", "للأسف، لم أنم جيدًا."],
+["Helaas doet mijn rug pijn.", "للأسف، ظهري يؤلمني."],
+["Helaas kan ik vanavond niet mee-eten.", "للأسف، لا أستطيع تناول العشاء معكم هذا المساء."],
+["Helaas hebben we elkaar verkeerd begrepen.", "للأسف، أسأنا فهم بعضنا بعضًا."],
+["Helaas kon ik je gisteren niet bereiken.", "للأسف، لم أتمكن من التواصل معك أمس."],
+["Helaas heb ik je bericht te laat gelezen.", "للأسف، قرأت رسالتك متأخرًا جدًا."],
+["Helaas is het feest afgelast.", "للأسف، تم إلغاء الحفل."],
+["Helaas kunnen we dit weekend niet op bezoek komen.", "للأسف، لا نستطيع زيارتكم في عطلة نهاية الأسبوع هذه."],
+["Helaas woont mijn familie ver weg.", "للأسف، تعيش عائلتي بعيدًا."],
+["Helaas hebben we geen tijd om alles vandaag af te werken.", "للأسف، ليس لدينا وقت لإنهاء كل شيء اليوم."],
+["Helaas is dat niet mogelijk.", "للأسف، هذا غير ممكن."],
+["Helaas loopt niet alles zoals gepland.", "للأسف، لا تسير الأمور كلها كما خُطِّط لها."],
+["Helaas moeten we het opnieuw proberen.", "للأسف، علينا أن نحاول مرة أخرى."],
+["Helaas is het antwoord nee.", "للأسف، الإجابة هي لا."]
+];
+
+function renderSentences(items) {
+    const container = document.getElementById("sentences");
+    container.innerHTML = "";
+
+    items.forEach((sentence, index) => {
+        const card = document.createElement("article");
+        card.className = "card";
+
+        const number = document.createElement("div");
+        number.className = "number";
+        number.textContent = index + 1;
+
+        const content = document.createElement("div");
+
+        const dutch = document.createElement("div");
+        dutch.className = "dutch";
+        dutch.textContent = sentence[0];
+
+        const arabic = document.createElement("div");
+        arabic.className = "arabic";
+        arabic.textContent = sentence[1];
+
+        content.appendChild(dutch);
+        content.appendChild(arabic);
+        card.appendChild(number);
+        card.appendChild(content);
+        container.appendChild(card);
+    });
+}
+
+function searchSentences() {
+    const query = document.getElementById("search").value.toLowerCase().trim();
+
+    const filtered = sentences.filter(sentence =>
+        sentence[0].toLowerCase().includes(query) ||
+        sentence[1].toLowerCase().includes(query)
+    );
+
+    renderSentences(filtered);
+}
+
+renderSentences(sentences);
+</script>
+
+</body>
+</html>
