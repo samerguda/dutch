@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوقات اليوم بالهولندية | Nederlandse dagdelen</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --bg: #f9f7fe;
+            --surface: #ffffff;
+            --primary: #3b2e6b;
+            --primary-light: #6a5acd;
+            --accent: #ff9f68;
+            --text: #1e1b2e;
+            --text-light: #4a4766;
+            --border: #e6e2f0;
+            --shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            --radius: 28px;
+            --card-radius: 24px;
+            --transition: all 0.25s ease;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #12101c;
+                --surface: #1e1b2e;
+                --primary: #a895ff;
+                --primary-light: #8a7ad6;
+                --accent: #ffb07c;
+                --text: #f0edff;
+                --text-light: #c5c0e0;
+                --border: #2e2946;
+                --shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* تنسيق العناوين */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        h1 i {
+            color: var(--accent);
+            font-size: 2.4rem;
+        }
+
+        .subhead {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1.2rem;
+            font-weight: 400;
+        }
+
+        .subhead span {
+            background: var(--primary-light);
+            color: white;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+
+        /* شبكة البطاقات */
+        .time-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border-radius: var(--card-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary-light);
+        }
+
+        .card-header {
+            padding: 1.4rem 1.8rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .card-header i {
+            font-size: 2rem;
+            opacity: 0.9;
+            width: 2rem;
+            text-align: center;
+        }
+
+        .card-header .nl {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.3;
+            font-family: 'Quicksand', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .card-header .ar {
+            font-size: 1.1rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: -3px;
+            display: block;
+        }
+
+        .card-body {
+            padding: 1.5rem 1.8rem 1.8rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .examples {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            flex: 1;
+        }
+
+        .examples li {
+            border-right: 4px solid var(--accent);
+            padding-right: 1rem;
+            font-size: 1rem;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .examples li:hover {
+            color: var(--text);
+        }
+
+        .examples li .nl-sentence {
+            font-weight: 600;
+            color: var(--primary);
+            display: block;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.05rem;
+            margin-bottom: 2px;
+            direction: ltr;
+            text-align: right; /* لأن النص الهولندي يبدأ من اليسار لكن الحاوية عربية */
+        }
+
+        .examples li .ar-sentence {
+            font-size: 0.98rem;
+            color: var(--text-light);
+            display: block;
+        }
+
+        /* بطاقة الجمل العامة (مقارنات) */
+        .general-card {
+            background: var(--surface);
+            border-radius: var(--card-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            padding: 2rem 2.2rem;
+            margin-top: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .general-card:hover {
+            border-color: var(--accent);
+        }
+
+        .general-card h2 {
+            color: var(--primary);
+            font-size: 1.9rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.8rem;
+        }
+
+        .general-card h2 i {
+            color: var(--accent);
+        }
+
+        .general-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem 2rem;
+        }
+
+        .general-list li {
+            padding-right: 1rem;
+            border-right: 4px solid var(--primary-light);
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .general-list li .nl-sentence {
+            font-weight: 600;
+            color: var(--primary);
+            display: block;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.05rem;
+            direction: ltr;
+            text-align: right;
+            margin-bottom: 2px;
+        }
+
+        .general-list li .ar-sentence {
+            font-size: 0.98rem;
+        }
+
+        /* شارة اللغة */
+        .lang-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #1e1b2e;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* تذييل */
+        footer {
+            text-align: center;
+            margin-top: 3.5rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+
+        footer i {
+            color: var(--accent);
+        }
+
+        /* استجابة */
+        @media (max-width: 700px) {
+            body {
+                padding: 1.5rem 1rem 3rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .card-header .nl {
+                font-size: 1.5rem;
+            }
+            .card-header i {
+                font-size: 1.6rem;
+            }
+            .general-card {
+                padding: 1.5rem;
+            }
+            .general-list {
+                grid-template-columns: 1fr;
+            }
+            .time-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>
+        <i class="fas fa-clock"></i>
+        أوقات اليوم بالهولندية
+        <span class="lang-badge">Nederlands</span>
+    </h1>
+    <div class="subhead">
+        <i class="fas fa-language"></i> المفردات + الأمثلة المترجمة إلى العربية
+    </div>
+
+    <!-- شبكة البطاقات الستة -->
+    <div class="time-grid">
+        <!-- 1. الصباح -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-sun"></i>
+                <div>
+                    <div class="nl">De ochtend / 's morgens</div>
+                    <div class="ar">الصباح / في الصباح</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="examples">
+                    <li>
+                        <span class="nl-sentence">De ochtend begint vroeg.</span>
+                        <span class="ar-sentence">الصباح يبدأ مبكراً.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Morgens drink ik graag koffie.</span>
+                        <span class="ar-sentence">في الصباح أحب أن أشرب القهوة.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Ik word wakker in de ochtend.</span>
+                        <span class="ar-sentence">أستيقظ في الصباح.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Morgens schijnt de zon.</span>
+                        <span class="ar-sentence">في الصباح تسطع الشمس.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Wat doe je 's morgens?</span>
+                        <span class="ar-sentence">ماذا تفعل في الصباح؟</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De lucht is helder in de ochtend.</span>
+                        <span class="ar-sentence">السماء صافية في الصباح.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Morgens loop ik naar school.</span>
+                        <span class="ar-sentence">في الصباح أمشي إلى المدرسة.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De vogels zingen 's morgens.</span>
+                        <span class="ar-sentence">الطيور تغرد في الصباح.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De ochtend is mijn favoriete moment.</span>
+                        <span class="ar-sentence">الصباح هو وقتي المفضل.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Morgens ontbijt ik met brood.</span>
+                        <span class="ar-sentence">في الصباح أفطر بالخبز.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Hij leest de krant 's morgens.</span>
+                        <span class="ar-sentence">هو يقرأ الجريدة في الصباح.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de ochtend is het nog rustig.</span>
+                        <span class="ar-sentence">في الصباح يكون الجو هادئاً بعد.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Morgens poets ik mijn tanden.</span>
+                        <span class="ar-sentence">في الصباح أفرش أسناني.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De ochtend brengt een nieuwe dag.</span>
+                        <span class="ar-sentence">الصباح يجلب يوماً جديداً.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Morgens sport ik een beetje.</span>
+                        <span class="ar-sentence">في الصباح أمارس القليل من الرياضة.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2. قبل الظهر -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-cloud-sun"></i>
+                <div>
+                    <div class="nl">De voormiddag / In de voormiddag</div>
+                    <div class="ar">قبل الظهر / في فترة قبل الظهر</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="examples">
+                    <li>
+                        <span class="nl-sentence">De voormiddag duurt tot twaalf uur.</span>
+                        <span class="ar-sentence">فترة قبل الظهر تستمر حتى الساعة الثانية عشرة.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de voormiddag heb ik een afspraak.</span>
+                        <span class="ar-sentence">لدي موعد في فترة قبل الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De voormiddag is heel productief.</span>
+                        <span class="ar-sentence">فترة قبل الظهر منتجة للغاية.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de voormiddag werken we hard.</span>
+                        <span class="ar-sentence">نحن نعمل بجد في فترة قبل الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Wat doe je in de voormiddag?</span>
+                        <span class="ar-sentence">ماذا تفعل في فترة قبل الظهر؟</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De voormiddag vliegt voorbij.</span>
+                        <span class="ar-sentence">فترة قبل الظهر تمر بسرعة البرق.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de voormiddag drink ik thee.</span>
+                        <span class="ar-sentence">أشرب الشاي في فترة قبل الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De les begint in de voormiddag.</span>
+                        <span class="ar-sentence">الدرس يبدأ في فترة قبل الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De voormiddag is bijna voorbij.</span>
+                        <span class="ar-sentence">فترة قبل الظهر على وشك الانتهاء.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de voormiddag ga ik naar de markt.</span>
+                        <span class="ar-sentence">أذهب إلى السوق في فترة قبل الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Hij studeert in de voormiddag.</span>
+                        <span class="ar-sentence">هو يدرس في فترة قبل الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De voormiddag brengt veel werk.</span>
+                        <span class="ar-sentence">فترة قبل الظهر تحمل الكثير من العمل.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de voormiddag schijnt de zon fel.</span>
+                        <span class="ar-sentence">تسطع الشمس بقوة في فترة قبل الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">We pauzeren in de voormiddag.</span>
+                        <span class="ar-sentence">نأخذ استراحة في فترة قبل الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De voormiddag is een drukke tijd.</span>
+                        <span class="ar-sentence">فترة قبل الظهر وقت مزدحم.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. الظهر -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-sun"></i>
+                <div>
+                    <div class="nl">De middag / 's middags</div>
+                    <div class="ar">الظهر / في وقت الظهر</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="examples">
+                    <li>
+                        <span class="nl-sentence">De middag begint om twaalf uur.</span>
+                        <span class="ar-sentence">الظهر يبدأ عند الساعة الثانية عشرة.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Middags eten we warm.</span>
+                        <span class="ar-sentence">في الظهر نتناول طعاماً ساخناً.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De zon staat hoog in de middag.</span>
+                        <span class="ar-sentence">الشمس تكون في أعلى نقطة في منتصف النهار.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Middags heb ik pauze.</span>
+                        <span class="ar-sentence">لدي استراحة في وقت الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Wat eet jij 's middags?</span>
+                        <span class="ar-sentence">ماذا تأكل في وقت الظهر؟</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De middag is erg warm in de zomer.</span>
+                        <span class="ar-sentence">منتصف النهار يكون حاراً جداً في الصيف.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Middags lees ik een boek.</span>
+                        <span class="ar-sentence">في وقت الظهر أقرأ كتاباً.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De kinderen spelen 's middags buiten.</span>
+                        <span class="ar-sentence">الأطفال يلعبون في الخارج وقت الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De middag duurt tot vier uur.</span>
+                        <span class="ar-sentence">فترة منتصف النهار تستمر حتى الساعة الرابعة.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Middags doe ik een dutje.</span>
+                        <span class="ar-sentence">أخذ قيلولة في وقت الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Hij komt 's middags thuis.</span>
+                        <span class="ar-sentence">هو يعود إلى البيت وقت الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de middag schijnt de zon.</span>
+                        <span class="ar-sentence">تسطع الشمس في منتصف النهار.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Middags drink ik water.</span>
+                        <span class="ar-sentence">أشرب الماء في وقت الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De middag is vaak druk op kantoor.</span>
+                        <span class="ar-sentence">منتصف النهار غالباً ما يكون مزدحماً في المكتب.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Middags schijn ik te rusten.</span>
+                        <span class="ar-sentence">يبدو أنني أستريح وقت الظهر.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4. بعد الظهر -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-cloud-sun-rain"></i>
+                <div>
+                    <div class="nl">De namiddag / In de namiddag</div>
+                    <div class="ar">بعد الظهر / في فترة بعد الظهر</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="examples">
+                    <li>
+                        <span class="nl-sentence">De namiddag volgt na de middag.</span>
+                        <span class="ar-sentence">فترة بعد الظهر تأتي بعد منتصف النهار.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de namiddag ga ik wandelen.</span>
+                        <span class="ar-sentence">أذهب للتنزه في فترة بعد الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De namiddag is een rustige tijd.</span>
+                        <span class="ar-sentence">فترة بعد الظهر وقت هادئ.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de namiddag drinken we koffie.</span>
+                        <span class="ar-sentence">نشرب القهوة في فترة بعد الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Wat doe je in de namiddag?</span>
+                        <span class="ar-sentence">ماذا تفعل في فترة بعد الظهر؟</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De namiddag lucht koelt wat af.</span>
+                        <span class="ar-sentence">هواء فترة بعد الظهر يبرد قليلاً.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de namiddag bezoek ik een vriend.</span>
+                        <span class="ar-sentence">أزور صديقاً في فترة بعد الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De zon zakt in de namiddag.</span>
+                        <span class="ar-sentence">تنخفض الشمس في فترة بعد الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De namiddag duurt tot de avond.</span>
+                        <span class="ar-sentence">فترة بعد الظهر تستمر حتى المساء.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de namiddag doe ik boodschappen.</span>
+                        <span class="ar-sentence">أقوم بالتسوق في فترة بعد الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Hij werkt in de namiddag door.</span>
+                        <span class="ar-sentence">هو يستمر في العمل في فترة بعد الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De namiddag is ideaal om te sporten.</span>
+                        <span class="ar-sentence">فترة بعد الظهر مثالية لممارسة الرياضة.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de namiddag schijnt het licht zacht.</span>
+                        <span class="ar-sentence">يشرق الضوء بنعومة في فترة بعد الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">We praten in de namiddag samen.</span>
+                        <span class="ar-sentence">نتحدث معاً في فترة بعد الظهر.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De namiddag brengt ontspanning.</span>
+                        <span class="ar-sentence">فترة بعد الظهر تجلب الاسترخاء.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5. المساء -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-moon"></i>
+                <div>
+                    <div class="nl">De avond / 's avonds</div>
+                    <div class="ar">المساء / في المساء</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="examples">
+                    <li>
+                        <span class="nl-sentence">De avond valt snel in de winter.</span>
+                        <span class="ar-sentence">يحل المساء بسرعة في الشتاء.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Avonds kook ik avondeten.</span>
+                        <span class="ar-sentence">في المساء أطبخ وجبة العشاء.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Ik kijk 's avonds naar televisie.</span>
+                        <span class="ar-sentence">أشاهد التلفاز في المساء.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De avond is gezellig.</span>
+                        <span class="ar-sentence">المساء مريح وجميل.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Wat doe je 's avonds?</span>
+                        <span class="ar-sentence">ماذا تفعل في المساء؟</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de avond branden de lampen.</span>
+                        <span class="ar-sentence">في المساء تضيء المصابيح.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Avonds rust ik lekker uit.</span>
+                        <span class="ar-sentence">في المساء أستريح جيداً.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De maan verschijnt 's avonds.</span>
+                        <span class="ar-sentence">يظهر القمر في المساء.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De avond brengt koelte.</span>
+                        <span class="ar-sentence">المساء يجلب البرودة.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Avonds familie komt op bezoek.</span>
+                        <span class="ar-sentence">تأتي العائلة للزيارة في المساء.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Hij leest een boek 's avonds.</span>
+                        <span class="ar-sentence">هو يقرأ كتاباً في المساء.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De avond is stil.</span>
+                        <span class="ar-sentence">المساء هادئ.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Avonds drink ik warme melk.</span>
+                        <span class="ar-sentence">أشرب الحليب الدافئ في المساء.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">We eten samen 's avonds.</span>
+                        <span class="ar-sentence">نتناول الطعام معاً في المساء.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De avond is om te ontspannen.</span>
+                        <span class="ar-sentence">المساء للاسترخاء.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 6. الليل -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-star"></i>
+                <div>
+                    <div class="nl">De nacht / 's nachts</div>
+                    <div class="ar">الليل / في الليل</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="examples">
+                    <li>
+                        <span class="nl-sentence">De nacht is donker en stil.</span>
+                        <span class="ar-sentence">الليل مظلم وهادئ.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Nachts slapen de meeste mensen.</span>
+                        <span class="ar-sentence">في الليل ينام معظم الناس.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De sterren schitteren 's nachts.</span>
+                        <span class="ar-sentence">النجوم تتألق في الليل.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De nacht duurt vele uren.</span>
+                        <span class="ar-sentence">الليل يستغرق ساعات طويلة.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Wie werkt er 's nachts?</span>
+                        <span class="ar-sentence">من يعمل في الليل؟</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">In de nacht is het koud.</span>
+                        <span class="ar-sentence">في الليل يكون الجو بارداً.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Nachts hoor ik soms geluiden.</span>
+                        <span class="ar-sentence">في الليل أسمع أصواتاً أحياناً.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De maan schijnt 's nachts fel.</span>
+                        <span class="ar-sentence">يشرق القمر ساطعاً في الليل.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De nacht geeft rust.</span>
+                        <span class="ar-sentence">الليل يمنح الهدوء.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Nachts droom ik mooie dingen.</span>
+                        <span class="ar-sentence">أحلم بأشياء جميلة في الليل.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Hij rijdt 's nachts over de snelweg.</span>
+                        <span class="ar-sentence">هو يقود سيارته على الطريق السريع ليلاً.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De nacht is stil buiten.</span>
+                        <span class="ar-sentence">الليل هادئ بالخارج.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">'s Nachts branden de straatlantaarns.</span>
+                        <span class="ar-sentence">مصابيح الشوارع تضيء ليلاً.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">Sommige dieren slapen 's nachts goed.</span>
+                        <span class="ar-sentence">بعض الحيوانات تنام جيداً ليلاً.</span>
+                    </li>
+                    <li>
+                        <span class="nl-sentence">De nacht eindigt bij de ochtend.</span>
+                        <span class="ar-sentence">الليل ينتهي عند الصباح.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم الجمل العامة والمقارنات -->
+    <div class="general-card">
+        <h2><i class="fas fa-exchange-alt"></i> جمل عامة ومقارنات بين فترات اليوم</h2>
+        <ul class="general-list">
+            <li>
+                <span class="nl-sentence">De ochtend en de avond zijn elkaars tegenovergestelde.</span>
+                <span class="ar-sentence">الصباح والمساء متضادان.</span>
+            </li>
+            <li>
+                <span class="nl-sentence">'s Morgens en 's avonds zijn erg belangrijk in een dag.</span>
+                <span class="ar-sentence">الصباح والمساء مهمان جداً في اليوم.</span>
+            </li>
+            <li>
+                <span class="nl-sentence">Vanaf de ochtend tot de nacht ben ik bezig.</span>
+                <span class="ar-sentence">من الصباح وحتى الليل وأنا مشغول.</span>
+            </li>
+            <li>
+                <span class="nl-sentence">In de voormiddag werk ik, en in de namiddag rust ik.</span>
+                <span class="ar-sentence">أعمل في فترة قبل الظهر، وأستريح في فترة بعد الظهر.</span>
+            </li>
+            <li>
+                <span class="nl-sentence">De middag is het midden van de dag.</span>
+                <span class="ar-sentence">منتصف النهار هو وسط اليوم.</span>
+            </li>
+            <li>
+                <span class="nl-sentence">Elk moment van de dag, van ochtend tot nacht, heeft zijn charme.</span>
+                <span class="ar-sentence">كل لحظة في اليوم، من الصباح إلى الليل، لها سحرها.</span>
+            </li>
+            <li>
+                <span class="nl-sentence">'s Avonds is het donker, maar 's morgens wordt het licht.</span>
+                <span class="ar-sentence">في المساء يصبح مظلماً، ولكن في الصباح يصبح مضيئاً.</span>
+            </li>
+            <li>
+                <span class="nl-sentence">De namiddag brengt ons dichter bij de avond.</span>
+                <span class="ar-sentence">فترة بعد الظهر تقربنا أكثر من المساء.</span>
+            </li>
+            <li>
+                <span class="nl-sentence">'s Nachts is het stil, 's middags is het druk.</span>
+                <span class="ar-sentence">في الليل يسود الهدوء، وفي منتصف النهار يكون مزدحماً.</span>
+            </li>
+            <li>
+                <span class="nl-sentence">De cyclus van de dag en de nacht herhaalt zich altijd.</span>
+                <span class="ar-sentence">دورة اليوم والليل تتكرر دائماً.</span>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <i class="fas fa-graduation-cap"></i> تدرب على المفردات الهولندية وأوقات اليوم – مع الترجمة العربية
+    </footer>
+</div>
+</body>
+</html>
