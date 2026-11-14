@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thuis – 100 جملة هولندية مع الترجمة العربية</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+      background: #f5f7fa;
+      color: #1e2a3a;
+      padding: 2rem 1rem;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      padding: 2.5rem 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0b3b5c;
+      border-right: 6px solid #f39c12;
+      padding-right: 1rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #4a5b6b;
+      margin-bottom: 2rem;
+      padding-right: 1.2rem;
+      border-right: 2px solid #e0e6ed;
+      padding-bottom: 0.3rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eef4fc;
+      color: #0b3b5c;
+      font-weight: 600;
+      padding: 0.25rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      margin-left: 0.5rem;
+      border: 1px solid #cbdae8;
+    }
+
+    .intro-note {
+      background: #fef9e7;
+      border-right: 4px solid #f39c12;
+      padding: 0.9rem 1.2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: #2c3e50;
+    }
+
+    .intro-note strong {
+      color: #b9770e;
+    }
+
+    /* جدول الجمل */
+    .sentence-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2.5rem;
+      font-size: 1.02rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .sentence-table thead {
+      background: #0b3b5c;
+      color: white;
+      font-weight: 600;
+    }
+
+    .sentence-table th {
+      padding: 0.9rem 1rem;
+      text-align: right;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    .sentence-table th:first-child {
+      width: 55%;
+    }
+
+    .sentence-table th:last-child {
+      width: 45%;
+    }
+
+    .sentence-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e9edf2;
+      vertical-align: top;
+    }
+
+    .sentence-table tbody tr:nth-child(even) {
+      background: #fafcff;
+    }
+
+    .sentence-table tbody tr:hover {
+      background: #eef6fe;
+      transition: 0.15s;
+    }
+
+    .nl-sentence {
+      font-weight: 500;
+      color: #0b3b5c;
+      direction: ltr;
+      text-align: left;
+      display: inline-block;
+      unicode-bidi: embed;
+      font-family: 'Segoe UI', 'Tahoma', sans-serif;
+    }
+
+    .ar-sentence {
+      color: #1e2a3a;
+      font-weight: 500;
+    }
+
+    /* جدول الفرق المهم */
+    .diff-section {
+      margin-top: 2.5rem;
+      background: #f2f8ff;
+      border-radius: 20px;
+      padding: 1.8rem 1.8rem 1rem 1.8rem;
+      border: 1px solid #d4e2f0;
+    }
+
+    .diff-section h2 {
+      font-size: 1.5rem;
+      color: #0b3b5c;
+      margin-bottom: 1.2rem;
+      border-right: 5px solid #f39c12;
+      padding-right: 1rem;
+    }
+
+    .diff-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .diff-table th {
+      background: #1e4a6b;
+      color: white;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      text-align: right;
+    }
+
+    .diff-table td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid #e0e8f0;
+      background: white;
+    }
+
+    .diff-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .diff-table td:first-child {
+      font-weight: 600;
+      color: #0b3b5c;
+      direction: ltr;
+      text-align: left;
+      font-family: 'Segoe UI', 'Tahoma', sans-serif;
+    }
+
+    .diff-table td:last-child {
+      color: #1e2a3a;
+    }
+
+    .note-box {
+      background: #ffffff;
+      border-right: 5px solid #2e86c1;
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      margin-top: 1.2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .note-box p {
+      margin-bottom: 0.6rem;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .note-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .example-nl {
+      font-weight: 600;
+      color: #0b3b5c;
+      direction: ltr;
+      display: inline-block;
+      background: #eef4fc;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      margin-left: 0.3rem;
+    }
+
+    .highlight {
+      background: #fef3d6;
+      padding: 0.1rem 0.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #9e6b0b;
+    }
+
+    .footnote {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #5a6f80;
+      text-align: center;
+      border-top: 1px dashed #cddbe8;
+      padding-top: 1.5rem;
+    }
+
+    /* تحسين استجابة الجوال */
+    @media (max-width: 700px) {
+      body {
+        padding: 0.8rem 0.5rem;
+      }
+
+      .container {
+        padding: 1.5rem 1rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .sentence-table th,
+      .sentence-table td {
+        padding: 0.6rem 0.5rem;
+        font-size: 0.95rem;
+      }
+
+      .sentence-table th:first-child {
+        width: 50%;
+      }
+
+      .sentence-table th:last-child {
+        width: 50%;
+      }
+
+      .diff-table th,
+      .diff-table td {
+        padding: 0.5rem 0.6rem;
+        font-size: 0.9rem;
+      }
+
+      .note-box p {
+        font-size: 0.95rem;
+      }
+
+      .badge {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>كلمة <span style="color: #f39c12;">Thuis</span> بالهولندي</h1>
+    <div class="subhead">
+      معناها: <strong>في البيت / إلى البيت / بالمنزل</strong> حسب سياق الجملة
+      <span class="badge">100 جملة</span>
+      <span class="badge">مع الترجمة العربية</span>
+    </div>
+
+    <div class="intro-note">
+      💡 <strong>ملاحظة:</strong> كلمة <strong>Thuis</strong> تعني حرفيًا «في البيت» أو «بالمنزل»، وتُستخدم للتعبير عن الوجود داخل المنزل. أما «إلى البيت» فتُترجم عادةً بـ <strong>naar huis</strong>. ستجد في نهاية الصفحة جدولًا يوضح الفرق بدقة.
+    </div>
+
+    <!-- جدول الجمل المائة -->
+    <table class="sentence-table">
+      <thead>
+        <tr>
+          <th>الجملة الهولندية</th>
+          <th>الترجمة العربية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="nl-sentence">Ik ben thuis.</span></td><td class="ar-sentence">أنا في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik blijf vandaag thuis.</span></td><td class="ar-sentence">سأبقى في البيت اليوم.</td></tr>
+        <tr><td><span class="nl-sentence">Ik werk thuis.</span></td><td class="ar-sentence">أعمل من المنزل.</td></tr>
+        <tr><td><span class="nl-sentence">Ik studeer thuis.</span></td><td class="ar-sentence">أدرس في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik eet thuis.</span></td><td class="ar-sentence">أتناول الطعام في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik slaap thuis.</span></td><td class="ar-sentence">أنام في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik kom thuis.</span></td><td class="ar-sentence">أعود إلى البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik ga naar huis.</span></td><td class="ar-sentence">أذهب إلى البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik voel me thuis.</span></td><td class="ar-sentence">أشعر أنني في بيتي.</td></tr>
+        <tr><td><span class="nl-sentence">Ik ben graag thuis.</span></td><td class="ar-sentence">أحب أن أكون في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Mijn vrouw is thuis.</span></td><td class="ar-sentence">زوجتي في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Mijn kinderen zijn thuis.</span></td><td class="ar-sentence">أطفالي في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Mijn vader is thuis.</span></td><td class="ar-sentence">أبي في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Mijn moeder blijft thuis.</span></td><td class="ar-sentence">أمي تبقى في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Mijn broer werkt thuis.</span></td><td class="ar-sentence">أخي يعمل من المنزل.</td></tr>
+        <tr><td><span class="nl-sentence">Mijn zus studeert thuis.</span></td><td class="ar-sentence">أختي تدرس في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">We zijn allemaal thuis.</span></td><td class="ar-sentence">نحن جميعًا في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Iedereen is thuis.</span></td><td class="ar-sentence">الجميع في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Niemand is thuis.</span></td><td class="ar-sentence">لا أحد في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Er is iemand thuis.</span></td><td class="ar-sentence">يوجد شخص في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik kom om vijf uur thuis.</span></td><td class="ar-sentence">أعود إلى البيت الساعة الخامسة.</td></tr>
+        <tr><td><span class="nl-sentence">Wanneer kom je thuis?</span></td><td class="ar-sentence">متى تعود إلى البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Hoe laat ben je thuis?</span></td><td class="ar-sentence">الساعة كم ستكون في البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Ik ben vroeg thuis.</span></td><td class="ar-sentence">أكون في البيت مبكرًا.</td></tr>
+        <tr><td><span class="nl-sentence">Ik ben laat thuis.</span></td><td class="ar-sentence">أكون في البيت متأخرًا.</td></tr>
+        <tr><td><span class="nl-sentence">Ik kom vandaag niet thuis.</span></td><td class="ar-sentence">لن أعود إلى البيت اليوم.</td></tr>
+        <tr><td><span class="nl-sentence">Ik ben net thuisgekomen.</span></td><td class="ar-sentence">لقد وصلت إلى البيت للتو.</td></tr>
+        <tr><td><span class="nl-sentence">Ben je al thuis?</span></td><td class="ar-sentence">هل وصلت إلى البيت بالفعل؟</td></tr>
+        <tr><td><span class="nl-sentence">Ben je nog thuis?</span></td><td class="ar-sentence">هل ما زلت في البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Ik ga nu naar huis.</span></td><td class="ar-sentence">أنا ذاهب إلى البيت الآن.</td></tr>
+        <tr><td><span class="nl-sentence">Wat doe je thuis?</span></td><td class="ar-sentence">ماذا تفعل في البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Ik kijk thuis televisie.</span></td><td class="ar-sentence">أشاهد التلفاز في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik luister thuis naar muziek.</span></td><td class="ar-sentence">أستمع إلى الموسيقى في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik lees thuis een boek.</span></td><td class="ar-sentence">أقرأ كتابًا في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik kook thuis.</span></td><td class="ar-sentence">أطبخ في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik maak thuis schoon.</span></td><td class="ar-sentence">أنظف في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik was thuis mijn kleren.</span></td><td class="ar-sentence">أغسل ملابسي في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik strijk thuis mijn kleren.</span></td><td class="ar-sentence">أكوي ملابسي في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik speel thuis met de kinderen.</span></td><td class="ar-sentence">ألعب مع الأطفال في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik oefen thuis Nederlands.</span></td><td class="ar-sentence">أتدرب على الهولندية في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik heb vandaag veel werk thuis.</span></td><td class="ar-sentence">لدي اليوم عمل كثير في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik moet thuis blijven.</span></td><td class="ar-sentence">يجب أن أبقى في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik wil vandaag thuis rusten.</span></td><td class="ar-sentence">أريد أن أرتاح في البيت اليوم.</td></tr>
+        <tr><td><span class="nl-sentence">Ik heb thuis geen internet.</span></td><td class="ar-sentence">ليس لدي إنترنت في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik heb thuis een computer.</span></td><td class="ar-sentence">لدي كمبيوتر في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik heb thuis een grote tafel.</span></td><td class="ar-sentence">لدي طاولة كبيرة في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Mijn huis is altijd netjes.</span></td><td class="ar-sentence">بيتي مرتب دائمًا.</td></tr>
+        <tr><td><span class="nl-sentence">Het is koud thuis.</span></td><td class="ar-sentence">الجو بارد في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Het is warm thuis.</span></td><td class="ar-sentence">الجو دافئ في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Het is rustig thuis.</span></td><td class="ar-sentence">الجو هادئ في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik voel me veilig thuis.</span></td><td class="ar-sentence">أشعر بالأمان في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik voel me goed thuis.</span></td><td class="ar-sentence">أشعر بالراحة في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik voel me niet goed thuis.</span></td><td class="ar-sentence">لا أشعر أنني بخير في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik ben liever thuis.</span></td><td class="ar-sentence">أفضل البقاء في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik blijf liever thuis.</span></td><td class="ar-sentence">أفضل أن أبقى في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik wil thuis blijven.</span></td><td class="ar-sentence">أريد أن أبقى في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik ben vandaag de hele dag thuis.</span></td><td class="ar-sentence">أنا في البيت طوال اليوم.</td></tr>
+        <tr><td><span class="nl-sentence">We blijven vanavond thuis.</span></td><td class="ar-sentence">سنبقى في البيت هذا المساء.</td></tr>
+        <tr><td><span class="nl-sentence">We eten vanavond thuis.</span></td><td class="ar-sentence">سنتناول العشاء في البيت هذا المساء.</td></tr>
+        <tr><td><span class="nl-sentence">We ontvangen vrienden thuis.</span></td><td class="ar-sentence">نستقبل الأصدقاء في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Mag ik bij jou thuis komen?</span></td><td class="ar-sentence">هل يمكنني أن آتي إلى بيتك؟</td></tr>
+        <tr><td><span class="nl-sentence">Ben je alleen thuis?</span></td><td class="ar-sentence">هل أنت وحدك في البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Wie is er thuis?</span></td><td class="ar-sentence">من الموجود في البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Is er iemand thuis?</span></td><td class="ar-sentence">هل يوجد أحد في البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Ben je vandaag thuis?</span></td><td class="ar-sentence">هل أنت في البيت اليوم؟</td></tr>
+        <tr><td><span class="nl-sentence">Waarom ben je thuis?</span></td><td class="ar-sentence">لماذا أنت في البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Waarom blijf je thuis?</span></td><td class="ar-sentence">لماذا تبقى في البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Hoe voelt het om thuis te zijn?</span></td><td class="ar-sentence">كيف تشعر عندما تكون في البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Wat eten jullie thuis?</span></td><td class="ar-sentence">ماذا تأكلون في البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Heb je thuis verwarming?</span></td><td class="ar-sentence">هل لديك تدفئة في البيت؟</td></tr>
+        <tr><td><span class="nl-sentence">Ik werk meestal thuis.</span></td><td class="ar-sentence">عادةً أعمل من البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik ontbijt meestal thuis.</span></td><td class="ar-sentence">عادةً أتناول الإفطار في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik lunch soms thuis.</span></td><td class="ar-sentence">أحيانًا أتناول الغداء في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik ben meestal rond zes uur thuis.</span></td><td class="ar-sentence">عادةً أكون في البيت حوالي السادسة.</td></tr>
+        <tr><td><span class="nl-sentence">Op zondag blijf ik thuis.</span></td><td class="ar-sentence">أبقى في البيت يوم الأحد.</td></tr>
+        <tr><td><span class="nl-sentence">In het weekend ben ik vaak thuis.</span></td><td class="ar-sentence">غالبًا أكون في البيت في عطلة نهاية الأسبوع.</td></tr>
+        <tr><td><span class="nl-sentence">Na het werk ga ik naar huis.</span></td><td class="ar-sentence">بعد العمل أذهب إلى البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Na school kom ik thuis.</span></td><td class="ar-sentence">بعد المدرسة أعود إلى البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik ga rechtstreeks naar huis.</span></td><td class="ar-sentence">أذهب مباشرة إلى البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik wil zo snel mogelijk naar huis.</span></td><td class="ar-sentence">أريد الذهاب إلى البيت في أسرع وقت ممكن.</td></tr>
+        <tr><td><span class="nl-sentence">Mijn vrouw wacht thuis op mij.</span></td><td class="ar-sentence">زوجتي تنتظرني في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Mijn kinderen wachten thuis.</span></td><td class="ar-sentence">أطفالي ينتظرون في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik heb mijn sleutels thuis laten liggen.</span></td><td class="ar-sentence">تركت مفاتيحي في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Mijn telefoon ligt thuis.</span></td><td class="ar-sentence">هاتفي موجود في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Mijn portefeuille ligt nog thuis.</span></td><td class="ar-sentence">محفظتي ما زالت في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik ben iets thuis vergeten.</span></td><td class="ar-sentence">نسيت شيئًا في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik moet eerst thuis iets ophalen.</span></td><td class="ar-sentence">يجب أن آخذ شيئًا من البيت أولًا.</td></tr>
+        <tr><td><span class="nl-sentence">Ik heb thuis alles voorbereid.</span></td><td class="ar-sentence">حضرت كل شيء في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik heb thuis veel te doen.</span></td><td class="ar-sentence">لدي أشياء كثيرة لأفعلها في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Ik moet thuis nog opruimen.</span></td><td class="ar-sentence">ما زال عليّ ترتيب البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Thuis spreek ik Arabisch.</span></td><td class="ar-sentence">في البيت أتحدث العربية.</td></tr>
+        <tr><td><span class="nl-sentence">Thuis spreek ik ook Nederlands.</span></td><td class="ar-sentence">في البيت أتحدث الهولندية أيضًا.</td></tr>
+        <tr><td><span class="nl-sentence">Thuis leer ik elke dag nieuwe woorden.</span></td><td class="ar-sentence">أتعلم كلمات جديدة كل يوم في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Thuis maak ik mijn Nederlandse oefeningen.</span></td><td class="ar-sentence">أحل تمارين الهولندية في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Thuis praat ik met mijn vrouw.</span></td><td class="ar-sentence">أتحدث مع زوجتي في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Thuis drinken we samen koffie.</span></td><td class="ar-sentence">نشرب القهوة معًا في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Thuis voel ik me ontspannen.</span></td><td class="ar-sentence">أشعر بالاسترخاء في البيت.</td></tr>
+        <tr><td><span class="nl-sentence">Thuis kan ik mezelf zijn.</span></td><td class="ar-sentence">في البيت أستطيع أن أكون على طبيعتي.</td></tr>
+        <tr><td><span class="nl-sentence">Thuis is het altijd gezellig.</span></td><td class="ar-sentence">البيت دائمًا مليء بالألفة والجو الجميل.</td></tr>
+        <tr><td><span class="nl-sentence">Ik ben blij dat ik weer thuis ben.</span></td><td class="ar-sentence">أنا سعيد لأنني عدت إلى البيت مرة أخرى.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- قسم الفرق المهم جدًا -->
+    <div class="diff-section">
+      <h2>فرق مهم جدًا في الهولندية</h2>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th>الهولندية</th>
+            <th>العربية</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Thuis</td><td>في البيت</td></tr>
+          <tr><td>Naar huis</td><td>إلى البيت</td></tr>
+          <tr><td>Van huis</td><td>من البيت</td></tr>
+          <tr><td>Bij mij thuis</td><td>في بيتي</td></tr>
+          <tr><td>Bij jou thuis</td><td>في بيتك</td></tr>
+          <tr><td>Thuiswerken</td><td>العمل من المنزل</td></tr>
+          <tr><td>Thuiskomen</td><td>العودة إلى البيت</td></tr>
+        </tbody>
+      </table>
+
+      <div class="note-box">
+        <p><span class="highlight">لاحظ الفرق:</span></p>
+        <p>🔹 <span class="example-nl">Ik ben thuis.</span> = أنا في البيت. <span style="color:#4a5b6b; font-size:0.95rem;">(وجود داخل المنزل)</span></p>
+        <p>🔹 <span class="example-nl">Ik ga naar huis.</span> = أنا ذاهب إلى البيت. <span style="color:#4a5b6b; font-size:0.95rem;">(اتجاه نحو المنزل)</span></p>
+        <p>🔹 <span class="example-nl">Ik kom thuis.</span> = أنا أعود إلى البيت. <span style="color:#4a5b6b; font-size:0.95rem;">(العودة والوصول)</span></p>
+        <p>🔹 <span class="example-nl">Ik kom van huis.</span> = أنا قادم من البيت. <span style="color:#4a5b6b; font-size:0.95rem;">(المصدر: المنزل)</span></p>
+      </div>
+    </div>
+
+    <div class="footnote">
+      ✦ 100 جملة هولندية مستخدمة في الحياة اليومية في بلجيكا — مع الترجمة العربية ✦
+    </div>
+  </div>
+</body>
+</html>
