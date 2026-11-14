@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meestal - 100 جملة هولندية بلجيكية مع الترجمة العربية</title>
+<style>
+  :root {
+    --primary: #1e3a5f;
+    --accent: #e85d04;
+    --bg: #f7f9fc;
+    --card: #ffffff;
+    --border: #dce3ec;
+    --text: #1a1a2e;
+    --muted: #5a6a7e;
+    --nl: #0b5394;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, 'Noto Naskh Arabic', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.9;
+    padding: 0 0 60px;
+  }
+  header {
+    background: linear-gradient(135deg, var(--primary), #2c5282);
+    color: #fff;
+    padding: 50px 20px 40px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  header h1 span { color: #ffb703; }
+  header p {
+    font-size: 1.15rem;
+    opacity: 0.92;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-top: 18px;
+    font-size: 0.95rem;
+  }
+  main { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+  .intro-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin: 30px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .intro-card h2 {
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    border-right: 5px solid var(--accent);
+    padding-right: 12px;
+  }
+  .intro-card p { color: var(--muted); font-size: 1.05rem; }
+  .intro-card strong { color: var(--accent); }
+
+.section-title {
+font-size: 1.5rem;
+color: var(--primary);
+margin: 45px 0 20px;
+padding-bottom: 10px;
+border-bottom: 3px solid var(--accent);
+display: inline-block;
+}
+.sentence-list { list-style: none; counter-reset: sent; }
+.sentence-list li {
+counter-increment: sent;
+background: var(--card);
+border: 1px solid var(--border);
+border-radius: 12px;
+padding: 16px 20px 16px 60px;
+margin-bottom: 12px;
+position: relative;
+transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.sentence-list li:hover {
+transform: translateX(-4px);
+box-shadow: 0 4px 16px rgba(30,58,95,0.12);
+border-color: var(--accent);
+}
+.sentence-list li::before {
+content: counter(sent);
+position: absolute;
+left: 16px;
+top: 16px;
+width: 32px;
+height: 32px;
+background: var(--primary);
+color: #fff;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.85rem;
+font-weight: bold;
+}
+.nl {
+display: block;
+color: var(--nl);
+font-weight: 600;
+font-size: 1.08rem;
+direction: ltr;
+text-align: left;
+margin-bottom: 6px;
+font-family: 'Segoe UI', Arial, sans-serif;
+}
+.ar {
+display: block;
+color: var(--text);
+font-size: 1.02rem;
+}
+.note {
+background: #fff8e7;
+border: 1px solid #f0d78c;
+border-right: 5px solid var(--accent);
+border-radius: 12px;
+padding: 22px 26px;
+margin: 40px 0 20px;
+}
+.note h3 {
+color: var(--accent);
+font-size: 1.25rem;
+margin-bottom: 12px;
+}
+.note ul { list-style: none; }
+.note li {
+margin-bottom: 14px;
+padding-bottom: 14px;
+border-bottom: 1px dashed #e8d49a;
+}
+.note li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.note .ex-nl {
+display: block;
+color: var(--nl);
+font-weight: 600;
+direction: ltr;
+text-align: left;
+font-family: 'Segoe UI', Arial, sans-serif;
+}
+.note .ex-ar { display: block; color: var(--muted); }
+.compare {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 14px;
+margin-top: 16px;
+}
+.compare div {
+background: #eef4fb;
+border: 1px solid #c9dbf0;
+border-radius: 10px;
+padding: 14px 18px;
+text-align: center;
+}
+.compare strong {
+display: block;
+color: var(--primary);
+font-size: 1.15rem;
+direction: ltr;
+}
+.compare span { color: var(--muted); font-size: 0.95rem; }
+footer {
+text-align: center;
+color: var(--muted);
+font-size: 0.9rem;
+margin-top: 50px;
+padding-top: 20px;
+border-top: 1px solid var(--border);
+}
+@media (max-width: 600px) {
+header h1 { font-size: 1.7rem; }
+.sentence-list li { padding: 14px 14px 14px 50px; }
+.sentence-list li::before { left: 10px; width: 28px; height: 28px; font-size: 0.75rem; }
+.nl { font-size: 1rem; }
+.ar { font-size: 0.96rem; }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>كلمة <span>Meestal</span> بالهولندي</h1>
+  <p>معناها: عادةً / غالبًا / في معظم الأحيان</p>
+  <p>100 جملة باللهجة الهولندية المستخدمة في بلجيكا (Vlaams) مع الترجمة العربية</p>
+  <div class="badge">🇧🇪 Vlaams &nbsp;•&nbsp; 100 جملة &nbsp;•&nbsp; ترجمة عربية</div>
+</header>
+
+<main>
+
+  <div class="intro-card">
+    <h2>ما معنى Meestal؟</h2>
+    <p>
+      كلمة <strong>Meestal</strong> هي ظرف تكرار في اللغة الهولندية يعني
+      <strong>عادةً / غالبًا / في معظم الأحيان</strong>.
+      تُستخدم للتعبير عن شيء يحدث في أغلب الحالات، وليس دائمًا.
+      في اللهجة الفلمنكية (المستخدمة في بلجيكا) تُستخدم بنفس الطريقة تقريبًا كما في الهولندية القياسية.
+    </p>
+  </div>
+
+  <h2 class="section-title">100 جملة باستخدام Meestal</h2>
+  <ol class="sentence-list">
+    <li><span class="nl">Ik sta meestal om zeven uur op.</span><span class="ar">عادةً أستيقظ الساعة السابعة.</span></li>
+    <li><span class="nl">Ik drink meestal koffie in de ochtend.</span><span class="ar">عادةً أشرب القهوة في الصباح.</span></li>
+    <li><span class="nl">Ik ontbijt meestal thuis.</span><span class="ar">عادةً أتناول الإفطار في البيت.</span></li>
+    <li><span class="nl">Ik ga meestal met de auto naar het werk.</span><span class="ar">عادةً أذهب للعمل بالسيارة.</span></li>
+    <li><span class="nl">Ik kom meestal op tijd.</span><span class="ar">عادةً أصل في الموعد.</span></li>
+    <li><span class="nl">Ik kook meestal zelf.</span><span class="ar">عادةً أطبخ بنفسي.</span></li>
+    <li><span class="nl">Ik eet meestal om twaalf uur.</span><span class="ar">عادةً آكل الساعة الثانية عشرة.</span></li>
+    <li><span class="nl">Ik slaap meestal acht uur.</span><span class="ar">عادةً أنام ثماني ساعات.</span></li>
+    <li><span class="nl">Ik werk meestal overdag.</span><span class="ar">عادةً أعمل خلال النهار.</span></li>
+    <li><span class="nl">Ik ben meestal thuis in de avond.</span><span class="ar">عادةً أكون في البيت مساءً.</span></li>
+    <li><span class="nl">Hij komt meestal te laat.</span><span class="ar">هو عادةً يأتي متأخرًا.</span></li>
+    <li><span class="nl">Zij werkt meestal van maandag tot vrijdag.</span><span class="ar">هي عادةً تعمل من الاثنين إلى الجمعة.</span></li>
+    <li><span class="nl">Mijn vrouw kookt meestal.</span><span class="ar">زوجتي عادةً تطبخ.</span></li>
+    <li><span class="nl">Mijn kinderen spelen meestal buiten.</span><span class="ar">أطفالي عادةً يلعبون في الخارج.</span></li>
+    <li><span class="nl">We eten meestal samen.</span><span class="ar">عادةً نأكل معًا.</span></li>
+    <li><span class="nl">We gaan meestal op zaterdag winkelen.</span><span class="ar">عادةً نذهب للتسوق يوم السبت.</span></li>
+    <li><span class="nl">Ik neem meestal de bus.</span><span class="ar">عادةً أستقل الحافلة.</span></li>
+    <li><span class="nl">Ik wandel meestal na het eten.</span><span class="ar">عادةً أتمشى بعد الطعام.</span></li>
+    <li><span class="nl">Ik luister meestal naar muziek.</span><span class="ar">عادةً أستمع إلى الموسيقى.</span></li>
+    <li><span class="nl">Ik kijk meestal ’s avonds televisie.</span><span class="ar">عادةً أشاهد التلفاز مساءً.</span></li>
+    <li><span class="nl">Het is hier meestal rustig.</span><span class="ar">المكان هنا عادةً هادئ.</span></li>
+    <li><span class="nl">Het regent meestal in de winter.</span><span class="ar">عادةً تمطر في الشتاء.</span></li>
+    <li><span class="nl">De winkels sluiten meestal om zes uur.</span><span class="ar">المحلات عادةً تغلق الساعة السادسة.</span></li>
+    <li><span class="nl">De trein komt meestal op tijd.</span><span class="ar">القطار عادةً يصل في الموعد.</span></li>
+    <li><span class="nl">De bus is meestal druk.</span><span class="ar">الحافلة عادةً مزدحمة.</span></li>
+    <li><span class="nl">De lessen beginnen meestal om negen uur.</span><span class="ar">الدروس عادةً تبدأ الساعة التاسعة.</span></li>
+    <li><span class="nl">Ik ben meestal moe na het werk.</span><span class="ar">عادةً أكون متعبًا بعد العمل.</span></li>
+    <li><span class="nl">Hij is meestal vriendelijk.</span><span class="ar">هو عادةً ودود.</span></li>
+    <li><span class="nl">Zij is meestal optimistisch.</span><span class="ar">هي عادةً متفائلة.</span></li>
+    <li><span class="nl">Mijn baas is meestal tevreden.</span><span class="ar">مديري عادةً راضٍ.</span></li>
+    <li><span class="nl">Ik ga meestal vroeg slapen.</span><span class="ar">عادةً أذهب للنوم مبكرًا.</span></li>
+    <li><span class="nl">Ik sta meestal vroeg op.</span><span class="ar">عادةً أستيقظ مبكرًا.</span></li>
+    <li><span class="nl">Ik sport meestal drie keer per week.</span><span class="ar">عادةً أمارس الرياضة ثلاث مرات أسبوعيًا.</span></li>
+    <li><span class="nl">Ik eet meestal gezond.</span><span class="ar">عادةً أتناول طعامًا صحيًا.</span></li>
+    <li><span class="nl">Ik drink meestal water.</span><span class="ar">عادةً أشرب الماء.</span></li>
+    <li><span class="nl">Ik koop meestal verse groenten.</span><span class="ar">عادةً أشتري الخضروات الطازجة.</span></li>
+    <li><span class="nl">Ik gebruik meestal mijn telefoon.</span><span class="ar">عادةً أستخدم هاتفي.</span></li>
+    <li><span class="nl">Ik betaal meestal met mijn bankkaart.</span><span class="ar">عادةً أدفع ببطاقتي البنكية.</span></li>
+    <li><span class="nl">Ik draag meestal comfortabele kleren.</span><span class="ar">عادةً أرتدي ملابس مريحة.</span></li>
+    <li><span class="nl">Ik lees meestal ’s avonds een boek.</span><span class="ar">عادةً أقرأ كتابًا مساءً.</span></li>
+    <li><span class="nl">Wat doe je meestal in het weekend?</span><span class="ar">ماذا تفعل عادةً في عطلة نهاية الأسبوع؟</span></li>
+    <li><span class="nl">Waar eet je meestal?</span><span class="ar">أين تأكل عادةً؟</span></li>
+    <li><span class="nl">Hoe laat vertrek je meestal?</span><span class="ar">في أي ساعة تغادر عادةً؟</span></li>
+    <li><span class="nl">Wanneer kom je meestal thuis?</span><span class="ar">متى تعود إلى البيت عادةً؟</span></li>
+    <li><span class="nl">Met wie ga je meestal wandelen?</span><span class="ar">مع من تتمشى عادةً؟</span></li>
+    <li><span class="nl">Wat drink je meestal?</span><span class="ar">ماذا تشرب عادةً؟</span></li>
+    <li><span class="nl">Welke bus neem je meestal?</span><span class="ar">أي حافلة تستقل عادةً؟</span></li>
+    <li><span class="nl">Waar koop je meestal boodschappen?</span><span class="ar">أين تشتري احتياجات المنزل عادةً؟</span></li>
+    <li><span class="nl">Hoe ga je meestal naar school?</span><span class="ar">كيف تذهب إلى المدرسة عادةً؟</span></li>
+    <li><span class="nl">Wat eet je meestal als ontbijt?</span><span class="ar">ماذا تأكل عادةً في الإفطار؟</span></li>
+    <li><span class="nl">Ik werk meestal in Kortrijk.</span><span class="ar">عادةً أعمل في كورتريك.</span></li>
+    <li><span class="nl">Ik doe meestal boodschappen in Harelbeke.</span><span class="ar">عادةً أشتري احتياجات المنزل في هارلبكة.</span></li>
+    <li><span class="nl">Ik spreek meestal Nederlands op school.</span><span class="ar">عادةً أتحدث الهولندية في المدرسة.</span></li>
+    <li><span class="nl">Ik oefen meestal thuis.</span><span class="ar">عادةً أتدرب في البيت.</span></li>
+    <li><span class="nl">Ik leer meestal nieuwe woorden.</span><span class="ar">عادةً أتعلم كلمات جديدة.</span></li>
+    <li><span class="nl">Ik maak meestal mijn huiswerk ’s avonds.</span><span class="ar">عادةً أعمل واجبي مساءً.</span></li>
+    <li><span class="nl">De leraar geeft meestal voorbeelden.</span><span class="ar">المعلم عادةً يعطي أمثلة.</span></li>
+    <li><span class="nl">We spreken meestal Nederlands in de klas.</span><span class="ar">عادةً نتحدث الهولندية في الفصل.</span></li>
+    <li><span class="nl">Ik begrijp meestal de uitleg.</span><span class="ar">عادةً أفهم الشرح.</span></li>
+    <li><span class="nl">Ik maak meestal weinig fouten.</span><span class="ar">عادةً أرتكب أخطاء قليلة.</span></li>
+    <li><span class="nl">Ik ben meestal beschikbaar na vijf uur.</span><span class="ar">عادةً أكون متاحًا بعد الخامسة.</span></li>
+    <li><span class="nl">Ik werk meestal acht uur per dag.</span><span class="ar">عادةً أعمل ثماني ساعات يوميًا.</span></li>
+    <li><span class="nl">Mijn collega’s helpen me meestal.</span><span class="ar">زملائي عادةً يساعدونني.</span></li>
+    <li><span class="nl">De vergadering duurt meestal een uur.</span><span class="ar">الاجتماع عادةً يستغرق ساعة.</span></li>
+    <li><span class="nl">Ik begin meestal om acht uur te werken.</span><span class="ar">عادةً أبدأ العمل الساعة الثامنة.</span></li>
+    <li><span class="nl">We hebben meestal veel werk.</span><span class="ar">عادةً يكون لدينا عمل كثير.</span></li>
+    <li><span class="nl">Ik gebruik meestal de computer op het werk.</span><span class="ar">عادةً أستخدم الكمبيوتر في العمل.</span></li>
+    <li><span class="nl">Mijn werkgever betaalt meestal op tijd.</span><span class="ar">صاحب العمل عادةً يدفع في الموعد.</span></li>
+    <li><span class="nl">Ik ben meestal bezig.</span><span class="ar">عادةً أكون مشغولًا.</span></li>
+    <li><span class="nl">Ik neem meestal een korte pauze.</span><span class="ar">عادةً آخذ استراحة قصيرة.</span></li>
+    <li><span class="nl">In België eten mensen meestal om zes uur.</span><span class="ar">في بلجيكا يأكل الناس عادةً الساعة السادسة.</span></li>
+    <li><span class="nl">In de zomer is het meestal warmer.</span><span class="ar">في الصيف يكون الجو عادةً أكثر دفئًا.</span></li>
+    <li><span class="nl">Op zondag zijn de winkels meestal gesloten.</span><span class="ar">يوم الأحد تكون المحلات عادةً مغلقة.</span></li>
+    <li><span class="nl">In de ochtend is het meestal druk op de weg.</span><span class="ar">في الصباح يكون الطريق عادةً مزدحمًا.</span></li>
+    <li><span class="nl">In de winter wordt het meestal vroeg donker.</span><span class="ar">في الشتاء يحل الظلام عادةً مبكرًا.</span></li>
+    <li><span class="nl">Ik ga meestal naar de dokter als ik ziek ben.</span><span class="ar">عادةً أذهب للطبيب عندما أمرض.</span></li>
+    <li><span class="nl">Mijn telefoon staat meestal op stil.</span><span class="ar">هاتفي عادةً يكون على الوضع الصامت.</span></li>
+    <li><span class="nl">Ik parkeer meestal voor het gebouw.</span><span class="ar">عادةً أوقف السيارة أمام المبنى.</span></li>
+    <li><span class="nl">We vertrekken meestal samen.</span><span class="ar">عادةً نغادر معًا.</span></li>
+    <li><span class="nl">Ik betaal meestal contactloos.</span><span class="ar">عادةً أدفع دون تلامس.</span></li>
+    <li><span class="nl">Dat gebeurt meestal niet.</span><span class="ar">هذا لا يحدث عادةً.</span></li>
+    <li><span class="nl">Ik ben meestal niet thuis op maandag.</span><span class="ar">عادةً لا أكون في البيت يوم الاثنين.</span></li>
+    <li><span class="nl">Hij eet meestal geen vlees.</span><span class="ar">هو عادةً لا يأكل اللحوم.</span></li>
+    <li><span class="nl">Ik drink meestal geen frisdrank.</span><span class="ar">عادةً لا أشرب المشروبات الغازية.</span></li>
+    <li><span class="nl">We gaan meestal niet laat slapen.</span><span class="ar">عادةً لا نذهب للنوم متأخرًا.</span></li>
+    <li><span class="nl">Zij komt meestal niet alleen.</span><span class="ar">هي عادةً لا تأتي بمفردها.</span></li>
+    <li><span class="nl">Ik begrijp meestal alles.</span><span class="ar">عادةً أفهم كل شيء.</span></li>
+    <li><span class="nl">Het werkt meestal goed.</span><span class="ar">إنه يعمل جيدًا في معظم الأحيان.</span></li>
+    <li><span class="nl">Dat is meestal geen probleem.</span><span class="ar">هذا عادةً ليس مشكلة.</span></li>
+    <li><span class="nl">Ik vergeet dat meestal niet.</span><span class="ar">عادةً لا أنسى ذلك.</span></li>
+    <li><span class="nl">Meestal ben ik thuis op zondag.</span><span class="ar">غالبًا أكون في البيت يوم الأحد.</span></li>
+    <li><span class="nl">Meestal ga ik met mijn vrouw wandelen.</span><span class="ar">غالبًا أذهب للتمشية مع زوجتي.</span></li>
+    <li><span class="nl">Meestal neem ik mijn lunch mee.</span><span class="ar">غالبًا أحضر غدائي معي.</span></li>
+    <li><span class="nl">Meestal beginnen we om negen uur.</span><span class="ar">غالبًا نبدأ الساعة التاسعة.</span></li>
+    <li><span class="nl">Meestal is het hier heel rustig.</span><span class="ar">غالبًا يكون المكان هنا هادئًا جدًا.</span></li>
+    <li><span class="nl">Meestal doe ik alles zelf.</span><span class="ar">غالبًا أفعل كل شيء بنفسي.</span></li>
+    <li><span class="nl">Meestal heb ik genoeg tijd.</span><span class="ar">غالبًا يكون لدي وقت كافٍ.</span></li>
+    <li><span class="nl">Meestal ga ik met de fiets.</span><span class="ar">غالبًا أذهب بالدراجة.</span></li>
+    <li><span class="nl">Meestal begrijp ik wat ze zeggen.</span><span class="ar">غالبًا أفهم ما يقولونه.</span></li>
+    <li><span class="nl">Meestal probeer ik elke dag Nederlands te spreken.</span><span class="ar">غالبًا أحاول التحدث بالهولندية كل يوم.</span></li>
+  </ol>
+
+  <div class="note">
+    <h3>ملاحظة مهمة: مكان Meestal في الجملة</h3>
+    <ul>
+      <li>
+        <span class="ex-nl">1. في بداية الجملة: Meestal werk ik overdag.</span>
+        <span class="ex-ar">عادةً أعمل خلال النهار.</span>
+      </li>
+      <li>
+        <span class="ex-nl">2. بعد الفعل المصرف: Ik werk meestal overdag.</span>
+        <span class="ex-ar">عادةً أعمل خلال النهار.</span>
+      </li>
+      <li>
+        <span class="ex-nl">3. في السؤال: Werk je meestal op zaterdag?</span>
+        <span class="ex-ar">هل تعمل عادةً يوم السبت؟</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="intro-card">
+    <h2>Meestal = Vaak = Gewoonlijk</h2>
+    <div class="compare">
+      <div><strong>Meestal</strong><span>في معظم الأحيان</span></div>
+      <div><strong>Vaak</strong><span>كثيرًا / غالبًا</span></div>
+      <div><strong>Gewoonlijk</strong><span>عادةً</span></div>
+    </div>
+  </div>
+
+  <footer>
+    جمل هولندية فلمنكية مع الترجمة العربية &nbsp;•&nbsp; Meestal — عادةً / غالبًا / في معظم الأحيان
+  </footer>
+
+</main>
+
+</body>
+</html>
