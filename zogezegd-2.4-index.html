@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zo gezegd 2.1 - فهرس المحتويات والوحدات</title>
+    <!-- استيراد خط Cairo للعربية و Inter للهولندية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- تحميل Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        arabic: ['Cairo', 'sans-serif'],
+                        dutch: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brandPurple: '#6A359C',
+                        brandPurpleDark: '#51247A',
+                        brandYellow: '#F5B800',
+                        brandOrange: '#E06D1B',
+                        brandBg: '#F8F7FC',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #F8F7FC;
+            color: #1F2937;
+        }
+        .dutch-text {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            unicode-bidi: isolate;
+        }
+        /* تأثيرات حركية ناعمة للبطاقات */
+        .unit-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .unit-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(106, 53, 156, 0.12);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-brandPurple selection:text-white">
+
+    <!-- الرأس العلوي (Header) المستوحى من ألوان أغلفة الكتب -->
+    <header class="bg-gradient-to-l from-brandPurple via-brandPurpleDark to-[#3B175C] text-white shadow-lg relative overflow-hidden">
+        <!-- لمسة ديكورية مستوحاة من منحنيات الغلاف -->
+        <div class="absolute -top-24 -left-24 w-72 h-72 bg-brandYellow rounded-full opacity-20 blur-2xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 right-10 w-64 h-64 bg-brandOrange rounded-full opacity-20 blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <span class="inline-block bg-brandYellow text-gray-900 font-bold text-xs sm:text-sm px-3 py-1 rounded-full mb-3 shadow-sm dutch-text">
+                        B1 • Threshold 1 • Pelckmans
+                    </span>
+                    <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight flex flex-wrap items-baseline gap-2">
+                        <span class="dutch-text text-brandYellow">Zo gezegd 2.1</span>
+                        <span class="text-white text-xl sm:text-2xl font-bold">— فهرس الوحدات والمحتويات</span>
+                    </h1>
+                    <p class="mt-2 text-purple-100 text-sm sm:text-base max-w-2xl">
+                        دليل منظم وثنائي اللغة (هولندي / عربي) لوحدات كتابي المحادثة الشفوية والكتابة الشخصية.
+                    </p>
+                </div>
+            </div>
+
+            <!-- شريط البحث وأزرار التصفية -->
+            <div class="mt-6 bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/15 flex flex-col md:flex-row gap-3">
+                <!-- حقل البحث -->
+                <div class="relative flex-1">
+                    <div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-purple-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <input type="text" id="searchInput" placeholder="ابحث بالعربية أو الهولندية (مثال: België، الطقس، 45)..." 
+                        class="w-full bg-white text-gray-800 placeholder-gray-400 rounded-xl pr-10 pl-10 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-brandYellow shadow-inner">
+                    <button id="clearSearch" class="hidden absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400 hover:text-gray-600" title="مسح البحث">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- أزرار التصفية حسب الكتاب -->
+                <div class="flex flex-wrap sm:flex-nowrap gap-2 justify-center" role="group" aria-label="تصفية الكتب">
+                    <button data-filter="all" class="filter-btn active flex-1 sm:flex-none px-4 py-2.5 rounded-xl text-sm font-bold transition-all bg-brandYellow text-gray-900 shadow-sm cursor-pointer">
+                        الكل
+                    </button>
+                    <button data-filter="book1" class="filter-btn flex-1 sm:flex-none px-4 py-2.5 rounded-xl text-sm font-bold transition-all bg-white/15 text-white hover:bg-white/25 cursor-pointer">
+                        المحادثة (Mondeling)
+                    </button>
+                    <button data-filter="book2" class="filter-btn flex-1 sm:flex-none px-4 py-2.5 rounded-xl text-sm font-bold transition-all bg-white/15 text-white hover:bg-white/25 cursor-pointer">
+                        الكتابة (Schriftelijk)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- رسالة في حال عدم وجود نتائج بحث -->
+        <div id="noResults" class="hidden text-center py-14 bg-white rounded-3xl border border-purple-100 shadow-sm px-4">
+            <div class="w-16 h-16 bg-purple-50 text-brandPurple rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">لا توجد نتائج مطابقة لبحثك</h3>
+            <p class="text-gray-500 text-sm mt-1">جرّب البحث بكلمة أخرى أو امسح نص البحث لعرض جميع الوحدات.</p>
+            <button id="resetAllBtn" class="mt-4 px-5 py-2 bg-brandPurple text-white rounded-xl text-sm font-semibold hover:bg-brandPurpleDark transition">
+                عرض كل المحتويات
+            </button>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- الكتاب الأول: Mondeling persoonlijk         -->
+        <!-- ========================================== -->
+        <section id="book1-section" class="book-section space-y-5">
+            <div class="bg-white rounded-2xl p-5 sm:p-6 border-r-4 border-brandPurple shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-100 text-brandPurple">الكتاب الأول</span>
+                        <span class="text-xs font-semibold text-gray-500">المحادثة الشفوية الشخصية</span>
+                    </div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dutch-text">
+                        Zo gezegd 2.1 <span class="text-brandPurple font-semibold">(B1 – Threshold 1 mondeling persoonlijk)</span>
+                    </h2>
+                </div>
+                <div class="text-xs sm:text-sm font-semibold text-brandPurple bg-purple-50 px-3.5 py-2 rounded-xl self-start sm:self-center">
+                    6 وحدات دراسية
+                </div>
+            </div>
+
+            <!-- شبكة وحدات الكتاب الأول -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- الوحدة 1 -->
+                <article class="searchable-item unit-card bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-brandPurple text-white font-bold flex items-center justify-center shrink-0 text-lg shadow-sm dutch-text">
+                        1
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="dutch-text font-bold text-gray-900 text-base sm:text-lg leading-snug">
+                            HOE GOED KEN JE MIJ?
+                        </h3>
+                        <p class="text-gray-600 font-semibold text-sm sm:text-base mt-1.5">
+                            ما مدى معرفتك بي؟
+                        </p>
+                    </div>
+                </article>
+
+                <!-- الوحدة 2 -->
+                <article class="searchable-item unit-card bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-brandPurple text-white font-bold flex items-center justify-center shrink-0 text-lg shadow-sm dutch-text">
+                        2
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="dutch-text font-bold text-gray-900 text-base sm:text-lg leading-snug">
+                            ZO DOE JE DAT!
+                        </h3>
+                        <p class="text-gray-600 font-semibold text-sm sm:text-base mt-1.5">
+                            هكذا تفعل ذلك!
+                        </p>
+                    </div>
+                </article>
+
+                <!-- الوحدة 3 -->
+                <article class="searchable-item unit-card bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-brandPurple text-white font-bold flex items-center justify-center shrink-0 text-lg shadow-sm dutch-text">
+                        3
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="dutch-text font-bold text-gray-900 text-base sm:text-lg leading-snug">
+                            WAT MOET IK DOEN?
+                        </h3>
+                        <p class="text-gray-600 font-semibold text-sm sm:text-base mt-1.5">
+                            ماذا يجب أن أفعل؟
+                        </p>
+                    </div>
+                </article>
+
+                <!-- الوحدة 4 -->
+                <article class="searchable-item unit-card bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-brandPurple text-white font-bold flex items-center justify-center shrink-0 text-lg shadow-sm dutch-text">
+                        4
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="dutch-text font-bold text-gray-900 text-base sm:text-lg leading-snug">
+                            GEZOCHT!
+                        </h3>
+                        <p class="text-gray-600 font-semibold text-sm sm:text-base mt-1.5">
+                            مطلوب! / مفقود!
+                        </p>
+                    </div>
+                </article>
+
+                <!-- الوحدة 5 -->
+                <article class="searchable-item unit-card bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-brandPurple text-white font-bold flex items-center justify-center shrink-0 text-lg shadow-sm dutch-text">
+                        5
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="dutch-text font-bold text-gray-900 text-base sm:text-lg leading-snug">
+                            THUIS IN BELGIË
+                        </h3>
+                        <p class="text-gray-600 font-semibold text-sm sm:text-base mt-1.5">
+                            في بيتي في بلجيكا
+                        </p>
+                    </div>
+                </article>
+
+                <!-- الوحدة 6 -->
+                <article class="searchable-item unit-card bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-brandPurple text-white font-bold flex items-center justify-center shrink-0 text-lg shadow-sm dutch-text">
+                        6
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="dutch-text font-bold text-gray-900 text-base sm:text-lg leading-snug">
+                            ZO ZIJN DE BELGEN EN ZO SPREKEN ZE!
+                        </h3>
+                        <p class="text-gray-600 font-semibold text-sm sm:text-base mt-1.5">
+                            هكذا هم البلجيكيون وهكذا يتحدثون!
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- الكتاب الثاني: Schriftelijk persoonlijk     -->
+        <!-- ========================================== -->
+        <section id="book2-section" class="book-section space-y-6">
+            <div class="bg-white rounded-2xl p-5 sm:p-6 border-r-4 border-brandOrange shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-orange-100 text-brandOrange">الكتاب الثاني</span>
+                        <span class="text-xs font-semibold text-gray-500">الكتابة الشخصية — Inhoudstafel (فهرس المحتويات)</span>
+                    </div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dutch-text">
+                        Zo gezegd 2.1 <span class="text-brandOrange font-semibold">(B1 • Threshold 1 schriftelijk persoonlijk)</span>
+                    </h2>
+                </div>
+                <div class="text-xs sm:text-sm font-semibold text-brandOrange bg-orange-50 px-3.5 py-2 rounded-xl self-start sm:self-center">
+                    7 أجزاء + ملاحق وتدريبات
+                </div>
+            </div>
+
+            <!-- القسم الفرعي 1: الأجزاء الرئيسية (Deel 1 - 7) -->
+            <div class="sub-group space-y-3">
+                <h3 class="text-base sm:text-lg font-bold text-gray-800 flex items-center gap-2 px-1">
+                    <span class="w-2.5 h-2.5 rounded-full bg-brandOrange"></span>
+                    <span>الأجزاء الرئيسية</span>
+                    <span class="text-sm font-medium text-gray-400 dutch-text">(Delen 1 – 7)</span>
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    <!-- Deel 1 -->
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center justify-between gap-3">
+                        <div class="flex items-start gap-3.5 min-w-0">
+                            <span class="px-2.5 py-1 rounded-lg bg-orange-50 text-brandOrange font-bold text-xs sm:text-sm shrink-0 dutch-text border border-orange-200/60">
+                                Deel 1
+                            </span>
+                            <div class="min-w-0">
+                                <h4 class="dutch-text font-bold text-gray-900 text-base leading-snug">Dat maakt mij gelukkig!</h4>
+                                <p class="text-gray-600 text-sm font-semibold mt-1">هذا يجعلني سعيداً!</p>
+                            </div>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">
+                            صـ 9
+                        </span>
+                    </article>
+
+                    <!-- Deel 2 -->
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center justify-between gap-3">
+                        <div class="flex items-start gap-3.5 min-w-0">
+                            <span class="px-2.5 py-1 rounded-lg bg-orange-50 text-brandOrange font-bold text-xs sm:text-sm shrink-0 dutch-text border border-orange-200/60">
+                                Deel 2
+                            </span>
+                            <div class="min-w-0">
+                                <h4 class="dutch-text font-bold text-gray-900 text-base leading-snug">Die wil ik leren kennen!</h4>
+                                <p class="text-gray-600 text-sm font-semibold mt-1">أرغب في التعرّف على هؤلاء!</p>
+                            </div>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">
+                            صـ 23
+                        </span>
+                    </article>
+
+                    <!-- Deel 3 -->
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center justify-between gap-3">
+                        <div class="flex items-start gap-3.5 min-w-0">
+                            <span class="px-2.5 py-1 rounded-lg bg-orange-50 text-brandOrange font-bold text-xs sm:text-sm shrink-0 dutch-text border border-orange-200/60">
+                                Deel 3
+                            </span>
+                            <div class="min-w-0">
+                                <h4 class="dutch-text font-bold text-gray-900 text-base leading-snug">Typisch Belgisch!</h4>
+                                <p class="text-gray-600 text-sm font-semibold mt-1">بلجيكي بامتياز!</p>
+                            </div>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">
+                            صـ 45
+                        </span>
+                    </article>
+
+                    <!-- Deel 4 -->
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center justify-between gap-3">
+                        <div class="flex items-start gap-3.5 min-w-0">
+                            <span class="px-2.5 py-1 rounded-lg bg-orange-50 text-brandOrange font-bold text-xs sm:text-sm shrink-0 dutch-text border border-orange-200/60">
+                                Deel 4
+                            </span>
+                            <div class="min-w-0">
+                                <h4 class="dutch-text font-bold text-gray-900 text-base leading-snug">Wat een weer!</h4>
+                                <p class="text-gray-600 text-sm font-semibold mt-1">يا له من طقس!</p>
+                            </div>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">
+                            صـ 55
+                        </span>
+                    </article>
+
+                    <!-- Deel 5 -->
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center justify-between gap-3">
+                        <div class="flex items-start gap-3.5 min-w-0">
+                            <span class="px-2.5 py-1 rounded-lg bg-orange-50 text-brandOrange font-bold text-xs sm:text-sm shrink-0 dutch-text border border-orange-200/60">
+                                Deel 5
+                            </span>
+                            <div class="min-w-0">
+                                <h4 class="dutch-text font-bold text-gray-900 text-base leading-snug">Ik woon in België</h4>
+                                <p class="text-gray-600 text-sm font-semibold mt-1">أنا أعيش في بلجيكا</p>
+                            </div>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">
+                            صـ 73
+                        </span>
+                    </article>
+
+                    <!-- Deel 6 -->
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center justify-between gap-3">
+                        <div class="flex items-start gap-3.5 min-w-0">
+                            <span class="px-2.5 py-1 rounded-lg bg-orange-50 text-brandOrange font-bold text-xs sm:text-sm shrink-0 dutch-text border border-orange-200/60">
+                                Deel 6
+                            </span>
+                            <div class="min-w-0">
+                                <h4 class="dutch-text font-bold text-gray-900 text-base leading-snug">Zo los je het op!</h4>
+                                <p class="text-gray-600 text-sm font-semibold mt-1">هكذا تحلّها!</p>
+                            </div>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">
+                            صـ 87
+                        </span>
+                    </article>
+
+                    <!-- Deel 7 -->
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center justify-between gap-3 md:col-span-2">
+                        <div class="flex items-start gap-3.5 min-w-0">
+                            <span class="px-2.5 py-1 rounded-lg bg-orange-50 text-brandOrange font-bold text-xs sm:text-sm shrink-0 dutch-text border border-orange-200/60">
+                                Deel 7
+                            </span>
+                            <div class="min-w-0">
+                                <h4 class="dutch-text font-bold text-gray-900 text-base leading-snug">Wat is er gebeurd?</h4>
+                                <p class="text-gray-600 text-sm font-semibold mt-1">ماذا حدث؟</p>
+                            </div>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">
+                            صـ 103
+                        </span>
+                    </article>
+                </div>
+            </div>
+
+            <!-- القسم الفرعي 2: التدريبات والتمارين -->
+            <div class="sub-group space-y-3">
+                <h3 class="text-base sm:text-lg font-bold text-gray-800 flex items-center gap-2 px-1">
+                    <span class="w-2.5 h-2.5 rounded-full bg-brandYellow"></span>
+                    <span>التدريبات والتمارين</span>
+                    <span class="text-sm font-medium text-gray-400 dutch-text">(Training & Oefeningen)</span>
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                            <h4 class="dutch-text font-bold text-gray-900 text-base">Imperfectumtraining</h4>
+                            <p class="text-gray-600 text-sm font-semibold mt-1">تدريب على الماضي الناقص</p>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200/60 px-2.5 py-1 rounded-full">
+                            صـ 115
+                        </span>
+                    </article>
+
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center justify-between gap-3">
+                        <div class="min-w-0">
+                            <h4 class="dutch-text font-bold text-gray-900 text-base">A/B-oefeningen en leescarrousel</h4>
+                            <p class="text-gray-600 text-sm font-semibold mt-1">تمارين A/B ودورة القراءة</p>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200/60 px-2.5 py-1 rounded-full">
+                            صـ 125
+                        </span>
+                    </article>
+                </div>
+            </div>
+
+            <!-- القسم الفرعي 3: الملاحق (Bijlagen) -->
+            <div class="sub-group space-y-3">
+                <div class="flex items-center justify-between px-1">
+                    <h3 class="text-base sm:text-lg font-bold text-gray-800 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brandPurple"></span>
+                        <span>الملاحق والقواعد</span>
+                        <span class="text-sm font-medium text-gray-400 dutch-text">(Bijlagen)</span>
+                    </h3>
+                    <span class="text-xs font-bold text-brandPurple bg-purple-50 px-2.5 py-1 rounded-lg">تبدأ صـ 139</span>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm divide-y divide-gray-100 overflow-hidden">
+                    <!-- ملحق 1 -->
+                    <article class="searchable-item p-4 hover:bg-purple-50/40 transition flex items-center justify-between gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 min-w-0">
+                            <span class="dutch-text font-bold text-gray-900 text-sm sm:text-base">Schrijfregel</span>
+                            <span class="hidden sm:inline text-gray-300">•</span>
+                            <span class="text-gray-600 text-sm font-medium">قاعدة الكتابة</span>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">صـ 139</span>
+                    </article>
+
+                    <!-- ملحق 2 -->
+                    <article class="searchable-item p-4 hover:bg-purple-50/40 transition flex items-center justify-between gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 min-w-0">
+                            <span class="dutch-text font-bold text-gray-900 text-sm sm:text-base">Zinsconstructies</span>
+                            <span class="hidden sm:inline text-gray-300">•</span>
+                            <span class="text-gray-600 text-sm font-medium">تراكيب الجمل</span>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">صـ 140</span>
+                    </article>
+
+                    <!-- ملحق 3 -->
+                    <article class="searchable-item p-4 hover:bg-purple-50/40 transition flex items-center justify-between gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 min-w-0">
+                            <span class="dutch-text font-bold text-gray-900 text-sm sm:text-base">Correctiesymbolen schrijfvaardigheid</span>
+                            <span class="hidden sm:inline text-gray-300">•</span>
+                            <span class="text-gray-600 text-sm font-medium">رموز تصحيح مهارة الكتابة</span>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">صـ 142</span>
+                    </article>
+
+                    <!-- ملحق 4 -->
+                    <article class="searchable-item p-4 hover:bg-purple-50/40 transition flex items-center justify-between gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 min-w-0">
+                            <span class="dutch-text font-bold text-gray-900 text-sm sm:text-base">Theorie perfectum</span>
+                            <span class="hidden sm:inline text-gray-300">•</span>
+                            <span class="text-gray-600 text-sm font-medium">نظرية زمن الماضي التام</span>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">صـ 143</span>
+                    </article>
+
+                    <!-- ملحق 5 -->
+                    <article class="searchable-item p-4 hover:bg-purple-50/40 transition flex items-center justify-between gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 min-w-0">
+                            <span class="dutch-text font-bold text-gray-900 text-sm sm:text-base">Theorie imperfectum</span>
+                            <span class="hidden sm:inline text-gray-300">•</span>
+                            <span class="text-gray-600 text-sm font-medium">نظرية زمن الماضي الناقص</span>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">صـ 145</span>
+                    </article>
+
+                    <!-- ملحق 6 -->
+                    <article class="searchable-item p-4 hover:bg-purple-50/40 transition flex items-center justify-between gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 min-w-0">
+                            <span class="dutch-text font-bold text-gray-900 text-sm sm:text-base">Lijst irreguliere verba</span>
+                            <span class="hidden sm:inline text-gray-300">•</span>
+                            <span class="text-gray-600 text-sm font-medium">قائمة الأفعال الشاذة</span>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">صـ 147</span>
+                    </article>
+
+                    <!-- ملحق 7 -->
+                    <article class="searchable-item p-4 hover:bg-purple-50/40 transition flex items-center justify-between gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 min-w-0">
+                            <span class="dutch-text font-bold text-gray-900 text-sm sm:text-base">Weerposter</span>
+                            <span class="hidden sm:inline text-gray-300">•</span>
+                            <span class="text-gray-600 text-sm font-medium">ملصق الطقس</span>
+                        </div>
+                        <span class="shrink-0 text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">صـ 150</span>
+                    </article>
+                </div>
+            </div>
+
+            <!-- القسم الفرعي 4: ملف الإنجاز والبطاقات الدوارة -->
+            <div class="sub-group space-y-3">
+                <h3 class="text-base sm:text-lg font-bold text-gray-800 flex items-center gap-2 px-1">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span>ملف الإنجاز والبطاقات التعليمية</span>
+                    <span class="text-sm font-medium text-gray-400 dutch-text">(Portfolio & Draaikaartjes)</span>
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex flex-col justify-between gap-3">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                                <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">ملف الإنجاز</span>
+                                <span class="text-xs font-bold text-gray-500">صـ 151</span>
+                            </div>
+                            <h4 class="dutch-text font-bold text-gray-900 text-base">Taalportfolio</h4>
+                            <p class="text-gray-600 text-sm font-semibold mt-1">ملف الإنجاز اللغوي</p>
+                        </div>
+                    </article>
+
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex flex-col justify-between gap-3">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                                <span class="text-xs font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-md">بطاقات دوّارة</span>
+                                <span class="text-xs font-bold text-gray-500">صـ 157</span>
+                            </div>
+                            <h4 class="dutch-text font-bold text-gray-900 text-base">Draaikaartjes: imperfectum</h4>
+                            <p class="text-gray-600 text-sm font-semibold mt-1">بطاقات دوّارة: الماضي الناقص</p>
+                        </div>
+                    </article>
+
+                    <article class="searchable-item unit-card bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex flex-col justify-between gap-3">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                                <span class="text-xs font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-md">بطاقات دوّارة</span>
+                                <span class="text-xs font-bold text-gray-500">صـ 161</span>
+                            </div>
+                            <h4 class="dutch-text font-bold text-gray-900 text-base">Draaikaartjes: zinsconstructies</h4>
+                            <p class="text-gray-600 text-sm font-semibold mt-1">بطاقات دوّارة: تراكيب الجمل</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-white border-t border-gray-200/80 py-6 mt-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm text-gray-500">
+            <p class="dutch-text font-medium">Zo gezegd 2.1 • B1 Threshold 1 (Nederlands - العربية)</p>
+            <p>تصميم متجاوب لتسهيل مراجعة وحدات المنهج</p>
+        </div>
+    </footer>
+
+    <!-- منطق البحث والتصفية التفاعلي -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const clearSearchBtn = document.getElementById('clearSearch');
+            const resetAllBtn = document.getElementById('resetAllBtn');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const book1Section = document.getElementById('book1-section');
+            const book2Section = document.getElementById('book2-section');
+            const noResults = document.getElementById('noResults');
+
+            let currentFilter = 'all';
+
+            // تحديث مظهر أزرار التصفية وتطبيق الفلتر
+            function updateFilterButtons(selectedFilter) {
+                filterBtns.forEach(btn => {
+                    if (btn.dataset.filter === selectedFilter) {
+                        btn.classList.remove('bg-white/15', 'text-white', 'hover:bg-white/25');
+                        btn.classList.add('bg-brandYellow', 'text-gray-900', 'shadow-sm');
+                    } else {
+                        btn.classList.remove('bg-brandYellow', 'text-gray-900', 'shadow-sm');
+                        btn.classList.add('bg-white/15', 'text-white', 'hover:bg-white/25');
+                    }
+                });
+            }
+
+            // دالة التصفية الشاملة (حسب الكتاب + نص البحث)
+            function applyFilters() {
+                const query = searchInput.value.trim().toLowerCase();
+
+                // إظهار أو إخفاء زر مسح البحث
+                if (query.length > 0) {
+                    clearSearchBtn.classList.remove('hidden');
+                } else {
+                    clearSearchBtn.classList.add('hidden');
+                }
+
+                // تحديد الكتب المسموح بعرضها حسب التبويب المختار
+                const showBook1Tab = (currentFilter === 'all' || currentFilter === 'book1');
+                const showBook2Tab = (currentFilter === 'all' || currentFilter === 'book2');
+
+                let totalVisibleItems = 0;
+
+                // معالجة الكتاب الأول
+                if (showBook1Tab) {
+                    const items1 = book1Section.querySelectorAll('.searchable-item');
+                    let visibleInBook1 = 0;
+                    items1.forEach(item => {
+                        const text = item.textContent.toLowerCase();
+                        if (text.includes(query)) {
+                            item.classList.remove('hidden');
+                            visibleInBook1++;
+                            totalVisibleItems++;
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                    book1Section.classList.toggle('hidden', visibleInBook1 === 0);
+                } else {
+                    book1Section.classList.add('hidden');
+                }
+
+                // معالجة الكتاب الثاني وأقسامه الفرعية
+                if (showBook2Tab) {
+                    const subGroups = book2Section.querySelectorAll('.sub-group');
+                    let visibleInBook2 = 0;
+
+                    subGroups.forEach(group => {
+                        const items = group.querySelectorAll('.searchable-item');
+                        let visibleInGroup = 0;
+                        items.forEach(item => {
+                            const text = item.textContent.toLowerCase();
+                            if (text.includes(query)) {
+                                item.classList.remove('hidden');
+                                visibleInGroup++;
+                                visibleInBook2++;
+                                totalVisibleItems++;
+                            } else {
+                                item.classList.add('hidden');
+                            }
+                        });
+                        // إخفاء العنوان الفرعي إذا لم يكن به نتائج
+                        group.classList.toggle('hidden', visibleInGroup === 0);
+                    });
+
+                    book2Section.classList.toggle('hidden', visibleInBook2 === 0);
+                } else {
+                    book2Section.classList.add('hidden');
+                }
+
+                // إظهار رسالة "لا توجد نتائج" عند الحاجة
+                noResults.classList.toggle('hidden', totalVisibleItems > 0);
+            }
+
+            // الاستماع لأحداث البحث
+            searchInput.addEventListener('input', applyFilters);
+
+            // زر مسح البحث
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                searchInput.focus();
+                applyFilters();
+            });
+
+            // زر إعادة الضبط من رسالة عدم وجود نتائج
+            resetAllBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                currentFilter = 'all';
+                updateFilterButtons('all');
+                applyFilters();
+            });
+
+            // الاستماع لأزرار التصفية
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentFilter = btn.dataset.filter;
+                    updateFilterButtons(currentFilter);
+                    applyFilters();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
