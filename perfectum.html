@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أشهر 100 فعل هولندي في زمن Perfectum</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, 'Arial', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+        line-height: 1.7;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        overflow: hidden;
+    }
+
+    header {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: #fff;
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    header p {
+        font-size: 1.1em;
+        opacity: 0.95;
+    }
+
+    .content {
+        padding: 30px;
+    }
+
+    .section {
+        margin-bottom: 45px;
+    }
+
+    .section h2 {
+        color: #1e3c72;
+        font-size: 1.6em;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #667eea;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section h2::before {
+        content: "◆";
+        color: #764ba2;
+        font-size: 0.8em;
+    }
+
+    .rule-box {
+        background: #f0f4ff;
+        border-right: 5px solid #667eea;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .rule-box p {
+        margin-bottom: 10px;
+        font-size: 1.05em;
+    }
+
+    .rule-box strong {
+        color: #1e3c72;
+    }
+
+    .example-box {
+        background: #fff8e1;
+        border-right: 5px solid #ffb300;
+        padding: 15px 20px;
+        border-radius: 10px;
+        margin: 10px 0;
+    }
+
+    .example-box .nl {
+        color: #1e3c72;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+
+    .example-box .ar {
+        color: #555;
+        font-size: 1em;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    thead {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: #fff;
+    }
+
+    th {
+        padding: 14px 12px;
+        text-align: right;
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+    td {
+        padding: 11px 12px;
+        border-bottom: 1px solid #e8e8e8;
+        font-size: 0.98em;
+    }
+
+    tbody tr:nth-child(even) {
+        background: #f8f9ff;
+    }
+
+    tbody tr:hover {
+        background: #e8eeff;
+        transition: background 0.2s;
+    }
+
+    tbody tr:nth-child(1) td:first-child,
+    tbody tr:nth-child(2) td:first-child,
+    tbody tr:nth-child(3) td:first-child {
+        background: #ffe0e0;
+    }
+
+    .num {
+        text-align: center;
+        font-weight: bold;
+        color: #764ba2;
+        width: 50px;
+    }
+
+    .inf {
+        font-weight: 600;
+        color: #1e3c72;
+    }
+
+    .perf {
+        color: #2a5298;
+        font-style: italic;
+    }
+
+    .ar {
+        color: #333;
+    }
+
+    .note {
+        background: #e8f5e9;
+        border-right: 5px solid #43a047;
+        padding: 15px 20px;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .note strong {
+        color: #2e7d32;
+    }
+
+    .irregular-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        margin-top: 15px;
+    }
+
+    .irregular-item {
+        background: #fff;
+        border: 2px solid #ffcdd2;
+        border-radius: 8px;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .irregular-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .irregular-item .arrow {
+        color: #e53935;
+        font-weight: bold;
+    }
+
+    .regular-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        margin-top: 15px;
+    }
+
+    .regular-item {
+        background: #fff;
+        border: 2px solid #bbdefb;
+        border-radius: 8px;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .regular-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .regular-item .arrow {
+        color: #1976d2;
+        font-weight: bold;
+    }
+
+    .tip-box {
+        background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        border-right: 5px solid #ff9800;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .tip-box h3 {
+        color: #e65100;
+        margin-bottom: 10px;
+    }
+
+    .tip-box ul {
+        padding-right: 20px;
+    }
+
+    .tip-box li {
+        margin-bottom: 8px;
+    }
+
+    .badge {
+        display: inline-block;
+        background: #667eea;
+        color: #fff;
+        padding: 3px 10px;
+        border-radius: 15px;
+        font-size: 0.8em;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+
+    .badge.blue { background: #1976d2; }
+    .badge.red { background: #e53935; }
+    .badge.green { background: #43a047; }
+    .badge.orange { background: #fb8c00; }
+
+    @media (max-width: 768px) {
+        body { padding: 10px; }
+        header h1 { font-size: 1.5em; }
+        .content { padding: 15px; }
+        th, td { padding: 8px 6px; font-size: 0.85em; }
+        .section h2 { font-size: 1.3em; }
+        .irregular-list, .regular-list { grid-template-columns: 1fr; }
+    }
+
+    .scroll-top {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        background: #1e3c72;
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+        cursor: pointer;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        transition: background 0.3s, transform 0.3s;
+        text-decoration: none;
+    }
+
+    .scroll-top:hover {
+        background: #764ba2;
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🇳🇱 أشهر 100 فعل هولندي في زمن Perfectum</h1>
+        <p>Voltooid Tegenwoordige Tijd (VTT) – الماضي المستخدم في الكلام اليومي</p>
+    </header>
+
+    <div class="content">
+
+        <!-- القسم الأول: القاعدة -->
+        <section class="section">
+            <h2>أولاً: أهم قاعدة</h2>
+            <div class="rule-box">
+                <p>يتكوّن الـ <strong>Perfectum</strong> من:</p>
+                <p>🔹 <strong>hebben + voltooid deelwoord</strong></p>
+                <p>🔹 <strong>zijn + voltooid deelwoord</strong></p>
+            </div>
+            <div class="example-box">
+                <span class="nl">Ik heb gewerkt</span> = <span class="ar">أنا عملت</span>
+            </div>
+            <div class="example-box">
+                <span class="nl">Ik ben gegaan</span> = <span class="ar">أنا ذهبت</span>
+            </div>
+        </section>
+
+        <!-- القسم الثاني: الجدول -->
+        <section class="section">
+            <h2>أشهر 100 فعل في Perfectum</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Infinitief</th>
+                        <th>Perfectum</th>
+                        <th>الترجمة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="num">1</td><td class="inf">zijn</td><td class="perf">is geweest</td><td class="ar">كان</td></tr>
+                    <tr><td class="num">2</td><td class="inf">hebben</td><td class="perf">heeft gehad</td><td class="ar">امتلك / كان لديه</td></tr>
+                    <tr><td class="num">3</td><td class="inf">doen</td><td class="perf">heeft gedaan</td><td class="ar">فعل</td></tr>
+                    <tr><td class="num">4</td><td class="inf">gaan</td><td class="perf">is gegaan</td><td class="ar">ذهب</td></tr>
+                    <tr><td class="num">5</td><td class="inf">komen</td><td class="perf">is gekomen</td><td class="ar">جاء</td></tr>
+                    <tr><td class="num">6</td><td class="inf">zien</td><td class="perf">heeft gezien</td><td class="ar">رأى</td></tr>
+                    <tr><td class="num">7</td><td class="inf">maken</td><td class="perf">heeft gemaakt</td><td class="ar">صنع</td></tr>
+                    <tr><td class="num">8</td><td class="inf">werken</td><td class="perf">heeft gewerkt</td><td class="ar">عمل</td></tr>
+                    <tr><td class="num">9</td><td class="inf">wonen</td><td class="perf">heeft gewoond</td><td class="ar">سكن</td></tr>
+                    <tr><td class="num">10</td><td class="inf">leren</td><td class="perf">heeft geleerd</td><td class="ar">تعلّم</td></tr>
+                    <tr><td class="num">11</td><td class="inf">spreken</td><td class="perf">heeft gesproken</td><td class="ar">تكلّم</td></tr>
+                    <tr><td class="num">12</td><td class="inf">zeggen</td><td class="perf">heeft gezegd</td><td class="ar">قال</td></tr>
+                    <tr><td class="num">13</td><td class="inf">vragen</td><td class="perf">heeft gevraagd</td><td class="ar">سأل</td></tr>
+                    <tr><td class="num">14</td><td class="inf">antwoorden</td><td class="perf">heeft geantwoord</td><td class="ar">أجاب</td></tr>
+                    <tr><td class="num">15</td><td class="inf">geven</td><td class="perf">heeft gegeven</td><td class="ar">أعطى</td></tr>
+                    <tr><td class="num">16</td><td class="inf">nemen</td><td class="perf">heeft genomen</td><td class="ar">أخذ</td></tr>
+                    <tr><td class="num">17</td><td class="inf">krijgen</td><td class="perf">heeft gekregen</td><td class="ar">حصل على</td></tr>
+                    <tr><td class="num">18</td><td class="inf">vinden</td><td class="perf">heeft gevonden</td><td class="ar">وجد</td></tr>
+                    <tr><td class="num">19</td><td class="inf">denken</td><td class="perf">heeft gedacht</td><td class="ar">فكّر</td></tr>
+                    <tr><td class="num">20</td><td class="inf">weten</td><td class="perf">heeft geweten</td><td class="ar">عرف</td></tr>
+                    <tr><td class="num">21</td><td class="inf">kennen</td><td class="perf">heeft gekend</td><td class="ar">عرف شخصاً</td></tr>
+                    <tr><td class="num">22</td><td class="inf">begrijpen</td><td class="perf">heeft begrepen</td><td class="ar">فهم</td></tr>
+                    <tr><td class="num">23</td><td class="inf">schrijven</td><td class="perf">heeft geschreven</td><td class="ar">كتب</td></tr>
+                    <tr><td class="num">24</td><td class="inf">lezen</td><td class="perf">heeft gelezen</td><td class="ar">قرأ</td></tr>
+                    <tr><td class="num">25</td><td class="inf">luisteren</td><td class="perf">heeft geluisterd</td><td class="ar">استمع</td></tr>
+                    <tr><td class="num">26</td><td class="inf">horen</td><td class="perf">heeft gehoord</td><td class="ar">سمع</td></tr>
+                    <tr><td class="num">27</td><td class="inf">kijken</td><td class="perf">heeft gekeken</td><td class="ar">شاهد</td></tr>
+                    <tr><td class="num">28</td><td class="inf">eten</td><td class="perf">heeft gegeten</td><td class="ar">أكل</td></tr>
+                    <tr><td class="num">29</td><td class="inf">drinken</td><td class="perf">heeft gedronken</td><td class="ar">شرب</td></tr>
+                    <tr><td class="num">30</td><td class="inf">slapen</td><td class="perf">heeft geslapen</td><td class="ar">نام</td></tr>
+                    <tr><td class="num">31</td><td class="inf">kopen</td><td class="perf">heeft gekocht</td><td class="ar">اشترى</td></tr>
+                    <tr><td class="num">32</td><td class="inf">verkopen</td><td class="perf">heeft verkocht</td><td class="ar">باع</td></tr>
+                    <tr><td class="num">33</td><td class="inf">betalen</td><td class="perf">heeft betaald</td><td class="ar">دفع</td></tr>
+                    <tr><td class="num">34</td><td class="inf">gebruiken</td><td class="perf">heeft gebruikt</td><td class="ar">استخدم</td></tr>
+                    <tr><td class="num">35</td><td class="inf">zoeken</td><td class="perf">heeft gezocht</td><td class="ar">بحث</td></tr>
+                    <tr><td class="num">36</td><td class="inf">proberen</td><td class="perf">heeft geprobeerd</td><td class="ar">حاول</td></tr>
+                    <tr><td class="num">37</td><td class="inf">beginnen</td><td class="perf">is begonnen</td><td class="ar">بدأ</td></tr>
+                    <tr><td class="num">38</td><td class="inf">stoppen</td><td class="perf">is gestopt</td><td class="ar">توقف</td></tr>
+                    <tr><td class="num">39</td><td class="inf">blijven</td><td class="perf">is gebleven</td><td class="ar">بقي</td></tr>
+                    <tr><td class="num">40</td><td class="inf">worden</td><td class="perf">is geworden</td><td class="ar">أصبح</td></tr>
+                    <tr><td class="num">41</td><td class="inf">vertrekken</td><td class="perf">is vertrokken</td><td class="ar">غادر</td></tr>
+                    <tr><td class="num">42</td><td class="inf">aankomen</td><td class="perf">is aangekomen</td><td class="ar">وصل</td></tr>
+                    <tr><td class="num">43</td><td class="inf">vertrekken</td><td class="perf">is vertrokken</td><td class="ar">انطلق</td></tr>
+                    <tr><td class="num">44</td><td class="inf">terugkomen</td><td class="perf">is teruggekomen</td><td class="ar">عاد</td></tr>
+                    <tr><td class="num">45</td><td class="inf">opstaan</td><td class="perf">is opgestaan</td><td class="ar">استيقظ / نهض</td></tr>
+                    <tr><td class="num">46</td><td class="inf">zitten</td><td class="perf">heeft gezeten</td><td class="ar">جلس</td></tr>
+                    <tr><td class="num">47</td><td class="inf">staan</td><td class="perf">heeft gestaan</td><td class="ar">وقف</td></tr>
+                    <tr><td class="num">48</td><td class="inf">liggen</td><td class="perf">heeft gelegen</td><td class="ar">استلقى</td></tr>
+                    <tr><td class="num">49</td><td class="inf">lopen</td><td class="perf">heeft gelopen</td><td class="ar">مشى</td></tr>
+                    <tr><td class="num">50</td><td class="inf">fietsen</td><td class="perf">is gefietst</td><td class="ar">ركب الدراجة</td></tr>
+                    <tr><td class="num">51</td><td class="inf">rijden</td><td class="perf">heeft gereden</td><td class="ar">قاد</td></tr>
+                    <tr><td class="num">52</td><td class="inf">reizen</td><td class="perf">heeft gereisd</td><td class="ar">سافر</td></tr>
+                    <tr><td class="num">53</td><td class="inf">vliegen</td><td class="perf">heeft gevlogen</td><td class="ar">طار</td></tr>
+                    <tr><td class="num">54</td><td class="inf">zwemmen</td><td class="perf">heeft gezwommen</td><td class="ar">سبح</td></tr>
+                    <tr><td class="num">55</td><td class="inf">wandelen</td><td class="perf">heeft gewandeld</td><td class="ar">تمشّى</td></tr>
+                    <tr><td class="num">56</td><td class="inf">ontmoeten</td><td class="perf">heeft ontmoet</td><td class="ar">قابل</td></tr>
+                    <tr><td class="num">57</td><td class="inf">helpen</td><td class="perf">heeft geholpen</td><td class="ar">ساعد</td></tr>
+                    <tr><td class="num">58</td><td class="inf">wachten</td><td class="perf">heeft gewacht</td><td class="ar">انتظر</td></tr>
+                    <tr><td class="num">59</td><td class="inf">bellen</td><td class="perf">heeft gebeld</td><td class="ar">اتصل</td></tr>
+                    <tr><td class="num">60</td><td class="inf">sturen</td><td class="perf">heeft gestuurd</td><td class="ar">أرسل</td></tr>
+                    <tr><td class="num">61</td><td class="inf">ontvangen</td><td class="perf">heeft ontvangen</td><td class="ar">استلم</td></tr>
+                    <tr><td class="num">62</td><td class="inf">vergeten</td><td class="perf">heeft vergeten</td><td class="ar">نسي</td></tr>
+                    <tr><td class="num">63</td><td class="inf">verliezen</td><td class="perf">heeft verloren</td><td class="ar">خسر</td></tr>
+                    <tr><td class="num">64</td><td class="inf">winnen</td><td class="perf">heeft gewonnen</td><td class="ar">فاز</td></tr>
+                    <tr><td class="num">65</td><td class="inf">kiezen</td><td class="perf">heeft gekozen</td><td class="ar">اختار</td></tr>
+                    <tr><td class="num">66</td><td class="inf">dragen</td><td class="perf">heeft gedragen</td><td class="ar">حمل / ارتدى</td></tr>
+                    <tr><td class="num">67</td><td class="inf">trekken</td><td class="perf">heeft getrokken</td><td class="ar">سحب</td></tr>
+                    <tr><td class="num">68</td><td class="inf">brengen</td><td class="perf">heeft gebracht</td><td class="ar">أحضر</td></tr>
+                    <tr><td class="num">69</td><td class="inf">halen</td><td class="perf">heeft gehaald</td><td class="ar">جلب</td></tr>
+                    <tr><td class="num">70</td><td class="inf">laten</td><td class="perf">heeft gelaten</td><td class="ar">ترك / سمح</td></tr>
+                    <tr><td class="num">71</td><td class="inf">zetten</td><td class="perf">heeft gezet</td><td class="ar">وضع</td></tr>
+                    <tr><td class="num">72</td><td class="inf">leggen</td><td class="perf">heeft gelegd</td><td class="ar">وضع</td></tr>
+                    <tr><td class="num">73</td><td class="inf">openen</td><td class="perf">heeft geopend</td><td class="ar">فتح</td></tr>
+                    <tr><td class="num">74</td><td class="inf">sluiten</td><td class="perf">heeft gesloten</td><td class="ar">أغلق</td></tr>
+                    <tr><td class="num">75</td><td class="inf">wassen</td><td class="perf">heeft gewassen</td><td class="ar">غسل</td></tr>
+                    <tr><td class="num">76</td><td class="inf">schoonmaken</td><td class="perf">heeft schoongemaakt</td><td class="ar">نظّف</td></tr>
+                    <tr><td class="num">77</td><td class="inf">koken</td><td class="perf">heeft gekookt</td><td class="ar">طبخ</td></tr>
+                    <tr><td class="num">78</td><td class="inf">bakken</td><td class="perf">heeft gebakken</td><td class="ar">خبز / قلي</td></tr>
+                    <tr><td class="num">79</td><td class="inf">snijden</td><td class="perf">heeft gesneden</td><td class="ar">قطع</td></tr>
+                    <tr><td class="num">80</td><td class="inf">beginnen</td><td class="perf">is begonnen</td><td class="ar">بدأ</td></tr>
+                    <tr><td class="num">81</td><td class="inf">vergeten</td><td class="perf">heeft vergeten</td><td class="ar">نسي</td></tr>
+                    <tr><td class="num">82</td><td class="inf">ontmoeten</td><td class="perf">heeft ontmoet</td><td class="ar">التقى</td></tr>
+                    <tr><td class="num">83</td><td class="inf">vertellen</td><td class="perf">heeft verteld</td><td class="ar">حكى</td></tr>
+                    <tr><td class="num">84</td><td class="inf">uitleggen</td><td class="perf">heeft uitgelegd</td><td class="ar">شرح</td></tr>
+                    <tr><td class="num">85</td><td class="inf">betekenen</td><td class="perf">heeft betekend</td><td class="ar">عنى</td></tr>
+                    <tr><td class="num">86</td><td class="inf">veranderen</td><td class="perf">heeft veranderd</td><td class="ar">غيّر</td></tr>
+                    <tr><td class="num">87</td><td class="inf">gebeuren</td><td class="perf">is gebeurd</td><td class="ar">حدث</td></tr>
+                    <tr><td class="num">88</td><td class="inf">voelen</td><td class="perf">heeft gevoeld</td><td class="ar">شعر</td></tr>
+                    <tr><td class="num">89</td><td class="inf">lachen</td><td class="perf">heeft gelachen</td><td class="ar">ضحك</td></tr>
+                    <tr><td class="num">90</td><td class="inf">huilen</td><td class="perf">heeft gehuild</td><td class="ar">بكى</td></tr>
+                    <tr><td class="num">91</td><td class="inf">hopen</td><td class="perf">heeft gehoopt</td><td class="ar">أمِل</td></tr>
+                    <tr><td class="num">92</td><td class="inf">geloven</td><td class="perf">heeft geloofd</td><td class="ar">صدّق / آمن</td></tr>
+                    <tr><td class="num">93</td><td class="inf">wensen</td><td class="perf">heeft gewenst</td><td class="ar">تمنى</td></tr>
+                    <tr><td class="num">94</td><td class="inf">missen</td><td class="perf">heeft gemist</td><td class="ar">افتقد</td></tr>
+                    <tr><td class="num">95</td><td class="inf">bestellen</td><td class="perf">heeft besteld</td><td class="ar">طلب</td></tr>
+                    <tr><td class="num">96</td><td class="inf">huren</td><td class="perf">heeft gehuurd</td><td class="ar">استأجر</td></tr>
+                    <tr><td class="num">97</td><td class="inf">reserveren</td><td class="perf">heeft gereserveerd</td><td class="ar">حجز</td></tr>
+                    <tr><td class="num">98</td><td class="inf">opruimen</td><td class="perf">heeft opgeruimd</td><td class="ar">رتّب</td></tr>
+                    <tr><td class="num">99</td><td class="inf">meenemen</td><td class="perf">heeft meegenomen</td><td class="ar">أخذ معه</td></tr>
+                    <tr><td class="num">100</td><td class="inf">uitgaan</td><td class="perf">is uitgegaan</td><td class="ar">خرج للتنزه</td></tr>
+                </tbody>
+            </table>
+
+            <div class="note">
+                <strong>📌 ملاحظة:</strong> بعض الأفعال مثل <strong>rijden</strong> و<strong>lopen</strong> يمكن أن تستخدم مع <strong>hebben</strong> أو <strong>zijn</strong> حسب المعنى والسياق.
+            </div>
+        </section>
+
+        <!-- القسم الثالث: أمثلة مهمة -->
+        <section class="section">
+            <h2>ثانياً: أمثلة مهمة في الحياة اليومية ببلجيكا</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nederlands</th>
+                        <th>العربية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="perf">Ik heb gewerkt.</td><td class="ar">أنا عملت.</td></tr>
+                    <tr><td class="perf">Ik ben naar huis gegaan.</td><td class="ar">ذهبت إلى المنزل.</td></tr>
+                    <tr><td class="perf">Ik heb Nederlands geleerd.</td><td class="ar">تعلمت الهولندية.</td></tr>
+                    <tr><td class="perf">Ik heb boodschappen gedaan.</td><td class="ar">تسوقت.</td></tr>
+                    <tr><td class="perf">Ik heb gegeten.</td><td class="ar">أكلت.</td></tr>
+                    <tr><td class="perf">Ik heb mijn vrouw gebeld.</td><td class="ar">اتصلت بزوجتي.</td></tr>
+                    <tr><td class="perf">Ik ben laat aangekomen.</td><td class="ar">وصلت متأخراً.</td></tr>
+                    <tr><td class="perf">Ik heb niets begrepen.</td><td class="ar">لم أفهم شيئاً.</td></tr>
+                    <tr><td class="perf">Ik ben thuis gebleven.</td><td class="ar">بقيت في المنزل.</td></tr>
+                    <tr><td class="perf">Ik heb een nieuwe baan gevonden.</td><td class="ar">وجدت عملاً جديداً.</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- القسم الرابع: قاعدة الحفظ -->
+        <section class="section">
+            <h2>ثالثاً: قاعدة مهمة لحفظ التصريف</h2>
+
+            <h3 style="color: #1976d2; margin-bottom: 10px;">🟦 الأفعال المنتظمة (Regelmatige werkwoorden)</h3>
+            <div class="regular-list">
+                <div class="regular-item"><span>werken</span><span class="arrow">→</span><span>gewerkt</span></div>
+                <div class="regular-item"><span>maken</span><span class="arrow">→</span><span>gemaakt</span></div>
+                <div class="regular-item"><span>leren</span><span class="arrow">→</span><span>geleerd</span></div>
+                <div class="regular-item"><span>wonen</span><span class="arrow">→</span><span>gewoond</span></div>
+            </div>
+
+            <h3 style="color: #e53935; margin: 25px 0 10px;">🟥 الأفعال غير المنتظمة (Onregelmatige werkwoorden)</h3>
+            <div class="irregular-list">
+                <div class="irregular-item"><span>gaan</span><span class="arrow">→</span><span>gegaan</span></div>
+                <div class="irregular-item"><span>zien</span><span class="arrow">→</span><span>gezien</span></div>
+                <div class="irregular-item"><span>schrijven</span><span class="arrow">→</span><span>geschreven</span></div>
+                <div class="irregular-item"><span>spreken</span><span class="arrow">→</span><span>gesproken</span></div>
+                <div class="irregular-item"><span>eten</span><span class="arrow">→</span><span>gegeten</span></div>
+                <div class="irregular-item"><span>drinken</span><span class="arrow">→</span><span>gedronken</span></div>
+            </div>
+
+            <div class="tip-box">
+                <h3>💡 نصيحتي</h3>
+                <p>احفظ كل يوم <strong>10 أفعال</strong>، لكن احفظ الفعل في ثلاث صور معاً:</p>
+                <ul>
+                    <li><span class="badge blue">Infinitief</span> gaan</li>
+                    <li><span class="badge red">Perfectum</span> gegaan</li>
+                    <li><span class="badge green">جملة</span> Ik ben naar huis gegaan.</li>
+                </ul>
+                <p style="margin-top: 10px;">بهذه الطريقة ستستطيع استخدام الـ <strong>Perfectum</strong> في المحادثة والامتحان الهولندي A2.</p>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<a href="#" class="scroll-top" title="العودة للأعلى">↑</a>
+
+</body>
+</html>
